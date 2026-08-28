@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 19</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 19</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 19 · RLE with Bitmap Images</h3>
+      <p><b>Cambridge focus:</b> Apply Run Length Encoding to simple image data and explain how repeated pixel values can be represented more efficiently. RLE is a lossless compression method specified by the Cambridge syllabus.</p>
+      <div class="callout"><b>Success criteria:</b> Students can read a simple row of pixel values, identify consecutive runs, encode them using count + value, decode the result, and explain why RLE can be effective for images containing large areas of the same colour.</div>
+      <p><b>Prior learning:</b> Period 18 — basic RLE encoding and decoding.</p>
+      <p><b>Key vocabulary:</b> bitmap, pixel, pixel value, run, count, value, encode, decode, lossless, compression.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>Make RLE visual</h3>
+      <p>Use a row of coloured squares or 0/1 values on the board.</p>
+      <ol>
+        <li>Read pixels from left to right.</li>
+        <li>Group identical consecutive values.</li>
+        <li>Write each run as <b>count + value</b>.</li>
+        <li>Compare the original pixel sequence with the encoded sequence.</li>
+        <li>Decode it back to prove the image data is preserved.</li>
+      </ol>
+      <div class="callout"><b>Teaching message:</b> RLE does not change the image. It changes how repeated pixel data is stored.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>RLE in 60 seconds</h3>
+      <div class="callout"><b>AAAAA BBB CC → 5A 3B 2C</b></div>
+      <ol>
+        <li>What is a run?</li>
+        <li>What two pieces of information are stored?</li>
+        <li>Why is RLE lossless?</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <span class="time">5–12 min · Connect to images</span>
+      <h3>Pixels can have values</h3>
+      <p>In a simple black-and-white bitmap, we can represent pixels using values such as:</p>
+      <div class="callout"><b>0 = black &nbsp;&nbsp; 1 = white</b></div>
+      <p>Consider one row:</p>
+      <div class="binary">0000000011111111000000</div>
+      <p>There are three runs:</p>
+      <div class="callout"><b>8 zeros | 8 ones | 6 zeros</b></div>
+    </div>
+
+    <div class="card">
+      <span class="time">12–20 min · Model</span>
+      <h3>Encode a pixel row</h3>
+      <p>For:</p>
+      <div class="binary">0000000011111111000000</div>
+      <p>Use count + value:</p>
+      <div class="callout"><b>8 0 &nbsp; 8 1 &nbsp; 6 0</b></div>
+      <p>The original row contains <b>22 pixels</b>. The RLE representation records only the run information.</p>
+      <div class="callout"><b>Important:</b> The exact storage benefit depends on how the encoded counts and values are represented.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">20–28 min · Interactive</span>
+      <h3>Pixel-row RLE encoder</h3>
+      <p>Enter a row containing only 0 and 1. The tool will identify the runs.</p>
+      <input id="pixelTeacherInput" value="0000000011111111000000" style="width:100%;box-sizing:border-box;padding:10px;border-radius:10px;border:1px solid #aaa;font-size:16px">
+      <button onclick="encodePixelTeacher()">Encode pixel row</button>
+      <div class="callout" id="pixelTeacherOutput">Click Encode pixel row.</div>
+      <div class="callout" id="pixelTeacherStats"></div>
+    </div>
+
+    <div class="card">
+      <span class="time">28–34 min · Decode</span>
+      <h3>Rebuild the pixels</h3>
+      <p>Decode:</p>
+      <div class="callout"><b>5 0 &nbsp; 4 1 &nbsp; 3 0</b></div>
+      <p>Expand each run:</p>
+      <div class="callout"><b>00000 | 1111 | 000 → 000001111000</b></div>
+      <p>The original pixel sequence is recovered exactly.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">34–40 min · Image reasoning</span>
+      <h3>Why can RLE be effective for images?</h3>
+      <p>Images often contain areas where neighbouring pixels have the same colour.</p>
+      <ul>
+        <li>A large white background can create long runs of the same value.</li>
+        <li>A large block of one colour can create long runs.</li>
+        <li>Long runs are represented compactly by a count and value.</li>
+      </ul>
+      <div class="callout"><b>Contrast:</b> a highly detailed image with rapidly changing pixel values may contain many short runs and gain little from RLE.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">40–45 min · Compare</span>
+      <h3>Which image row compresses better?</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Row</th><th style="padding:8px;background:#082b59;color:white">Runs</th><th style="padding:8px;background:#082b59;color:white">RLE suitability</th></tr>
+        <tr><td style="padding:7px">00000000001111111111</td><td style="padding:7px">2</td><td style="padding:7px">Excellent</td></tr>
+        <tr><td style="padding:7px">01010101010101010101</td><td style="padding:7px">20</td><td style="padding:7px">Poor</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <span class="time">45–48 min · Assessment</span>
+      <h3>Cambridge-style practice</h3>
+      <ol>
+        <li>A black pixel has value 0 and a white pixel has value 1. Encode <b>00000111110000</b> using RLE.</li>
+        <li>Decode <b>6 0 3 1 4 0</b>.</li>
+        <li>Explain why RLE is particularly suitable for an image containing large areas of one colour.</li>
+      </ol>
+      <div class="callout"><b>Marking focus:</b> runs must be consecutive. Students must not combine separated identical values.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">48–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>How can a row of pixels be represented using RLE?</li>
+        <li>What makes RLE effective?</li>
+        <li>Why is RLE lossless?</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> Period 20 can consolidate Topic 1.3 with mixed image/sound storage and compression questions.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 19 applies RLE to bitmap pixel data and develops visual, encode/decode reasoning.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Pixels</span>
+        <span>3. Find runs</span><span>4. Encode</span>
+        <span>5. Decode</span><span>6. Challenge</span>
+      </div>
+      <p>Today you will use RLE on <b>bitmap pixel data</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Represent simple pixels using values.</li>
+        <li>Identify consecutive pixel runs.</li>
+        <li>Encode a pixel row using RLE.</li>
+        <li>Decode an RLE pixel row.</li>
+        <li>Explain why some images compress better than others.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · Pixel values</h3>
+      <p>For a simple black-and-white image:</p>
+      <div class="callout"><b>0 = black &nbsp;&nbsp; 1 = white</b></div>
+      <p>Example:</p>
+      <div class="binary">0000000011111111000000</div>
+    </div>
+
+    <div class="card">
+      <h3>2 · Find the runs</h3>
+      <p>Group consecutive identical pixels:</p>
+      <div class="callout"><b>00000000 | 11111111 | 000000</b></div>
+      <p>So the runs are:</p>
+      <div class="callout"><b>8 zeros | 8 ones | 6 zeros</b></div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Encode</h3>
+      <div class="callout"><b>8 0 &nbsp; 8 1 &nbsp; 6 0</b></div>
+      <p>This stores the count followed by the pixel value.</p>
+      <div class="callout"><b>Remember:</b> count + value, not value + count.</div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Quick check</h3>
+      <p><b>Q1:</b> In the row 0000111100, how many runs are there?</p>
+      <button class="option" onclick="check19(this,false,'q1s19')">2</button>
+      <button class="option" onclick="check19(this,true,'q1s19')">3</button>
+      <button class="option" onclick="check19(this,false,'q1s19')">10</button>
+      <div class="score" id="q1s19"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> What does each RLE pair contain?</p>
+      <button class="option" onclick="check19(this,true,'q2s19')">Count and value</button>
+      <button class="option" onclick="check19(this,false,'q2s19')">Width and height</button>
+      <div class="score" id="q2s19"></div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Try the encoder</h3>
+      <p>Enter a row containing only 0 and 1:</p>
+      <input id="pixelStudentInput" value="00000111110000" style="width:100%;box-sizing:border-box;padding:10px;border-radius:10px;border:1px solid #aaa;font-size:16px">
+      <button onclick="encodePixelStudent()">Encode pixel row</button>
+      <div class="callout" id="pixelStudentOutput">Your RLE result will appear here.</div>
+      <div class="callout" id="pixelStudentStats"></div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Decode</h3>
+      <p>Decode:</p>
+      <div class="binary">5 0 &nbsp; 4 1 &nbsp; 3 0</div>
+      <button onclick="show('answers19a')">Reveal answer</button>
+      <div class="answer" id="answers19a">
+        5 zeros = 00000<br>
+        4 ones = 1111<br>
+        3 zeros = 000<br><br>
+        <b>000001111000</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Which compresses better?</h3>
+      <p>Choose the row likely to benefit more from RLE.</p>
+      <button class="option" onclick="check19(this,true,'q3s19')">00000000001111111111</button>
+      <button class="option" onclick="check19(this,false,'q3s19')">01010101010101010101</button>
+      <div class="score" id="q3s19"></div>
+      <div class="callout">Long consecutive runs are good for RLE. Frequent changes create many short runs.</div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Challenge</h3>
+      <p>Encode:</p>
+      <div class="binary">00000111110000</div>
+      <button onclick="show('answers19b')">Reveal answer</button>
+      <div class="answer" id="answers19b">
+        <b>5 0 &nbsp; 5 1 &nbsp; 4 0</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Exam practice</h3>
+      <p>Explain why RLE is particularly suitable for an image containing large areas of one colour.</p>
+      <button onclick="show('exam19')">Show model answer</button>
+      <div class="answer" id="exam19">
+        Large areas of one colour create long runs of identical pixel values. RLE can represent each long run using a count and value instead of storing every pixel separately, reducing the amount of data.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Common mistakes</h3>
+      <ul>
+        <li>Combining identical pixels that are separated by other pixels.</li>
+        <li>Writing value before count when the agreed format is count + value.</li>
+        <li>Forgetting that RLE must be decoded back to the original data.</li>
+        <li>Assuming every image gets a large reduction from RLE.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>11 · Self-assessment</h3>
+      <p>Choose your confidence:</p>
+      <button onclick="confidence19('confident')">🟢 I can apply RLE to pixel data</button>
+      <button onclick="confidence19('okay')">🟡 I need more practice</button>
+      <button onclick="confidence19('need')">🔴 I need help</button>
+      <div class="score" id="confidence19"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Applying Run Length Encoding to bitmap pixel data.
+    </div>>>
+  </div>
+</section>
+</main>
+
+<script>
+function pixelRuns(text){
+  const clean=(text||'').replace(/[^01]/g,'');
+  if(!clean)return [];
+  const runs=[];
+  let count=1;
+  for(let i=1;i<=clean.length;i++){
+    if(i<clean.length && clean[i]===clean[i-1]) count++;
+    else {runs.push({count,value:clean[i-1]});count=1;}
+  }
+  return runs;
+}
+function encodePixelTeacher(){
+  const input=document.getElementById('pixelTeacherInput').value;
+  const clean=input.replace(/[^01]/g,'');
+  const runs=pixelRuns(clean);
+  document.getElementById('pixelTeacherOutput').innerHTML=runs.length?'<b>RLE:</b> '+runs.map(r=>r.count+' '+r.value).join(' &nbsp; '):'Enter 0s and 1s.';
+  document.getElementById('pixelTeacherStats').innerHTML=clean?'<b>Pixels:</b> '+clean.length+' &nbsp; <b>Runs:</b> '+runs.length:'';
+}
+function encodePixelStudent(){
+  const input=document.getElementById('pixelStudentInput').value;
+  const clean=input.replace(/[^01]/g,'');
+  const runs=pixelRuns(clean);
+  document.getElementById('pixelStudentOutput').innerHTML=runs.length?'<b>RLE:</b> '+runs.map(r=>r.count+' '+r.value).join(' &nbsp; '):'Enter 0s and 1s.';
+  document.getElementById('pixelStudentStats').innerHTML=clean?'<b>Pixels:</b> '+clean.length+' &nbsp; <b>Runs:</b> '+runs.length:'';
+}
+function check19(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1s19:correct?'✓ Correct — 0000111100 contains 3 runs.':'✗ Not quite. Group consecutive identical values.',
+    q2s19:correct?'✓ Correct — RLE uses a count and the value.':'✗ Not quite. Each run needs its count and value.',
+    q3s19:correct?'✓ Correct — long runs are ideal for RLE.':'✗ Not quite. Alternating values create many short runs.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence19(v){
+  const text={
+    confident:'Excellent — you can now apply RLE to bitmap data.',
+    okay:'Good. Practise identifying runs before encoding.',
+    need:'That is useful information. Rework the 0000000011111111000000 example step by step.'
+  };
+  document.getElementById('confidence19').textContent=text[v];
+}
+</script>
+</body>
+</html>

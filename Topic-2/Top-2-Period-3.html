@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 3</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+
+.network{position:relative;height:180px;margin:15px 0;border-radius:18px;background:rgba(255,255,255,.55);overflow:hidden}
+.network-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.network-svg line{stroke:#557;stroke-width:4;stroke-linecap:round}
+.network .node{position:absolute;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;background:#082b59;color:white;z-index:3;box-sizing:border-box}
+.network .sender{left:7%;top:50%}
+.network .r1{left:30%;top:25%}
+.network .r2{left:50%;top:72.2%}
+.network .r3{left:70%;top:25%}
+.network .dest{left:93%;top:50%}
+.moving-packet{position:absolute;left:0;top:0;width:26px;height:26px;border-radius:7px;background:#f2c94c;color:#082b59;font-weight:800;text-align:center;line-height:26px;z-index:4;opacity:0;transform:translate(-50%,-50%);box-shadow:0 3px 8px rgba(0,0,0,.18)}
+
+.mode-visual{display:flex;align-items:center;justify-content:center;gap:28px;margin:18px 0;padding:18px;border-radius:16px;background:rgba(255,255,255,.55)}
+.mode-visual .device{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#082b59;color:white;font-weight:800;font-size:18px}
+.mode-visual .arrow{font-size:48px;font-weight:800;color:#082b59;line-height:1}
+.mode-visual .arrow.one{letter-spacing:0}
+.scenario-box{padding:14px;margin:10px 0;border-radius:12px;background:rgba(255,255,255,.45)}
+.scenario-box button{margin:8px 4px 0}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 2 — Data Transmission · Period 3</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 3 · Transmission Modes</h3>
+      <p><b>Topic 2 · Data Transmission:</b> Students learn the three transmission modes: simplex, half-duplex and full-duplex.</p>
+      <div class="callout"><b>Success criteria:</b> Students can define all three modes, distinguish the direction of communication and select a suitable mode for a given scenario.</div>
+      <p><b>Prior learning:</b> Periods 1–2 — data packets, packet switching and routers.</p>
+      <p><b>Key vocabulary:</b> simplex, half-duplex, full-duplex, one direction, both directions, simultaneously, transmission mode.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>Teach direction before terminology</h3>
+      <ol>
+        <li>Draw two devices, A and B.</li>
+        <li>For simplex, draw an arrow only A → B.</li>
+        <li>For half-duplex, draw arrows A ↔ B but explain that only one direction operates at a time.</li>
+        <li>For full-duplex, show two simultaneous arrows A ↔ B.</li>
+        <li>Attach a familiar example to each mode.</li>
+        <li>Finish with scenario selection questions.</li>
+      </ol>
+      <div class="callout"><b>Memory rule:</b> Simplex = one way · Half-duplex = two ways, one at a time · Full-duplex = two ways at the same time.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>From packets to communication</h3>
+      <p>Ask:</p>
+      <ul>
+        <li>What is a packet?</li>
+        <li>What does a router do?</li>
+        <li>Can packets from one message take different routes?</li>
+      </ul>
+      <div class="callout"><b>Bridge:</b> Today we focus not on the route packets take, but on the <b>direction of communication</b> between devices.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–14 min · Teach</span>
+      <h3>Simplex transmission</h3>
+      <div class="mode-visual">
+        <div class="device">A</div><div class="arrow one">→</div><div class="device">B</div>
+      </div>
+      <p><b>Simplex mode</b> occurs when data can be sent in <b>one direction only</b>.</p>
+      <div class="callout"><b>Example from the textbook:</b> sending data from a computer to a printer.</div>
+      <p><b>Teaching question:</b> Can the printer send data back to the computer using the same simplex communication?</p>
+    </div>
+
+    <div class="card">
+      <span class="time">14–23 min · Teach</span>
+      <h3>Half-duplex transmission</h3>
+      <div class="mode-visual">
+        <div class="device">A</div><div class="arrow both">↔</div><div class="device">B</div>
+      </div>
+      <p><b>Half-duplex mode</b> allows data to be sent in <b>both directions, but not at the same time</b>.</p>
+      <div class="callout"><b>Example from the textbook:</b> a walkie-talkie. A person can transmit or receive, but the two directions cannot operate simultaneously.</div>
+      <p><b>Teaching question:</b> Why do people say “over” when using a walkie-talkie?</p>
+    </div>
+
+    <div class="card">
+      <span class="time">23–32 min · Teach</span>
+      <h3>Full-duplex transmission</h3>
+      <div class="mode-visual">
+        <div class="device">A</div><div class="arrow full">⇄</div><div class="device">B</div>
+      </div>
+      <p><b>Full-duplex mode</b> allows data to be sent in <b>both directions at the same time</b>.</p>
+      <div class="callout"><b>Example from the textbook:</b> a broadband internet connection.</div>
+      <p><b>Teaching question:</b> What advantage does simultaneous two-way communication provide?</p>
+    </div>
+
+    <div class="card">
+      <span class="time">32–38 min · Interactive</span>
+      <h3>Choose the transmission mode</h3>
+      <p>Read each scenario and click the most suitable mode.</p>
+      <div class="scenario-box">
+        <b>Scenario 1:</b> A device sends information to a printer and no return communication is required.
+        <button onclick="modeCheck('simplex','sc1')">Simplex</button>
+        <button onclick="modeCheck('half','sc1')">Half-duplex</button>
+        <button onclick="modeCheck('full','sc1')">Full-duplex</button>
+        <div id="sc1" class="score"></div>
+      </div>
+      <div class="scenario-box">
+        <b>Scenario 2:</b> Two people use a walkie-talkie.
+        <button onclick="modeCheck('simplex','sc2')">Simplex</button>
+        <button onclick="modeCheck('half','sc2')">Half-duplex</button>
+        <button onclick="modeCheck('full','sc2')">Full-duplex</button>
+        <div id="sc2" class="score"></div>
+      </div>
+      <div class="scenario-box">
+        <b>Scenario 3:</b> Two devices need to send and receive data simultaneously.
+        <button onclick="modeCheck('simplex','sc3')">Simplex</button>
+        <button onclick="modeCheck('half','sc3')">Half-duplex</button>
+        <button onclick="modeCheck('full','sc3')">Full-duplex</button>
+        <div id="sc3" class="score"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="time">38–44 min · Compare</span>
+      <h3>Compare the three modes</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Mode</th><th style="padding:8px;background:#082b59;color:white">Direction</th><th style="padding:8px;background:#082b59;color:white">Example</th></tr>
+        <tr><td style="padding:7px"><b>Simplex</b></td><td style="padding:7px">One direction only</td><td style="padding:7px">Computer → printer</td></tr>
+        <tr><td style="padding:7px"><b>Half-duplex</b></td><td style="padding:7px">Both directions, not simultaneously</td><td style="padding:7px">Walkie-talkie</td></tr>
+        <tr><td style="padding:7px"><b>Full-duplex</b></td><td style="padding:7px">Both directions simultaneously</td><td style="padding:7px">Broadband internet connection</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <span class="time">44–48 min · Assessment</span>
+      <h3>Cambridge-style questions</h3>
+      <ol>
+        <li>Define simplex data transmission.</li>
+        <li>Define half-duplex data transmission.</li>
+        <li>Define full-duplex data transmission.</li>
+        <li>State a suitable example for half-duplex transmission.</li>
+        <li>Explain why full-duplex is different from half-duplex.</li>
+      </ol>
+      <div class="callout"><b>Marking focus:</b> the words <b>at the same time</b> are essential when distinguishing full-duplex from half-duplex.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">48–50 min · Exit ticket</span>
+      <h3>One sentence for each</h3>
+      <p>Ask students to complete:</p>
+      <div class="callout"><b>Simplex:</b> __________________________________</div>
+      <div class="callout"><b>Half-duplex:</b> ______________________________</div>
+      <div class="callout"><b>Full-duplex:</b> ______________________________</div>
+      <div class="callout"><b>Next:</b> Serial and parallel data transmission.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 3 teaches simplex, half-duplex and full-duplex transmission modes.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Simplex</span>
+        <span>3. Half-duplex</span><span>4. Full-duplex</span>
+        <span>5. Compare</span><span>6. Test</span>
+      </div>
+      <p>Today you will learn three ways that data can move between devices.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Define simplex transmission.</li>
+        <li>Define half-duplex transmission.</li>
+        <li>Define full-duplex transmission.</li>
+        <li>Recognise suitable real-world examples.</li>
+        <li>Select the correct mode for a scenario.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · Simplex</h3>
+      <div class="mode-visual">
+        <div class="device">A</div><div class="arrow one">→</div><div class="device">B</div>
+      </div>
+      <p>Data travels in <b>one direction only</b>.</p>
+      <div class="callout"><b>Example:</b> computer → printer.</div>
+      <p><b>Memory:</b> one-way street.</p>
+    </div>
+
+    <div class="card">
+      <h3>2 · Half-duplex</h3>
+      <div class="mode-visual">
+        <div class="device">A</div><div class="arrow both">↔</div><div class="device">B</div>
+      </div>
+      <p>Data travels in <b>both directions, but not at the same time</b>.</p>
+      <div class="callout"><b>Example:</b> walkie-talkie.</div>
+      <p><b>Memory:</b> two-way street with one direction operating at a time.</p>
+    </div>
+
+    <div class="card">
+      <h3>3 · Full-duplex</h3>
+      <div class="mode-visual">
+        <div class="device">A</div><div class="arrow full">⇄</div><div class="device">B</div>
+      </div>
+      <p>Data travels in <b>both directions at the same time</b>.</p>
+      <div class="callout"><b>Example:</b> broadband internet connection.</div>
+      <p><b>Memory:</b> two-way street with both directions operating simultaneously.</p>
+    </div>
+
+    <div class="card">
+      <h3>4 · Quick check</h3>
+      <p><b>Q1:</b> Which mode allows only one direction?</p>
+      <button class="option" onclick="checkP3(this,true,'q1p3')">Simplex</button>
+      <button class="option" onclick="checkP3(this,false,'q1p3')">Half-duplex</button>
+      <button class="option" onclick="checkP3(this,false,'q1p3')">Full-duplex</button>
+      <div class="score" id="q1p3"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> Which mode allows both directions, but not at the same time?</p>
+      <button class="option" onclick="checkP3(this,false,'q2p3')">Simplex</button>
+      <button class="option" onclick="checkP3(this,true,'q2p3')">Half-duplex</button>
+      <button class="option" onclick="checkP3(this,false,'q2p3')">Full-duplex</button>
+      <div class="score" id="q2p3"></div>
+
+      <p style="margin-top:15px"><b>Q3:</b> Which mode allows simultaneous two-way communication?</p>
+      <button class="option" onclick="checkP3(this,false,'q3p3')">Simplex</button>
+      <button class="option" onclick="checkP3(this,false,'q3p3')">Half-duplex</button>
+      <button class="option" onclick="checkP3(this,true,'q3p3')">Full-duplex</button>
+      <div class="score" id="q3p3"></div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Scenario challenge</h3>
+      <p><b>Printer communication:</b> choose the most suitable mode.</p>
+      <button class="option" onclick="checkP3(this,true,'sc1p3')">Simplex</button>
+      <button class="option" onclick="checkP3(this,false,'sc1p3')">Half-duplex</button>
+      <button class="option" onclick="checkP3(this,false,'sc1p3')">Full-duplex</button>
+      <div class="score" id="sc1p3"></div>
+
+      <p style="margin-top:15px"><b>Walkie-talkie:</b></p>
+      <button class="option" onclick="checkP3(this,false,'sc2p3')">Simplex</button>
+      <button class="option" onclick="checkP3(this,true,'sc2p3')">Half-duplex</button>
+      <button class="option" onclick="checkP3(this,false,'sc2p3')">Full-duplex</button>
+      <div class="score" id="sc2p3"></div>
+
+      <p style="margin-top:15px"><b>Simultaneous two-way communication:</b></p>
+      <button class="option" onclick="checkP3(this,false,'sc3p3')">Simplex</button>
+      <button class="option" onclick="checkP3(this,false,'sc3p3')">Half-duplex</button>
+      <button class="option" onclick="checkP3(this,true,'sc3p3')">Full-duplex</button>
+      <div class="score" id="sc3p3"></div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Compare</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Mode</th><th style="padding:8px;background:#082b59;color:white">Direction</th></tr>
+        <tr><td style="padding:7px"><b>Simplex</b></td><td style="padding:7px">One direction only</td></tr>
+        <tr><td style="padding:7px"><b>Half-duplex</b></td><td style="padding:7px">Both directions, not simultaneously</td></tr>
+        <tr><td style="padding:7px"><b>Full-duplex</b></td><td style="padding:7px">Both directions simultaneously</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>7 · Exam practice</h3>
+      <p><b>Question:</b> Explain the difference between half-duplex and full-duplex transmission.</p>
+      <button onclick="showP3('examP3')">Show model answer</button>
+      <div class="answer" id="examP3">Half-duplex allows data to travel in both directions, but not at the same time. Full-duplex allows data to travel in both directions at the same time.</div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Common mistakes</h3>
+      <ul>
+        <li>Thinking half-duplex means one direction only.</li>
+        <li>Forgetting the phrase “at the same time” for full-duplex.</li>
+        <li>Confusing the direction of transmission with the route through a network.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>9 · Self-assessment</h3>
+      <p>Choose your confidence:</p>
+      <button onclick="confidenceP3('confident')">🟢 I can identify all three modes</button>
+      <button onclick="confidenceP3('okay')">🟡 I need more practice</button>
+      <button onclick="confidenceP3('need')">🔴 I need help</button>
+      <div class="score" id="confidenceP3"></div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Simplex · Half-duplex · Full-duplex.
+    </div>>>
+  </div>
+</section>
+</main>
+
+<script>
+function modeCheck(choice,id){
+  const correct={sc1:'simplex',sc2:'half',sc3:'full'};
+  const box=document.getElementById(id);
+  box.textContent=choice===correct[id]?'✓ Correct.':'✗ Not quite. Think about the direction of communication.';
+}
+function checkP3(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1p3:correct?'✓ Correct — simplex is one direction only.':'✗ Not quite. Simplex means one direction only.',
+    q2p3:correct?'✓ Correct — half-duplex is two directions, one at a time.':'✗ Not quite. Half-duplex is two-way, but not simultaneously.',
+    q3p3:correct?'✓ Correct — full-duplex allows simultaneous two-way communication.':'✗ Not quite. Look for the word “simultaneously”.',
+    sc1p3:correct?'✓ Correct — the textbook uses computer → printer as a simplex example.':'✗ Review the printer example.',
+    sc2p3:correct?'✓ Correct — a walkie-talkie is half-duplex.':'✗ Review the walkie-talkie example.',
+    sc3p3:correct?'✓ Correct — simultaneous two-way communication is full-duplex.':'✗ Look for simultaneous communication.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function showP3(id){document.getElementById(id).style.display='block'}
+function confidenceP3(v){
+  const text={
+    confident:'Excellent — you are ready for serial and parallel transmission.',
+    okay:'Good. Focus on the difference between half-duplex and full-duplex.',
+    need:'That is useful information. Relearn the three direction diagrams.'
+  };
+  document.getElementById('confidenceP3').textContent=text[v];
+}
+</script>
+</body>
+</html>

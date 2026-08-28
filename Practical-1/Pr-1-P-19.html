@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Practical 1 | Period 19</title>
+<style>
+:root{--teak:#7b4b2a;--dark:#4f2d19;--half:#f8f5ec;--half2:#eee8dc;--ink:#3b281d;--cream:#fffdf8;--gold:#d6ad62}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#6f4326,#8b5733 48%,#6b3f25);color:var(--ink);overflow:hidden}
+header{height:86px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#4f2d19ee;color:var(--half);border-bottom:2px solid #c99a5a;box-shadow:0 5px 18px #24140b66}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0;font-size:13px;font-weight:600;color:#eadfce}
+.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:45px;height:45px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700;color:#fff}
+.school{display:flex;align-items:center;gap:11px}.school img{width:49px;height:49px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}
+.badge{padding:9px 14px;border-radius:18px;background:var(--gold);color:var(--dark);font-weight:900;font-size:13px}
+.layout{height:calc(100vh - 86px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:#f8f5ecf2;border:2px solid #d1ad77;border-radius:22px;box-shadow:0 14px 34px #24140b66;overflow:hidden;display:flex;flex-direction:column}
+.panehead{padding:15px 20px;background:var(--dark);color:var(--half)}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:var(--cream);border:1px solid #cbbda8;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #5b3a2112}
+.card h3{margin:0 0 9px;font-size:17px;color:var(--dark)}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}
+.time{display:inline-block;background:#ead5ae;border:1px solid #b88b4d;color:var(--dark);border-radius:20px;padding:4px 9px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{border-left:5px solid var(--teak);background:var(--half2);padding:12px 14px;border-radius:8px;margin:10px 0}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:var(--half2);border-radius:16px;margin:15px 0}
+.node{padding:13px 15px;border-radius:13px;background:var(--dark);color:var(--half);font-weight:900;text-align:center}.tag{padding:10px 13px;border-radius:12px;background:#ead5ae;color:var(--dark);font-weight:900}.arrow{font-size:25px;font-weight:900;color:var(--teak)}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--dark);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c7b9a6;color:var(--ink);margin:7px 0}.option.correct{background:#e1efe5;border-color:#6e9a7c}.option.wrong{background:#f5dfdb;border-color:#a96c62}
+.score{font-weight:900;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#e6f0e8;border-radius:10px;border:1px solid #9db9a4}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e5ded3;font-size:12px;font-weight:800}.progress .active{background:#ead5ae;border:1px solid #b88b4d}
+.workout{background:#f4eee4;border:2px dashed #b68a56;border-radius:15px;padding:15px;margin:12px 0}
+.code{font-family:Consolas,monospace;background:#392317;color:#fff;padding:14px;border-radius:12px;line-height:1.65}
+.footer{font-size:11px;color:#66584c;border-top:1px solid #d6cbbb;padding-top:10px;margin-top:18px}
+table{width:100%;border-collapse:collapse}th{background:var(--dark);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5ccbf;vertical-align:top}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}}
+</style></head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div>
+<h1>IGCSE Computer Science 0984</h1><p>Practical Studio 1 · Algorithms & Problem Solving · Period 19</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">PRACTICAL STUDIO</div></div>
+</header>
+<main class="layout">
+<section class="pane"><div class="panehead"><h2>🧑‍🏫 Teacher Studio</h2><small>String algorithms · substring · length · case conversion · validation</small></div><div class="content">
+<div class="card"><span class="time">Practical 1 · Period 19</span><h3>Advanced String Operations</h3>
+<p>Period 18 introduced character-by-character processing. This period extends that skill to common <b>string operations</b>: determining length, extracting portions of text, changing case, comparing strings and combining these operations into useful algorithms.</p>
+<div class="callout"><b>Core idea:</b> A string problem can often be solved by combining a built-in string operation with a loop, selection, counter or Boolean flag.</div></div>
+<div class="card"><span class="time">Teaching route</span><h3>Input → String operation → Process → Validate → Output</h3>
+<div class="flow"><div class="node">TEXT</div><div class="arrow">→</div><div class="tag">LENGTH / EXTRACT</div><div class="arrow">→</div><div class="node">PROCESS</div><div class="arrow">→</div><div class="tag">CHECK</div><div class="arrow">→</div><div class="node">RESULT</div></div></div>
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>1 · What is a substring?</h3><div class="workout">The word "COMPUTER" contains smaller sequences such as "COMP" and "PUT". Why can extracting part of a string be useful?</div><div class="callout">It allows an algorithm to examine or use only the required portion of a larger piece of text.</div></div>
+<div class="card"><span class="time">8–18 min · Teach</span><h3>2 · String length</h3><div class="code">Word ← "COMPUTER"<br>L ← LENGTH(Word)<br>OUTPUT L</div><p>The result is <b>8</b>. Length is useful for controlling loops and checking input requirements.</p></div>
+<div class="card"><span class="time">18–27 min · Teach</span><h3>3 · Extracting part of a string</h3><div class="code">Word ← "COMPUTER"<br>OUTPUT SUBSTRING(Word, 1, 4)</div><p>This illustrates the idea of extracting a section of a string. Use the exact substring syntax and indexing rules specified by the pseudocode environment being taught.</p></div>
+<div class="card"><span class="time">27–35 min · Worked example</span><h3>4 · Example #1 — Username check</h3><div class="code">INPUT Username<br>IF LENGTH(Username) &gt;= 5 THEN<br>&nbsp;&nbsp;OUTPUT "Length accepted"<br>ELSE<br>&nbsp;&nbsp;OUTPUT "Too short"<br>ENDIF</div><div class="callout">This is a simple example of combining a string function with selection.</div></div>
+<div class="card"><span class="time">35–42 min · Worked example</span><h3>5 · Example #2 — Case-insensitive comparison</h3><div class="code">INPUT Answer<br>Answer ← UCASE(Answer)<br>IF Answer = "YES" THEN<br>&nbsp;&nbsp;OUTPUT "Accepted"<br>ELSE<br>&nbsp;&nbsp;OUTPUT "Try again"<br>ENDIF</div><p>Normalising case can make user input easier to compare consistently.</p></div>
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>6 · Extract a prefix</h3><div class="workout">A product code contains a three-character category at the beginning. Design an algorithm that extracts the first three characters.</div><button onclick="showT19('w1')">Show model approach</button><div class="answer" id="w1"><div class="code">INPUT Code<br>Category ← SUBSTRING(Code, 1, 3)<br>OUTPUT Category</div><p>Use the substring syntax supported by your course environment.</p></div></div>
+<div class="card"><span class="time">47–50 min · Exit</span><h3>7 · Teacher questions</h3><ul><li>Why is LENGTH useful?</li><li>What is a substring?</li><li>Why might text be converted to uppercase before comparison?</li><li>How can string functions reduce the amount of code needed?</li></ul></div>
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Practical Studio 1 · Period 19 · Advanced string operations.</div>
+</div></section>
+
+<section class="pane"><div class="panehead"><h2>🧑‍💻 Student Practical Studio</h2><small>String functions · extraction · comparison · validation workouts</small></div><div class="content">
+<div class="card"><h3>🧭 Your practical journey</h3><div class="progress"><span>1. Arrays</span><span>2. Search</span><span>3. Sort</span><span>4. Subroutines</span><span class="active">5. String operations</span></div></div>
+<div class="card"><h3>🎯 Learning targets</h3><ul><li>Use string length in algorithms.</li><li>Extract required sections of text.</li><li>Compare strings consistently.</li><li>Normalise case when appropriate.</li><li>Combine string functions with validation.</li><li>Design practical text-processing solutions.</li></ul></div>
+<div class="card"><h3>1 · Quick check</h3><p>What does LENGTH("HELLO") return?</p><button class="option" onclick="checkT19(this,true,'q1')">5</button><button class="option" onclick="checkT19(this,false,'q1')">4</button><button class="option" onclick="checkT19(this,false,'q1')">6</button><div class="score" id="q1"></div></div>
+<div class="card"><h3>2 · Worked Example #1 — Length validation</h3><div class="code">INPUT Password<br>IF LENGTH(Password) &gt;= 8 THEN<br>&nbsp;&nbsp;OUTPUT "Accepted"<br>ELSE<br>&nbsp;&nbsp;OUTPUT "Too short"<br>ENDIF</div><p>This checks one simple password requirement.</p></div>
+<div class="card"><h3>3 · Workout — Extract a code</h3><div class="workout">For "CS0984", extract "0984".</div><button onclick="showT19('a1')">Show model</button><div class="answer" id="a1"><div class="code">Code ← "CS0984"<br>NumberPart ← SUBSTRING(Code, 3, 4)<br>OUTPUT NumberPart</div><p>Adjust indexing if your pseudocode specification uses a different convention.</p></div></div>
+<div class="card"><h3>4 · Interactive check</h3><p>Why might UCASE(Answer) be useful before comparing Answer with "YES"?</p><button class="option" onclick="checkT19(this,true,'q2')">It allows YES, Yes and yes to be treated consistently.</button><button class="option" onclick="checkT19(this,false,'q2')">It makes the string longer.</button><div class="score" id="q2"></div></div>
+<div class="card"><h3>5 · Worked Example #2 — Username structure</h3><div class="code">INPUT Username<br>IF LENGTH(Username) &lt; 5 THEN<br>&nbsp;&nbsp;OUTPUT "Invalid"<br>ELSE<br>&nbsp;&nbsp;Prefix ← SUBSTRING(Username, 1, 2)<br>&nbsp;&nbsp;OUTPUT Prefix<br>ENDIF</div></div>
+<div class="card"><h3>6 · Workout — Domain check</h3><div class="workout">A school email must end with "@school.edu". Design a check for the required ending.</div><button onclick="showT19('a2')">Show model approach</button><div class="answer" id="a2"><div class="code">INPUT Email<br>Suffix ← SUBSTRING(Email, LENGTH(Email) - 10, 11)<br>IF Suffix = "@school.edu" THEN<br>&nbsp;&nbsp;OUTPUT "Valid domain"<br>ELSE<br>&nbsp;&nbsp;OUTPUT "Invalid domain"<br>ENDIF</div><p>Use the exact substring convention supported by your environment; alternatively, use a suitable string-ending function if available.</p></div></div>
+<div class="card"><h3>7 · Worked Example #3 — Character + function</h3><div class="code">Count ← 0<br>INPUT Word<br>FOR I ← 1 TO LENGTH(Word)<br>&nbsp;&nbsp;IF UCASE(Word[I]) = "A" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;Count ← Count + 1<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br>OUTPUT Count</div><p>This version counts both uppercase and lowercase A characters.</p></div>
+<div class="card"><h3>8 · Debugging workout</h3><div class="code">INPUT Word<br>FOR I ← 1 TO LENGTH(Word) + 1<br>&nbsp;&nbsp;OUTPUT Word[I]<br>NEXT I</div><p>What problem can occur?</p><button onclick="showT19('a3')">Reveal</button><div class="answer" id="a3">The loop attempts to access one character beyond the end of the string. The normal traversal limit should be <b>LENGTH(Word)</b>.</div></div>
+<div class="card"><h3>9 · Interactive check</h3><p>Which operation is most directly related to finding how many characters a string contains?</p><button class="option" onclick="checkT19(this,true,'q3')">LENGTH</button><button class="option" onclick="checkT19(this,false,'q3')">WRITEFILE</button><div class="score" id="q3"></div></div>
+<div class="card"><h3>10 · Challenge — First and last character</h3><div class="workout">Input a word and output its first and last characters.</div><button onclick="showT19('a4')">Show model</button><div class="answer" id="a4"><div class="code">INPUT Word<br>First ← Word[1]<br>Last ← Word[LENGTH(Word)]<br>OUTPUT First<br>OUTPUT Last</div></div></div>
+<div class="card"><h3>11 · Think like an examiner</h3><p>A question asks you to “check that a code begins with CS”. Which approach is most suitable?</p><button class="option" onclick="checkT19(this,true,'q4')">Extract the required prefix and compare it with "CS".</button><button class="option" onclick="checkT19(this,false,'q4')">Count every character without checking its position.</button><div class="score" id="q4"></div></div>
+<div class="card"><h3>12 · Mini exam question</h3><p>Write an algorithm that inputs a word and outputs whether its first two characters are "CS".</p><button onclick="showT19('a5')">Show model answer</button><div class="answer" id="a5"><div class="code">INPUT Word<br>IF LENGTH(Word) &gt;= 2 THEN<br>&nbsp;&nbsp;Prefix ← SUBSTRING(Word, 1, 2)<br>&nbsp;&nbsp;IF UCASE(Prefix) = "CS" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;OUTPUT "Valid"<br>&nbsp;&nbsp;ELSE<br>&nbsp;&nbsp;&nbsp;&nbsp;OUTPUT "Invalid"<br>&nbsp;&nbsp;ENDIF<br>ELSE<br>&nbsp;&nbsp;OUTPUT "Invalid"<br>ENDIF</div></div></div>
+<div class="card"><h3>13 · Common mistakes</h3><ul><li>Using the wrong substring starting position.</li><li>Requesting more characters than the string contains.</li><li>Forgetting to validate minimum length before extraction.</li><li>Ignoring case when the requirement is case-insensitive.</li><li>Using LENGTH incorrectly in loop limits.</li><li>Assuming string functions have identical syntax in every programming language.</li></ul></div>
+<div class="card"><h3>14 · Self-assessment</h3><p>Can you use string functions safely and combine them with loops, selection and validation?</p><button onclick="confidenceT19('ready')">🟢 Yes</button><button onclick="confidenceT19('practice')">🟡 More workouts</button><button onclick="confidenceT19('revise')">🔴 Need revision</button><div class="score" id="confidence"></div></div>
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Practical Studio 1 · Period 19 · Advanced string operations.</div>
+</div></section>
+</main>
+<script>
+function checkT19(btn,c,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');const m={q1:c?'✓ Correct — HELLO contains five characters.':'✗ Count H, E, L, L, O.',q2:c?'✓ Correct — normalising case makes comparison consistent.':'✗ The purpose is consistent comparison, not changing length.',q3:c?'✓ Correct — LENGTH gives the number of characters.':'✗ WRITEFILE is a file operation, not a string-length operation.',q4:c?'✓ Correct — position matters, so checking the prefix is appropriate.':'✗ The question specifically requires the characters at the beginning.'};document.getElementById(id).textContent=m[id]}
+function showT19(id){document.getElementById(id).style.display='block'}
+function confidenceT19(v){const t={ready:'Excellent — you can combine string functions with your algorithm skills.',practice:'Good. Keep practising substring positions and boundary cases.',revise:'Remember: check the string length before extracting, then use the correct position and length.'};document.getElementById('confidence').textContent=t[v]}
+</script></body></html>

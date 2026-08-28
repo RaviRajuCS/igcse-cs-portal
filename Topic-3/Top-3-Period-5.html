@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 3 | Period 5</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--glass:rgba(255,255,255,.76)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#ffffff55;backdrop-filter:blur(12px);border-bottom:1px solid #fff9}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0;font-size:13px;font-weight:600}
+.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}
+.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:800;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid #fff9;border-radius:22px;box-shadow:0 12px 30px #082b5928;overflow:hidden;display:flex;flex-direction:column}
+.panehead{padding:15px 20px;background:#082b59f5;color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:#fffdf5eb;border:1px solid #082b5922;border-radius:16px;padding:16px;margin-bottom:15px}
+.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}
+.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}
+.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.box{padding:13px;border-radius:13px;background:#f7f2df;border:1px solid #d9c98f}.box b{display:block;margin-bottom:5px}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#ffffff95;border-radius:16px;margin:15px 0}
+.node{padding:13px 15px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:25px;font-weight:900}.tag{padding:10px 13px;border-radius:12px;background:var(--gold2);font-weight:900}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}
+.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div>
+<h1>IGCSE Computer Science 0984</h1><p>Topic 3 — Hardware · Period 5</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>Input and output devices · purpose and selection</small></div>
+<div class="content">
+
+<div class="card">
+<span class="time">Lesson overview</span>
+<h3>Period 5 · Input and Output Devices</h3>
+<p>This lesson begins <b>3.2 Input and output devices</b>. Students learn what input and output devices are, why they are required, and how different devices are selected for particular tasks.</p>
+<div class="callout"><b>Success criteria:</b> Students can define input and output devices, explain their purpose, distinguish between them, and select an appropriate device for a given context.</div>
+<p>Cambridge requires understanding of input/output devices and their purposes, including the listed examples. Cambridge guidance also states that students need to understand what each device does, why it does it and when it might be used, rather than its physical internal operation. citeturn2view0turn0search9</p>
+</div>
+
+<div class="card">
+<span class="time">My teaching route</span>
+<h3>Teach function before hardware detail</h3>
+<ol>
+<li>Connect input/output to the CPU processing model.</li>
+<li>Define an input device and an output device.</li>
+<li>Explain why a computer needs both.</li>
+<li>Group the syllabus devices by their purpose.</li>
+<li>Use scenarios to choose the most suitable device.</li>
+<li>Emphasise the difference between <b>what a device does</b> and <b>how it physically works</b>.</li>
+</ol>
+<div class="callout"><b>Core rule:</b> Input sends data into the computer; output presents data/results from the computer.</div>
+</div>
+
+<div class="card">
+<span class="time">0–7 min · Retrieval</span>
+<h3>Where do input and output fit?</h3>
+<div class="flow"><div class="node">INPUT<br>data enters</div><div class="arrow">→</div><div class="node">CPU<br>processes</div><div class="arrow">→</div><div class="node">OUTPUT<br>result leaves</div></div>
+<p>Ask students: <b>Can a computer process useful information without receiving data or instructions?</b></p>
+<div class="callout">Input devices provide data/instructions to the computer. Output devices communicate results from the computer to a user or another system.</div>
+</div>
+
+<div class="card">
+<span class="time">7–16 min · Teach</span>
+<h3>1 · Input devices</h3>
+<p>An <b>input device</b> is hardware used to enter data or instructions into a computer system.</p>
+<div class="grid">
+<div class="box"><b>Keyboard</b>Enters text, numbers and commands.</div>
+<div class="box"><b>Microphone</b>Captures sound/audio.</div>
+<div class="box"><b>Digital camera</b>Captures images/video.</div>
+<div class="box"><b>Optical mouse</b>Provides pointer movement and selections.</div>
+<div class="box"><b>Barcode scanner</b>Reads barcode information.</div>
+<div class="box"><b>QR code scanner</b>Reads QR-code information.</div>
+</div>
+</div>
+
+<div class="card">
+<span class="time">16–24 min · Teach</span>
+<h3>2 · More input devices</h3>
+<table>
+<tr><th>Device</th><th>Typical purpose</th></tr>
+<tr><td>Touch screen</td><td>Accepts touch input such as selections, taps and gestures.</td></tr>
+<tr><td>2D scanner</td><td>Captures a two-dimensional object/image.</td></tr>
+<tr><td>3D scanner</td><td>Captures the shape/geometry of a three-dimensional object.</td></tr>
+</table>
+<div class="callout"><b>Touch-screen note:</b> The syllabus includes resistive, capacitive and infra-red touch screens. At this stage focus on what they are used for and when a touch screen is suitable.</div>
+</div>
+
+<div class="card">
+<span class="time">24–32 min · Teach</span>
+<h3>3 · Output devices</h3>
+<p>An <b>output device</b> is hardware that presents or produces information/results from a computer system.</p>
+<div class="grid">
+<div class="box"><b>LED screen</b>Displays visual output.</div>
+<div class="box"><b>LCD screen</b>Displays visual output.</div>
+<div class="box"><b>Speaker</b>Produces sound output.</div>
+<div class="box"><b>Inkjet printer</b>Produces printed output.</div>
+<div class="box"><b>Laser printer</b>Produces printed output.</div>
+<div class="box"><b>3D printer</b>Produces a physical three-dimensional object.</div>
+<div class="box"><b>DLP projector</b>Projects a digital image/video.</div>
+<div class="box"><b>LCD projector</b>Projects a digital image/video.</div>
+<div class="box"><b>Actuator</b>Produces a physical action in response to a control signal.</div>
+</div>
+</div>
+
+<div class="card">
+<span class="time">32–40 min · Apply</span>
+<h3>4 · Choosing the right device</h3>
+<table>
+<tr><th>Scenario</th><th>Suitable device</th><th>Why?</th></tr>
+<tr><td>Enter a long essay</td><td>Keyboard</td><td>Designed for text entry.</td></tr>
+<tr><td>Record a student's voice</td><td>Microphone</td><td>Captures sound.</td></tr>
+<tr><td>Read a product code</td><td>Barcode scanner</td><td>Captures barcode data.</td></tr>
+<tr><td>Display a film to a large audience</td><td>Projector</td><td>Projects visual output onto a large surface.</td></tr>
+<tr><td>Produce a physical prototype</td><td>3D printer</td><td>Creates a three-dimensional physical object.</td></tr>
+</table>
+</div>
+
+<div class="card">
+<span class="time">40–46 min · Compare</span>
+<h3>5 · Input or output?</h3>
+<div class="callout"><b>Input:</b> keyboard · microphone · camera · mouse · barcode scanner · QR scanner · touch screen · 2D/3D scanner.</div>
+<div class="callout"><b>Output:</b> screen · speaker · printer · projector · actuator.</div>
+<div class="callout"><b>Interesting case:</b> A touch screen can act as both an <b>input device</b> and an <b>output device</b> because it displays information and accepts touch input.</div>
+</div>
+
+<div class="card">
+<span class="time">46–50 min · Exit ticket</span>
+<h3>Five quick checks</h3>
+<ol><li>What is an input device?</li><li>What is an output device?</li><li>Name one device used to capture sound.</li><li>Name one device used to read a product code.</li><li>Why can a touch screen be both input and output?</li></ol>
+<div class="callout"><b>Answers:</b> enters data/instructions · presents results · microphone · barcode scanner · it displays output and accepts touch input.</div>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+Topic 3 · Hardware · Period 5 · Input and output devices.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card">
+<h3>🧭 Your learning route</h3>
+<div class="progress"><span class="active">1. Input</span><span>2. Output</span><span>3. Devices</span><span>4. Scenarios</span><span>5. Test</span></div>
+<p>Today you learn how computers receive information and communicate results.</p>
+</div>
+
+<div class="card">
+<h3>🎯 Learning goals</h3>
+<ul>
+<li>Define an input device.</li>
+<li>Define an output device.</li>
+<li>Explain why input and output devices are required.</li>
+<li>Identify common input and output devices.</li>
+<li>Select the most suitable device for a given scenario.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>1 · Input vs output</h3>
+<div class="flow"><div class="tag">INPUT<br>into computer</div><div class="arrow">→</div><div class="node">COMPUTER<br>PROCESSING</div><div class="arrow">→</div><div class="tag">OUTPUT<br>from computer</div></div>
+<div class="callout"><b>Simple rule:</b> If the device is being used to put data into the computer, think <b>input</b>. If it is being used to present a result, think <b>output</b>.</div>
+</div>
+
+<div class="card">
+<h3>2 · Interactive classification</h3>
+<p>A keyboard is primarily:</p>
+<button class="option" onclick="checkP5(this,true,'q1p5')">An input device</button>
+<button class="option" onclick="checkP5(this,false,'q1p5')">An output device</button>
+<div class="score" id="q1p5"></div>
+<p style="margin-top:15px">A speaker is primarily:</p>
+<button class="option" onclick="checkP5(this,false,'q2p5')">An input device</button>
+<button class="option" onclick="checkP5(this,true,'q2p5')">An output device</button>
+<div class="score" id="q2p5"></div>
+</div>
+
+<div class="card">
+<h3>3 · Input devices at a glance</h3>
+<table>
+<tr><th>Device</th><th>Data captured / entered</th></tr>
+<tr><td>Keyboard</td><td>Text, numbers and commands.</td></tr>
+<tr><td>Microphone</td><td>Sound.</td></tr>
+<tr><td>Digital camera</td><td>Images/video.</td></tr>
+<tr><td>Optical mouse</td><td>Pointer movement and selections.</td></tr>
+<tr><td>Barcode scanner</td><td>Barcode data.</td></tr>
+<tr><td>QR code scanner</td><td>QR-code data.</td></tr>
+<tr><td>Touch screen</td><td>Touch selections/gestures.</td></tr>
+<tr><td>2D/3D scanner</td><td>Scanned objects/images.</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>4 · Output devices at a glance</h3>
+<table>
+<tr><th>Device</th><th>Output produced</th></tr>
+<tr><td>LED/LCD screen</td><td>Visual information.</td></tr>
+<tr><td>Speaker</td><td>Sound.</td></tr>
+<tr><td>Inkjet/laser printer</td><td>Printed documents/images.</td></tr>
+<tr><td>3D printer</td><td>Physical 3D object.</td></tr>
+<tr><td>DLP/LCD projector</td><td>Projected visual information.</td></tr>
+<tr><td>Actuator</td><td>Physical movement/action.</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h3>5 · Interactive device selection</h3>
+<p>A supermarket wants to read the black-and-white code printed on a product package. Which device is most suitable?</p>
+<button class="option" onclick="checkP5(this,true,'q3p5')">Barcode scanner</button>
+<button class="option" onclick="checkP5(this,false,'q3p5')">Microphone</button>
+<button class="option" onclick="checkP5(this,false,'q3p5')">Speaker</button>
+<div class="score" id="q3p5"></div>
+<p style="margin-top:15px">A teacher wants to record spoken instructions. Which device is most suitable?</p>
+<button class="option" onclick="checkP5(this,true,'q4p5')">Microphone</button>
+<button class="option" onclick="checkP5(this,false,'q4p5')">Laser printer</button>
+<button class="option" onclick="checkP5(this,false,'q4p5')">Projector</button>
+<div class="score" id="q4p5"></div>
+</div>
+
+<div class="card">
+<h3>6 · The touch screen special case</h3>
+<p>A touch screen can perform <b>two jobs</b>.</p>
+<div class="flow"><div class="node">DISPLAY<br>OUTPUT</div><div class="arrow">+</div><div class="node">TOUCH<br>INPUT</div></div>
+<div class="callout">The screen displays menus and information, while the touch surface accepts the user's selections.</div>
+</div>
+
+<div class="card">
+<h3>7 · Scenario challenge</h3>
+<p>A museum wants visitors to select information about an exhibit by touching icons on a large display. Which device is suitable, and why?</p>
+<button onclick="showP5('a1p5')">Show model answer</button>
+<div class="answer" id="a1p5">A touch screen is suitable because it can display information and allow visitors to select options by touching the screen.</div>
+<p>A factory needs to create a physical plastic prototype from a digital design. Which device is suitable?</p>
+<button onclick="showP5('a2p5')">Show model answer</button>
+<div class="answer" id="a2p5">A 3D printer is suitable because it can produce a physical three-dimensional object from digital information.</div>
+</div>
+
+<div class="card">
+<h3>8 · Exam practice</h3>
+<p><b>Question:</b> State what is meant by an input device.</p>
+<button onclick="showP5('a3p5')">Show model answer</button>
+<div class="answer" id="a3p5">Hardware used to enter data or instructions into a computer system.</div>
+<p><b>Question:</b> State what is meant by an output device.</p>
+<button onclick="showP5('a4p5')">Show model answer</button>
+<div class="answer" id="a4p5">Hardware used to present or produce information/results from a computer system.</div>
+<p><b>Question:</b> Explain why an input device is required.</p>
+<button onclick="showP5('a5p5')">Show model answer</button>
+<div class="answer" id="a5p5">It allows data or instructions to be entered into the computer so that the computer can process them.</div>
+</div>
+
+<div class="card">
+<h3>9 · Common exam mistakes</h3>
+<ul>
+<li>Calling a speaker an input device because it is connected to a computer.</li>
+<li>Forgetting that a touch screen can be both input and output.</li>
+<li>Choosing a device without explaining why it suits the scenario.</li>
+<li>Confusing a barcode scanner with a QR code scanner.</li>
+<li>Describing how a device works internally when the question only asks what it does or when it is used.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>10 · Self-assessment</h3>
+<p>How confident are you with input and output devices?</p>
+<button onclick="confidenceP5('ready')">🟢 I understand</button>
+<button onclick="confidenceP5('practice')">🟡 I need practice</button>
+<button onclick="confidenceP5('revise')">🔴 I need revision</button>
+<div class="score" id="confidenceP5"></div>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+Input devices · Output devices · Device selection · Touch screen.</div>
+</div>
+</section>
+</main>
+
+<script>
+function checkP5(btn,c,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(c?'correct':'wrong');
+ const msg={
+ q1p5:c?'✓ Correct — a keyboard sends data into the computer.':'✗ Not quite — a keyboard is an input device.',
+ q2p5:c?'✓ Correct — a speaker produces output from the computer.':'✗ Not quite — a speaker is an output device.',
+ q3p5:c?'✓ Correct — a barcode scanner is designed to read product barcodes.':'✗ Not quite — choose a device that captures barcode data.',
+ q4p5:c?'✓ Correct — a microphone captures sound.':'✗ Not quite — a microphone is used to capture sound.'
+ };
+ document.getElementById(id).textContent=msg[id];
+}
+function showP5(id){document.getElementById(id).style.display='block'}
+function confidenceP5(v){
+ const t={
+ ready:'Excellent — you can identify and select input and output devices confidently.',
+ practice:'Good. Practise matching each device to the data it captures or produces.',
+ revise:'Revisit the input/output tables and the scenario-selection examples.'
+ };
+ document.getElementById('confidenceP5').textContent=t[v];
+}
+</script>
+</body>
+</html>

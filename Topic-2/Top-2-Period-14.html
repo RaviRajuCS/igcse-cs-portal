@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 14</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--blue2:#12477f;--glass:rgba(255,255,255,.72);--shadow:0 12px 30px rgba(8,43,89,.16)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(255,255,255,.34);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.55)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0 0;font-size:13px;font-weight:600}.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:700;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}.panehead{padding:15px 20px;background:rgba(8,43,89,.95);color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:rgba(255,253,245,.88);border:1px solid rgba(8,43,89,.13);border-radius:16px;padding:16px;margin-bottom:15px}.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:rgba(255,255,255,.58);border-radius:16px;margin:15px 0}.node{padding:13px 15px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:25px;font-weight:900}.tag{padding:10px 13px;border-radius:12px;background:var(--gold2);font-weight:900}.signal{padding:9px 12px;border-radius:10px;background:#e7edf5;font-weight:800}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div><h1>IGCSE Computer Science 0984</h1><p>Topic 2 — Data Transmission · Period 14</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>My teaching route</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Lesson overview</span><h3>Period 14 · Automatic Repeat Request (ARQ)</h3>
+<p><b>Topic 2 · Data Transmission:</b> Students learn how <b>Automatic Repeat Request (ARQ)</b> establishes that data has been received without error by using acknowledgements, negative acknowledgements and a timeout.</p>
+<div class="callout"><b>Success criteria:</b> Students can describe the ARQ sequence, distinguish a positive acknowledgement from a negative acknowledgement, explain the purpose of a timeout, and trace when data is resent.</div>
+<p><b>Prior learning:</b> Periods 6–10 — parity, checksum, echo check and other error-detection methods.</p>
+<p><b>Key vocabulary:</b> ARQ, positive acknowledgement (ACK), negative acknowledgement (NACK), timeout, resend, sender, receiver.</p></div>
+
+<div class="card"><span class="time">My teaching route</span><h3>Make the conversation between sender and receiver visible</h3>
+<ol><li>Retrieve why error detection is needed.</li><li>Introduce ARQ as a method that combines error detection with feedback.</li><li>Trace a successful transmission and positive acknowledgement.</li><li>Trace an error and negative acknowledgement.</li><li>Introduce timeout when no response arrives.</li><li>Show automatic retransmission.</li><li>Practise identifying the exact event that triggers a resend.</li></ol>
+<div class="callout"><b>Memory rule:</b> <b>Send → check → ACK / NACK → timeout if no response → resend.</b></div></div>
+
+<div class="card"><span class="time">0–6 min · Retrieval</span><h3>What have we already checked?</h3>
+<div class="callout"><b>Parity:</b> checks parity.<br><b>Checksum:</b> recalculates a value.<br><b>Echo:</b> returns data for comparison.</div>
+<p>But detecting an error is only part of the job. The sender also needs to know what to do next.</p></div>
+
+<div class="card"><span class="time">6–15 min · Teach</span><h3>What is ARQ?</h3>
+<p><b>Automatic Repeat Request (ARQ)</b> is a method in which the receiver provides feedback to the sender about whether the transmitted data was received correctly.</p>
+<div class="flow"><div class="node">SENDER</div><div class="arrow">→</div><div class="node">DATA</div><div class="arrow">→</div><div class="node">RECEIVER<br>CHECK</div><div class="arrow">→</div><div class="tag">ACK / NACK</div><div class="arrow">→</div><div class="node">SENDER</div></div>
+<div class="callout"><b>Key idea:</b> If the sender does not receive the expected response within the agreed time, it can resend the data.</div></div>
+
+<div class="card"><span class="time">15–24 min · Successful transmission</span><h3>Positive acknowledgement</h3>
+<div class="flow"><div class="node">1. SEND DATA</div><div class="arrow">→</div><div class="node">2. RECEIVE<br>NO ERROR</div><div class="arrow">→</div><div class="tag">3. ACK</div><div class="arrow">→</div><div class="node">4. CONTINUE</div></div>
+<p>A <b>positive acknowledgement</b> tells the sender that the data has been received successfully.</p>
+<div class="callout"><b>ACK = “I received it correctly.”</b></div></div>
+
+<div class="card"><span class="time">24–32 min · Error case</span><h3>Negative acknowledgement</h3>
+<div class="flow"><div class="node">1. SEND DATA</div><div class="arrow">→</div><div class="node">2. RECEIVE<br>ERROR</div><div class="arrow">→</div><div class="tag">3. NACK</div><div class="arrow">→</div><div class="node">4. RESEND</div></div>
+<p>A <b>negative acknowledgement</b> tells the sender that the receiver has detected a problem with the data.</p>
+<div class="callout"><b>NACK = “I received it, but there is an error.”</b></div></div>
+
+<div class="card"><span class="time">32–39 min · Timeout</span><h3>What if no acknowledgement arrives?</h3>
+<p>Sometimes the sender receives neither an ACK nor a NACK. The response itself may have been lost or delayed.</p>
+<div class="flow"><div class="node">SEND DATA</div><div class="arrow">→</div><div class="node">RECEIVER</div><div class="arrow">→</div><div class="signal">NO RESPONSE</div><div class="arrow">→</div><div class="tag">TIMEOUT</div><div class="arrow">→</div><div class="node">RESEND</div></div>
+<p>A <b>timeout</b> is the agreed period the sender waits for the expected response. If it expires, the sender can automatically resend the data.</p>
+<div class="callout"><b>Important:</b> Timeout prevents the sender from waiting forever.</div></div>
+
+<div class="card"><span class="time">39–44 min · Compare</span><h3>ACK, NACK and timeout</h3>
+<table><tr><th>Event</th><th>Meaning</th><th>Sender action</th></tr><tr><td><b>ACK</b></td><td>Data received without detected error.</td><td>Continue with the transmission process.</td></tr><tr><td><b>NACK</b></td><td>Receiver detected an error.</td><td>Resend the data.</td></tr><tr><td><b>Timeout</b></td><td>No expected response arrived in time.</td><td>Resend the data.</td></tr></table></div>
+
+<div class="card"><span class="time">44–48 min · Assessment</span><h3>Cambridge-style questions</h3>
+<ol><li>Define ARQ.</li><li>State what a positive acknowledgement tells the sender.</li><li>State what a negative acknowledgement tells the sender.</li><li>Explain why a timeout is needed.</li><li>Describe what happens when the receiver detects an error.</li><li>Describe what happens if the sender receives no acknowledgement before the timeout.</li></ol>
+<div class="callout"><b>Marking focus:</b> Include <b>ACK, NACK and timeout</b> where relevant.</div></div>
+
+<div class="card"><span class="time">48–50 min · Exit ticket</span><h3>ARQ in one line</h3>
+<div class="callout"><b>ARQ:</b> Send data → receiver checks it → ACK if correct, NACK if incorrect → resend after NACK or timeout.</div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br><b>Planning note:</b> Period 14 covers ARQ, including positive/negative acknowledgements and timeout, as specified in Topic 2.2. citeturn0search12</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Send</span><span>2. Check</span><span>3. ACK/NACK</span><span>4. Timeout</span><span>5. Resend</span><span>6. Test</span></div><p>Today you will learn how ARQ makes a sender automatically repeat a transmission when the receiver reports an error or no response arrives in time.</p></div>
+
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Define ARQ.</li><li>Explain a positive acknowledgement.</li><li>Explain a negative acknowledgement.</li><li>Explain timeout.</li><li>Trace when data is resent.</li></ul></div>
+
+<div class="card"><h3>1 · The basic ARQ cycle</h3><div class="flow"><div class="node">SEND</div><div class="arrow">→</div><div class="node">RECEIVE<br>&amp; CHECK</div><div class="arrow">→</div><div class="tag">ACK / NACK</div><div class="arrow">→</div><div class="node">SENDER<br>ACTION</div></div><div class="callout"><b>ARQ adds feedback</b> to the error-detection process.</div></div>
+
+<div class="card"><h3>2 · Positive acknowledgement (ACK)</h3><p>If the receiver checks the data and finds no error, it sends an <b>ACK</b>.</p><div class="callout"><b>ACK means:</b> “The data was received correctly.”</div><p>The sender can then continue rather than unnecessarily resending the data.</p></div>
+
+<div class="card"><h3>3 · Negative acknowledgement (NACK)</h3><p>If the receiver detects an error, it sends a <b>NACK</b>.</p><div class="callout"><b>NACK means:</b> “There is a problem with the data; send it again.”</div></div>
+
+<div class="card"><h3>4 · Timeout</h3><p>What happens if the ACK or NACK never reaches the sender?</p><div class="callout">The sender waits for a predetermined period. If that period expires without the expected response, a <b>timeout</b> occurs.</div><p>The sender then resends the data.</p></div>
+
+<div class="card"><h3>5 · Interactive ARQ check</h3>
+<p>The receiver finds no error and sends a response. Which response?</p><button class="option" onclick="checkP14(this,true,'q1p14')">ACK</button><button class="option" onclick="checkP14(this,false,'q1p14')">NACK</button><div class="score" id="q1p14"></div>
+<p style="margin-top:15px">The receiver detects an error. Which response?</p><button class="option" onclick="checkP14(this,false,'q2p14')">ACK</button><button class="option" onclick="checkP14(this,true,'q2p14')">NACK</button><div class="score" id="q2p14"></div>
+<p style="margin-top:15px">The sender receives no response before the agreed waiting period ends. What occurs?</p><button class="option" onclick="checkP14(this,true,'q3p14')">Timeout, followed by a resend</button><button class="option" onclick="checkP14(this,false,'q3p14')">The sender waits forever</button><div class="score" id="q3p14"></div></div>
+
+<div class="card"><h3>6 · Trace a successful transmission</h3><ol><li>Sender transmits the data.</li><li>Receiver receives and checks it.</li><li>No error is detected.</li><li>Receiver sends ACK.</li><li>Sender receives ACK.</li><li>Transmission can continue.</li></ol></div>
+
+<div class="card"><h3>7 · Trace an error</h3><ol><li>Sender transmits the data.</li><li>Receiver detects an error.</li><li>Receiver sends NACK.</li><li>Sender receives NACK.</li><li>Sender resends the data.</li></ol></div>
+
+<div class="card"><h3>8 · Trace a lost response</h3><ol><li>Sender transmits the data.</li><li>Receiver receives it correctly.</li><li>The expected acknowledgement does not reach the sender.</li><li>The waiting period expires.</li><li>Timeout occurs.</li><li>Sender automatically resends.</li></ol><div class="callout"><b>Why?</b> The sender cannot assume that the transmission process completed successfully without the expected response.</div></div>
+
+<div class="card"><h3>9 · ACK vs NACK vs timeout</h3><table><tr><th>Term</th><th>Meaning</th><th>Result</th></tr><tr><td>ACK</td><td>Received correctly.</td><td>Continue.</td></tr><tr><td>NACK</td><td>Error detected.</td><td>Resend.</td></tr><tr><td>Timeout</td><td>No response in time.</td><td>Resend.</td></tr></table></div>
+
+<div class="card"><h3>10 · Exam practice</h3><p><b>Question:</b> Explain how ARQ can establish that data has been received without error.</p><button onclick="showP14('examP14')">Show model answer</button><div class="answer" id="examP14">The receiver checks the transmitted data. If no error is detected, it sends a positive acknowledgement to the sender. If an error is detected, it sends a negative acknowledgement and the sender resends the data. If no acknowledgement is received before the timeout, the sender resends the data.</div></div>
+
+<div class="card"><h3>11 · Challenge</h3><p>Why is a timeout useful even when the receiver has not detected an error?</p><button onclick="showP14('challengeP14')">Show answer</button><div class="answer" id="challengeP14">The acknowledgement may have been lost or delayed. The timeout prevents the sender from waiting indefinitely and allows it to resend the data when no expected response arrives.</div></div>
+
+<div class="card"><h3>12 · Common mistakes</h3><ul><li>Confusing ACK with NACK.</li><li>Thinking timeout means the data definitely contained an error.</li><li>Forgetting that a timeout can occur because the response was lost or delayed.</li><li>Forgetting that NACK causes a resend.</li><li>Forgetting that ARQ requires feedback from the receiver.</li></ul></div>
+
+<div class="card"><h3>13 · Self-assessment</h3><p>Choose your confidence:</p><button onclick="confidenceP14('confident')">🟢 I can explain ARQ</button><button onclick="confidenceP14('okay')">🟡 I need more practice</button><button onclick="confidenceP14('need')">🔴 I need help</button><div class="score" id="confidenceP14"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>ARQ · ACK · NACK · Timeout · Resend · Reliable transmission.</div>
+</div>
+</section>
+</main>
+
+<script>
+function checkP14(btn,c,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');const m={q1p14:c?'✓ Correct — ACK confirms successful receipt.':'✗ Not quite — ACK is the positive acknowledgement.',q2p14:c?'✓ Correct — NACK indicates an error.':'✗ Not quite — NACK is the negative acknowledgement.',q3p14:c?'✓ Correct — timeout leads to retransmission.':'✗ Not quite — the sender does not wait forever.'};document.getElementById(id).textContent=m[id]}
+function showP14(id){document.getElementById(id).style.display='block'}
+function confidenceP14(v){const t={confident:'Excellent — you understand ACK, NACK, timeout and resend.',okay:'Good. Repeat: ACK = correct, NACK = error, timeout = no response.',need:'That is useful information. Revisit the three ARQ pathways and try the interactive questions again.'};document.getElementById('confidenceP14').textContent=t[v]}
+</script>
+</body>
+</html>

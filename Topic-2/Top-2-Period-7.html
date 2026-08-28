@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 7</title>
+<style>
+:root{--gold:#d9a441;--gold-light:#f4df9a;--blue:#082b59;--blue-2:#12477f;--glass:rgba(255,255,255,.72);--shadow:0 12px 30px rgba(8,43,89,.16)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(255,255,255,.34);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.55)}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}.brand p{margin:3px 0 0;font-size:13px;font-weight:600}.teacher-identity{display:flex;align-items:center;gap:10px}.teacher-photo{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid rgba(8,43,89,.75)}.teacher-name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700;letter-spacing:.8px}
+.school-brand{display:flex;align-items:center;gap:11px}.school-brand img{width:48px;height:48px;object-fit:contain;background:rgba(255,255,255,.8);border-radius:10px;padding:3px}.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:white;font-weight:700;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}.pane-head{padding:15px 20px;background:rgba(8,43,89,.95);color:white}.pane-head h2{margin:0;font-size:20px}.pane-head small{opacity:.8}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:rgba(255,253,245,.88);border:1px solid rgba(8,43,89,.13);border-radius:16px;padding:16px;margin-bottom:15px}.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}.time{display:inline-block;background:var(--gold-light);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e1;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.parity-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:5px;margin:15px 0}.parity-grid div{text-align:center;padding:10px 3px;border-radius:7px;background:#f4df9a;font-weight:900}.parity-grid .label{background:var(--blue);color:white}.parity-grid .parity{background:#d8e8f7}
+table{width:100%;border-collapse:collapse}th{padding:8px;background:var(--blue);color:white;text-align:left}td{padding:8px;border-bottom:1px solid #d5dde6}.footer-note{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}.parity-grid{grid-template-columns:repeat(5,1fr)}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher-identity"><img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="teacher-name">Ravi Raju</div></div><h1>IGCSE Computer Science 0984</h1><p>Topic 2 — Data Transmission · Period 7</p></div>
+<div class="school-brand"><img src="MES35.jpg" alt="Modern English School Cairo logo"><div class="school-name">Modern English School Cairo</div><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="pane-head"><h2>👨‍🏫 Teacher Pane</h2><small>My teaching route</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Lesson overview</span><h3>Period 7 · Parity Checks</h3>
+<p><b>Topic 2 · Data Transmission:</b> Students learn how a parity bit can be added to transmitted data so that the receiver can detect certain errors.</p>
+<div class="callout"><b>Success criteria:</b> Students can explain parity checking, distinguish even and odd parity, calculate the required parity bit, and explain what happens when a parity check fails.</div>
+<p><b>Prior learning:</b> Period 6 — transmission errors, including data loss, gain and change.</p>
+<p><b>Key vocabulary:</b> parity bit, parity check, even parity, odd parity, error detection, number of 1s, error detected.</p></div>
+
+<div class="card"><span class="time">My teaching route</span><h3>Make the extra bit meaningful</h3>
+<ol><li>Retrieve the three types of transmission error.</li><li>Show a binary data word and count its 1s.</li><li>Introduce the extra parity bit.</li><li>Build even parity first, step by step.</li><li>Repeat with odd parity.</li><li>Show how a changed bit can make the parity rule fail.</li><li>Finish with the limitation: some errors can pass the parity check.</li></ol>
+<div class="callout"><b>Memory rule:</b> Parity checking adds one extra bit so the number of 1s can be checked.</div></div>
+
+<div class="card"><span class="time">0–5 min · Retrieval</span><h3>Why are we checking?</h3>
+<ul><li>What is data loss?</li><li>What is data gain?</li><li>What is data change?</li><li>Why might data change during transmission?</li></ul>
+<div class="callout"><b>Bridge:</b> If the receiver can perform a simple check on the received bits, an error may be detected.</div></div>
+
+<div class="card"><span class="time">5–15 min · Teach</span><h3>What is a parity bit?</h3>
+<p>A <b>parity bit</b> is an extra bit added to a group of data bits. It is used to make the total number of 1s either <b>even</b> or <b>odd</b>, depending on the parity system being used.</p>
+<div class="parity-grid"><div class="label">Data</div><div>1</div><div>0</div><div>1</div><div>1</div><div>0</div><div>0</div><div>1</div><div class="parity">P</div></div>
+<div class="callout"><b>Important:</b> The parity bit is not part of the original data. It is added for checking.</div></div>
+
+<div class="card"><span class="time">15–25 min · Guided example</span><h3>Even parity — step by step</h3>
+<p>Suppose the data is <b>1011001</b>.</p>
+<p><b>Step 1:</b> Count the 1s.</p><div class="callout">1011001 contains <b>4 ones</b>.</div>
+<p><b>Step 2:</b> Even parity requires the total number of 1s to remain even.</p>
+<div class="callout">There are already 4 ones, so the parity bit is <b>0</b>.</div>
+<p><b>Result:</b> <b>10110010</b> if the parity bit is placed at the end.</p></div>
+
+<div class="card"><span class="time">25–32 min · Guided example</span><h3>Odd parity — step by step</h3>
+<p>Use the same data: <b>1011001</b>.</p>
+<p>There are <b>4 ones</b>. Odd parity requires the total number of 1s to be odd.</p>
+<div class="callout">We need one more 1, so the parity bit is <b>1</b>.</div>
+<p><b>Result:</b> <b>10110011</b> if the parity bit is placed at the end.</p>
+<div class="callout"><b>Notice:</b> The same data can have different parity bits depending on whether even or odd parity is being used.</div></div>
+
+<div class="card"><span class="time">32–38 min · Demonstrate</span><h3>How can parity detect an error?</h3>
+<p>Imagine even parity was used and the transmitted sequence has four 1s. If one data bit changes, the number of 1s becomes odd.</p>
+<div class="parity-grid"><div class="label">Received</div><div>1</div><div>0</div><div>0</div><div>1</div><div>0</div><div>0</div><div>1</div><div class="parity">0</div></div>
+<div class="callout"><b>Receiver's check:</b> If the total number of 1s does not satisfy the expected parity rule, an error is detected.</div></div>
+
+<div class="card"><span class="time">38–43 min · Critical thinking</span><h3>What is the limitation?</h3>
+<p>Parity checking does <b>not</b> detect every possible error.</p>
+<p>If two bits change, the number of 1s may still have the correct parity. The receiver could therefore accept the data even though it is incorrect.</p>
+<div class="callout"><b>Exam point:</b> A parity check can detect many single-bit errors, but it cannot detect all errors.</div></div>
+
+<div class="card"><span class="time">43–47 min · Assessment</span><h3>Cambridge-style questions</h3>
+<ol><li>Define a parity bit.</li><li>Explain the purpose of a parity check.</li><li>For the data <b>1101010</b>, state the even parity bit.</li><li>For the data <b>1101010</b>, state the odd parity bit.</li><li>Explain one limitation of parity checking.</li></ol>
+<div class="callout"><b>Marking focus:</b> Show the count of 1s when calculating parity; do not simply guess the parity bit.</div></div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>Finish the sentences</h3>
+<div class="callout"><b>A parity bit is...</b> an extra bit added for error checking.</div>
+<div class="callout"><b>Even parity means...</b> the total number of 1s is even.</div>
+<div class="callout"><b>Odd parity means...</b> the total number of 1s is odd.</div>
+<div class="callout"><b>A limitation is...</b> some errors, such as certain two-bit errors, can go undetected.</div></div>
+
+<div class="footer-note"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br><b>Planning note:</b> Period 7 teaches parity checks, including even/odd parity, calculation and limitations.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="pane-head"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Recall</span><span>2. Parity bit</span><span>3. Even</span><span>4. Odd</span><span>5. Detect</span><span>6. Test</span></div><p>Today you will learn how an extra bit can help a receiver <b>detect transmission errors</b>.</p></div>
+
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Define a parity bit.</li><li>Explain a parity check.</li><li>Calculate even parity.</li><li>Calculate odd parity.</li><li>Explain how a parity error is detected.</li><li>State a limitation of parity checking.</li></ul></div>
+
+<div class="card"><h3>1 · What is a parity bit?</h3><div class="callout"><b>A parity bit is an extra bit added to transmitted data for error checking.</b></div><p>The parity bit is selected so that the total number of 1s follows the agreed rule: <b>even</b> or <b>odd</b>.</p></div>
+
+<div class="card"><h3>2 · Even parity</h3><p>With <b>even parity</b>, the total number of 1s, including the parity bit, must be even.</p><p>Example: <b>1011001</b> has four 1s.</p><div class="callout">Four is already even → parity bit = <b>0</b>.</div><p>Result: <b>10110010</b></p></div>
+
+<div class="card"><h3>3 · Odd parity</h3><p>With <b>odd parity</b>, the total number of 1s, including the parity bit, must be odd.</p><p>Example: <b>1011001</b> has four 1s.</p><div class="callout">Four is even, so add one more 1 → parity bit = <b>1</b>.</div><p>Result: <b>10110011</b></p></div>
+
+<div class="card"><h3>4 · Interactive parity calculator</h3><p>Data: <b>1101010</b></p><p>Count the 1s first, then choose the correct parity bit.</p>
+<p><b>Even parity:</b></p><button class="option" onclick="parityChoice(this,false,'evenP6')">0</button><button class="option" onclick="parityChoice(this,true,'evenP6')">1</button><div class="score" id="evenP6"></div>
+<p><b>Odd parity:</b></p><button class="option" onclick="parityChoice(this,true,'oddP6')">0</button><button class="option" onclick="parityChoice(this,false,'oddP6')">1</button><div class="score" id="oddP6"></div></div>
+
+<div class="card"><h3>5 · How does the receiver detect an error?</h3><p>The receiver counts the number of 1s in the received sequence and checks whether it matches the agreed parity rule.</p><div class="callout"><b>Expected even parity:</b> an odd total means the parity check has failed → an error has been detected.</div><p>The check detects an error; it does not automatically repair the incorrect bit.</p></div>
+
+<div class="card"><h3>6 · One-bit error</h3><p>Suppose a sequence using even parity originally contains an even number of 1s. If one bit changes from 0 to 1 or from 1 to 0, the parity changes.</p><div class="callout"><b>Result:</b> the receiver can detect that an error has occurred.</div></div>
+
+<div class="card"><h3>7 · Limitation</h3><p>Suppose <b>two bits</b> change. The number of 1s can change by two, leaving the parity even when even parity is expected.</p><div class="callout"><b>Therefore:</b> parity checking cannot detect every possible transmission error.</div><button onclick="showP7('limP7')">Show example</button><div class="answer" id="limP7">With even parity, a valid sequence might have an even number of 1s. If two bits change, the number of 1s may remain even, so the parity check can still pass even though the data is wrong.</div></div>
+
+<div class="card"><h3>8 · Exam practice</h3><p><b>Question:</b> Explain how a parity check can detect an error in transmitted data.</p><button onclick="showP7('examP7')">Show model answer</button><div class="answer" id="examP7">A parity bit is added so that the total number of 1s is even or odd according to the agreed rule. The receiver counts the 1s and checks the rule. If the expected parity is not achieved, an error is detected.</div></div>
+
+<div class="card"><h3>9 · Common mistakes</h3><ul><li>Forgetting to include the parity bit when checking the total number of 1s.</li><li>Confusing even parity with an even number of data bits.</li><li>Thinking parity automatically corrects the error.</li><li>Claiming parity detects every possible error.</li><li>Failing to count the 1s before choosing the parity bit.</li></ul></div>
+
+<div class="card"><h3>10 · Self-assessment</h3><p>Choose your confidence:</p><button onclick="confidenceP7('confident')">🟢 I can calculate parity</button><button onclick="confidenceP7('okay')">🟡 I need more practice</button><button onclick="confidenceP7('need')">🔴 I need help</button><div class="score" id="confidenceP7"></div></div>
+
+<div class="footer-note"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Parity bit · Even parity · Odd parity · Error detection.</div>
+</div>
+</section>
+</main>
+<script>
+function parityChoice(btn,correct,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(correct?'correct':'wrong');document.getElementById(id).textContent=correct?'✓ Correct — count the 1s carefully.':'✗ Not quite — count the 1s and apply the parity rule.'}
+function showP7(id){document.getElementById(id).style.display='block'}
+function confidenceP7(v){const t={confident:'Excellent — you are ready for the next error-detection method.',okay:'Good. Practise counting the 1s before choosing the parity bit.',need:'That is useful information. Revisit even parity, odd parity and the two-bit limitation.'};document.getElementById('confidenceP7').textContent=t[v]}
+</script>
+</body>
+</html>

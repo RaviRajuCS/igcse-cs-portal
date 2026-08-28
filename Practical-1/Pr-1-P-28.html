@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Practical 1 | Period 28</title>
+<style>
+:root{--teak:#7b4b2a;--dark:#4f2d19;--half:#f8f5ec;--half2:#eee8dc;--ink:#3b281d;--cream:#fffdf8;--gold:#d6ad62}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#6f4326,#8b5733 48%,#6b3f25);color:var(--ink);overflow:hidden}
+header{height:86px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#4f2d19ee;color:var(--half);border-bottom:2px solid #c99a5a;box-shadow:0 5px 18px #24140b66}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0;font-size:13px;font-weight:600;color:#eadfce}
+.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:45px;height:45px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700;color:#fff}
+.school{display:flex;align-items:center;gap:11px}.school img{width:49px;height:49px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}
+.badge{padding:9px 14px;border-radius:18px;background:var(--gold);color:var(--dark);font-weight:900;font-size:13px}
+.layout{height:calc(100vh - 86px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:#f8f5ecf2;border:2px solid #d1ad77;border-radius:22px;box-shadow:0 14px 34px #24140b66;overflow:hidden;display:flex;flex-direction:column}
+.panehead{padding:15px 20px;background:var(--dark);color:var(--half)}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:var(--cream);border:1px solid #cbbda8;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #5b3a2112}
+.card h3{margin:0 0 9px;font-size:17px;color:var(--dark)}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}
+.time{display:inline-block;background:#ead5ae;border:1px solid #b88b4d;color:var(--dark);border-radius:20px;padding:4px 9px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{border-left:5px solid var(--teak);background:var(--half2);padding:12px 14px;border-radius:8px;margin:10px 0}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:var(--half2);border-radius:16px;margin:15px 0}
+.node{padding:13px 15px;border-radius:13px;background:var(--dark);color:var(--half);font-weight:900;text-align:center}.tag{padding:10px 13px;border-radius:12px;background:#ead5ae;color:var(--dark);font-weight:900}.arrow{font-size:25px;font-weight:900;color:var(--teak)}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--dark);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c7b9a6;color:var(--ink);margin:7px 0}.option.correct{background:#e1efe5;border-color:#6e9a7c}.option.wrong{background:#f5dfdb;border-color:#a96c62}
+.score{font-weight:900;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#e6f0e8;border-radius:10px;border:1px solid #9db9a4}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e5ded3;font-size:12px;font-weight:800}.progress .active{background:#ead5ae;border:1px solid #b88b4d}
+.workout{background:#f4eee4;border:2px dashed #b68a56;border-radius:15px;padding:15px;margin:12px 0}
+.code{font-family:Consolas,monospace;background:#392317;color:#fff;padding:14px;border-radius:12px;line-height:1.65}
+.footer{font-size:11px;color:#66584c;border-top:1px solid #d6cbbb;padding-top:10px;margin-top:18px}
+table{width:100%;border-collapse:collapse}th{background:var(--dark);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5ccbf;vertical-align:top}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div>
+<h1>IGCSE Computer Science 0984</h1><p>Practical Studio 1 · Algorithms & Problem Solving · Period 28</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">PRACTICAL STUDIO</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>🧑‍🏫 Teacher Studio</h2><small>String validation · structured input · passwords · identifiers · practical testing</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Practical 1 · Period 28</span>
+<h3>Advanced String Validation</h3>
+<p>Students build on Period 27 by using strings for realistic validation tasks. They combine <b>length checks, character checks, counters and Boolean flags</b> to validate usernames, passwords and simple identifiers.</p>
+<div class="callout"><b>Core idea:</b> Real-world string validation often involves several rules. Check each required rule and only accept the input when all required conditions are satisfied.</div>
+</div>
+
+<div class="card"><span class="time">Teaching route</span><h3>INPUT → CHECK EACH RULE → REJECT / ACCEPT → PROCESS</h3>
+<div class="flow"><div class="node">STRING</div><div class="arrow">→</div><div class="tag">LENGTH</div><div class="arrow">→</div><div class="node">CHARACTERS</div><div class="arrow">→</div><div class="tag">RULES</div><div class="arrow">→</div><div class="node">VALID?</div></div></div>
+
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>1 · One rule versus several rules</h3>
+<div class="workout">A password must be at least 8 characters long and contain at least one digit. Is checking its length alone enough?</div>
+<div class="callout">No. Both requirements must be checked. A password can have eight characters and still contain no digit.</div>
+</div>
+
+<div class="card"><span class="time">8–18 min · Teach</span><h3>2 · Using flags for multiple requirements</h3>
+<div class="code">HasDigit ← FALSE<br>FOR I ← 1 TO LENGTH(Password)<br>&nbsp;&nbsp;IF Password[I] &gt;= "0" AND Password[I] &lt;= "9" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;HasDigit ← TRUE<br>&nbsp;&nbsp;ENDIF<br>NEXT I</div>
+<p>The flag records whether at least one digit has been found.</p>
+</div>
+
+<div class="card"><span class="time">18–27 min · Teach</span><h3>3 · Combining validation rules</h3>
+<div class="code">Valid ← TRUE<br>IF LENGTH(Password) &lt; 8 THEN<br>&nbsp;&nbsp;Valid ← FALSE<br>ENDIF<br><br>IF HasDigit = FALSE THEN<br>&nbsp;&nbsp;Valid ← FALSE<br>ENDIF<br><br>IF Valid THEN<br>&nbsp;&nbsp;OUTPUT "Accepted"<br>ELSE<br>&nbsp;&nbsp;OUTPUT "Rejected"<br>ENDIF</div>
+<div class="callout">Using one overall <b>Valid</b> flag keeps the final decision simple while each rule can be checked separately.</div>
+</div>
+
+<div class="card"><span class="time">27–35 min · Worked example</span><h3>4 · Example #1 — Username validation</h3>
+<div class="code">INPUT Username<br>WHILE LENGTH(Username) &lt; 5 OR LENGTH(Username) &gt; 12 DO<br>&nbsp;&nbsp;OUTPUT "Username must be 5 to 12 characters"<br>&nbsp;&nbsp;INPUT Username<br>ENDWHILE<br>OUTPUT "Username accepted"</div>
+<p>This is a clean single-rule validation. More rules can be added when the specification requires them.</p>
+</div>
+
+<div class="card"><span class="time">35–42 min · Worked example</span><h3>5 · Example #2 — Password requirements</h3>
+<div class="code">Valid ← TRUE<br>HasDigit ← FALSE<br>FOR I ← 1 TO LENGTH(Password)<br>&nbsp;&nbsp;IF Password[I] &gt;= "0" AND Password[I] &lt;= "9" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;HasDigit ← TRUE<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br><br>IF LENGTH(Password) &lt; 8 OR HasDigit = FALSE THEN<br>&nbsp;&nbsp;Valid ← FALSE<br>ENDIF<br><br>OUTPUT Valid</div>
+</div>
+
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>6 · Validation workout</h3>
+<div class="workout">A student ID must contain exactly 6 characters. Design the length check.</div>
+<button onclick="showT28('w1')">Show model</button>
+<div class="answer" id="w1"><div class="code">IF LENGTH(StudentID) &lt;&gt; 6 THEN<br>&nbsp;&nbsp;OUTPUT "Invalid ID"<br>ENDIF</div></div>
+</div>
+
+<div class="card"><span class="time">47–50 min · Exit</span><h3>7 · Teacher questions</h3>
+<ul><li>Why might one validation rule be insufficient?</li><li>How does a Boolean flag help with character requirements?</li><li>How can several rules be combined?</li><li>Why should the validation match the exact specification?</li></ul>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Practical Studio 1 · Period 28 · Advanced string validation.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🧑‍💻 Student Practical Studio</h2><small>Password rules · IDs · usernames · character flags · exam workouts</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your practical journey</h3>
+<div class="progress"><span>1. Arrays</span><span>2. Search</span><span>3. Sort</span><span>4. Subroutines</span><span>5. Files</span><span>6. Validation</span><span>7. Testing</span><span>8. Integration</span><span>9. Menus</span><span>10. Strings</span><span class="active">11. String validation</span></div>
+</div>
+
+<div class="card"><h3>🎯 Learning targets</h3>
+<ul><li>Validate exact string lengths.</li><li>Combine several validation rules.</li><li>Use flags to detect required character types.</li><li>Distinguish accepted and rejected strings.</li><li>Design tests for each validation rule.</li><li>Explain why a particular test exposes a fault.</li></ul>
+</div>
+
+<div class="card"><h3>1 · Quick check</h3>
+<p>A student ID must contain exactly 6 characters. Which length is invalid?</p>
+<button class="option" onclick="checkT28(this,true,'q1')">7</button>
+<button class="option" onclick="checkT28(this,false,'q1')">6</button>
+<div class="score" id="q1"></div>
+</div>
+
+<div class="card"><h3>2 · Worked Example #1 — Exact length</h3>
+<div class="code">INPUT Code<br>WHILE LENGTH(Code) &lt;&gt; 6 DO<br>&nbsp;&nbsp;OUTPUT "Enter exactly 6 characters"<br>&nbsp;&nbsp;INPUT Code<br>ENDWHILE<br>OUTPUT "Accepted"</div>
+<p>Unlike a minimum-length rule, this specification accepts <b>only</b> length 6.</p>
+</div>
+
+<div class="card"><h3>3 · Workout — Require a digit</h3>
+<div class="workout">Write an algorithm that sets HasDigit to TRUE if a string contains at least one digit.</div>
+<button onclick="showT28('a1')">Show model</button>
+<div class="answer" id="a1"><div class="code">HasDigit ← FALSE<br>FOR I ← 1 TO LENGTH(Text)<br>&nbsp;&nbsp;IF Text[I] &gt;= "0" AND Text[I] &lt;= "9" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;HasDigit ← TRUE<br>&nbsp;&nbsp;ENDIF<br>NEXT I</div></div>
+</div>
+
+<div class="card"><h3>4 · Interactive check</h3>
+<p>Which password satisfies both rules: at least 8 characters and at least one digit?</p>
+<button class="option" onclick="checkT28(this,true,'q2')">Computer7</button>
+<button class="option" onclick="checkT28(this,false,'q2')">Computer</button>
+<div class="score" id="q2"></div>
+</div>
+
+<div class="card"><h3>5 · Worked Example #2 — Require two character types</h3>
+<div class="code">HasDigit ← FALSE<br>HasA ← FALSE<br>FOR I ← 1 TO LENGTH(Text)<br>&nbsp;&nbsp;IF Text[I] &gt;= "0" AND Text[I] &lt;= "9" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;HasDigit ← TRUE<br>&nbsp;&nbsp;ENDIF<br>&nbsp;&nbsp;IF Text[I] = "A" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;HasA ← TRUE<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br><br>IF HasDigit AND HasA THEN<br>&nbsp;&nbsp;OUTPUT "Accepted"<br>ELSE<br>&nbsp;&nbsp;OUTPUT "Rejected"<br>ENDIF</div>
+</div>
+
+<div class="card"><h3>6 · Workout — Password test data</h3>
+<div class="workout">For the rule "at least 8 characters and at least one digit", provide one valid password and two invalid examples that fail different rules.</div>
+<button onclick="showT28('a2')">Show possible answers</button>
+<div class="answer" id="a2">Valid: <b>Computer7</b>. Invalid for length: <b>Comp7</b>. Invalid for digit requirement: <b>Computer</b>.</div>
+</div>
+
+<div class="card"><h3>7 · Worked Example #3 — Validation loop</h3>
+<div class="code">INPUT Password<br>HasDigit ← FALSE<br>FOR I ← 1 TO LENGTH(Password)<br>&nbsp;&nbsp;IF Password[I] &gt;= "0" AND Password[I] &lt;= "9" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;HasDigit ← TRUE<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br><br>WHILE LENGTH(Password) &lt; 8 OR HasDigit = FALSE DO<br>&nbsp;&nbsp;OUTPUT "Password does not meet the requirements"<br>&nbsp;&nbsp;INPUT Password<br>&nbsp;&nbsp;HasDigit ← FALSE<br>&nbsp;&nbsp;FOR I ← 1 TO LENGTH(Password)<br>&nbsp;&nbsp;&nbsp;&nbsp;IF Password[I] &gt;= "0" AND Password[I] &lt;= "9" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HasDigit ← TRUE<br>&nbsp;&nbsp;&nbsp;&nbsp;ENDIF<br>&nbsp;&nbsp;NEXT I<br>ENDWHILE<br>OUTPUT "Accepted"</div>
+<p>When a new password is entered, the flag must be reset and recalculated.</p>
+</div>
+
+<div class="card"><h3>8 · Debugging workout</h3>
+<div class="code">HasDigit ← FALSE<br>FOR I ← 1 TO LENGTH(Password)<br>&nbsp;&nbsp;IF Password[I] &gt;= "0" AND Password[I] &lt;= "9" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;HasDigit ← TRUE<br>&nbsp;&nbsp;ELSE<br>&nbsp;&nbsp;&nbsp;&nbsp;HasDigit ← FALSE<br>&nbsp;&nbsp;ENDIF<br>NEXT I</div>
+<p>Why can this fail even when the password contains a digit?</p>
+<button onclick="showT28('a3')">Reveal</button>
+<div class="answer" id="a3">A later non-digit character can reset HasDigit to FALSE. Once a required digit has been found, the flag should remain TRUE.</div>
+</div>
+
+<div class="card"><h3>9 · Interactive check</h3>
+<p>Once HasDigit becomes TRUE, what should normally happen?</p>
+<button class="option" onclick="checkT28(this,true,'q3')">It should remain TRUE for the rest of that validation.</button>
+<button class="option" onclick="checkT28(this,false,'q3')">It should become FALSE whenever the next character is not a digit.</button>
+<div class="score" id="q3"></div>
+</div>
+
+<div class="card"><h3>10 · Challenge — Username rules</h3>
+<div class="workout">A username must contain 5–12 characters and must contain the character "A". Design the validation logic.</div>
+<button onclick="showT28('a4')">Show solution</button>
+<div class="answer" id="a4"><div class="code">HasA ← FALSE<br>FOR I ← 1 TO LENGTH(Username)<br>&nbsp;&nbsp;IF Username[I] = "A" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;HasA ← TRUE<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br><br>IF LENGTH(Username) &gt;= 5 AND LENGTH(Username) &lt;= 12 AND HasA THEN<br>&nbsp;&nbsp;OUTPUT "Accepted"<br>ELSE<br>&nbsp;&nbsp;OUTPUT "Rejected"<br>ENDIF</div></div>
+</div>
+
+<div class="card"><h3>11 · Test each rule</h3>
+<table><tr><th>Test</th><th>Purpose</th></tr><tr><td>AAAAA</td><td>Minimum length + required A</td></tr><tr><td>123456789012</td><td>Maximum length but no A</td></tr><tr><td>AAAA</td><td>Below minimum</td></tr><tr><td>ABCDEFGHIJKLM</td><td>Above maximum</td></tr><tr><td>RAVI123</td><td>Typical valid candidate if A is required</td></tr></table>
+</div>
+
+<div class="card"><h3>12 · Think like an examiner</h3>
+<p>Why is <b>AAAA</b> an important test for the username rule?</p>
+<button class="option" onclick="checkT28(this,true,'q4')">It has the required character but is below the minimum length, so it tests whether both rules are enforced.</button>
+<button class="option" onclick="checkT28(this,false,'q4')">It is automatically valid because it contains A.</button>
+<div class="score" id="q4"></div>
+</div>
+
+<div class="card"><h3>13 · Mini exam question</h3>
+<p>A password must contain at least 8 characters and at least one digit. Explain two suitable test cases and their expected results.</p>
+<button onclick="showT28('a5')">Show model answer</button>
+<div class="answer" id="a5">Example 1: <b>Computer7</b> → Accepted. Example 2: <b>Computer</b> → Rejected because it contains no digit. Another useful test is <b>Comp7</b> → Rejected because it is too short.</div>
+</div>
+
+<div class="card"><h3>14 · Final practical challenge</h3>
+<div class="workout">Create a password checker with three rules: minimum length 8, at least one digit and at least one "A". Test at least one valid password and three invalid passwords, each targeting a different failure.</div>
+<button onclick="showT28('a6')">Use this plan</button>
+<div class="answer" id="a6"><ol><li>Input password.</li><li>Check length.</li><li>Traverse characters for a digit.</li><li>Traverse characters for A.</li><li>Combine the rules.</li><li>Repeat until valid if required.</li><li>Record expected results for each test.</li></ol></div>
+</div>
+
+<div class="card"><h3>15 · Common mistakes</h3>
+<ul><li>Checking only one of several required rules.</li><li>Resetting a TRUE flag when a later character does not match.</li><li>Forgetting to reset a flag before checking a new input.</li><li>Using an inclusive rule when the specification requires an exact length.</li><li>Testing only valid strings.</li><li>Not designing a test that isolates each failure condition.</li></ul>
+</div>
+
+<div class="card"><h3>16 · Self-assessment</h3>
+<p>Can you build a multi-rule string validator using length checks, character traversal, flags and systematic tests?</p>
+<button onclick="confidenceT28('ready')">🟢 Yes</button><button onclick="confidenceT28('practice')">🟡 More workouts</button><button onclick="confidenceT28('revise')">🔴 Need revision</button><div class="score" id="confidence"></div>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Practical Studio 1 · Period 28 · Advanced string validation.</div>
+</div>
+</section>
+</main>
+
+<script>
+function checkT28(btn,c,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(c?'correct':'wrong');
+ const m={
+ q1:c?'✓ Correct — 7 is not exactly 6 characters.':'✗ The required length is exactly 6.',
+ q2:c?'✓ Correct — Computer7 has at least 8 characters and contains a digit.':'✗ Computer is missing the required digit.',
+ q3:c?'✓ Correct — once the required character has been found, the flag should stay TRUE.':'✗ A later non-matching character must not erase evidence that a digit was found.',
+ q4:c?'✓ Correct — it isolates the minimum-length failure while satisfying the character rule.':'✗ Containing A alone is not enough; the length rule must also be satisfied.'
+ };
+ document.getElementById(id).textContent=m[id];
+}
+function showT28(id){document.getElementById(id).style.display='block'}
+function confidenceT28(v){
+ const t={
+ ready:'Excellent — you can now combine several string-validation rules into a robust practical solution.',
+ practice:'Good. Keep practising multi-rule validation and targeted test data.',
+ revise:'Remember: check every required rule, preserve successful flags, and test each failure condition separately.'
+ };
+ document.getElementById('confidence').textContent=t[v];
+}
+</script>
+</body>
+</html>

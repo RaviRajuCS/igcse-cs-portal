@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 11</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--blue2:#12477f;--glass:rgba(255,255,255,.72);--shadow:0 12px 30px rgba(8,43,89,.16)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(255,255,255,.34);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.55)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0 0;font-size:13px;font-weight:600}.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:700;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}.panehead{padding:15px 20px;background:rgba(8,43,89,.95);color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:rgba(255,253,245,.88);border:1px solid rgba(8,43,89,.13);border-radius:16px;padding:16px;margin-bottom:15px}.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.packet{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:18px;background:rgba(255,255,255,.58);border-radius:16px;margin:15px 0}.node{padding:13px 16px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:25px;font-weight:900}.tag{padding:7px 10px;border-radius:10px;background:var(--gold2);font-weight:800;font-size:12px}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div><h1>IGCSE Computer Science 0984</h1><p>Topic 2 — Data Transmission · Period 11</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>My teaching route</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Lesson overview</span><h3>Period 11 · Encryption</h3>
+<p><b>Topic 2 · Data Transmission:</b> Students move from protecting the integrity of transmitted data to protecting its <b>confidentiality</b> by introducing encryption and the basic distinction between plaintext, ciphertext, encryption and decryption.</p>
+<div class="callout"><b>Success criteria:</b> Students can explain why encryption is needed, distinguish plaintext from ciphertext, describe encryption and decryption, and explain the role of a key.</div>
+<p><b>Prior learning:</b> Periods 6–10 — errors and error detection.</p>
+<p><b>Key vocabulary:</b> encryption, decryption, plaintext, ciphertext, key, confidentiality, sender, receiver.</p></div>
+
+<div class="card"><span class="time">My teaching route</span><h3>Change the question: “Is it correct?” → “Can others read it?”</h3>
+<ol><li>Retrieve error detection.</li><li>Ask whether correct data is necessarily private.</li><li>Introduce plaintext and ciphertext.</li><li>Show encryption as a transformation.</li><li>Introduce a key.</li><li>Show decryption at the receiver.</li><li>Distinguish encryption from error detection.</li></ol>
+<div class="callout"><b>Teaching principle:</b> Error detection checks whether data has been altered. <b>Encryption protects the information from being understood by unauthorised people.</b></div></div>
+
+<div class="card"><span class="time">0–7 min · Retrieval</span><h3>What problem did we solve?</h3>
+<ul><li>Why can transmitted data contain errors?</li><li>What does parity check?</li><li>What does a checksum check?</li><li>What does an echo check do?</li></ul>
+<div class="callout"><b>New question:</b> Suppose the data arrives correctly. What if somebody else can read it while it is being transmitted?</div></div>
+
+<div class="card"><span class="time">7–16 min · Teach</span><h3>Why encrypt data?</h3>
+<p>Data transmitted across a network may contain information that should not be understood by unauthorised people.</p>
+<div class="callout"><b>Encryption</b> changes readable data into an encoded form so that it is difficult for an unauthorised person to understand.</div>
+<p>Examples include passwords, personal information, financial information and confidential messages.</p></div>
+
+<div class="card"><span class="time">16–25 min · Core concepts</span><h3>Plaintext → Ciphertext</h3>
+<div class="packet"><div class="node">PLAINTEXT<br>Readable data</div><div class="arrow">→</div><div class="tag">ENCRYPT + KEY</div><div class="arrow">→</div><div class="node">CIPHERTEXT<br>Encoded data</div></div>
+<p><b>Plaintext</b> is the original readable data.</p>
+<p><b>Ciphertext</b> is the encrypted, unreadable-looking form of that data.</p>
+<div class="callout"><b>Important:</b> Encryption does not mean that the data has been deleted or destroyed. It has been transformed into another form.</div></div>
+
+<div class="card"><span class="time">25–33 min · Guided process</span><h3>Encryption and decryption</h3>
+<div class="packet"><div class="node">Sender<br>Plaintext</div><div class="arrow">→</div><div class="tag">ENCRYPT</div><div class="arrow">→</div><div class="node">Ciphertext</div><div class="arrow">→</div><div class="tag">DECRYPT</div><div class="arrow">→</div><div class="node">Receiver<br>Plaintext</div></div>
+<p>The sender encrypts the original data. The encrypted data is transmitted. The receiver decrypts it to recover the original information.</p>
+<div class="callout"><b>Key idea:</b> The encryption/decryption process uses a <b>key</b>. The key controls the transformation used by the encryption system.</div></div>
+
+<div class="card"><span class="time">33–39 min · Demonstrate</span><h3>Simple classroom cipher</h3>
+<p>Use a simple Caesar-style example only to demonstrate the idea of transformation. If each letter is shifted by 1:</p>
+<table><tr><th>Plaintext</th><th>H</th><th>E</th><th>L</th><th>L</th><th>O</th></tr><tr><th>Ciphertext</th><td>I</td><td>F</td><td>M</td><td>M</td><td>P</td></tr></table>
+<div class="callout"><b>HELLO → IFMMP</b><br>The receiver applies the reverse shift to decrypt the ciphertext.</div>
+<p>This is a teaching example. Real encryption systems are much more sophisticated.</p></div>
+
+<div class="card"><span class="time">39–44 min · Clarify</span><h3>Encryption is not error detection</h3>
+<table><tr><th>Error detection</th><th>Encryption</th></tr><tr><td>Checks whether data may have been altered.</td><td>Protects the confidentiality of data.</td></tr><tr><td>Uses methods such as parity, checksum or echo check.</td><td>Transforms plaintext into ciphertext using an encryption process and key.</td></tr><tr><td>Answers: “Was the data changed?”</td><td>Answers: “Can an unauthorised person understand the data?”</td></tr></table></div>
+
+<div class="card"><span class="time">44–48 min · Assessment</span><h3>Cambridge-style questions</h3>
+<ol><li>Define encryption.</li><li>State what is meant by plaintext.</li><li>State what is meant by ciphertext.</li><li>Explain the purpose of a key in encryption.</li><li>Describe the process of encrypting and decrypting transmitted data.</li><li>Explain one difference between encryption and error detection.</li></ol>
+<div class="callout"><b>Marking focus:</b> Use the sequence <b>plaintext → encrypt → ciphertext → transmit → decrypt → plaintext</b>.</div></div>
+
+<div class="card"><span class="time">48–50 min · Exit ticket</span><h3>Four words to remember</h3>
+<div class="packet"><div class="tag">PLAINTEXT</div><div class="arrow">→</div><div class="tag">ENCRYPT</div><div class="arrow">→</div><div class="tag">CIPHERTEXT</div><div class="arrow">→</div><div class="tag">DECRYPT</div></div>
+<div class="callout"><b>Final thought:</b> A message can arrive correctly and still need protection from unauthorised readers.</div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br><b>Planning note:</b> Period 11 introduces encryption, plaintext, ciphertext, keys, encryption/decryption and confidentiality.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Why?</span><span>2. Plaintext</span><span>3. Encrypt</span><span>4. Ciphertext</span><span>5. Decrypt</span><span>6. Test</span></div><p>Today you will learn how encryption helps protect transmitted information from unauthorised readers.</p></div>
+
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Explain why encryption is needed.</li><li>Define plaintext and ciphertext.</li><li>Explain encryption and decryption.</li><li>Explain the role of a key.</li><li>Distinguish encryption from error detection.</li></ul></div>
+
+<div class="card"><h3>1 · Why encrypt?</h3><p>Imagine sending a private message across a network. Even if the message reaches the correct receiver, an unauthorised person might try to intercept it.</p><div class="callout"><b>Encryption protects confidentiality</b> by transforming readable information into an encoded form.</div></div>
+
+<div class="card"><h3>2 · Plaintext</h3><p><b>Plaintext</b> is the original readable information before encryption.</p><div class="callout">Example: <b>MEET AT 5</b> is plaintext because it can be read directly.</div></div>
+
+<div class="card"><h3>3 · Ciphertext</h3><p><b>Ciphertext</b> is the transformed information produced by encryption.</p><div class="callout">Example: <b>MEET AT 5</b> may become a sequence that does not make sense to an unauthorised reader.</div></div>
+
+<div class="card"><h3>4 · The complete journey</h3><div class="packet"><div class="node">Plaintext</div><div class="arrow">→</div><div class="tag">ENCRYPT</div><div class="arrow">→</div><div class="node">Ciphertext</div><div class="arrow">→</div><div class="tag">DECRYPT</div><div class="arrow">→</div><div class="node">Plaintext</div></div></div>
+
+<div class="card"><h3>5 · What is a key?</h3><p>A <b>key</b> is information used by an encryption system to control how the data is encrypted and/or decrypted.</p><div class="callout"><b>Think of a key like a secret setting:</b> the correct key allows an authorised user to perform the appropriate cryptographic operation.</div></div>
+
+<div class="card"><h3>6 · Interactive check</h3>
+<p>Which term means the original readable data before encryption?</p><button class="option" onclick="checkP11(this,true,'q1p11')">Plaintext</button><button class="option" onclick="checkP11(this,false,'q1p11')">Ciphertext</button><div class="score" id="q1p11"></div>
+<p style="margin-top:15px">Which term describes the encrypted form?</p><button class="option" onclick="checkP11(this,false,'q2p11')">Plaintext</button><button class="option" onclick="checkP11(this,true,'q2p11')">Ciphertext</button><div class="score" id="q2p11"></div>
+<p style="margin-top:15px">Which process converts ciphertext back into readable data?</p><button class="option" onclick="checkP11(this,false,'q3p11')">Encryption</button><button class="option" onclick="checkP11(this,true,'q3p11')">Decryption</button><div class="score" id="q3p11"></div></div>
+
+<div class="card"><h3>7 · Simple cipher demonstration</h3><p>For a simple classroom example, shift every letter forward by one position:</p><div class="callout"><b>HELLO → IFMMP</b></div><p>To decrypt it, shift each letter backward by one:</p><div class="callout"><b>IFMMP → HELLO</b></div><p>Real-world encryption is far more complex than this example.</p></div>
+
+<div class="card"><h3>8 · Encryption vs error detection</h3><table><tr><th>Question</th><th>Technique</th></tr><tr><td>“Has the data probably been altered?”</td><td><b>Error detection</b></td></tr><tr><td>“Can an unauthorised person understand the data?”</td><td><b>Encryption</b></td></tr></table><div class="callout"><b>Do not confuse them:</b> encryption protects confidentiality; error detection checks integrity.</div></div>
+
+<div class="card"><h3>9 · Exam practice</h3><p><b>Question:</b> Describe how data can be encrypted before transmission and decrypted after it is received.</p><button onclick="showP11('examP11')">Show model answer</button><div class="answer" id="examP11">The original plaintext is encrypted using an encryption process and key to produce ciphertext. The ciphertext is transmitted to the receiver. The receiver uses the appropriate decryption process and key to recover the plaintext.</div></div>
+
+<div class="card"><h3>10 · Challenge</h3><p>A message arrives at the correct destination without any transmission error. Why might encryption still have been necessary?</p><button onclick="showP11('challengeP11')">Show answer</button><div class="answer" id="challengeP11">Because the data could have been intercepted while being transmitted. Encryption helps prevent an unauthorised person from understanding the information.</div></div>
+
+<div class="card"><h3>11 · Common mistakes</h3><ul><li>Calling plaintext the encrypted message.</li><li>Calling ciphertext the original readable data.</li><li>Thinking encryption detects transmission errors.</li><li>Thinking encryption and decryption are the same operation.</li><li>Assuming the simple Caesar example represents modern encryption.</li></ul></div>
+
+<div class="card"><h3>12 · Self-assessment</h3><p>Choose your confidence:</p><button onclick="confidenceP11('confident')">🟢 I can explain encryption</button><button onclick="confidenceP11('okay')">🟡 I need more practice</button><button onclick="confidenceP11('need')">🔴 I need help</button><div class="score" id="confidenceP11"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Encryption · Plaintext · Ciphertext · Key · Decryption · Confidentiality.</div>
+</div>
+</section>
+</main>
+<script>
+function checkP11(btn,c,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');const m={q1p11:c?'✓ Correct — plaintext is the original readable data.':'✗ Not quite — think about the word “plain”.',q2p11:c?'✓ Correct — ciphertext is the encrypted form.':'✗ Not quite — the encrypted form is ciphertext.',q3p11:c?'✓ Correct — decryption recovers the readable data.':'✗ Not quite — encryption creates ciphertext.'};document.getElementById(id).textContent=m[id]}
+function showP11(id){document.getElementById(id).style.display='block'}
+function confidenceP11(v){const t={confident:'Excellent — you understand the encryption journey.',okay:'Good. Repeat plaintext → encrypt → ciphertext → decrypt.',need:'That is useful information. Revisit the four core terms and the journey diagram.'};document.getElementById('confidenceP11').textContent=t[v]}
+</script>
+</body>
+</html>

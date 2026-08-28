@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 6 | Period 6</title>
+<style>
+:root{--gold:#d8ad45;--gold2:#efd47a;--blue:#123b63;--blue2:#0b2d4d;--ink:#17324d}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#c99528,#efd16c 45%,#c99a2e);color:var(--ink);overflow:hidden}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#0b2d4df2;color:#fff;border-bottom:3px solid var(--gold2);box-shadow:0 5px 18px #08203b66}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:2px 0;color:#e8eef5;font-size:13px;font-weight:600}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:19px;font-weight:700}
+.school{display:flex;align-items:center;gap:10px;font-size:13px}.school img{width:48px;height:48px;background:#fff;border-radius:9px;padding:3px;object-fit:contain}
+.badge{background:var(--gold2);color:var(--blue2);font-weight:900;padding:9px 13px;border-radius:18px}
+.layout{height:calc(100vh - 88px);display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:14px}
+.pane{min-height:0;background:#fffaf0f5;border:2px solid #c7a653;border-radius:22px;box-shadow:0 14px 34px #49340f55;overflow:hidden;display:flex;flex-direction:column}
+.panehead{background:var(--blue2);color:#fff;padding:15px 20px}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:#fffdf7;border:1px solid #d9c797;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #49340f12}
+.card h3{margin:0 0 9px;color:var(--blue2);font-size:17px}p{line-height:1.55}ul,ol{line-height:1.55;padding-left:20px}
+.time{display:inline-block;background:#f2dda0;border:1px solid #c7a653;color:var(--blue2);padding:4px 9px;border-radius:18px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{background:#f5ecd0;border-left:5px solid var(--blue);padding:12px 14px;border-radius:8px;margin:10px 0}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#f6edcf;border-radius:16px;margin:14px 0}
+.node{background:var(--blue2);color:#fff;padding:13px 15px;border-radius:13px;font-weight:900;text-align:center}.arrow{font-size:25px;font-weight:900;color:var(--blue)}
+.example{background:#eef3f7;border:1px solid #b7c7d6;border-radius:13px;padding:13px;margin:10px 0}
+.workout{background:#f7f0dd;border:2px dashed #b7964e;border-radius:15px;padding:15px;margin:12px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue2);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid #c8b98e}.option.correct{background:#e1efe5;border-color:#6d997a}.option.wrong{background:#f5dfdb;border-color:#a86b61}
+.answer{display:none;background:#e5f0e7;border:1px solid #9db9a4;padding:11px;border-radius:10px;margin-top:9px}.score{font-weight:900;margin-top:8px}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{background:#e7dfcf;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:800}.progress .active{background:#e8d18a;border:1px solid #b7964e;color:var(--blue2)}
+table{width:100%;border-collapse:collapse}th{background:var(--blue2);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #ddd2b8;vertical-align:top}
+.footer{font-size:11px;color:#685e4e;border-top:1px solid #d8ccb0;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}header{height:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div><div class="name">Ravi Raju</div><h1>IGCSE Computer Science 0984</h1><p>Topic 6 · Automated and Emerging Technologies · Period 6</p></div></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">TOPIC 6</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>📘 Teacher Studio</h2><small>6.2 Robotics · characteristics · mechanical structure · electrical components · programmable</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Topic 6 · Period 6</span>
+<h3>Characteristics and Components of Robots</h3>
+<p>This period targets the exact Cambridge 0984 requirement to <b>describe the characteristics of a robot</b>.</p>
+<div class="callout"><b>Cambridge 0984:</b> a robot has a <b>mechanical structure/framework</b>, <b>electrical components such as sensors, microprocessors and actuators</b>, and is <b>programmable</b>. citeturn0search12</div>
+</div>
+
+<div class="card"><h3>1 · The three defining characteristics</h3>
+<div class="flow">
+<div class="node">MECHANICAL<br>STRUCTURE</div><div class="arrow">+</div>
+<div class="node">ELECTRICAL<br>COMPONENTS</div><div class="arrow">+</div>
+<div class="node">PROGRAMMABLE<br>BEHAVIOUR</div>
+</div>
+<p>These three ideas should be present when explaining what makes a machine a robot in the context of this syllabus.</p>
+</div>
+
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>2 · Mechanical structure or framework</h3>
+<p>The mechanical structure is the physical body of the robot. It supports the components and allows the robot to perform its intended movements.</p>
+<table><tr><th>Part</th><th>Possible function</th></tr>
+<tr><td>Frame/chassis</td><td>Supports and holds components.</td></tr>
+<tr><td>Wheels</td><td>Allow a mobile robot to move.</td></tr>
+<tr><td>Joints</td><td>Allow parts such as robotic arms to change position.</td></tr>
+<tr><td>Arm/gripper</td><td>Allows the robot to manipulate objects.</td></tr>
+</table>
+</div>
+
+<div class="card"><span class="time">8–18 min · Teach</span><h3>3 · Electrical components</h3>
+<table><tr><th>Component</th><th>Role in a robot</th></tr>
+<tr><td><b>Sensor</b></td><td>Detects information about the robot's environment.</td></tr>
+<tr><td><b>Microprocessor/controller</b></td><td>Processes sensor data and follows programmed instructions.</td></tr>
+<tr><td><b>Actuator</b></td><td>Produces movement or another physical action.</td></tr>
+<tr><td><b>Power supply</b></td><td>Provides electrical energy for operation.</td></tr>
+</table>
+<div class="callout">For the syllabus, sensors, microprocessors and actuators are specifically identified as examples of electrical components.</div>
+</div>
+
+<div class="card"><span class="time">18–27 min · Teach</span><h3>4 · Programmable</h3>
+<p>A robot is programmable: its behaviour is determined by instructions that can be stored and executed by its controller.</p>
+<div class="example"><b>Example:</b> A warehouse robot can be programmed to detect an obstacle, stop, turn and continue along a planned route.</div>
+<div class="callout"><b>Important:</b> “Programmable” means that the robot's behaviour is controlled by instructions. It does not mean the robot necessarily has artificial intelligence.</div>
+</div>
+
+<div class="card"><span class="time">27–35 min · Worked example</span><h3>5 · Analyse a mobile warehouse robot</h3>
+<table><tr><th>Characteristic</th><th>Evidence</th></tr>
+<tr><td>Mechanical structure</td><td>Chassis, wheels and physical body support the robot.</td></tr>
+<tr><td>Electrical components</td><td>Distance sensors, controller and motors allow sensing, processing and movement.</td></tr>
+<tr><td>Programmable</td><td>A stored program determines how it responds to sensor readings and where it moves.</td></tr>
+</table>
+</div>
+
+<div class="card"><span class="time">35–42 min · Comparison</span><h3>6 · Robot or ordinary machine?</h3>
+<div class="example"><b>Electric fan:</b> has a mechanical structure and electrical components, but by itself it is not necessarily a robot because it does not have the programmable sensing/control characteristics expected of a robot.</div>
+<div class="example"><b>Mobile delivery robot:</b> has a mechanical structure, electrical components including sensors/controller/actuators, and programmable behaviour.</div>
+</div>
+
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>7 · Describe the characteristics</h3>
+<div class="workout">A robot vacuum cleaner moves around a room, detects obstacles and follows programmed cleaning behaviour. Explain how it demonstrates the three characteristics of a robot.</div>
+<button onclick="showA('w1')">Show model</button>
+<div class="answer" id="w1"><b>Mechanical structure:</b> physical body, wheels and moving parts. <b>Electrical components:</b> sensors, controller/microprocessor and motors/actuators. <b>Programmable:</b> stored instructions determine how it moves and responds to sensor data.</div>
+</div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>8 · The three-part exam answer</h3>
+<div class="callout"><b>Robot = mechanical structure + electrical components + programmable behaviour.</b><br><br>When asked to describe a robot's characteristics, cover all three.</div>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 6 · Characteristics and components of robots.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🧠 Student Studio</h2><small>Recognise → describe → distinguish → apply</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Topic 6 roadmap</h3><div class="progress"><span>6.1 Automated systems</span><span class="active">6.2 Robotics</span><span>6.3 Artificial Intelligence</span></div></div>
+
+<div class="card"><h3>🎯 Learning targets</h3>
+<ul><li>Describe a robot's mechanical structure.</li><li>Identify electrical components in a robot.</li><li>Explain why a robot is programmable.</li><li>Recognise the three Cambridge characteristics.</li><li>Apply the characteristics to real robot examples.</li></ul></div>
+
+<div class="card"><h3>1 · Quick check</h3><p>Which of the following is one of the three characteristics specified for a robot?</p>
+<button class="option" onclick="checkQ(this,true,'q1')">A mechanical structure or framework</button>
+<button class="option" onclick="checkQ(this,false,'q1')">A human operator permanently controlling every action</button>
+<div class="score" id="q1"></div></div>
+
+<div class="card"><h3>2 · Complete the framework</h3>
+<div class="workout">Complete the three-part description: <b>Mechanical ________ + electrical ________ + programmable ________.</b></div>
+<button onclick="showA('a1')">Show answer</button>
+<div class="answer" id="a1"><b>Mechanical structure/framework + electrical components + programmable behaviour.</b></div>
+</div>
+
+<div class="card"><h3>3 · Interactive check</h3><p>Which component is an electrical component of a robot?</p>
+<button class="option" onclick="checkQ(this,true,'q2')">Sensor</button>
+<button class="option" onclick="checkQ(this,false,'q2')">Cardboard box used as packaging</button>
+<div class="score" id="q2"></div></div>
+
+<div class="card"><h3>4 · Worked Example — Robotic arm</h3>
+<div class="example">A factory robot has a metal frame, joints, sensors, a microprocessor, motors and a program controlling its movements.</div>
+<p><b>Mechanical structure:</b> frame and joints. <b>Electrical components:</b> sensors, microprocessor and motors. <b>Programmable:</b> the stored program controls the movements.</p>
+</div>
+
+<div class="card"><h3>5 · Workout — Explain “programmable”</h3>
+<div class="workout">Why is a robot's ability to be programmed important?</div>
+<button onclick="showA('a2')">Show model answer</button>
+<div class="answer" id="a2">Programming allows instructions to define the robot's behaviour, including how it responds to sensor inputs and what actions its actuators perform.</div>
+</div>
+
+<div class="card"><h3>6 · Interactive check</h3><p>Which statement is most accurate?</p>
+<button class="option" onclick="checkQ(this,true,'q3')">A robot combines a physical structure, electrical components and programmable behaviour.</button>
+<button class="option" onclick="checkQ(this,false,'q3')">A robot must have artificial intelligence to be a robot.</button>
+<div class="score" id="q3"></div></div>
+
+<div class="card"><h3>7 · Classification challenge</h3>
+<div class="workout">A programmable machine has sensors, a microprocessor, motors and a physical framework. Does it meet the three characteristics of a robot? Explain.</div>
+<button onclick="showA('a3')">Show model</button>
+<div class="answer" id="a3">Yes. It has a mechanical framework, electrical components including sensors, a microprocessor and motors/actuators, and it is programmable.</div>
+</div>
+
+<div class="card"><h3>8 · Exam-style question</h3>
+<p><b>Question:</b> Describe three characteristics of a robot.</p>
+<button onclick="showA('a4')">Show mark-point model</button>
+<div class="answer" id="a4">A robot has a mechanical structure/framework; it has electrical components such as sensors, a microprocessor and actuators; and it is programmable.</div>
+</div>
+
+<div class="card"><h3>9 · Exam-style application</h3>
+<p><b>Question:</b> A domestic robot vacuum moves around a room and avoids obstacles. Describe how it demonstrates the characteristics of a robot.</p>
+<button onclick="showA('a5')">Show mark-point model</button>
+<div class="answer" id="a5">It has a mechanical structure such as a body and wheels. It has electrical components such as sensors, a microprocessor/controller and motors. It is programmable so that stored instructions determine how it moves and responds to sensor data.</div>
+</div>
+
+<div class="card"><h3>10 · Common mistakes</h3>
+<ul><li>Giving only sensors, microprocessors and actuators and forgetting the mechanical structure.</li><li>Forgetting that the robot must be programmable.</li><li>Assuming every robot must use artificial intelligence.</li><li>Describing an application instead of describing the characteristics.</li><li>Confusing the physical structure with the electrical components.</li></ul>
+</div>
+
+<div class="card"><h3>11 · Exam vocabulary</h3>
+<table><tr><th>Term</th><th>Meaning</th></tr>
+<tr><td>Mechanical structure</td><td>The physical framework/body and moving parts.</td></tr>
+<tr><td>Electrical components</td><td>Electronic/electrical parts such as sensors, microprocessors and actuators.</td></tr>
+<tr><td>Programmable</td><td>Behaviour can be controlled by stored instructions.</td></tr>
+<tr><td>Robot</td><td>A programmable machine combining a physical structure and electrical components to perform tasks.</td></tr>
+</table></div>
+
+<div class="card"><h3>12 · Self-assessment</h3>
+<p>Can you give the three Cambridge characteristics of a robot without looking at your notes?</p>
+<button onclick="confidence('ready')">🟢 Yes</button><button onclick="confidence('practice')">🟡 More practice</button><button onclick="confidence('revise')">🔴 Need revision</button>
+<div class="score" id="confidence"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 6 · Characteristics and components of robots.</div>
+</div>
+</section>
+</main>
+
+<script>
+function showA(id){document.getElementById(id).style.display='block'}
+function checkQ(btn,correct,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(correct?'correct':'wrong');
+ const m={
+ q1:correct?'✓ Correct — a mechanical structure/framework is one of the specified characteristics.':'✗ Human control is not one of the three defining characteristics.',
+ q2:correct?'✓ Correct — sensors are electrical components used by robots.':'✗ That is not an electrical component of a robot.',
+ q3:correct?'✓ Correct — those are the three characteristics to remember.':'✗ Artificial intelligence is not required by the 0984 definition of a robot.'
+ };
+ document.getElementById(id).textContent=m[id]
+}
+function confidence(v){
+ const m={
+ ready:'Excellent — you know the three Cambridge characteristics of a robot.',
+ practice:'Good. Practise describing each characteristic with a real robot example.',
+ revise:'Remember: MECHANICAL STRUCTURE + ELECTRICAL COMPONENTS + PROGRAMMABLE.'
+ };
+ document.getElementById('confidence').textContent=m[v]
+}
+</script>
+</body>
+</html>

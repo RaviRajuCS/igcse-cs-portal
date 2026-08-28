@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 15</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--blue2:#12477f;--glass:rgba(255,255,255,.72);--shadow:0 12px 30px rgba(8,43,89,.16)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(255,255,255,.34);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.55)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0 0;font-size:13px;font-weight:600}.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:700;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}.panehead{padding:15px 20px;background:rgba(8,43,89,.95);color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:rgba(255,253,245,.88);border:1px solid rgba(8,43,89,.13);border-radius:16px;padding:16px;margin-bottom:15px}.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:rgba(255,255,255,.58);border-radius:16px;margin:15px 0}.node{padding:13px 15px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:25px;font-weight:900}.key{padding:10px 14px;border-radius:12px;background:var(--gold2);font-weight:900}.lock{font-size:30px}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}}
+</style></head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div><h1>IGCSE Computer Science 0984</h1><p>Topic 2 — Data Transmission · Period 15</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+<main class="layout">
+<section class="pane"><div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>My teaching route</small></div><div class="content">
+
+<div class="card"><span class="time">Lesson overview</span><h3>Period 15 · Asymmetric Encryption</h3>
+<p><b>Topic 2 · Data Transmission:</b> Students extend their understanding of encryption by learning the public/private key model used in <b>asymmetric encryption</b>.</p>
+<div class="callout"><b>Success criteria:</b> Students can explain why asymmetric encryption uses two related keys, distinguish a public key from a private key, describe how a public key can be used to encrypt data for a recipient, and explain why the private key must be kept secret.</div>
+<p><b>Prior learning:</b> Periods 11–12 — encryption, plaintext, ciphertext, keys and symmetric encryption.</p>
+<p><b>Key vocabulary:</b> asymmetric encryption, public key, private key, key pair, plaintext, ciphertext, encryption, decryption.</p></div>
+
+<div class="card"><span class="time">My teaching route</span><h3>Change “one shared secret” into “a pair of keys”</h3>
+<ol><li>Retrieve symmetric encryption.</li><li>Identify the key-sharing problem.</li><li>Introduce the public/private key pair.</li><li>Trace encryption using the recipient's public key.</li><li>Trace decryption using the recipient's private key.</li><li>Emphasise that the private key must remain secret.</li><li>Compare the two encryption models.</li></ol>
+<div class="callout"><b>Memory rule:</b> Asymmetric = <b>public key + private key</b>.</div></div>
+
+<div class="card"><span class="time">0–7 min · Retrieval</span><h3>Symmetric encryption recap</h3>
+<ul><li>What key is used in symmetric encryption?</li><li>Why must it be kept secret?</li><li>What is the main key-sharing challenge?</li></ul>
+<div class="callout"><b>Bridge:</b> If a secret key must be shared securely, could we use a different arrangement where one key can be made public?</div></div>
+
+<div class="card"><span class="time">7–16 min · Teach</span><h3>What is asymmetric encryption?</h3>
+<p><b>Asymmetric encryption</b> uses a <b>pair of related keys</b>: a <b>public key</b> and a <b>private key</b>.</p>
+<div class="flow"><div class="node">PUBLIC KEY<br>can be shared</div><div class="arrow">+</div><div class="node">PRIVATE KEY<br>kept secret</div><div class="arrow">=</div><div class="key">KEY PAIR 🔑</div></div>
+<div class="callout"><b>Core idea:</b> The public key may be distributed openly, but the private key belongs to its owner and must be protected.</div></div>
+
+<div class="card"><span class="time">16–25 min · Guided process</span><h3>Sending a confidential message</h3>
+<div class="flow"><div class="node">SENDER<br>Plaintext</div><div class="arrow">→</div><div class="key">RECIPIENT'S<br>PUBLIC KEY</div><div class="arrow">→</div><div class="node">CIPHERTEXT</div><div class="arrow">→</div><div class="node">RECIPIENT</div></div>
+<p>For the basic confidentiality model, the sender uses the <b>recipient's public key</b> to encrypt the message.</p>
+<p>The recipient then uses the corresponding <b>private key</b> to decrypt it.</p>
+<div class="callout"><b>Exam sequence:</b> recipient's public key → encrypt → ciphertext → recipient's private key → decrypt.</div></div>
+
+<div class="card"><span class="time">25–33 min · Key security</span><h3>Why is the private key private?</h3>
+<p>The public key is intended to be shared. The private key must be kept secret by its owner.</p>
+<table><tr><th>Key</th><th>What happens?</th></tr><tr><td><b>Public key</b></td><td>Can be distributed to others.</td></tr><tr><td><b>Private key</b></td><td>Must be protected and not disclosed to unauthorised people.</td></tr></table>
+<div class="callout"><b>Never reverse them in a confidentiality question:</b> encrypt with the recipient's <b>public</b> key; decrypt with the recipient's <b>private</b> key.</div></div>
+
+<div class="card"><span class="time">33–39 min · Compare</span><h3>Symmetric vs asymmetric</h3>
+<table><tr><th>Symmetric</th><th>Asymmetric</th></tr><tr><td>One shared secret key.</td><td>Two related keys: public and private.</td></tr><tr><td>Both parties need the shared secret.</td><td>Public key can be distributed openly.</td></tr><tr><td>Secure key distribution is a major challenge.</td><td>Private key remains with its owner.</td></tr><tr><td>Efficient for large amounts of data.</td><td>Useful where secure public-key communication is needed.</td></tr></table></div>
+
+<div class="card"><span class="time">39–44 min · Clarify</span><h3>What students must not confuse</h3>
+<div class="callout"><b>Public ≠ secret.</b> The public key can be shared.</div>
+<div class="callout"><b>Private = secret.</b> The private key must be protected.</div>
+<div class="callout"><b>Encryption ≠ error detection.</b> Encryption protects confidentiality; parity/checksum/echo/ARQ deal with transmission integrity and reliable delivery.</div></div>
+
+<div class="card"><span class="time">44–48 min · Assessment</span><h3>Cambridge-style questions</h3>
+<ol><li>State the two keys used in asymmetric encryption.</li><li>State which key may be shared publicly.</li><li>Explain why the private key must be kept secret.</li><li>Describe how a sender can encrypt a message for a recipient using asymmetric encryption.</li><li>Compare symmetric and asymmetric encryption.</li></ol>
+<div class="callout"><b>Marking focus:</b> For confidentiality, clearly identify the <b>recipient's public key</b> for encryption and the corresponding <b>private key</b> for decryption.</div></div>
+
+<div class="card"><span class="time">48–50 min · Exit ticket</span><h3>Two-key memory rule</h3>
+<div class="callout"><b>PUBLIC KEY:</b> share it.<br><b>PRIVATE KEY:</b> protect it.</div>
+<div class="callout"><b>Confidential message:</b> encrypt with recipient's public key → decrypt with recipient's private key.</div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br><b>Planning note:</b> Period 15 covers asymmetric encryption and the public/private key model required by Topic 2.3. citeturn0search12</div>
+</div></section>
+
+<section class="pane"><div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div><div class="content">
+
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Recall</span><span>2. Two keys</span><span>3. Public</span><span>4. Private</span><span>5. Encrypt</span><span>6. Test</span></div><p>Today you will learn the <b>public/private key</b> model of asymmetric encryption.</p></div>
+
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Define asymmetric encryption.</li><li>Identify public and private keys.</li><li>Explain which key is used for confidential encryption.</li><li>Explain why the private key must remain secret.</li><li>Compare asymmetric with symmetric encryption.</li></ul></div>
+
+<div class="card"><h3>1 · The two keys</h3><div class="flow"><div class="node">PUBLIC KEY<br>📢 Share</div><div class="arrow">+</div><div class="node">PRIVATE KEY<br>🔒 Protect</div></div><div class="callout"><b>Asymmetric = two related keys.</b></div></div>
+
+<div class="card"><h3>2 · Sending a secret message</h3><p>Imagine Ravi wants to send a confidential message to a student.</p><ol><li>The student makes a public key available.</li><li>Ravi obtains the student's public key.</li><li>Ravi encrypts the message using the student's public key.</li><li>The ciphertext is transmitted.</li><li>The student uses the corresponding private key to decrypt the ciphertext.</li></ol></div>
+
+<div class="card"><h3>3 · Follow the key</h3><div class="flow"><div class="node">Ravi<br>Plaintext</div><div class="arrow">→</div><div class="key">Student's<br>PUBLIC KEY</div><div class="arrow">→</div><div class="node">Ciphertext</div><div class="arrow">→</div><div class="key">Student's<br>PRIVATE KEY</div><div class="arrow">→</div><div class="node">Plaintext</div></div></div>
+
+<div class="card"><h3>4 · Interactive key check</h3>
+<p>Which key can be shared openly?</p><button class="option" onclick="checkP15(this,true,'q1p15')">Public key</button><button class="option" onclick="checkP15(this,false,'q1p15')">Private key</button><div class="score" id="q1p15"></div>
+<p style="margin-top:15px">For confidential communication to a recipient, which key is used by the sender to encrypt?</p><button class="option" onclick="checkP15(this,true,'q2p15')">Recipient's public key</button><button class="option" onclick="checkP15(this,false,'q2p15')">Recipient's private key</button><div class="score" id="q2p15"></div>
+<p style="margin-top:15px">Which key must remain secret?</p><button class="option" onclick="checkP15(this,false,'q3p15')">Public key</button><button class="option" onclick="checkP15(this,true,'q3p15')">Private key</button><div class="score" id="q3p15"></div></div>
+
+<div class="card"><h3>5 · Why is this useful?</h3><p>With symmetric encryption, two parties need to share the same secret key. Asymmetric encryption provides a public key that can be distributed without revealing the corresponding private key.</p><div class="callout"><b>Main idea:</b> the private key does not need to be published simply so that others can encrypt messages for its owner.</div></div>
+
+<div class="card"><h3>6 · Symmetric vs asymmetric</h3><table><tr><th>Question</th><th>Symmetric</th><th>Asymmetric</th></tr><tr><td>Number of keys</td><td>One shared secret key</td><td>Public/private pair</td></tr><tr><td>Can a key be public?</td><td>No — the shared key must remain secret</td><td>Yes — the public key can be shared</td></tr><tr><td>Main key-management issue</td><td>Securely sharing the secret</td><td>Protecting the private key</td></tr></table></div>
+
+<div class="card"><h3>7 · Exam practice</h3><p><b>Question:</b> Explain how asymmetric encryption can be used to send confidential data to a recipient.</p><button onclick="showP15('examP15')">Show model answer</button><div class="answer" id="examP15">The sender obtains the recipient's public key and uses it to encrypt the plaintext. The resulting ciphertext is sent to the recipient. The recipient uses the corresponding private key to decrypt the ciphertext and recover the plaintext.</div></div>
+
+<div class="card"><h3>8 · Challenge</h3><p>Why is it safe to distribute a public key while the private key must be protected?</p><button onclick="showP15('challengeP15')">Show answer</button><div class="answer" id="challengeP15">The public key is intended for distribution and is not the secret key that the owner must protect. The corresponding private key is kept secret and is used by the owner for the appropriate cryptographic operation.</div></div>
+
+<div class="card"><h3>9 · Common mistakes</h3><ul><li>Calling the public key secret.</li><li>Giving the recipient's private key to the sender for confidentiality.</li><li>Forgetting that asymmetric encryption uses a pair of related keys.</li><li>Confusing asymmetric encryption with symmetric encryption.</li><li>Thinking the public key and private key are simply two unrelated passwords.</li></ul></div>
+
+<div class="card"><h3>10 · Self-assessment</h3><p>Choose your confidence:</p><button onclick="confidenceP15('confident')">🟢 I can explain public/private keys</button><button onclick="confidenceP15('okay')">🟡 I need more practice</button><button onclick="confidenceP15('need')">🔴 I need help</button><div class="score" id="confidenceP15"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Asymmetric encryption · Public key · Private key · Key pair · Confidentiality.</div>
+</div></section>
+</main>
+<script>
+function checkP15(btn,c,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');const m={q1p15:c?'✓ Correct — the public key can be shared.':'✗ Not quite — the private key must remain secret.',q2p15:c?'✓ Correct — encrypt with the recipient’s public key.':'✗ Not quite — for this confidentiality model, use the recipient’s public key.',q3p15:c?'✓ Correct — the private key must be protected.':'✗ Not quite — the public key is intended to be shared.'};document.getElementById(id).textContent=m[id]}
+function showP15(id){document.getElementById(id).style.display='block'}
+function confidenceP15(v){const t={confident:'Excellent — you understand the public/private key model.',okay:'Good. Repeat: public = share, private = protect.',need:'That is useful information. Revisit the key-pair diagram and confidentiality sequence.'};document.getElementById('confidenceP15').textContent=t[v]}
+</script>
+</body></html>

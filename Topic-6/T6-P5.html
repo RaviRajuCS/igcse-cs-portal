@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 6 | Period 5</title>
+<style>
+:root{--gold:#d8ad45;--gold2:#efd47a;--blue:#123b63;--blue2:#0b2d4d;--ink:#17324d}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#c99528,#efd16c 45%,#c99a2e);color:var(--ink);overflow:hidden}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#0b2d4df2;color:#fff;border-bottom:3px solid var(--gold2);box-shadow:0 5px 18px #08203b66}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:2px 0;color:#e8eef5;font-size:13px;font-weight:600}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:19px;font-weight:700}
+.school{display:flex;align-items:center;gap:10px;font-size:13px}.school img{width:48px;height:48px;background:#fff;border-radius:9px;padding:3px;object-fit:contain}
+.badge{background:var(--gold2);color:var(--blue2);font-weight:900;padding:9px 13px;border-radius:18px}
+.layout{height:calc(100vh - 88px);display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:14px}
+.pane{min-height:0;background:#fffaf0f5;border:2px solid #c7a653;border-radius:22px;box-shadow:0 14px 34px #49340f55;overflow:hidden;display:flex;flex-direction:column}
+.panehead{background:var(--blue2);color:#fff;padding:15px 20px}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:#fffdf7;border:1px solid #d9c797;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #49340f12}
+.card h3{margin:0 0 9px;color:var(--blue2);font-size:17px}p{line-height:1.55}ul,ol{line-height:1.55;padding-left:20px}
+.time{display:inline-block;background:#f2dda0;border:1px solid #c7a653;color:var(--blue2);padding:4px 9px;border-radius:18px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{background:#f5ecd0;border-left:5px solid var(--blue);padding:12px 14px;border-radius:8px;margin:10px 0}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#f6edcf;border-radius:16px;margin:14px 0}
+.node{background:var(--blue2);color:#fff;padding:13px 15px;border-radius:13px;font-weight:900;text-align:center}.arrow{font-size:25px;font-weight:900;color:var(--blue)}
+.example{background:#eef3f7;border:1px solid #b7c7d6;border-radius:13px;padding:13px;margin:10px 0}
+.workout{background:#f7f0dd;border:2px dashed #b7964e;border-radius:15px;padding:15px;margin:12px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue2);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid #c8b98e}.option.correct{background:#e1efe5;border-color:#6d997a}.option.wrong{background:#f5dfdb;border-color:#a86b61}
+.answer{display:none;background:#e5f0e7;border:1px solid #9db9a4;padding:11px;border-radius:10px;margin-top:9px}.score{font-weight:900;margin-top:8px}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{background:#e7dfcf;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:800}.progress .active{background:#e8d18a;border:1px solid #b7964e;color:var(--blue2)}
+table{width:100%;border-collapse:collapse}th{background:var(--blue2);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #ddd2b8;vertical-align:top}
+.footer{font-size:11px;color:#685e4e;border-top:1px solid #d8ccb0;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}header{height:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div><div class="name">Ravi Raju</div><h1>IGCSE Computer Science 0984</h1><p>Topic 6 · Automated and Emerging Technologies · Period 5</p></div></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">TOPIC 6</div></div>
+</header>
+
+<main class="layout">
+<section class="pane"><div class="panehead"><h2>📘 Teacher Studio</h2><small>6.2 Robotics · robot components · sensors · actuators · control</small></div><div class="content">
+
+<div class="card"><span class="time">Topic 6 · Period 5</span><h3>Introduction to Robotics</h3>
+<p>This period introduces <b>robotics</b> as an application of automated control. Students learn the basic parts of a robot and how sensing, processing and movement work together.</p>
+<div class="callout"><b>Cambridge 0984 focus:</b> understand the characteristics and uses of robots, including their ability to sense their environment, process information and carry out programmed actions.</div></div>
+
+<div class="card"><h3>1 · What is a robot?</h3>
+<p>A robot is a programmable machine that can carry out tasks automatically or semi-autonomously. A robot normally combines:</p>
+<div class="flow"><div class="node">SENSORS</div><div class="arrow">→</div><div class="node">CONTROL / PROCESSING</div><div class="arrow">→</div><div class="node">ACTUATORS</div></div>
+<p>The robot can repeatedly sense its environment, process the information and produce an action.</p></div>
+
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>2 · Robot components</h3>
+<table><tr><th>Component</th><th>Purpose</th></tr>
+<tr><td>Sensor</td><td>Detects information about the robot's environment.</td></tr>
+<tr><td>Processor / controller</td><td>Processes sensor information and follows the programmed instructions.</td></tr>
+<tr><td>Actuator</td><td>Produces movement or another physical action.</td></tr>
+<tr><td>Power supply</td><td>Provides electrical energy to operate the robot.</td></tr>
+<tr><td>Program</td><td>Defines the instructions and behaviour of the robot.</td></tr></table></div>
+
+<div class="card"><span class="time">8–18 min · Teach</span><h3>3 · Robots can sense their environment</h3>
+<p>Robots may use sensors to detect conditions such as:</p>
+<ul><li>distance from an object</li><li>light level</li><li>temperature</li><li>touch/contact</li><li>position or movement</li></ul>
+<div class="example"><b>Example:</b> A warehouse robot uses a distance sensor to detect an obstacle in its path. The controller processes the reading and changes the robot's movement.</div></div>
+
+<div class="card"><span class="time">18–27 min · Teach</span><h3>4 · Robots need actuators to act</h3>
+<table><tr><th>Actuator</th><th>Possible robot action</th></tr>
+<tr><td>Motor</td><td>Drive wheels, rotate an arm or move a joint.</td></tr>
+<tr><td>Gripper mechanism</td><td>Pick up or release an object.</td></tr>
+<tr><td>Servo motor</td><td>Move a component to a controlled position.</td></tr>
+<tr><td>Speaker/buzzer</td><td>Produce an audible signal.</td></tr></table>
+<div class="callout">A robot's sensors provide information; its actuators allow it to <b>do something physically</b>.</div></div>
+
+<div class="card"><span class="time">27–35 min · Worked example</span><h3>5 · Obstacle-avoiding robot</h3>
+<div class="flow"><div class="node">Distance Sensor</div><div class="arrow">→</div><div class="node">Controller</div><div class="arrow">→</div><div class="node">Motors</div></div>
+<ol><li>The sensor measures the distance to an obstacle.</li><li>The controller receives and processes the measurement.</li><li>The program checks whether the obstacle is too close.</li><li>If it is too close, the controller changes the motor commands.</li><li>The robot stops, turns or changes direction.</li></ol></div>
+
+<div class="card"><span class="time">35–42 min · Guided teaching</span><h3>6 · Robots in real-world applications</h3>
+<table><tr><th>Application</th><th>Possible task</th><th>Why a robot?</th></tr>
+<tr><td>Manufacturing</td><td>Assembly or welding</td><td>Repetitive and precise work</td></tr>
+<tr><td>Warehousing</td><td>Move goods</td><td>Continuous movement and sorting</td></tr>
+<tr><td>Medicine</td><td>Assist with precise procedures</td><td>Controlled, accurate movement</td></tr>
+<tr><td>Exploration</td><td>Collect data in hazardous areas</td><td>Can operate where humans may be at risk</td></tr>
+<tr><td>Agriculture</td><td>Monitor or treat crops</td><td>Automated repetitive tasks</td></tr></table></div>
+
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>7 · Explain the robot</h3>
+<div class="workout">A warehouse robot must move around a building while avoiding obstacles. Explain how its sensor, controller and actuators work together.</div>
+<button onclick="showA('w1')">Show model</button>
+<div class="answer" id="w1">A distance/proximity sensor detects obstacles. The controller processes the sensor data and follows the programmed instructions. It sends signals to motors, which move the robot or change its direction to avoid the obstacle.</div></div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>8 · Robot thinking</h3>
+<div class="callout"><b>Remember:</b> A robot does not “think” like a human. It uses sensors to obtain data and a programmed controller to determine the actions its actuators should perform.</div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 5 · Introduction to Robotics.</div>
+</div></section>
+
+<section class="pane"><div class="panehead"><h2>🧠 Student Studio</h2><small>Understand → identify → explain → apply</small></div><div class="content">
+
+<div class="card"><h3>🧭 Topic 6 roadmap</h3><div class="progress"><span>6.1 Automated systems</span><span class="active">6.2 Robotics</span><span>6.3 Artificial Intelligence</span></div></div>
+
+<div class="card"><h3>🎯 Learning targets</h3>
+<ul><li>Describe what a robot is.</li><li>Identify sensors used by robots.</li><li>Explain the role of a controller/processor.</li><li>Identify actuators used for movement.</li><li>Explain how a robot responds to its environment.</li></ul></div>
+
+<div class="card"><h3>1 · Quick check</h3><p>Which component allows a robot to detect an obstacle?</p>
+<button class="option" onclick="checkQ(this,true,'q1')">Distance/proximity sensor</button>
+<button class="option" onclick="checkQ(this,false,'q1')">Motor</button><div class="score" id="q1"></div></div>
+
+<div class="card"><h3>2 · Worked Example — Robot arm</h3>
+<div class="example">A robot arm picks up objects from a conveyor belt and places them in boxes.</div>
+<table><tr><th>Part</th><th>Role</th></tr><tr><td>Sensor</td><td>Can detect an object's position or presence.</td></tr><tr><td>Controller</td><td>Processes sensor information and follows the program.</td></tr><tr><td>Actuators</td><td>Motors move the robot arm and gripper.</td></tr></table></div>
+
+<div class="card"><h3>3 · Workout — Complete the chain</h3>
+<div class="workout">Complete: A robot uses a <b>________</b> to detect an obstacle, a <b>________</b> to process the data, and <b>________</b> to move.</div>
+<button onclick="showA('a1')">Show answer</button>
+<div class="answer" id="a1"><b>Sensor → controller/processor → motors/actuators.</b></div></div>
+
+<div class="card"><h3>4 · Interactive check</h3><p>Which component produces physical movement in a mobile robot?</p>
+<button class="option" onclick="checkQ(this,true,'q2')">Motor</button>
+<button class="option" onclick="checkQ(this,false,'q2')">Light sensor</button><div class="score" id="q2"></div></div>
+
+<div class="card"><h3>5 · Worked Example — Obstacle avoidance</h3>
+<div class="flow"><div class="node">Detect</div><div class="arrow">→</div><div class="node">Process</div><div class="arrow">→</div><div class="node">Change movement</div></div>
+<p>The robot detects an obstacle, processes the distance information and changes the motor commands so that it avoids the obstacle.</p></div>
+
+<div class="card"><h3>6 · Workout — Explain the controller</h3>
+<div class="workout">Why is a robot's controller needed? Do not simply write “it controls the robot”. Explain what information it uses and what it does.</div>
+<button onclick="showA('a2')">Show model answer</button>
+<div class="answer" id="a2">The controller receives data from sensors, processes the data using programmed instructions and sends control signals to the robot's actuators.</div></div>
+
+<div class="card"><h3>7 · Interactive check</h3><p>A robot uses a sensor to detect an object and then moves its arm to pick it up. What is most likely to move the arm?</p>
+<button class="option" onclick="checkQ(this,true,'q3')">Motor / actuator</button>
+<button class="option" onclick="checkQ(this,false,'q3')">Sensor</button><div class="score" id="q3"></div></div>
+
+<div class="card"><h3>8 · Scenario challenge</h3>
+<div class="workout">A robot is sent into a dangerous area to collect information. Give one reason a robot may be preferred to sending a person.</div>
+<button onclick="showA('a3')">Show model</button>
+<div class="answer" id="a3">A robot can operate in an environment that may be dangerous to a human, reducing the person's exposure to the hazard.</div></div>
+
+<div class="card"><h3>9 · Exam-style question</h3>
+<p><b>Question:</b> Explain how an obstacle-avoiding robot can detect an obstacle and change its direction.</p>
+<button onclick="showA('a4')">Show mark-point model</button>
+<div class="answer" id="a4">A distance/proximity sensor detects the obstacle and sends data to the controller. The controller processes the data and checks the programmed condition. If the obstacle is too close, it sends signals to the motors/actuators to stop, turn or change direction.</div></div>
+
+<div class="card"><h3>10 · Robot vs ordinary automated system</h3>
+<table><tr><th>Automated system</th><th>Robot</th></tr><tr><td>May control a fixed process.</td><td>Often combines sensing, processing and physical movement.</td></tr><tr><td>Can use sensors and actuators.</td><td>Uses sensors and actuators to interact with its environment.</td></tr><tr><td>May remain in one location.</td><td>May be mobile or have moving joints.</td></tr></table></div>
+
+<div class="card"><h3>11 · Common mistakes</h3><ul><li>Calling a motor a sensor.</li><li>Saying the robot “thinks” without explaining the programmed processing.</li><li>Forgetting that sensors provide input data.</li><li>Forgetting that actuators produce physical actions.</li><li>Listing robot applications without explaining why robots are suitable.</li></ul></div>
+
+<div class="card"><h3>12 · Self-assessment</h3><p>Can you explain how a robot senses, processes and acts?</p>
+<button onclick="confidence('ready')">🟢 Yes</button><button onclick="confidence('practice')">🟡 More practice</button><button onclick="confidence('revise')">🔴 Need revision</button>
+<div class="score" id="confidence"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 5 · Introduction to Robotics.</div>
+</div></section>
+</main>
+<script>
+function showA(id){document.getElementById(id).style.display='block'}
+function checkQ(btn,correct,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(correct?'correct':'wrong');
+ const m={
+ q1:correct?'✓ Correct — a distance/proximity sensor detects the obstacle.':'✗ A motor is an actuator; it produces movement.',
+ q2:correct?'✓ Correct — a motor converts the control signal into physical movement.':'✗ A light sensor provides input data.',
+ q3:correct?'✓ Correct — motors/actuators move the robot arm.':'✗ A sensor detects information; it does not normally move the arm.'
+ };
+ document.getElementById(id).textContent=m[id]
+}
+function confidence(v){
+ const m={
+ ready:'Excellent — you understand the sense → process → act cycle of a robot.',
+ practice:'Good. Practise identifying sensors, controllers and actuators in different robots.',
+ revise:'Remember: SENSOR detects → CONTROLLER processes → ACTUATOR moves/acts.'
+ };
+ document.getElementById('confidence').textContent=m[v]
+}
+</script>
+</body></html>

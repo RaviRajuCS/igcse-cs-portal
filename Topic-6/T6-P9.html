@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 6 | Period 9</title>
+<style>
+:root{--gold:#d8ad45;--gold2:#efd47a;--blue:#123b63;--blue2:#0b2d4d;--ink:#17324d}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#c99528,#efd16c 45%,#c99a2e);color:var(--ink);overflow:hidden}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#0b2d4df2;color:#fff;border-bottom:3px solid var(--gold2);box-shadow:0 5px 18px #08203b66}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:2px 0;color:#e8eef5;font-size:13px;font-weight:600}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:19px;font-weight:700}
+.school{display:flex;align-items:center;gap:10px;font-size:13px}.school img{width:48px;height:48px;background:#fff;border-radius:9px;padding:3px;object-fit:contain}.badge{background:var(--gold2);color:var(--blue2);font-weight:900;padding:9px 13px;border-radius:18px}
+.layout{height:calc(100vh - 88px);display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:14px}.pane{min-height:0;background:#fffaf0f5;border:2px solid #c7a653;border-radius:22px;box-shadow:0 14px 34px #49340f55;overflow:hidden;display:flex;flex-direction:column}
+.panehead{background:var(--blue2);color:#fff;padding:15px 20px}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:#fffdf7;border:1px solid #d9c797;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #49340f12}.card h3{margin:0 0 9px;color:var(--blue2);font-size:17px}
+p{line-height:1.55}ul,ol{line-height:1.55;padding-left:20px}.time{display:inline-block;background:#f2dda0;border:1px solid #c7a653;color:var(--blue2);padding:4px 9px;border-radius:18px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{background:#f5ecd0;border-left:5px solid var(--blue);padding:12px 14px;border-radius:8px;margin:10px 0}.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#f6edcf;border-radius:16px;margin:14px 0}
+.node{background:var(--blue2);color:#fff;padding:13px 15px;border-radius:13px;font-weight:900;text-align:center}.arrow{font-size:25px;font-weight:900;color:var(--blue)}
+.example{background:#eef3f7;border:1px solid #b7c7d6;border-radius:13px;padding:13px;margin:10px 0}.workout{background:#f7f0dd;border:2px dashed #b7964e;border-radius:15px;padding:15px;margin:12px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue2);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid #c8b98e}
+.option.correct{background:#e1efe5;border-color:#6d997a}.option.wrong{background:#f5dfdb;border-color:#a86b61}.answer{display:none;background:#e5f0e7;border:1px solid #9db9a4;padding:11px;border-radius:10px;margin-top:9px}.score{font-weight:900;margin-top:8px}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{background:#e7dfcf;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:800}.progress .active{background:#e8d18a;border:1px solid #b7964e;color:var(--blue2)}
+table{width:100%;border-collapse:collapse}th{background:var(--blue2);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #ddd2b8;vertical-align:top}
+.footer{font-size:11px;color:#685e4e;border-top:1px solid #d8ccb0;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}header{height:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div><div class="name">Ravi Raju</div><h1>IGCSE Computer Science 0984</h1><p>Topic 6 · Automated and Emerging Technologies · Period 9</p></div></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">TOPIC 6</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>📘 Teacher Studio</h2><small>6.2 Robotics · applications · suitability · limitations · exam evaluation</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Topic 6 · Period 9</span><h3>Choosing the Right Robot for the Task</h3>
+<p>This period consolidates robotics by asking students to decide <b>why a robot is suitable for a particular task</b> and to justify the decision using characteristics, applications, advantages and limitations.</p>
+<div class="callout"><b>Exam skill:</b> Do not say simply “robots are useful”. Explain how the robot's features match the task.</div></div>
+
+<div class="card"><h3>1 · Task → robot → reason</h3>
+<div class="flow"><div class="node">TASK</div><div class="arrow">→</div><div class="node">ROBOT<br>FEATURE</div><div class="arrow">→</div><div class="node">BENEFIT</div><div class="arrow">→</div><div class="node">LIMITATION</div></div>
+<p>A strong evaluation links the nature of the task to a useful robot feature and then considers what could go wrong or what the robot cannot do well.</p></div>
+
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>2 · Match the task to the reason</h3>
+<table><tr><th>Task</th><th>Useful robot characteristic</th><th>Reason</th></tr>
+<tr><td>Repetitive assembly</td><td>Programmable and consistent</td><td>Can repeat the same sequence accurately.</td></tr>
+<tr><td>Hazardous exploration</td><td>Remote operation</td><td>Reduces human exposure to danger.</td></tr>
+<tr><td>Moving warehouse goods</td><td>Mobility and sensing</td><td>Can transport items while responding to obstacles.</td></tr>
+<tr><td>Precise manipulation</td><td>Controlled actuators</td><td>Can perform programmed movements.</td></tr>
+</table></div>
+
+<div class="card"><span class="time">8–18 min · Teach</span><h3>3 · Suitability depends on the task</h3>
+<ul><li><b>Repetition:</b> robots are useful when the same actions must be performed many times.</li>
+<li><b>Danger:</b> robots can work in environments where human exposure would be risky.</li>
+<li><b>Precision:</b> programmed movement can be useful for controlled tasks.</li>
+<li><b>Continuous work:</b> robots can operate for long periods without human fatigue.</li>
+<li><b>Predictability:</b> robots work well when the task can be described by programmed rules.</li></ul>
+<div class="callout">A task involving frequent unexpected decisions may be less suitable for a conventional programmed robot.</div></div>
+
+<div class="card"><span class="time">18–27 min · Teach</span><h3>4 · Limitations to consider</h3>
+<table><tr><th>Limitation</th><th>Why it matters</th></tr>
+<tr><td>Cost</td><td>Purchase, installation and maintenance may be expensive.</td></tr>
+<tr><td>Programming</td><td>Unexpected situations may not be handled if they were not considered in the program.</td></tr>
+<tr><td>Failure</td><td>Sensor, controller, actuator or mechanical faults can stop the task.</td></tr>
+<tr><td>Safety</td><td>A malfunctioning robot can create hazards.</td></tr>
+<tr><td>Flexibility</td><td>A robot may be less adaptable than a person in an unfamiliar situation.</td></tr></table></div>
+
+<div class="card"><span class="time">27–35 min · Worked example</span><h3>5 · Hazardous exploration robot</h3>
+<div class="example"><b>Scenario:</b> A robot is used to inspect an unsafe industrial area.</div>
+<ol><li><b>Suitable:</b> it can enter the hazardous area instead of sending a person.</li><li><b>Sensing:</b> sensors can collect information about the environment.</li><li><b>Control:</b> the controller processes readings and follows programmed instructions.</li><li><b>Limitation:</b> communication or power failure could prevent the robot completing its task.</li><li><b>Judgement:</b> despite the limitations, reducing human exposure may make the robot highly suitable.</li></ol></div>
+
+<div class="card"><span class="time">35–42 min · Evaluation practice</span><h3>6 · Build a balanced argument</h3>
+<div class="callout"><b>Step 1:</b> identify the task.<br><b>Step 2:</b> identify the robot feature that helps.<br><b>Step 3:</b> explain the benefit.<br><b>Step 4:</b> identify a realistic limitation.<br><b>Step 5:</b> explain the consequence.</div></div>
+
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>7 · Scenario evaluation</h3>
+<div class="workout">A supermarket considers using mobile robots to move stock from a storage area to the shop floor. Explain why robots may be suitable and give one limitation.</div>
+<button onclick="showA('w1')">Show model</button>
+<div class="answer" id="w1">Robots can repeatedly transport stock, reducing routine human workload. Sensors and programmed movement can help them navigate around obstacles. A limitation is that a fault or unexpected situation could stop delivery of stock, and purchase/maintenance costs may be high.</div></div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>8 · The final robotics question</h3>
+<div class="callout"><b>Would a robot be suitable?</b> Answer with: <b>task requirement → robot feature → benefit → limitation → judgement.</b></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 9 · Choosing the right robot for the task.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🧠 Student Studio</h2><small>Match · justify · evaluate · exam practice</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Topic 6 roadmap</h3><div class="progress"><span>6.1 Automated systems</span><span class="active">6.2 Robotics</span><span>6.3 Artificial Intelligence</span></div></div>
+
+<div class="card"><h3>🎯 Learning targets</h3>
+<ul><li>Explain why robots are suitable for particular tasks.</li><li>Use robot characteristics to justify a choice.</li><li>Identify realistic limitations.</li><li>Write balanced scenario-specific evaluations.</li><li>Reach a justified conclusion.</li></ul></div>
+
+<div class="card"><h3>1 · Quick check</h3><p>Which task is especially suited to a programmed robot?</p>
+<button class="option" onclick="checkQ(this,true,'q1')">Repeating the same assembly operation many times</button>
+<button class="option" onclick="checkQ(this,false,'q1')">Making unpredictable personal decisions in every situation</button>
+<div class="score" id="q1"></div></div>
+
+<div class="card"><h3>2 · Workout — Match the feature</h3>
+<div class="workout">A robot is being considered for a dangerous environment. Which robot advantage should be used in the justification?</div>
+<button onclick="showA('a1')">Show answer</button>
+<div class="answer" id="a1">Safety: the robot can perform tasks in the hazardous environment while reducing the risk to a human operator.</div></div>
+
+<div class="card"><h3>3 · Interactive check</h3><p>Why is a task with many unexpected situations potentially difficult for a conventional programmed robot?</p>
+<button class="option" onclick="checkQ(this,true,'q2')">The program may not contain instructions for every unexpected situation.</button>
+<button class="option" onclick="checkQ(this,false,'q2')">Robots automatically understand every situation like humans.</button>
+<div class="score" id="q2"></div></div>
+
+<div class="card"><h3>4 · Worked Example — Warehouse robot</h3>
+<div class="example"><b>Task:</b> transport boxes repeatedly between a storage area and a loading area.</div>
+<p><b>Why suitable:</b> the task is repetitive; the robot can follow programmed routes and use sensors to detect obstacles. <b>Limitation:</b> faults or unexpected obstacles may interrupt the task.</p></div>
+
+<div class="card"><h3>5 · Workout — Develop the answer</h3>
+<div class="workout">Develop this statement for warehouse robots: <b>“They save time.”</b></div>
+<button onclick="showA('a2')">Show model answer</button>
+<div class="answer" id="a2">A robot can repeatedly transport boxes without waiting for a human worker to perform every trip, so goods can be moved efficiently between locations.</div></div>
+
+<div class="card"><h3>6 · Interactive check</h3><p>Which is a realistic limitation of a robot used in a factory?</p>
+<button class="option" onclick="checkQ(this,true,'q3')">A mechanical or electrical fault may stop production.</button>
+<button class="option" onclick="checkQ(this,false,'q3')">It can never be affected by a fault.</button>
+<div class="score" id="q3"></div></div>
+
+<div class="card"><h3>7 · Scenario challenge — Exploration</h3>
+<div class="workout">A robot is used to inspect a dangerous area. Give one reason for using it and one limitation.</div>
+<button onclick="showA('a3')">Show model</button>
+<div class="answer" id="a3"><b>Reason:</b> it can enter the dangerous area and collect information without directly exposing a person. <b>Limitation:</b> a power, communication or component failure could prevent the inspection.</div></div>
+
+<div class="card"><h3>8 · Exam-style question</h3>
+<p><b>Question:</b> A company wants to use robots for repetitive manufacturing. Explain why robots are suitable and describe two possible disadvantages.</p>
+<button onclick="showA('a4')">Show mark-point model</button>
+<div class="answer" id="a4">Robots are suitable because the task is repetitive and programmed movements can be repeated consistently and quickly. They may increase productivity and reduce human involvement in repetitive work. Disadvantages include the cost of purchasing and maintaining the robots, and faults or programming errors could stop production or cause incorrect actions.</div></div>
+
+<div class="card"><h3>9 · Final judgement challenge</h3>
+<div class="workout">A robot costs a lot to install but will perform a dangerous repetitive task for many years. Would the cost necessarily mean the robot is unsuitable?</div>
+<button onclick="showA('a5')">Show model</button>
+<div class="answer" id="a5">No. Cost is only one factor. If the robot substantially reduces human exposure to danger and performs a repetitive task effectively for many years, the safety and productivity benefits may justify the cost.</div></div>
+
+<div class="card"><h3>10 · Exam writing frame</h3>
+<div class="callout"><b>Robots are suitable because...</b> the task is ________ and the robot can ________.<br><br>
+<b>One disadvantage is...</b> ________, which could result in ________.<br><br>
+<b>Overall...</b> the robot is/is not suitable because ________.</div></div>
+
+<div class="card"><h3>11 · Common mistakes</h3>
+<ul><li>Assuming every task should be automated.</li><li>Giving generic advantages without linking them to the task.</li><li>Forgetting cost, maintenance and failure.</li><li>Ignoring unexpected situations.</li><li>Giving a conclusion without evidence from the scenario.</li></ul></div>
+
+<div class="card"><h3>12 · Self-assessment</h3>
+<p>Can you justify whether a robot is suitable for a particular task?</p>
+<button onclick="confidence('ready')">🟢 Yes</button><button onclick="confidence('practice')">🟡 More practice</button><button onclick="confidence('revise')">🔴 Need revision</button>
+<div class="score" id="confidence"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 9 · Choosing the right robot for the task.</div>
+</div>
+</section>
+</main>
+
+<script>
+function showA(id){document.getElementById(id).style.display='block'}
+function checkQ(btn,correct,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(correct?'correct':'wrong');
+ const m={
+ q1:correct?'✓ Correct — repetitive programmed tasks are a strong robot application.':'✗ A conventional programmed robot may not be ideal for unpredictable human-style decisions.',
+ q2:correct?'✓ Correct — the program may not cover every unexpected condition.':'✗ Conventional robots do not automatically understand every situation like humans.',
+ q3:correct?'✓ Correct — mechanical/electrical faults can interrupt production.':'✗ Robots can fail and require maintenance.'
+ };
+ document.getElementById(id).textContent=m[id]
+}
+function confidence(v){
+ const m={
+ ready:'Excellent — you can justify robot suitability using the scenario.',
+ practice:'Good. Practise linking task → feature → benefit → limitation.',
+ revise:'Remember: suitability depends on the task, not simply on whether a robot is available.'
+ };
+ document.getElementById('confidence').textContent=m[v]
+}
+</script>
+</body>
+</html>

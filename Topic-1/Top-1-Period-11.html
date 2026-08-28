@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 11</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 11</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 11 · Text Representation</h3>
+      <p><b>Cambridge focus:</b> Topic 1.2 Text, sound and images — how and why computers represent text, including the use of character sets such as ASCII and Unicode. fileciteturn9file3L226-L232</p>
+      <div class="callout"><b>Success criteria:</b> Students can explain why text must be represented digitally, describe a character set, distinguish ASCII from Unicode, and explain why Unicode is needed for a much wider range of characters and languages.</div>
+      <p><b>Prior learning:</b> Binary representation and number systems.</p>
+      <p><b>Key vocabulary:</b> character, character set, ASCII, Unicode, encoding, code point, 7-bit, 8-bit, multilingual, representation.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>Before students enter</h3>
+      <ul>
+        <li>Display a short word and ask: “How can a computer store this?”</li>
+        <li>Prepare a simple character-to-number table.</li>
+        <li>Contrast familiar English characters with characters from other writing systems.</li>
+        <li>Keep the distinction visible: <b>character</b> = the symbol; <b>character set</b> = the defined collection and associated codes.</li>
+      </ul>
+      <div class="callout"><b>Teaching principle:</b> start with the problem of representing human language, then introduce character sets as the solution.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Reconnect with binary</h3>
+      <ol>
+        <li>What does a computer ultimately use to represent data?</li>
+        <li>Why is binary suitable for electronic computers?</li>
+        <li>What is a bit?</li>
+        <li>Why can't a computer simply store the letter A as a human-readable symbol?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> Computers process binary patterns, so human characters need a defined numerical/binary representation.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–13 min · Discover</span>
+      <h3>What is a character set?</h3>
+      <p>A computer needs a consistent way to represent characters such as letters, digits and punctuation.</p>
+      <div class="callout"><b>Character set:</b> a defined collection of characters together with a code associated with each character.</div>
+      <p>Once a character has a code, that code can be stored and processed as binary data.</p>
+      <p><b>Think:</b> If two computers use different codes for the same character, what problem could occur when data is exchanged?</p>
+    </div>
+
+    <div class="card">
+      <span class="time">13–22 min · Teach</span>
+      <h3>ASCII</h3>
+      <p><b>ASCII</b> is a character set used to represent common characters. The textbook identifies ASCII as one of the character sets used in computer representation of text. fileciteturn9file3L226-L232</p>
+      <p>ASCII uses <b>7 bits</b> for its standard character codes, giving 128 possible codes.</p>
+      <div class="callout"><b>Examples:</b> A = 65₁₀ = 1000001₂; a = 97₁₀ = 1100001₂.</div>
+      <p>ASCII includes upper- and lower-case letters, digits, punctuation and control characters.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">22–31 min · Teach</span>
+      <h3>Why Unicode?</h3>
+      <p>ASCII is limited because its standard 7-bit code provides only 128 character codes. Modern computing needs to represent characters from many writing systems.</p>
+      <p><b>Unicode</b> provides a much larger character repertoire. The textbook describes Unicode as a character set representing all the languages of the world and notes that its first 128 characters are the same as ASCII. fileciteturn8file3L201-L206</p>
+      <div class="callout"><b>Key idea:</b> Unicode allows computers to represent far more characters than the original ASCII character set.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">31–37 min · Compare</span>
+      <h3>ASCII versus Unicode</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Feature</th><th style="padding:8px;background:#082b59;color:white">ASCII</th><th style="padding:8px;background:#082b59;color:white">Unicode</th></tr>
+        <tr><td style="padding:7px">Purpose</td><td style="padding:7px">Common character representation</td><td style="padding:7px">Very large international character repertoire</td></tr>
+        <tr><td style="padding:7px">Standard ASCII size</td><td style="padding:7px">7 bits / 128 codes</td><td style="padding:7px">Much larger code space</td></tr>
+        <tr><td style="padding:7px">Languages</td><td style="padding:7px">Limited</td><td style="padding:7px">Designed for worldwide scripts</td></tr>
+        <tr><td style="padding:7px">Relationship</td><td style="padding:7px">Original set</td><td style="padding:7px">First 128 characters match ASCII</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <span class="time">37–42 min · Guided activity</span>
+      <h3>Decode the idea</h3>
+      <p>Students work with these decimal ASCII codes:</p>
+      <div class="binary">65 · 66 · 67 · 97 · 98 · 99</div>
+      <p>Ask students to identify the characters and then explain why the codes for upper- and lower-case letters are different.</p>
+      <div class="callout"><b>Extension:</b> Ask students to convert one of the decimal codes into binary using their place-value knowledge.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">42–46 min · Assessment</span>
+      <h3>Cambridge-style questions</h3>
+      <ol>
+        <li>Define the term <b>character set</b>.</li>
+        <li>State how many bits are used by standard ASCII.</li>
+        <li>Explain one limitation of ASCII.</li>
+        <li>Explain why Unicode is useful.</li>
+      </ol>
+      <div class="callout"><b>Look for:</b> students must explain the need for Unicode, not simply state that it “has more characters”.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">46–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>What is a character set?</li>
+        <li>How many standard ASCII codes are available?</li>
+        <li>Why is Unicode needed?</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> Period 12 can deepen ASCII/Unicode with binary codes, storage implications and practical encoding/decoding exercises.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 11 begins text representation with character sets, ASCII and Unicode, following the Cambridge Topic 1 sequence.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Character sets</span>
+        <span>3. ASCII</span><span>4. Unicode</span>
+        <span>5. Compare</span><span>6. Exit ticket</span>
+      </div>
+      <p>Today you will discover how computers represent <b>human text</b> using character sets.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Explain why text needs digital representation.</li>
+        <li>Define a character set.</li>
+        <li>Describe ASCII.</li>
+        <li>Explain the need for Unicode.</li>
+        <li>Compare ASCII and Unicode.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · What is a character set?</h3>
+      <p>A <b>character set</b> defines a collection of characters and gives each character a code.</p>
+      <div class="callout">Character → code → binary data stored by the computer.</div>
+      <p>For example, a character such as <b>A</b> can be associated with a numerical code, which can then be represented in binary.</p>
+    </div>
+
+    <div class="card">
+      <h3>2 · ASCII</h3>
+      <p>Standard ASCII uses <b>7 bits</b>.</p>
+      <div class="callout"><b>2⁷ = 128 possible codes</b></div>
+      <p>Some familiar examples:</p>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Character</th><th style="padding:8px;background:#082b59;color:white">Decimal</th><th style="padding:8px;background:#082b59;color:white">Binary</th></tr>
+        <tr><td style="padding:7px">A</td><td style="padding:7px">65</td><td style="padding:7px">1000001</td></tr>
+        <tr><td style="padding:7px">B</td><td style="padding:7px">66</td><td style="padding:7px">1000010</td></tr>
+        <tr><td style="padding:7px">a</td><td style="padding:7px">97</td><td style="padding:7px">1100001</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>3 · Quick check</h3>
+      <p><b>Q1:</b> How many standard ASCII codes are available?</p>
+      <button class="option" onclick="check11(this,false,'q1s11')">64</button>
+      <button class="option" onclick="check11(this,true,'q1s11')">128</button>
+      <button class="option" onclick="check11(this,false,'q1s11')">256</button>
+      <div class="score" id="q1s11"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> Which character is represented by ASCII decimal 65?</p>
+      <button class="option" onclick="check11(this,true,'q2s11')">A</button>
+      <button class="option" onclick="check11(this,false,'q2s11')">a</button>
+      <button class="option" onclick="check11(this,false,'q2s11')">B</button>
+      <div class="score" id="q2s11"></div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Why Unicode?</h3>
+      <p>ASCII has a limited number of codes. Modern computers need to represent characters from many languages and writing systems.</p>
+      <div class="callout"><b>Unicode</b> provides a much larger character repertoire and is designed for international text.</div>
+      <p>The Cambridge textbook states that Unicode represents all the languages of the world and that its first 128 characters are the same as ASCII. fileciteturn8file3L201-L206</p>
+    </div>
+
+    <div class="card">
+      <h3>5 · ASCII or Unicode?</h3>
+      <p>Choose the better explanation:</p>
+      <button class="option" onclick="check11(this,false,'q3s11')">ASCII can represent every character used worldwide.</button>
+      <button class="option" onclick="check11(this,true,'q3s11')">Unicode supports a much wider range of characters and languages.</button>
+      <div class="score" id="q3s11"></div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Decode the codes</h3>
+      <p>What characters are represented by these ASCII decimal codes?</p>
+      <div class="binary">65 · 66 · 67 · 97 · 98 · 99</div>
+      <button onclick="show('answers11a')">Reveal answers</button>
+      <div class="answer" id="answers11a">
+        <b>A · B · C · a · b · c</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Think like an examiner</h3>
+      <p><b>Question:</b> Explain why Unicode is needed instead of relying only on ASCII.</p>
+      <button onclick="show('exam11')">Show model answer</button>
+      <div class="answer" id="exam11">
+        Standard ASCII has only 128 codes, so it cannot represent the very large range of characters needed for worldwide languages. Unicode provides a much larger character repertoire.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Practice</h3>
+      <ol>
+        <li>How many different codes can 7 bits represent?</li>
+        <li>What decimal code represents A in ASCII?</li>
+        <li>What is the binary form of ASCII 65?</li>
+        <li>Give one reason why Unicode is useful.</li>
+      </ol>
+      <button onclick="show('answers11b')">Reveal answers</button>
+      <div class="answer" id="answers11b">
+        1. 128<br>
+        2. 65<br>
+        3. 1000001₂<br>
+        4. It can represent a much wider range of characters/languages.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Common mistakes</h3>
+      <ul>
+        <li>Saying ASCII and Unicode are programming languages.</li>
+        <li>Confusing a character with its code.</li>
+        <li>Thinking ASCII can represent every writing system.</li>
+        <li>Forgetting that the original ASCII standard uses 7 bits.</li>
+        <li>Giving “Unicode has more characters” without explaining why that matters.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>10 · Self-assessment</h3>
+      <p>Choose your confidence level:</p>
+      <button onclick="confidence11('confident')">🟢 I can explain ASCII and Unicode</button>
+      <button onclick="confidence11('okay')">🟡 I mostly understand</button>
+      <button onclick="confidence11('need')">🔴 I need more practice</button>
+      <div class="score" id="confidence11"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Text representation: character sets, ASCII and Unicode.
+    </div>>
+  </div>
+</section>
+</main>
+
+<script>
+function check11(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1s11:correct?'✓ Correct — 2⁷ = 128.':'✗ Not quite. Standard ASCII uses 7 bits.',
+    q2s11:correct?'✓ Correct — ASCII 65 is A.':'✗ Not quite. Check the ASCII examples.',
+    q3s11:correct?'✓ Correct — Unicode supports a much wider character repertoire.':'✗ Not quite. Think about the limitation of 128 standard ASCII codes.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence11(v){
+  const text={
+    confident:'Excellent — you are ready to explore text representation in greater depth.',
+    okay:'Good. Review the ASCII examples and the reason Unicode is needed.',
+    need:'That is useful information. Revisit character sets, then compare ASCII with Unicode again.'
+  };
+  document.getElementById('confidence11').textContent=text[v];
+}
+</script>
+</body>
+</html>

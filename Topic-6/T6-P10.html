@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 6 | Period 10</title>
+<style>
+:root{--gold:#d8ad45;--gold2:#efd47a;--blue:#123b63;--blue2:#0b2d4d;--ink:#17324d}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#c99528,#efd16c 45%,#c99a2e);color:var(--ink);overflow:hidden}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#0b2d4df2;color:#fff;border-bottom:3px solid var(--gold2);box-shadow:0 5px 18px #08203b66}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:2px 0;color:#e8eef5;font-size:13px;font-weight:600}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:19px;font-weight:700}
+.school{display:flex;align-items:center;gap:10px;font-size:13px}.school img{width:48px;height:48px;background:#fff;border-radius:9px;padding:3px;object-fit:contain}.badge{background:var(--gold2);color:var(--blue2);font-weight:900;padding:9px 13px;border-radius:18px}
+.layout{height:calc(100vh - 88px);display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:14px}
+.pane{min-height:0;background:#fffaf0f5;border:2px solid #c7a653;border-radius:22px;box-shadow:0 14px 34px #49340f55;overflow:hidden;display:flex;flex-direction:column}
+.panehead{background:var(--blue2);color:#fff;padding:15px 20px}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:#fffdf7;border:1px solid #d9c797;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #49340f12}
+.card h3{margin:0 0 9px;color:var(--blue2);font-size:17px}p{line-height:1.55}ul,ol{line-height:1.55;padding-left:20px}
+.time{display:inline-block;background:#f2dda0;border:1px solid #c7a653;color:var(--blue2);padding:4px 9px;border-radius:18px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{background:#f5ecd0;border-left:5px solid var(--blue);padding:12px 14px;border-radius:8px;margin:10px 0}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#f6edcf;border-radius:16px;margin:14px 0}
+.node{background:var(--blue2);color:#fff;padding:13px 15px;border-radius:13px;font-weight:900;text-align:center}.arrow{font-size:25px;font-weight:900;color:var(--blue)}
+.example{background:#eef3f7;border:1px solid #b7c7d6;border-radius:13px;padding:13px;margin:10px 0}
+.workout{background:#f7f0dd;border:2px dashed #b7964e;border-radius:15px;padding:15px;margin:12px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue2);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid #c8b98e}
+.option.correct{background:#e1efe5;border-color:#6d997a}.option.wrong{background:#f5dfdb;border-color:#a86b61}
+.answer{display:none;background:#e5f0e7;border:1px solid #9db9a4;padding:11px;border-radius:10px;margin-top:9px}.score{font-weight:900;margin-top:8px}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{background:#e7dfcf;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:800}.progress .active{background:#e8d18a;border:1px solid #b7964e;color:var(--blue2)}
+table{width:100%;border-collapse:collapse}th{background:var(--blue2);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #ddd2b8;vertical-align:top}
+.footer{font-size:11px;color:#685e4e;border-top:1px solid #d8ccb0;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}header{height:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div><div class="name">Ravi Raju</div><h1>IGCSE Computer Science 0984</h1><p>Topic 6 · Automated and Emerging Technologies · Period 10</p></div></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">TOPIC 6</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>📘 Teacher Studio</h2><small>6.3 Artificial intelligence · definition · characteristics · data · rules · reasoning</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Topic 6 · Period 10</span><h3>Introduction to Artificial Intelligence</h3>
+<p>This period begins <b>6.3 Artificial Intelligence</b> using the exact Cambridge 0984 scope: what AI means and its main characteristics.</p>
+<div class="callout"><b>Cambridge 0984 focus:</b> AI is a branch of computer science dealing with the simulation of intelligent behaviours by computers. Its characteristics include the collection of data and rules for using that data, the ability to reason, and it can include the ability to learn and adapt.</div>
+</div>
+
+<div class="card"><h3>1 · What is Artificial Intelligence?</h3>
+<p><b>Artificial intelligence (AI)</b> is a branch of computer science dealing with the simulation of intelligent behaviours by computers.</p>
+<div class="flow"><div class="node">DATA</div><div class="arrow">+</div><div class="node">RULES FOR<br>USING DATA</div><div class="arrow">+</div><div class="node">REASONING</div><div class="arrow">+</div><div class="node">LEARNING / ADAPTATION</div></div>
+<p>The final characteristic is not required in every AI system; Cambridge states that AI <b>can include</b> the ability to learn and adapt.</p></div>
+
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>2 · The four ideas to remember</h3>
+<table><tr><th>Idea</th><th>Meaning</th></tr>
+<tr><td>Collection of data</td><td>AI systems use data as information about the problem or environment.</td></tr>
+<tr><td>Rules for using data</td><td>Instructions or rules determine how the available data is used.</td></tr>
+<tr><td>Reasoning</td><td>The system can use information and rules to reach a conclusion or decision.</td></tr>
+<tr><td>Learning and adapting</td><td>Some AI systems can automatically improve/adapt their processes and/or data.</td></tr>
+</table></div>
+
+<div class="card"><span class="time">8–18 min · Teach</span><h3>3 · AI is more than “following instructions”</h3>
+<p>A conventional program can follow a fixed sequence of instructions. AI systems can be designed to simulate aspects of intelligent behaviour by using data and rules to reach decisions.</p>
+<div class="example"><b>Example:</b> A system receives information about symptoms and uses stored knowledge and rules to help reach a possible diagnosis. The important idea is not that the computer is human, but that it is simulating aspects of intelligent behaviour.</div>
+<div class="callout"><b>Do not confuse:</b> automation and AI. An automated system can operate from fixed programmed rules without being an AI system.</div></div>
+
+<div class="card"><span class="time">18–27 min · Teach</span><h3>4 · Data and rules</h3>
+<p>AI needs information to work with. The system also needs a method for using that information.</p>
+<div class="flow"><div class="node">COLLECT / PROVIDE<br>DATA</div><div class="arrow">→</div><div class="node">APPLY<br>RULES</div><div class="arrow">→</div><div class="node">REASON / DECIDE</div></div>
+<p>For example, an AI system for identifying objects may receive image data and use rules or learned processes to classify what it has detected.</p></div>
+
+<div class="card"><span class="time">27–35 min · Teach</span><h3>5 · Reasoning</h3>
+<p><b>Reasoning</b> means using available information and rules to reach a conclusion or decision.</p>
+<div class="example"><b>Example:</b> If a system has information about a patient's symptoms and medical rules, it can reason from the available information to suggest possible conditions.</div>
+<div class="callout">In an exam, explain what information is used and how it leads to the decision. Avoid simply writing “the computer thinks”.</div></div>
+
+<div class="card"><span class="time">35–42 min · Teach</span><h3>6 · Learning and adaptation</h3>
+<p>Some AI systems can learn from data and adapt their own processes and/or data. This is particularly important when introducing <b>machine learning</b>, which will be studied in a later period.</p>
+<div class="example"><b>Simple idea:</b> A system receives many examples, detects useful patterns and adjusts its process so that it can make better predictions on later data.</div></div>
+
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>7 · Is it AI or ordinary automation?</h3>
+<div class="workout">A lighting system switches a lamp on whenever a light sensor detects that the room is dark. Is this automatically an example of AI? Explain.</div>
+<button onclick="showA('w1')">Show model</button>
+<div class="answer" id="w1">Not necessarily. This is an automated system using a sensor, a programmed rule and an actuator. It does not by itself demonstrate the AI characteristics required in the syllabus.</div></div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>8 · AI in one sentence</h3>
+<div class="callout">AI = <b>computer systems simulating intelligent behaviour</b>, using data and rules to support reasoning, and sometimes learning and adapting.</div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 10 · Introduction to Artificial Intelligence.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🧠 Student Studio</h2><small>Define → recognise → distinguish → explain</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Topic 6 roadmap</h3><div class="progress"><span>6.1 Automated systems</span><span>6.2 Robotics</span><span class="active">6.3 Artificial Intelligence</span></div></div>
+
+<div class="card"><h3>🎯 Learning targets</h3>
+<ul><li>Define artificial intelligence.</li><li>Describe the main characteristics of AI.</li><li>Explain the role of data.</li><li>Explain the role of rules in using data.</li><li>Explain reasoning.</li><li>Understand that some AI systems can learn and adapt.</li></ul></div>
+
+<div class="card"><h3>1 · Quick check</h3><p>Which statement best describes AI?</p>
+<button class="option" onclick="checkQ(this,true,'q1')">A branch of computer science dealing with the simulation of intelligent behaviours by computers.</button>
+<button class="option" onclick="checkQ(this,false,'q1')">Any computer system that uses electricity.</button>
+<div class="score" id="q1"></div></div>
+
+<div class="card"><h3>2 · Four-characteristic challenge</h3>
+<div class="workout">Name the four ideas associated with the main characteristics of AI in the 0984 syllabus.</div>
+<button onclick="showA('a1')">Show answer</button>
+<div class="answer" id="a1"><b>Collection of data; rules for using that data; ability to reason; and the ability to learn and adapt (which AI can include).</b></div></div>
+
+<div class="card"><h3>3 · Interactive check</h3><p>Why is data important to an AI system?</p>
+<button class="option" onclick="checkQ(this,true,'q2')">It provides information that the system can use when applying rules and reasoning.</button>
+<button class="option" onclick="checkQ(this,false,'q2')">It automatically makes every decision without processing.</button>
+<div class="score" id="q2"></div></div>
+
+<div class="card"><h3>4 · Worked Example — Decision system</h3>
+<div class="example">A system receives information about a problem and applies stored rules to reach a recommendation.</div>
+<p>The data provides information about the problem. Rules describe how the information should be used. The system reasons from the available information to produce a conclusion.</p></div>
+
+<div class="card"><h3>5 · Workout — Explain reasoning</h3>
+<div class="workout">A student writes: “The AI thinks the answer is correct.” Improve this explanation so it describes reasoning more accurately.</div>
+<button onclick="showA('a2')">Show model answer</button>
+<div class="answer" id="a2">The system uses the available data and programmed/learned rules to analyse the information and reach a conclusion or decision.</div></div>
+
+<div class="card"><h3>6 · Interactive check</h3><p>Which statement about learning and adapting is correct?</p>
+<button class="option" onclick="checkQ(this,true,'q3')">Some AI systems can automatically adapt their processes and/or data.</button>
+<button class="option" onclick="checkQ(this,false,'q3')">Every automated system automatically learns.</button>
+<div class="score" id="q3"></div></div>
+
+<div class="card"><h3>7 · Scenario challenge — Recommendation system</h3>
+<div class="workout">A system uses information about previous choices to recommend items to a user. Explain how data and reasoning could be involved.</div>
+<button onclick="showA('a3')">Show model</button>
+<div class="answer" id="a3">The system collects information about previous choices. It uses rules or learned processes to analyse the data and identify patterns. It then reasons from the available information to produce recommendations.</div></div>
+
+<div class="card"><h3>8 · Automation vs AI</h3>
+<table><tr><th>Automation</th><th>Artificial intelligence</th></tr>
+<tr><td>Can use fixed programmed rules to perform a task automatically.</td><td>Simulates intelligent behaviour using data and rules and can include reasoning and learning/adaptation.</td></tr>
+<tr><td>Example: light turns on below a fixed threshold.</td><td>Example: a system analyses data to classify or predict an outcome.</td></tr>
+</table></div>
+
+<div class="card"><h3>9 · Exam-style question</h3>
+<p><b>Question:</b> What is meant by artificial intelligence?</p>
+<button onclick="showA('a4')">Show mark-point model</button>
+<div class="answer" id="a4">Artificial intelligence is a branch of computer science dealing with the simulation of intelligent behaviours by computers.</div></div>
+
+<div class="card"><h3>10 · Exam-style question</h3>
+<p><b>Question:</b> Describe the main characteristics of AI.</p>
+<button onclick="showA('a5')">Show mark-point model</button>
+<div class="answer" id="a5">AI systems involve the collection of data and rules for using that data, the ability to reason, and can include the ability to learn and adapt.</div></div>
+
+<div class="card"><h3>11 · Common mistakes</h3>
+<ul><li>Defining AI as simply “robots”.</li><li>Assuming every automated system is AI.</li><li>Saying AI is exactly the same as human intelligence.</li><li>Forgetting the role of data and rules.</li><li>Saying every AI system must learn; the syllabus says AI <b>can include</b> learning and adaptation.</li></ul></div>
+
+<div class="card"><h3>12 · Self-assessment</h3>
+<p>Can you define AI and describe its main characteristics without confusing it with ordinary automation?</p>
+<button onclick="confidence('ready')">🟢 Yes</button><button onclick="confidence('practice')">🟡 More practice</button><button onclick="confidence('revise')">🔴 Need revision</button>
+<div class="score" id="confidence"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 10 · Introduction to Artificial Intelligence.</div>
+</div>
+</section>
+</main>
+
+<script>
+function showA(id){document.getElementById(id).style.display='block'}
+function checkQ(btn,correct,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(correct?'correct':'wrong');
+ const m={
+ q1:correct?'✓ Correct — that is the Cambridge definition of AI.':'✗ AI is not simply any electrical computer system.',
+ q2:correct?'✓ Correct — data provides information used in processing, rules and reasoning.':'✗ Data still has to be processed and used by the system.',
+ q3:correct?'✓ Correct — some AI systems can automatically adapt their processes and/or data.':'✗ Ordinary automation does not automatically imply learning.'
+ };
+ document.getElementById(id).textContent=m[id]
+}
+function confidence(v){
+ const m={
+ ready:'Excellent — you can define AI and distinguish it from ordinary automation.',
+ practice:'Good. Practise the four key ideas: data, rules, reasoning, learning/adaptation.',
+ revise:'Remember: AI simulates intelligent behaviour using data and rules; it can include reasoning and learning/adaptation.'
+ };
+ document.getElementById('confidence').textContent=m[v]
+}
+</script>
+</body>
+</html>

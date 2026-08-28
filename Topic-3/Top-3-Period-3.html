@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 3 | Period 3</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--glass:rgba(255,255,255,.76)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#ffffff55;backdrop-filter:blur(12px);border-bottom:1px solid #fff9}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0;font-size:13px;font-weight:600}
+.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}
+.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:800;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid #fff9;border-radius:22px;box-shadow:0 12px 30px #082b5928;overflow:hidden;display:flex;flex-direction:column}
+.panehead{padding:15px 20px;background:#082b59f5;color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:#fffdf5eb;border:1px solid #082b5922;border-radius:16px;padding:16px;margin-bottom:15px}
+.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}
+.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}
+.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.perf{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:12px 0}.perf div{background:#f7f2df;border:1px solid #d9c98f;border-radius:13px;padding:12px;text-align:center}.perf b{display:block;font-size:20px;margin-bottom:4px}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#ffffff95;border-radius:16px;margin:15px 0}
+.node{padding:13px 15px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:25px;font-weight:900}.tag{padding:10px 13px;border-radius:12px;background:var(--gold2);font-weight:900}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}
+.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}.perf{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div>
+<h1>IGCSE Computer Science 0984</h1><p>Topic 3 — Hardware · Period 3</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>CPU performance · cores, cache and clock</small></div>
+<div class="content">
+
+<div class="card">
+<span class="time">Lesson overview</span>
+<h3>Period 3 · CPU Performance</h3>
+<p>This lesson builds on the CPU architecture studied in Periods 1–2. Students now investigate three factors that can affect CPU performance: <b>number of cores, cache size and clock speed</b>.</p>
+<div class="callout"><b>Success criteria:</b> Students can define a CPU core, cache and clock speed, and explain how increasing the number of cores, cache size or clock speed can affect performance.</div>
+<p>Cambridge specifically requires students to understand cores, cache and clock in a CPU and explain how they can affect CPU performance. citeturn0search12</p>
+</div>
+
+<div class="card">
+<span class="time">My teaching route</span>
+<h3>Do not reduce performance to “GHz = faster”</h3>
+<ol>
+<li>Retrieve the CPU's role and FDE cycle.</li>
+<li>Introduce a <b>core</b> as a processing unit within a CPU.</li>
+<li>Explain how multiple cores can allow more instructions/tasks to be processed at the same time.</li>
+<li>Introduce <b>cache</b> as fast memory close to/within the CPU.</li>
+<li>Explain how a larger cache can reduce the need to access slower main memory.</li>
+<li>Introduce <b>clock speed</b> as the number of clock cycles per second.</li>
+<li>Explain why clock speed is useful but not the only factor determining performance.</li>
+</ol>
+</div>
+
+<div class="card">
+<span class="time">0–7 min · Retrieval</span>
+<h3>What are we trying to make faster?</h3>
+<div class="flow"><div class="node">FETCH</div><div class="arrow">→</div><div class="node">DECODE</div><div class="arrow">→</div><div class="node">EXECUTE</div><div class="arrow">↻</div></div>
+<p>Ask: <b>What determines how quickly a CPU can carry out its work?</b></p>
+<div class="callout">Several factors affect performance. Today we focus on <b>cores, cache and clock speed</b>.</div>
+</div>
+
+<div class="card">
+<span class="time">7–17 min · Teach</span>
+<h3>1 · CPU cores</h3>
+<p>A <b>core</b> is an individual processing unit within a CPU. A CPU can contain one or more cores.</p>
+<div class="perf">
+<div><b>1</b>Single-core</div>
+<div><b>2</b>Dual-core</div>
+<div><b>4+</b>Multi-core</div>
+</div>
+<p>Multiple cores can allow a CPU to work on more than one instruction stream/task at the same time, particularly when software and the operating system can use the available cores effectively.</p>
+<div class="callout"><b>Exam wording:</b> More cores can increase performance because more processing can be carried out concurrently.</div>
+</div>
+
+<div class="card">
+<span class="time">17–27 min · Teach</span>
+<h3>2 · CPU cache</h3>
+<p><b>Cache</b> is very fast memory used to store frequently or recently needed instructions and data so the CPU can access them quickly.</p>
+<div class="flow"><div class="node">CPU</div><div class="arrow">↔</div><div class="tag">CACHE<br>very fast</div><div class="arrow">↔</div><div class="node">RAM<br>slower</div></div>
+<p>A larger cache can store more frequently used data/instructions close to the CPU. This can reduce the number of slower accesses to RAM and improve performance.</p>
+<div class="callout"><b>Key idea:</b> Cache does not replace RAM. It helps the CPU obtain frequently needed information faster.</div>
+</div>
+
+<div class="card">
+<span class="time">27–36 min · Teach</span>
+<h3>3 · Clock speed</h3>
+<p>The CPU clock provides regular timing signals for CPU operations. <b>Clock speed</b> is the number of clock cycles per second and is commonly measured in <b>hertz (Hz)</b>, such as GHz.</p>
+<div class="flow"><div class="tag">1 GHz</div><div class="arrow">=</div><div class="node">1 billion<br>cycles/second</div></div>
+<p>A higher clock speed can allow a CPU to perform more cycles per second, which can increase performance when other factors are comparable.</p>
+<div class="callout"><b>Important:</b> A higher clock speed does not automatically mean every CPU is faster. Architecture, number of cores, cache and the workload also matter.</div>
+</div>
+
+<div class="card">
+<span class="time">36–43 min · Compare</span>
+<h3>How the three factors affect performance</h3>
+<table>
+<tr><th>Factor</th><th>Meaning</th><th>Possible performance effect</th></tr>
+<tr><td><b>Cores</b></td><td>Individual processing units in a CPU.</td><td>More cores can allow more work to be processed concurrently.</td></tr>
+<tr><td><b>Cache</b></td><td>Very fast memory holding frequently/recently needed data and instructions.</td><td>Larger cache can reduce slower RAM accesses.</td></tr>
+<tr><td><b>Clock speed</b></td><td>Number of clock cycles per second.</td><td>Higher speed can allow more cycles per second.</td></tr>
+</table>
+</div>
+
+<div class="card">
+<span class="time">43–47 min · Application</span>
+<h3>CPU A vs CPU B</h3>
+<p><b>CPU A:</b> 2 cores, 2.8 GHz, smaller cache<br><b>CPU B:</b> 4 cores, 2.6 GHz, larger cache</p>
+<p>Which CPU is automatically faster?</p>
+<div class="callout"><b>Answer:</b> You cannot decide from clock speed alone. CPU B has more cores and a larger cache, while CPU A has the higher clock speed. The actual workload and CPU architecture also affect the result.</div>
+</div>
+
+<div class="card">
+<span class="time">47–50 min · Exit ticket</span>
+<h3>Three sentences to remember</h3>
+<div class="callout"><b>Cores:</b> more cores can allow more processing to occur concurrently.</div>
+<div class="callout"><b>Cache:</b> more cache can reduce slower accesses to RAM.</div>
+<div class="callout"><b>Clock:</b> higher clock speed means more clock cycles per second, which can improve performance when other factors are comparable.</div>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+Topic 3 · Hardware · Period 3 · CPU performance.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card">
+<h3>🧭 Your learning route</h3>
+<div class="progress"><span class="active">1. Cores</span><span>2. Cache</span><span>3. Clock</span><span>4. Compare</span><span>5. Test</span></div>
+<p>Today we answer one question: <b>What can make a CPU perform better?</b></p>
+</div>
+
+<div class="card">
+<h3>🎯 Learning goals</h3>
+<ul><li>Define a CPU core.</li><li>Explain how the number of cores can affect performance.</li><li>Explain the purpose of cache and how cache size can affect performance.</li><li>Define clock speed and explain its effect on performance.</li><li>Explain why clock speed alone is not enough to compare CPUs.</li></ul>
+</div>
+
+<div class="card">
+<h3>1 · Cores</h3>
+<p>Imagine the CPU as a team of workers. A <b>core</b> is an individual processing unit that can carry out processing.</p>
+<div class="flow"><div class="node">1 CORE<br>one processing unit</div><div class="arrow">→</div><div class="node">4 CORES<br>four processing units</div></div>
+<div class="callout"><b>Performance:</b> More cores can allow more processing to take place at the same time, especially when software can use multiple cores.</div>
+</div>
+
+<div class="card">
+<h3>2 · Interactive core check</h3>
+<p>Which statement is most accurate?</p>
+<button class="option" onclick="checkP3(this,true,'q1p3')">More cores can allow more processing to occur concurrently.</button>
+<button class="option" onclick="checkP3(this,false,'q1p3')">More cores always make every single program exactly four times faster.</button>
+<div class="score" id="q1p3"></div>
+</div>
+
+<div class="card">
+<h3>3 · Cache</h3>
+<p>Cache is <b>very fast memory</b> used by the CPU to hold data and instructions that are frequently or recently needed.</p>
+<div class="flow"><div class="node">CPU</div><div class="arrow">→</div><div class="tag">FAST CACHE</div><div class="arrow">→</div><div class="node">RAM</div></div>
+<p>If information is already in cache, the CPU can access it faster than if it has to fetch it from RAM.</p>
+<div class="callout"><b>Therefore:</b> A larger cache can improve performance because more useful information can be kept close to the CPU.</div>
+</div>
+
+<div class="card">
+<h3>4 · Interactive cache check</h3>
+<p>Why can a larger cache improve CPU performance?</p>
+<button class="option" onclick="checkP3(this,true,'q2p3')">It can store more frequently needed data/instructions close to the CPU, reducing slower RAM accesses.</button>
+<button class="option" onclick="checkP3(this,false,'q2p3')">It permanently replaces secondary storage.</button>
+<div class="score" id="q2p3"></div>
+</div>
+
+<div class="card">
+<h3>5 · Clock speed</h3>
+<p>The CPU's clock provides timing signals. <b>Clock speed</b> tells us how many cycles occur each second.</p>
+<div class="flow"><div class="tag">GHz</div><div class="arrow">→</div><div class="node">billions of<br>cycles/second</div></div>
+<p>For example, <b>3 GHz</b> means approximately 3 billion clock cycles per second.</p>
+<div class="callout"><b>Performance:</b> A higher clock speed can mean more cycles per second, provided the CPUs are otherwise comparable.</div>
+</div>
+
+<div class="card">
+<h3>6 · Interactive clock check</h3>
+<p>What does 2 GHz mean?</p>
+<button class="option" onclick="checkP3(this,true,'q3p3')">Approximately 2 billion clock cycles per second.</button>
+<button class="option" onclick="checkP3(this,false,'q3p3')">2 million instructions are always completed every second.</button>
+<div class="score" id="q3p3"></div>
+</div>
+
+<div class="card">
+<h3>7 · Do not compare CPUs using clock speed alone</h3>
+<table>
+<tr><th>CPU</th><th>Cores</th><th>Clock</th><th>Cache</th></tr>
+<tr><td>A</td><td>2</td><td>3.2 GHz</td><td>Smaller</td></tr>
+<tr><td>B</td><td>4</td><td>2.8 GHz</td><td>Larger</td></tr>
+</table>
+<p>CPU A has the higher clock speed, but CPU B has more cores and a larger cache. Therefore, <b>clock speed alone cannot determine which CPU will perform better</b>.</p>
+</div>
+
+<div class="card">
+<h3>8 · Exam practice</h3>
+<p><b>Question:</b> Explain how increasing the number of cores can affect CPU performance.</p>
+<button onclick="showP3('a1p3')">Show model answer</button>
+<div class="answer" id="a1p3">More cores provide more processing units, allowing more instructions/tasks to be processed concurrently, so performance can increase when software can use the additional cores.</div>
+<p><b>Question:</b> Explain how increasing cache size can affect CPU performance.</p>
+<button onclick="showP3('a2p3')">Show model answer</button>
+<div class="answer" id="a2p3">A larger cache can store more frequently/recently needed data and instructions close to the CPU, reducing slower accesses to RAM and potentially improving performance.</div>
+<p><b>Question:</b> Explain how clock speed can affect performance.</p>
+<button onclick="showP3('a3p3')">Show model answer</button>
+<div class="answer" id="a3p3">A higher clock speed means more clock cycles per second, so the CPU can potentially perform more processing cycles in a given time, when other factors are comparable.</div>
+</div>
+
+<div class="card">
+<h3>9 · Challenge</h3>
+<p>A student says: <i>“CPU X runs at 4.0 GHz, while CPU Y runs at 3.5 GHz, so CPU X must always be faster.”</i></p>
+<button onclick="showP3('challengeP3')">Evaluate the statement</button>
+<div class="answer" id="challengeP3">The statement is too simplistic. Clock speed is one performance factor. The number of cores, cache size, CPU architecture and the workload can also affect performance. CPU X may be faster for some tasks, but the clock speed alone does not prove it will always be faster.</div>
+</div>
+
+<div class="card">
+<h3>10 · Common exam mistakes</h3>
+<ul>
+<li>Writing that more cores always make a CPU exactly proportionally faster.</li>
+<li>Calling cache “secondary storage”.</li>
+<li>Confusing clock speed with the number of instructions completed per second.</li>
+<li>Assuming the CPU with the highest GHz must always be fastest.</li>
+<li>Forgetting to explain <b>why</b> a factor improves performance.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>11 · Self-assessment</h3>
+<p>How confident are you with CPU performance?</p>
+<button onclick="confidenceP3('ready')">🟢 I understand</button>
+<button onclick="confidenceP3('practice')">🟡 I need practice</button>
+<button onclick="confidenceP3('revise')">🔴 I need revision</button>
+<div class="score" id="confidenceP3"></div>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+Cores · Cache · Clock speed · CPU performance.</div>
+</div>
+</section>
+</main>
+
+<script>
+function checkP3(btn,c,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(c?'correct':'wrong');
+ const msg={
+ q1p3:c?'✓ Correct — more cores can allow more concurrent processing.':'✗ Not quite — extra cores do not guarantee a fixed speed-up for every program.',
+ q2p3:c?'✓ Correct — more useful data/instructions can be kept close to the CPU.':'✗ Not quite — cache supports faster access; it does not replace secondary storage.',
+ q3p3:c?'✓ Correct — 2 GHz is approximately 2 billion clock cycles per second.':'✗ Not quite — GHz measures clock cycles per second, not a guaranteed number of completed instructions.'
+ };
+ document.getElementById(id).textContent=msg[id];
+}
+function showP3(id){document.getElementById(id).style.display='block'}
+function confidenceP3(v){
+ const t={
+ ready:'Excellent — you can now explain the three main CPU performance factors.',
+ practice:'Good. Rehearse: cores = concurrent processing; cache = faster access to frequently needed data; clock = cycles per second.',
+ revise:'Revisit the three-factor comparison table and the CPU X vs CPU Y example.'
+ };
+ document.getElementById('confidenceP3').textContent=t[v];
+}
+</script>
+</body>
+</html>

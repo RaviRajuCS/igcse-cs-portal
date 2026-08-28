@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 20</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 20</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 20 · Topic 1 Consolidation</h3>
+      <p><b>Purpose:</b> Bring together the major ideas covered so far in Data Representation and prepare students for a formal Topic 1 assessment.</p>
+      <div class="callout"><b>Success criteria:</b> Students can move between number representation, character representation, sound representation, image representation, storage calculations and compression without confusing the key terms or formulas.</div>
+      <p><b>Prior learning:</b> Periods 1–19 of Topic 1.</p>
+      <p><b>Teacher focus:</b> Diagnose misconceptions, strengthen exam technique, and identify students who need targeted reteaching.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>The Topic 1 map</h3>
+      <ol>
+        <li><b>Number systems:</b> denary, binary, hexadecimal and conversions.</li>
+        <li><b>Text:</b> character sets, ASCII and Unicode.</li>
+        <li><b>Sound:</b> sampling, sample rate and sample resolution.</li>
+        <li><b>Images:</b> pixels, resolution and colour depth.</li>
+        <li><b>Storage:</b> bits, bytes and storage units.</li>
+        <li><b>Compression:</b> lossy, lossless and RLE.</li>
+      </ol>
+      <div class="callout"><b>Teaching principle:</b> students should explain relationships, not merely recall isolated definitions.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Rapid-fire Topic 1</h3>
+      <ol>
+        <li>How many bits are in a byte?</li>
+        <li>What is hexadecimal used for?</li>
+        <li>What is a character set?</li>
+        <li>What is sampling?</li>
+        <li>What does colour depth measure?</li>
+        <li>What is the purpose of compression?</li>
+        <li>What does RLE stand for?</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <span class="time">5–12 min · Number systems</span>
+      <h3>Conversion checkpoint</h3>
+      <p>Use these as quick board questions:</p>
+      <ul>
+        <li>Convert <b>45₁₀</b> to binary.</li>
+        <li>Convert <b>101101₂</b> to denary.</li>
+        <li>Convert <b>2F₁₆</b> to denary.</li>
+        <li>Convert <b>58₁₀</b> to hexadecimal.</li>
+      </ul>
+      <div class="callout"><b>Teacher check:</b> ask students to show working. A correct answer without a reliable method is not enough for a consolidation lesson.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">12–19 min · Text</span>
+      <h3>ASCII and Unicode checkpoint</h3>
+      <ol>
+        <li>How many bits does standard ASCII use?</li>
+        <li>How many codes does 7-bit ASCII provide?</li>
+        <li>What is ASCII 65?</li>
+        <li>Why is Unicode needed?</li>
+      </ol>
+      <div class="callout"><b>Common misconception:</b> Unicode is not “just another binary system”. It is a much larger character set.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">19–27 min · Sound</span>
+      <h3>Sound checkpoint</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Term</th><th style="padding:8px;background:#082b59;color:white">Meaning</th></tr>
+        <tr><td style="padding:7px">Sampling</td><td style="padding:7px">Taking measurements of an analogue sound signal at regular intervals</td></tr>
+        <tr><td style="padding:7px">Sample rate</td><td style="padding:7px">Number of samples taken per second</td></tr>
+        <tr><td style="padding:7px">Sample resolution</td><td style="padding:7px">Number of bits used for each sample</td></tr>
+      </table>
+      <p><b>Calculation:</b> sample rate × sample resolution × duration = raw file size in bits.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">27–34 min · Images</span>
+      <h3>Image checkpoint</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Term</th><th style="padding:8px;background:#082b59;color:white">Meaning</th></tr>
+        <tr><td style="padding:7px">Pixel</td><td style="padding:7px">A picture element in a bitmap image</td></tr>
+        <tr><td style="padding:7px">Resolution</td><td style="padding:7px">Number of pixels, commonly width × height</td></tr>
+        <tr><td style="padding:7px">Colour depth</td><td style="padding:7px">Bits used to represent colour information</td></tr>
+      </table>
+      <p><b>Calculation:</b> width × height × colour depth = raw image size in bits.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">34–40 min · Compression</span>
+      <h3>Compression checkpoint</h3>
+      <ul>
+        <li><b>Compression:</b> reduces file size.</li>
+        <li><b>Lossy:</b> permanently removes some data.</li>
+        <li><b>Lossless:</b> reduces size without permanent loss of data.</li>
+        <li><b>RLE:</b> represents consecutive repeated values using run information.</li>
+      </ul>
+      <div class="callout"><b>Exam trap:</b> RLE does not count all occurrences of a value. It counts consecutive runs.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">40–47 min · Mixed assessment</span>
+      <h3>Mini Topic 1 Test</h3>
+      <ol>
+        <li>Convert 37₁₀ to binary.</li>
+        <li>State the number of bits in a standard ASCII code.</li>
+        <li>Explain why Unicode is needed.</li>
+        <li>Define sample rate.</li>
+        <li>An image is 500 × 400 pixels with 8-bit colour depth. Calculate its size in bytes.</li>
+        <li>Explain one reason for compressing a file.</li>
+        <li>Encode <b>AAAAABBBCC</b> using RLE.</li>
+      </ol>
+      <div class="callout"><b>Teacher strategy:</b> let students work independently first, then review each answer by discussing the method rather than simply displaying the answer.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>Readiness check</h3>
+      <ol>
+        <li>Which Topic 1 area are you strongest in?</li>
+        <li>Which area needs another explanation?</li>
+        <li>Can you calculate both sound and image file sizes?</li>
+      </ol>
+      <div class="callout"><b>Next stage:</b> use the results of this consolidation to target revision before the formal Topic 1 assessment.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 20 consolidates the major Topic 1 concepts and provides a diagnostic checkpoint before formal assessment.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Number systems</span>
+        <span>3. Text</span><span>4. Sound</span>
+        <span>5. Images</span><span>6. Compression</span>
+      </div>
+      <p>This is your <b>Topic 1 checkpoint</b>. Try the questions yourself before revealing any answers.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 What should you know?</h3>
+      <ul>
+        <li>Binary, denary and hexadecimal representation.</li>
+        <li>Character sets, ASCII and Unicode.</li>
+        <li>Sampling, sample rate and sample resolution.</li>
+        <li>Pixels, image resolution and colour depth.</li>
+        <li>Storage-unit conversions.</li>
+        <li>Compression, lossy, lossless and RLE.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · Number systems</h3>
+      <p>Try these:</p>
+      <ol>
+        <li>45₁₀ → binary</li>
+        <li>101101₂ → denary</li>
+        <li>2F₁₆ → denary</li>
+        <li>58₁₀ → hexadecimal</li>
+      </ol>
+      <button onclick="show('answers20a')">Reveal answers</button>
+      <div class="answer" id="answers20a">
+        45₁₀ = <b>101101₂</b><br>
+        101101₂ = <b>45₁₀</b><br>
+        2F₁₆ = <b>47₁₀</b><br>
+        58₁₀ = <b>3A₁₆</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2 · Text</h3>
+      <p><b>Q1:</b> Standard ASCII uses:</p>
+      <button class="option" onclick="check20(this,true,'q1s20')">7 bits</button>
+      <button class="option" onclick="check20(this,false,'q1s20')">8 bits</button>
+      <button class="option" onclick="check20(this,false,'q1s20')">16 bits</button>
+      <div class="score" id="q1s20"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> Why is Unicode needed?</p>
+      <button class="option" onclick="check20(this,true,'q2s20')">To represent a much larger range of characters.</button>
+      <button class="option" onclick="check20(this,false,'q2s20')">To increase processor speed.</button>
+      <div class="score" id="q2s20"></div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Sound</h3>
+      <p>Complete:</p>
+      <div class="callout"><b>Raw sound size in bits = __________ × __________ × __________</b></div>
+      <button onclick="show('answers20b')">Reveal answer</button>
+      <div class="answer" id="answers20b">
+        <b>sample rate × sample resolution × duration</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Image</h3>
+      <p>An image is 500 × 400 pixels with 8-bit colour depth. Calculate the size in bytes.</p>
+      <button onclick="show('answers20c')">Reveal answer</button>
+      <div class="answer" id="answers20c">
+        Pixels = 500 × 400 = 200,000.<br>
+        Bits = 200,000 × 8 = 1,600,000 bits.<br>
+        Bytes = 1,600,000 ÷ 8 = <b>200,000 bytes</b>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Compression</h3>
+      <p><b>Q3:</b> Which method permanently removes some data?</p>
+      <button class="option" onclick="check20(this,true,'q3s20')">Lossy compression</button>
+      <button class="option" onclick="check20(this,false,'q3s20')">Lossless compression</button>
+      <div class="score" id="q3s20"></div>
+
+      <p style="margin-top:15px"><b>Q4:</b> What does RLE use to represent a run?</p>
+      <button class="option" onclick="check20(this,true,'q4s20')">A count and a value</button>
+      <button class="option" onclick="check20(this,false,'q4s20')">Only the value</button>
+      <div class="score" id="q4s20"></div>
+    </div>
+
+    <div class="card">
+      <h3>6 · RLE challenge</h3>
+      <p>Encode:</p>
+      <div class="binary">AAAAABBBCC</div>
+      <button onclick="show('answers20d')">Reveal answer</button>
+      <div class="answer" id="answers20d">
+        <b>5A 3B 2C</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Mixed mini-test</h3>
+      <ol>
+        <li>Convert 37₁₀ to binary.</li>
+        <li>State the number of bits in standard ASCII.</li>
+        <li>Define sample rate.</li>
+        <li>Define colour depth.</li>
+        <li>State one benefit of compression.</li>
+      </ol>
+      <button onclick="show('answers20e')">Reveal model answers</button>
+      <div class="answer" id="answers20e">
+        37₁₀ = <b>100101₂</b><br>
+        Standard ASCII = <b>7 bits</b><br>
+        Sample rate = <b>number of samples taken per second</b><br>
+        Colour depth = <b>number of bits used to represent colour information</b><br>
+        Compression can reduce <b>storage space, transmission time or bandwidth requirements</b>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Exam technique</h3>
+      <ul>
+        <li>Read the unit requested before calculating.</li>
+        <li>Show working for multi-step calculations.</li>
+        <li>Use the exact terminology from the question.</li>
+        <li>For “explain” questions, give a reason and its consequence.</li>
+        <li>For RLE, identify <b>consecutive</b> runs.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>9 · Topic 1 readiness</h3>
+      <p>How ready are you?</p>
+      <button onclick="confidence20('confident')">🟢 Ready for assessment</button>
+      <button onclick="confidence20('okay')">🟡 Almost ready</button>
+      <button onclick="confidence20('need')">🔴 I need revision</button>
+      <div class="score" id="confidence20"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Topic 1 consolidation and assessment readiness.
+    </div>>>
+  </div>
+</section>
+</main>
+
+<script>
+function check20(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1s20:correct?'✓ Correct — standard ASCII uses 7 bits.':'✗ Not quite. Standard ASCII is a 7-bit character set.',
+    q2s20:correct?'✓ Correct — Unicode provides a much larger character repertoire.':'✗ Not quite. Unicode is about representing a much wider range of characters.',
+    q3s20:correct?'✓ Correct — lossy compression permanently removes some data.':'✗ Not quite. Lossless compression does not permanently remove data.',
+    q4s20:correct?'✓ Correct — RLE stores a count and value for each run.':'✗ Not quite. A run needs its count and value.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence20(v){
+  const text={
+    confident:'Excellent — you are ready for the formal Topic 1 assessment.',
+    okay:'Good. Review the areas where you hesitated before the assessment.',
+    need:'That is useful information. Use the previous Topic 1 periods for targeted revision.'
+  };
+  document.getElementById('confidence20').textContent=text[v];
+}
+</script>
+</body>
+</html>

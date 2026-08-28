@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 17</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 17</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 17 · Data Compression</h3>
+      <p><b>Cambridge focus:</b> Topic 1.3 introduces the purpose and need for data compression. Compression reduces file size, which can reduce bandwidth requirements, storage requirements and transmission time. Students also begin to distinguish lossy and lossless compression. </p>
+      <div class="callout"><b>Success criteria:</b> Students can define compression, explain why compression is needed, identify practical benefits, and distinguish lossy from lossless compression at a conceptual level.</div>
+      <p><b>Prior learning:</b> Image and sound file-size calculations.</p>
+      <p><b>Key vocabulary:</b> compression, compressed file, bandwidth, storage space, transmission time, lossy, lossless, redundant data, original data.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>The big idea</h3>
+      <div class="callout"><b>Compression reduces the size of a file.</b></div>
+      <ul>
+        <li>Less storage space required</li>
+        <li>Less data needs to travel across a network</li>
+        <li>Shorter transmission time</li>
+        <li>Lower bandwidth requirement</li>
+      </ul>
+      <p>Begin with a real-life analogy: remove unnecessary repetition from a message without changing what the receiver needs to understand.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Why are files large?</h3>
+      <ol>
+        <li>What makes a bitmap image larger?</li>
+        <li>What makes a sound file larger?</li>
+        <li>Why might a large file be inconvenient to send?</li>
+        <li>What is bandwidth?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> If we can reduce the amount of data in a file, we can make storage and transmission more efficient.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–13 min · Discover</span>
+      <h3>What is compression?</h3>
+      <p><b>Compression</b> is the process of reducing the size of a file.</p>
+      <p>Compression is useful because large files require more storage and more data to be transferred.</p>
+      <div class="callout"><b>Compression does not mean “making the information disappear”.</b> The key question is what happens to the information during compression and decompression.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">13–21 min · Why do we need it?</span>
+      <h3>Three practical benefits</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Benefit</th><th style="padding:8px;background:#082b59;color:white">Why?</th></tr>
+        <tr><td style="padding:7px">Less storage</td><td style="padding:7px">The compressed file occupies less space.</td></tr>
+        <tr><td style="padding:7px">Faster transmission</td><td style="padding:7px">Fewer bits need to be sent.</td></tr>
+        <tr><td style="padding:7px">Less bandwidth</td><td style="padding:7px">The transfer requires less network capacity.</td></tr>
+      </table>
+      <div class="callout"><b>Exam connection:</b> when asked for the purpose of compression, give a benefit rather than simply repeating “it makes files smaller”.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">21–30 min · Teach</span>
+      <h3>Lossy vs lossless</h3>
+      <p>There are two important categories of compression:</p>
+      <div class="callout"><b>Lossy compression</b> permanently removes some data to reduce file size.</div>
+      <div class="callout"><b>Lossless compression</b> reduces file size without permanently losing data; the original data can be restored.</div>
+      <p>The Cambridge syllabus specifically requires students to understand both methods. </p>
+    </div>
+
+    <div class="card">
+      <span class="time">30–36 min · Examples</span>
+      <h3>Where might each be useful?</h3>
+      <ul>
+        <li><b>Lossy:</b> useful where a smaller file is more important than preserving every piece of original data.</li>
+        <li><b>Lossless:</b> useful where the original data must be recovered exactly.</li>
+      </ul>
+      <div class="callout"><b>Remember:</b> “lossy” refers to permanent data loss; “lossless” means the original data can be recovered.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">36–41 min · Compare</span>
+      <h3>Lossy vs lossless</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Feature</th><th style="padding:8px;background:#082b59;color:white">Lossy</th><th style="padding:8px;background:#082b59;color:white">Lossless</th></tr>
+        <tr><td style="padding:7px">Data removed?</td><td style="padding:7px">Yes, permanently</td><td style="padding:7px">No permanent loss</td></tr>
+        <tr><td style="padding:7px">Original restored exactly?</td><td style="padding:7px">No</td><td style="padding:7px">Yes</td></tr>
+        <tr><td style="padding:7px">Main idea</td><td style="padding:7px">Smaller size by removing data</td><td style="padding:7px">Smaller size without permanent data loss</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <span class="time">41–46 min · Assessment</span>
+      <h3>Cambridge-style questions</h3>
+      <ol>
+        <li>Define compression.</li>
+        <li>State two reasons why data is compressed.</li>
+        <li>Define lossy compression.</li>
+        <li>Define lossless compression.</li>
+        <li>State one difference between lossy and lossless compression.</li>
+      </ol>
+      <div class="callout"><b>Marking focus:</b> “lossless” must mean that the original data can be fully recovered.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">46–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>What is the purpose of compression?</li>
+        <li>What happens to data in lossy compression?</li>
+        <li>Can the original data be fully restored after lossless compression?</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> Period 18 can introduce <b>Run Length Encoding (RLE)</b> as the main lossless compression technique required by the syllabus.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 17 introduces the purpose and need for data compression and establishes the lossy/lossless distinction.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Compression</span>
+        <span>3. Benefits</span><span>4. Lossy</span>
+        <span>5. Lossless</span><span>6. Exit ticket</span>
+      </div>
+      <p>Today you will learn why computers compress files and the difference between <b>lossy</b> and <b>lossless</b> compression.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Define compression.</li>
+        <li>Explain why compression is needed.</li>
+        <li>Identify practical benefits of compression.</li>
+        <li>Define lossy compression.</li>
+        <li>Define lossless compression.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · What is compression?</h3>
+      <p><b>Compression</b> reduces the size of a file.</p>
+      <div class="callout">Smaller file → less storage space and less data to transmit.</div>
+    </div>
+
+    <div class="card">
+      <h3>2 · Why compress data?</h3>
+      <ul>
+        <li>Use less storage space.</li>
+        <li>Reduce the amount of data sent across a network.</li>
+        <li>Reduce transmission time.</li>
+        <li>Reduce bandwidth requirements.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>3 · Quick check</h3>
+      <p><b>Q1:</b> What is the main purpose of compression?</p>
+      <button class="option" onclick="check17(this,true,'q1s17')">Reduce file size</button>
+      <button class="option" onclick="check17(this,false,'q1s17')">Increase file size</button>
+      <button class="option" onclick="check17(this,false,'q1s17')">Change binary into decimal</button>
+      <div class="score" id="q1s17"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> Which is a benefit of a smaller file?</p>
+      <button class="option" onclick="check17(this,true,'q2s17')">Less transmission time</button>
+      <button class="option" onclick="check17(this,false,'q2s17')">More storage required</button>
+      <div class="score" id="q2s17"></div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Lossy compression</h3>
+      <p>Lossy compression reduces file size by <b>permanently removing some data</b>.</p>
+      <div class="callout"><b>Lossy → some original data is lost.</b></div>
+      <p>After decompression, the result is not exactly identical to the original data.</p>
+    </div>
+
+    <div class="card">
+      <h3>5 · Lossless compression</h3>
+      <p>Lossless compression reduces file size <b>without permanently losing data</b>.</p>
+      <div class="callout"><b>Lossless → original data can be restored exactly.</b></div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Quick check</h3>
+      <p><b>Q3:</b> Which type permanently removes some data?</p>
+      <button class="option" onclick="check17(this,true,'q3s17')">Lossy</button>
+      <button class="option" onclick="check17(this,false,'q3s17')">Lossless</button>
+      <div class="score" id="q3s17"></div>
+
+      <p style="margin-top:15px"><b>Q4:</b> Which type can restore the original data exactly?</p>
+      <button class="option" onclick="check17(this,false,'q4s17')">Lossy</button>
+      <button class="option" onclick="check17(this,true,'q4s17')">Lossless</button>
+      <div class="score" id="q4s17"></div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Compare</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Lossy</th><th style="padding:8px;background:#082b59;color:white">Lossless</th></tr>
+        <tr><td style="padding:7px">Permanent data removal</td><td style="padding:7px">No permanent data removal</td></tr>
+        <tr><td style="padding:7px">Original cannot be restored exactly</td><td style="padding:7px">Original can be restored exactly</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>8 · Scenario challenge</h3>
+      <p>A company must send a huge collection of files over a slow network. Give two reasons why compression could help.</p>
+      <button onclick="show('answers17a')">Show model answer</button>
+      <div class="answer" id="answers17a">
+        Compression reduces the amount of data that needs to be transmitted, so transmission time can be shorter and less bandwidth is required. It also reduces the storage space needed.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Exam practice</h3>
+      <p><b>Question:</b> Explain the difference between lossy and lossless compression.</p>
+      <button onclick="show('exam17')">Show model answer</button>
+      <div class="answer" id="exam17">
+        Lossy compression permanently removes some data to reduce file size, so the original cannot be recovered exactly. Lossless compression reduces the file size without permanently losing data, so the original can be fully restored.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Common mistakes</h3>
+      <ul>
+        <li>Thinking compression always means losing data.</li>
+        <li>Confusing “smaller file” with “lower quality” in every situation.</li>
+        <li>Forgetting that lossless compression allows exact recovery.</li>
+        <li>Giving only “smaller files” when asked for practical benefits.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>11 · Self-assessment</h3>
+      <p>Choose your confidence:</p>
+      <button onclick="confidence17('confident')">🟢 I understand compression</button>
+      <button onclick="confidence17('okay')">🟡 I need more practice</button>
+      <button onclick="confidence17('need')">🔴 I need help</button>
+      <div class="score" id="confidence17"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Data compression: purpose, benefits, lossy and lossless methods.
+    </div>>>
+  </div>
+</section>
+</main>
+
+<script>
+function check17(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1s17:correct?'✓ Correct — compression reduces file size.':'✗ Not quite. The main purpose is to reduce file size.',
+    q2s17:correct?'✓ Correct — less data can mean shorter transmission time.':'✗ Not quite. Think about the benefits of sending less data.',
+    q3s17:correct?'✓ Correct — lossy compression permanently removes some data.':'✗ Not quite. Lossy means some data is permanently removed.',
+    q4s17:correct?'✓ Correct — lossless compression allows exact restoration.':'✗ Not quite. Lossless means the original can be restored.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence17(v){
+  const text={
+    confident:'Excellent — you are ready to learn RLE.',
+    okay:'Good. Practise the difference between lossy and lossless.',
+    need:'That is useful information. Review the two definitions with your teacher.'
+  };
+  document.getElementById('confidence17').textContent=text[v];
+}
+</script>
+</body>
+</html>

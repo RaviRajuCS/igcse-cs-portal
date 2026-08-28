@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 9</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 9</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 9 · Converting Two's Complement</h3>
+      <p><b>Cambridge focus:</b> Topic 1.1 Number systems — representing negative integers using two's complement and understanding the range available for a fixed number of bits. fileciteturn6file0L44-L50</p>
+      <div class="callout"><b>Success criteria:</b> Students can convert a negative denary integer to an n-bit two's complement representation, convert a two's complement bit pattern back to denary, and check whether a requested value is within the available range.</div>
+      <p><b>Prior learning:</b> Period 8 — sign bit, two's complement place values and range.</p>
+      <p><b>Key vocabulary:</b> two's complement, signed integer, negative, invert, add one, sign bit, magnitude, range, fixed-width.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>Before students enter</h3>
+      <ul>
+        <li>Keep the 8-bit two's complement place-value table visible.</li>
+        <li>Prepare the conversion sequence: positive magnitude → binary → invert bits → add 1.</li>
+        <li>Use fixed-width binary throughout. For an 8-bit task, every intermediate representation must remain 8 bits.</li>
+        <li>Prepare one positive example and one negative example.</li>
+        <li>Remind students to check that the requested denary value lies within −128 to +127 for 8 bits.</li>
+      </ul>
+      <div class="callout"><b>Teaching principle:</b> make the conversion algorithm procedural and checkable, but always connect it back to the meaning of the sign bit and fixed-width representation.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Reconnect with Period 8</h3>
+      <ol>
+        <li>What is the 8-bit two's complement range?</li>
+        <li>What does a left-most bit of 1 indicate?</li>
+        <li>What is 00000101 in two's complement?</li>
+        <li>What does 11111111 represent?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> We now know what the representation means. Today we learn how to create the representation for a negative denary value.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–15 min · Model</span>
+      <h3>Negative denary → two's complement</h3>
+      <p>Use this four-step method for a negative value:</p>
+      <ol>
+        <li>Find the positive magnitude.</li>
+        <li>Write it in binary using the required number of bits.</li>
+        <li>Invert every bit.</li>
+        <li>Add 1.</li>
+      </ol>
+      <p><b>Example: represent −5 using 8 bits.</b></p>
+      <p>+5 = <b>00000101</b></p>
+      <p>Invert → <b>11111010</b></p>
+      <p>Add 1 → <b>11111011</b></p>
+      <div class="callout"><b>Therefore −5 = 11111011₂</b> in 8-bit two's complement.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">15–24 min · Model</span>
+      <h3>Another example: −18</h3>
+      <p>Step 1: 18₁₀ = 00010010₂</p>
+      <p>Step 2: invert → 11101101₂</p>
+      <p>Step 3: add 1 → 11101110₂</p>
+      <div class="callout"><b>Answer:</b> −18 = 11101110₂</div>
+      <p><b>Verification:</b> −128 + 64 + 32 + 16 + 8 + 4 + 2 = −2? Check carefully: for 11101110, the 1 bits after the sign are 64 + 32 + 8 + 4 + 2 = 110; −128 + 110 = −18.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">24–33 min · Reverse conversion</span>
+      <h3>Two's complement → denary</h3>
+      <p>Use the two's complement place values directly. For an 8-bit number:</p>
+      <div class="weights">
+        <div>−128</div><div>64</div><div>32</div><div>16</div>
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p><b>Example:</b> 11100110₂</p>
+      <p>−128 + 64 + 32 + 4 + 2 = <b>−26</b>.</p>
+      <div class="callout"><b>Answer:</b> 11100110₂ = −26₁₀</div>
+    </div>
+
+    <div class="card">
+      <span class="time">33–39 min · Guided practice</span>
+      <h3>Think → Pair → Explain</h3>
+      <p><b>Denary → two's complement:</b></p>
+      <ol>
+        <li>−7₁₀</li>
+        <li>−12₁₀</li>
+        <li>−25₁₀</li>
+      </ol>
+      <p><b>Two's complement → denary:</b></p>
+      <ol start="4">
+        <li>11111010₂</li>
+        <li>11110000₂</li>
+        <li>10000001₂</li>
+      </ol>
+      <div class="callout"><b>Teacher move:</b> Require students to show the inversion and +1 steps for the first group.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">39–44 min · Range and checking</span>
+      <h3>Can the value fit?</h3>
+      <p>Before converting, check the range.</p>
+      <div class="callout"><b>8-bit two's complement: −128 to +127</b></div>
+      <p>So −129 cannot be represented in 8-bit two's complement, while −128 can.</p>
+      <p>Similarly, +128 cannot be represented as a positive 8-bit two's complement integer.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">44–47 min · Assessment</span>
+      <h3>Mini-whiteboard check</h3>
+      <ol>
+        <li>Convert −6 to 8-bit two's complement.</li>
+        <li>Convert 11111001₂ to denary.</li>
+        <li>Can −140 be represented in 8-bit two's complement?</li>
+      </ol>
+      <div class="callout"><b>Look for:</b> students who forget the final +1, use variable-width binary, or apply unsigned place values to a negative pattern.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>Convert −5 to 8-bit two's complement.</li>
+        <li>Convert 11111011₂ to denary.</li>
+        <li>State the 8-bit two's complement range.</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> Period 10 can consolidate number systems and introduce mixed conversion practice before moving further through Data Representation.</div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 9 teaches the full two's complement conversion procedure and reverse conversion, following the conceptual foundation established in Period 8.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Negative values</span>
+        <span>3. Convert</span><span>4. Reverse convert</span>
+        <span>5. Range</span><span>6. Exit ticket</span>
+      </div>
+      <p>Today you will learn how to <b>create</b> and <b>decode</b> two's complement representations.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Convert negative denary integers into fixed-width two's complement.</li>
+        <li>Convert two's complement binary back into denary.</li>
+        <li>Use the invert-and-add-one method correctly.</li>
+        <li>Check whether a value is inside the available range.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · The conversion method</h3>
+      <p>To represent a negative denary number:</p>
+      <ol>
+        <li>Write the positive magnitude in binary.</li>
+        <li>Use the required number of bits.</li>
+        <li>Invert every bit.</li>
+        <li>Add 1.</li>
+      </ol>
+      <div class="callout"><b>Shortcut to remember:</b> Magnitude → Invert → Add 1.</div>
+    </div>
+
+    <div class="card">
+      <h3>2 · Worked example: −5</h3>
+      <p>+5 = <b>00000101</b></p>
+      <p>Invert = <b>11111010</b></p>
+      <p>Add 1 = <b>11111011</b></p>
+      <div class="callout"><b>−5 = 11111011₂</b></div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Worked example: −18</h3>
+      <p>18 = 00010010</p>
+      <p>Invert → 11101101</p>
+      <p>Add 1 → <b>11101110</b></p>
+      <div class="callout"><b>−18 = 11101110₂</b></div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Quick check</h3>
+      <p><b>Q1:</b> What is the first step when converting −7?</p>
+      <button class="option" onclick="studentCheck9(this,true,'q1s9')">Write +7 in binary</button>
+      <button class="option" onclick="studentCheck9(this,false,'q1s9')">Invert −7</button>
+      <button class="option" onclick="studentCheck9(this,false,'q1s9')">Add 1 to −7</button>
+      <div class="score" id="q1s9"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> After inverting the bits, what comes next?</p>
+      <button class="option" onclick="studentCheck9(this,false,'q2s9')">Divide by 2</button>
+      <button class="option" onclick="studentCheck9(this,true,'q2s9')">Add 1</button>
+      <button class="option" onclick="studentCheck9(this,false,'q2s9')">Remove the sign bit</button>
+      <div class="score" id="q2s9"></div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Reverse conversion</h3>
+      <p>Use the two's complement place values:</p>
+      <div class="weights">
+        <div>−128</div><div>64</div><div>32</div><div>16</div>
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p><b>Example:</b> 11100110</p>
+      <p>−128 + 64 + 32 + 4 + 2 = <b>−26</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>6 · Practice — Denary → two's complement</h3>
+      <ol>
+        <li>−7</li>
+        <li>−12</li>
+        <li>−25</li>
+        <li>−64</li>
+      </ol>
+      <button onclick="show('answers9a')">Reveal answers</button>
+      <div class="answer" id="answers9a">
+        <b>Answers:</b><br>
+        −7 → 11111001<br>
+        −12 → 11110100<br>
+        −25 → 11100111<br>
+        −64 → 11000000
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Practice — two's complement → Denary</h3>
+      <ol>
+        <li>11111010</li>
+        <li>11110000</li>
+        <li>10000001</li>
+        <li>11000000</li>
+      </ol>
+      <button onclick="show('answers9b')">Reveal answers</button>
+      <div class="answer" id="answers9b">
+        <b>Answers:</b><br>
+        11111010 → −6<br>
+        11110000 → −16<br>
+        10000001 → −127<br>
+        11000000 → −64
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Check the range</h3>
+      <div class="callout"><b>8-bit two's complement = −128 to +127</b></div>
+      <p>Therefore:</p>
+      <ul>
+        <li>−128 → representable</li>
+        <li>−129 → not representable</li>
+        <li>+127 → representable</li>
+        <li>+128 → not representable as a positive value</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>9 · Challenge</h3>
+      <p>Convert <b>−100</b> into 8-bit two's complement. Show every step.</p>
+      <button onclick="show('challenge9')">Show model answer</button>
+      <div class="answer" id="challenge9">
+        +100 = 01100100<br>
+        Invert → 10011011<br>
+        Add 1 → <b>10011100</b><br>
+        Therefore −100 = 10011100₂.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Exam practice</h3>
+      <p><b>Question:</b> Explain how to represent −13 using 8-bit two's complement.</p>
+      <button onclick="show('exam9')">Show model answer</button>
+      <div class="answer" id="exam9">
+        13 = 00001101<br>
+        Invert → 11110010<br>
+        Add 1 → <b>11110011</b><br>
+        So −13 is represented as 11110011₂.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>11 · Common mistakes</h3>
+      <ul>
+        <li>Forgetting to use the required fixed number of bits.</li>
+        <li>Forgetting the final +1.</li>
+        <li>Adding 1 before inverting instead of after.</li>
+        <li>Using unsigned place values to decode a negative value.</li>
+        <li>Trying to represent a number outside the allowed range.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>12 · Self-assessment</h3>
+      <p>How confident are you now?</p>
+      <button onclick="confidence9('confident')">🟢 I can convert both ways</button>
+      <button onclick="confidence9('okay')">🟡 I need more practice</button>
+      <button onclick="confidence9('need')">🔴 I need help</button>
+      <div class="score" id="confidence9"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      <b>Source basis:</b> Cambridge IGCSE (9–1) Computer Science 0984 syllabus, 2026–2028, Topic 1.1; and <i>Cambridge IGCSE and O Level Computer Science, Second Edition</i>, Chapter 1. Content is presented as original teaching material.
+    </div>>
+  </div>
+</section>
+</main>
+
+<script>
+function studentCheck9(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  document.getElementById(id).textContent=correct?'✓ Correct!':'✗ Not quite. Remember: magnitude → invert → add 1.';
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence9(v){
+  const text={
+    confident:'Excellent — you can now convert two’s complement values both ways.',
+    okay:'Good. Practise the invert-and-add-one sequence again.',
+    need:'That is useful information. Work through the −5 example one step at a time.'
+  };
+  document.getElementById('confidence9').textContent=text[v];
+}
+</script>
+</body>
+</html>

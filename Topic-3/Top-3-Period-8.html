@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 3 | Period 8</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--glass:rgba(255,255,255,.76)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#ffffff55;backdrop-filter:blur(12px);border-bottom:1px solid #fff9}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0;font-size:13px;font-weight:600}
+.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}
+.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:800;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid #fff9;border-radius:22px;box-shadow:0 12px 30px #082b5928;overflow:hidden;display:flex;flex-direction:column}
+.panehead{padding:15px 20px;background:#082b59f5;color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:#fffdf5eb;border:1px solid #082b5922;border-radius:16px;padding:16px;margin-bottom:15px}
+.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}
+.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}
+.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.box{padding:13px;border-radius:13px;background:#f7f2df;border:1px solid #d9c98f}.box b{display:block;margin-bottom:5px}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#ffffff95;border-radius:16px;margin:15px 0}
+.node{padding:13px 15px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:25px;font-weight:900}.tag{padding:10px 13px;border-radius:12px;background:var(--gold2);font-weight:900}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}
+.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div>
+<h1>IGCSE Computer Science 0984</h1><p>Topic 3 — Hardware · Period 8</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>Secondary storage · permanence · choosing storage</small></div>
+<div class="content">
+<div class="card"><span class="time">Lesson overview</span><h3>Period 8 · Secondary Storage</h3>
+<p>This lesson introduces the second major category in <b>3.3 Data storage</b>: <b>secondary storage</b>. Students learn how it differs from primary storage, why it is necessary, and why it is used for more permanent storage of data.</p>
+<div class="callout"><b>Success criteria:</b> Students can define secondary storage, explain why it is needed, distinguish it from primary storage, and choose suitable secondary storage for a situation.</div>
+<p>The Cambridge 2026–2028 syllabus defines secondary storage as storage that is <b>not directly accessed by the CPU</b> and is necessary for more permanent storage of data. citeturn0search12</p></div>
+<div class="card"><span class="time">My teaching route</span><h3>Start with the key distinction</h3>
+<ol><li>Retrieve primary storage from Period 7.</li><li>Define secondary storage.</li><li>Contrast direct CPU access with indirect access.</li><li>Explain why computers need permanent storage.</li><li>Introduce the three storage technologies that will be studied next: magnetic, optical and solid-state.</li><li>Use real-world examples and selection scenarios.</li></ol>
+<div class="callout"><b>Core distinction:</b> Primary storage supports current processing; secondary storage provides more permanent storage of data.</div></div>
+<div class="card"><span class="time">0–7 min · Retrieval</span><h3>What happens when power is switched off?</h3>
+<div class="flow"><div class="node">RAM</div><div class="arrow">→</div><div class="tag">CONTENTS LOST</div></div>
+<div class="flow"><div class="node">SECONDARY STORAGE</div><div class="arrow">→</div><div class="tag">DATA RETAINED</div></div>
+<div class="callout">A computer needs somewhere to keep files and programs for later use. This is one of the reasons secondary storage is necessary.</div></div>
+<div class="card"><span class="time">7–17 min · Teach</span><h3>1 · What is secondary storage?</h3>
+<p><b>Secondary storage</b> is storage that is <b>not directly accessed by the CPU</b> and is used for more permanent storage of data.</p>
+<div class="grid"><div class="box"><b>More permanent</b>Data remains stored when the computer is switched off.</div><div class="box"><b>Large capacity</b>It can store many files, programs, media and backups.</div><div class="box"><b>Not directly accessed by CPU</b>Data must be transferred to primary storage for active processing.</div><div class="box"><b>Examples</b>HDD, optical discs, SSD, SD card and USB drive.</div></div></div>
+<div class="card"><span class="time">17–27 min · Compare</span><h3>2 · Primary vs secondary storage</h3>
+<table><tr><th>Primary storage</th><th>Secondary storage</th></tr><tr><td>Directly accessed by CPU.</td><td>Not directly accessed by CPU.</td></tr><tr><td>Used for current processing.</td><td>Used for more permanent storage.</td></tr><tr><td>Includes RAM and ROM.</td><td>Includes HDD, optical and solid-state storage.</td></tr><tr><td>RAM is volatile.</td><td>Designed to retain stored data when power is removed.</td></tr></table>
+</div>
+<div class="card"><span class="time">27–34 min · Teach</span><h3>3 · Why do we need secondary storage?</h3>
+<ul><li>To store files for later use.</li><li>To store applications and large collections of data.</li><li>To keep data when the computer is switched off.</li><li>To provide storage capacity beyond the immediate working memory of RAM.</li></ul>
+<div class="callout"><b>Example:</b> A student's photographs may be stored on an SSD or USB drive. They are not kept permanently in RAM.</div></div>
+<div class="card"><span class="time">34–41 min · Preview</span><h3>4 · Three secondary-storage technologies</h3>
+<div class="grid"><div class="box"><b>Magnetic</b>Uses magnetised areas to represent stored data. Example: HDD.</div><div class="box"><b>Optical</b>Uses laser-read/write patterns on optical discs. Examples: CD, DVD, Blu-ray.</div><div class="box"><b>Solid-state / flash</b>Uses electronic memory cells. Examples: SSD, SD card, USB drive.</div></div>
+<div class="callout">The detailed operation of these three technologies is covered in the next period. Today, know the categories and examples.</div></div>
+<div class="card"><span class="time">41–47 min · Apply</span><h3>5 · Choosing secondary storage</h3>
+<table><tr><th>Need</th><th>Possible choice</th><th>Reason</th></tr><tr><td>Large internal storage in a desktop</td><td>HDD or SSD</td><td>Large capacity internal storage.</td></tr><tr><td>Carry a small collection of files</td><td>USB drive</td><td>Portable solid-state storage.</td></tr><tr><td>Store photographs on a phone</td><td>SD card</td><td>Small removable flash storage.</td></tr><tr><td>Distribute a movie on a disc</td><td>DVD/Blu-ray</td><td>Optical media.</td></tr></table></div>
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>Four quick checks</h3>
+<ol><li>What is secondary storage?</li><li>Is secondary storage directly accessed by the CPU?</li><li>Why is it necessary?</li><li>Name the three storage technologies in this syllabus.</li></ol>
+<div class="callout"><b>Answers:</b> non-direct CPU storage for more permanent data · no · permanent storage · magnetic, optical, solid-state.</div></div>
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 3 · Hardware · Period 8 · Secondary storage.</div>
+</div></section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Secondary</span><span>2. Purpose</span><span>3. Technologies</span><span>4. Compare</span><span>5. Test</span></div><p>Today you move beyond working memory and learn where a computer keeps data for the longer term.</p></div>
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Define secondary storage.</li><li>Explain why secondary storage is needed.</li><li>Distinguish primary and secondary storage.</li><li>Identify magnetic, optical and solid-state storage.</li><li>Recognise common examples of each.</li></ul></div>
+<div class="card"><h3>1 · The key idea</h3><div class="flow"><div class="node">CPU</div><div class="arrow">↔</div><div class="tag">PRIMARY<br>STORAGE</div><div class="arrow">↔</div><div class="tag">SECONDARY<br>STORAGE</div></div><p>Secondary storage is <b>not directly accessed by the CPU</b>. Data needed for active processing is transferred into primary storage.</p></div>
+<div class="card"><h3>2 · Interactive definition</h3><p>Which statement best defines secondary storage?</p><button class="option" onclick="checkP8(this,true,'q1p8')">Storage not directly accessed by the CPU and used for more permanent storage of data.</button><button class="option" onclick="checkP8(this,false,'q1p8')">Storage directly accessed by the CPU that holds only the next instruction.</button><div class="score" id="q1p8"></div></div>
+<div class="card"><h3>3 · Why not just use RAM?</h3><p>RAM is excellent for current processing, but it is volatile. If power is removed, its contents are lost.</p><div class="callout"><b>Secondary storage solves the permanence problem.</b> Files can remain stored when the computer is switched off.</div><div class="flow"><div class="node">WRITE FILE</div><div class="arrow">→</div><div class="tag">SECONDARY STORAGE</div><div class="arrow">→</div><div class="node">POWER OFF</div><div class="arrow">→</div><div class="tag">FILE REMAINS</div></div></div>
+<div class="card"><h3>4 · Interactive comparison</h3><p>Which one is directly accessed by the CPU?</p><button class="option" onclick="checkP8(this,true,'q2p8')">Primary storage</button><button class="option" onclick="checkP8(this,false,'q2p8')">Secondary storage</button><div class="score" id="q2p8"></div>
+<p style="margin-top:15px">Which is intended for more permanent storage?</p><button class="option" onclick="checkP8(this,false,'q3p8')">Primary storage only</button><button class="option" onclick="checkP8(this,true,'q3p8')">Secondary storage</button><div class="score" id="q3p8"></div></div>
+<div class="card"><h3>5 · Three storage technologies</h3><table><tr><th>Technology</th><th>Examples</th></tr><tr><td><b>Magnetic</b></td><td>Hard disk drive (HDD)</td></tr><tr><td><b>Optical</b></td><td>CD, DVD, Blu-ray</td></tr><tr><td><b>Solid-state / flash</b></td><td>SSD, SD card, USB drive</td></tr></table></div>
+<div class="card"><h3>6 · Interactive technology check</h3><p>Which technology is used by an HDD?</p><button class="option" onclick="checkP8(this,true,'q4p8')">Magnetic storage</button><button class="option" onclick="checkP8(this,false,'q4p8')">Optical storage</button><button class="option" onclick="checkP8(this,false,'q4p8')">Solid-state storage</button><div class="score" id="q4p8"></div>
+<p style="margin-top:15px">Which technology includes CD, DVD and Blu-ray?</p><button class="option" onclick="checkP8(this,false,'q5p8')">Magnetic</button><button class="option" onclick="checkP8(this,true,'q5p8')">Optical</button><div class="score" id="q5p8"></div>
+<p style="margin-top:15px">Which technology includes SSD, SD card and USB drive?</p><button class="option" onclick="checkP8(this,true,'q6p8')">Solid-state / flash</button><button class="option" onclick="checkP8(this,false,'q6p8')">Optical</button><div class="score" id="q6p8"></div></div>
+<div class="card"><h3>7 · Scenario challenge</h3><p>A student wants to carry a small collection of files between computers. Which secondary-storage device would be suitable?</p><button onclick="showP8('a1p8')">Show model answer</button><div class="answer" id="a1p8">A USB drive is suitable because it is portable solid-state/flash storage and can hold files for transfer between computers.</div>
+<p>A family wants a large-capacity internal drive for a desktop computer. Name two suitable technologies.</p><button onclick="showP8('a2p8')">Show model answer</button><div class="answer" id="a2p8">A hard disk drive (HDD) or a solid-state drive (SSD).</div></div>
+<div class="card"><h3>8 · Exam practice</h3><p><b>Question:</b> State what is meant by secondary storage.</p><button onclick="showP8('a3p8')">Show model answer</button><div class="answer" id="a3p8">Storage that is not directly accessed by the CPU and is used for more permanent storage of data.</div>
+<p><b>Question:</b> Explain why a computer needs secondary storage.</p><button onclick="showP8('a4p8')">Show model answer</button><div class="answer" id="a4p8">It provides more permanent storage for programs, files and data so they can be retained when the computer is switched off.</div>
+<p><b>Question:</b> Give one example of each secondary-storage technology.</p><button onclick="showP8('a5p8')">Show model answer</button><div class="answer" id="a5p8">Magnetic: HDD. Optical: DVD. Solid-state: SSD/SD card/USB drive.</div></div>
+<div class="card"><h3>9 · Common exam mistakes</h3><ul><li>Saying secondary storage is directly accessed by the CPU.</li><li>Calling RAM secondary storage.</li><li>Forgetting that secondary storage is used for more permanent storage.</li><li>Mixing up optical discs and solid-state devices.</li><li>Giving an example without identifying its technology.</li></ul></div>
+<div class="card"><h3>10 · Self-assessment</h3><p>How confident are you with secondary storage?</p><button onclick="confidenceP8('ready')">🟢 I understand</button><button onclick="confidenceP8('practice')">🟡 I need practice</button><button onclick="confidenceP8('revise')">🔴 I need revision</button><div class="score" id="confidenceP8"></div></div>
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Secondary storage · Magnetic · Optical · Solid-state.</div>
+</div></section>
+</main>
+<script>
+function checkP8(btn,c,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');const m={q1p8:c?'✓ Correct — secondary storage is not directly accessed by the CPU and provides more permanent storage.':'✗ Not quite — direct CPU access describes primary storage.',q2p8:c?'✓ Correct — primary storage is directly accessed by the CPU.':'✗ Not quite — secondary storage is not directly accessed by the CPU.',q3p8:c?'✓ Correct — secondary storage provides more permanent storage.':'✗ Not quite — RAM is working/primary storage.',q4p8:c?'✓ Correct — HDD uses magnetic storage.':'✗ Not quite — HDD is a magnetic storage device.',q5p8:c?'✓ Correct — CD, DVD and Blu-ray are optical storage.':'✗ Not quite — those are optical media.',q6p8:c?'✓ Correct — SSD, SD card and USB drive use solid-state/flash storage.':'✗ Not quite — these are solid-state/flash devices.'};document.getElementById(id).textContent=m[id]}
+function showP8(id){document.getElementById(id).style.display='block'}
+function confidenceP8(v){const t={ready:'Excellent — you can distinguish primary and secondary storage and identify the three technologies.',practice:'Good. Rehearse: secondary = not directly accessed by CPU + more permanent; HDD = magnetic, CD/DVD/Blu-ray = optical, SSD/SD/USB = solid-state.',revise:'Revisit the primary-vs-secondary table and the three technology examples.'};document.getElementById('confidenceP8').textContent=t[v]}
+</script>
+</body></html>

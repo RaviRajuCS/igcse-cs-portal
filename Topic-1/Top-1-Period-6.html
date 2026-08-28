@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 6</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 6</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 6 · Overflow in Binary Addition</h3>
+      <p><b>Cambridge focus:</b> Topic 1.1 Number systems. Students need to understand overflow as a consequence of exceeding the capacity of the available number of bits. The syllabus also expects understanding of the effect of the number of bits available on the range of values that can be represented. fileciteturn7file0L14-L18</p>
+      <div class="callout"><b>Success criteria:</b> Students can identify when binary addition produces overflow, explain why it occurs, calculate the maximum value representable with a given number of bits, and distinguish an ordinary carry from an overflow error.</div>
+      <p><b>Prior learning:</b> Period 5 — binary addition and carrying.</p>
+      <p><b>Key vocabulary:</b> overflow, carry, register, bit, range, maximum value, 8-bit, 16-bit, represent, error.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">Teacher preparation</span>
+      <h3>Before students enter</h3>
+      <ul>
+        <li>Review the 8-bit range: 0–255 for positive unsigned binary integers.</li>
+        <li>Prepare one addition that stays within 8 bits and one that produces a ninth bit.</li>
+        <li>Keep the distinction visible: <b>carry = part of addition</b>; <b>overflow = result cannot fit in the available bits</b>.</li>
+        <li>Prepare a quick comparison of 8-bit, 16-bit and 32-bit maximum values.</li>
+      </ul>
+      <div class="callout"><b>Teaching principle:</b> students should discover overflow by comparing the mathematical result with the storage capacity, not by treating “a ninth bit” as a definition without explanation.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Reconnect with binary addition</h3>
+      <ol>
+        <li>What is 1 + 1 in binary?</li>
+        <li>Why do we carry when a column contains 1 + 1?</li>
+        <li>Add 01010100₂ + 00001011₂.</li>
+        <li>What is the largest positive value that can be represented using 8 unsigned bits?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> The arithmetic can be correct while the stored answer is wrong if there are not enough bits to hold the result.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–14 min · Discover</span>
+      <h3>What does “8-bit” limit?</h3>
+      <p>An 8-bit positive binary number has place values 128, 64, 32, 16, 8, 4, 2 and 1.</p>
+      <p>The largest value is:</p>
+      <div class="callout"><b>128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255</b></div>
+      <p>Therefore an 8-bit unsigned representation can store values from <b>0 to 255</b>. The textbook gives the same maximum as 2⁸ − 1. fileciteturn6file2L147-L158</p>
+    </div>
+
+    <div class="card">
+      <span class="time">14–24 min · Model</span>
+      <h3>Example of overflow</h3>
+      <p>Use the textbook-style example:</p>
+      <pre style="font-family:Consolas,monospace;font-size:18px;background:#0b315f;color:white;padding:15px;border-radius:12px;text-align:center">  01101110   (110)
++ 11011110   (222)
+-----------
+1 01001100</pre>
+      <p>The mathematical result is <b>332</b>, but only eight result bits are available.</p>
+      <p>If the ninth bit is discarded, the stored 8-bit result is <b>01001100₂ = 76₁₀</b>, which is incorrect.</p>
+      <div class="callout"><b>Conclusion:</b> the ninth bit shows that the result exceeded the maximum value that can be represented using 8 bits. This is <b>overflow</b>. fileciteturn6file2L147-L154</div>
+    </div>
+
+    <div class="card">
+      <span class="time">24–32 min · Explain</span>
+      <h3>Carry versus overflow</h3>
+      <p><b>Carry:</b> a value is carried from one binary column to the next during normal addition.</p>
+      <p><b>Overflow:</b> the final mathematical result is outside the range that can be represented using the available number of bits.</p>
+      <div class="callout"><b>Example:</b> 200 + 30 = 230 fits in 8 bits → no overflow. 200 + 70 = 270 does not fit in 8 bits → overflow.</div>
+      <p><b>Ask:</b> Can an addition contain carries without producing overflow? <b>Yes.</b> Can the final carry indicate overflow in an unsigned fixed-width addition? <b>Yes.</b></p>
+    </div>
+
+    <div class="card">
+      <span class="time">32–38 min · Explore</span>
+      <h3>More bits = larger range</h3>
+      <p>For unsigned binary integers, the maximum value is <b>2ⁿ − 1</b>, where <b>n</b> is the number of bits.</p>
+      <ul>
+        <li>8 bits → 2⁸ − 1 = <b>255</b></li>
+        <li>16 bits → 2¹⁶ − 1 = <b>65,535</b></li>
+        <li>32 bits → 2³² − 1 = <b>4,294,967,295</b></li>
+      </ul>
+      <p>The textbook explicitly uses these examples to show how increasing the number of bits increases the range of values that can be stored. fileciteturn6file2L155-L158</p>
+    </div>
+
+    <div class="card">
+      <span class="time">38–44 min · Differentiation</span>
+      <h3>Three levels of challenge</h3>
+      <p><b>Support:</b> Decide whether 120 + 100, 100 + 50 and 200 + 40 overflow an 8-bit unsigned register.</p>
+      <p><b>Core:</b> Convert each pair to 8-bit binary, add them and identify overflow.</p>
+      <p><b>Challenge:</b> Explain why the same mathematical calculation might fit in a 16-bit register but overflow an 8-bit register.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">44–47 min · Assessment</span>
+      <h3>Mini-whiteboard check</h3>
+      <ol>
+        <li>What is the maximum unsigned value in 8 bits?</li>
+        <li>Does 180 + 50 produce overflow in 8 bits?</li>
+        <li>Why does a ninth bit indicate a problem in an 8-bit result?</li>
+      </ol>
+      <div class="callout"><b>Look for:</b> students who call every carry “overflow”. Ask them to compare the final mathematical result with 255.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>State the maximum unsigned value represented by 8 bits.</li>
+        <li>Does 200 + 55 cause overflow in 8 bits? Explain.</li>
+        <li>In one sentence, distinguish a carry from overflow.</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> If students can identify and explain overflow, Period 7 can move to logical binary shifts. If not, use a short 8-bit range recap first.</div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 6 develops overflow as a fixed-width representation issue, building directly on binary addition from Period 5.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. 8-bit range</span>
+        <span>3. Overflow</span><span>4. Carry vs overflow</span>
+        <span>5. Practice</span><span>6. Exit ticket</span>
+      </div>
+      <p>Today you will learn what happens when a binary result is <b>too large to fit into the number of bits available</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Explain what overflow means.</li>
+        <li>Identify overflow in an 8-bit unsigned binary addition.</li>
+        <li>Calculate the maximum value that can be represented with a given number of bits.</li>
+        <li>Distinguish a normal carry from an overflow error.</li>
+        <li>Explain why more bits allow a larger range of values.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · The 8-bit limit</h3>
+      <p>An unsigned 8-bit number has these place values:</p>
+      <div class="weights">
+        <div>128</div><div>64</div><div>32</div><div>16</div>
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p>The largest possible value uses 1 in every position:</p>
+      <div class="binary">11111111</div>
+      <div class="callout"><b>128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255</b></div>
+      <p>So the range is <b>0 to 255</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>2 · What is overflow?</h3>
+      <p>Overflow occurs when the mathematical result is too large to be represented using the available number of bits.</p>
+      <p>For example:</p>
+      <pre style="font-family:Consolas,monospace;font-size:18px;background:#0b315f;color:white;padding:15px;border-radius:12px;text-align:center">  01101110
++ 11011110
+-----------
+1 01001100</pre>
+      <p>The true answer is <b>332</b>. But 332 is greater than 255, so it cannot be stored in an 8-bit unsigned representation.</p>
+      <div class="callout"><b>Overflow has occurred.</b></div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Why is the stored answer wrong?</h3>
+      <p>If the ninth bit is discarded, the stored eight bits are:</p>
+      <div class="binary">01001100</div>
+      <p>That represents 76₁₀, not 332₁₀.</p>
+      <div class="callout"><b>The problem is not the addition.</b> The problem is that the available 8-bit representation cannot hold the mathematical result.</div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Carry or overflow?</h3>
+      <p>A <b>carry</b> happens during the normal addition process.</p>
+      <p><b>Overflow</b> happens when the final value is outside the representable range.</p>
+      <div class="callout">
+        <b>200 + 30 = 230</b> → fits in 8 bits → no overflow.<br><br>
+        <b>200 + 70 = 270</b> → greater than 255 → overflow.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Quick check</h3>
+      <p><b>Q1:</b> What is the maximum unsigned value in 8 bits?</p>
+      <button class="option" onclick="studentCheck6(this,false,'q1s6')">128</button>
+      <button class="option" onclick="studentCheck6(this,true,'q1s6')">255</button>
+      <button class="option" onclick="studentCheck6(this,false,'q1s6')">256</button>
+      <div class="score" id="q1s6"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> Does 200 + 70 cause 8-bit unsigned overflow?</p>
+      <button class="option" onclick="studentCheck6(this,true,'q2s6')">Yes</button>
+      <button class="option" onclick="studentCheck6(this,false,'q2s6')">No</button>
+      <div class="score" id="q2s6"></div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Practice — spot the overflow</h3>
+      <p>Decide whether each calculation overflows an 8-bit unsigned representation:</p>
+      <ol>
+        <li>120 + 100</li>
+        <li>100 + 50</li>
+        <li>200 + 40</li>
+        <li>180 + 90</li>
+        <li>127 + 128</li>
+      </ol>
+      <button onclick="show('answers6a')">Reveal answers</button>
+      <div class="answer" id="answers6a">
+        <b>Answers:</b><br>
+        1. Overflow (220 actually fits — so <b>no overflow</b>).<br>
+        2. No overflow (150).<br>
+        3. No overflow (240).<br>
+        4. Overflow (270).<br>
+        5. No overflow (255).
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Practice — binary</h3>
+      <p>Add the following as 8-bit binary numbers and decide whether overflow occurs:</p>
+      <ol>
+        <li>10100000 + 00110000</li>
+        <li>11001000 + 00101000</li>
+        <li>10010110 + 01101010</li>
+      </ol>
+      <button onclick="show('answers6b')">Reveal answers</button>
+      <div class="answer" id="answers6b">
+        <b>Answers:</b><br>
+        1. 11010000 — no overflow (208).<br>
+        2. 11110000 — no overflow (240).<br>
+        3. 1 00000000 — overflow; mathematical result is 256.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>8 · More bits, bigger range</h3>
+      <ul>
+        <li>8 bits → maximum 255</li>
+        <li>16 bits → maximum 65,535</li>
+        <li>32 bits → maximum 4,294,967,295</li>
+      </ul>
+      <p>The general rule for an unsigned n-bit number is:</p>
+      <div class="callout"><b>Maximum value = 2ⁿ − 1</b></div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Exam practice</h3>
+      <p><b>Question:</b> Explain why adding 200₁₀ and 70₁₀ using 8-bit unsigned binary causes overflow.</p>
+      <button onclick="show('exam6')">Show model answer</button>
+      <div class="answer" id="exam6">
+        200 + 70 = 270. An 8-bit unsigned number can represent only 0–255. Since 270 is greater than 255, the result cannot be represented in 8 bits, so overflow occurs.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Common mistakes</h3>
+      <ul>
+        <li>Calling every carry an overflow.</li>
+        <li>Forgetting that an 8-bit unsigned value has a maximum of 255.</li>
+        <li>Looking only at the binary pattern without checking the mathematical result.</li>
+        <li>Thinking that overflow means the computer's arithmetic operation was necessarily performed incorrectly.</li>
+        <li>Forgetting that increasing the number of bits increases the range of representable values.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>11 · Self-assessment</h3>
+      <p>How confident are you now?</p>
+      <button onclick="confidence6('confident')">🟢 I can identify and explain overflow</button>
+      <button onclick="confidence6('okay')">🟡 I need more practice</button>
+      <button onclick="confidence6('need')">🔴 I need help</button>
+      <div class="score" id="confidence6"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      <b>Source basis:</b> Cambridge IGCSE (9–1) Computer Science 0984 syllabus, 2026–2028, Topic 1.1; and <i>Cambridge IGCSE and O Level Computer Science, Second Edition</i>, Chapter 1. Content is presented as original teaching material.
+    </div>>
+  </div>
+</section>
+</main>
+
+<script>
+function studentCheck6(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  document.getElementById(id).textContent=correct?'✓ Correct!':'✗ Not quite. Check the 8-bit maximum of 255.';
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence6(v){
+  const text={
+    confident:'Excellent — you are ready for logical binary shifts.',
+    okay:'Good. Practise comparing the result with 255.',
+    need:'That is useful information. Rework the 8-bit range and overflow example.'
+  };
+  document.getElementById('confidence6').textContent=text[v];
+}
+</script>
+</body>
+</html>

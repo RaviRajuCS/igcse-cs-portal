@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 6 | Period 7</title>
+<style>
+:root{--gold:#d8ad45;--gold2:#efd47a;--blue:#123b63;--blue2:#0b2d4d;--ink:#17324d}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#c99528,#efd16c 45%,#c99a2e);color:var(--ink);overflow:hidden}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#0b2d4df2;color:#fff;border-bottom:3px solid var(--gold2);box-shadow:0 5px 18px #08203b66}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:2px 0;color:#e8eef5;font-size:13px;font-weight:600}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:19px;font-weight:700}
+.school{display:flex;align-items:center;gap:10px;font-size:13px}.school img{width:48px;height:48px;background:#fff;border-radius:9px;padding:3px;object-fit:contain}.badge{background:var(--gold2);color:var(--blue2);font-weight:900;padding:9px 13px;border-radius:18px}
+.layout{height:calc(100vh - 88px);display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:14px}.pane{min-height:0;background:#fffaf0f5;border:2px solid #c7a653;border-radius:22px;box-shadow:0 14px 34px #49340f55;overflow:hidden;display:flex;flex-direction:column}
+.panehead{background:var(--blue2);color:#fff;padding:15px 20px}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:#fffdf7;border:1px solid #d9c797;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #49340f12}.card h3{margin:0 0 9px;color:var(--blue2);font-size:17px}
+p{line-height:1.55}ul,ol{line-height:1.55;padding-left:20px}.time{display:inline-block;background:#f2dda0;border:1px solid #c7a653;color:var(--blue2);padding:4px 9px;border-radius:18px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{background:#f5ecd0;border-left:5px solid var(--blue);padding:12px 14px;border-radius:8px;margin:10px 0}.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#f6edcf;border-radius:16px;margin:14px 0}
+.node{background:var(--blue2);color:#fff;padding:13px 15px;border-radius:13px;font-weight:900;text-align:center}.arrow{font-size:25px;font-weight:900;color:var(--blue)}
+.example{background:#eef3f7;border:1px solid #b7c7d6;border-radius:13px;padding:13px;margin:10px 0}.workout{background:#f7f0dd;border:2px dashed #b7964e;border-radius:15px;padding:15px;margin:12px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue2);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid #c8b98e}
+.option.correct{background:#e1efe5;border-color:#6d997a}.option.wrong{background:#f5dfdb;border-color:#a86b61}.answer{display:none;background:#e5f0e7;border:1px solid #9db9a4;padding:11px;border-radius:10px;margin-top:9px}.score{font-weight:900;margin-top:8px}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{background:#e7dfcf;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:800}.progress .active{background:#e8d18a;border:1px solid #b7964e;color:var(--blue2)}
+table{width:100%;border-collapse:collapse}th{background:var(--blue2);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #ddd2b8;vertical-align:top}.footer{font-size:11px;color:#685e4e;border-top:1px solid #d8ccb0;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}header{height:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div><div class="name">Ravi Raju</div><h1>IGCSE Computer Science 0984</h1><p>Topic 6 · Automated and Emerging Technologies · Period 7</p></div></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">TOPIC 6</div></div>
+</header>
+
+<main class="layout">
+<section class="pane"><div class="panehead"><h2>📘 Teacher Studio</h2><small>6.2 Robotics · applications · advantages · disadvantages · scenario evaluation</small></div><div class="content">
+
+<div class="card"><span class="time">Topic 6 · Period 7</span><h3>Roles, Applications, Advantages and Disadvantages of Robots</h3>
+<p>This period moves from <b>what a robot is</b> to <b>why robots are used</b>. Students evaluate robot use in real-world scenarios and explain benefits and limitations.</p>
+<div class="callout"><b>Exam focus:</b> Always connect an advantage or disadvantage to the particular robotic application being described.</div></div>
+
+<div class="card"><h3>1 · Why use robots?</h3>
+<div class="flow"><div class="node">REPETITIVE</div><div class="arrow">+</div><div class="node">DANGEROUS</div><div class="arrow">+</div><div class="node">PRECISE</div><div class="arrow">+</div><div class="node">CONTINUOUS</div></div>
+<p>Robots are especially useful when tasks are repetitive, hazardous, physically difficult, require consistent precision, or need to be performed for long periods.</p></div>
+
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>2 · Major robot applications</h3>
+<table><tr><th>Application</th><th>Typical robot role</th></tr>
+<tr><td>Manufacturing</td><td>Assembly, welding, painting, handling</td></tr>
+<tr><td>Warehousing</td><td>Moving, sorting and delivering goods</td></tr>
+<tr><td>Medicine</td><td>Assisting with precise procedures or handling</td></tr>
+<tr><td>Exploration</td><td>Collecting information in hazardous or inaccessible places</td></tr>
+<tr><td>Agriculture</td><td>Monitoring crops or carrying out repetitive tasks</td></tr>
+<tr><td>Domestic use</td><td>Cleaning and other household tasks</td></tr>
+</table></div>
+
+<div class="card"><span class="time">8–18 min · Teach</span><h3>3 · Advantages of robots</h3>
+<ul><li><b>Safety:</b> robots can perform dangerous tasks without putting a human directly in the hazardous environment.</li>
+<li><b>Consistency:</b> programmed movements can be repeated in the same way.</li>
+<li><b>Precision:</b> robots can carry out controlled movements for suitable tasks.</li>
+<li><b>Speed:</b> repetitive operations can be performed rapidly.</li>
+<li><b>Continuous operation:</b> robots can work for long periods without human fatigue.</li>
+<li><b>Productivity:</b> automation can increase the amount of work completed.</li></ul></div>
+
+<div class="card"><span class="time">18–27 min · Teach</span><h3>4 · Disadvantages of robots</h3>
+<ul><li><b>Cost:</b> robots can be expensive to purchase, install and maintain.</li>
+<li><b>Job displacement:</b> some tasks previously performed by people may become automated.</li>
+<li><b>Maintenance:</b> mechanical and electrical components can fail.</li>
+<li><b>Programming dependence:</b> an incorrect program can produce incorrect behaviour.</li>
+<li><b>Limited flexibility:</b> a robot may struggle with unexpected situations if it has not been programmed for them.</li>
+<li><b>Safety risk from failure:</b> a malfunctioning robot can cause injury or damage.</li></ul></div>
+
+<div class="card"><span class="time">27–35 min · Worked examples</span><h3>5 · Application analysis</h3>
+<div class="example"><b>Manufacturing:</b> a robot performs repetitive welding. <b>Benefit:</b> consistent welding and reduced exposure to hazardous work. <b>Drawback:</b> purchase and maintenance costs can be high.</div>
+<div class="example"><b>Exploration:</b> a robot enters a dangerous environment to collect measurements. <b>Benefit:</b> reduces human exposure to danger. <b>Drawback:</b> communication, power or component failure may prevent the mission.</div>
+<div class="example"><b>Domestic cleaning:</b> a robot vacuum cleans floors automatically. <b>Benefit:</b> reduces human effort. <b>Drawback:</b> it may need maintenance and may not handle unusual obstacles effectively.</div>
+</div>
+
+<div class="card"><span class="time">35–42 min · Evaluation</span><h3>6 · Balanced judgement</h3>
+<p>A good evaluation does not simply say “robots are good” or “robots are bad”. It considers the <b>purpose of the robot</b>.</p>
+<div class="callout"><b>Example:</b> For a robot working in a radioactive environment, safety may be a much more important advantage than speed. For a factory producing thousands of identical products, consistency and productivity may be especially important.</div></div>
+
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>7 · Scenario evaluation</h3>
+<div class="workout">A hospital uses a robot to transport supplies between departments. Give <b>two advantages</b> and <b>two disadvantages</b>, explaining each in context.</div>
+<button onclick="showA('w1')">Show model</button>
+<div class="answer" id="w1"><b>Advantages:</b> it can transport supplies repeatedly, reducing routine human workload; it can operate consistently according to its programmed route. <b>Disadvantages:</b> purchase and maintenance can be expensive; a fault could prevent supplies reaching the required department.</div></div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>8 · The evaluation formula</h3>
+<div class="callout"><b>Point → because → consequence in this scenario.</b><br><br>Example: “A robot can work continuously <b>because</b> it does not become physically tired, <b>so</b> it can repeatedly transport supplies for long periods.”</div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 7 · Applications, advantages and disadvantages of robots.</div>
+</div></section>
+
+<section class="pane"><div class="panehead"><h2>🧠 Student Studio</h2><small>Recognise → explain → evaluate → exam practice</small></div><div class="content">
+
+<div class="card"><h3>🧭 Topic 6 roadmap</h3><div class="progress"><span>6.1 Automated systems</span><span class="active">6.2 Robotics</span><span>6.3 Artificial Intelligence</span></div></div>
+
+<div class="card"><h3>🎯 Learning targets</h3>
+<ul><li>Identify common applications of robots.</li><li>Explain why a robot is suitable for a particular task.</li><li>Explain advantages and disadvantages in context.</li><li>Distinguish generic statements from developed explanations.</li><li>Evaluate whether a robot is appropriate for a scenario.</li></ul></div>
+
+<div class="card"><h3>1 · Quick check</h3><p>Which is a strong reason for using a robot in a dangerous environment?</p>
+<button class="option" onclick="checkQ(this,true,'q1')">It can reduce human exposure to the danger.</button>
+<button class="option" onclick="checkQ(this,false,'q1')">It means the robot can never fail.</button><div class="score" id="q1"></div></div>
+
+<div class="card"><h3>2 · Worked Example — Manufacturing</h3>
+<div class="example">A robot repeatedly paints identical parts on a production line.</div>
+<p><b>Why suitable?</b> The task is repetitive and requires consistent movement. The robot can repeat programmed movements rapidly and consistently.</p>
+</div>
+
+<div class="card"><h3>3 · Workout — Application</h3>
+<div class="workout">Why might a robot be useful for exploring a place that is too dangerous for a human?</div>
+<button onclick="showA('a1')">Show answer</button>
+<div class="answer" id="a1">A robot can enter the hazardous environment and collect information or perform tasks without directly exposing a human to the danger.</div></div>
+
+<div class="card"><h3>4 · Interactive check</h3><p>Which is a realistic disadvantage of using robots?</p>
+<button class="option" onclick="checkQ(this,true,'q2')">They may be expensive to purchase and maintain.</button>
+<button class="option" onclick="checkQ(this,false,'q2')">They never need electricity.</button><div class="score" id="q2"></div></div>
+
+<div class="card"><h3>5 · Worked Example — Warehouse</h3>
+<div class="flow"><div class="node">Detect route / obstacles</div><div class="arrow">→</div><div class="node">Process program</div><div class="arrow">→</div><div class="node">Move goods</div></div>
+<p>A warehouse robot can repeatedly transport goods. Sensors help it detect its surroundings while the controller follows programmed instructions and motors provide movement.</p></div>
+
+<div class="card"><h3>6 · Workout — Advantage + explanation</h3>
+<div class="workout">Turn “Robots are fast” into a developed answer for a factory assembly line.</div>
+<button onclick="showA('a2')">Show model</button>
+<div class="answer" id="a2">Robots can perform repetitive assembly operations quickly, so the factory may produce more items in a given amount of time.</div></div>
+
+<div class="card"><h3>7 · Interactive check</h3><p>Why can programming be a disadvantage?</p>
+<button class="option" onclick="checkQ(this,true,'q3')">An incorrect program can cause the robot to behave incorrectly.</button>
+<button class="option" onclick="checkQ(this,false,'q3')">Programming makes every robot physically stronger.</button><div class="score" id="q3"></div></div>
+
+<div class="card"><h3>8 · Scenario challenge — Medicine</h3>
+<div class="workout">A robot assists with a medical procedure requiring controlled, precise movements. Give one advantage and one possible disadvantage.</div>
+<button onclick="showA('a3')">Show model</button>
+<div class="answer" id="a3"><b>Advantage:</b> controlled programmed movement can provide high consistency and precision for suitable tasks. <b>Disadvantage:</b> a malfunction or incorrect programming could have serious consequences and requires careful maintenance and supervision.</div></div>
+
+<div class="card"><h3>9 · Exam-style question</h3>
+<p><b>Question:</b> A company is considering robots for repetitive factory work. Explain two advantages and two disadvantages.</p>
+<button onclick="showA('a4')">Show mark-point model</button>
+<div class="answer" id="a4"><b>Advantages:</b> robots can repeat tasks quickly and consistently, increasing production; they can reduce the need for people to perform repetitive or hazardous work. <b>Disadvantages:</b> robots can be expensive to buy and maintain; faults or incorrect programming can stop production or cause incorrect actions.</div></div>
+
+<div class="card"><h3>10 · Evaluation challenge</h3>
+<div class="workout">Would a robot necessarily be the best choice for every task? Explain why or why not.</div>
+<button onclick="showA('a5')">Show model</button>
+<div class="answer" id="a5">No. A robot is most suitable when its strengths match the task. A task requiring flexible human judgement, unexpected decisions or low-volume work may not justify the cost or programming needed for a robot.</div></div>
+
+<div class="card"><h3>11 · Common mistakes</h3>
+<ul><li>Assuming robots are always faster or more accurate.</li><li>Ignoring cost and maintenance.</li><li>Giving advantages without linking them to the application.</li><li>Claiming a robot cannot fail.</li><li>Forgetting that incorrect programming can cause incorrect behaviour.</li></ul></div>
+
+<div class="card"><h3>12 · Self-assessment</h3>
+<p>Can you explain why a robot is suitable for a task and evaluate both its benefits and limitations?</p>
+<button onclick="confidence('ready')">🟢 Yes</button><button onclick="confidence('practice')">🟡 More practice</button><button onclick="confidence('revise')">🔴 Need revision</button>
+<div class="score" id="confidence"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 7 · Robot applications and evaluation.</div>
+</div></section>
+</main>
+
+<script>
+function showA(id){document.getElementById(id).style.display='block'}
+function checkQ(btn,correct,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(correct?'correct':'wrong');
+ const m={
+ q1:correct?'✓ Correct — robots can reduce human exposure to dangerous environments.':'✗ A robot can fail; no system is guaranteed never to fail.',
+ q2:correct?'✓ Correct — purchase and maintenance can be significant costs.':'✗ Robots require electrical power to operate.',
+ q3:correct?'✓ Correct — programming errors can produce incorrect robot behaviour.':'✗ Programming does not make a robot physically stronger.'
+ };
+ document.getElementById(id).textContent=m[id]
+}
+function confidence(v){
+ const m={
+ ready:'Excellent — you can evaluate robot applications in context.',
+ practice:'Good. Practise linking every advantage and disadvantage to the scenario.',
+ revise:'Remember: choose the robot because of the task, then explain both benefits and limitations.'
+ };
+ document.getElementById('confidence').textContent=m[v]
+}
+</script>
+</body>
+</html>

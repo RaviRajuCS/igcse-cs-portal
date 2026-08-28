@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 10</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 10</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 10 · Number Systems Mastery</h3>
+      <p><b>Purpose:</b> A complete consolidation and assessment lesson for the Number Systems section of Topic 1. Students bring together binary, denary, hexadecimal, binary addition, overflow, logical shifts and two's complement.</p>
+      <div class="callout"><b>Success criteria:</b> Students can select the correct number-system method, perform conversions and calculations accurately, explain representation limits, and use appropriate Cambridge exam language.</div>
+      <p><b>Prior learning:</b> Periods 1–9.</p>
+      <p><b>Key vocabulary:</b> binary, denary, hexadecimal, conversion, addition, carry, overflow, logical shift, two's complement, signed, unsigned, range.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>Before students enter</h3>
+      <ul>
+        <li>Tell students this is a consolidation lesson, not a new-content lesson.</li>
+        <li>Encourage students to show working for every conversion and calculation.</li>
+        <li>Use the diagnostic questions to identify misconceptions for individual follow-up.</li>
+        <li>Keep the key rules available, but gradually remove them during the assessment section.</li>
+      </ul>
+      <div class="callout"><b>Teacher principle:</b> assess the student's choice of method as well as the final answer.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–7 min · Retrieval</span>
+      <h3>Number Systems Flash Recall</h3>
+      <ol>
+        <li>What are the bases of binary, denary and hexadecimal?</li>
+        <li>Which hexadecimal digits represent 10–15?</li>
+        <li>What is the maximum unsigned 8-bit value?</li>
+        <li>What is the 8-bit two's complement range?</li>
+        <li>What does a left logical shift do?</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <span class="time">7–15 min · Diagnostic</span>
+      <h3>Choose the correct method</h3>
+      <p>Ask students to identify the method before calculating:</p>
+      <ul>
+        <li>10110110₂ → denary</li>
+        <li>174₁₀ → hexadecimal</li>
+        <li>3A₁₆ → denary</li>
+        <li>01010101₂ + 00100111₂</li>
+        <li>200 + 70 using 8-bit unsigned binary</li>
+        <li>−13 → 8-bit two's complement</li>
+      </ul>
+      <div class="callout"><b>Teaching point:</b> strong students recognise the representation and required process before they begin the arithmetic.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">15–25 min · Core assessment</span>
+      <h3>Conversions</h3>
+      <ol>
+        <li>Convert 10110101₂ to denary.</li>
+        <li>Convert 213₁₀ to hexadecimal.</li>
+        <li>Convert 7C₁₆ to denary.</li>
+        <li>Convert 94₁₀ to binary.</li>
+        <li>Convert −27₁₀ to 8-bit two's complement.</li>
+        <li>Convert 11100101₂ to denary as an 8-bit two's complement value.</li>
+      </ol>
+      <div class="callout"><b>Teacher check:</b> students should show place values or conversion steps, not just answers.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">25–34 min · Calculations</span>
+      <h3>Binary addition, overflow and shifts</h3>
+      <ol>
+        <li>00110110₂ + 00010101₂</li>
+        <li>01111111₂ + 00000001₂</li>
+        <li>11001000₂ + 00101000₂ — decide whether overflow occurs in 8-bit unsigned representation.</li>
+        <li>Shift 00110100₂ left by 2 places.</li>
+        <li>Shift 01101000₂ right by 3 places.</li>
+      </ol>
+      <div class="callout"><b>Teacher check:</b> distinguish the addition carry from overflow and require students to explain the range test.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">34–41 min · Application</span>
+      <h3>Explain, don't just calculate</h3>
+      <ol>
+        <li>Explain why computers use binary.</li>
+        <li>Explain why hexadecimal is useful to humans.</li>
+        <li>Explain why an 8-bit unsigned result can overflow.</li>
+        <li>Explain why two's complement is useful.</li>
+      </ol>
+      <div class="callout"><b>Exam language:</b> “Explain” requires a reason or consequence, not merely a definition.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">41–47 min · Mini-mock</span>
+      <h3>Cambridge-style mixed questions</h3>
+      <p><b>Q1.</b> Convert 5D₁₆ to denary.</p>
+      <p><b>Q2.</b> Convert 173₁₀ to hexadecimal.</p>
+      <p><b>Q3.</b> Add 00101101₂ and 00010111₂.</p>
+      <p><b>Q4.</b> State whether 250 + 20 produces overflow in 8-bit unsigned representation.</p>
+      <p><b>Q5.</b> Give the 8-bit two's complement representation of −9.</p>
+      <p><b>Q6.</b> Shift 00111000₂ right by 2 places.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit assessment</span>
+      <h3>Mastery check</h3>
+      <ol>
+        <li>One conversion you can now do confidently.</li>
+        <li>One mistake you must avoid in binary calculations.</li>
+        <li>One thing you still need to practise.</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> Students who are secure can move to the next Data Representation area: text, including character sets such as ASCII and Unicode. Students needing support receive targeted number-system practice.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 10 consolidates the Number Systems sequence before Topic 1 moves to text, sound and images.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Conversions</span>
+        <span>3. Addition</span><span>4. Shifts</span>
+        <span>5. Two's complement</span><span>6. Mini-mock</span>
+      </div>
+      <p>Today is your <b>Number Systems Mastery</b> lesson. Use the method that matches the question.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Mastery checklist</h3>
+      <ul>
+        <li>☐ Binary ↔ denary</li>
+        <li>☐ Denary ↔ hexadecimal</li>
+        <li>☐ Binary ↔ hexadecimal</li>
+        <li>☐ Binary addition</li>
+        <li>☐ Overflow</li>
+        <li>☐ Logical shifts</li>
+        <li>☐ Two's complement</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · Conversion practice</h3>
+      <ol>
+        <li>10110101₂ → denary</li>
+        <li>213₁₀ → hexadecimal</li>
+        <li>7C₁₆ → denary</li>
+        <li>94₁₀ → binary</li>
+        <li>−27₁₀ → 8-bit two's complement</li>
+        <li>11100101₂ → denary as two's complement</li>
+      </ol>
+      <button onclick="show('answers10a')">Reveal answers</button>
+      <div class="answer" id="answers10a">
+        <b>Answers:</b><br>
+        1. 181<br>
+        2. D5₁₆<br>
+        3. 124<br>
+        4. 01011110₂<br>
+        5. 11100101₂<br>
+        6. −27
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2 · Binary addition</h3>
+      <p>Complete:</p>
+      <div class="binary">00110110 + 00010101</div>
+      <button onclick="show('answers10b')">Reveal answer</button>
+      <div class="answer" id="answers10b">
+        <b>01001011₂</b> = 75₁₀.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Overflow</h3>
+      <p>Does <b>250 + 20</b> overflow an 8-bit unsigned representation?</p>
+      <button class="option" onclick="check10(this,true,'q10')">Yes</button>
+      <button class="option" onclick="check10(this,false,'q10')">No</button>
+      <div class="score" id="q10"></div>
+      <div class="callout">Reason: 250 + 20 = 270, which is greater than the 8-bit maximum of 255.</div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Logical shifts</h3>
+      <p><b>00111000₂ → left 2</b></p>
+      <p><b>01101000₂ → right 3</b></p>
+      <button onclick="show('answers10c')">Reveal answers</button>
+      <div class="answer" id="answers10c">
+        00111000 → 11100000.<br>
+        01101000 → 00001101.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Two's complement</h3>
+      <p>Convert <b>−9</b> into 8-bit two's complement.</p>
+      <button onclick="show('answers10d')">Reveal answer</button>
+      <div class="answer" id="answers10d">
+        9 = 00001001 → invert 11110110 → add 1 = <b>11110111</b>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Explain</h3>
+      <p>Write one or two sentences for each:</p>
+      <ol>
+        <li>Why do computers use binary?</li>
+        <li>Why is hexadecimal useful?</li>
+        <li>What is overflow?</li>
+        <li>Why is two's complement needed?</li>
+      </ol>
+      <button onclick="show('answers10e')">Show key points</button>
+      <div class="answer" id="answers10e">
+        <b>Key points:</b> binary matches two-state electronic switching; hexadecimal provides a compact human-readable representation of binary; overflow occurs when a result is outside the available fixed-width range; two's complement provides a representation for negative integers.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Mini-mock</h3>
+      <ol>
+        <li>5D₁₆ → denary</li>
+        <li>173₁₀ → hexadecimal</li>
+        <li>00101101₂ + 00010111₂</li>
+        <li>250 + 20 → overflow?</li>
+        <li>−9 → 8-bit two's complement</li>
+        <li>00111000₂ → right 2</li>
+      </ol>
+      <button onclick="show('mock10')">Reveal answers</button>
+      <div class="answer" id="mock10">
+        <b>Answers:</b> 93; AD₁₆; 01000100₂; Yes; 11110111₂; 00001110₂.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Common exam mistakes</h3>
+      <ul>
+        <li>Using the wrong place-value system.</li>
+        <li>Forgetting hexadecimal A–F values.</li>
+        <li>Ignoring carries in binary addition.</li>
+        <li>Calling every carry overflow.</li>
+        <li>Using unsigned place values for two's complement.</li>
+        <li>Forgetting the fixed number of bits.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>9 · Your readiness</h3>
+      <p>Choose your level:</p>
+      <button onclick="confidence10('ready')">🟢 Ready for the next section</button>
+      <button onclick="confidence10('practice')">🟡 I need more practice</button>
+      <button onclick="confidence10('help')">🔴 I need teacher help</button>
+      <div class="score" id="confidence10"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Number Systems consolidation: binary, denary, hexadecimal, addition, overflow, logical shifts and two's complement.
+    </div>>
+  </div>
+</section>
+</main>
+
+<script>
+function check10(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  document.getElementById(id).textContent=correct?'✓ Correct! 270 is greater than 255.':'✗ Not quite. Check the 8-bit maximum.';
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence10(v){
+  const text={
+    ready:'Excellent — you are ready to move into text representation.',
+    practice:'Good. Target the number-system skill you found hardest.',
+    help:'That is useful information. Ask your teacher to work through the relevant conversion with you.'
+  };
+  document.getElementById('confidence10').textContent=text[v];
+}
+</script>
+</body>
+</html>

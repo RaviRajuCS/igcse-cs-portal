@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 6 | Period 12</title>
+<style>
+:root{--gold:#d8ad45;--gold2:#efd47a;--blue:#123b63;--blue2:#0b2d4d;--ink:#17324d}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#c99528,#efd16c 45%,#c99a2e);color:var(--ink);overflow:hidden}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#0b2d4df2;color:#fff;border-bottom:3px solid var(--gold2);box-shadow:0 5px 18px #08203b66}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:2px 0;color:#e8eef5;font-size:13px;font-weight:600}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:19px;font-weight:700}
+.school{display:flex;align-items:center;gap:10px;font-size:13px}.school img{width:48px;height:48px;background:#fff;border-radius:9px;padding:3px;object-fit:contain}.badge{background:var(--gold2);color:var(--blue2);font-weight:900;padding:9px 13px;border-radius:18px}
+.layout{height:calc(100vh - 88px);display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:14px}.pane{min-height:0;background:#fffaf0f5;border:2px solid #c7a653;border-radius:22px;box-shadow:0 14px 34px #49340f55;overflow:hidden;display:flex;flex-direction:column}
+.panehead{background:var(--blue2);color:#fff;padding:15px 20px}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:#fffdf7;border:1px solid #d9c797;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #49340f12}.card h3{margin:0 0 9px;color:var(--blue2);font-size:17px}
+p{line-height:1.55}ul,ol{line-height:1.55;padding-left:20px}.time{display:inline-block;background:#f2dda0;border:1px solid #c7a653;color:var(--blue2);padding:4px 9px;border-radius:18px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{background:#f5ecd0;border-left:5px solid var(--blue);padding:12px 14px;border-radius:8px;margin:10px 0}.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#f6edcf;border-radius:16px;margin:14px 0}
+.node{background:var(--blue2);color:#fff;padding:13px 15px;border-radius:13px;font-weight:900;text-align:center}.arrow{font-size:25px;font-weight:900;color:var(--blue)}
+.example{background:#eef3f7;border:1px solid #b7c7d6;border-radius:13px;padding:13px;margin:10px 0}.workout{background:#f7f0dd;border:2px dashed #b7964e;border-radius:15px;padding:15px;margin:12px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue2);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid #c8b98e}
+.option.correct{background:#e1efe5;border-color:#6d997a}.option.wrong{background:#f5dfdb;border-color:#a86b61}.answer{display:none;background:#e5f0e7;border:1px solid #9db9a4;padding:11px;border-radius:10px;margin-top:9px}.score{font-weight:900;margin-top:8px}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{background:#e7dfcf;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:800}.progress .active{background:#e8d18a;border:1px solid #b7964e;color:var(--blue2)}
+table{width:100%;border-collapse:collapse}th{background:var(--blue2);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #ddd2b8;vertical-align:top}
+.footer{font-size:11px;color:#685e4e;border-top:1px solid #d8ccb0;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}header{height:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div><div class="name">Ravi Raju</div><h1>IGCSE Computer Science 0984</h1><p>Topic 6 · Automated and Emerging Technologies · Period 12</p></div></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">TOPIC 6</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>📘 Teacher Studio</h2><small>6.3 Artificial intelligence · machine learning · automatic adaptation</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Topic 6 · Period 12</span><h3>Machine Learning</h3>
+<p>This period covers the second and final AI system type named in Cambridge 0984: <b>machine learning</b>.</p>
+<div class="callout"><b>Exact syllabus focus:</b> Machine learning is when a program has the ability to <b>automatically adapt its own processes and/or data</b>.</div>
+</div>
+
+<div class="card"><h3>1 · What makes machine learning different?</h3>
+<div class="flow"><div class="node">DATA</div><div class="arrow">→</div><div class="node">PROGRAM</div><div class="arrow">→</div><div class="node">PROCESS / DATA<br>ADAPTS</div><div class="arrow">→</div><div class="node">NEW<br>RESULTS</div></div>
+<p>The important distinction is that the program can <b>automatically adapt its own processes and/or data</b> rather than relying only on an unchanged set of instructions.</p></div>
+
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>2 · The key definition</h3>
+<table><tr><th>Term</th><th>Meaning for 0984</th></tr>
+<tr><td>Machine learning</td><td>A program has the ability to automatically adapt its own processes and/or data.</td></tr>
+<tr><td>Adapt</td><td>Change or adjust the process and/or data automatically in response to information or experience.</td></tr>
+<tr><td>Process</td><td>The way the program handles information to produce a result.</td></tr>
+<tr><td>Data</td><td>Information used by the program and potentially adapted as part of the system.</td></tr>
+</table></div>
+
+<div class="card"><span class="time">8–18 min · Teach</span><h3>3 · Automatic adaptation</h3>
+<p>In machine learning, the important idea is <b>automatic adaptation</b>. A programmer does not have to manually rewrite the program every time the system needs to adjust.</p>
+<div class="example"><b>Illustrative example:</b> A recommendation system receives information about user choices. Its process can adapt to those patterns so that later recommendations can change.</div>
+<div class="callout">For this syllabus, you do not need to teach a particular machine-learning algorithm. Concentrate on the idea of automatic adaptation.</div></div>
+
+<div class="card"><span class="time">18–27 min · Teach</span><h3>4 · Adaptation of processes</h3>
+<p>A machine-learning program may adapt <b>how it processes information</b>.</p>
+<div class="example">Suppose a system repeatedly receives examples and its process is adjusted automatically so that it becomes better at producing an appropriate result from later examples.</div>
+<p>The key point is that the process changes automatically as part of the learning system.</p></div>
+
+<div class="card"><span class="time">27–35 min · Teach</span><h3>5 · Adaptation of data</h3>
+<p>The syllabus also allows the program to adapt its <b>data</b>. This means the information used by the system can be automatically updated or adjusted as new information becomes available.</p>
+<div class="example">A recommendation system can continually update the information it holds about a user's choices so that future recommendations reflect newer information.</div></div>
+
+<div class="card"><span class="time">35–42 min · Compare</span><h3>6 · Fixed program vs machine learning</h3>
+<table><tr><th>Fixed programmed system</th><th>Machine-learning system</th></tr>
+<tr><td>Uses instructions that remain unchanged unless a programmer changes them.</td><td>Can automatically adapt its own processes and/or data.</td></tr>
+<tr><td>Example: IF temperature &lt; 20 THEN switch heater on.</td><td>Example: a system adapts its process/data as new examples or information are provided.</td></tr>
+<tr><td>Behaviour is determined by the fixed program.</td><td>Behaviour/process or data can change automatically through the learning system.</td></tr>
+</table></div>
+
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>7 · Is it machine learning?</h3>
+<div class="workout">A program always uses exactly the same fixed rules to classify incoming data. A programmer must manually change the code whenever the rules need to change. Does this, by itself, demonstrate machine learning?</div>
+<button onclick="showA('w1')">Show model</button>
+<div class="answer" id="w1">No. The description shows a fixed programmed system. Machine learning requires the program to have the ability to automatically adapt its own processes and/or data.</div></div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>8 · One sentence to remember</h3>
+<div class="callout"><b>Machine learning = automatic adaptation of a program's own processes and/or data.</b></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 12 · Machine learning.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🧠 Student Studio</h2><small>Define → distinguish → explain → apply</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Topic 6 roadmap</h3><div class="progress"><span>6.1 Automated systems</span><span>6.2 Robotics</span><span class="active">6.3 Artificial Intelligence</span></div></div>
+
+<div class="card"><h3>🎯 Learning targets</h3>
+<ul><li>Define machine learning using the 0984 syllabus idea.</li><li>Explain automatic adaptation.</li><li>Distinguish machine learning from fixed programming.</li><li>Recognise adaptation of processes and/or data.</li><li>Apply the definition to unfamiliar examples.</li></ul></div>
+
+<div class="card"><h3>1 · Quick check</h3><p>What is the key characteristic of machine learning?</p>
+<button class="option" onclick="checkQ(this,true,'q1')">The program can automatically adapt its own processes and/or data.</button>
+<button class="option" onclick="checkQ(this,false,'q1')">A programmer must manually rewrite the program every time it changes.</button>
+<div class="score" id="q1"></div></div>
+
+<div class="card"><h3>2 · Definition challenge</h3>
+<div class="workout">Complete the definition: Machine learning is when a program has the ability to automatically adapt its own ________ and/or ________.</div>
+<button onclick="showA('a1')">Show answer</button>
+<div class="answer" id="a1"><b>processes and/or data.</b></div></div>
+
+<div class="card"><h3>3 · Interactive check</h3><p>Which system best matches the syllabus definition of machine learning?</p>
+<button class="option" onclick="checkQ(this,true,'q2')">A program that automatically adjusts its process when new information is received.</button>
+<button class="option" onclick="checkQ(this,false,'q2')">A program that always follows unchanged instructions.</button>
+<div class="score" id="q2"></div></div>
+
+<div class="card"><h3>4 · Worked Example — Recommendations</h3>
+<div class="example">A recommendation system receives information about a user's choices and automatically changes the information/process it uses for later recommendations.</div>
+<p>This demonstrates the central machine-learning idea because the system can <b>automatically adapt</b> its processes and/or data as new information becomes available.</p></div>
+
+<div class="card"><h3>5 · Workout — Fixed rule or learning?</h3>
+<div class="workout">System A always applies the same programmed rules. System B automatically adjusts its process using new information. Which one demonstrates machine learning?</div>
+<button onclick="showA('a2')">Show answer</button>
+<div class="answer" id="a2"><b>System B.</b> It automatically adapts its process using new information. System A remains a fixed programmed system.</div></div>
+
+<div class="card"><h3>6 · Interactive check</h3><p>Does machine learning require the program to adapt every part of itself?</p>
+<button class="option" onclick="checkQ(this,true,'q3')">No. The syllabus says it can automatically adapt its own processes and/or data.</button>
+<button class="option" onclick="checkQ(this,false,'q3')">Yes. Every part of the program must always change.</button>
+<div class="score" id="q3"></div></div>
+
+<div class="card"><h3>7 · Scenario challenge — Changing information</h3>
+<div class="workout">A system receives new examples over time and automatically adjusts the process it uses to produce later results. Explain why this fits the definition of machine learning.</div>
+<button onclick="showA('a3')">Show model</button>
+<div class="answer" id="a3">It fits the definition because the program automatically adapts its own process as new information is received. The adaptation occurs as part of the program rather than requiring a programmer to manually rewrite it each time.</div></div>
+
+<div class="card"><h3>8 · AI comparison</h3>
+<table><tr><th>Artificial intelligence</th><th>Machine learning</th></tr>
+<tr><td>Broad area involving simulation of intelligent behaviours by computers.</td><td>A type of AI system covered in the syllabus where a program can automatically adapt its own processes and/or data.</td></tr>
+<tr><td>Can include reasoning and can include learning/adaptation.</td><td>Specifically focuses on automatic adaptation.</td></tr>
+</table></div>
+
+<div class="card"><h3>9 · Expert system vs machine learning</h3>
+<div class="example"><b>Expert system:</b> uses a knowledge base, rule base, inference engine and interface to simulate expert decision-making.</div>
+<div class="example"><b>Machine learning:</b> a program has the ability to automatically adapt its own processes and/or data.</div>
+<div class="callout">Both are within the Cambridge 0984 AI scope, but they describe different approaches.</div></div>
+
+<div class="card"><h3>10 · Exam-style question</h3>
+<p><b>Question:</b> What is meant by machine learning?</p>
+<button onclick="showA('a4')">Show mark-point model</button>
+<div class="answer" id="a4">Machine learning is when a program has the ability to automatically adapt its own processes and/or data.</div></div>
+
+<div class="card"><h3>11 · Exam-style application</h3>
+<p><b>Question:</b> Explain why a program that automatically changes how it processes new information can be described as using machine learning.</p>
+<button onclick="showA('a5')">Show mark-point model</button>
+<div class="answer" id="a5">The program is automatically adapting its own process as new information is received. This matches the syllabus definition of machine learning, which is the ability of a program to automatically adapt its own processes and/or data.</div></div>
+
+<div class="card"><h3>12 · Common mistakes</h3>
+<ul><li>Defining machine learning as simply “AI that learns”.</li><li>Forgetting the word <b>automatically</b>.</li><li>Ignoring the possibility of adapting <b>processes and/or data</b>.</li><li>Calling every program that uses data machine learning.</li><li>Assuming a programmer must manually change the code for it to count as machine learning.</li></ul></div>
+
+<div class="card"><h3>13 · Self-assessment</h3>
+<p>Can you explain machine learning precisely enough for a Cambridge 0984 exam?</p>
+<button onclick="confidence('ready')">🟢 Yes</button><button onclick="confidence('practice')">🟡 More practice</button><button onclick="confidence('revise')">🔴 Need revision</button>
+<div class="score" id="confidence"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 12 · Machine learning.</div>
+</div>
+</section>
+</main>
+
+<script>
+function showA(id){document.getElementById(id).style.display='block'}
+function checkQ(btn,correct,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(correct?'correct':'wrong');
+ const m={
+ q1:correct?'✓ Correct — automatic adaptation of processes and/or data is the key idea.':'✗ Manual rewriting is not the defining feature of machine learning.',
+ q2:correct?'✓ Correct — automatic adjustment from new information fits the syllabus definition.':'✗ An unchanged program is a fixed programmed system.',
+ q3:correct?'✓ Correct — the syllabus specifically says processes and/or data.':'✗ The whole program does not need to change.'
+ };
+ document.getElementById(id).textContent=m[id]
+}
+function confidence(v){
+ const m={
+ ready:'Excellent — you know the precise Cambridge definition of machine learning.',
+ practice:'Good. Practise distinguishing automatic adaptation from fixed programming.',
+ revise:'Remember: MACHINE LEARNING = a program automatically adapts its own PROCESSES and/or DATA.'
+ };
+ document.getElementById('confidence').textContent=m[v]
+}
+</script>
+</body>
+</html>

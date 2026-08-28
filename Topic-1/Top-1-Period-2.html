@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 2</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 2</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>Your teaching route — keep this open while presenting</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 2 · Converting Between Binary and Denary</h3>
+      <p><b>Cambridge focus:</b> Topic 1.1 Number systems — converting between positive denary and positive binary. The syllabus requires conversions in both directions, with integer values only and binary numbers up to 16 bits. fileciteturn5file0L11-L24</p>
+      <div class="callout"><b>Success criteria:</b> Students can convert positive binary integers to denary using place values and convert positive denary integers to binary using an appropriate method, showing clear working.</div>
+      <p><b>Prior learning:</b> Period 1 — binary, denary, bases and binary place values.</p>
+      <p><b>Key vocabulary:</b> denary, binary, base, bit, place value, positive integer, convert, most significant bit, least significant bit.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">Teacher preparation</span>
+      <h3>Before students enter</h3>
+      <ul>
+        <li>Open the webpage in full-screen mode.</li>
+        <li>Review the 8-bit place-value sequence: 128, 64, 32, 16, 8, 4, 2, 1.</li>
+        <li>Prepare mini-whiteboards or paper for rapid conversion questions.</li>
+        <li>Remind students that this period focuses on <b>positive integers</b>; two's complement is taught later.</li>
+        <li>Keep the distinction clear between a number's value and the binary representation used to store it.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Start with yesterday's learning</h3>
+      <ol>
+        <li>What is the base of binary?</li>
+        <li>What are the only two binary digits?</li>
+        <li>Write the 8-bit place values from left to right.</li>
+        <li>What does the right-most place represent?</li>
+      </ol>
+      <div class="callout"><b>Teacher move:</b> Do not reteach the whole previous period. Use these questions to identify gaps before introducing conversion.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–15 min · Teach</span>
+      <h3>Binary → Denary</h3>
+      <p>Model the method slowly. Place the binary digits above their powers of two, select the place values beneath every <b>1</b>, then add them.</p>
+      <div class="weights">
+        <div>128</div><div>64</div><div>32</div><div>16</div>
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p><b>Model:</b> 10110101₂</p>
+      <p style="text-align:center;font-weight:800">128 + 32 + 16 + 4 + 1 = 181</p>
+      <p>Therefore <b>10110101₂ = 181₁₀</b>.</p>
+      <div class="callout"><b>Check:</b> Ask students to point to every 1 before doing the addition. This reduces place-value errors.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">15–25 min · Teach</span>
+      <h3>Denary → Binary</h3>
+      <p>Use the largest suitable power of two and work from left to right. Put a <b>1</b> when the place value can be subtracted from the remaining value; otherwise put <b>0</b>.</p>
+      <p><b>Model 1:</b> Convert 45₁₀ to 8-bit binary.</p>
+      <p>32 fits → 1, remainder 13<br>16 does not fit → 0<br>8 fits → 1, remainder 5<br>4 fits → 1, remainder 1<br>2 does not fit → 0<br>1 fits → 1</p>
+      <div class="callout"><b>Answer:</b> 45₁₀ = 00101101₂</div>
+      <p><b>Teacher emphasis:</b> Leading zeroes are included when the question asks for an 8-bit answer.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">25–34 min · Guided practice</span>
+      <h3>Think → Pair → Explain</h3>
+      <p><b>Binary to denary:</b></p>
+      <ol>
+        <li>00001111₂</li>
+        <li>00101010₂</li>
+        <li>11000001₂</li>
+      </ol>
+      <p><b>Denary to 8-bit binary:</b></p>
+      <ol start="4">
+        <li>18₁₀</li>
+        <li>72₁₀</li>
+        <li>200₁₀</li>
+      </ol>
+      <p>Require students to explain the place values they selected rather than giving only an answer.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">34–42 min · Differentiation</span>
+      <h3>Three levels of challenge</h3>
+      <p><b>Support:</b> use an 8-bit place-value table and convert 7, 12, 25 and 31.</p>
+      <p><b>Core:</b> convert 53, 94, 127 and 173 into 8-bit binary.</p>
+      <p><b>Challenge:</b> convert 101101011001₂ to denary, then convert 2749₁₀ to binary. The syllabus permits binary values up to 16 bits. fileciteturn5file0L36-L39</p>
+    </div>
+
+    <div class="card">
+      <span class="time">42–47 min · Assessment</span>
+      <h3>Mini-whiteboard check</h3>
+      <ol>
+        <li>Convert 01100101₂ to denary.</li>
+        <li>Convert 156₁₀ to 8-bit binary.</li>
+        <li>Explain why 00010110₂ and 10110₂ represent the same positive value.</li>
+      </ol>
+      <div class="callout"><b>Look for:</b> students who know the procedure but repeatedly misalign the place values. This is a representation error, not necessarily a calculation error.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>Convert 00111001₂ to denary.</li>
+        <li>Convert 99₁₀ to 8-bit binary.</li>
+        <li>Write one sentence describing your method for denary → binary.</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> If students can perform both directions accurately, Period 3 can introduce hexadecimal and binary/hexadecimal conversion. If not, begin Period 3 with a short targeted conversion recap.</div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Cambridge specifies the required conversion skills, but does not prescribe classroom hours. This is a 50-minute teacher-designed period within Topic 1.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Binary → Denary</span>
+        <span>3. Denary → Binary</span><span>4. Practice</span>
+        <span>5. Challenge</span><span>6. Exit ticket</span>
+      </div>
+      <p>Today you will learn to move between two number systems. Always write your working — the method is as important as the final answer.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Convert a positive binary integer to denary.</li>
+        <li>Convert a positive denary integer to binary.</li>
+        <li>Use binary place values accurately.</li>
+        <li>Give an 8-bit answer when 8 bits are requested.</li>
+        <li>Explain the method clearly enough for another student to follow.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · Binary → Denary</h3>
+      <p>Use the place values:</p>
+      <div class="weights">
+        <div>128</div><div>64</div><div>32</div><div>16</div>
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p>Example: <b>01011010₂</b></p>
+      <p>The 1s are under 64, 16, 8 and 2.</p>
+      <div class="callout"><b>64 + 16 + 8 + 2 = 90</b><br>So 01011010₂ = 90₁₀.</div>
+      <p><b>Rule:</b> add only the place values whose binary digit is 1.</p>
+    </div>
+
+    <div class="card">
+      <h3>2 · Denary → Binary</h3>
+      <p>To convert a positive denary integer into binary, compare it with the place values from the largest to the smallest.</p>
+      <p><b>Example: 45₁₀</b></p>
+      <div class="weights">
+        <div>128</div><div>64</div><div>32</div><div>16</div>
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p>45 is less than 64 → <b>0</b><br>
+      45 contains 32 → <b>1</b>, remainder 13<br>
+      13 is less than 16 → <b>0</b><br>
+      13 contains 8 → <b>1</b>, remainder 5<br>
+      5 contains 4 → <b>1</b>, remainder 1<br>
+      1 is less than 2 → <b>0</b><br>
+      1 contains 1 → <b>1</b></p>
+      <div class="callout"><b>45₁₀ = 00101101₂</b></div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Why leading zeroes matter</h3>
+      <p><b>101101₂</b> and <b>00101101₂</b> have the same positive value: 45.</p>
+      <p>The second form explicitly uses 8 bits.</p>
+      <div class="callout"><b>Exam tip:</b> If the question says “give your answer as an 8-bit binary number”, include leading zeroes.</div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Quick check</h3>
+      <p><b>Q1:</b> What is 00001111₂ in denary?</p>
+      <button class="option" onclick="studentCheck(this,false,'q1s')">12</button>
+      <button class="option" onclick="studentCheck(this,true,'q1s')">15</button>
+      <button class="option" onclick="studentCheck(this,false,'q1s')">16</button>
+      <div class="score" id="q1s"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> What is 18₁₀ as an 8-bit binary number?</p>
+      <button class="option" onclick="studentCheck(this,true,'q2s')">00010010</button>
+      <button class="option" onclick="studentCheck(this,false,'q2s')">00011000</button>
+      <button class="option" onclick="studentCheck(this,false,'q2s')">00100010</button>
+      <div class="score" id="q2s"></div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Practice — no peeking!</h3>
+      <p><b>Convert binary to denary:</b></p>
+      <ol>
+        <li>00001011₂</li><li>00110110₂</li><li>10010101₂</li>
+      </ol>
+      <p><b>Convert denary to 8-bit binary:</b></p>
+      <ol start="4">
+        <li>27₁₀</li><li>64₁₀</li><li>149₁₀</li>
+      </ol>
+      <button onclick="show('answers2')">Reveal answers</button>
+      <div class="answer" id="answers2">
+        <b>Answers:</b><br>
+        1. 11 &nbsp; 2. 54 &nbsp; 3. 149<br>
+        4. 00011011 &nbsp; 5. 01000000 &nbsp; 6. 10010101
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Challenge</h3>
+      <p>Try these without an 8-bit table:</p>
+      <ol>
+        <li>Convert 111100001111₂ to denary.</li>
+        <li>Convert 2749₁₀ to binary.</li>
+        <li>Explain how you know that 00101101₂ represents 45₁₀.</li>
+      </ol>
+      <button onclick="show('challenge2')">Show challenge answers</button>
+      <div class="answer" id="challenge2">
+        <b>Answers:</b><br>
+        1. 3855<br>
+        2. 101010111101₂<br>
+        3. 32 + 8 + 4 + 1 = 45.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Common mistakes</h3>
+      <ul>
+        <li>Starting the place-value row with 1 instead of the largest required power of two.</li>
+        <li>Adding place values under 0s.</li>
+        <li>Forgetting that 1, 2, 4, 8, 16, 32... are powers of two.</li>
+        <li>Writing the correct value but not giving the requested 8-bit representation.</li>
+        <li>Confusing the conversion direction and using the wrong method.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>8 · Exam practice</h3>
+      <p><b>Question:</b> Convert <b>01101011₂</b> into denary. Show your working.</p>
+      <button onclick="show('exam2')">Show model answer</button>
+      <div class="answer" id="exam2">
+        01101011₂ = 64 + 32 + 8 + 2 + 1 = <b>107₁₀</b>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Self-assessment</h3>
+      <p>How confident are you now?</p>
+      <button onclick="confidence2('confident')">🟢 I can convert both ways</button>
+      <button onclick="confidence2('okay')">🟡 I need a little more practice</button>
+      <button onclick="confidence2('need')">🔴 I need help</button>
+      <div class="score" id="confidence2"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      <b>Source basis:</b> Cambridge IGCSE (9–1) Computer Science 0984 syllabus, 2026–2028, Topic 1.1; and <i>Cambridge IGCSE and O Level Computer Science, Second Edition</i>, Chapter 1. Content is presented as original teaching material.
+    </div>
+  </div>
+</section>
+</main>
+
+<script>
+function studentCheck(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  document.getElementById(id).textContent=correct?'✓ Correct!':'✗ Not quite. Check the place values and try again.';
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence2(v){
+  const text={
+    confident:'Excellent — you are ready to move on to hexadecimal.',
+    okay:'Good. Practise the conversion questions once more.',
+    need:'That is useful information. Rework the examples and ask your teacher to check your method.'
+  };
+  document.getElementById('confidence2').textContent=text[v];
+}
+</script>
+</body>
+</html>

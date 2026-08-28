@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Practical 1 | Period 27</title>
+<style>
+:root{--teak:#7b4b2a;--dark:#4f2d19;--half:#f8f5ec;--half2:#eee8dc;--ink:#3b281d;--cream:#fffdf8;--gold:#d6ad62}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#6f4326,#8b5733 48%,#6b3f25);color:var(--ink);overflow:hidden}
+header{height:86px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#4f2d19ee;color:var(--half);border-bottom:2px solid #c99a5a;box-shadow:0 5px 18px #24140b66}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0;font-size:13px;font-weight:600;color:#eadfce}
+.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:45px;height:45px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700;color:#fff}
+.school{display:flex;align-items:center;gap:11px}.school img{width:49px;height:49px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}
+.badge{padding:9px 14px;border-radius:18px;background:var(--gold);color:var(--dark);font-weight:900;font-size:13px}
+.layout{height:calc(100vh - 86px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:#f8f5ecf2;border:2px solid #d1ad77;border-radius:22px;box-shadow:0 14px 34px #24140b66;overflow:hidden;display:flex;flex-direction:column}
+.panehead{padding:15px 20px;background:var(--dark);color:var(--half)}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:var(--cream);border:1px solid #cbbda8;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #5b3a2112}
+.card h3{margin:0 0 9px;font-size:17px;color:var(--dark)}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}
+.time{display:inline-block;background:#ead5ae;border:1px solid #b88b4d;color:var(--dark);border-radius:20px;padding:4px 9px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{border-left:5px solid var(--teak);background:var(--half2);padding:12px 14px;border-radius:8px;margin:10px 0}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:var(--half2);border-radius:16px;margin:15px 0}
+.node{padding:13px 15px;border-radius:13px;background:var(--dark);color:var(--half);font-weight:900;text-align:center}.tag{padding:10px 13px;border-radius:12px;background:#ead5ae;color:var(--dark);font-weight:900}.arrow{font-size:25px;font-weight:900;color:var(--teak)}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--dark);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c7b9a6;color:var(--ink);margin:7px 0}.option.correct{background:#e1efe5;border-color:#6e9a7c}.option.wrong{background:#f5dfdb;border-color:#a96c62}
+.score{font-weight:900;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#e6f0e8;border-radius:10px;border:1px solid #9db9a4}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e5ded3;font-size:12px;font-weight:800}.progress .active{background:#ead5ae;border:1px solid #b88b4d}
+.workout{background:#f4eee4;border:2px dashed #b68a56;border-radius:15px;padding:15px;margin:12px 0}
+.code{font-family:Consolas,monospace;background:#392317;color:#fff;padding:14px;border-radius:12px;line-height:1.65}
+.footer{font-size:11px;color:#66584c;border-top:1px solid #d6cbbb;padding-top:10px;margin-top:18px}
+table{width:100%;border-collapse:collapse}th{background:var(--dark);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5ccbf;vertical-align:top}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div>
+<h1>IGCSE Computer Science 0984</h1><p>Practical Studio 1 · Algorithms & Problem Solving · Period 27</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">PRACTICAL STUDIO</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>🧑‍🏫 Teacher Studio</h2><small>String processing · character traversal · validation · searching text</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Practical 1 · Period 27</span>
+<h3>String Processing — Practical Techniques</h3>
+<p>Students apply their algorithmic skills to <b>strings</b>. They learn to inspect characters, count occurrences, search for text, validate simple string requirements and build reusable string-processing routines.</p>
+<div class="callout"><b>Core idea:</b> A string can be processed systematically by examining its characters, applying a condition and maintaining a suitable counter, flag or result.</div>
+</div>
+
+<div class="card"><span class="time">Teaching route</span><h3>STRING → CHARACTERS → TEST CONDITION → UPDATE → RESULT</h3>
+<div class="flow"><div class="node">STRING</div><div class="arrow">→</div><div class="tag">CHARACTER</div><div class="arrow">→</div><div class="node">CHECK</div><div class="arrow">→</div><div class="tag">COUNT / FLAG</div><div class="arrow">→</div><div class="node">RESULT</div></div></div>
+
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>1 · Strings are data too</h3>
+<div class="workout">How could a program count how many times the letter "A" occurs in a word?</div>
+<div class="callout">Traverse the characters one by one. Whenever the current character equals "A", increment a counter.</div>
+</div>
+
+<div class="card"><span class="time">8–18 min · Teach</span><h3>2 · Traversing a string</h3>
+<div class="code">Count ← 0<br>FOR I ← 1 TO LENGTH(Word)<br>&nbsp;&nbsp;IF Word[I] = "A" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;Count ← Count + 1<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br>OUTPUT Count</div>
+<p>The loop visits every character. The counter records how many characters satisfy the condition.</p>
+</div>
+
+<div class="card"><span class="time">18–27 min · Teach</span><h3>3 · Searching for a character</h3>
+<div class="code">Found ← FALSE<br>FOR I ← 1 TO LENGTH(Text)<br>&nbsp;&nbsp;IF Text[I] = "X" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;Found ← TRUE<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br>IF Found = TRUE THEN<br>&nbsp;&nbsp;OUTPUT "X found"<br>ELSE<br>&nbsp;&nbsp;OUTPUT "X not found"<br>ENDIF</div>
+<div class="callout">A Boolean flag is useful when the final question is simply whether something was found.</div>
+</div>
+
+<div class="card"><span class="time">27–35 min · Worked example</span><h3>4 · Example #1 — Count vowels</h3>
+<div class="code">Count ← 0<br>FOR I ← 1 TO LENGTH(Text)<br>&nbsp;&nbsp;IF Text[I] = "A" OR Text[I] = "E" OR Text[I] = "I" OR Text[I] = "O" OR Text[I] = "U" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;Count ← Count + 1<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br>OUTPUT Count</div>
+<p>For <b>"COMPUTER"</b>, the result is <b>3</b>: O, U and E.</p>
+</div>
+
+<div class="card"><span class="time">35–42 min · Worked example</span><h3>5 · Example #2 — Validate a simple identifier</h3>
+<div class="code">Valid ← TRUE<br>IF LENGTH(Code) &lt; 3 THEN<br>&nbsp;&nbsp;Valid ← FALSE<br>ENDIF<br><br>IF Valid = TRUE THEN<br>&nbsp;&nbsp;OUTPUT "Length acceptable"<br>ELSE<br>&nbsp;&nbsp;OUTPUT "Too short"<br>ENDIF</div>
+<p>This demonstrates how string length can become part of a validation rule.</p>
+</div>
+
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>6 · String workout</h3>
+<div class="workout">Write an algorithm that counts the number of occurrences of the letter "S" in a string.</div>
+<button onclick="showT27('w1')">Show model</button>
+<div class="answer" id="w1"><div class="code">Count ← 0<br>FOR I ← 1 TO LENGTH(Text)<br>&nbsp;&nbsp;IF Text[I] = "S" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;Count ← Count + 1<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br>OUTPUT Count</div></div>
+</div>
+
+<div class="card"><span class="time">47–50 min · Exit</span><h3>7 · Teacher questions</h3>
+<ul><li>How can a string be traversed?</li><li>When is a counter useful?</li><li>When is a Boolean flag useful?</li><li>How can string length support validation?</li></ul>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Practical Studio 1 · Period 27 · String processing techniques.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🧑‍💻 Student Practical Studio</h2><small>Character processing · counters · flags · validation · workouts</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your practical journey</h3>
+<div class="progress"><span>1. Arrays</span><span>2. Search</span><span>3. Sort</span><span>4. Subroutines</span><span>5. Files</span><span>6. Validation</span><span>7. Testing</span><span>8. Integration</span><span>9. Menus</span><span class="active">10. Strings</span></div>
+</div>
+
+<div class="card"><h3>🎯 Learning targets</h3>
+<ul><li>Traverse a string character by character.</li><li>Count matching characters.</li><li>Search for a character or pattern.</li><li>Use Boolean flags.</li><li>Use string length in validation.</li><li>Test string algorithms with meaningful data.</li></ul>
+</div>
+
+<div class="card"><h3>1 · Quick check</h3>
+<p>What is the purpose of <b>LENGTH(Text)</b> in a character-traversal loop?</p>
+<button class="option" onclick="checkT27(this,true,'q1')">It tells the loop how many characters to examine.</button>
+<button class="option" onclick="checkT27(this,false,'q1')">It automatically counts vowels.</button>
+<div class="score" id="q1"></div>
+</div>
+
+<div class="card"><h3>2 · Worked Example #1 — Count a character</h3>
+<div class="code">Text ← "MISSISSIPPI"<br>Count ← 0<br>FOR I ← 1 TO LENGTH(Text)<br>&nbsp;&nbsp;IF Text[I] = "S" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;Count ← Count + 1<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br>OUTPUT Count</div>
+<div class="callout">The result is <b>4</b> because S occurs four times.</div>
+</div>
+
+<div class="card"><h3>3 · Workout — Count digits</h3>
+<div class="workout">Design an algorithm that counts how many "7" characters occur in a string.</div>
+<button onclick="showT27('a1')">Show model</button>
+<div class="answer" id="a1"><div class="code">Count ← 0<br>FOR I ← 1 TO LENGTH(Text)<br>&nbsp;&nbsp;IF Text[I] = "7" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;Count ← Count + 1<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br>OUTPUT Count</div></div>
+</div>
+
+<div class="card"><h3>4 · Interactive check</h3>
+<p>How many vowels are in <b>COMPUTER</b>?</p>
+<button class="option" onclick="checkT27(this,true,'q2')">3</button>
+<button class="option" onclick="checkT27(this,false,'q2')">4</button>
+<div class="score" id="q2"></div>
+</div>
+
+<div class="card"><h3>5 · Worked Example #2 — Search with a flag</h3>
+<div class="code">Found ← FALSE<br>FOR I ← 1 TO LENGTH(Text)<br>&nbsp;&nbsp;IF Text[I] = "Z" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;Found ← TRUE<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br>IF Found THEN<br>&nbsp;&nbsp;OUTPUT "Found"<br>ELSE<br>&nbsp;&nbsp;OUTPUT "Not found"<br>ENDIF</div>
+<p>Once the flag becomes TRUE, it remains TRUE. The final decision is made after the traversal.</p>
+</div>
+
+<div class="card"><h3>6 · Workout — Find a letter</h3>
+<div class="workout">Write pseudocode to determine whether the letter "Q" occurs in a string.</div>
+<button onclick="showT27('a2')">Show model</button>
+<div class="answer" id="a2"><div class="code">Found ← FALSE<br>FOR I ← 1 TO LENGTH(Text)<br>&nbsp;&nbsp;IF Text[I] = "Q" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;Found ← TRUE<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br>OUTPUT Found</div></div>
+</div>
+
+<div class="card"><h3>7 · Worked Example #3 — String validation</h3>
+<div class="code">INPUT Username<br>WHILE LENGTH(Username) &lt; 5 DO<br>&nbsp;&nbsp;OUTPUT "Username must have at least 5 characters"<br>&nbsp;&nbsp;INPUT Username<br>ENDWHILE<br>OUTPUT "Accepted"</div>
+<p>This is a practical combination of string processing and input validation.</p>
+</div>
+
+<div class="card"><h3>8 · Debugging workout</h3>
+<div class="code">Count ← 0<br>FOR I ← 1 TO LENGTH(Text) - 1<br>&nbsp;&nbsp;IF Text[I] = "A" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;Count ← Count + 1<br>&nbsp;&nbsp;ENDIF<br>NEXT I</div>
+<p>Why might this miss a character?</p>
+<button onclick="showT27('a3')">Reveal</button>
+<div class="answer" id="a3">The loop stops at <b>LENGTH(Text) - 1</b>, so the final character is never checked. If every character must be examined, the upper limit should be <b>LENGTH(Text)</b>.</div>
+</div>
+
+<div class="card"><h3>9 · Interactive check</h3>
+<p>Which variable type is particularly useful for storing "found / not found"?</p>
+<button class="option" onclick="checkT27(this,true,'q3')">Boolean</button>
+<button class="option" onclick="checkT27(this,false,'q3')">Real</button>
+<div class="score" id="q3"></div>
+</div>
+
+<div class="card"><h3>10 · Challenge — Count vowels</h3>
+<div class="workout">Write an algorithm that counts A, E, I, O and U in a string. Test it using at least one string with no vowels and one containing several vowels.</div>
+<button onclick="showT27('a4')">Show solution</button>
+<div class="answer" id="a4"><div class="code">Count ← 0<br>FOR I ← 1 TO LENGTH(Text)<br>&nbsp;&nbsp;IF Text[I] = "A" OR Text[I] = "E" OR Text[I] = "I" OR Text[I] = "O" OR Text[I] = "U" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;Count ← Count + 1<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br>OUTPUT Count</div></div>
+</div>
+
+<div class="card"><h3>11 · Test your string algorithm</h3>
+<table><tr><th>Test string</th><th>Purpose</th></tr><tr><td>COMPUTER</td><td>Normal mixed text</td></tr><tr><td>AEIOU</td><td>Many matching characters</td></tr><tr><td>BCDFG</td><td>No vowels</td></tr><tr><td>A</td><td>Single-character boundary case</td></tr><tr><td>""</td><td>Empty-string case, if permitted by the specification</td></tr></table>
+</div>
+
+<div class="card"><h3>12 · Think like an examiner</h3>
+<p>Why should a string algorithm be tested with a string containing no matching characters?</p>
+<button class="option" onclick="checkT27(this,true,'q4')">It checks that the initial count or flag remains correct when there are no matches.</button>
+<button class="option" onclick="checkT27(this,false,'q4')">Because every string must contain the target character.</button>
+<div class="score" id="q4"></div>
+</div>
+
+<div class="card"><h3>13 · Mini exam question</h3>
+<p>Write pseudocode to count the number of occurrences of the character "E" in a string called Text.</p>
+<button onclick="showT27('a5')">Show model answer</button>
+<div class="answer" id="a5"><div class="code">Count ← 0<br>FOR I ← 1 TO LENGTH(Text)<br>&nbsp;&nbsp;IF Text[I] = "E" THEN<br>&nbsp;&nbsp;&nbsp;&nbsp;Count ← Count + 1<br>&nbsp;&nbsp;ENDIF<br>NEXT I<br>OUTPUT Count</div></div>
+</div>
+
+<div class="card"><h3>14 · Final practical challenge</h3>
+<div class="workout">Build a username checker that requires at least 5 characters and reports whether the username contains the character "A". Add suitable validation and tests.</div>
+<button onclick="showT27('a6')">Use this plan</button>
+<div class="answer" id="a6"><ol><li>Input the username.</li><li>Validate its length.</li><li>Traverse the string.</li><li>Use a Boolean flag for "A found".</li><li>Output the result.</li><li>Test short, valid, matching and non-matching usernames.</li></ol></div>
+</div>
+
+<div class="card"><h3>15 · Common mistakes</h3>
+<ul><li>Using the wrong upper limit for the character loop.</li><li>Forgetting to initialise the counter or flag.</li><li>Counting the wrong character.</li><li>Confusing a counter with a Boolean flag.</li><li>Ignoring case requirements specified by the problem.</li><li>Not considering an empty or one-character string when appropriate.</li></ul>
+</div>
+
+<div class="card"><h3>16 · Self-assessment</h3>
+<p>Can you traverse strings, count characters, search for characters, validate string requirements and test your solution thoroughly?</p>
+<button onclick="confidenceT27('ready')">🟢 Yes</button>
+<button onclick="confidenceT27('practice')">🟡 More workouts</button>
+<button onclick="confidenceT27('revise')">🔴 Need revision</button>
+<div class="score" id="confidence"></div>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Practical Studio 1 · Period 27 · String processing techniques.</div>
+</div>
+</section>
+</main>
+
+<script>
+function checkT27(btn,c,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(c?'correct':'wrong');
+ const m={
+ q1:c?'✓ Correct — the length gives the number of character positions to examine.':'✗ LENGTH gives the number of characters; it does not perform the counting task itself.',
+ q2:c?'✓ Correct — O, U and E are the three vowels.':'✗ Check each character: C O M P U T E R.',
+ q3:c?'✓ Correct — a Boolean naturally represents TRUE or FALSE.':'✗ A found/not-found state is best represented by a Boolean.',
+ q4:c?'✓ Correct — it checks that the initial count or FALSE state works when there are zero matches.':'✗ No-match data is an important test of the starting state.'
+ };
+ document.getElementById(id).textContent=m[id];
+}
+function showT27(id){document.getElementById(id).style.display='block'}
+function confidenceT27(v){
+ const t={
+ ready:'Excellent — you can now process strings systematically and test the important cases.',
+ practice:'Good. Keep practising character traversal, counters and Boolean flags.',
+ revise:'Remember: traverse → test each character → update the counter/flag → produce the result.'
+ };
+ document.getElementById('confidence').textContent=t[v];
+}
+</script>
+</body>
+</html>

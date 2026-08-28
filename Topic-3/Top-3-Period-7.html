@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 3 | Period 7</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--glass:rgba(255,255,255,.76)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#ffffff55;backdrop-filter:blur(12px);border-bottom:1px solid #fff9}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0;font-size:13px;font-weight:600}
+.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}
+.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:800;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid #fff9;border-radius:22px;box-shadow:0 12px 30px #082b5928;overflow:hidden;display:flex;flex-direction:column}
+.panehead{padding:15px 20px;background:#082b59f5;color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:#fffdf5eb;border:1px solid #082b5922;border-radius:16px;padding:16px;margin-bottom:15px}
+.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}
+.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}
+.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.box{padding:13px;border-radius:13px;background:#f7f2df;border:1px solid #d9c98f}.box b{display:block;margin-bottom:5px}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#ffffff95;border-radius:16px;margin:15px 0}
+.node{padding:13px 15px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:25px;font-weight:900}.tag{padding:10px 13px;border-radius:12px;background:var(--gold2);font-weight:900}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}
+.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div>
+<h1>IGCSE Computer Science 0984</h1><p>Topic 3 — Hardware · Period 7</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>Primary storage · RAM · ROM</small></div>
+<div class="content">
+<div class="card"><span class="time">Lesson overview</span><h3>Period 7 · Primary Storage</h3>
+<p>This lesson begins <b>3.3 Data storage</b>. Students learn what primary storage means, why it is directly accessed by the CPU, and the roles of <b>RAM</b> and <b>ROM</b>.</p>
+<div class="callout"><b>Success criteria:</b> Students can define primary storage, explain why RAM and ROM are needed, distinguish RAM from ROM, and explain why a computer needs both.</div>
+<p>Cambridge specifies that primary storage is directly accessed by the CPU and includes RAM and ROM. Students must understand why both are needed and the difference between them. citeturn0search12</p></div>
+<div class="card"><span class="time">My teaching route</span><h3>Build the storage hierarchy from the CPU</h3>
+<ol><li>Retrieve CPU processing.</li><li>Define primary storage.</li><li>Explain direct CPU access.</li><li>Introduce RAM and its role during current processing.</li><li>Introduce ROM and its role in storing essential instructions that persist without power.</li><li>Compare RAM and ROM.</li><li>Apply the distinction to real situations.</li></ol>
+<div class="callout"><b>Core distinction:</b> RAM is working memory for current programs/data; ROM stores essential instructions that are retained when power is removed.</div></div>
+<div class="card"><span class="time">0–7 min · Retrieval</span><h3>Where does the CPU get what it needs?</h3>
+<div class="flow"><div class="node">CPU</div><div class="arrow">↔</div><div class="tag">PRIMARY<br>STORAGE</div><div class="arrow">↔</div><div class="node">DATA /<br>INSTRUCTIONS</div></div>
+<p>Ask: <b>What does “primary” mean in primary storage?</b></p>
+<div class="callout">Primary storage is storage that is <b>directly accessed by the CPU</b>.</div></div>
+<div class="card"><span class="time">7–17 min · Teach</span><h3>1 · RAM</h3>
+<p><b>Random Access Memory (RAM)</b> is primary storage used to hold programs and data that are currently being used by the computer.</p>
+<div class="grid"><div class="box"><b>Volatile</b>Its contents are lost when power is switched off.</div><div class="box"><b>Working memory</b>Holds programs and data currently in use.</div><div class="box"><b>CPU access</b>Directly accessed by the CPU.</div><div class="box"><b>Changeable</b>Contents can be read and written during normal operation.</div></div>
+</div>
+<div class="card"><span class="time">17–27 min · Teach</span><h3>2 · ROM</h3>
+<p><b>Read Only Memory (ROM)</b> is primary storage that contains essential instructions needed to start or operate the computer system.</p>
+<div class="grid"><div class="box"><b>Non-volatile</b>Contents are retained when power is switched off.</div><div class="box"><b>Essential instructions</b>Stores instructions needed for startup/booting.</div><div class="box"><b>Primary storage</b>Directly accessible by the CPU.</div><div class="box"><b>Persistent</b>Its contents do not disappear simply because power is removed.</div></div>
+</div>
+<div class="card"><span class="time">27–36 min · Compare</span><h3>3 · RAM vs ROM</h3>
+<table><tr><th>RAM</th><th>ROM</th></tr><tr><td>Volatile.</td><td>Non-volatile.</td></tr><tr><td>Stores programs/data currently in use.</td><td>Stores essential startup instructions.</td></tr><tr><td>Contents change as programs run.</td><td>Contents are retained without power.</td></tr><tr><td>Used as working memory.</td><td>Used for persistent essential instructions.</td></tr></table>
+<div class="callout"><b>Exam trigger:</b> “Lost when power is removed” → RAM. “Retained when power is removed” → ROM.</div></div>
+<div class="card"><span class="time">36–43 min · Apply</span><h3>4 · Why does a computer need both?</h3>
+<div class="flow"><div class="tag">ROM<br>essential startup instructions</div><div class="arrow">→</div><div class="node">START /<br>BOOT</div><div class="arrow">→</div><div class="tag">RAM<br>current programs + data</div></div>
+<p>A computer needs ROM so that essential instructions remain available when the system is powered on. It needs RAM to provide temporary working storage for the operating system, programs and data currently being used.</p></div>
+<div class="card"><span class="time">43–47 min · Misconceptions</span><h3>5 · Avoid these mistakes</h3>
+<ul><li>Calling RAM permanent storage.</li><li>Saying ROM loses its contents when power is removed.</li><li>Calling secondary storage “primary” because it stores files permanently.</li><li>Forgetting that primary storage is directly accessed by the CPU.</li><li>Saying RAM stores only programs and never data.</li></ul></div>
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>Four quick checks</h3>
+<ol><li>What is primary storage?</li><li>What does RAM store?</li><li>Why is RAM volatile?</li><li>Why does a computer need ROM?</li></ol>
+<div class="callout"><b>Answers:</b> storage directly accessed by CPU · current programs/data · contents are lost without power · retains essential startup instructions.</div></div>
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 3 · Hardware · Period 7 · Primary storage, RAM and ROM.</div>
+</div></section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Primary</span><span>2. RAM</span><span>3. ROM</span><span>4. Compare</span><span>5. Test</span></div><p>Today you will understand the computer's main working storage and its essential non-volatile instructions.</p></div>
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Define primary storage.</li><li>Explain why primary storage is required.</li><li>Explain the role of RAM.</li><li>Explain the role of ROM.</li><li>Distinguish between RAM and ROM.</li><li>Explain why a computer needs both.</li></ul></div>
+<div class="card"><h3>1 · Primary storage</h3><p>Primary storage is storage that the <b>CPU can access directly</b>.</p><div class="flow"><div class="node">CPU</div><div class="arrow">↔</div><div class="tag">PRIMARY STORAGE</div><div class="arrow">↔</div><div class="node">CURRENT<br>PROCESSING</div></div><div class="callout">The two primary-storage types you need to know here are <b>RAM and ROM</b>.</div></div>
+<div class="card"><h3>2 · Interactive primary-storage check</h3><p>Which statement is correct?</p><button class="option" onclick="checkP7(this,true,'q1p7')">Primary storage is directly accessed by the CPU.</button><button class="option" onclick="checkP7(this,false,'q1p7')">Primary storage can only be accessed through a printer.</button><div class="score" id="q1p7"></div></div>
+<div class="card"><h3>3 · RAM</h3><div class="flow"><div class="node">PROGRAM</div><div class="arrow">+</div><div class="node">DATA</div><div class="arrow">→</div><div class="tag">RAM<br>WORKING MEMORY</div></div><p>RAM holds programs and data currently being used.</p><div class="callout"><b>Volatile</b> means the contents are lost when the computer is switched off.</div></div>
+<div class="card"><h3>4 · Interactive RAM check</h3><p>Which is a characteristic of RAM?</p><button class="option" onclick="checkP7(this,true,'q2p7')">It is volatile and stores programs/data currently in use.</button><button class="option" onclick="checkP7(this,false,'q2p7')">It permanently stores the computer's startup instructions without power.</button><div class="score" id="q2p7"></div></div>
+<div class="card"><h3>5 · ROM</h3><div class="flow"><div class="tag">ROM</div><div class="arrow">→</div><div class="node">ESSENTIAL<br>STARTUP<br>INSTRUCTIONS</div></div><p>ROM retains its contents when power is removed, so essential startup instructions remain available when the computer is switched on.</p><div class="callout"><b>Non-volatile</b> means the contents are retained when power is switched off.</div></div>
+<div class="card"><h3>6 · Interactive ROM check</h3><p>Why is ROM useful when a computer is switched on?</p><button class="option" onclick="checkP7(this,true,'q3p7')">It retains essential instructions needed to start the system.</button><button class="option" onclick="checkP7(this,false,'q3p7')">It stores every document the user has ever created.</button><div class="score" id="q3p7"></div></div>
+<div class="card"><h3>7 · RAM or ROM?</h3><table><tr><th>Situation</th><th>Think...</th></tr><tr><td>Program currently running</td><td>RAM</td></tr><tr><td>Data currently being processed</td><td>RAM</td></tr><tr><td>Essential startup instructions</td><td>ROM</td></tr><tr><td>Contents must remain after power off</td><td>ROM</td></tr></table></div>
+<div class="card"><h3>8 · Interactive comparison</h3><p>A computer is switched off. Which memory loses its stored contents?</p><button class="option" onclick="checkP7(this,true,'q4p7')">RAM</button><button class="option" onclick="checkP7(this,false,'q4p7')">ROM</button><div class="score" id="q4p7"></div>
+<p style="margin-top:15px">Which memory retains its contents without electrical power?</p><button class="option" onclick="checkP7(this,false,'q5p7')">RAM</button><button class="option" onclick="checkP7(this,true,'q5p7')">ROM</button><div class="score" id="q5p7"></div></div>
+<div class="card"><h3>9 · Exam practice</h3><p><b>Question:</b> State what is meant by primary storage.</p><button onclick="showP7('a1p7')">Show model answer</button><div class="answer" id="a1p7">Storage that is directly accessed by the CPU.</div>
+<p><b>Question:</b> Explain why RAM is needed.</p><button onclick="showP7('a2p7')">Show model answer</button><div class="answer" id="a2p7">RAM provides temporary working storage for programs and data that are currently being used by the computer.</div>
+<p><b>Question:</b> Explain why a computer needs ROM.</p><button onclick="showP7('a3p7')">Show model answer</button><div class="answer" id="a3p7">ROM retains essential instructions when power is removed, so they are available when the computer starts.</div></div>
+<div class="card"><h3>10 · Challenge</h3><p>A student says: <i>“ROM is more useful than RAM because ROM does not lose its contents when the power is switched off.”</i> Is this a good comparison?</p><button onclick="showP7('challengeP7')">Show model answer</button><div class="answer" id="challengeP7">No. RAM and ROM have different purposes. RAM is needed for temporary working storage of programs and data currently being used, while ROM retains essential instructions needed for startup. A computer needs both.</div></div>
+<div class="card"><h3>11 · Self-assessment</h3><p>How confident are you with primary storage, RAM and ROM?</p><button onclick="confidenceP7('ready')">🟢 I understand</button><button onclick="confidenceP7('practice')">🟡 I need practice</button><button onclick="confidenceP7('revise')">🔴 I need revision</button><div class="score" id="confidenceP7"></div></div>
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Primary storage · RAM · ROM · Volatile · Non-volatile.</div>
+</div></section>
+</main>
+<script>
+function checkP7(btn,c,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');const m={q1p7:c?'✓ Correct — primary storage is directly accessed by the CPU.':'✗ Not quite — direct CPU access is the key definition.',q2p7:c?'✓ Correct — RAM is volatile working memory for current programs and data.':'✗ Not quite — that describes ROM.',q3p7:c?'✓ Correct — ROM retains essential startup instructions without power.':'✗ Not quite — ROM is not general file storage.',q4p7:c?'✓ Correct — RAM is volatile.':'✗ Not quite — ROM is non-volatile.',q5p7:c?'✓ Correct — ROM retains its contents without power.':'✗ Not quite — RAM is volatile.'};document.getElementById(id).textContent=m[id]}
+function showP7(id){document.getElementById(id).style.display='block'}
+function confidenceP7(v){const t={ready:'Excellent — you can explain primary storage and clearly distinguish RAM from ROM.',practice:'Good. Rehearse: RAM = current working programs/data; ROM = retained essential startup instructions.',revise:'Revisit the RAM vs ROM table and the volatile/non-volatile distinction.'};document.getElementById('confidenceP7').textContent=t[v]}
+</script>
+</body></html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 2</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+
+.network{position:relative;height:180px;margin:15px 0;border-radius:18px;background:rgba(255,255,255,.55);overflow:hidden}
+.network-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.network-svg line{stroke:#557;stroke-width:4;stroke-linecap:round}
+.network .node{position:absolute;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;background:#082b59;color:white;z-index:3;box-sizing:border-box}
+.network .sender{left:7%;top:50%}
+.network .r1{left:30%;top:25%}
+.network .r2{left:50%;top:72.2%}
+.network .r3{left:70%;top:25%}
+.network .dest{left:93%;top:50%}
+.moving-packet{position:absolute;left:0;top:0;width:26px;height:26px;border-radius:7px;background:#f2c94c;color:#082b59;font-weight:800;text-align:center;line-height:26px;z-index:4;opacity:0;transform:translate(-50%,-50%);box-shadow:0 3px 8px rgba(0,0,0,.18)}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 2 — Data Transmission · Period 2</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 2 · Packet Switching & Routers</h3>
+      <p><b>Topic 2 · Data Transmission:</b> Students now move from the structure of a packet to the way packets travel across a network using packet switching.</p>
+      <div class="callout"><b>Success criteria:</b> Students can explain packet switching, describe how routers forward packets, explain why packets can take different routes, and explain how the destination reassembles the message.</div>
+      <p><b>Prior learning:</b> Period 1 — data packets, headers, payloads, trailers and sequence numbers.</p>
+      <p><b>Key vocabulary:</b> packet switching, router, routing, route, destination, forwarding, network congestion, reassembly.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>Build the idea from the previous lesson</h3>
+      <ol>
+        <li>Remind students that a message is divided into packets.</li>
+        <li>Place four packets on the board.</li>
+        <li>Draw two or three possible network routes.</li>
+        <li>Show that packets do not necessarily have to follow the same route.</li>
+        <li>Introduce the router as the device that forwards packets towards their destination.</li>
+        <li>Finish by showing reassembly at the destination.</li>
+      </ol>
+      <div class="callout"><b>Core idea:</b> packet switching allows packets to be forwarded independently through a network and reassembled at the destination.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Remember Period 1</h3>
+      <ol>
+        <li>What is a data packet?</li>
+        <li>What are the three main parts of a packet?</li>
+        <li>Why is a sequence number useful?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> We know what a packet is. Today we investigate how packets travel from sender to receiver.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–13 min · Teach</span>
+      <h3>What is packet switching?</h3>
+      <p><b>Packet switching</b> is a method of transmitting data in which a message is split into packets and the packets are sent across a network towards the destination.</p>
+      <p>Packets can be forwarded through different parts of the network depending on the available route.</p>
+      <div class="callout"><b>Think:</b> one message → many packets → network → destination → one reconstructed message.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">13–22 min · Routers</span>
+      <h3>What does a router do?</h3>
+      <p>A <b>router</b> receives packets and decides where to forward them next so that they can move towards their destination.</p>
+      <ul>
+        <li>Receives a packet.</li>
+        <li>Reads relevant addressing information.</li>
+        <li>Chooses a suitable next route.</li>
+        <li>Forwards the packet.</li>
+      </ul>
+      <div class="callout"><b>Important:</b> a router is not the destination. It is an intermediate device that forwards traffic.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">22–30 min · Interactive route</span>
+      <h3>Watch packets choose routes</h3>
+      <p>Click <b>Send packets</b>. The animation demonstrates four packets travelling through a small network. Different packets may use different routes.</p>
+      <div class="network" id="network22">
+  <svg class="network-svg" viewBox="0 0 1000 180" preserveAspectRatio="none" aria-label="Packet switching network diagram">
+    <line x1="70" y1="90" x2="300" y2="45"/>
+    <line x1="70" y1="90" x2="500" y2="130"/>
+    <line x1="300" y1="45" x2="700" y2="45"/>
+    <line x1="500" y1="130" x2="700" y2="45"/>
+    <line x1="700" y1="45" x2="930" y2="90"/>
+    <line x1="500" y1="130" x2="930" y2="90"/>
+  </svg>
+  <div class="node sender">S</div>
+  <div class="node r1">R1</div>
+  <div class="node r2">R2</div>
+  <div class="node r3">R3</div>
+  <div class="node dest">D</div>
+  <div class="moving-packet p1">1</div>
+  <div class="moving-packet p2">2</div>
+  <div class="moving-packet p3">3</div>
+  <div class="moving-packet p4">4</div>
+</div>
+      <button onclick="runNetwork22()">▶ Send packets</button>
+      <div class="callout" id="networkStatus22">Ready.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">30–36 min · Why different routes?</span>
+      <h3>Traffic and alternative paths</h3>
+      <p>A network may have more than one possible route between two devices. If one route is busy or unavailable, packets may be forwarded through another route.</p>
+      <div class="callout"><b>Key idea:</b> packet switching can make efficient use of available network paths.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">36–41 min · Destination</span>
+      <h3>Reassembling the message</h3>
+      <p>Packets can arrive in a different order from the order in which they were sent.</p>
+      <div class="packet-demo">
+        <div class="packet">3</div><div class="packet">1</div><div class="packet">4</div><div class="packet">2</div>
+      </div>
+      <p>Sequence numbers allow the receiving system to put the packets back into the correct order:</p>
+      <div class="callout"><b>1 → 2 → 3 → 4 → original message</b></div>
+    </div>
+
+    <div class="card">
+      <span class="time">41–46 min · Assessment</span>
+      <h3>Cambridge-style questions</h3>
+      <ol>
+        <li>Define packet switching.</li>
+        <li>State the purpose of a router.</li>
+        <li>Explain why packets from the same message may take different routes.</li>
+        <li>Explain how sequence numbers help at the destination.</li>
+      </ol>
+      <div class="callout"><b>Marking focus:</b> students should describe the process of forwarding packets, not simply say that a router “connects networks”.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">46–50 min · Exit ticket</span>
+      <h3>Explain the journey</h3>
+      <p>Ask students to explain this sequence aloud:</p>
+      <div class="callout"><b>Sender → packets → routers → different possible routes → destination → reassembly</b></div>
+      <div class="callout"><b>Next:</b> Transmission modes — simplex, half-duplex and full-duplex.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 2 develops packet switching, router forwarding, alternative routes and packet reassembly.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Packet switching</span>
+        <span>3. Routers</span><span>4. Routes</span>
+        <span>5. Reassembly</span><span>6. Test</span>
+      </div>
+      <p>Today you will follow a packet from the <b>sender</b> to the <b>destination</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Define packet switching.</li>
+        <li>Explain the role of a router.</li>
+        <li>Understand that packets can take different routes.</li>
+        <li>Explain how packets are reassembled.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · What is packet switching?</h3>
+      <p>A message is split into smaller packets. The packets are transmitted through a network towards the destination.</p>
+      <div class="callout"><b>Message → packets → network → destination</b></div>
+    </div>
+
+    <div class="card">
+      <h3>2 · What does a router do?</h3>
+      <p>A router receives packets and forwards them towards their destination using a suitable route.</p>
+      <div class="callout"><b>Receive → examine → choose next route → forward</b></div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Quick check</h3>
+      <p><b>Q1:</b> What is the main role of a router?</p>
+      <button class="option" onclick="check22p2(this,true,'q1p2')">Forward packets towards their destination</button>
+      <button class="option" onclick="check22p2(this,false,'q1p2')">Create the original message</button>
+      <button class="option" onclick="check22p2(this,false,'q1p2')">Store every website permanently</button>
+      <div class="score" id="q1p2"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> Can packets from one message take different routes?</p>
+      <button class="option" onclick="check22p2(this,true,'q2p2')">Yes</button>
+      <button class="option" onclick="check22p2(this,false,'q2p2')">No</button>
+      <div class="score" id="q2p2"></div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Watch the journey</h3>
+      <div class="network" id="network22student">
+  <svg class="network-svg" viewBox="0 0 1000 180" preserveAspectRatio="none" aria-label="Packet switching network diagram">
+    <line x1="70" y1="90" x2="300" y2="45"/>
+    <line x1="70" y1="90" x2="500" y2="130"/>
+    <line x1="300" y1="45" x2="700" y2="45"/>
+    <line x1="500" y1="130" x2="700" y2="45"/>
+    <line x1="700" y1="45" x2="930" y2="90"/>
+    <line x1="500" y1="130" x2="930" y2="90"/>
+  </svg>
+  <div class="node sender">S</div>
+  <div class="node r1">R1</div>
+  <div class="node r2">R2</div>
+  <div class="node r3">R3</div>
+  <div class="node dest">D</div>
+  <div class="moving-packet p1">1</div>
+  <div class="moving-packet p2">2</div>
+  <div class="moving-packet p3">3</div>
+  <div class="moving-packet p4">4</div>
+</div>
+      <button onclick="runNetwork22student()">▶ Send packets</button>
+      <div class="callout" id="networkStudentStatus">Watch what happens to the packets.</div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Why different routes?</h3>
+      <p>Networks can have several possible paths. A packet may be forwarded along a different path if another route is busy or unavailable.</p>
+      <div class="callout"><b>Different routes do not mean different messages.</b> The packets can still belong to the same original message.</div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Reassembly</h3>
+      <p>Packets may arrive out of order:</p>
+      <div class="packet-demo">
+        <div class="packet">3</div><div class="packet">1</div><div class="packet">4</div><div class="packet">2</div>
+      </div>
+      <p>Use their sequence numbers:</p>
+      <div class="callout"><b>1 → 2 → 3 → 4</b></div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Your turn</h3>
+      <p>Define packet switching.</p>
+      <button onclick="show22p2('ans1p2')">Show model answer</button>
+      <div class="answer" id="ans1p2">A method of transmitting data in which a message is split into packets that are sent across a network towards the destination.</div>
+
+      <p style="margin-top:15px">Explain why packets may take different routes.</p>
+      <button onclick="show22p2('ans2p2')">Show model answer</button>
+      <div class="answer" id="ans2p2">A network can have several possible paths, and packets may be forwarded along different paths depending on the available route or network traffic.</div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Exam practice</h3>
+      <p><b>Question:</b> Explain how packets are reassembled at the destination.</p>
+      <button onclick="show22p2('examP2')">Show model answer</button>
+      <div class="answer" id="examP2">Sequence numbers identify the position of each packet. The receiving system uses these numbers to put packets into the correct order and reconstruct the original message.</div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Common mistakes</h3>
+      <ul>
+        <li>Thinking every packet must follow the same route.</li>
+        <li>Thinking a router is the final destination.</li>
+        <li>Forgetting the role of sequence numbers.</li>
+        <li>Thinking packets are automatically received in the correct order.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>10 · Self-assessment</h3>
+      <p>Choose your confidence:</p>
+      <button onclick="confidenceP2('confident')">🟢 I understand packet switching</button>
+      <button onclick="confidenceP2('okay')">🟡 I need more practice</button>
+      <button onclick="confidenceP2('need')">🔴 I need help</button>
+      <div class="score" id="confidenceP2"></div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Packet switching, routers, routes and reassembly.
+    </div>>>
+  </div>
+</section>
+</main>
+
+<script>
+function check22p2(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1p2:correct?'✓ Correct — routers forward packets towards their destination.':'✗ Not quite. A router forwards packets.',
+    q2p2:correct?'✓ Correct — packets can use different available routes.':'✗ Not quite. Packets can take different routes.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function show22p2(id){document.getElementById(id).style.display='block'}
+function confidenceP2(v){
+  const text={
+    confident:'Excellent — you are ready for transmission modes.',
+    okay:'Good. Review the router and route examples once more.',
+    need:'That is useful information. Revisit the packet-switching sequence.'
+  };
+  document.getElementById('confidenceP2').textContent=text[v];
+}
+function animatePackets(containerId,statusId){
+  const box=document.getElementById(containerId);
+  const packets=[...box.querySelectorAll('.moving-packet')];
+  const routes=[
+    [[7,50],[30,25],[70,25],[93,50]],
+    [[7,50],[50,72.2],[93,50]],
+    [[7,50],[30,25],[50,72.2],[93,50]],
+    [[7,50],[50,72.2],[70,25],[93,50]]
+  ];
+  packets.forEach((p,idx)=>{
+    const route=routes[idx];
+    const start=performance.now();
+    const duration=3000+idx*180;
+    p.style.opacity='1';
+    function step(now){
+      const t=Math.min(1,(now-start)/duration);
+      const scaled=t*(route.length-1);
+      const seg=Math.min(route.length-2,Math.floor(scaled));
+      const local=scaled-seg;
+      const a=route[seg],b=route[Math.min(seg+1,route.length-1)];
+      const x=a[0]+(b[0]-a[0])*local;
+      const y=a[1]+(b[1]-a[1])*local;
+      p.style.left=x+'%';
+      p.style.top=y+'%';
+      if(t<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+  document.getElementById(statusId).textContent='Packets are travelling through the network. Notice that different packets can use different routes.';
+  setTimeout(()=>document.getElementById(statusId).textContent='Arrival complete. Sequence numbers allow the destination to restore the correct order.',3600);
+}
+function runNetwork22(){animatePackets('network22','networkStatus22')}
+function runNetwork22student(){animatePackets('network22student','networkStudentStatus')}
+</script>
+</body>
+</html>

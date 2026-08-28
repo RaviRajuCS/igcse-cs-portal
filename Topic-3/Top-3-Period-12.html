@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 3 | Period 12</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--glass:rgba(255,255,255,.76)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#ffffff55;backdrop-filter:blur(12px);border-bottom:1px solid #fff9}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0;font-size:13px;font-weight:600}
+.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}
+.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:800;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid #fff9;border-radius:22px;box-shadow:0 12px 30px #082b5928;overflow:hidden;display:flex;flex-direction:column}
+.panehead{padding:15px 20px;background:#082b59f5;color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:#fffdf5eb;border:1px solid #082b5922;border-radius:16px;padding:16px;margin-bottom:15px}
+.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}
+.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}
+.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}
+.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.box{padding:13px;border-radius:13px;background:#f7f2df;border:1px solid #d9c98f}.box b{display:block;margin-bottom:5px}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#ffffff95;border-radius:16px;margin:15px 0}
+.node{padding:13px 15px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:25px;font-weight:900}.tag{padding:10px 13px;border-radius:12px;background:var(--gold2);font-weight:900}
+.mac{font-family:Consolas,monospace;letter-spacing:2px;font-size:20px;text-align:center;padding:16px;border-radius:14px;background:#082b59;color:#fff}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}
+.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div>
+<h1>IGCSE Computer Science 0984</h1><p>Topic 3 — Hardware · Period 12</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>Network Interface Cards · MAC addresses</small></div>
+<div class="content">
+<div class="card"><span class="time">Lesson overview</span><h3>Period 12 · NICs and MAC Addresses</h3>
+<p>This lesson begins <b>3.4 Network hardware</b>. Students learn why a computer needs a <b>Network Interface Card (NIC)</b> to access a network and what a <b>Media Access Control (MAC) address</b> is, including its purpose and structure.</p>
+<div class="callout"><b>Success criteria:</b> Students can explain the role of a NIC, define a MAC address, explain why a MAC address identifies a network interface, recognise its hexadecimal structure, and explain how manufacturer and serial information form the address.</div>
+<p>The Cambridge 2026–2028 syllabus states that a computer needs a NIC to access a network; a NIC receives a MAC address at manufacture; MAC addresses are usually written in hexadecimal and are created using a manufacturer code and serial code. citeturn2view0</p>
+</div>
+
+<div class="card"><span class="time">My teaching route</span><h3>Build the idea from device → interface → identity</h3>
+<ol><li>Ask how a computer physically/technically connects to a network.</li><li>Introduce the NIC as the network interface hardware.</li><li>Explain that the NIC has a MAC address assigned at manufacture.</li><li>Show the hexadecimal structure of a MAC address.</li><li>Distinguish MAC address from an IP address, which students will study next.</li><li>Apply the ideas to identification scenarios.</li></ol>
+<div class="callout"><b>Core distinction:</b> <b>NIC</b> = network interface hardware. <b>MAC address</b> = hardware/interface address used to identify that network interface on the network.</div>
+</div>
+
+<div class="card"><span class="time">0–7 min · Retrieval</span><h3>How does a computer join a network?</h3>
+<div class="flow"><div class="node">COMPUTER</div><div class="arrow">→</div><div class="tag">NIC</div><div class="arrow">→</div><div class="node">NETWORK</div></div>
+<p>Ask: <b>What hardware provides the computer with a network interface?</b></p>
+<div class="callout">The answer is the <b>Network Interface Card (NIC)</b>. A NIC may be built into a motherboard or provided as a separate interface.</div>
+</div>
+
+<div class="card"><span class="time">7–18 min · Teach</span><h3>1 · Network Interface Card (NIC)</h3>
+<p>A <b>Network Interface Card</b> is hardware that provides a computer with an interface to a network.</p>
+<div class="grid">
+<div class="box"><b>Network access</b>The NIC enables the computer to connect to and communicate over a network.</div>
+<div class="box"><b>Network interface</b>It provides the hardware interface between the computer and the network medium.</div>
+<div class="box"><b>Can be wired</b>Ethernet NICs connect using a network cable.</div>
+<div class="box"><b>Can be wireless</b>Wireless network interfaces allow connection without an Ethernet cable.</div>
+</div>
+<div class="callout"><b>Exam wording:</b> “A computer needs a NIC to access a network.”</div>
+</div>
+
+<div class="card"><span class="time">18–30 min · Teach</span><h3>2 · What is a MAC address?</h3>
+<p>A <b>Media Access Control (MAC) address</b> is an address associated with a network interface. It is assigned to the NIC at the point of manufacture.</p>
+<div class="mac">3C : 52 : 82 : A7 : 14 : 9B</div>
+<p>MAC addresses are usually written in <b>hexadecimal</b>. The syllabus describes the address as being created using a <b>manufacturer code</b> and a <b>serial code</b>.</p>
+<div class="callout"><b>Remember:</b> MAC → associated with the NIC → assigned at manufacture → usually written in hexadecimal.</div>
+</div>
+
+<div class="card"><span class="time">30–39 min · Structure</span><h3>3 · Understanding the MAC structure</h3>
+<div class="flow"><div class="tag">MANUFACTURER<br>CODE</div><div class="arrow">+</div><div class="tag">SERIAL<br>CODE</div><div class="arrow">→</div><div class="node">MAC<br>ADDRESS</div></div>
+<p>The manufacturer code identifies the manufacturer associated with the interface, while the serial portion distinguishes the individual interface.</p>
+<div class="callout">Students do <b>not</b> need to memorise a particular manufacturer's code. They need to understand the structure and purpose.</div>
+</div>
+
+<div class="card"><span class="time">39–45 min · Compare</span><h3>4 · MAC address vs IP address</h3>
+<table>
+<tr><th>MAC address</th><th>IP address</th></tr>
+<tr><td>Associated with the network interface/NIC.</td><td>Allocated by the network.</td></tr>
+<tr><td>Assigned at manufacture.</td><td>Can be static or dynamic.</td></tr>
+<tr><td>Usually written in hexadecimal.</td><td>Used as a network address and has different versions.</td></tr>
+<tr><td>Identifies the network interface.</td><td>Used to identify/address a device on a network.</td></tr>
+</table>
+<div class="callout"><b>Important:</b> IP addresses are the focus of the next period. Do not confuse a MAC address with an IP address.</div>
+</div>
+
+<div class="card"><span class="time">45–48 min · Apply</span><h3>5 · Scenario discussion</h3>
+<p>A technician replaces the network interface in a computer. Which hardware component has changed, and what identifying address is associated with the new interface?</p>
+<div class="callout"><b>Expected:</b> The NIC/network interface has changed, and the new NIC has its own MAC address.</div>
+</div>
+
+<div class="card"><span class="time">48–50 min · Exit ticket</span><h3>Five quick checks</h3>
+<ol><li>What is a NIC?</li><li>Why does a computer need a NIC?</li><li>What is a MAC address?</li><li>When is a MAC address assigned?</li><li>How are MAC addresses usually written?</li></ol>
+<div class="callout"><b>Answers:</b> network interface hardware · to access a network · address associated with the NIC/interface · at manufacture · hexadecimal.</div>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 3 · Hardware · Period 12 · NICs and MAC addresses.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. NIC</span><span>2. MAC</span><span>3. Structure</span><span>4. Compare</span><span>5. Test</span></div>
+<p>Today you will learn how a computer gets access to a network and how its network interface is identified.</p></div>
+
+<div class="card"><h3>🎯 Learning goals</h3>
+<ul><li>Explain what a NIC is.</li><li>Explain why a computer needs a NIC.</li><li>Define a MAC address.</li><li>Explain the purpose of a MAC address.</li><li>Understand its hexadecimal structure.</li><li>Explain manufacturer code + serial code.</li><li>Distinguish MAC addresses from IP addresses.</li></ul></div>
+
+<div class="card"><h3>1 · What is a NIC?</h3>
+<p>A <b>Network Interface Card (NIC)</b> is the hardware that gives a computer a network interface.</p>
+<div class="flow"><div class="node">COMPUTER</div><div class="arrow">→</div><div class="tag">NIC</div><div class="arrow">→</div><div class="node">NETWORK</div></div>
+<div class="callout">Without a suitable network interface, the computer cannot access that network.</div></div>
+
+<div class="card"><h3>2 · Interactive NIC check</h3>
+<p>Which statement is correct?</p>
+<button class="option" onclick="checkP12(this,true,'q1p12')">A computer needs a NIC to access a network.</button>
+<button class="option" onclick="checkP12(this,false,'q1p12')">A NIC is used only to store files permanently.</button>
+<div class="score" id="q1p12"></div></div>
+
+<div class="card"><h3>3 · Meet the MAC address</h3>
+<p>Every network interface has a <b>MAC address</b>. It is assigned to the NIC at the point of manufacture.</p>
+<div class="mac">3C : 52 : 82 : A7 : 14 : 9B</div>
+<p>MAC addresses are usually written using <b>hexadecimal</b> notation.</p></div>
+
+<div class="card"><h3>4 · Interactive MAC check</h3>
+<p>When is a MAC address assigned?</p>
+<button class="option" onclick="checkP12(this,true,'q2p12')">At the point of manufacture of the NIC.</button>
+<button class="option" onclick="checkP12(this,false,'q2p12')">Only when a user opens a web browser.</button>
+<div class="score" id="q2p12"></div>
+<p style="margin-top:15px">Which number system is normally used to write a MAC address?</p>
+<button class="option" onclick="checkP12(this,true,'q3p12')">Hexadecimal</button>
+<button class="option" onclick="checkP12(this,false,'q3p12')">Denary only</button>
+<div class="score" id="q3p12"></div></div>
+
+<div class="card"><h3>5 · MAC address structure</h3>
+<div class="flow"><div class="tag">MANUFACTURER<br>CODE</div><div class="arrow">+</div><div class="tag">SERIAL<br>CODE</div><div class="arrow">→</div><div class="node">MAC ADDRESS</div></div>
+<p>The syllabus expects you to understand that the MAC address is created from a <b>manufacturer code</b> and a <b>serial code</b>.</p></div>
+
+<div class="card"><h3>6 · Interactive structure check</h3>
+<p>Which two elements are used to create a MAC address according to the syllabus?</p>
+<button class="option" onclick="checkP12(this,true,'q4p12')">Manufacturer code and serial code</button>
+<button class="option" onclick="checkP12(this,false,'q4p12')">Username and password</button>
+<div class="score" id="q4p12"></div></div>
+
+<div class="card"><h3>7 · MAC or IP?</h3>
+<table>
+<tr><th>Question</th><th>Answer</th></tr>
+<tr><td>Associated with the NIC?</td><td><b>MAC</b></td></tr>
+<tr><td>Assigned at manufacture?</td><td><b>MAC</b></td></tr>
+<tr><td>Usually hexadecimal?</td><td><b>MAC</b></td></tr>
+<tr><td>Allocated by the network?</td><td><b>IP</b></td></tr>
+<tr><td>Can be static or dynamic?</td><td><b>IP</b></td></tr>
+</table>
+<div class="callout"><b>Memory trick:</b> MAC = interface identity. IP = network address.</div></div>
+
+<div class="card"><h3>8 · Interactive distinction</h3>
+<p>A network administrator changes the IP address allocated to a computer. Which address is being changed?</p>
+<button class="option" onclick="checkP12(this,true,'q5p12')">IP address</button>
+<button class="option" onclick="checkP12(this,false,'q5p12')">MAC address</button>
+<div class="score" id="q5p12"></div>
+<p style="margin-top:15px">A new network interface is manufactured. Which address is associated with the new interface?</p>
+<button class="option" onclick="checkP12(this,true,'q6p12')">MAC address</button>
+<button class="option" onclick="checkP12(this,false,'q6p12')">Only the IP address</button>
+<div class="score" id="q6p12"></div></div>
+
+<div class="card"><h3>9 · Exam practice</h3>
+<p><b>Question:</b> State what is meant by a NIC.</p>
+<button onclick="showP12('a1p12')">Show model answer</button>
+<div class="answer" id="a1p12">A network interface card is hardware that provides a computer with an interface to access a network.</div>
+<p><b>Question:</b> State what is meant by a MAC address.</p>
+<button onclick="showP12('a2p12')">Show model answer</button>
+<div class="answer" id="a2p12">An address associated with a network interface/NIC, assigned at manufacture.</div>
+<p><b>Question:</b> Explain the structure of a MAC address.</p>
+<button onclick="showP12('a3p12')">Show model answer</button>
+<div class="answer" id="a3p12">It is created using a manufacturer code and a serial code and is usually written in hexadecimal.</div>
+</div>
+
+<div class="card"><h3>10 · Scenario challenge</h3>
+<p>A school technician installs a replacement network interface card. Explain one reason why the new interface has a different MAC address from the old interface.</p>
+<button onclick="showP12('challengeP12')">Show model answer</button>
+<div class="answer" id="challengeP12">The MAC address is associated with the network interface and is assigned at manufacture, so a different NIC has its own MAC address.</div></div>
+
+<div class="card"><h3>11 · Common exam mistakes</h3>
+<ul><li>Saying a MAC address is assigned by the router.</li><li>Saying a MAC address is the same as an IP address.</li><li>Writing a MAC address as ordinary denary numbers.</li><li>Forgetting that the MAC address is associated with the NIC.</li><li>Confusing the manufacturer code with the IP address.</li></ul></div>
+
+<div class="card"><h3>12 · Self-assessment</h3>
+<p>How confident are you with NICs and MAC addresses?</p>
+<button onclick="confidenceP12('ready')">🟢 I understand</button>
+<button onclick="confidenceP12('practice')">🟡 I need practice</button>
+<button onclick="confidenceP12('revise')">🔴 I need revision</button>
+<div class="score" id="confidenceP12"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>NIC · MAC address · Manufacturer code · Serial code · Hexadecimal.</div>
+</div>
+</section>
+</main>
+<script>
+function checkP12(btn,c,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(c?'correct':'wrong');
+ const m={
+ q1p12:c?'✓ Correct — a computer needs a NIC to access a network.':'✗ Not quite — a NIC provides the network interface.',
+ q2p12:c?'✓ Correct — the MAC address is assigned at manufacture.':'✗ Not quite — the MAC address is associated with the NIC from manufacture.',
+ q3p12:c?'✓ Correct — MAC addresses are usually written in hexadecimal.':'✗ Not quite — hexadecimal is the expected representation.',
+ q4p12:c?'✓ Correct — manufacturer code + serial code.':'✗ Not quite — think about the two parts specified by Cambridge.',
+ q5p12:c?'✓ Correct — the allocated network address is the IP address.':'✗ Not quite — the question describes the IP address.',
+ q6p12:c?'✓ Correct — the new NIC has its own MAC address.':'✗ Not quite — MAC is associated with the network interface.'
+ };
+ document.getElementById(id).textContent=m[id];
+}
+function showP12(id){document.getElementById(id).style.display='block'}
+function confidenceP12(v){
+ const t={
+ ready:'Excellent — you can explain NICs and MAC addresses and distinguish MAC from IP.',
+ practice:'Good. Rehearse: NIC = network interface hardware; MAC = interface address, assigned at manufacture, usually hexadecimal.',
+ revise:'Revisit the NIC → MAC → manufacturer code + serial code sequence and the MAC vs IP table.'
+ };
+ document.getElementById('confidenceP12').textContent=t[v];
+}
+</script>
+</body>
+</html>

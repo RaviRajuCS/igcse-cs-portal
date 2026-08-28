@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Practical 1 | Period 1</title>
+<style>
+:root{
+  --teak:#7b4b2a;--teak-dark:#4f2d19;--teak-mid:#9a6741;
+  --half:#f8f5ec;--half2:#eee8dc;--ink:#3b281d;--cream:#fffdf8;
+  --gold:#d6ad62;--green:#315c43;--red:#8a3e35;
+}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:
+linear-gradient(135deg,#6f4326 0%,#8b5733 48%,#6b3f25 100%);
+color:var(--ink);overflow:hidden}
+header{height:86px;display:flex;align-items:center;justify-content:space-between;
+padding:12px 24px;background:#4f2d19ee;color:var(--half);
+border-bottom:2px solid #c99a5a;box-shadow:0 5px 18px #24140b66}
+.brand h1{margin:0;font-size:27px;letter-spacing:.2px}.brand p{margin:3px 0;font-size:13px;font-weight:600;color:#eadfce}
+.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:45px;height:45px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700;color:#fff}
+.school{display:flex;align-items:center;gap:11px}.school img{width:49px;height:49px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}.badge{padding:9px 14px;border-radius:18px;background:var(--gold);color:var(--teak-dark);font-weight:900;font-size:13px}
+.layout{height:calc(100vh - 86px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:#f8f5ecf2;border:2px solid #d1ad77;border-radius:22px;
+box-shadow:0 14px 34px #24140b66;overflow:hidden;display:flex;flex-direction:column}
+.panehead{padding:15px 20px;background:var(--teak-dark);color:var(--half)}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}
+.content{overflow:auto;padding:20px 22px 30px}
+.card{background:var(--cream);border:1px solid #cbbda8;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #5b3a2112}
+.card h3{margin:0 0 9px;font-size:17px;color:var(--teak-dark)}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}
+.time{display:inline-block;background:#ead5ae;border:1px solid #b88b4d;color:var(--teak-dark);border-radius:20px;padding:4px 9px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{border-left:5px solid var(--teak);background:#eee8dc;padding:12px 14px;border-radius:8px;margin:10px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.box{padding:13px;border-radius:13px;background:#f2ece2;border:1px solid #d2c3ae}.box b{display:block;margin-bottom:5px;color:var(--teak-dark)}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#eee8dc;border-radius:16px;margin:15px 0}
+.node{padding:13px 15px;border-radius:13px;background:var(--teak-dark);color:var(--half);font-weight:900;text-align:center}.tag{padding:10px 13px;border-radius:12px;background:#ead5ae;color:var(--teak-dark);font-weight:900}.arrow{font-size:25px;font-weight:900;color:var(--teak)}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--teak-dark);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c7b9a6;color:var(--ink);margin:7px 0}
+.option.correct{background:#e1efe5;border-color:#6e9a7c}.option.wrong{background:#f5dfdb;border-color:#a96c62}
+.score{font-weight:900;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#e6f0e8;border-radius:10px;border:1px solid #9db9a4}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e5ded3;font-size:12px;font-weight:800}.progress .active{background:#ead5ae;border:1px solid #b88b4d}
+.code{font-family:Consolas,monospace;background:#392317;color:#fff;padding:14px;border-radius:12px;line-height:1.6}
+table{width:100%;border-collapse:collapse}th{background:var(--teak-dark);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5ccbf;vertical-align:top}
+.workout{background:#f4eee4;border:2px dashed #b68a56;border-radius:15px;padding:15px;margin:12px 0}
+.footer{font-size:11px;color:#66584c;border-top:1px solid #d6cbbb;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand">
+<div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div>
+<h1>IGCSE Computer Science 0984</h1><p>Practical Studio 1 · Algorithms & Problem Solving · Period 1</p>
+</div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">PRACTICAL STUDIO</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>🧑‍🏫 Teacher Studio</h2><small>Problem analysis · abstraction · decomposition · IPO</small></div>
+<div class="content">
+<div class="card"><span class="time">Practical 1 · Period 1</span><h3>From Problem to Solution</h3>
+<p>This practical studio begins <b>Algorithm Design and Problem-solving</b>. Students learn that successful programming starts before coding: first understand the problem, identify requirements, decompose it and describe the inputs, processes, outputs and storage involved.</p>
+<div class="callout"><b>Cambridge alignment:</b> the program development life cycle begins with <b>analysis</b>, including abstraction, decomposition, identification of the problem and requirements. Students then use design methods such as structure diagrams, flowcharts and pseudocode. citeturn0search12</div>
+</div>
+
+<div class="card"><span class="time">The new practical philosophy</span><h3>Problem → Design → Code → Test → Improve</h3>
+<div class="flow"><div class="node">PROBLEM</div><div class="arrow">→</div><div class="tag">ANALYSE</div><div class="arrow">→</div><div class="tag">DESIGN</div><div class="arrow">→</div><div class="node">CODE</div><div class="arrow">→</div><div class="tag">TEST</div><div class="arrow">→</div><div class="node">IMPROVE</div></div>
+<p>Our practical pages will repeatedly use this cycle. The aim is to make students <b>think like problem-solvers</b>, not merely memorise pseudocode commands.</p>
+</div>
+
+<div class="card"><span class="time">0–8 min · Warm-up</span><h3>1 · What exactly is the problem?</h3>
+<p>Suppose a school wants a program that calculates a student's final percentage from five test scores.</p>
+<div class="workout"><b>Before thinking about code, ask:</b><ol><li>What information will the program need?</li><li>What calculation must it perform?</li><li>What result should it produce?</li><li>Does anything need to be stored?</li></ol></div>
+<div class="callout"><b>Key habit:</b> Never rush from a question straight into code. First identify what the problem is asking the computer to do.</div>
+</div>
+
+<div class="card"><span class="time">8–18 min · Analysis</span><h3>2 · IPO analysis</h3>
+<div class="grid"><div class="box"><b>INPUT</b>Five test scores.</div><div class="box"><b>PROCESS</b>Add the scores and calculate the percentage/average.</div><div class="box"><b>OUTPUT</b>Final percentage or average.</div><div class="box"><b>STORAGE</b>Scores may be stored in variables or an array.</div></div>
+<div class="callout"><b>Teacher prompt:</b> Ask students to identify IPO before showing them any pseudocode.</div>
+</div>
+
+<div class="card"><span class="time">18–28 min · Decomposition</span><h3>3 · Break a problem into smaller parts</h3>
+<p>A large problem becomes easier when it is divided into manageable sub-problems.</p>
+<div class="flow"><div class="node">STUDENT MARKS SYSTEM</div><div class="arrow">→</div><div class="tag">INPUT MARKS</div><div class="arrow">+</div><div class="tag">CALCULATE TOTAL</div><div class="arrow">+</div><div class="tag">CALCULATE AVERAGE</div><div class="arrow">+</div><div class="tag">DISPLAY RESULT</div></div>
+<p>This is <b>decomposition</b>: breaking the problem into component parts that can be designed and solved separately.</p>
+</div>
+
+<div class="card"><span class="time">28–36 min · Abstraction</span><h3>4 · What should we ignore?</h3>
+<p>Imagine a school wants a program to calculate a student's average mark. The student has a name, class, favourite colour, five marks and a house.</p>
+<div class="workout"><b>Which information is essential?</b><br>Student name · class · favourite colour · five marks · house</div>
+<div class="callout"><b>Answer:</b> The five marks are essential to the calculation. The name may be useful for identifying the result, but favourite colour and house are irrelevant to the calculation. <b>Abstraction</b> means concentrating on the important features and ignoring unnecessary detail.</div>
+</div>
+
+<div class="card"><span class="time">36–44 min · Design</span><h3>5 · Three ways to design the solution</h3>
+<table><tr><th>Method</th><th>What it helps us do</th></tr><tr><td>Structure diagram</td><td>Shows how a large problem is divided into modules/sub-problems.</td></tr><tr><td>Flowchart</td><td>Shows the sequence and decisions in an algorithm visually.</td></tr><tr><td>Pseudocode</td><td>Describes the algorithm in a structured, language-independent form.</td></tr></table>
+<div class="callout"><b>Important:</b> Design comes before coding. A good design reduces mistakes later.</div>
+</div>
+
+<div class="card"><span class="time">44–50 min · Guided workout</span><h3>6 · Workout: cinema ticket calculator</h3>
+<div class="workout"><b>Problem:</b> A cinema program asks for the number of adult tickets and child tickets. Adult tickets cost $10 and child tickets cost $6. The program calculates and displays the total cost.</div>
+<ol><li>Identify the inputs.</li><li>Identify the processes.</li><li>Identify the output.</li><li>Write one sentence describing the purpose of the algorithm.</li><li>Break the problem into smaller steps.</li></ol>
+<button onclick="showT1('workout1')">Show worked solution</button>
+<div class="answer" id="workout1"><b>Inputs:</b> number of adult tickets, number of child tickets.<br><b>Process:</b> adult tickets × 10 + child tickets × 6.<br><b>Output:</b> total cost.<br><b>Purpose:</b> calculate and display the total cinema ticket cost.<br><b>Steps:</b> input adult tickets → input child tickets → calculate adult cost → calculate child cost → add costs → output total.</div>
+</div>
+
+<div class="card"><span class="time">Teacher challenge</span><h3>7 · One problem, many solutions</h3>
+<p>Ask students to design the <b>same cinema problem</b> as:</p><ul><li>a structure diagram</li><li>a flowchart</li><li>pseudocode</li></ul>
+<div class="callout">The purpose is not to make three different algorithms. The underlying solution should remain logically equivalent while the representation changes.</div>
+</div>
+
+<div class="card"><h3>📌 Period 1 takeaway</h3>
+<div class="flow"><div class="tag">UNDERSTAND</div><div class="arrow">→</div><div class="tag">DECOMPOSE</div><div class="arrow">→</div><div class="tag">IDENTIFY IPO</div><div class="arrow">→</div><div class="tag">DESIGN</div></div>
+<p><b>The strongest programmers solve the problem before they write the code.</b></p>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Practical Studio 1 · Algorithms & Problem Solving · Period 1.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🧑‍💻 Student Practical Studio</h2><small>Learn → Try → Work out → Check → Improve</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your practical journey</h3>
+<div class="progress"><span class="active">1. Understand</span><span>2. Analyse</span><span>3. Decompose</span><span>4. Design</span><span>5. Workout</span></div>
+<p>Today you are not learning how to code yet. You are learning the skill that comes <b>before coding: understanding the problem.</b></p></div>
+
+<div class="card"><h3>🎯 Learning targets</h3><ul><li>Understand the program development life cycle.</li><li>Identify the analysis stage.</li><li>Use abstraction.</li><li>Decompose a problem.</li><li>Identify inputs, processes, outputs and storage.</li><li>Explain the purpose of an algorithm.</li><li>Prepare a solution using a suitable design method.</li></ul></div>
+
+<div class="card"><h3>1 · The development life cycle</h3>
+<div class="flow"><div class="node">ANALYSIS</div><div class="arrow">→</div><div class="node">DESIGN</div><div class="arrow">→</div><div class="node">CODING</div><div class="arrow">→</div><div class="node">TESTING</div></div>
+<div class="callout"><b>Today's focus = ANALYSIS.</b> We need to know exactly what problem we are solving before we design the solution.</div></div>
+
+<div class="card"><h3>2 · Quick check: what comes first?</h3><p>Which stage should identify the problem and its requirements?</p>
+<button class="option" onclick="checkT1(this,true,'q1')">Analysis</button>
+<button class="option" onclick="checkT1(this,false,'q1')">Coding</button>
+<button class="option" onclick="checkT1(this,false,'q1')">Testing</button>
+<div class="score" id="q1"></div></div>
+
+<div class="card"><h3>3 · Worked Example #1 — Average mark</h3>
+<div class="workout"><b>Problem:</b> Input three test marks and display the average.</div>
+<table><tr><th>Element</th><th>Answer</th></tr><tr><td>Input</td><td>Three marks</td></tr><tr><td>Process</td><td>Add marks and divide by 3</td></tr><tr><td>Output</td><td>Average</td></tr><tr><td>Storage</td><td>Variables for the marks and average</td></tr></table>
+<div class="callout"><b>Algorithm purpose:</b> Calculate and display the average of three test marks.</div></div>
+
+<div class="card"><h3>4 · Your turn — Average mark</h3>
+<p>For a program that inputs <b>five</b> marks and displays the highest mark, identify the input, process and output.</p>
+<button onclick="showT1('a2')">Show answer</button><div class="answer" id="a2"><b>Input:</b> five marks. <b>Process:</b> compare the marks to find the highest. <b>Output:</b> highest mark.</div></div>
+
+<div class="card"><h3>5 · Worked Example #2 — Electricity bill</h3>
+<div class="workout"><b>Problem:</b> A program inputs the number of electricity units used and calculates the bill at $0.20 per unit.</div>
+<div class="flow"><div class="tag">UNITS</div><div class="arrow">→</div><div class="node">UNITS × 0.20</div><div class="arrow">→</div><div class="tag">BILL</div></div>
+<p><b>Input:</b> units used · <b>Process:</b> units × 0.20 · <b>Output:</b> bill.</p></div>
+
+<div class="card"><h3>6 · Your turn — Bus fare</h3>
+<p>A bus program inputs the number of passengers and charges $3 per passenger.</p><p>What is the process?</p>
+<button class="option" onclick="checkT1(this,true,'q2')">Number of passengers × 3</button>
+<button class="option" onclick="checkT1(this,false,'q2')">Number of passengers + 3</button>
+<button class="option" onclick="checkT1(this,false,'q2')">Number of passengers ÷ 3</button>
+<div class="score" id="q2"></div></div>
+
+<div class="card"><h3>7 · Decomposition workout</h3>
+<div class="workout"><b>Problem:</b> A school wants a program that records a student's name, inputs four marks, calculates the total and average, and displays the student's name, total and average.</div>
+<p>Break it into four smaller tasks.</p>
+<button onclick="showT1('a3')">Show worked decomposition</button><div class="answer" id="a3">1. Input student name. 2. Input four marks. 3. Calculate total and average. 4. Display name, total and average.</div></div>
+
+<div class="card"><h3>8 · Abstraction workout</h3>
+<p>A library system needs to calculate an overdue fine. The book has a title, author, colour, number of overdue days and fine per day.</p>
+<p>Which information is essential for calculating the fine?</p>
+<button class="option" onclick="checkT1(this,true,'q3')">Overdue days and fine per day</button>
+<button class="option" onclick="checkT1(this,false,'q3')">Book colour and author</button>
+<div class="score" id="q3"></div></div>
+
+<div class="card"><h3>9 · Worked Example #3 — Login attempt</h3>
+<div class="workout"><b>Problem:</b> A system asks for a username and password. It checks whether they match the stored values and displays “Access granted” or “Access denied”.</div>
+<table><tr><th>Input</th><td>Username and password</td></tr><tr><th>Process</th><td>Compare entered values with stored values</td></tr><tr><th>Output</th><td>Access granted / Access denied</td></tr><tr><th>Storage</th><td>Stored username and password</td></tr></table></div>
+
+<div class="card"><h3>10 · Purpose of an algorithm</h3><p>Which is the best description of an algorithm's purpose?</p>
+<button class="option" onclick="checkT1(this,true,'q4')">To provide a sequence of steps that solves a problem.</button>
+<button class="option" onclick="checkT1(this,false,'q4')">To make a computer faster.</button>
+<button class="option" onclick="checkT1(this,false,'q4')">To store every file permanently.</button>
+<div class="score" id="q4"></div></div>
+
+<div class="card"><h3>11 · Mini challenge — Parking fee</h3>
+<div class="workout"><b>Problem:</b> A car park charges $2 for the first hour and $1.50 for every additional hour. Input the number of hours and calculate the total fee.</div>
+<p>Before seeing the answer, identify:</p><ol><li>Inputs</li><li>Processes</li><li>Outputs</li><li>One decision/condition that the algorithm may need</li></ol>
+<button onclick="showT1('a4')">Show model analysis</button><div class="answer" id="a4"><b>Input:</b> number of hours. <b>Process:</b> if hours = 1, fee = 2; otherwise fee = 2 + (hours − 1) × 1.50. <b>Output:</b> total fee. <b>Condition:</b> whether the number of hours is 1 or more than 1.</div></div>
+
+<div class="card"><h3>12 · Design challenge</h3>
+<div class="workout"><b>Problem:</b> A sports club wants a program that inputs the number of adult members and child members and calculates the total membership fee. Adult membership = $50; child membership = $30.</div>
+<p><b>Your task:</b> Write the IPO analysis and list the steps of the solution in plain English.</p>
+<button onclick="showT1('a5')">Reveal model solution</button><div class="answer" id="a5"><b>Input:</b> adult members, child members. <b>Process:</b> adult members × 50 + child members × 30. <b>Output:</b> total membership fee. <b>Steps:</b> input adult members → input child members → calculate adult fee → calculate child fee → add fees → output total.</div></div>
+
+<div class="card"><h3>13 · Exit challenge</h3>
+<p>A school cafeteria program inputs the number of meals sold and the price per meal. It calculates and displays total sales.</p>
+<p><b>Can you identify the IPO without looking?</b></p>
+<button onclick="showT1('a6')">Check</button><div class="answer" id="a6"><b>Input:</b> number of meals, price per meal. <b>Process:</b> number of meals × price per meal. <b>Output:</b> total sales.</div></div>
+
+<div class="card"><h3>14 · Self-check</h3>
+<p>How confident are you at analysing a programming problem before coding?</p>
+<button onclick="confidenceT1('ready')">🟢 I can analyse</button>
+<button onclick="confidenceT1('practice')">🟡 I need more workouts</button>
+<button onclick="confidenceT1('revise')">🔴 I need help</button>
+<div class="score" id="confidence"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Practical Studio 1 · Algorithms & Problem Solving · Period 1.</div>
+</div>
+</section>
+</main>
+<script>
+function checkT1(btn,c,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');const m={q1:c?'✓ Correct — analysis identifies the problem and requirements.':'✗ Not yet — coding comes later.',q2:c?'✓ Correct — multiply passengers by the fare per passenger.':'✗ Not quite — the fare is calculated by multiplication.',q3:c?'✓ Correct — only overdue days and fine per day are needed for the calculation.':'✗ Not quite — those details are not needed for calculating the fine.',q4:c?'✓ Correct — an algorithm is a sequence of steps designed to solve a problem.':'✗ Not quite — an algorithm describes a solution process.'};document.getElementById(id).textContent=m[id]}
+function showT1(id){document.getElementById(id).style.display='block'}
+function confidenceT1(v){const t={ready:'Excellent — you are ready to move from analysis into solution design.',practice:'Good. Keep practising IPO and decomposition with different real-world problems.',revise:'Revisit: problem → inputs → processes → outputs → storage → decomposition → design.'};document.getElementById('confidence').textContent=t[v]}
+</script>
+</body>
+</html>

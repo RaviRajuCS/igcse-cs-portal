@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 3</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 3</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>Your teaching route — keep this open while presenting</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 3 · Hexadecimal and Binary</h3>
+      <p><b>Cambridge focus:</b> Topic 1.1 Number systems — understanding hexadecimal as a base 16 system and converting between positive hexadecimal and positive binary. Cambridge also requires learners to understand why hexadecimal is beneficial as a data representation method. fileciteturn5file0L15-L24</p>
+      <div class="callout"><b>Success criteria:</b> Students can identify hexadecimal digits, explain the relationship between one hexadecimal digit and four binary bits, convert hexadecimal ↔ binary accurately, and explain why hexadecimal is more convenient for humans than long binary strings.</div>
+      <p><b>Prior learning:</b> Periods 1–2 — binary place values and binary ↔ denary conversion.</p>
+      <p><b>Key vocabulary:</b> hexadecimal, base 16, binary, nibble, digit, A–F, conversion, representation, compact, MAC address, colour code.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">Teacher preparation</span>
+      <h3>Before students enter</h3>
+      <ul>
+        <li>Open the webpage in full-screen mode.</li>
+        <li>Display the hexadecimal digit table: 0–9, A, B, C, D, E, F.</li>
+        <li>Have students recall that four binary bits can represent values from 0 to 15.</li>
+        <li>Prepare a quick comparison: a long binary value versus its shorter hexadecimal form.</li>
+        <li>Keep denary conversion separate from the main hexadecimal ↔ binary method: today's key shortcut is <b>4 bits ↔ 1 hexadecimal digit</b>.</li>
+      </ul>
+      <div class="callout"><b>Teaching principle:</b> make students discover why hexadecimal works before asking them to memorise a conversion table.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Connect to Period 2</h3>
+      <ol>
+        <li>What is the base of binary?</li>
+        <li>What is the largest value represented by four binary bits?</li>
+        <li>Write 13₁₀ in binary.</li>
+        <li>How many bits are in an 8-bit binary integer?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> Four bits can represent 16 different values — exactly the number of symbols needed for hexadecimal.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–13 min · Discover</span>
+      <h3>What is hexadecimal?</h3>
+      <p>Explain that hexadecimal is a <b>base 16</b> number system. It needs sixteen symbols:</p>
+      <p style="text-align:center;font-weight:800;font-size:19px">0 1 2 3 4 5 6 7 8 9 A B C D E F</p>
+      <p>After 9, the letters A–F represent the denary values 10–15.</p>
+      <div class="callout"><b>Important:</b> A in hexadecimal means 10₁₀, B means 11₁₀, ... and F means 15₁₀.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">13–22 min · Teach</span>
+      <h3>Why 4 bits make one hexadecimal digit</h3>
+      <p>Four binary bits have 16 possible combinations, from 0000 to 1111. Hexadecimal also has 16 possible symbols, from 0 to F.</p>
+      <div class="weights">
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p>For example:</p>
+      <p style="text-align:center;font-family:Consolas,monospace;font-size:21px"><b>1011₂ = 11₁₀ = B₁₆</b></p>
+      <p>Therefore every group of four binary bits can be replaced by one hexadecimal digit.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">22–30 min · Model</span>
+      <h3>Binary → Hexadecimal</h3>
+      <p>Start from the right and split the binary number into groups of four. Add leading zeroes if necessary.</p>
+      <p><b>Example:</b> 11010110₂</p>
+      <p style="text-align:center;font-family:Consolas,monospace;font-size:23px"><b>1101&nbsp;&nbsp;0110</b></p>
+      <p>1101₂ = D₁₆ and 0110₂ = 6₁₆.</p>
+      <div class="callout"><b>Answer:</b> 11010110₂ = D6₁₆</div>
+    </div>
+
+    <div class="card">
+      <span class="time">30–36 min · Model</span>
+      <h3>Hexadecimal → Binary</h3>
+      <p>Replace each hexadecimal digit with its four-bit binary equivalent.</p>
+      <p><b>Example:</b> 3A₁₆</p>
+      <p style="text-align:center;font-family:Consolas,monospace;font-size:22px"><b>3 → 0011 &nbsp;&nbsp;&nbsp; A → 1010</b></p>
+      <div class="callout"><b>Answer:</b> 3A₁₆ = 00111010₂</div>
+      <p><b>Teacher check:</b> Ask students why the zeroes must be retained when converting each hexadecimal digit to four bits.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">36–42 min · Guided practice</span>
+      <h3>Think → Pair → Explain</h3>
+      <p><b>Binary → hexadecimal:</b></p>
+      <ol>
+        <li>10101111₂</li>
+        <li>01110010₂</li>
+        <li>11111111₂</li>
+      </ol>
+      <p><b>Hexadecimal → binary:</b></p>
+      <ol start="4">
+        <li>4C₁₆</li>
+        <li>A7₁₆</li>
+        <li>F0₁₆</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <span class="time">42–47 min · Why hexadecimal?</span>
+      <h3>Hexadecimal as a beneficial representation</h3>
+      <p>Cambridge requires learners to identify areas where hexadecimal is used and understand that it is easier for humans to understand because it is a shorter representation of binary. fileciteturn5file0L23-L24 fileciteturn5file0L40-L44</p>
+      <ul>
+        <li>Computer memory addresses and other low-level representations</li>
+        <li>MAC addresses</li>
+        <li>Colour codes</li>
+        <li>Error codes and debugging information</li>
+      </ul>
+      <div class="callout"><b>Key question:</b> Which is easier for a human to read: 1111110010101011 or FCA B? Hexadecimal reduces the number of characters while preserving the information.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>What base is hexadecimal?</li>
+        <li>Convert B7₁₆ to binary.</li>
+        <li>Give one reason hexadecimal is useful in computer science.</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> Secure Period 3 before moving to denary ↔ hexadecimal and the wider uses of hexadecimal.</div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 3 is a teacher-designed 50-minute lesson covering the hexadecimal concepts and hexadecimal ↔ binary conversion explicitly required by Cambridge.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Hexadecimal</span>
+        <span>3. 4-bit groups</span><span>4. Binary ↔ Hex</span>
+        <span>5. Uses</span><span>6. Exit ticket</span>
+      </div>
+      <p>Today you will learn the relationship between binary and hexadecimal. The most important idea is simple:</p>
+      <div class="callout"><b>1 hexadecimal digit = 4 binary bits</b></div>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Define hexadecimal as a base 16 number system.</li>
+        <li>Identify the hexadecimal digits 0–9 and A–F.</li>
+        <li>Convert binary to hexadecimal.</li>
+        <li>Convert hexadecimal to binary.</li>
+        <li>Explain why hexadecimal is a useful, shorter representation of binary.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · The hexadecimal digits</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Denary</th><th style="padding:8px;background:#082b59;color:white">Hex</th><th style="padding:8px;background:#082b59;color:white">Denary</th><th style="padding:8px;background:#082b59;color:white">Hex</th></tr>
+        <tr><td style="padding:7px">0–9</td><td style="padding:7px">0–9</td><td style="padding:7px">10</td><td style="padding:7px"><b>A</b></td></tr>
+        <tr><td style="padding:7px"></td><td style="padding:7px"></td><td style="padding:7px">11</td><td style="padding:7px"><b>B</b></td></tr>
+        <tr><td style="padding:7px"></td><td style="padding:7px"></td><td style="padding:7px">12</td><td style="padding:7px"><b>C</b></td></tr>
+        <tr><td style="padding:7px"></td><td style="padding:7px"></td><td style="padding:7px">13</td><td style="padding:7px"><b>D</b></td></tr>
+        <tr><td style="padding:7px"></td><td style="padding:7px"></td><td style="padding:7px">14</td><td style="padding:7px"><b>E</b></td></tr>
+        <tr><td style="padding:7px"></td><td style="padding:7px"></td><td style="padding:7px">15</td><td style="padding:7px"><b>F</b></td></tr>
+      </table>
+      <p><b>Memory trick:</b> A–F represent 10–15.</p>
+    </div>
+
+    <div class="card">
+      <h3>2 · Why four bits?</h3>
+      <p>Four bits can make 16 different patterns. That matches the 16 hexadecimal symbols.</p>
+      <div class="weights">
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p>For example:</p>
+      <div class="binary">1011</div>
+      <p style="text-align:center"><b>8 + 2 + 1 = 11 = B₁₆</b></p>
+      <p>So <b>1011₂ = B₁₆</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>3 · Binary → hexadecimal</h3>
+      <p>Split the binary number into groups of four from the right.</p>
+      <p><b>Example:</b> 11010110₂</p>
+      <div class="binary">1101&nbsp;&nbsp;0110</div>
+      <p>1101 = D and 0110 = 6.</p>
+      <div class="callout"><b>11010110₂ = D6₁₆</b></div>
+      <p>If the left group has fewer than four bits, add leading zeroes.</p>
+    </div>
+
+    <div class="card">
+      <h3>4 · Hexadecimal → binary</h3>
+      <p>Replace every hexadecimal digit with exactly four binary bits.</p>
+      <p><b>Example:</b> A7₁₆</p>
+      <div class="binary">1010&nbsp;&nbsp;0111</div>
+      <div class="callout"><b>A7₁₆ = 10100111₂</b></div>
+      <p>Never remove the zeroes inside a four-bit group.</p>
+    </div>
+
+    <div class="card">
+      <h3>5 · Quick check</h3>
+      <p><b>Q1:</b> What does hexadecimal use as its base?</p>
+      <button class="option" onclick="studentCheck3(this,false,'q1s3')">8</button>
+      <button class="option" onclick="studentCheck3(this,true,'q1s3')">16</button>
+      <button class="option" onclick="studentCheck3(this,false,'q1s3')">10</button>
+      <div class="score" id="q1s3"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> What is 1010₂ in hexadecimal?</p>
+      <button class="option" onclick="studentCheck3(this,false,'q2s3')">8</button>
+      <button class="option" onclick="studentCheck3(this,true,'q2s3')">A</button>
+      <button class="option" onclick="studentCheck3(this,false,'q2s3')">10</button>
+      <div class="score" id="q2s3"></div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Practice — Binary → Hex</h3>
+      <ol>
+        <li>00101101₂</li>
+        <li>11110000₂</li>
+        <li>01011011₂</li>
+        <li>10011010₂</li>
+      </ol>
+      <button onclick="show('answers3a')">Reveal answers</button>
+      <div class="answer" id="answers3a">
+        <b>Answers:</b> 2D₁₆, F0₁₆, 5B₁₆, 9A₁₆.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Practice — Hex → Binary</h3>
+      <ol>
+        <li>2F₁₆</li>
+        <li>80₁₆</li>
+        <li>C4₁₆</li>
+        <li>FE₁₆</li>
+      </ol>
+      <button onclick="show('answers3b')">Reveal answers</button>
+      <div class="answer" id="answers3b">
+        <b>Answers:</b> 00101111₂, 10000000₂, 11000100₂, 11111110₂.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Why use hexadecimal?</h3>
+      <p>Binary can become long and difficult for humans to read. Hexadecimal provides a much shorter representation because four binary bits can be written as one hexadecimal digit.</p>
+      <p>Cambridge specifically expects you to identify areas where hexadecimal is used and understand that it is easier for humans to understand than binary because it is shorter. fileciteturn5file0L40-L44</p>
+      <ul>
+        <li>MAC addresses</li>
+        <li>Colour codes</li>
+        <li>Error codes</li>
+        <li>Other low-level computer representations</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>9 · Exam practice</h3>
+      <p><b>Question:</b> Convert <b>101111001010₂</b> into hexadecimal. Show your working.</p>
+      <button onclick="show('exam3')">Show model answer</button>
+      <div class="answer" id="exam3">
+        Group into fours: 1011 1100 1010<br>
+        1011 = B, 1100 = C, 1010 = A<br>
+        <b>Answer: BCA₁₆</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Common mistakes</h3>
+      <ul>
+        <li>Thinking A–F are “letters” rather than hexadecimal digits representing 10–15.</li>
+        <li>Grouping binary from the wrong end.</li>
+        <li>Using fewer than four binary bits for a hexadecimal digit.</li>
+        <li>Forgetting leading zeroes in a four-bit group.</li>
+        <li>Confusing hexadecimal base 16 with binary base 2.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>11 · Self-assessment</h3>
+      <p>How confident are you now?</p>
+      <button onclick="confidence3('confident')">🟢 I can convert both ways</button>
+      <button onclick="confidence3('okay')">🟡 I need more practice</button>
+      <button onclick="confidence3('need')">🔴 I need help</button>
+      <div class="score" id="confidence3"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      <b>Source basis:</b> Cambridge IGCSE (9–1) Computer Science 0984 syllabus, 2026–2028, Topic 1.1; and <i>Cambridge IGCSE and O Level Computer Science, Second Edition</i>, Chapter 1. Content is presented as original teaching material.
+    </div>>
+  </div>
+</section>
+</main>
+
+<script>
+function studentCheck3(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  document.getElementById(id).textContent=correct?'✓ Correct!':'✗ Not quite. Check the hexadecimal digit table.';
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence3(v){
+  const text={
+    confident:'Excellent — you are ready for denary ↔ hexadecimal.',
+    okay:'Good. Practise grouping binary into fours again.',
+    need:'That is useful information. Rework the 4-bit ↔ hexadecimal table and examples.'
+  };
+  document.getElementById('confidence3').textContent=text[v];
+}
+</script>
+</body>
+</html>

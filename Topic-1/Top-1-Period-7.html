@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 7</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 7</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 7 · Logical Binary Shifts</h3>
+      <p><b>Cambridge focus:</b> Topic 1.1 Number systems — logical binary shifts to the left and right. The textbook explains that a left shift is equivalent to multiplying by 2 and a right shift to dividing by 2, with empty positions replaced by zeroes. fileciteturn6file2L166-L178</p>
+      <div class="callout"><b>Success criteria:</b> Students can perform logical left and right shifts, explain the effect of each shift on a positive binary value, and recognise when repeated shifts exceed the useful range of an 8-bit register.</div>
+      <p><b>Prior learning:</b> Period 6 — overflow and the limits of an 8-bit representation.</p>
+      <p><b>Key vocabulary:</b> logical shift, shift left, shift right, bit, register, multiply, divide, power of 2, zero-fill, overflow.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">Teacher preparation</span>
+      <h3>Before students enter</h3>
+      <ul>
+        <li>Display an 8-bit binary number and its place values.</li>
+        <li>Prepare examples of one-place and multiple-place left/right shifts.</li>
+        <li>Keep the rule visible: <b>left shift → ×2 per place</b>; <b>right shift → ÷2 per place</b>.</li>
+        <li>Remind students that this lesson uses <b>logical</b> shifts: zeroes enter the empty positions.</li>
+        <li>Prepare one example where shifting left loses a bit in an 8-bit register.</li>
+      </ul>
+      <div class="callout"><b>Teaching principle:</b> students should connect the visual movement of bits with the mathematical effect, rather than treating shifting as a mechanical string operation.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Reconnect with representation</h3>
+      <ol>
+        <li>What is the denary value of 00000101₂?</li>
+        <li>What is the effect of multiplying a number by 2?</li>
+        <li>Why can an 8-bit register cause a value to be lost?</li>
+        <li>What happens when a ninth bit is generated?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> A shift changes the positions of bits. Today we investigate exactly how that changes the value.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–13 min · Teach</span>
+      <h3>Logical shift left</h3>
+      <p>Move every bit one position to the left. The empty position on the right is filled with <b>0</b>.</p>
+      <pre style="font-family:Consolas,monospace;font-size:20px;background:#0b315f;color:white;padding:15px;border-radius:12px;text-align:center">00100101
+↓ shift left 1
+01001010</pre>
+      <p>00100101₂ = 37₁₀ and 01001010₂ = 74₁₀.</p>
+      <div class="callout"><b>One left shift = ×2</b></div>
+      <p>Two left shifts = ×4, three left shifts = ×8, and so on.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">13–21 min · Teach</span>
+      <h3>Logical shift right</h3>
+      <p>Move every bit one position to the right. The empty position on the left is filled with <b>0</b>.</p>
+      <pre style="font-family:Consolas,monospace;font-size:20px;background:#0b315f;color:white;padding:15px;border-radius:12px;text-align:center">00100100
+↓ shift right 1
+00010010</pre>
+      <p>00100100₂ = 36₁₀ and 00010010₂ = 18₁₀.</p>
+      <div class="callout"><b>One right shift = ÷2</b></div>
+      <p>Two right shifts = ÷4, three right shifts = ÷8.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">21–29 min · Model</span>
+      <h3>Multiple shifts</h3>
+      <p>Model a three-place right shift:</p>
+      <pre style="font-family:Consolas,monospace;font-size:19px;background:#0b315f;color:white;padding:15px;border-radius:12px;text-align:center">01101000
+→ 00110100  (1)
+→ 00011010  (2)
+→ 00001101  (3)</pre>
+      <p>01101000₂ = 104₁₀. After three right shifts, the result is 13₁₀.</p>
+      <div class="callout"><b>Check:</b> 104 ÷ 2³ = 104 ÷ 8 = 13.</div>
+      <p>The textbook likewise describes each right shift as division by 2 and warns that excessive shifting can lose significant bits. fileciteturn6file2L166-L178</p>
+    </div>
+
+    <div class="card">
+      <span class="time">29–36 min · Guided practice</span>
+      <h3>Think → Pair → Explain</h3>
+      <p>Perform the requested shift and calculate the denary value before and after.</p>
+      <ol>
+        <li>00101100₂ — shift left 1 place.</li>
+        <li>01010000₂ — shift right 2 places.</li>
+        <li>00010110₂ — shift left 2 places.</li>
+        <li>01111000₂ — shift right 3 places.</li>
+      </ol>
+      <div class="callout"><b>Teacher move:</b> Ask students to predict the denary result before physically shifting the bits.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">36–42 min · Differentiation</span>
+      <h3>Three levels of challenge</h3>
+      <p><b>Support:</b> Use 4-bit values and perform one shift at a time.</p>
+      <p><b>Core:</b> Use 8-bit values and perform two- or three-place shifts.</p>
+      <p><b>Challenge:</b> Explain what happens when a left shift pushes a 1 beyond the left edge of an 8-bit register.</p>
+      <div class="callout"><b>Key idea:</b> shifting is only guaranteed to behave like ×2 or ÷2 while the required value remains representable in the available register.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">42–47 min · Assessment</span>
+      <h3>Mini-whiteboard check</h3>
+      <ol>
+        <li>Shift 00010110₂ left by 1.</li>
+        <li>Shift 01010000₂ right by 2.</li>
+        <li>What mathematical operation does a left shift by 3 places represent?</li>
+      </ol>
+      <div class="callout"><b>Look for:</b> students who shift the bits but fail to insert zeroes, or who reverse the multiplication/division relationship.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>Perform 00111000₂ → left shift 1.</li>
+        <li>Perform 00111000₂ → right shift 2.</li>
+        <li>State the mathematical effect of a right shift by 3 places.</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> If students can perform and explain shifts, Period 8 can examine shift limits and then move into two's complement. If not, begin with a short shift drill.</div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 7 introduces logical binary shifts and their mathematical effects, following the sequence in the Cambridge textbook.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Shift left</span>
+        <span>3. Shift right</span><span>4. Multiple shifts</span>
+        <span>5. Practice</span><span>6. Exit ticket</span>
+      </div>
+      <p>Today you will learn how moving binary digits left or right changes the value.</p>
+      <div class="callout"><b>Left → ×2 per place &nbsp; | &nbsp; Right → ÷2 per place</b></div>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Perform logical left shifts.</li>
+        <li>Perform logical right shifts.</li>
+        <li>Insert zeroes into the empty positions.</li>
+        <li>Explain the multiplication/division effect.</li>
+        <li>Recognise when repeated shifts can exceed an 8-bit register's useful range.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · Logical shift left</h3>
+      <p>Move every bit one position left and put <b>0</b> into the right-most position.</p>
+      <pre style="font-family:Consolas,monospace;font-size:20px;background:#0b315f;color:white;padding:15px;border-radius:12px;text-align:center">00100101
+→ 01001010</pre>
+      <p>37 becomes 74.</p>
+      <div class="callout"><b>Left shift 1 = ×2</b></div>
+    </div>
+
+    <div class="card">
+      <h3>2 · Logical shift right</h3>
+      <p>Move every bit one position right and put <b>0</b> into the left-most position.</p>
+      <pre style="font-family:Consolas,monospace;font-size:20px;background:#0b315f;color:white;padding:15px;border-radius:12px;text-align:center">00100100
+→ 00010010</pre>
+      <p>36 becomes 18.</p>
+      <div class="callout"><b>Right shift 1 = ÷2</b></div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Multiple shifts</h3>
+      <p>Example: shift 01101000₂ right by three places.</p>
+      <pre style="font-family:Consolas,monospace;font-size:19px;background:#0b315f;color:white;padding:15px;border-radius:12px;text-align:center">01101000
+00110100
+00011010
+00001101</pre>
+      <p>104 ÷ 2³ = 13.</p>
+      <div class="callout"><b>Three right shifts = divide by 8.</b></div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Quick check</h3>
+      <p><b>Q1:</b> What does one left shift do?</p>
+      <button class="option" onclick="studentCheck7(this,true,'q1s7')">Multiply by 2</button>
+      <button class="option" onclick="studentCheck7(this,false,'q1s7')">Divide by 2</button>
+      <button class="option" onclick="studentCheck7(this,false,'q1s7')">Add 1</button>
+      <div class="score" id="q1s7"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> What is 00010100₂ shifted right by 1?</p>
+      <button class="option" onclick="studentCheck7(this,false,'q2s7')">00010100</button>
+      <button class="option" onclick="studentCheck7(this,true,'q2s7')">00001010</button>
+      <button class="option" onclick="studentCheck7(this,false,'q2s7')">00101000</button>
+      <div class="score" id="q2s7"></div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Practice — shift left</h3>
+      <ol>
+        <li>00101100₂ → left 1</li>
+        <li>00010110₂ → left 2</li>
+        <li>00110001₂ → left 1</li>
+        <li>00001001₂ → left 3</li>
+      </ol>
+      <button onclick="show('answers7a')">Reveal answers</button>
+      <div class="answer" id="answers7a">
+        <b>Answers:</b><br>
+        1. 01011000<br>
+        2. 01011000<br>
+        3. 01100010<br>
+        4. 01001000
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Practice — shift right</h3>
+      <ol>
+        <li>01010000₂ → right 1</li>
+        <li>01111000₂ → right 2</li>
+        <li>00110100₂ → right 2</li>
+        <li>11110000₂ → right 3</li>
+      </ol>
+      <button onclick="show('answers7b')">Reveal answers</button>
+      <div class="answer" id="answers7b">
+        <b>Answers:</b><br>
+        1. 00101000<br>
+        2. 00011110<br>
+        3. 00001101<br>
+        4. 00011110
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Connect to denary</h3>
+      <p>Use the mathematical shortcut to predict the answer.</p>
+      <ul>
+        <li>Left 1 → ×2</li>
+        <li>Left 2 → ×4</li>
+        <li>Left 3 → ×8</li>
+        <li>Right 1 → ÷2</li>
+        <li>Right 2 → ÷4</li>
+        <li>Right 3 → ÷8</li>
+      </ul>
+      <div class="callout"><b>Example:</b> 48 shifted left 2 places = 48 × 4 = 192.</div>
+    </div>
+
+    <div class="card">
+      <h3>8 · When can things go wrong?</h3>
+      <p>In a fixed 8-bit register, there is only room for eight bits. A left shift can push a bit beyond the left edge.</p>
+      <div class="callout"><b>Important:</b> The ×2 relationship works only while the result can be represented correctly in the available register.</div>
+      <p>Repeated shifts can eventually lose significant bits. The textbook illustrates this limitation for an 8-bit register. fileciteturn6file2L171-L178</p>
+    </div>
+
+    <div class="card">
+      <h3>9 · Exam practice</h3>
+      <p><b>Question:</b> Shift 00110100₂ three places to the right. Give the resulting binary number and its denary value.</p>
+      <button onclick="show('exam7')">Show model answer</button>
+      <div class="answer" id="exam7">
+        00110100 → 00011010 → 00001101 → 00000110.<br>
+        Result = <b>00000110₂ = 6₁₀</b>.<br>
+        Check: 52 ÷ 8 = 6.5, so the logical shift gives the integer result 6 because the fractional part is discarded.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Common mistakes</h3>
+      <ul>
+        <li>Moving the bits in the wrong direction.</li>
+        <li>Forgetting to insert a zero into the empty position.</li>
+        <li>Confusing left shift with division.</li>
+        <li>Confusing right shift with multiplication.</li>
+        <li>Ignoring the fixed number of bits available in a register.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>11 · Self-assessment</h3>
+      <p>How confident are you now?</p>
+      <button onclick="confidence7('confident')">🟢 I can perform and explain shifts</button>
+      <button onclick="confidence7('okay')">🟡 I need more practice</button>
+      <button onclick="confidence7('need')">🔴 I need help</button>
+      <div class="score" id="confidence7"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      <b>Source basis:</b> Cambridge IGCSE (9–1) Computer Science 0984 syllabus, 2026–2028, Topic 1.1; and <i>Cambridge IGCSE and O Level Computer Science, Second Edition</i>, Chapter 1. Content is presented as original teaching material.
+    </div>>
+  </div>
+</section>
+</main>
+
+<script>
+function studentCheck7(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  document.getElementById(id).textContent=correct?'✓ Correct!':'✗ Not quite. Remember: left ×2, right ÷2.';
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence7(v){
+  const text={
+    confident:'Excellent — you are ready to explore the limits of logical shifts.',
+    okay:'Good. Practise moving the bits one place at a time.',
+    need:'That is useful information. Rework the left/right examples and check the direction carefully.'
+  };
+  document.getElementById('confidence7').textContent=text[v];
+}
+</script>
+</body>
+</html>

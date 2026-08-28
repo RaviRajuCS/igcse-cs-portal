@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 13</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 13</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 13 · Sound Representation</h3>
+      <p><b>Cambridge focus:</b> Topic 1.2 Text, sound and images — sound representation, including sampling, sample resolution and sample rate. The Cambridge course sequence places sound after text representation. fileciteturn9file3L226-L236</p>
+      <div class="callout"><b>Success criteria:</b> Students can explain why analogue sound must be sampled to be represented digitally, describe sample rate and sample resolution, and explain how changing these affects the quality and size of a digital sound file.</div>
+      <p><b>Prior learning:</b> Binary representation and text/character representation.</p>
+      <p><b>Key vocabulary:</b> analogue, digital, sampling, sample, sample rate, sample resolution, amplitude, quality, file size, waveform.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>Before students enter</h3>
+      <ul>
+        <li>Display a smooth analogue waveform and a set of discrete sample points.</li>
+        <li>Ask: “Can a computer store a sound wave directly?”</li>
+        <li>Prepare a simple low-rate and high-rate sampling comparison.</li>
+        <li>Keep the two controls visible: <b>sample rate</b> and <b>sample resolution</b>.</li>
+      </ul>
+      <div class="callout"><b>Teaching principle:</b> students should first understand sampling as taking measurements of a changing sound wave before calculating file sizes.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Reconnect with digital representation</h3>
+      <ol>
+        <li>What is the difference between analogue and digital data?</li>
+        <li>What does a bit represent?</li>
+        <li>Why does a computer need numerical codes to represent text?</li>
+        <li>Can a computer store a continuously changing sound wave directly as binary?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> Sound is naturally analogue. To store it digitally, the computer repeatedly measures the wave and stores numerical values.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–14 min · Discover</span>
+      <h3>What is sampling?</h3>
+      <p>A sound wave changes continuously over time. <b>Sampling</b> takes measurements of the wave at regular time intervals.</p>
+      <div class="callout"><b>Sampling = taking repeated measurements of an analogue signal.</b></div>
+      <p>Each measurement is represented digitally as a numerical value. The collection of samples is then used to reconstruct an approximation of the original sound.</p>
+      <p><b>Ask:</b> What happens if we take very few measurements?</p>
+    </div>
+
+    <div class="card">
+      <span class="time">14–23 min · Teach</span>
+      <h3>Sample rate</h3>
+      <p><b>Sample rate</b> is the number of samples taken per second. It is measured in <b>hertz (Hz)</b>.</p>
+      <div class="callout"><b>Higher sample rate → more samples each second → a more accurate representation of changes over time.</b></div>
+      <p>For example, 8,000 samples per second has a sample rate of 8 kHz.</p>
+      <p>Students should be able to interpret the unit: <b>1 kHz = 1,000 samples per second.</b></p>
+    </div>
+
+    <div class="card">
+      <span class="time">23–31 min · Teach</span>
+      <h3>Sample resolution</h3>
+      <p><b>Sample resolution</b> is the number of bits used to store each sample.</p>
+      <p>More bits allow a sample's amplitude to be represented using more possible values.</p>
+      <div class="callout"><b>Higher sample resolution → more possible amplitude values → greater accuracy of each sample.</b></div>
+      <p>Examples:</p>
+      <ul>
+        <li>8-bit resolution → 2⁸ = 256 possible levels</li>
+        <li>16-bit resolution → 2¹⁶ = 65,536 possible levels</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="time">31–37 min · Compare</span>
+      <h3>Sample rate vs sample resolution</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Control</th><th style="padding:8px;background:#082b59;color:white">What changes?</th><th style="padding:8px;background:#082b59;color:white">Effect of increasing it</th></tr>
+        <tr><td style="padding:7px">Sample rate</td><td style="padding:7px">Number of samples per second</td><td style="padding:7px">Captures changes in the waveform more frequently</td></tr>
+        <tr><td style="padding:7px">Sample resolution</td><td style="padding:7px">Bits per sample</td><td style="padding:7px">Represents amplitude with finer precision</td></tr>
+      </table>
+      <div class="callout"><b>Important:</b> both can increase quality, but they describe different aspects of sampling.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">37–42 min · Application</span>
+      <h3>Quality versus file size</h3>
+      <p>Increasing the sample rate means more samples are stored each second. Increasing sample resolution means more bits are stored for each sample.</p>
+      <div class="callout"><b>Therefore:</b> increasing either setting generally increases the amount of storage required.</div>
+      <p>This creates a practical trade-off between sound quality and file size.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">42–46 min · Assessment</span>
+      <h3>Cambridge-style questions</h3>
+      <ol>
+        <li>Define sample rate.</li>
+        <li>Define sample resolution.</li>
+        <li>Explain one effect of increasing sample rate.</li>
+        <li>Explain one effect of increasing sample resolution.</li>
+        <li>Explain why increasing sampling settings can increase file size.</li>
+      </ol>
+      <div class="callout"><b>Marking focus:</b> students must distinguish “samples per second” from “bits per sample”.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">46–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>What is sampling?</li>
+        <li>What does sample rate measure?</li>
+        <li>What does sample resolution measure?</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> Period 14 can use numerical sampling questions and introduce sound-file-size calculations once these two concepts are secure.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 13 introduces digital sound through sampling, sample rate and sample resolution before numerical sound-file calculations.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Sampling</span>
+        <span>3. Sample rate</span><span>4. Resolution</span>
+        <span>5. File size</span><span>6. Exit ticket</span>
+      </div>
+      <p>Today you will learn how an analogue sound wave becomes <b>digital data</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Explain sampling.</li>
+        <li>Define sample rate.</li>
+        <li>Define sample resolution.</li>
+        <li>Explain how each affects sound quality.</li>
+        <li>Explain how sampling settings affect file size.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · Analogue → digital</h3>
+      <p>A sound wave is continuously changing. A computer stores digital data, so it takes repeated measurements of the wave.</p>
+      <div class="callout"><b>Sampling</b> = measuring the sound wave at regular intervals.</div>
+      <p>Each measurement is stored as a numerical value.</p>
+    </div>
+
+    <div class="card">
+      <h3>2 · Sample rate</h3>
+      <p>Sample rate tells us <b>how many samples are taken every second</b>.</p>
+      <div class="callout"><b>Unit: hertz (Hz)</b><br>1 Hz = 1 sample per second<br>1 kHz = 1,000 samples per second</div>
+      <p>Higher sample rate means the waveform is measured more frequently.</p>
+    </div>
+
+    <div class="card">
+      <h3>3 · Sample resolution</h3>
+      <p>Sample resolution tells us <b>how many bits are used for each sample</b>.</p>
+      <div class="callout"><b>8-bit → 2⁸ = 256 possible levels</b><br><b>16-bit → 2¹⁶ = 65,536 possible levels</b></div>
+      <p>Higher resolution allows the amplitude of each sample to be represented more precisely.</p>
+    </div>
+
+    <div class="card">
+      <h3>4 · Quick check</h3>
+      <p><b>Q1:</b> What does sample rate measure?</p>
+      <button class="option" onclick="check13(this,true,'q1s13')">Samples per second</button>
+      <button class="option" onclick="check13(this,false,'q1s13')">Bits per sample</button>
+      <button class="option" onclick="check13(this,false,'q1s13')">Number of speakers</button>
+      <div class="score" id="q1s13"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> What does sample resolution measure?</p>
+      <button class="option" onclick="check13(this,false,'q2s13')">Samples per second</button>
+      <button class="option" onclick="check13(this,true,'q2s13')">Bits per sample</button>
+      <button class="option" onclick="check13(this,false,'q2s13')">Seconds of audio</button>
+      <div class="score" id="q2s13"></div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Compare the two</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Sample rate</th><th style="padding:8px;background:#082b59;color:white">Sample resolution</th></tr>
+        <tr><td style="padding:7px">Samples per second</td><td style="padding:7px">Bits per sample</td></tr>
+        <tr><td style="padding:7px">Measured in Hz</td><td style="padding:7px">Measured in bits</td></tr>
+        <tr><td style="padding:7px">More frequent measurements</td><td style="padding:7px">More amplitude levels</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>6 · Think about quality</h3>
+      <p>Which change gives more accurate measurements over time?</p>
+      <button class="option" onclick="check13(this,true,'q3s13')">Increase sample rate</button>
+      <button class="option" onclick="check13(this,false,'q3s13')">Decrease sample rate</button>
+      <div class="score" id="q3s13"></div>
+      <p>Which change gives more precise amplitude levels?</p>
+      <button class="option" onclick="check13(this,true,'q4s13')">Increase sample resolution</button>
+      <button class="option" onclick="check13(this,false,'q4s13')">Decrease sample resolution</button>
+      <div class="score" id="q4s13"></div>
+    </div>
+
+    <div class="card">
+      <h3>7 · File size</h3>
+      <p>More samples require more stored data. More bits per sample also require more stored data.</p>
+      <div class="callout"><b>Higher sample rate + higher resolution → larger sound data.</b></div>
+      <p>This is a quality-versus-storage trade-off.</p>
+    </div>
+
+    <div class="card">
+      <h3>8 · Practice</h3>
+      <ol>
+        <li>How many samples are taken each second at 8 kHz?</li>
+        <li>How many possible levels are available at 8-bit resolution?</li>
+        <li>How many possible levels are available at 16-bit resolution?</li>
+        <li>Which setting describes bits per sample?</li>
+      </ol>
+      <button onclick="show('answers13a')">Reveal answers</button>
+      <div class="answer" id="answers13a">
+        1. 8,000 samples per second<br>
+        2. 256 levels<br>
+        3. 65,536 levels<br>
+        4. Sample resolution
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Exam practice</h3>
+      <p><b>Question:</b> Explain the difference between sample rate and sample resolution.</p>
+      <button onclick="show('exam13')">Show model answer</button>
+      <div class="answer" id="exam13">
+        Sample rate is the number of samples taken per second, measured in hertz. Sample resolution is the number of bits used to store each sample and determines how many amplitude levels can be represented.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Common mistakes</h3>
+      <ul>
+        <li>Confusing sample rate with sample resolution.</li>
+        <li>Thinking Hz means bits per sample.</li>
+        <li>Thinking higher sample rate means more amplitude levels.</li>
+        <li>Forgetting that increasing sampling settings generally increases storage requirements.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>11 · Self-assessment</h3>
+      <p>Choose your confidence:</p>
+      <button onclick="confidence13('confident')">🟢 I understand sampling</button>
+      <button onclick="confidence13('okay')">🟡 I need more practice</button>
+      <button onclick="confidence13('need')">🔴 I need help</button>
+      <div class="score" id="confidence13"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Sound representation: sampling, sample rate and sample resolution.
+    </div>>
+  </div>
+</section>
+</main>
+
+<script>
+function check13(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1s13:correct?'✓ Correct — sample rate is samples per second.':'✗ Not quite. Think “how many samples every second”.',
+    q2s13:correct?'✓ Correct — sample resolution is bits per sample.':'✗ Not quite. Think “how many bits store each sample”.',
+    q3s13:correct?'✓ Correct — a higher rate samples the wave more frequently.':'✗ Not quite. More frequent measurements require a higher sample rate.',
+    q4s13:correct?'✓ Correct — higher resolution gives more amplitude levels.':'✗ Not quite. Resolution concerns bits per sample.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence13(v){
+  const text={
+    confident:'Excellent — you are ready for sound-file calculations.',
+    okay:'Good. Practise the difference between sample rate and sample resolution.',
+    need:'That is useful information. Rework the two definitions with your teacher.'
+  };
+  document.getElementById('confidence13').textContent=text[v];
+}
+</script>
+</body>
+</html>

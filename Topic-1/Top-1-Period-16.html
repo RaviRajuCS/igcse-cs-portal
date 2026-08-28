@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 16</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 16</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 16 · Image File Size Calculations</h3>
+      <p><b>Cambridge focus:</b> Bitmap image data is determined by the number of pixels and the colour depth used to represent each pixel. Students apply these ideas to calculate the storage required for an image.</p>
+      <div class="callout"><b>Success criteria:</b> Students can calculate the number of pixels in an image, multiply by colour depth to find the size in bits, convert bits to bytes, and convert the result to the required storage unit.</div>
+      <p><b>Prior learning:</b> Period 15 — pixels, resolution and colour depth.</p>
+      <p><b>Key vocabulary:</b> resolution, pixel, colour depth, bits per pixel, image size, bits, bytes, KiB, MiB, bitmap.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>The calculation chain</h3>
+      <div class="callout"><b>Pixels = width × height</b><br><br><b>Image size (bits) = pixels × colour depth</b></div>
+      <ol>
+        <li>Find the total number of pixels.</li>
+        <li>Multiply by the colour depth in bits per pixel.</li>
+        <li>Divide by 8 to obtain bytes.</li>
+        <li>Convert to KiB, MiB or another requested unit if necessary.</li>
+      </ol>
+      <p>Keep the answer in the unit requested by the question.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Reconnect with Period 15</h3>
+      <ol>
+        <li>What is a pixel?</li>
+        <li>What does image resolution tell us?</li>
+        <li>What does colour depth tell us?</li>
+        <li>How many colours can 8 bits represent?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> We know what resolution and colour depth mean. Now we use them to calculate image data size.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–14 min · Model</span>
+      <h3>Worked example 1</h3>
+      <p>An image is <b>800 × 600 pixels</b> with a colour depth of <b>8 bits</b>.</p>
+      <p>Pixels = 800 × 600 = <b>480,000</b></p>
+      <p>Bits = 480,000 × 8 = <b>3,840,000 bits</b></p>
+      <p>Bytes = 3,840,000 ÷ 8 = <b>480,000 bytes</b></p>
+      <div class="callout"><b>Answer:</b> 480,000 bytes of raw pixel data.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">14–23 min · Model</span>
+      <h3>Worked example 2 · MiB</h3>
+      <p>An image is <b>1024 × 768 pixels</b> with a colour depth of <b>24 bits</b>.</p>
+      <p>Pixels = 1024 × 768 = <b>786,432</b></p>
+      <p>Bits = 786,432 × 24 = <b>18,874,368 bits</b></p>
+      <p>Bytes = 18,874,368 ÷ 8 = <b>2,359,296 bytes</b></p>
+      <p>MiB = 2,359,296 ÷ 1,048,576 = <b>2.25 MiB</b></p>
+      <div class="callout"><b>Exam habit:</b> write the unit after every major step.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">23–31 min · Guided practice</span>
+      <h3>Build the calculation</h3>
+      <p><b>Question A:</b> 640 × 480 pixels, 8-bit colour depth.</p>
+      <p><b>Question B:</b> 800 × 600 pixels, 16-bit colour depth.</p>
+      <p>For each, calculate:</p>
+      <ol>
+        <li>Number of pixels</li>
+        <li>Size in bits</li>
+        <li>Size in bytes</li>
+      </ol>
+      <div class="callout"><b>Teacher move:</b> check that students calculate pixels first. Do not let them multiply width × height × colour depth mentally without showing the structure.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">31–36 min · Unit conversion</span>
+      <h3>Bytes → KiB → MiB</h3>
+      <div class="callout"><b>8 bits = 1 byte</b><br><b>1024 bytes = 1 KiB</b><br><b>1024 KiB = 1 MiB</b></div>
+      <p>For the storage-unit conversions specified in the Cambridge syllabus, use <b>1024</b>, not 1000.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">36–41 min · Application</span>
+      <h3>What makes an image larger?</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Increase</th><th style="padding:8px;background:#082b59;color:white">Effect</th></tr>
+        <tr><td style="padding:7px">Width / height</td><td style="padding:7px">More pixels → more data</td></tr>
+        <tr><td style="padding:7px">Resolution</td><td style="padding:7px">More pixels → larger file</td></tr>
+        <tr><td style="padding:7px">Colour depth</td><td style="padding:7px">More bits per pixel → larger file</td></tr>
+      </table>
+      <div class="callout"><b>Key relationship:</b> raw bitmap size is directly proportional to the number of pixels and colour depth.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">41–47 min · Assessment</span>
+      <h3>Cambridge-style calculation</h3>
+      <p>An image has a resolution of <b>1280 × 720 pixels</b> and a colour depth of <b>16 bits</b>.</p>
+      <ol>
+        <li>Calculate the number of pixels.</li>
+        <li>Calculate the file size in bits.</li>
+        <li>Calculate the file size in bytes.</li>
+        <li>Calculate the file size in MiB.</li>
+      </ol>
+      <div class="callout"><b>Marking focus:</b> width × height → pixels → × bits per pixel → bits → ÷8 → bytes → storage conversion.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>What is the formula for the number of pixels?</li>
+        <li>How do you calculate image size in bits?</li>
+        <li>What do you divide by to convert bits to bytes?</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> Period 17 can consolidate image calculations and introduce questions involving changes in resolution and colour depth.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 16 applies image resolution and colour depth to raw bitmap file-size calculations.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Pixels</span>
+        <span>3. Bits</span><span>4. Bytes</span>
+        <span>5. Storage units</span><span>6. Assessment</span>
+      </div>
+      <p>Today you will calculate the storage needed for a bitmap image.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Calculate the number of pixels.</li>
+        <li>Calculate image size in bits.</li>
+        <li>Convert bits to bytes.</li>
+        <li>Convert to KiB or MiB.</li>
+        <li>Explain how resolution and colour depth affect file size.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · The formulas</h3>
+      <div class="callout"><b>Pixels = width × height</b><br><br><b>Image size in bits = pixels × colour depth</b></div>
+      <p>Then:</p>
+      <div class="callout"><b>Bytes = bits ÷ 8</b></div>
+    </div>
+
+    <div class="card">
+      <h3>2 · Worked example</h3>
+      <p>800 × 600 pixels, 8-bit colour depth.</p>
+      <p>Pixels = 800 × 600 = <b>480,000</b></p>
+      <p>Bits = 480,000 × 8 = <b>3,840,000 bits</b></p>
+      <p>Bytes = 3,840,000 ÷ 8 = <b>480,000 bytes</b></p>
+    </div>
+
+    <div class="card">
+      <h3>3 · Quick check</h3>
+      <p><b>Q1:</b> What is the first calculation?</p>
+      <button class="option" onclick="check16(this,true,'q1s16')">Width × height</button>
+      <button class="option" onclick="check16(this,false,'q1s16')">Width + height</button>
+      <button class="option" onclick="check16(this,false,'q1s16')">Colour depth ÷ 8</button>
+      <div class="score" id="q1s16"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> How do you convert bits to bytes?</p>
+      <button class="option" onclick="check16(this,false,'q2s16')">Multiply by 8</button>
+      <button class="option" onclick="check16(this,true,'q2s16')">Divide by 8</button>
+      <button class="option" onclick="check16(this,false,'q2s16')">Divide by 1024</button>
+      <div class="score" id="q2s16"></div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Practice A</h3>
+      <p>640 × 480 pixels, 8-bit colour depth.</p>
+      <button onclick="show('answers16a')">Reveal answer</button>
+      <div class="answer" id="answers16a">
+        Pixels = 307,200.<br>
+        Bits = 2,457,600 bits.<br>
+        Bytes = <b>307,200 bytes</b>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Practice B</h3>
+      <p>800 × 600 pixels, 16-bit colour depth.</p>
+      <button onclick="show('answers16b')">Reveal answer</button>
+      <div class="answer" id="answers16b">
+        Pixels = 480,000.<br>
+        Bits = 7,680,000 bits.<br>
+        Bytes = <b>960,000 bytes</b>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Storage units</h3>
+      <div class="callout"><b>8 bits = 1 byte</b><br><b>1024 bytes = 1 KiB</b><br><b>1024 KiB = 1 MiB</b></div>
+      <p>Use <b>1024</b> for the specified binary storage conversions.</p>
+    </div>
+
+    <div class="card">
+      <h3>7 · Challenge: MiB</h3>
+      <p>1024 × 768 pixels, 24-bit colour depth.</p>
+      <button onclick="show('challenge16')">Show model answer</button>
+      <div class="answer" id="challenge16">
+        Pixels = 786,432.<br>
+        Bits = 18,874,368 bits.<br>
+        Bytes = 2,359,296 bytes.<br>
+        MiB = 2,359,296 ÷ 1,048,576 = <b>2.25 MiB</b>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Exam practice</h3>
+      <p>An image is 1280 × 720 pixels with a colour depth of 16 bits. Calculate its size in MiB.</p>
+      <button onclick="show('exam16')">Show model answer</button>
+      <div class="answer" id="exam16">
+        Pixels = 1280 × 720 = 921,600.<br>
+        Bits = 921,600 × 16 = 14,745,600 bits.<br>
+        Bytes = 1,843,200 bytes.<br>
+        MiB = 1,843,200 ÷ 1,048,576 ≈ <b>1.76 MiB</b>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Think carefully</h3>
+      <p>What happens to raw image size if the colour depth doubles while the resolution stays the same?</p>
+      <button class="option" onclick="check16(this,true,'q3s16')">The file size doubles.</button>
+      <button class="option" onclick="check16(this,false,'q3s16')">The file size halves.</button>
+      <button class="option" onclick="check16(this,false,'q3s16')">The file size stays the same.</button>
+      <div class="score" id="q3s16"></div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Common mistakes</h3>
+      <ul>
+        <li>Forgetting width × height.</li>
+        <li>Using colour depth as the number of colours rather than bits per pixel.</li>
+        <li>Forgetting to divide bits by 8.</li>
+        <li>Using 1000 instead of 1024 for the specified storage conversion.</li>
+        <li>Giving the answer without the requested unit.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>11 · Self-assessment</h3>
+      <p>Choose your confidence:</p>
+      <button onclick="confidence16('confident')">🟢 I can calculate image file sizes</button>
+      <button onclick="confidence16('okay')">🟡 I need more practice</button>
+      <button onclick="confidence16('need')">🔴 I need help</button>
+      <div class="score" id="confidence16"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Image file-size calculations: resolution × colour depth → bits → bytes → storage units.
+    </div>>
+  </div>
+</section>
+</main>
+
+<script>
+function check16(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1s16:correct?'✓ Correct — width × height gives the number of pixels.':'✗ Not quite. First find the total number of pixels.',
+    q2s16:correct?'✓ Correct — 8 bits make 1 byte.':'✗ Not quite. Divide bits by 8 to get bytes.',
+    q3s16:correct?'✓ Correct — doubling bits per pixel doubles the raw data size.':'✗ Not quite. With the same number of pixels, doubling bits per pixel doubles the data.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence16(v){
+  const text={
+    confident:'Excellent — you are ready for more complex image questions.',
+    okay:'Good. Practise the calculation chain: pixels → bits → bytes → storage unit.',
+    need:'That is useful information. Work through the 800 × 600 example step by step.'
+  };
+  document.getElementById('confidence16').textContent=text[v];
+}
+</script>
+</body>
+</html>

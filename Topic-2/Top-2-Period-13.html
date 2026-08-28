@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 13</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--blue2:#12477f;--glass:rgba(255,255,255,.72);--shadow:0 12px 30px rgba(8,43,89,.16)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(255,255,255,.34);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.55)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0 0;font-size:13px;font-weight:600}.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:700;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}.panehead{padding:15px 20px;background:rgba(8,43,89,.95);color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:rgba(255,253,245,.88);border:1px solid rgba(8,43,89,.13);border-radius:16px;padding:16px;margin-bottom:15px}.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.code{font-family:Consolas,monospace;background:#102e50;color:#fff;padding:14px;border-radius:12px;line-height:1.7;text-align:center;font-size:17px}.digit{display:inline-block;padding:5px 9px;background:var(--gold2);color:var(--blue);border-radius:7px;font-weight:900;margin:2px}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div><h1>IGCSE Computer Science 0984</h1><p>Topic 2 — Data Transmission · Period 13</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>My teaching route</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Lesson overview</span><h3>Period 13 · Check Digits</h3>
+<p><b>Topic 2 · Data Transmission:</b> Students learn how a <b>check digit</b> is used to detect errors in data entry and identify common examples such as <b>ISBNs and bar codes</b>.</p>
+<div class="callout"><b>Success criteria:</b> Students can explain the purpose of a check digit, describe how it is generated from other digits, explain how a receiver/system recalculates and compares it, and identify ISBNs and bar codes as examples.</div>
+<p><b>Important syllabus distinction:</b> A check digit is used to detect errors in <b>data entry</b>; it is not the same as a parity bit, checksum or echo check used after transmission. citeturn0search12</p>
+<p><b>Key vocabulary:</b> check digit, validation, data entry, recalculation, comparison, ISBN, bar code, error detection.</p></div>
+
+<div class="card"><span class="time">My teaching route</span><h3>Move from transmission errors to entry errors</h3>
+<ol><li>Retrieve parity, checksum and echo check.</li><li>Introduce the new problem: data can be entered incorrectly.</li><li>Show an ordinary identification number with an additional check digit.</li><li>Explain that the check digit is calculated from the other digits.</li><li>At checking time, recalculate and compare.</li><li>Use ISBN and bar-code examples.</li><li>Clarify that a check digit detects likely entry errors; it does not prove all data is correct.</li></ol>
+<div class="callout"><b>Teaching principle:</b> Students should first understand the <b>purpose and process</b>; detailed real-world algorithms should only be taught when specifically required.</div></div>
+
+<div class="card"><span class="time">0–6 min · Retrieval</span><h3>Three transmission checks</h3>
+<div class="callout"><b>Parity:</b> count the 1s.<br><b>Checksum:</b> calculate and compare a value.<br><b>Echo:</b> return and compare the data.</div>
+<p>Now consider a different problem: a person types a number into a system and accidentally enters one digit incorrectly. How could the system detect that?</p></div>
+
+<div class="card"><span class="time">6–15 min · Teach</span><h3>What is a check digit?</h3>
+<p>A <b>check digit</b> is an extra digit added to a number. It is calculated from the other digits and is used to help detect errors when the number is entered.</p>
+<div class="code"><span class="digit">4</span><span class="digit">8</span><span class="digit">2</span><span class="digit">7</span><span class="digit">?</span><br><small>data digits → calculated check digit</small></div>
+<div class="callout"><b>Core idea:</b> The final digit is not simply another piece of identification data. It carries information that allows the entered number to be checked.</div></div>
+
+<div class="card"><span class="time">15–24 min · Process</span><h3>How does the check work?</h3>
+<div class="callout"><b>1.</b> Start with the original digits.<br><b>2.</b> Apply the specified calculation.<br><b>3.</b> Produce the check digit.<br><b>4.</b> Store or print the complete number.<br><b>5.</b> When the number is entered later, repeat the calculation.<br><b>6.</b> Compare the calculated check digit with the supplied check digit.</div>
+<p>If the values do not match, the system can flag the entry as potentially incorrect.</p></div>
+
+<div class="card"><span class="time">24–32 min · Simple classroom example</span><h3>Understanding the calculation</h3>
+<p>For a classroom demonstration, suppose a system uses this simplified rule:</p>
+<div class="callout">Add the first four digits and use the final digit of the total as the check digit.</div>
+<div class="code">4 + 8 + 2 + 7 = 21<br>Check digit = <span class="digit">1</span></div>
+<p>The complete number would therefore be <b>48271</b>.</p>
+<div class="callout"><b>Important:</b> This is a teaching example only. Real ISBN and bar-code check-digit algorithms use specified standards and calculations.</div></div>
+
+<div class="card"><span class="time">32–38 min · Error demonstration</span><h3>What if a digit is entered incorrectly?</h3>
+<p>Original number: <b>48271</b></p>
+<p>Suppose a user enters: <b>48371</b>.</p>
+<div class="code">4 + 8 + 3 + 7 = 22<br>Calculated check digit = <span class="digit">2</span><br>Entered check digit = <span class="digit">1</span></div>
+<div class="callout"><b>2 ≠ 1</b> → the check fails → the system can flag a possible data-entry error.</div></div>
+
+<div class="card"><span class="time">38–43 min · Real examples</span><h3>Where are check digits used?</h3>
+<table><tr><th>Example</th><th>Purpose</th></tr><tr><td><b>ISBN</b></td><td>Books use an ISBN format containing a check digit to help detect errors in the number.</td></tr><tr><td><b>Bar codes</b></td><td>Many bar-code systems include a check digit so the scanned number can be checked.</td></tr></table>
+<div class="callout"><b>Exam memory:</b> If asked for examples of check-digit use, remember <b>ISBN</b> and <b>bar codes</b>.</div></div>
+
+<div class="card"><span class="time">43–47 min · Compare</span><h3>Check digit vs transmission checks</h3>
+<table><tr><th>Check digit</th><th>Parity / Checksum / Echo</th></tr><tr><td>Used to detect errors in data entry.</td><td>Used to detect errors after data transmission.</td></tr><tr><td>Added as an extra digit to a number.</td><td>Uses a parity bit, calculated value or returned data.</td></tr><tr><td>Examples include ISBNs and bar codes.</td><td>Examples include parity checks, checksums and echo checks.</td></tr></table></div>
+
+<div class="card"><span class="time">47–50 min · Assessment</span><h3>Cambridge-style questions</h3>
+<ol><li>Define a check digit.</li><li>Explain how a check digit can detect an error during data entry.</li><li>State two examples where check digits are used.</li><li>Explain why the check digit is recalculated when data is entered.</li><li>State one difference between a check digit and a parity check.</li></ol>
+<div class="callout"><b>Marking focus:</b> Mention <b>data entry</b>, <b>recalculation</b> and <b>comparison</b>.</div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br><b>Planning note:</b> Period 13 covers check digits for data-entry error detection, including ISBN and bar-code examples. citeturn0search12</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Problem</span><span>2. Check digit</span><span>3. Calculate</span><span>4. Compare</span><span>5. Examples</span><span>6. Test</span></div><p>Today you will learn how an extra digit can help a computer detect an error when a number is entered.</p></div>
+
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Define check digit.</li><li>Explain how it is calculated from other digits.</li><li>Explain how it detects data-entry errors.</li><li>Identify ISBN and bar codes as examples.</li><li>Distinguish check digits from transmission error checks.</li></ul></div>
+
+<div class="card"><h3>1 · The problem</h3><p>People can make mistakes while typing or entering numbers. A digit may be changed, omitted or entered incorrectly.</p><div class="callout"><b>Question:</b> How can the computer recognise that an entered number may be wrong?</div></div>
+
+<div class="card"><h3>2 · The check digit</h3><p>A check digit is an extra digit calculated from the other digits in the number.</p><div class="code"><span class="digit">4</span><span class="digit">8</span><span class="digit">2</span><span class="digit">7</span><span class="digit">1</span><br><small>data digits + check digit</small></div><div class="callout">The checking system knows the rule used to calculate the final digit.</div></div>
+
+<div class="card"><h3>3 · A simple example</h3><p>Use the classroom rule: add the first four digits and take the final digit of the total.</p><div class="code">4 + 8 + 2 + 7 = 21<br>Check digit = <span class="digit">1</span></div><p>So the complete number is <b>48271</b>.</p></div>
+
+<div class="card"><h3>4 · Checking an entered number</h3><p>The user enters <b>48271</b>.</p><p>The system recalculates the check digit:</p><div class="code">4 + 8 + 2 + 7 = 21<br>Calculated = <span class="digit">1</span> · Entered = <span class="digit">1</span></div><div class="callout"><b>Match →</b> the check passes.</div></div>
+
+<div class="card"><h3>5 · Detecting an error</h3><p>The user accidentally enters <b>48371</b>.</p><div class="code">4 + 8 + 3 + 7 = 22<br>Calculated = <span class="digit">2</span> · Entered = <span class="digit">1</span></div><div class="callout"><b>Mismatch →</b> the system flags a possible error.</div></div>
+
+<div class="card"><h3>6 · Interactive check</h3>
+<p>What is the purpose of a check digit?</p><button class="option" onclick="checkP13(this,true,'q1p13')">To help detect errors in entered data</button><button class="option" onclick="checkP13(this,false,'q1p13')">To encrypt the entered data</button><button class="option" onclick="checkP13(this,false,'q1p13')">To increase the size of the screen</button><div class="score" id="q1p13"></div>
+<p style="margin-top:15px">Which is an example of where a check digit is used?</p><button class="option" onclick="checkP13(this,true,'q2p13')">ISBN</button><button class="option" onclick="checkP13(this,false,'q2p13')">Parity bit</button><div class="score" id="q2p13"></div></div>
+
+<div class="card"><h3>7 · Check digit vs parity</h3><table><tr><th>Check digit</th><th>Parity check</th></tr><tr><td>Extra digit in a number.</td><td>Extra bit associated with transmitted binary data.</td></tr><tr><td>Primarily checks data entry.</td><td>Checks transmitted data for certain errors.</td></tr><tr><td>Examples: ISBN, bar codes.</td><td>Examples: even/odd parity.</td></tr></table></div>
+
+<div class="card"><h3>8 · Real-world examples</h3><div class="callout"><b>ISBN:</b> International Standard Book Numbers include a check digit.</div><div class="callout"><b>Bar codes:</b> Many bar-code numbering systems use a check digit to help detect scanning or entry errors.</div><p>These are specifically named in the Cambridge 0984 syllabus. citeturn0search12</p></div>
+
+<div class="card"><h3>9 · Exam practice</h3><p><b>Question:</b> Explain how a check digit is used to detect an error in data entry.</p><button onclick="showP13('examP13')">Show model answer</button><div class="answer" id="examP13">A check digit is calculated from the other digits in a number. When the number is entered, the check digit is calculated again and compared with the entered check digit. If they do not match, an error in the entered data is indicated.</div></div>
+
+<div class="card"><h3>10 · Challenge</h3><p>Why is a check digit not normally described as an encryption method?</p><button onclick="showP13('challengeP13')">Show answer</button><div class="answer" id="challengeP13">A check digit is used to detect errors in data entry. It does not transform data to protect it from unauthorised readers, which is the purpose of encryption.</div></div>
+
+<div class="card"><h3>11 · Common mistakes</h3><ul><li>Confusing a check digit with a parity bit.</li><li>Forgetting that the syllabus uses check digits for data-entry error detection.</li><li>Thinking the check digit corrects the wrong data automatically.</li><li>Claiming that a matching check digit guarantees every possible error has been detected.</li><li>Using an invented classroom calculation as if it were the real ISBN or bar-code standard.</li></ul></div>
+
+<div class="card"><h3>12 · Self-assessment</h3><p>Choose your confidence:</p><button onclick="confidenceP13('confident')">🟢 I can explain check digits</button><button onclick="confidenceP13('okay')">🟡 I need more practice</button><button onclick="confidenceP13('need')">🔴 I need help</button><div class="score" id="confidenceP13"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Check digit · Data entry · ISBN · Bar codes · Recalculate · Compare.</div>
+</div>
+</section>
+</main>
+
+<script>
+function checkP13(btn,c,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');const m={q1p13:c?'✓ Correct — a check digit helps detect data-entry errors.':'✗ Not quite — think about what happens when a number is entered.',q2p13:c?'✓ Correct — ISBNs use check digits.':'✗ Not quite — parity is a transmission error-detection method.'};document.getElementById(id).textContent=m[id]}
+function showP13(id){document.getElementById(id).style.display='block'}
+function confidenceP13(v){const t={confident:'Excellent — you understand the check-digit process.',okay:'Good. Review calculate → enter → recalculate → compare.',need:'That is useful information. Revisit the simple example and the ISBN/bar-code examples.'};document.getElementById('confidenceP13').textContent=t[v]}
+</script>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 18</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 18</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 18 · Run Length Encoding (RLE)</h3>
+      <p><b>Cambridge focus:</b> Run Length Encoding (RLE) is specified as an example of lossless compression. Students need to understand how files are compressed using lossless methods. </p>
+      <div class="callout"><b>Success criteria:</b> Students can explain RLE, identify repeated runs of data, encode runs using a count and value, decode an RLE sequence, and explain when RLE is effective or ineffective.</div>
+      <p><b>Prior learning:</b> Period 17 — compression, lossy and lossless methods.</p>
+      <p><b>Key vocabulary:</b> RLE, run, repeated data, count, value, encode, decode, flag, lossless, compression ratio.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>Teach RLE visually</h3>
+      <ol>
+        <li>Write a repeated sequence on the board.</li>
+        <li>Circle each consecutive run.</li>
+        <li>Replace each run with <b>count + value</b>.</li>
+        <li>Compare original length with encoded length.</li>
+        <li>Decode the result to prove that no information has been permanently lost.</li>
+      </ol>
+      <div class="callout"><b>Core idea:</b> RLE stores repeated units as a count followed by the value being repeated.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Reconnect with compression</h3>
+      <ol>
+        <li>What is compression?</li>
+        <li>What is the difference between lossy and lossless compression?</li>
+        <li>Which type allows the original data to be restored exactly?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> Today we will learn one specific lossless technique: RLE.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–13 min · Discover</span>
+      <h3>Find the runs</h3>
+      <p>Consider:</p>
+      <div class="binary">AAAAABBBBCCDDDDD</div>
+      <p>Do not read this as 16 separate characters. Group consecutive identical characters:</p>
+      <div class="callout"><b>AAAAA | BBBB | CC | DDDDD</b></div>
+      <p>These are four <b>runs</b>.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">13–22 min · Model</span>
+      <h3>Encode the runs</h3>
+      <p>Replace each run with its count and value:</p>
+      <div class="callout"><b>5A | 4B | 2C | 5D</b></div>
+      <p>The original sequence has 16 characters. The compressed representation has 8 values if each count and character occupies one unit.</p>
+      <div class="callout"><b>16 units → 8 units = 50% of the original size.</b></div>
+      <p>This is why RLE works particularly well when there are long runs of repeated values.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">22–30 min · Interactive demonstration</span>
+      <h3>RLE Encoder</h3>
+      <p>Enter a short string containing repeated characters. The tool groups consecutive runs automatically.</p>
+      <input id="rleTeacherInput" value="AAAAABBBBCCDDDDD" style="width:100%;box-sizing:border-box;padding:10px;border-radius:10px;border:1px solid #aaa;font-size:16px">
+      <button onclick="encodeTeacherRLE()">Encode with RLE</button>
+      <div class="callout" id="rleTeacherOutput">Click Encode with RLE.</div>
+      <div class="callout" id="rleTeacherStats"></div>
+    </div>
+
+    <div class="card">
+      <span class="time">30–35 min · Decode</span>
+      <h3>Reverse the process</h3>
+      <p>RLE must be reversible. Decode:</p>
+      <div class="callout"><b>3A | 2B | 4C</b></div>
+      <p>Students expand each pair:</p>
+      <div class="callout"><b>AAA | BB | CCCC → AAABBCCCC</b></div>
+      <p>Because the original sequence can be reconstructed, this is <b>lossless</b> compression.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">35–40 min · When does RLE work?</span>
+      <h3>Effective vs ineffective data</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Data</th><th style="padding:8px;background:#082b59;color:white">RLE result</th></tr>
+        <tr><td style="padding:7px">AAAAAAAABBBBBBBB</td><td style="padding:7px">Very effective</td></tr>
+        <tr><td style="padding:7px">11111111110000000000</td><td style="padding:7px">Very effective</td></tr>
+        <tr><td style="padding:7px">ABABABABAB</td><td style="padding:7px">Not effective</td></tr>
+        <tr><td style="padding:7px">CDCDCDCDCD</td><td style="padding:7px">Not effective</td></tr>
+      </table>
+      <div class="callout"><b>Rule:</b> RLE benefits from consecutive repetition. Alternating data produces many short runs.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">40–44 min · Flag concept</span>
+      <h3>Why can a flag be useful?</h3>
+      <p>When data contains many runs of one character, RLE is straightforward. But a sequence with many single items can be awkward because the count itself adds data.</p>
+      <p>The textbook introduces a <b>flag</b> to distinguish encoded run information from ordinary data. For example, a flag can precede a count and value when a run is being encoded.</p>
+      <div class="callout"><b>Teacher message:</b> the flag removes ambiguity about how the following values should be interpreted.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">44–48 min · Assessment</span>
+      <h3>Cambridge-style RLE questions</h3>
+      <ol>
+        <li>What is meant by RLE?</li>
+        <li>Encode <b>AAAAABBCCCCC</b> using count + value pairs.</li>
+        <li>Decode <b>4A 3B 2C</b>.</li>
+        <li>Explain why RLE is a lossless compression method.</li>
+        <li>Suggest why RLE may be ineffective for <b>ABABABAB</b>.</li>
+      </ol>
+      <div class="callout"><b>Marking focus:</b> students should identify consecutive runs, not simply count how many times a character appears anywhere in the string.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">48–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>What does RLE store instead of every repeated item?</li>
+        <li>Why is RLE lossless?</li>
+        <li>Give one type of data where RLE is likely to work well.</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> Period 19 can extend RLE to bitmap-style data and examine compression effectiveness and flags in more detail.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 18 teaches Run Length Encoding as a practical lossless compression technique.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Find runs</span>
+        <span>3. Encode</span><span>4. Decode</span>
+        <span>5. Test RLE</span><span>6. Exit ticket</span>
+      </div>
+      <p>Today you will learn how <b>Run Length Encoding (RLE)</b> compresses repeated data.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Explain RLE.</li>
+        <li>Identify consecutive runs.</li>
+        <li>Encode data using count + value.</li>
+        <li>Decode RLE data.</li>
+        <li>Explain why RLE is lossless.</li>
+        <li>Recognise when RLE is effective or ineffective.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · Find the runs</h3>
+      <div class="binary">AAAAABBBBCCDDDDD</div>
+      <p>Group consecutive identical characters:</p>
+      <div class="callout"><b>AAAAA | BBBB | CC | DDDDD</b></div>
+      <p>There are four runs.</p>
+    </div>
+
+    <div class="card">
+      <h3>2 · Encode</h3>
+      <p>Store each run as <b>count + value</b>:</p>
+      <div class="callout"><b>5A | 4B | 2C | 5D</b></div>
+      <p>Original = 16 characters. Encoded = 8 values.</p>
+      <div class="callout"><b>50% of the original size</b> when each encoded value uses one unit.</div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Quick check</h3>
+      <p><b>Q1:</b> What does RLE store?</p>
+      <button class="option" onclick="check18(this,true,'q1s18')">A count and the repeated value</button>
+      <button class="option" onclick="check18(this,false,'q1s18')">Only the first character</button>
+      <button class="option" onclick="check18(this,false,'q1s18')">Only the number of different characters</button>
+      <div class="score" id="q1s18"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> Why is RLE lossless?</p>
+      <button class="option" onclick="check18(this,true,'q2s18')">The original data can be reconstructed.</button>
+      <button class="option" onclick="check18(this,false,'q2s18')">It permanently deletes some data.</button>
+      <div class="score" id="q2s18"></div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Try the RLE encoder</h3>
+      <p>Type a short sequence of repeated characters:</p>
+      <input id="rleStudentInput" value="AAAABBBCCAAAA" style="width:100%;box-sizing:border-box;padding:10px;border-radius:10px;border:1px solid #aaa;font-size:16px">
+      <button onclick="encodeStudentRLE()">Compress it</button>
+      <div class="callout" id="rleStudentOutput">Your RLE result will appear here.</div>
+      <div class="callout" id="rleStudentStats"></div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Decode</h3>
+      <p>Decode:</p>
+      <div class="binary">4A 3B 2C</div>
+      <button onclick="show('answers18a')">Reveal answer</button>
+      <div class="answer" id="answers18a">
+        AAAA + BBB + CC = <b>AAAABBBCC</b><br>
+        Written without spaces: <b>AAAABBBCC</b>.<br>
+        That is 4 A's, 3 B's and 2 C's.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Effective or ineffective?</h3>
+      <p>Which sequence is likely to compress better with RLE?</p>
+      <button class="option" onclick="check18(this,true,'q3s18')">AAAAAAAAAABBBBBBBBBB</button>
+      <button class="option" onclick="check18(this,false,'q3s18')">ABABABABABABABAB</button>
+      <div class="score" id="q3s18"></div>
+      <div class="callout"><b>Why?</b> RLE works best when consecutive identical values form long runs.</div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Challenge</h3>
+      <p>Encode:</p>
+      <div class="binary">AAAAABBCCCCC</div>
+      <button onclick="show('answers18b')">Reveal answer</button>
+      <div class="answer" id="answers18b">
+        <b>5A 2B 5C</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Why can RLE fail?</h3>
+      <p>Consider:</p>
+      <div class="binary">CDCDCDCDCD</div>
+      <p>There are many runs of length 1. Storing a count for every single character can add overhead instead of saving space.</p>
+      <div class="callout"><b>Key idea:</b> RLE is not automatically effective for every file.</div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Exam practice</h3>
+      <p><b>Question:</b> Explain why RLE is a lossless compression method.</p>
+      <button onclick="show('exam18')">Show model answer</button>
+      <div class="answer" id="exam18">
+        RLE represents consecutive repeated data using a count and the value. The original sequence can be reconstructed exactly from these count-and-value pairs, so no data is permanently lost.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Common mistakes</h3>
+      <ul>
+        <li>Counting all occurrences instead of consecutive occurrences.</li>
+        <li>Forgetting to include the value after the count.</li>
+        <li>Thinking RLE always makes a file smaller.</li>
+        <li>Calling RLE lossy because the stored representation looks different.</li>
+        <li>Forgetting that the encoded data must be decodable back to the original.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>11 · Self-assessment</h3>
+      <p>Choose your confidence:</p>
+      <button onclick="confidence18('confident')">🟢 I can encode and decode RLE</button>
+      <button onclick="confidence18('okay')">🟡 I need more practice</button>
+      <button onclick="confidence18('need')">🔴 I need help</button>
+      <div class="score" id="confidence18"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Run Length Encoding: finding runs, encoding, decoding and compression effectiveness.
+    </div>>>
+  </div>
+</section>
+</main>
+
+<script>
+function rleEncode(text){
+  if(!text) return [];
+  const runs=[];
+  let count=1;
+  for(let i=1;i<=text.length;i++){
+    if(i<text.length && text[i]===text[i-1]) count++;
+    else { runs.push({count,value:text[i-1]}); count=1; }
+  }
+  return runs;
+}
+function formatRuns(runs){
+  return runs.map(r=>r.count+r.value).join(' | ');
+}
+function encodeTeacherRLE(){
+  const input=document.getElementById('rleTeacherInput').value;
+  const runs=rleEncode(input);
+  document.getElementById('rleTeacherOutput').innerHTML= runs.length ? '<b>RLE:</b> '+formatRuns(runs) : 'Enter some data.';
+  const original=input.length;
+  const encoded=runs.length*2;
+  document.getElementById('rleTeacherStats').innerHTML= original ? '<b>Original units:</b> '+original+' &nbsp; <b>Count/value units:</b> '+encoded+' &nbsp; <b>Ratio:</b> '+(encoded/original*100).toFixed(1)+'%' : '';
+}
+function encodeStudentRLE(){
+  const input=document.getElementById('rleStudentInput').value;
+  const runs=rleEncode(input);
+  document.getElementById('rleStudentOutput').innerHTML= runs.length ? '<b>RLE:</b> '+formatRuns(runs) : 'Enter some data.';
+  const original=input.length;
+  const encoded=runs.length*2;
+  const saving=original?100-(encoded/original*100):0;
+  document.getElementById('rleStudentStats').innerHTML= original ? '<b>Original:</b> '+original+' units &nbsp; <b>Encoded:</b> '+encoded+' units &nbsp; <b>Change:</b> '+(saving>=0?saving.toFixed(1)+'% smaller':Math.abs(saving).toFixed(1)+'% larger') : '';
+}
+function check18(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1s18:correct?'✓ Correct — RLE stores a count and the repeated value.':'✗ Not quite. Each run needs both a count and a value.',
+    q2s18:correct?'✓ Correct — the original sequence can be reconstructed exactly.':'✗ Not quite. Lossless compression allows exact recovery.',
+    q3s18:correct?'✓ Correct — long consecutive runs are ideal for RLE.':'✗ Not quite. Alternating characters create many short runs.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence18(v){
+  const text={
+    confident:'Excellent — you are ready for more advanced RLE questions.',
+    okay:'Good. Practise identifying consecutive runs.',
+    need:'That is useful information. Work through the AAAAABBBB example again.'
+  };
+  document.getElementById('confidence18').textContent=text[v];
+}
+</script>
+</body>
+</html>

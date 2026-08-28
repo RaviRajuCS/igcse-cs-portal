@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 6 | Period 3</title>
+<style>
+:root{--gold:#d8ad45;--gold2:#efd47a;--blue:#123b63;--blue2:#0b2d4d;--ink:#17324d}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#c99528,#efd16c 45%,#c99a2e);color:var(--ink);overflow:hidden}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#0b2d4df2;color:#fff;border-bottom:3px solid var(--gold2);box-shadow:0 5px 18px #08203b66}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2)}
+.brand h1{margin:0;font-size:27px}
+.brand p{margin:2px 0;color:#e8eef5;font-size:13px;font-weight:600}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:19px;font-weight:700}
+.school{display:flex;align-items:center;gap:10px;font-size:13px}
+.school img{width:48px;height:48px;background:#fff;border-radius:9px;padding:3px;object-fit:contain}
+.badge{background:var(--gold2);color:var(--blue2);font-weight:900;padding:9px 13px;border-radius:18px}
+.layout{height:calc(100vh - 88px);display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:14px}
+.pane{min-height:0;background:#fffaf0f5;border:2px solid #c7a653;border-radius:22px;box-shadow:0 14px 34px #49340f55;overflow:hidden;display:flex;flex-direction:column}
+.panehead{background:var(--blue2);color:#fff;padding:15px 20px}
+.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}
+.content{overflow:auto;padding:20px 22px 30px}
+.card{background:#fffdf7;border:1px solid #d9c797;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #49340f12}
+.card h3{margin:0 0 9px;color:var(--blue2);font-size:17px}
+p{line-height:1.55}ul,ol{line-height:1.55;padding-left:20px}
+.time{display:inline-block;background:#f2dda0;border:1px solid #c7a653;color:var(--blue2);padding:4px 9px;border-radius:18px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{background:#f5ecd0;border-left:5px solid var(--blue);padding:12px 14px;border-radius:8px;margin:10px 0}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#f6edcf;border-radius:16px;margin:14px 0}
+.node{background:var(--blue2);color:#fff;padding:13px 15px;border-radius:13px;font-weight:900;text-align:center}
+.tag{background:#e8d18a;color:var(--blue2);padding:10px 13px;border-radius:12px;font-weight:900}
+.arrow{font-size:25px;font-weight:900;color:var(--blue)}
+.example{background:#eef3f7;border:1px solid #b7c7d6;border-radius:13px;padding:13px;margin:10px 0}
+.workout{background:#f7f0dd;border:2px dashed #b7964e;border-radius:15px;padding:15px;margin:12px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue2);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid #c8b98e}
+.option.correct{background:#e1efe5;border-color:#6d997a}.option.wrong{background:#f5dfdb;border-color:#a86b61}
+.answer{display:none;background:#e5f0e7;border:1px solid #9db9a4;padding:11px;border-radius:10px;margin-top:9px}
+.score{font-weight:900;margin-top:8px}
+.progress{display:flex;gap:6px;flex-wrap:wrap}
+.progress span{background:#e7dfcf;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:800}
+.progress .active{background:#e8d18a;border:1px solid #b7964e;color:var(--blue2)}
+table{width:100%;border-collapse:collapse}
+th{background:var(--blue2);color:#fff;text-align:left;padding:8px}
+td{padding:8px;border-bottom:1px solid #ddd2b8;vertical-align:top}
+.footer{font-size:11px;color:#685e4e;border-top:1px solid #d8ccb0;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}header{height:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand">
+<img src="IMG-Ravi.jpeg" alt="Ravi Raju">
+<div><div class="name">Ravi Raju</div><h1>IGCSE Computer Science 0984</h1><p>Topic 6 · Automated and Emerging Technologies · Period 3</p></div>
+</div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">TOPIC 6</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>📘 Teacher Studio</h2><small>6.1 Automated systems · industry · transport · agriculture · weather · gaming · lighting · science</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Topic 6 · Period 3</span>
+<h3>Automated System Scenarios</h3>
+<p>Students apply the sensor–microprocessor–actuator model to the scenarios named in Cambridge 0984. The emphasis is on <b>explaining the complete system</b>, not merely identifying components.</p>
+<div class="callout"><b>Exam habit:</b> Ask: <b>What is detected? → How is it processed? → What action is produced?</b></div>
+</div>
+
+<div class="card"><h3>1 · The universal scenario method</h3>
+<div class="flow">
+<div class="node">WHAT IS<br>DETECTED?</div><div class="arrow">→</div>
+<div class="tag">SENSOR</div><div class="arrow">→</div>
+<div class="node">WHAT RULE<br>IS APPLIED?</div><div class="arrow">→</div>
+<div class="tag">MICROPROCESSOR</div><div class="arrow">→</div>
+<div class="node">WHAT ACTION<br>HAPPENS?</div><div class="arrow">→</div>
+<div class="tag">ACTUATOR</div>
+</div>
+</div>
+
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>2 · Scenario vocabulary</h3>
+<table>
+<tr><th>Scenario</th><th>Possible sensor</th><th>Possible actuator</th></tr>
+<tr><td>Industry</td><td>Pressure / temperature</td><td>Motor / valve</td></tr>
+<tr><td>Transport</td><td>Proximity / speed</td><td>Motor / braking mechanism</td></tr>
+<tr><td>Agriculture</td><td>Moisture</td><td>Pump / valve</td></tr>
+<tr><td>Weather</td><td>Temperature / wind</td><td>Motor / heater</td></tr>
+<tr><td>Lighting</td><td>Light</td><td>Lamp</td></tr>
+<tr><td>Gaming</td><td>Movement / controller input</td><td>Vibration motor</td></tr>
+<tr><td>Science</td><td>Temperature / pressure</td><td>Heater / motor</td></tr>
+</table>
+</div>
+
+<div class="card"><span class="time">8–18 min · Teach</span><h3>3 · Industry — automated production</h3>
+<div class="example"><b>Scenario:</b> A factory monitors the temperature of a machine and automatically switches on cooling when the temperature becomes too high.</div>
+<ol><li>A temperature sensor measures the machine temperature.</li><li>The microprocessor compares the reading with a programmed threshold.</li><li>If the threshold is exceeded, it sends a control signal.</li><li>A cooling fan/motor operates to reduce the temperature.</li></ol>
+</div>
+
+<div class="card"><span class="time">18–27 min · Teach</span><h3>4 · Transport — automatic control</h3>
+<div class="example"><b>Scenario:</b> A vehicle detects an obstacle ahead and automatically applies braking.</div>
+<ol><li>A suitable proximity/distance sensor detects the obstacle.</li><li>The microprocessor processes the measured distance and programmed condition.</li><li>If the obstacle is too close, a control signal is produced.</li><li>An actuator operates the braking mechanism.</li></ol>
+<div class="callout">Strong answers explain the <b>cause-and-effect chain</b>, rather than simply listing “sensor, processor, actuator”.</div>
+</div>
+
+<div class="card"><span class="time">27–35 min · Teach</span><h3>5 · Agriculture — automatic irrigation</h3>
+<div class="flow"><div class="node">Moisture<br>Sensor</div><div class="arrow">→</div><div class="node">Microprocessor<br>+ threshold</div><div class="arrow">→</div><div class="node">Pump / Valve</div></div>
+<p>When soil moisture falls below the programmed level, the processor activates an actuator that supplies water.</p>
+</div>
+
+<div class="card"><span class="time">35–42 min · Worked examples</span><h3>6 · Weather, lighting, gaming and science</h3>
+<ul>
+<li><b>Weather:</b> sensors measure conditions; the processor analyses readings and can control equipment such as a protective mechanism.</li>
+<li><b>Lighting:</b> a light sensor detects low light; the processor applies a rule; a lamp is switched on.</li>
+<li><b>Gaming:</b> sensors can detect player movement or controller input; processing determines the response; an actuator can provide vibration or movement.</li>
+<li><b>Science:</b> sensors collect measurements; a processor applies programmed rules; an actuator can control experimental equipment.</li>
+</ul>
+</div>
+
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>7 · Scenario analysis</h3>
+<div class="workout">An automatic lighting system switches lights on when the room becomes dark. Explain the roles of the sensor, microprocessor and actuator.</div>
+<button onclick="showA('w1')">Show model</button>
+<div class="answer" id="w1"><b>Sensor:</b> light sensor detects the light level. <b>Microprocessor:</b> compares the reading with a programmed threshold. <b>Actuator:</b> lamp/light is switched on.</div>
+</div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>8 · Three-question method</h3>
+<div class="callout"><b>1.</b> What physical condition/input is detected?<br><b>2.</b> What does the microprocessor do with the data?<br><b>3.</b> What physical action does the actuator perform?</div>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 3 · Automated system scenarios.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🧠 Student Studio</h2><small>Scenario recognition · explanation · application · exam practice</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Topic 6 roadmap</h3><div class="progress"><span class="active">6.1 Automated systems</span><span>6.2 Robotics</span><span>6.3 Artificial Intelligence</span></div></div>
+
+<div class="card"><h3>🎯 Learning targets</h3>
+<ul><li>Apply the automated-system model to unfamiliar contexts.</li><li>Choose a suitable sensor from the physical condition described.</li><li>Explain the microprocessor's programmed decision.</li><li>Choose a suitable actuator for the required action.</li><li>Write complete scenario-based answers.</li></ul>
+</div>
+
+<div class="card"><h3>1 · Quick check</h3><p>A system detects soil moisture and switches on a pump when the soil is too dry. Which is the sensor?</p>
+<button class="option" onclick="checkQ(this,true,'q1')">Moisture sensor</button>
+<button class="option" onclick="checkQ(this,false,'q1')">Pump</button>
+<div class="score" id="q1"></div></div>
+
+<div class="card"><h3>2 · Worked Example — Factory machine</h3>
+<div class="example">A machine stops automatically when excessive pressure is detected.</div>
+<table><tr><th>Stage</th><th>Explanation</th></tr><tr><td>Sensor</td><td>Pressure sensor detects the pressure.</td></tr><tr><td>Processing</td><td>Microprocessor compares pressure with a safe programmed limit.</td></tr><tr><td>Action</td><td>An actuator stops the machine.</td></tr></table>
+</div>
+
+<div class="card"><h3>3 · Workout — Transport</h3>
+<div class="workout">A vehicle detects an object that is too close and automatically activates its brakes. Identify the sensor and actuator and explain the processor's role.</div>
+<button onclick="showA('a1')">Show model</button>
+<div class="answer" id="a1"><b>Sensor:</b> proximity/distance sensor. <b>Processor:</b> processes the distance data and checks the programmed condition. <b>Actuator:</b> braking mechanism.</div>
+</div>
+
+<div class="card"><h3>4 · Interactive check</h3><p>Which statement best describes the microprocessor in an automated system?</p>
+<button class="option" onclick="checkQ(this,true,'q2')">It processes sensor data and follows programmed instructions to control the response.</button>
+<button class="option" onclick="checkQ(this,false,'q2')">It physically moves the machine by itself.</button>
+<div class="score" id="q2"></div></div>
+
+<div class="card"><h3>5 · Worked Example — Weather</h3>
+<div class="example">A weather station closes a protective cover when wind speed becomes dangerously high.</div>
+<p><b>Sensor:</b> wind-speed sensor. <b>Processor:</b> compares wind speed with a programmed safety threshold. <b>Actuator:</b> motor closes the cover.</p>
+</div>
+
+<div class="card"><h3>6 · Workout — Lighting</h3>
+<div class="workout">Write the complete sensor → processor → actuator explanation for an automatic street light that turns on at night.</div>
+<button onclick="showA('a2')">Show model answer</button>
+<div class="answer" id="a2">A light sensor detects that the light level is low. The microprocessor compares the reading with the programmed threshold. It sends a control signal to the lamp, which switches on.</div>
+</div>
+
+<div class="card"><h3>7 · Interactive check</h3><p>A game controller detects player movement and the game responds with vibration. Which component could act as the actuator?</p>
+<button class="option" onclick="checkQ(this,true,'q3')">Vibration motor</button>
+<button class="option" onclick="checkQ(this,false,'q3')">Movement sensor</button>
+<div class="score" id="q3"></div></div>
+
+<div class="card"><h3>8 · Scenario challenge — Science</h3>
+<div class="workout">A laboratory system keeps a chemical solution at a target temperature. Explain how an automated system could achieve this.</div>
+<button onclick="showA('a3')">Show model</button>
+<div class="answer" id="a3"><b>Sensor:</b> temperature sensor. <b>Processor:</b> compares the reading with the programmed target/threshold. <b>Actuator:</b> heater raises the temperature when required.</div>
+</div>
+
+<div class="card"><h3>9 · Exam-style question</h3>
+<p><b>Question:</b> An automated agricultural system waters crops when the soil becomes too dry. Describe how sensors, a microprocessor and an actuator work together.</p>
+<button onclick="showA('a4')">Show mark-point model</button>
+<div class="answer" id="a4">A moisture sensor detects/measures the soil moisture. The sensor sends the data to the microprocessor. The microprocessor compares the reading with a programmed threshold. If the soil is too dry, it sends a control signal to an actuator such as a pump or valve. The actuator supplies water.</div>
+</div>
+
+<div class="card"><h3>10 · Examiner technique</h3>
+<div class="callout">For scenario questions, use the verbs <b>detects</b>, <b>sends</b>, <b>processes</b>, <b>compares</b>, <b>activates</b> and <b>controls</b>. These make the sequence clear.</div>
+</div>
+
+<div class="card"><h3>11 · Common mistakes</h3>
+<ul><li>Choosing a sensor that does not measure the required condition.</li><li>Saying the sensor makes the decision.</li><li>Forgetting the programmed rule/threshold.</li><li>Choosing an actuator that cannot perform the required action.</li><li>Giving three component names without explaining how they interact.</li></ul>
+</div>
+
+<div class="card"><h3>12 · Self-assessment</h3>
+<p>Can you analyse an unfamiliar automated-system scenario and explain the complete process?</p>
+<button onclick="confidence('ready')">🟢 Yes</button><button onclick="confidence('practice')">🟡 More practice</button><button onclick="confidence('revise')">🔴 Need revision</button>
+<div class="score" id="confidence"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 3 · Automated system scenarios.</div>
+</div>
+</section>
+</main>
+
+<script>
+function showA(id){document.getElementById(id).style.display='block'}
+function checkQ(btn,correct,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(correct?'correct':'wrong');
+ const m={
+ q1:correct?'✓ Correct — the moisture sensor detects the soil condition.':'✗ The pump is an actuator.',
+ q2:correct?'✓ Correct — processing and programmed control are the microprocessor’s roles.':'✗ Physical movement is produced by an actuator.',
+ q3:correct?'✓ Correct — a vibration motor can provide a physical output.':'✗ The movement sensor provides input data.'
+ };
+ document.getElementById(id).textContent=m[id]
+}
+function confidence(v){
+ const m={
+ ready:'Excellent — you can apply the sensor → microprocessor → actuator model to new scenarios.',
+ practice:'Good. Practise identifying what is detected, processed and controlled.',
+ revise:'Remember: What is detected? How is it processed? What physical action is produced?'
+ };
+ document.getElementById('confidence').textContent=m[v]
+}
+</script>
+</body></html>

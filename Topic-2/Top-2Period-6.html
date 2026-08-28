@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 6</title>
+<style>
+:root{--gold:#d9a441;--gold-light:#f4df9a;--blue:#082b59;--blue-2:#12477f;--glass:rgba(255,255,255,.72);--shadow:0 12px 30px rgba(8,43,89,.16)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(255,255,255,.34);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.55)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0 0;font-size:13px;font-weight:600}.teacher-identity{display:flex;align-items:center;gap:10px}.teacher-photo{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid rgba(8,43,89,.75)}.teacher-name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school-brand{display:flex;align-items:center;gap:11px}.school-brand img{width:48px;height:48px;object-fit:contain;background:rgba(255,255,255,.8);border-radius:10px;padding:3px}.school-name{font-size:13px;font-weight:800}.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:white;font-weight:700;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}.pane-head{padding:15px 20px;background:rgba(8,43,89,.95);color:white}.pane-head h2{margin:0;font-size:20px}.pane-head small{opacity:.8}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:rgba(255,253,245,.88);border:1px solid rgba(8,43,89,.13);border-radius:16px;padding:16px;margin-bottom:15px}.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}.time{display:inline-block;background:var(--gold-light);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e1;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.error-flow{display:flex;align-items:center;justify-content:center;gap:10px;padding:18px;background:rgba(255,255,255,.58);border-radius:16px;margin:15px 0}.node{padding:13px 16px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:28px;font-weight:900}.bits{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;margin:12px 0}.bit{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:7px;background:#f4df9a;font-weight:900}.changed{background:#f3b1a9!important}
+.compare{width:100%;border-collapse:collapse}.compare th{padding:8px;background:var(--blue);color:#fff;text-align:left}.compare td{padding:8px;border-bottom:1px solid #d5dde6}.footer-note{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}.error-flow{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher-identity"><img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="teacher-name">Ravi Raju</div></div><h1>IGCSE Computer Science 0984</h1><p>Topic 2 — Data Transmission · Period 6</p></div>
+<div class="school-brand"><img src="MES35.jpg" alt="Modern English School Cairo logo"><div class="school-name">Modern English School Cairo</div><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="pane-head"><h2>👨‍🏫 Teacher Pane</h2><small>My teaching route</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Lesson overview</span><h3>Period 6 · Why Do We Need Error Detection?</h3>
+<p><b>Topic 2 · Data Transmission:</b> Students now move from how data is transmitted to an essential question: <b>How can we know whether transmitted data has been changed, lost or gained?</b></p>
+<div class="callout"><b>Success criteria:</b> Students can explain why errors occur during transmission, identify data loss, data gain and data change, and explain why transmitted data must be checked.</div>
+<p><b>Prior learning:</b> Periods 3–5 — transmission modes, serial/parallel transmission and USB.</p>
+<p><b>Key vocabulary:</b> error, interference, data loss, data gain, data change, error detection, parity, checksum, echo check.</p></div>
+
+<div class="card"><span class="time">My teaching route</span><h3>Build the need before teaching the methods</h3>
+<ol><li>Retrieve serial transmission and USB.</li><li>Introduce the idea that transmitted data can be affected by interference.</li><li>Show three possible errors: loss, gain and change.</li><li>Ask why the receiver cannot simply assume the data is correct.</li><li>Introduce the purpose of error detection.</li><li>Preview the methods that follow: parity check, checksum and echo check.</li></ol>
+<div class="callout"><b>Teaching principle:</b> Students should understand <i>why</i> error detection is needed before memorising individual checking methods.</div></div>
+
+<div class="card"><span class="time">0–5 min · Retrieval</span><h3>What happens during transmission?</h3>
+<ul><li>What is serial transmission?</li><li>What is a USB interface used for?</li><li>Why is synchronisation important?</li><li>Can data always arrive exactly as it was sent?</li></ul>
+<div class="callout"><b>Bridge:</b> A transmission can be technically successful while the received data is still incorrect. We therefore need ways to detect errors.</div></div>
+
+<div class="card"><span class="time">5–15 min · Teach</span><h3>Why can errors occur?</h3>
+<div class="error-flow"><div class="node">Sender<br>101101</div><div class="arrow">→</div><div class="node">Transmission<br>interference</div><div class="arrow">→</div><div class="node">Receiver<br>?</div></div>
+<p>During transmission, <b>interference</b> can affect the data. The receiver may not receive exactly the same information that the sender transmitted.</p>
+<div class="callout"><b>Error detection</b> is the process of checking transmitted or entered data to determine whether an error has occurred.</div></div>
+
+<div class="card"><span class="time">15–25 min · Explore</span><h3>Three types of transmission error</h3>
+<table class="compare"><tr><th>Error</th><th>What happened?</th><th>Simple example</th></tr>
+<tr><td><b>Data loss</b></td><td>Some data fails to arrive.</td><td>101101 → 10101</td></tr>
+<tr><td><b>Data gain</b></td><td>Extra data is received.</td><td>101101 → 1011101</td></tr>
+<tr><td><b>Data change</b></td><td>Received data differs from the original.</td><td>101101 → 100101</td></tr></table>
+<div class="callout"><b>Remember:</b> Loss = something disappeared · Gain = something extra appeared · Change = information was altered.</div></div>
+
+<div class="card"><span class="time">25–32 min · Demonstrate</span><h3>See a data change</h3>
+<p>Suppose the sender transmits:</p><div class="bits"><span class="bit">1</span><span class="bit">0</span><span class="bit">1</span><span class="bit">1</span><span class="bit">0</span><span class="bit">0</span></div>
+<p>After interference, the receiver gets:</p><div class="bits"><span class="bit">1</span><span class="bit">0</span><span class="bit changed">0</span><span class="bit">1</span><span class="bit">0</span><span class="bit">0</span></div>
+<div class="callout"><b>Question:</b> The receiver has no direct way to look at the bits and know what the sender originally intended. A checking method is needed.</div></div>
+
+<div class="card"><span class="time">32–38 min · Teach</span><h3>Why check for errors?</h3>
+<ul><li>Incorrect data can produce an incorrect result.</li><li>Errors can corrupt files or messages.</li><li>Incorrect transmitted information can affect systems and decisions.</li><li>A receiver needs a way to establish whether received data is likely to be correct.</li></ul>
+<div class="callout"><b>Exam sentence:</b> Error detection is needed because data can be altered, lost or gained during transmission due to interference.</div></div>
+
+<div class="card"><span class="time">38–43 min · Preview</span><h3>Three methods you will learn next</h3>
+<table class="compare"><tr><th>Method</th><th>Big idea</th></tr>
+<tr><td><b>Parity check</b></td><td>Adds a parity bit so the number of 1s can be checked.</td></tr>
+<tr><td><b>Checksum</b></td><td>A calculated value is compared to detect whether data has changed.</td></tr>
+<tr><td><b>Echo check</b></td><td>Received data is sent back so it can be compared with the original.</td></tr></table>
+<p>These methods will be studied in detail in the following lessons.</p></div>
+
+<div class="card"><span class="time">43–47 min · Assessment</span><h3>Cambridge-style questions</h3>
+<ol><li>State why data needs to be checked after transmission.</li><li>Explain how interference can cause an error.</li><li>Describe what is meant by data loss.</li><li>Describe what is meant by data gain.</li><li>Describe what is meant by data change.</li></ol>
+<div class="callout"><b>Marking focus:</b> Use the precise terms <b>loss, gain, change</b> and connect errors to <b>interference during transmission</b>.</div></div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>Finish the sentences</h3>
+<div class="callout"><b>Data loss means...</b> some transmitted data fails to arrive.</div>
+<div class="callout"><b>Data gain means...</b> extra data is received.</div>
+<div class="callout"><b>Data change means...</b> the received data differs from the transmitted data.</div>
+<div class="callout"><b>Error detection is needed because...</b> interference can cause errors during data transmission.</div></div>
+
+<div class="footer-note"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br><b>Planning note:</b> Period 6 establishes the need for error detection and introduces data loss, data gain and data change.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="pane-head"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Why errors?</span><span>2. Interference</span><span>3. Loss</span><span>4. Gain</span><span>5. Change</span><span>6. Test</span></div><p>Today you will learn <b>why transmitted data must be checked</b> and the three basic types of transmission error.</p></div>
+
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Explain why errors can occur during transmission.</li><li>Explain the need for error detection.</li><li>Define data loss.</li><li>Define data gain.</li><li>Define data change.</li><li>Recognise the purpose of parity, checksum and echo checking.</li></ul></div>
+
+<div class="card"><h3>1 · The big idea</h3><div class="callout"><b>Sending data does not guarantee that the receiver gets exactly the same data.</b></div><p>Electrical or electromagnetic interference and other transmission problems can affect data as it travels between devices.</p><div class="error-flow"><div class="node">Original<br>DATA</div><div class="arrow">→</div><div class="node">Transmission</div><div class="arrow">→</div><div class="node">Received<br>DATA</div></div></div>
+
+<div class="card"><h3>2 · Data loss</h3><p><b>Data loss</b> occurs when some of the transmitted data does not arrive at the receiver.</p><div class="callout">Sent: <b>101101</b><br>Received: <b>10101</b><br><b>One or more bits have been lost.</b></div></div>
+
+<div class="card"><h3>3 · Data gain</h3><p><b>Data gain</b> occurs when extra data appears in the received information.</p><div class="callout">Sent: <b>101101</b><br>Received: <b>1011101</b><br><b>Extra information has appeared.</b></div></div>
+
+<div class="card"><h3>4 · Data change</h3><p><b>Data change</b> occurs when transmitted data is altered during transmission.</p><div class="callout">Sent: <b>101101</b><br>Received: <b>100101</b><br><b>A bit has changed.</b></div></div>
+
+<div class="card"><h3>5 · Quick check</h3>
+<p><b>Q1:</b> Some transmitted bits do not arrive. What type of error is this?</p><button class="option" onclick="checkP6(this,true,'q1p6')">Data loss</button><button class="option" onclick="checkP6(this,false,'q1p6')">Data gain</button><button class="option" onclick="checkP6(this,false,'q1p6')">Data change</button><div class="score" id="q1p6"></div>
+<p style="margin-top:15px"><b>Q2:</b> Extra bits appear in the received data. What type of error is this?</p><button class="option" onclick="checkP6(this,false,'q2p6')">Data loss</button><button class="option" onclick="checkP6(this,true,'q2p6')">Data gain</button><button class="option" onclick="checkP6(this,false,'q2p6')">Data change</button><div class="score" id="q2p6"></div>
+<p style="margin-top:15px"><b>Q3:</b> A 1 is received as a 0. What type of error is this?</p><button class="option" onclick="checkP6(this,false,'q3p6')">Data loss</button><button class="option" onclick="checkP6(this,false,'q3p6')">Data gain</button><button class="option" onclick="checkP6(this,true,'q3p6')">Data change</button><div class="score" id="q3p6"></div></div>
+
+<div class="card"><h3>6 · Why do we need error detection?</h3><p>Imagine downloading an important file. If one part of the data changes during transmission, the file may no longer be correct.</p><button onclick="showP6('examP6')">Show model answer</button><div class="answer" id="examP6">Error detection is needed because interference during transmission can cause data to be lost, gained or changed. Checking allows the receiver to determine whether an error has occurred.</div></div>
+
+<div class="card"><h3>7 · Method preview</h3><p>You will soon learn three important error detection methods:</p><ul><li><b>Parity check</b> — checks the number of 1s using an added parity bit.</li><li><b>Checksum</b> — compares a calculated value associated with the data.</li><li><b>Echo check</b> — sends received data back for comparison with the original.</li></ul><div class="callout"><b>Don't memorise the full procedures yet.</b> Today's goal is to understand why checking is necessary.</div></div>
+
+<div class="card"><h3>8 · Challenge</h3><p>A student says: “If the receiver gets a complete message, the message must be correct.” Is this always true?</p><button class="option" onclick="checkP6(this,false,'challengeP6')">Yes</button><button class="option" onclick="checkP6(this,true,'challengeP6')">No</button><div class="score" id="challengeP6"></div></div>
+
+<div class="card"><h3>9 · Common mistakes</h3><ul><li>Thinking error detection means correcting every error automatically.</li><li>Confusing data loss with data change.</li><li>Forgetting that interference can cause transmission errors.</li><li>Writing “data is wrong” instead of naming the specific type of error.</li><li>Trying to memorise parity/checksum before understanding the need for checking.</li></ul></div>
+
+<div class="card"><h3>10 · Self-assessment</h3><p>Choose your confidence:</p><button onclick="confidenceP6('confident')">🟢 I can explain transmission errors</button><button onclick="confidenceP6('okay')">🟡 I need more practice</button><button onclick="confidenceP6('need')">🔴 I need help</button><div class="score" id="confidenceP6"></div></div>
+
+<div class="footer-note"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Error detection · Interference · Data loss · Data gain · Data change.</div>
+</div>
+</section>
+</main>
+<script>
+function checkP6(btn,correct,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(correct?'correct':'wrong');const m={q1p6:correct?'✓ Correct — missing data is data loss.':'✗ Not quite — some data has failed to arrive.',q2p6:correct?'✓ Correct — extra data is data gain.':'✗ Not quite — extra data means gain.',q3p6:correct?'✓ Correct — the transmitted information has changed.':'✗ Not quite — the data has been altered.',challengeP6:correct?'✓ Correct — data can be changed even when a complete message arrives.':'✗ Not quite — complete does not necessarily mean correct.'};document.getElementById(id).textContent=m[id]}
+function showP6(id){document.getElementById(id).style.display='block'}
+function confidenceP6(v){const t={confident:'Excellent — you are ready to study the error detection methods.',okay:'Good. Review loss, gain and change once more.',need:'That is useful information. Revisit the three error examples and the big idea.'};document.getElementById('confidenceP6').textContent=t[v]}
+</script>
+</body>
+</html>

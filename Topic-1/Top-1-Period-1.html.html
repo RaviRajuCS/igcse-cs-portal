@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Lesson 1</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Lesson 1</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>Your teaching route — keep this open while presenting</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Lesson 1 · Binary Representation & Number Systems</h3>
+      <p><b>Cambridge focus:</b> Topic 1.1 Number systems. This lesson introduces why computers use binary, the denary/binary/hexadecimal systems, and binary place value. Detailed conversion techniques are deliberately developed in the following lessons.</p>
+      <div class="callout">
+        <b>Success criteria:</b> Students can explain why binary is used, distinguish the three number systems by base and digits, and calculate the denary value of a positive binary integer using place values.
+      </div>
+      <p><b>Resources:</b> board/projector, this webpage, mini-whiteboards or paper, and student notebooks.</p>
+      <p><b>Key vocabulary:</b> binary, denary, hexadecimal, base, bit, digit, place value, register, 8-bit, most significant bit (MSB), least significant bit (LSB).</p>
+    </div>
+
+    <div class="card">
+      <span class="time">Teacher preparation</span>
+      <h3>Before students enter</h3>
+      <ul>
+        <li>Open this page in full-screen mode.</li>
+        <li>Keep the teacher pane visible while presenting.</li>
+        <li>Prepare three everyday examples of digital data: text, an image and audio.</li>
+        <li>Have students ready to write an 8-bit place-value row: 128, 64, 32, 16, 8, 4, 2, 1.</li>
+        <li>Decide whether students already know powers of two; if not, build the pattern gradually.</li>
+      </ul>
+      <div class="callout"><b>Teaching principle:</b> do not begin with conversion algorithms. First establish <i>why</i> binary exists and what a binary place value means.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">Questioning strategy</span>
+      <h3>Questions to ask during teaching</h3>
+      <ul>
+        <li>Why are two states useful inside a computer?</li>
+        <li>What makes binary different from denary?</li>
+        <li>Why does the right-most binary position have a value of 1?</li>
+        <li>What does a 0 mean in a particular place-value column?</li>
+        <li>What does a 1 mean?</li>
+        <li>How could we check our binary-to-denary answer?</li>
+      </ul>
+      <p><b>Stretch:</b> Ask students to predict the maximum positive value represented by 8 bits before confirming it mathematically.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Starter</span>
+      <h3>Can a computer understand this?</h3>
+      <p>Show students a photograph, a sound recording and a text message. Ask:</p>
+      <ul>
+        <li>How can one computer store such different kinds of information?</li>
+        <li>What do all of these forms of data have in common inside a computer?</li>
+      </ul>
+      <div class="callout"><b>Target idea:</b> the computer ultimately processes data in binary form.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–12 min · Teach</span>
+      <h3>Why binary?</h3>
+      <p>Explain the link between binary and the two-state nature of electronic switching.</p>
+      <div class="binary">1&nbsp;&nbsp;0&nbsp;&nbsp;1&nbsp;&nbsp;0&nbsp;&nbsp;1&nbsp;&nbsp;1&nbsp;&nbsp;0&nbsp;&nbsp;0</div>
+      <p>Connect the idea of <b>ON/OFF</b> states to <b>1/0</b>. Emphasise that text, sound, images and numbers are encoded so that the computer can process them as binary data.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">12–20 min · Teach</span>
+      <h3>Three number systems</h3>
+      <ul>
+        <li><b>Denary</b> — base 10, digits 0–9.</li>
+        <li><b>Binary</b> — base 2, digits 0 and 1.</li>
+        <li><b>Hexadecimal</b> — base 16, digits 0–9 and A–F.</li>
+      </ul>
+      <p>Today, focus on understanding the systems. Detailed conversions come in the next lessons.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">20–30 min · Demonstrate</span>
+      <h3>Binary place values</h3>
+      <p>Build the 8-bit place-value pattern from right to left:</p>
+      <div class="weights">
+        <div>128</div><div>64</div><div>32</div><div>16</div>
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p>Demonstrate that each position is a power of 2. A 1 means that place value contributes to the number; a 0 means it does not.</p>
+      <p><b>Example:</b> 11101110₂ = 128 + 64 + 32 + 8 + 4 + 2 = 238₁₀.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">30–40 min · Guided practice</span>
+      <h3>Think → Pair → Check</h3>
+      <p>Students work out the denary values of:</p>
+      <ol>
+        <li>00110011₂</li>
+        <li>01111111₂</li>
+        <li>10011001₂</li>
+      </ol>
+      <p>Ask students to explain <i>why</i> each 1-bit contributes a particular value.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">40–47 min · Check understanding</span>
+      <h3>Mini-whiteboard questions</h3>
+      <ol>
+        <li>What base is binary?</li>
+        <li>How many different digits are used in binary?</li>
+        <li>What is the value of the right-most bit in an 8-bit number?</li>
+        <li>Why does a computer use binary to represent data?</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>One-minute exit ticket</h3>
+      <p>Students answer without help:</p>
+      <ol>
+        <li>Define binary number system.</li>
+        <li>Convert 00000101₂ to denary.</li>
+        <li>Give one reason computers use binary.</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> use the responses to decide whether Lesson 2 can begin with conversions or whether a short binary recap is needed.</div>
+    </div>
+
+    <div class="footer-note">
+      <b>Planning note:</b> Cambridge specifies the syllabus content but does not prescribe a number of classroom hours for Topic 1. This 50-minute lesson is part of a proposed teacher-designed sequence.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Why binary?</span>
+        <span>2. Number systems</span>
+        <span>3. Place values</span>
+        <span>4. Check</span>
+        <span>5. Practice</span>
+        <span>6. Exam language</span>
+      </div>
+      <p>Work through the sections in order. <b>Do not rush to the answers.</b> Try each question first, then check your reasoning.</p>
+    </div>
+
+    <div class="card">
+      <h3>⭐ Key vocabulary</h3>
+      <ul>
+        <li><b>Binary:</b> a base 2 number system using only 0 and 1.</li>
+        <li><b>Denary:</b> the familiar base 10 number system using 0–9.</li>
+        <li><b>Hexadecimal:</b> a base 16 number system using 0–9 and A–F.</li>
+        <li><b>Bit:</b> a binary digit, either 0 or 1.</li>
+        <li><b>Byte:</b> a group of 8 bits.</li>
+        <li><b>Register:</b> a small storage location used to hold data being processed.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🧠 Think about this</h3>
+      <p>Imagine a tiny electronic switch that can be in one of two states. If one state is represented by <b>0</b> and the other by <b>1</b>, a computer can build longer patterns from these two values.</p>
+      <p>For example:</p>
+      <div class="binary">10110100</div>
+      <p>That pattern can represent a numerical value, but binary patterns can also be used as part of the representation of text, sound, images and other data.</p>
+      <div class="callout"><b>Remember:</b> the binary pattern itself is not automatically “a denary number”. Its meaning depends on the representation being used.</div>
+    </div>
+
+    <div class="card">
+      <h3>🔍 Common mistakes</h3>
+      <ul>
+        <li>Calling binary “base 10” — it is <b>base 2</b>.</li>
+        <li>Forgetting that hexadecimal includes <b>A–F</b>.</li>
+        <li>Adding every place value instead of adding only the values under <b>1</b>.</li>
+        <li>Reading an 8-bit number from the wrong direction when using place values.</li>
+        <li>Dropping leading zeroes when the question specifically requires an 8-bit representation.</li>
+      </ul>
+    </div>
+
+
+    <div class="card">
+      <h3>Lesson goals</h3>
+      <p>By the end of this lesson you should be able to:</p>
+      <ul>
+        <li>explain why computers use binary to represent data;</li>
+        <li>identify denary, binary and hexadecimal as different number systems;</li>
+        <li>state the base and digits used by each system;</li>
+        <li>use binary place values to find the denary value of a positive binary integer.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · Why computers use binary</h3>
+      <p>Computers process data electronically. At the basic level, electronic switching can be represented by two states. Binary provides two values:</p>
+      <div class="binary">0 = one state &nbsp;&nbsp; 1 = the other state</div>
+      <p>For this syllabus, remember the central idea:</p>
+      <div class="callout"><b>Any form of data needs to be converted into binary to be processed by a computer.</b></div>
+    </div>
+
+    <div class="card">
+      <h3>2 · Number systems</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:9px;background:#082b59;color:white">System</th><th style="padding:9px;background:#082b59;color:white">Base</th><th style="padding:9px;background:#082b59;color:white">Digits</th></tr>
+        <tr><td style="padding:8px;border-bottom:1px solid #ddd"><b>Denary</b></td><td style="padding:8px;border-bottom:1px solid #ddd">10</td><td style="padding:8px;border-bottom:1px solid #ddd">0–9</td></tr>
+        <tr><td style="padding:8px;border-bottom:1px solid #ddd"><b>Binary</b></td><td style="padding:8px;border-bottom:1px solid #ddd">2</td><td style="padding:8px;border-bottom:1px solid #ddd">0, 1</td></tr>
+        <tr><td style="padding:8px"><b>Hexadecimal</b></td><td style="padding:8px">16</td><td style="padding:8px">0–9, A–F</td></tr>
+      </table>
+      <p>Hexadecimal uses A–F for values 10–15.</p>
+    </div>
+
+    <div class="card">
+      <h3>3 · Binary place values</h3>
+      <p>For an 8-bit positive binary integer, the place values are:</p>
+      <div class="weights">
+        <div>128</div><div>64</div><div>32</div><div>16</div>
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p>Example:</p>
+      <div class="binary">1 1 1 0 1 1 1 0</div>
+      <p>Add only the place values underneath a <b>1</b>:</p>
+      <p style="text-align:center;font-weight:800">128 + 64 + 32 + 8 + 4 + 2 = 238</p>
+      <p>Therefore <b>11101110₂ = 238₁₀</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>📝 Worked example — step by step</h3>
+      <p>Find the denary value of <b>01011010₂</b>.</p>
+      <div class="weights">
+        <div>128</div><div>64</div><div>32</div><div>16</div>
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p style="text-align:center;font-family:Consolas,monospace;font-size:20px">
+        <b>0&nbsp;&nbsp;1&nbsp;&nbsp;0&nbsp;&nbsp;1&nbsp;&nbsp;1&nbsp;&nbsp;0&nbsp;&nbsp;1&nbsp;&nbsp;0</b>
+      </p>
+      <p>Now select the place values beneath the 1s:</p>
+      <p style="text-align:center;font-weight:800">64 + 16 + 8 + 2 = 90</p>
+      <div class="callout"><b>Answer:</b> 01011010₂ = 90₁₀</div>
+      <p><b>Check yourself:</b> Can you explain why 128, 32, 4 and 1 were not included?</p>
+    </div>
+
+    <div class="card">
+      <h3>4 · Quick check</h3>
+      <p><b>Question 1:</b> Which number system uses only 0 and 1?</p>
+      <button class="option" onclick="check(this,true)">Binary</button>
+      <button class="option" onclick="check(this,false)">Denary</button>
+      <button class="option" onclick="check(this,false)">Hexadecimal</button>
+      <div class="score" id="q1"></div>
+
+      <p style="margin-top:15px"><b>Question 2:</b> What is the denary value of 00000101₂?</p>
+      <button class="option" onclick="check2(this,false)">3</button>
+      <button class="option" onclick="check2(this,true)">5</button>
+      <button class="option" onclick="check2(this,false)">8</button>
+      <div class="score" id="q2"></div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Try it yourself</h3>
+      <p>Work these out before revealing the answers.</p>
+      <ol>
+        <li>00001010₂</li>
+        <li>00110101₂</li>
+        <li>01010101₂</li>
+        <li>10000001₂</li>
+      </ol>
+      <button onclick="show('a')">Show answers</button>
+      <div class="answer" id="a">
+        <b>Answers:</b> 10, 53, 85, 129.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Exam language</h3>
+      <p>Cambridge command words matter. In this topic you may see words such as:</p>
+      <div class="progress">
+        <span>Define</span><span>Describe</span><span>Explain</span><span>Calculate</span><span>Convert</span>
+      </div>
+      <p><b>Tip:</b> If asked to <i>explain</i> why binary is used, do not merely say “because computers use 0 and 1”. Give the reason connected to the two-state operation of electronic switching.</p>
+    </div>
+
+    <div class="card">
+      <h3>7 · Self-assessment</h3>
+      <p>Choose your confidence level:</p>
+      <button onclick="confidence('confident')">🟢 I can teach this to someone</button>
+      <button onclick="confidence('okay')">🟡 I mostly understand</button>
+      <button onclick="confidence('need')">🔴 I need more practice</button>
+      <div class="score" id="confidence"></div>
+    </div>
+
+    <div class="footer-note">
+      <b>Source basis:</b> Cambridge IGCSE (9–1) Computer Science 0984 syllabus, 2026–2028, Topic 1.1 Number systems; and David Watson & Helen Williams, <i>Cambridge IGCSE and O Level Computer Science, Second Edition</i>, Chapter 1, Data representation. Content has been expressed as original teaching material rather than reproduced from the textbook.
+    </div>
+  </div>
+</section>
+</main>
+
+<script>
+function check(btn,correct){
+  [...btn.parentElement.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  document.getElementById('q1').textContent=correct?'✓ Correct — binary is base 2.':'✗ Not quite. Try again.';
+}
+function check2(btn,correct){
+  [...btn.parentElement.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  document.getElementById('q2').textContent=correct?'✓ Correct — 4 + 1 = 5.':'✗ Not quite. Use the 8,4,2,1 place values.';
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence(v){
+  const text={confident:'Excellent. You are ready for the next lesson.',okay:'Good. Review the examples once more before Lesson 2.',need:'That is useful information. Practise the four questions again and ask your teacher for help.'};
+  document.getElementById('confidence').textContent=text[v];
+}
+</script>
+</body>
+</html>

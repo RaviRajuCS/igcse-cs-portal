@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 15</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 15</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 15 · Image Representation</h3>
+      <p><b>Cambridge focus:</b> Topic 1.2 requires students to understand how and why a computer represents an image, including the effects of <b>resolution</b> and <b>colour depth</b>. The syllabus states that an image is a series of pixels converted to binary, that resolution is the number of pixels, and that colour depth is the number of bits used to represent each colour. </p>
+      <div class="callout"><b>Success criteria:</b> Students can define pixel, image resolution and colour depth; explain how a bitmap image is represented digitally; and predict how changing resolution or colour depth affects image quality and file size.</div>
+      <p><b>Prior learning:</b> Binary representation and sound sampling.</p>
+      <p><b>Key vocabulary:</b> bitmap, pixel, resolution, colour depth, bit depth, RGB, binary, image quality, file size, pixelated.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>Before students enter</h3>
+      <ul>
+        <li>Display a clear bitmap image and zoom into a small area.</li>
+        <li>Ask students what the tiny coloured squares are.</li>
+        <li>Prepare two versions of an image with different resolutions.</li>
+        <li>Keep the distinction visible: <b>resolution = number of pixels</b>; <b>colour depth = bits per colour/pixel representation</b>.</li>
+      </ul>
+      <div class="callout"><b>Teaching principle:</b> let students discover pixels visually before introducing the numerical definitions.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Reconnect with digital data</h3>
+      <ol>
+        <li>What is a bit?</li>
+        <li>Why does a computer need binary representation?</li>
+        <li>What is sampling?</li>
+        <li>What does sample resolution mean?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> Sound is represented using samples. Images are represented using pixels.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–13 min · Discover</span>
+      <h3>What is a pixel?</h3>
+      <p>A <b>pixel</b> is the smallest element used to make up an image on a display. A bitmap image is made from pixels. </p>
+      <div class="callout"><b>Pixel = picture element.</b></div>
+      <p>Each pixel has information associated with its colour. That information can be represented digitally using binary.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">13–22 min · Teach</span>
+      <h3>Image resolution</h3>
+      <p><b>Resolution</b> describes the number of pixels in an image. It is commonly expressed as width × height, for example <b>800 × 600</b> pixels.</p>
+      <p>Number of pixels = width × height.</p>
+      <div class="callout"><b>Example:</b> 800 × 600 = 480,000 pixels.</div>
+      <p>Higher resolution means more pixels are used to represent the image and generally gives greater detail.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">22–31 min · Teach</span>
+      <h3>Colour depth</h3>
+      <p><b>Colour depth</b> is the number of bits used to represent the colour information for a pixel. </p>
+      <p>The number of possible colours can be found using:</p>
+      <div class="callout"><b>Number of colours = 2<sup>colour depth</sup></b></div>
+      <ul>
+        <li>1-bit → 2 colours</li>
+        <li>2-bit → 4 colours</li>
+        <li>8-bit → 256 colours</li>
+        <li>24-bit → 16,777,216 possible colour combinations</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="time">31–37 min · Compare</span>
+      <h3>Resolution vs colour depth</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Feature</th><th style="padding:8px;background:#082b59;color:white">Resolution</th><th style="padding:8px;background:#082b59;color:white">Colour depth</th></tr>
+        <tr><td style="padding:7px">Measures</td><td style="padding:7px">Number of pixels</td><td style="padding:7px">Bits used for colour information</td></tr>
+        <tr><td style="padding:7px">Increasing it</td><td style="padding:7px">More pixels/detail</td><td style="padding:7px">More possible colours</td></tr>
+        <tr><td style="padding:7px">File size</td><td style="padding:7px">Generally increases</td><td style="padding:7px">Generally increases</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <span class="time">37–42 min · Application</span>
+      <h3>Image quality and file size</h3>
+      <p>The Cambridge syllabus states that both image <b>file size and quality increase as resolution and colour depth increase</b>. </p>
+      <div class="callout"><b>Higher resolution</b> → more pixels → more image data.<br><b>Higher colour depth</b> → more bits per colour → more image data.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">42–47 min · Assessment</span>
+      <h3>Cambridge-style questions</h3>
+      <ol>
+        <li>Define a pixel.</li>
+        <li>Define image resolution.</li>
+        <li>Define colour depth.</li>
+        <li>Calculate the number of pixels in an 800 × 600 image.</li>
+        <li>Explain one effect of increasing colour depth.</li>
+      </ol>
+      <div class="callout"><b>Marking focus:</b> students must not confuse resolution with colour depth.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>What is a pixel?</li>
+        <li>What does image resolution measure?</li>
+        <li>What does colour depth measure?</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> Period 16 can teach image file-size calculations using resolution and colour depth.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 15 introduces bitmap images, pixels, image resolution and colour depth before image file-size calculations.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Pixels</span>
+        <span>3. Resolution</span><span>4. Colour depth</span>
+        <span>5. Quality</span><span>6. Exit ticket</span>
+      </div>
+      <p>Today you will learn how a bitmap image becomes <b>digital data</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Define a pixel.</li>
+        <li>Explain image resolution.</li>
+        <li>Explain colour depth.</li>
+        <li>Calculate the number of pixels.</li>
+        <li>Explain how resolution and colour depth affect quality and file size.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · Pixels</h3>
+      <p>A bitmap image is made from many tiny <b>pixels</b>.</p>
+      <div class="callout"><b>Pixel = picture element</b></div>
+      <p>Each pixel has colour information. The computer stores that information digitally.</p>
+    </div>
+
+    <div class="card">
+      <h3>2 · Image resolution</h3>
+      <p>Resolution describes the number of pixels in the image.</p>
+      <div class="callout"><b>Number of pixels = width × height</b></div>
+      <p>Example: 800 × 600 = <b>480,000 pixels</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>3 · Quick check</h3>
+      <p><b>Q1:</b> What is the smallest element of a bitmap image?</p>
+      <button class="option" onclick="check15(this,true,'q1s15')">Pixel</button>
+      <button class="option" onclick="check15(this,false,'q1s15')">Frame</button>
+      <button class="option" onclick="check15(this,false,'q1s15')">Sample</button>
+      <div class="score" id="q1s15"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> How many pixels are in 400 × 300?</p>
+      <button class="option" onclick="check15(this,false,'q2s15')">70,000</button>
+      <button class="option" onclick="check15(this,true,'q2s15')">120,000</button>
+      <button class="option" onclick="check15(this,false,'q2s15')">700,000</button>
+      <div class="score" id="q2s15"></div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Colour depth</h3>
+      <p>Colour depth is the number of bits used to represent colour information for a pixel.</p>
+      <div class="callout"><b>Number of possible colours = 2<sup>bits</sup></b></div>
+      <p>Examples:</p>
+      <ul>
+        <li>1-bit → 2 colours</li>
+        <li>2-bit → 4 colours</li>
+        <li>8-bit → 256 colours</li>
+        <li>24-bit → 16,777,216 possible colour combinations</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>5 · Quick check</h3>
+      <p><b>Q3:</b> How many colours can 8 bits represent?</p>
+      <button class="option" onclick="check15(this,false,'q3s15')">8</button>
+      <button class="option" onclick="check15(this,true,'q3s15')">256</button>
+      <button class="option" onclick="check15(this,false,'q3s15')">512</button>
+      <div class="score" id="q3s15"></div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Resolution vs colour depth</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Resolution</th><th style="padding:8px;background:#082b59;color:white">Colour depth</th></tr>
+        <tr><td style="padding:7px">Number of pixels</td><td style="padding:7px">Bits used for colour</td></tr>
+        <tr><td style="padding:7px">More detail</td><td style="padding:7px">More possible colours</td></tr>
+        <tr><td style="padding:7px">Higher → larger image data</td><td style="padding:7px">Higher → larger image data</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>7 · Think about quality</h3>
+      <p>If an image changes from 640 × 480 to 1280 × 960, what happens?</p>
+      <button class="option" onclick="check15(this,true,'q4s15')">There are more pixels and potentially more detail.</button>
+      <button class="option" onclick="check15(this,false,'q4s15')">There are fewer pixels.</button>
+      <div class="score" id="q4s15"></div>
+      <p>If colour depth increases, the image can represent more possible colours.</p>
+    </div>
+
+    <div class="card">
+      <h3>8 · Practice</h3>
+      <ol>
+        <li>How many pixels are in a 1024 × 768 image?</li>
+        <li>How many colours can 4-bit colour depth represent?</li>
+        <li>How many colours can 16-bit colour depth represent?</li>
+        <li>What happens to file size when resolution increases?</li>
+      </ol>
+      <button onclick="show('answers15a')">Reveal answers</button>
+      <div class="answer" id="answers15a">
+        1. 786,432 pixels<br>
+        2. 16 colours<br>
+        3. 65,536 possible colour combinations<br>
+        4. File size generally increases.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Exam practice</h3>
+      <p><b>Question:</b> Explain the difference between image resolution and colour depth.</p>
+      <button onclick="show('exam15')">Show model answer</button>
+      <div class="answer" id="exam15">
+        Resolution is the number of pixels in an image, while colour depth is the number of bits used to represent the colour information for each pixel. Increasing either generally increases image data and file size.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Common mistakes</h3>
+      <ul>
+        <li>Calling a pixel a bit.</li>
+        <li>Confusing resolution with colour depth.</li>
+        <li>Multiplying colour depth by the wrong quantity.</li>
+        <li>Thinking higher resolution means more colours.</li>
+        <li>Forgetting that higher resolution and colour depth generally increase file size.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>11 · Self-assessment</h3>
+      <p>Choose your confidence:</p>
+      <button onclick="confidence15('confident')">🟢 I understand image representation</button>
+      <button onclick="confidence15('okay')">🟡 I need more practice</button>
+      <button onclick="confidence15('need')">🔴 I need help</button>
+      <div class="score" id="confidence15"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Image representation: pixels, resolution and colour depth.
+    </div>>
+  </div>
+</section>
+</main>
+
+<script>
+function check15(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1s15:correct?'✓ Correct — a bitmap image is made from pixels.':'✗ Not quite. A bitmap image is made from pixels.',
+    q2s15:correct?'✓ Correct — 400 × 300 = 120,000 pixels.':'✗ Not quite. Multiply width by height.',
+    q3s15:correct?'✓ Correct — 2⁸ = 256.':'✗ Not quite. Use 2⁸.',
+    q4s15:correct?'✓ Correct — increasing resolution means more pixels.':'✗ Not quite. Higher resolution means more pixels.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence15(v){
+  const text={
+    confident:'Excellent — you are ready for image file-size calculations.',
+    okay:'Good. Practise the difference between resolution and colour depth.',
+    need:'That is useful information. Rework pixels, resolution and colour depth with your teacher.'
+  };
+  document.getElementById('confidence15').textContent=text[v];
+}
+</script>
+</body>
+</html>

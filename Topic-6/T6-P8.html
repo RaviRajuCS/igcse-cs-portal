@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 6 | Period 8</title>
+<style>
+:root{--gold:#d8ad45;--gold2:#efd47a;--blue:#123b63;--blue2:#0b2d4d;--ink:#17324d}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#c99528,#efd16c 45%,#c99a2e);color:var(--ink);overflow:hidden}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#0b2d4df2;color:#fff;border-bottom:3px solid var(--gold2);box-shadow:0 5px 18px #08203b66}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:2px 0;color:#e8eef5;font-size:13px;font-weight:600}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:19px;font-weight:700}
+.school{display:flex;align-items:center;gap:10px;font-size:13px}.school img{width:48px;height:48px;background:#fff;border-radius:9px;padding:3px;object-fit:contain}.badge{background:var(--gold2);color:var(--blue2);font-weight:900;padding:9px 13px;border-radius:18px}
+.layout{height:calc(100vh - 88px);display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:14px}.pane{min-height:0;background:#fffaf0f5;border:2px solid #c7a653;border-radius:22px;box-shadow:0 14px 34px #49340f55;overflow:hidden;display:flex;flex-direction:column}
+.panehead{background:var(--blue2);color:#fff;padding:15px 20px}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:#fffdf7;border:1px solid #d9c797;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #49340f12}.card h3{margin:0 0 9px;color:var(--blue2);font-size:17px}
+p{line-height:1.55}ul,ol{line-height:1.55;padding-left:20px}.time{display:inline-block;background:#f2dda0;border:1px solid #c7a653;color:var(--blue2);padding:4px 9px;border-radius:18px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{background:#f5ecd0;border-left:5px solid var(--blue);padding:12px 14px;border-radius:8px;margin:10px 0}.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#f6edcf;border-radius:16px;margin:14px 0}
+.node{background:var(--blue2);color:#fff;padding:13px 15px;border-radius:13px;font-weight:900;text-align:center}.arrow{font-size:25px;font-weight:900;color:var(--blue)}
+.example{background:#eef3f7;border:1px solid #b7c7d6;border-radius:13px;padding:13px;margin:10px 0}.workout{background:#f7f0dd;border:2px dashed #b7964e;border-radius:15px;padding:15px;margin:12px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue2);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid #c8b98e}
+.option.correct{background:#e1efe5;border-color:#6d997a}.option.wrong{background:#f5dfdb;border-color:#a86b61}.answer{display:none;background:#e5f0e7;border:1px solid #9db9a4;padding:11px;border-radius:10px;margin-top:9px}.score{font-weight:900;margin-top:8px}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{background:#e7dfcf;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:800}.progress .active{background:#e8d18a;border:1px solid #b7964e;color:var(--blue2)}
+table{width:100%;border-collapse:collapse}th{background:var(--blue2);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #ddd2b8;vertical-align:top}
+.footer{font-size:11px;color:#685e4e;border-top:1px solid #d8ccb0;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}header{height:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div><div class="name">Ravi Raju</div><h1>IGCSE Computer Science 0984</h1><p>Topic 6 · Automated and Emerging Technologies · Period 8</p></div></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">TOPIC 6</div></div>
+</header>
+
+<main class="layout">
+<section class="pane"><div class="panehead"><h2>📘 Teacher Studio</h2><small>6.2 Robotics · sensors · processing · actuators · feedback · control</small></div><div class="content">
+
+<div class="card"><span class="time">Topic 6 · Period 8</span><h3>Robotics: Sensors, Actuators and Feedback</h3>
+<p>This period brings the robotics ideas together. Students trace how a robot <b>senses its environment, processes information and produces a physical response</b>, including repeated feedback.</p>
+<div class="callout"><b>Key idea:</b> Robot control is not a single action. Sensor readings can be taken repeatedly so that the robot continually adjusts its behaviour.</div></div>
+
+<div class="card"><h3>1 · The robot control cycle</h3>
+<div class="flow"><div class="node">SENSE</div><div class="arrow">→</div><div class="node">PROCESS</div><div class="arrow">→</div><div class="node">ACT</div><div class="arrow">→</div><div class="node">SENSE AGAIN</div></div>
+<p>The cycle allows a robot to respond to changing conditions instead of simply performing one fixed action.</p></div>
+
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>2 · Input, processing and output</h3>
+<table><tr><th>Stage</th><th>Robot example</th></tr>
+<tr><td>Input</td><td>A distance sensor measures the distance to an obstacle.</td></tr>
+<tr><td>Processing</td><td>The controller compares the reading with programmed conditions.</td></tr>
+<tr><td>Output</td><td>A motor changes the robot's movement.</td></tr>
+<tr><td>Feedback</td><td>New sensor readings show whether the movement has changed the situation.</td></tr></table></div>
+
+<div class="card"><span class="time">8–18 min · Teach</span><h3>3 · What is feedback?</h3>
+<p><b>Feedback</b> occurs when information about the current state of a system is returned to the controller and used to influence the next action.</p>
+<div class="example"><b>Example:</b> A robot is moving toward a wall. Its distance sensor repeatedly measures the distance. As the distance becomes smaller, the controller can change the motor commands so the robot turns away.</div>
+<div class="callout"><b>Exam distinction:</b> The sensor provides the information; the controller processes it; the actuator performs the response.</div></div>
+
+<div class="card"><span class="time">18–27 min · Teach</span><h3>4 · Feedback in a line-following robot</h3>
+<div class="flow"><div class="node">Light / line sensor</div><div class="arrow">→</div><div class="node">Controller</div><div class="arrow">→</div><div class="node">Left / right motors</div><div class="arrow">→</div><div class="node">New sensor reading</div></div>
+<ol><li>Sensors detect the position of the line.</li><li>The controller processes the readings.</li><li>The program decides whether the robot should adjust its direction.</li><li>Motor speeds are changed.</li><li>The sensors measure the new position and the cycle repeats.</li></ol></div>
+
+<div class="card"><span class="time">27–35 min · Worked example</span><h3>5 · Temperature-controlled robot system</h3>
+<div class="example">A robot-controlled system must maintain a target temperature.</div>
+<ol><li>A temperature sensor measures the current temperature.</li><li>The controller compares it with the programmed target.</li><li>If the temperature is too low, the controller activates a heater.</li><li>The temperature changes.</li><li>The sensor measures the new temperature and supplies feedback for the next decision.</li></ol></div>
+
+<div class="card"><span class="time">35–42 min · Compare</span><h3>6 · Fixed action vs feedback control</h3>
+<table><tr><th>Fixed action</th><th>Feedback control</th></tr>
+<tr><td>May perform an action once according to a program.</td><td>Repeatedly uses sensor information to adjust behaviour.</td></tr>
+<tr><td>Does not necessarily respond to a changed environment.</td><td>Can respond when sensor readings change.</td></tr>
+<tr><td>Example: move forward for a fixed time.</td><td>Example: keep adjusting direction while following a line.</td></tr></table></div>
+
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>7 · Analyse the feedback loop</h3>
+<div class="workout">A robot approaches an obstacle. It slows down as the measured distance becomes smaller, then turns away. Explain how feedback is involved.</div>
+<button onclick="showA('w1')">Show model</button>
+<div class="answer" id="w1">The distance sensor repeatedly measures the obstacle distance. The controller processes the readings and changes the motor commands as the distance changes. After the robot moves, the sensor takes another reading, providing feedback for the next decision.</div></div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>8 · Remember the loop</h3>
+<div class="callout"><b>Sensor reading → controller decision → actuator action → changed condition → new sensor reading.</b></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 8 · Robotics: sensors, actuators and feedback.</div>
+</div></section>
+
+<section class="pane"><div class="panehead"><h2>🧠 Student Studio</h2><small>Trace the loop · explain feedback · apply to scenarios</small></div><div class="content">
+
+<div class="card"><h3>🧭 Topic 6 roadmap</h3><div class="progress"><span>6.1 Automated systems</span><span class="active">6.2 Robotics</span><span>6.3 Artificial Intelligence</span></div></div>
+
+<div class="card"><h3>🎯 Learning targets</h3>
+<ul><li>Explain the sensor → controller → actuator cycle.</li><li>Describe feedback in a robotic system.</li><li>Explain how repeated sensor readings can change robot behaviour.</li><li>Apply feedback to unfamiliar scenarios.</li><li>Write a complete exam-style explanation.</li></ul></div>
+
+<div class="card"><h3>1 · Quick check</h3><p>What provides the information used as feedback?</p>
+<button class="option" onclick="checkQ(this,true,'q1')">New readings from sensors</button>
+<button class="option" onclick="checkQ(this,false,'q1')">The motor alone</button><div class="score" id="q1"></div></div>
+
+<div class="card"><h3>2 · Put the cycle in order</h3>
+<div class="workout">Arrange these ideas mentally: <b>actuator action · sensor reading · controller processing · new sensor reading</b>.</div>
+<button onclick="showA('a1')">Show order</button>
+<div class="answer" id="a1"><b>Sensor reading → controller processing → actuator action → new sensor reading.</b></div></div>
+
+<div class="card"><h3>3 · Interactive check</h3><p>Why does a robot need new sensor readings in a feedback system?</p>
+<button class="option" onclick="checkQ(this,true,'q2')">To find out how the environment has changed and help decide the next action.</button>
+<button class="option" onclick="checkQ(this,false,'q2')">To make the robot's program disappear.</button><div class="score" id="q2"></div></div>
+
+<div class="card"><h3>4 · Worked Example — Line following</h3>
+<div class="example">A robot follows a dark line on a light floor. It changes the speed of its left and right motors when the line moves away from the sensors.</div>
+<p>The sensors detect the line position. The controller processes the readings and changes motor speeds. The robot moves, the line position changes relative to the sensors, and new readings provide feedback.</p></div>
+
+<div class="card"><h3>5 · Workout — Explain the actuator</h3>
+<div class="workout">In a line-following robot, what does the actuator do after the controller makes a decision?</div>
+<button onclick="showA('a2')">Show model answer</button>
+<div class="answer" id="a2">The motors change the robot's movement, for example by changing the speed of the left or right wheel so the robot adjusts its direction.</div></div>
+
+<div class="card"><h3>6 · Interactive check</h3><p>Which statement best describes feedback?</p>
+<button class="option" onclick="checkQ(this,true,'q3')">Sensor information is repeatedly used to influence subsequent control actions.</button>
+<button class="option" onclick="checkQ(this,false,'q3')">The actuator sends no physical output.</button><div class="score" id="q3"></div></div>
+
+<div class="card"><h3>7 · Scenario challenge — Obstacle avoidance</h3>
+<div class="workout">A robot repeatedly checks its distance from a wall and turns when it becomes too close. Explain the complete feedback process.</div>
+<button onclick="showA('a3')">Show model</button>
+<div class="answer" id="a3">The distance sensor measures the wall distance. The controller processes the reading and checks the programmed condition. If the robot is too close, it sends signals to the motors to turn. The robot moves, then the sensor measures the distance again. This new reading provides feedback for the next control decision.</div></div>
+
+<div class="card"><h3>8 · Exam-style question</h3>
+<p><b>Question:</b> Explain how feedback can be used by a robot to follow a line.</p>
+<button onclick="showA('a4')">Show mark-point model</button>
+<div class="answer" id="a4">Sensors detect the position of the line. The controller processes the sensor readings and follows programmed instructions to decide how the robot should adjust. Motor/actuator speeds are changed to correct the direction. The robot moves and the sensors take new readings, which provide feedback for the next adjustment.</div></div>
+
+<div class="card"><h3>9 · Exam vocabulary</h3>
+<table><tr><th>Term</th><th>Meaning</th></tr><tr><td>Feedback</td><td>Information about the current state returned to the controller and used for subsequent control.</td></tr><tr><td>Sensor reading</td><td>Measured input about the robot's environment or condition.</td></tr><tr><td>Control action</td><td>An instruction sent to an actuator to change the physical system.</td></tr><tr><td>Loop</td><td>A repeated cycle of sensing, processing and acting.</td></tr></table></div>
+
+<div class="card"><h3>10 · Common mistakes</h3>
+<ul><li>Calling the actuator the source of feedback.</li><li>Describing only the first sensor reading and forgetting repetition.</li><li>Forgetting that the controller processes the sensor data.</li><li>Saying feedback means the robot “learns” automatically.</li><li>Failing to explain how the new reading affects the next action.</li></ul></div>
+
+<div class="card"><h3>11 · Self-assessment</h3>
+<p>Can you explain a complete robotic feedback loop using a scenario?</p>
+<button onclick="confidence('ready')">🟢 Yes</button><button onclick="confidence('practice')">🟡 More practice</button><button onclick="confidence('revise')">🔴 Need revision</button>
+<div class="score" id="confidence"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 8 · Robotics: sensors, actuators and feedback.</div>
+</div></section>
+</main>
+
+<script>
+function showA(id){document.getElementById(id).style.display='block'}
+function checkQ(btn,correct,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(correct?'correct':'wrong');
+ const m={
+ q1:correct?'✓ Correct — repeated sensor readings provide the information used as feedback.':'✗ Motors perform an action; sensor readings provide the feedback information.',
+ q2:correct?'✓ Correct — feedback lets the system respond to changes in the environment.':'✗ Feedback is about using new information for control.',
+ q3:correct?'✓ Correct — feedback uses sensor information to influence later actions.':'✗ Feedback is a control concept involving sensor information and subsequent actions.'
+ };
+ document.getElementById(id).textContent=m[id]
+}
+function confidence(v){
+ const m={
+ ready:'Excellent — you can trace a complete robotic feedback loop.',
+ practice:'Good. Practise explaining what changes after each new sensor reading.',
+ revise:'Remember: SENSE → PROCESS → ACT → SENSE AGAIN.'
+ };
+ document.getElementById('confidence').textContent=m[v]
+}
+</script>
+</body>
+</html>

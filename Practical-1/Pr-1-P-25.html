@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Practical 1 | Period 25</title>
+<style>
+:root{--teak:#7b4b2a;--dark:#4f2d19;--half:#f8f5ec;--half2:#eee8dc;--ink:#3b281d;--cream:#fffdf8;--gold:#d6ad62}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#6f4326,#8b5733 48%,#6b3f25);color:var(--ink);overflow:hidden}
+header{height:86px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#4f2d19ee;color:var(--half);border-bottom:2px solid #c99a5a;box-shadow:0 5px 18px #24140b66}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0;font-size:13px;font-weight:600;color:#eadfce}
+.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:45px;height:45px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700;color:#fff}
+.school{display:flex;align-items:center;gap:11px}.school img{width:49px;height:49px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}
+.badge{padding:9px 14px;border-radius:18px;background:var(--gold);color:var(--dark);font-weight:900;font-size:13px}
+.layout{height:calc(100vh - 86px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:#f8f5ecf2;border:2px solid #d1ad77;border-radius:22px;box-shadow:0 14px 34px #24140b66;overflow:hidden;display:flex;flex-direction:column}
+.panehead{padding:15px 20px;background:var(--dark);color:var(--half)}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:var(--cream);border:1px solid #cbbda8;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #5b3a2112}
+.card h3{margin:0 0 9px;font-size:17px;color:var(--dark)}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}
+.time{display:inline-block;background:#ead5ae;border:1px solid #b88b4d;color:var(--dark);border-radius:20px;padding:4px 9px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{border-left:5px solid var(--teak);background:var(--half2);padding:12px 14px;border-radius:8px;margin:10px 0}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:var(--half2);border-radius:16px;margin:15px 0}
+.node{padding:13px 15px;border-radius:13px;background:var(--dark);color:var(--half);font-weight:900;text-align:center}.tag{padding:10px 13px;border-radius:12px;background:#ead5ae;color:var(--dark);font-weight:900}.arrow{font-size:25px;font-weight:900;color:var(--teak)}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--dark);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c7b9a6;color:var(--ink);margin:7px 0}.option.correct{background:#e1efe5;border-color:#6e9a7c}.option.wrong{background:#f5dfdb;border-color:#a96c62}
+.score{font-weight:900;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#e6f0e8;border-radius:10px;border:1px solid #9db9a4}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e5ded3;font-size:12px;font-weight:800}.progress .active{background:#ead5ae;border:1px solid #b88b4d}
+.workout{background:#f4eee4;border:2px dashed #b68a56;border-radius:15px;padding:15px;margin:12px 0}
+.code{font-family:Consolas,monospace;background:#392317;color:#fff;padding:14px;border-radius:12px;line-height:1.65}
+.footer{font-size:11px;color:#66584c;border-top:1px solid #d6cbbb;padding-top:10px;margin-top:18px}
+table{width:100%;border-collapse:collapse}th{background:var(--dark);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5ccbf;vertical-align:top}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div>
+<h1>IGCSE Computer Science 0984</h1><p>Practical Studio 1 · Algorithms & Problem Solving · Period 25</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">PRACTICAL STUDIO</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>🧑‍🏫 Teacher Studio</h2><small>Integrated problem solving · decomposition · subroutines · validation · testing</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Practical 1 · Period 25</span>
+<h3>Integrated Algorithm — From Specification to Tested Solution</h3>
+<p>This period brings together the practical skills developed so far. Students receive a small problem specification, identify inputs and outputs, decompose the task into subroutines, validate data, process an array and test the finished solution.</p>
+<div class="callout"><b>Core idea:</b> Strong programmers do not jump straight into code. They understand the requirement, plan the solution, build it in manageable parts and test each important condition.</div>
+</div>
+
+<div class="card"><span class="time">Teaching route</span><h3>SPECIFICATION → PLAN → MODULES → CODE → TEST → REFINE</h3>
+<div class="flow"><div class="node">SPECIFICATION</div><div class="arrow">→</div><div class="tag">PLAN</div><div class="arrow">→</div><div class="node">BUILD</div><div class="arrow">→</div><div class="tag">TEST</div><div class="arrow">→</div><div class="node">REFINE</div></div></div>
+
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>1 · Bring the skills together</h3>
+<div class="workout">A program must input 10 marks, validate each mark from 0 to 100, calculate the average, find the highest mark and report whether the average is a pass. What skills are needed?</div>
+<div class="callout">Arrays, input validation, loops, accumulators, selection, subroutines and systematic testing can all contribute to the solution.</div>
+</div>
+
+<div class="card"><span class="time">8–18 min · Plan</span><h3>2 · Decompose the problem</h3>
+<div class="flow">
+<div class="node">InputMarks()</div><div class="arrow">→</div><div class="tag">Average()</div><div class="arrow">→</div><div class="node">Maximum()</div><div class="arrow">→</div><div class="tag">HasPassed()</div>
+</div>
+<p>Each module has one clear responsibility. The main program coordinates the modules rather than containing every detail itself.</p>
+</div>
+
+<div class="card"><span class="time">18–27 min · Worked design</span><h3>3 · Example #1 — Validation subroutine</h3>
+<div class="code">FUNCTION ValidMark(Mark)<br>
+&nbsp;&nbsp;RETURN Mark &gt;= 0 AND Mark &lt;= 100<br>
+ENDFUNCTION</div>
+<p>Once this function exists, the input section can repeatedly request a new mark until <b>ValidMark(Mark)</b> is TRUE.</p>
+</div>
+
+<div class="card"><span class="time">27–35 min · Worked design</span><h3>4 · Example #2 — Average subroutine</h3>
+<div class="code">FUNCTION Average(A, Count)<br>
+&nbsp;&nbsp;Total ← 0<br>
+&nbsp;&nbsp;FOR I ← 1 TO Count<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Total ← Total + A[I]<br>
+&nbsp;&nbsp;NEXT I<br>
+&nbsp;&nbsp;RETURN Total ÷ Count<br>
+ENDFUNCTION</div>
+<div class="callout">The function assumes that Count is valid. That responsibility belongs to the calling algorithm, which should validate the number of values before using it.</div>
+</div>
+
+<div class="card"><span class="time">35–42 min · Integrated example</span><h3>5 · Example #3 — Main algorithm structure</h3>
+<div class="code">CONSTANT N ← 10<br>DECLARE Marks : ARRAY[1:N] OF INTEGER<br><br>FOR I ← 1 TO N<br>&nbsp;&nbsp;INPUT Marks[I]<br>&nbsp;&nbsp;WHILE Marks[I] &lt; 0 OR Marks[I] &gt; 100 DO<br>&nbsp;&nbsp;&nbsp;&nbsp;OUTPUT "Enter 0 to 100"<br>&nbsp;&nbsp;&nbsp;&nbsp;INPUT Marks[I]<br>&nbsp;&nbsp;ENDWHILE<br>NEXT I<br><br>Avg ← Average(Marks, N)<br>High ← Maximum(Marks, N)<br>OUTPUT Avg<br>OUTPUT High</div>
+</div>
+
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>6 · Build a test plan</h3>
+<div class="workout">For the integrated mark system, choose tests that check normal marks, the 0/100 boundaries, invalid values and the pass boundary at 50.</div>
+<button onclick="showT25('w1')">Show model set</button>
+<div class="answer" id="w1"><b>Useful values:</b> 65 (normal), 0 and 100 (range boundaries), -1 and 101 (invalid), 49 and 50 (pass boundary). A larger test set can also include 51 and a mixture of several marks.</div>
+</div>
+
+<div class="card"><span class="time">47–50 min · Exit</span><h3>7 · Teacher questions</h3>
+<ul><li>Why decompose the solution before coding?</li><li>Which parts should be validated?</li><li>Which modules could be tested independently?</li><li>Why should boundary tests be included?</li></ul>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+Practical Studio 1 · Period 25 · Integrated algorithm design and testing.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🧑‍💻 Student Practical Studio</h2><small>Mini-project · decomposition · coding · testing · debugging</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your practical journey</h3>
+<div class="progress"><span>1. Arrays</span><span>2. Search</span><span>3. Sort</span><span>4. Subroutines</span><span>5. Files</span><span>6. Validation</span><span>7. Testing</span><span class="active">8. Integration</span></div>
+</div>
+
+<div class="card"><h3>🎯 Learning targets</h3>
+<ul><li>Read a short programming specification.</li><li>Identify inputs, processing and outputs.</li><li>Decompose a problem into subroutines.</li><li>Combine arrays, loops and selection.</li><li>Validate important input.</li><li>Design tests before declaring the solution complete.</li></ul>
+</div>
+
+<div class="card"><h3>1 · Quick check</h3>
+<p>Which should normally come first?</p>
+<button class="option" onclick="checkT25(this,true,'q1')">Understand and plan the specification.</button>
+<button class="option" onclick="checkT25(this,false,'q1')">Immediately write code without planning.</button>
+<div class="score" id="q1"></div>
+</div>
+
+<div class="card"><h3>2 · Mini-project specification</h3>
+<div class="workout"><b>Student Marks Manager</b><br><br>
+Input 8 marks. Each mark must be between 0 and 100 inclusive. Then output the average, highest mark and number of students who passed (50 or above).</div>
+<div class="callout"><b>Suggested modules:</b> input/validation, average, maximum and pass counter.</div>
+</div>
+
+<div class="card"><h3>3 · Workout — Identify the components</h3>
+<table><tr><th>Requirement</th><th>Useful technique</th></tr>
+<tr><td>Store 8 marks</td><td>Array</td></tr>
+<tr><td>Accept only 0–100</td><td>Validation loop</td></tr>
+<tr><td>Calculate average</td><td>Accumulator + function</td></tr>
+<tr><td>Find highest</td><td>Maximum algorithm</td></tr>
+<tr><td>Count passes</td><td>Counter + selection</td></tr></table>
+</div>
+
+<div class="card"><h3>4 · Interactive check</h3>
+<p>Which value should be rejected by the mark validation?</p>
+<button class="option" onclick="checkT25(this,true,'q2')">101</button>
+<button class="option" onclick="checkT25(this,false,'q2')">100</button>
+<div class="score" id="q2"></div>
+</div>
+
+<div class="card"><h3>5 · Worked Example — Pass counter</h3>
+<div class="code">FUNCTION CountPasses(A, Count)<br>
+&nbsp;&nbsp;Passes ← 0<br>
+&nbsp;&nbsp;FOR I ← 1 TO Count<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IF A[I] &gt;= 50 THEN<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passes ← Passes + 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ENDIF<br>
+&nbsp;&nbsp;NEXT I<br>
+&nbsp;&nbsp;RETURN Passes<br>
+ENDFUNCTION</div>
+<p>This is a focused module: it receives the array and number of elements and returns one result.</p>
+</div>
+
+<div class="card"><h3>6 · Workout — Write the complete solution</h3>
+<div class="workout">Using the Student Marks Manager specification, write the main algorithm that inputs and validates 8 marks, then calls <b>Average</b>, <b>Maximum</b> and <b>CountPasses</b>.</div>
+<button onclick="showT25('a1')">Show model structure</button>
+<div class="answer" id="a1"><div class="code">FOR I ← 1 TO 8<br>&nbsp;&nbsp;INPUT Marks[I]<br>&nbsp;&nbsp;WHILE Marks[I] &lt; 0 OR Marks[I] &gt; 100 DO<br>&nbsp;&nbsp;&nbsp;&nbsp;OUTPUT "Enter 0 to 100"<br>&nbsp;&nbsp;&nbsp;&nbsp;INPUT Marks[I]<br>&nbsp;&nbsp;ENDWHILE<br>NEXT I<br><br>Avg ← Average(Marks, 8)<br>High ← Maximum(Marks, 8)<br>Passes ← CountPasses(Marks, 8)<br><br>OUTPUT Avg<br>OUTPUT High<br>OUTPUT Passes</div></div>
+</div>
+
+<div class="card"><h3>7 · Worked Example — Trace a complete dataset</h3>
+<div class="code">Marks = [45, 50, 72, 0, 100, 49, 80, 65]</div>
+<table><tr><th>Measure</th><th>Expected result</th></tr><tr><td>Total</td><td>461</td></tr><tr><td>Average</td><td>57.625</td></tr><tr><td>Highest</td><td>100</td></tr><tr><td>Passes</td><td>5</td></tr></table>
+<div class="callout">The values 49 and 50 are especially useful because they test the pass boundary.</div>
+</div>
+
+<div class="card"><h3>8 · Debugging workout</h3>
+<div class="code">FUNCTION CountPasses(A, Count)<br>
+&nbsp;&nbsp;Passes ← 1<br>
+&nbsp;&nbsp;FOR I ← 1 TO Count<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IF A[I] &gt;= 50 THEN<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passes ← Passes + 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ENDIF<br>
+&nbsp;&nbsp;NEXT I<br>
+&nbsp;&nbsp;RETURN Passes<br>
+ENDFUNCTION</div>
+<p>What is the likely fault?</p>
+<button onclick="showT25('a2')">Reveal</button>
+<div class="answer" id="a2">The counter should begin at <b>0</b>, not 1. Starting at 1 adds an extra pass to every result.</div>
+</div>
+
+<div class="card"><h3>9 · Interactive check</h3>
+<p>For the dataset 45, 50, 72, 0, 100, 49, 80, 65, how many passes are there?</p>
+<button class="option" onclick="checkT25(this,true,'q3')">5</button>
+<button class="option" onclick="checkT25(this,false,'q3')">4</button>
+<div class="score" id="q3"></div>
+</div>
+
+<div class="card"><h3>10 · Challenge — Improve the design</h3>
+<div class="workout">Suggest one reason why <b>CountPasses</b> is better as a separate function than placing its entire loop in the main program.</div>
+<button onclick="showT25('a3')">Show possible answer</button>
+<div class="answer" id="a3">It gives the task one clear responsibility, makes the main program easier to read, allows the function to be tested independently and makes the calculation reusable.</div>
+</div>
+
+<div class="card"><h3>11 · Test the integrated solution</h3>
+<table><tr><th>Test</th><th>Purpose</th></tr>
+<tr><td>50</td><td>Pass boundary</td></tr>
+<tr><td>49</td><td>Just below pass boundary</td></tr>
+<tr><td>0</td><td>Lower input boundary</td></tr>
+<tr><td>100</td><td>Upper input boundary</td></tr>
+<tr><td>-1</td><td>Invalid low input</td></tr>
+<tr><td>101</td><td>Invalid high input</td></tr>
+<tr><td>All 50s</td><td>Average/pass consistency</td></tr></table>
+</div>
+
+<div class="card"><h3>12 · Think like an examiner</h3>
+<p>A program gives the correct average but the wrong number of passes. What should you do first?</p>
+<button class="option" onclick="checkT25(this,true,'q4')">Trace and test the pass-counting module separately.</button>
+<button class="option" onclick="checkT25(this,false,'q4')">Rewrite the entire program immediately.</button>
+<div class="score" id="q4"></div>
+</div>
+
+<div class="card"><h3>13 · Mini exam question</h3>
+<p>Explain two benefits of decomposing a programming problem into subroutines.</p>
+<button onclick="showT25('a4')">Show model answer</button>
+<div class="answer" id="a4">Any two: <b>simpler main program/readability</b>; <b>individual modules can be tested and debugged separately</b>; <b>code can be reused</b>; <b>each module has a clear responsibility</b>; <b>changes can be made to one part with less impact on others</b>.</div>
+</div>
+
+<div class="card"><h3>14 · Final practical challenge</h3>
+<div class="workout">Create your own small program using at least <b>one array, one loop, one validation check, one function and one systematic test table</b>. Before coding, write the specification in one paragraph.</div>
+<button onclick="showT25('a5')">Use this checklist</button>
+<div class="answer" id="a5"><ol><li>State the problem.</li><li>List inputs and outputs.</li><li>Identify the data structure.</li><li>Choose subroutines.</li><li>Add validation.</li><li>Write the algorithm.</li><li>Test normal, boundary and invalid cases.</li><li>Debug and refine.</li></ol></div>
+</div>
+
+<div class="card"><h3>15 · Common mistakes</h3><ul><li>Coding before understanding the specification.</li><li>Putting every task into one huge algorithm.</li><li>Forgetting to initialise counters and accumulators.</li><li>Validating some inputs but not others.</li><li>Testing only one successful case.</li><li>Changing working code without first identifying the fault.</li><li>Failing to test module outputs independently.</li></ul></div>
+
+<div class="card"><h3>16 · Self-assessment</h3><p>Can you take a programming specification, decompose it, build a modular solution, validate inputs and test the finished algorithm systematically?</p>
+<button onclick="confidenceT25('ready')">🟢 Yes</button><button onclick="confidenceT25('practice')">🟡 More workouts</button><button onclick="confidenceT25('revise')">🔴 Need revision</button>
+<div class="score" id="confidence"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Practical Studio 1 · Period 25 · Integrated algorithm design and testing.</div>
+</div>
+</section>
+</main>
+
+<script>
+function checkT25(btn,c,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(c?'correct':'wrong');
+ const m={
+ q1:c?'✓ Correct — understand and plan the specification before implementation.':'✗ Good solutions begin by understanding and planning the requirement.',
+ q2:c?'✓ Correct — 101 is outside the valid range 0–100.':'✗ 100 is a valid upper-boundary value.',
+ q3:c?'✓ Correct — 50, 72, 100, 80 and 65 are passes.':'✗ Count the values that are at least 50.',
+ q4:c?'✓ Correct — isolate the faulty module and test it systematically.':'✗ First locate the faulty component rather than rewriting everything.'
+ };
+ document.getElementById(id).textContent=m[id];
+}
+function showT25(id){document.getElementById(id).style.display='block'}
+function confidenceT25(v){
+ const t={
+ ready:'Excellent — you are bringing the practical skills together into complete solutions.',
+ practice:'Good. Keep building small integrated programs and testing every important boundary.',
+ revise:'Remember: understand → plan → decompose → build → test → refine.'
+ };
+ document.getElementById('confidence').textContent=t[v];
+}
+</script>
+</body>
+</html>

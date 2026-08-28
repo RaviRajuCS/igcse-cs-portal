@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 12</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--blue2:#12477f;--glass:rgba(255,255,255,.72);--shadow:0 12px 30px rgba(8,43,89,.16)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(255,255,255,.34);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.55)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0 0;font-size:13px;font-weight:600}.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:700;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}.panehead{padding:15px 20px;background:rgba(8,43,89,.95);color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:rgba(255,253,245,.88);border:1px solid rgba(8,43,89,.13);border-radius:16px;padding:16px;margin-bottom:15px}.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:rgba(255,255,255,.58);border-radius:16px;margin:15px 0}.node{padding:13px 15px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:25px;font-weight:900}.key{padding:10px 14px;border-radius:12px;background:var(--gold2);font-weight:900}.lock{font-size:32px}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div><h1>IGCSE Computer Science 0984</h1><p>Topic 2 — Data Transmission · Period 12</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>My teaching route</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Lesson overview</span><h3>Period 12 · Symmetric Encryption</h3>
+<p><b>Topic 2 · Data Transmission:</b> Students develop the encryption concepts from Period 11 by learning how <b>symmetric encryption</b> uses the same secret key to encrypt and decrypt data.</p>
+<div class="callout"><b>Success criteria:</b> Students can define symmetric encryption, explain the role of the shared secret key, trace the encryption/decryption process, and state important advantages and limitations.</div>
+<p><b>Prior learning:</b> Period 11 — plaintext, ciphertext, encryption, decryption and keys.</p>
+<p><b>Key vocabulary:</b> symmetric encryption, shared key, secret key, plaintext, ciphertext, encryption, decryption.</p></div>
+
+<div class="card"><span class="time">My teaching route</span><h3>Make the shared key the centre of the lesson</h3>
+<ol><li>Retrieve plaintext, ciphertext and key.</li><li>Introduce the idea of one shared secret key.</li><li>Trace sender encryption.</li><li>Trace receiver decryption using the same key.</li><li>Discuss how the key must remain secret.</li><li>Evaluate strengths and limitations.</li><li>Contrast with the basic idea of asymmetric encryption as a preview.</li></ol>
+<div class="callout"><b>Memory rule:</b> Symmetric = <b>same shared secret key</b> for encryption and decryption.</div></div>
+
+<div class="card"><span class="time">0–7 min · Retrieval</span><h3>Four words from Period 11</h3>
+<ul><li>What is plaintext?</li><li>What is ciphertext?</li><li>What does encryption do?</li><li>What does decryption do?</li></ul>
+<div class="callout"><b>Bridge:</b> We know a key is involved. Today we ask: <b>How can the sender and receiver use a shared secret key?</b></div></div>
+
+<div class="card"><span class="time">7–16 min · Teach</span><h3>What is symmetric encryption?</h3>
+<p><b>Symmetric encryption</b> is an encryption method in which the <b>same secret key</b> is used by the sender and receiver for the encryption and decryption processes.</p>
+<div class="flow"><div class="node">PLAINTEXT</div><div class="arrow">→</div><div class="key">SECRET KEY 🔑<br>ENCRYPT</div><div class="arrow">→</div><div class="node">CIPHERTEXT</div><div class="arrow">→</div><div class="key">SAME KEY 🔑<br>DECRYPT</div><div class="arrow">→</div><div class="node">PLAINTEXT</div></div>
+<div class="callout"><b>Core idea:</b> Both sides need access to the same secret key.</div></div>
+
+<div class="card"><span class="time">16–25 min · Guided example</span><h3>Trace the process</h3>
+<ol><li>The sender starts with readable <b>plaintext</b>.</li><li>The sender uses the shared secret key to encrypt it.</li><li>The resulting <b>ciphertext</b> is transmitted.</li><li>The receiver uses the same shared secret key to decrypt the ciphertext.</li><li>The receiver obtains the original plaintext.</li></ol>
+<div class="callout"><b>Important:</b> The message can be safely transmitted in encrypted form, but the shared key itself must be protected.</div></div>
+
+<div class="card"><span class="time">25–33 min · Demonstrate</span><h3>A classroom analogy</h3>
+<p>Imagine the sender puts a message into a special locked box. The sender locks it with a key. The receiver needs the <b>same key</b> to unlock the box.</p>
+<div class="flow"><div class="node">Message</div><div class="arrow">→</div><div class="lock">🔒</div><div class="arrow">→</div><div class="node">Locked message</div><div class="arrow">→</div><div class="lock">🔑</div><div class="arrow">→</div><div class="node">Message</div></div>
+<div class="callout"><b>Analogy:</b> One shared key is convenient — but securely getting that key to the receiver is an important challenge.</div></div>
+
+<div class="card"><span class="time">33–39 min · Evaluate</span><h3>Advantages and limitations</h3>
+<table><tr><th>Advantages</th><th>Limitations</th></tr><tr><td>Generally efficient for encrypting large amounts of data.</td><td>The secret key must be securely shared with the receiver.</td></tr><tr><td>Only the intended parties who know the key can use it for the corresponding operation.</td><td>If the secret key is exposed, the security of the encrypted data can be compromised.</td></tr><tr><td>Simple concept: one shared secret key.</td><td>Managing many different shared keys can become difficult in large systems.</td></tr></table></div>
+
+<div class="card"><span class="time">39–44 min · Compare</span><h3>Symmetric vs asymmetric — first look</h3>
+<table><tr><th>Symmetric</th><th>Asymmetric</th></tr><tr><td>Uses the same shared secret key for encryption/decryption.</td><td>Uses a pair of related keys.</td></tr><tr><td>Key sharing is an important challenge.</td><td>Designed to avoid the need to share a private key publicly.</td></tr><tr><td>Efficient for large amounts of data.</td><td>Useful for secure key exchange and other security tasks.</td></tr></table>
+<div class="callout"><b>Preview only:</b> Asymmetric encryption will be studied separately. Do not mix the two key models.</div></div>
+
+<div class="card"><span class="time">44–48 min · Assessment</span><h3>Cambridge-style questions</h3>
+<ol><li>Define symmetric encryption.</li><li>State what key is used for decryption in symmetric encryption.</li><li>Explain why the secret key must be protected.</li><li>Describe the process of symmetric encryption from sender to receiver.</li><li>State one advantage and one limitation of symmetric encryption.</li></ol>
+<div class="callout"><b>Marking focus:</b> The phrase <b>same secret/shared key</b> is central to the definition.</div></div>
+
+<div class="card"><span class="time">48–50 min · Exit ticket</span><h3>One sentence mastery</h3>
+<div class="callout"><b>Symmetric encryption:</b> the same secret key is used to encrypt and decrypt the data.</div>
+<div class="callout"><b>Big limitation:</b> the shared secret key must be securely distributed and kept secret.</div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br><b>Planning note:</b> Period 12 develops encryption through symmetric encryption and introduces the shared-secret-key model.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Recall</span><span>2. Shared key</span><span>3. Encrypt</span><span>4. Decrypt</span><span>5. Evaluate</span><span>6. Test</span></div><p>Today you will learn the key idea behind <b>symmetric encryption</b>: the same secret key is used by both sides.</p></div>
+
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Define symmetric encryption.</li><li>Explain the shared secret key.</li><li>Trace encryption and decryption.</li><li>Explain why the key must remain secret.</li><li>State advantages and limitations.</li><li>Recognise the basic difference from asymmetric encryption.</li></ul></div>
+
+<div class="card"><h3>1 · What does “symmetric” mean?</h3><div class="callout"><b>Same key → encryption + decryption.</b></div><p>In symmetric encryption, the sender and receiver share a secret key. The sender uses it to encrypt the data, and the receiver uses the same key to decrypt it.</p></div>
+
+<div class="card"><h3>2 · Follow the data</h3><div class="flow"><div class="node">PLAINTEXT</div><div class="arrow">→</div><div class="key">KEY 🔑<br>ENCRYPT</div><div class="arrow">→</div><div class="node">CIPHERTEXT</div><div class="arrow">→</div><div class="key">SAME KEY 🔑<br>DECRYPT</div><div class="arrow">→</div><div class="node">PLAINTEXT</div></div></div>
+
+<div class="card"><h3>3 · Why must the key be secret?</h3><p>If an unauthorised person obtains the secret key, they may be able to decrypt data protected with that key.</p><div class="callout"><b>Security rule:</b> Protect the key, not just the ciphertext.</div></div>
+
+<div class="card"><h3>4 · Interactive check</h3>
+<p>Which key is used to decrypt in symmetric encryption?</p><button class="option" onclick="checkP12(this,true,'q1p12')">The same shared secret key</button><button class="option" onclick="checkP12(this,false,'q1p12')">A completely unrelated key</button><div class="score" id="q1p12"></div>
+<p style="margin-top:15px">What is the main security challenge?</p><button class="option" onclick="checkP12(this,true,'q2p12')">Keeping the shared key secret and distributing it securely</button><button class="option" onclick="checkP12(this,false,'q2p12')">Making plaintext readable</button><div class="score" id="q2p12"></div></div>
+
+<div class="card"><h3>5 · Step-by-step example</h3><ol><li><b>Original:</b> “MEET AT 5” is plaintext.</li><li><b>Encrypt:</b> the sender uses the secret key.</li><li><b>Transmit:</b> ciphertext travels across the network.</li><li><b>Decrypt:</b> the receiver uses the same secret key.</li><li><b>Recover:</b> “MEET AT 5” is obtained again.</li></ol><div class="callout"><b>Notice:</b> The key is shared between the authorised parties; it is not the same thing as the message.</div></div>
+
+<div class="card"><h3>6 · Strengths</h3><ul><li>Efficient for encrypting large amounts of data.</li><li>Uses a straightforward shared-key model.</li><li>Can provide strong confidentiality when the key is kept secure.</li></ul></div>
+
+<div class="card"><h3>7 · Limitations</h3><ul><li>The sender and receiver must somehow obtain the same secret key securely.</li><li>If the key is exposed, protected data may be compromised.</li><li>Large systems may need to manage many shared keys between different parties.</li></ul></div>
+
+<div class="card"><h3>8 · First look at asymmetric encryption</h3><p>Asymmetric encryption uses a <b>pair of related keys</b> rather than one shared secret key.</p><table><tr><th>Symmetric</th><th>Asymmetric</th></tr><tr><td>Same shared secret key.</td><td>Pair of related keys.</td></tr><tr><td>Secure key sharing is a major challenge.</td><td>Public/private key model can help with key distribution.</td></tr></table><div class="callout"><b>Remember:</b> We are only previewing asymmetric encryption today.</div></div>
+
+<div class="card"><h3>9 · Exam practice</h3><p><b>Question:</b> Explain why symmetric encryption requires the sender and receiver to keep a key secret.</p><button onclick="showP12('examP12')">Show model answer</button><div class="answer" id="examP12">The same secret key is used for encryption and decryption. If an unauthorised person obtains the key, they may be able to decrypt the protected data. Therefore the key must be kept secret.</div></div>
+
+<div class="card"><h3>10 · Challenge</h3><p>Why can sharing a secret key securely become difficult when many people need to communicate?</p><button onclick="showP12('challengeP12')">Show answer</button><div class="answer" id="challengeP12">Each communicating pair may need a securely shared key. As the number of users grows, managing and protecting many keys becomes increasingly difficult.</div></div>
+
+<div class="card"><h3>11 · Common mistakes</h3><ul><li>Thinking symmetric means the plaintext and ciphertext are the same.</li><li>Forgetting that the same shared secret key is used.</li><li>Calling the key the plaintext or ciphertext.</li><li>Thinking encryption itself guarantees that the key is secure.</li><li>Confusing symmetric encryption with the public/private key model.</li></ul></div>
+
+<div class="card"><h3>12 · Self-assessment</h3><p>Choose your confidence:</p><button onclick="confidenceP12('confident')">🟢 I can explain symmetric encryption</button><button onclick="confidenceP12('okay')">🟡 I need more practice</button><button onclick="confidenceP12('need')">🔴 I need help</button><div class="score" id="confidenceP12"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Symmetric encryption · Shared key · Plaintext · Ciphertext · Encryption · Decryption.</div>
+</div>
+</section>
+</main>
+
+<script>
+function checkP12(btn,c,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');const m={q1p12:c?'✓ Correct — symmetric encryption uses the same shared secret key.':'✗ Not quite — remember the word “same”.',q2p12:c?'✓ Correct — secure key distribution and secrecy are essential.':'✗ Not quite — think about what happens if someone obtains the key.'};document.getElementById(id).textContent=m[id]}
+function showP12(id){document.getElementById(id).style.display='block'}
+function confidenceP12(v){const t={confident:'Excellent — you understand the shared-key model.',okay:'Good. Repeat: same secret key → encrypt and decrypt.',need:'That is useful information. Revisit the flow diagram and key-security explanation.'};document.getElementById('confidenceP12').textContent=t[v]}
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 3 | Period 14</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--glass:rgba(255,255,255,.76)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#ffffff55;backdrop-filter:blur(12px);border-bottom:1px solid #fff9}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0;font-size:13px;font-weight:600}
+.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}
+.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:800;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid #fff9;border-radius:22px;box-shadow:0 12px 30px #082b5928;overflow:hidden;display:flex;flex-direction:column}
+.panehead{padding:15px 20px;background:#082b59f5;color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:#fffdf5eb;border:1px solid #082b5922;border-radius:16px;padding:16px;margin-bottom:15px}.card h3{margin:0 0 9px;font-size:17px}
+p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}
+.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.box{padding:13px;border-radius:13px;background:#f7f2df;border:1px solid #d9c98f}.box b{display:block;margin-bottom:5px}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#ffffff95;border-radius:16px;margin:15px 0}.node{padding:13px 15px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:25px;font-weight:900}.tag{padding:10px 13px;border-radius:12px;background:var(--gold2);font-weight:900}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}
+.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div><h1>IGCSE Computer Science 0984</h1><p>Topic 3 — Hardware · Period 14</p></div><div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div></header>
+<main class="layout">
+<section class="pane"><div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>Routers · destination · IP allocation · Internet connection</small></div><div class="content">
+<div class="card"><span class="time">Lesson overview</span><h3>Period 14 · Routers</h3>
+<p>This lesson completes the specified <b>router</b> outcomes in 3.4 Network hardware. Students learn the three key functions required by Cambridge: how a router sends data to a specific destination, how it assigns IP addresses to devices on a network, and how it connects a local network to the Internet.</p>
+<div class="callout"><b>Success criteria:</b> Students can explain the role of a router, describe routing data towards a destination using IP information, explain IP address assignment to devices on a local network, and explain how a router connects a local network to the Internet.</div>
+<p>The Cambridge 0984 2026–2028 syllabus requires candidates to understand routers in these three contexts: sending data to a specific destination, assigning IP addresses, and connecting a local network to the Internet.</p></div>
+<div class="card"><span class="time">My teaching route</span><h3>From device → LAN → Internet</h3>
+<ol><li>Retrieve NIC, MAC and IP addresses.</li><li>Introduce the router as a network device that forwards data towards its destination.</li><li>Explain that a router can assign IP addresses to devices on a local network.</li><li>Show the router as the connection point between a LAN and the Internet.</li><li>Trace a simple packet journey.</li><li>Apply the three router functions to scenarios.</li></ol>
+<div class="callout"><b>Core distinction:</b> A <b>router</b> connects networks and forwards data between them. A <b>switch</b>, covered later, primarily connects devices within a LAN.</div></div>
+<div class="card"><span class="time">0–7 min · Retrieval</span><h3>Where does the router fit?</h3>
+<div class="flow"><div class="node">DEVICE</div><div class="arrow">→</div><div class="tag">LAN</div><div class="arrow">→</div><div class="node">ROUTER</div><div class="arrow">→</div><div class="tag">INTERNET</div></div>
+<p>Ask: <b>What device can connect a local network to the Internet?</b></p><div class="callout">The router provides the connection between the local network and other networks, including the Internet.</div></div>
+<div class="card"><span class="time">7–18 min · Teach</span><h3>1 · What is a router?</h3>
+<p>A <b>router</b> is a network device that connects different networks and forwards data towards its destination.</p>
+<div class="grid"><div class="box"><b>Connects networks</b>It can connect a local network to other networks.</div><div class="box"><b>Forwards data</b>It determines where network data should be sent next.</div><div class="box"><b>Uses IP information</b>Destination addressing helps the router decide where data should go.</div><div class="box"><b>Can assign IP addresses</b>On a local network, a router can automatically assign IP addresses to devices.</div></div></div>
+<div class="card"><span class="time">18–30 min · Teach</span><h3>2 · Sending data to a specific destination</h3>
+<p>When a device sends data to another network, the router examines the destination information and forwards the data towards the appropriate network.</p>
+<div class="flow"><div class="node">SOURCE</div><div class="arrow">→</div><div class="tag">ROUTER</div><div class="arrow">→</div><div class="tag">NEXT NETWORK</div><div class="arrow">→</div><div class="node">DESTINATION</div></div>
+<div class="callout"><b>Exam focus:</b> The router's job is not simply “to send data”. Explain that it <b>forwards data towards a specific destination</b>, using network addressing information.</div></div>
+<div class="card"><span class="time">30–39 min · Teach</span><h3>3 · Assigning IP addresses</h3>
+<p>A router can act as a <b>DHCP server</b> on a local network and automatically assign IP addresses to devices.</p>
+<div class="flow"><div class="node">ROUTER</div><div class="arrow">→</div><div class="tag">IP ADDRESS</div><div class="arrow">→</div><div class="node">DEVICE</div></div>
+<p>For example, a laptop joining the home LAN may receive an address such as <b>192.168.1.25</b>. Another device may receive a different address.</p>
+<div class="callout"><b>Important:</b> The router does not manufacture the device's MAC address. The MAC address belongs to the network interface; the IP address can be allocated by the network.</div></div>
+<div class="card"><span class="time">39–46 min · Teach</span><h3>4 · Connecting a LAN to the Internet</h3>
+<div class="flow"><div class="node">PC</div><div class="arrow">→</div><div class="tag">LOCAL NETWORK</div><div class="arrow">→</div><div class="node">ROUTER</div><div class="arrow">→</div><div class="tag">ISP / INTERNET</div><div class="arrow">→</div><div class="node">REMOTE NETWORK</div></div>
+<p>The router forms the gateway between the local network and external networks. It forwards traffic between the LAN and the Internet.</p></div>
+<div class="card"><span class="time">46–48 min · Compare</span><h3>5 · Router vs NIC</h3>
+<table><tr><th>NIC</th><th>Router</th></tr><tr><td>Provides a network interface for a computer/device.</td><td>Connects networks and forwards data.</td></tr><tr><td>Has an associated MAC address.</td><td>Can assign IP addresses on a local network.</td></tr><tr><td>Allows a device to access a network.</td><td>Can connect a LAN to the Internet.</td></tr></table></div>
+<div class="card"><span class="time">48–50 min · Exit ticket</span><h3>Five quick checks</h3>
+<ol><li>What is a router?</li><li>How does a router help data reach a destination?</li><li>How can a router assign IP addresses?</li><li>What does LAN stand for?</li><li>How can a router connect a LAN to the Internet?</li></ol>
+<div class="callout"><b>Answers:</b> network device connecting networks/forwarding data · uses destination network information · DHCP · Local Area Network · acts as the gateway between LAN and Internet.</div></div>
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 3 · Hardware · Period 14 · Routers.</div>
+</div></section>
+<section class="pane"><div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div><div class="content">
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Router</span><span>2. Destination</span><span>3. IP allocation</span><span>4. Internet</span><span>5. Test</span></div><p>Today you will learn the three important jobs of a router.</p></div>
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Explain what a router does.</li><li>Explain how it sends data towards a specific destination.</li><li>Explain how it can assign IP addresses.</li><li>Explain how it connects a LAN to the Internet.</li><li>Distinguish router functions from NIC functions.</li></ul></div>
+<div class="card"><h3>1 · The router as a gateway</h3>
+<div class="flow"><div class="node">YOUR COMPUTER</div><div class="arrow">→</div><div class="tag">HOME / SCHOOL LAN</div><div class="arrow">→</div><div class="node">ROUTER</div><div class="arrow">→</div><div class="tag">INTERNET</div></div>
+<p>Think of the router as the <b>gateway</b> between your local network and other networks.</p></div>
+<div class="card"><h3>2 · Interactive router check</h3><p>Which is a key function of a router?</p>
+<button class="option" onclick="checkP14(this,true,'q1p14')">Forward data towards its destination.</button>
+<button class="option" onclick="checkP14(this,false,'q1p14')">Store every file permanently for the user.</button><div class="score" id="q1p14"></div></div>
+<div class="card"><h3>3 · Following a data journey</h3><p>Suppose your laptop sends data to a server on another network.</p>
+<div class="flow"><div class="node">LAPTOP</div><div class="arrow">→</div><div class="tag">LOCAL ROUTER</div><div class="arrow">→</div><div class="tag">OTHER NETWORKS</div><div class="arrow">→</div><div class="node">SERVER</div></div>
+<p>The router receives the data and uses destination network information to determine where to forward it next.</p>
+<div class="callout"><b>Remember:</b> A router does not magically know the entire journey. It forwards traffic according to routing information available to it.</div></div>
+<div class="card"><h3>4 · Interactive destination check</h3><p>What information is especially important when a router decides where to forward IP data?</p>
+<button class="option" onclick="checkP14(this,true,'q2p14')">The destination IP/network address.</button>
+<button class="option" onclick="checkP14(this,false,'q2p14')">The file's font style.</button><div class="score" id="q2p14"></div></div>
+<div class="card"><h3>5 · Router and IP allocation</h3>
+<p>On many local networks, the router provides <b>DHCP</b> and automatically assigns IP addresses.</p>
+<div class="flow"><div class="node">DEVICE JOINS LAN</div><div class="arrow">→</div><div class="tag">ROUTER / DHCP</div><div class="arrow">→</div><div class="node">IP ADDRESS</div></div>
+<p>For example, a device may receive <b>192.168.1.25</b>. Another device can receive another available address.</p></div>
+<div class="card"><h3>6 · Interactive IP allocation check</h3><p>Which device can automatically assign IP addresses to devices on a local network?</p>
+<button class="option" onclick="checkP14(this,true,'q3p14')">A router acting as a DHCP server.</button>
+<button class="option" onclick="checkP14(this,false,'q3p14')">A monitor.</button><div class="score" id="q3p14"></div></div>
+<div class="card"><h3>7 · Router and Internet connection</h3>
+<div class="flow"><div class="tag">LAN</div><div class="arrow">↔</div><div class="node">ROUTER</div><div class="arrow">↔</div><div class="tag">ISP / INTERNET</div></div>
+<p>The router can provide the connection between devices on the local network and external networks.</p></div>
+<div class="card"><h3>8 · Three functions challenge</h3><p>Match each statement to the router function.</p>
+<table><tr><th>Statement</th><th>Function</th></tr><tr><td>Chooses where network data should be forwarded.</td><td>Destination / routing</td></tr><tr><td>Automatically gives a device an IP address.</td><td>IP allocation / DHCP</td></tr><tr><td>Provides a gateway between a LAN and the Internet.</td><td>Internet connection</td></tr></table></div>
+<div class="card"><h3>9 · Scenario challenge</h3>
+<p>A new tablet joins a school wireless LAN. It receives an IP address automatically, and later its data is sent to a server outside the school network. Explain two router functions involved.</p>
+<button onclick="showP14('a1p14')">Show model answer</button><div class="answer" id="a1p14">The router can assign the tablet an IP address using DHCP, and it can forward the tablet's data towards the destination server on another network.</div>
+</div>
+<div class="card"><h3>10 · Exam practice</h3>
+<p><b>Question:</b> Explain how a router sends data to a specific destination.</p>
+<button onclick="showP14('a2p14')">Show model answer</button><div class="answer" id="a2p14">The router examines destination network/address information and forwards the data towards the appropriate network or next destination.</div>
+<p><b>Question:</b> Explain how a router can assign IP addresses.</p>
+<button onclick="showP14('a3p14')">Show model answer</button><div class="answer" id="a3p14">The router can act as a DHCP server and automatically allocate IP addresses to devices joining the local network.</div>
+<p><b>Question:</b> Explain how a router connects a local network to the Internet.</p>
+<button onclick="showP14('a4p14')">Show model answer</button><div class="answer" id="a4p14">The router acts as a gateway between the local network and external networks, forwarding traffic between the LAN and the Internet.</div>
+</div>
+<div class="card"><h3>11 · MAC, IP, NIC and router</h3>
+<table><tr><th>Term</th><th>Remember</th></tr><tr><td>NIC</td><td>Network interface hardware.</td></tr><tr><td>MAC</td><td>Address associated with the network interface.</td></tr><tr><td>IP</td><td>Network address allocated by the network.</td></tr><tr><td>Router</td><td>Connects networks, forwards data and can assign IP addresses.</td></tr></table></div>
+<div class="card"><h3>12 · Common exam mistakes</h3><ul><li>Saying a router is the same as a NIC.</li><li>Saying the router manufactures a MAC address.</li><li>Explaining routing as simply “sending data” without mentioning its destination.</li><li>Forgetting that a router can assign IP addresses on a local network.</li><li>Forgetting the router's role as a gateway between a LAN and the Internet.</li></ul></div>
+<div class="card"><h3>13 · Self-assessment</h3><p>How confident are you with routers?</p><button onclick="confidenceP14('ready')">🟢 I understand</button><button onclick="confidenceP14('practice')">🟡 I need practice</button><button onclick="confidenceP14('revise')">🔴 I need revision</button><div class="score" id="confidenceP14"></div></div>
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Router · Routing · DHCP · IP allocation · LAN · Internet.</div>
+</div></section>
+</main>
+<script>
+function checkP14(btn,c,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');const m={q1p14:c?'✓ Correct — forwarding data towards its destination is a key router function.':'✗ Not quite — permanent file storage is not the router's role.',q2p14:c?'✓ Correct — destination IP/network information helps determine where data should be forwarded.':'✗ Not quite — routing decisions are based on network addressing information.',q3p14:c?'✓ Correct — a router can act as a DHCP server and assign IP addresses.':'✗ Not quite — a monitor cannot assign network IP addresses.'};document.getElementById(id).textContent=m[id]}
+function showP14(id){document.getElementById(id).style.display='block'}
+function confidenceP14(v){const t={ready:'Excellent — you can explain all three required router functions.',practice:'Good. Rehearse: router = forwards data to destination + can assign IP addresses + connects LAN to Internet.',revise:'Revisit the three-function table and the MAC/NIC/IP/router comparison.'};document.getElementById('confidenceP14').textContent=t[v]}
+</script>
+</body>
+</html>

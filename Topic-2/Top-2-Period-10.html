@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 10</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--blue2:#12477f;--glass:rgba(255,255,255,.72);--shadow:0 12px 30px rgba(8,43,89,.16)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(255,255,255,.34);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.55)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0 0;font-size:13px;font-weight:600}.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:700;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}.panehead{padding:15px 20px;background:rgba(8,43,89,.95);color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:rgba(255,253,245,.88);border:1px solid rgba(8,43,89,.13);border-radius:16px;padding:16px;margin-bottom:15px}.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:rgba(255,255,255,.58);border-radius:16px;margin:15px 0}.node{padding:13px 15px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:25px;font-weight:900}.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.method{padding:14px;border-radius:14px;background:rgba(255,255,255,.65);border:1px solid #d2dbe5}.method b{display:block;color:var(--blue2);font-size:16px;margin-bottom:5px}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}.method-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div><h1>IGCSE Computer Science 0984</h1><p>Topic 2 — Data Transmission · Period 10</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>My teaching route</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Lesson overview</span><h3>Period 10 · Choosing an Error Detection Method</h3>
+<p><b>Topic 2 · Data Transmission:</b> Students consolidate parity checks, checksums and echo checks, then choose an appropriate method for different situations.</p>
+<div class="callout"><b>Success criteria:</b> Students can describe the three methods, compare their operation and limitations, and justify a suitable error-detection method for a scenario.</div>
+<p><b>Prior learning:</b> Periods 6–9 — transmission errors, parity, checksum and echo check.</p>
+<p><b>Key vocabulary:</b> parity check, checksum, echo check, error detection, comparison, suitability, limitation, scenario.</p></div>
+
+<div class="card"><span class="time">My teaching route</span><h3>From remembering to choosing</h3>
+<ol><li>Rapid retrieval of the three methods.</li><li>Build a one-page comparison.</li><li>Use short scenarios to select a method.</li><li>Require a reason, not just a method name.</li><li>Address common exam traps.</li><li>Finish with a mixed Cambridge-style assessment.</li></ol>
+<div class="callout"><b>Teaching principle:</b> “Suitable” questions require a <b>method + reason</b>. Students must link the method's operation to the scenario.</div></div>
+
+<div class="card"><span class="time">0–7 min · Retrieval</span><h3>Three methods in three phrases</h3>
+<div class="method-grid"><div class="method"><b>Parity</b>Count the 1s.</div><div class="method"><b>Checksum</b>Calculate a checking value.</div><div class="method"><b>Echo check</b>Return and compare.</div></div>
+<div class="callout"><b>Challenge:</b> Explain each phrase in a complete sentence.</div></div>
+
+<div class="card"><span class="time">7–15 min · Compare</span><h3>The complete comparison</h3>
+<table><tr><th>Method</th><th>How it works</th><th>Main limitation</th></tr><tr><td><b>Parity check</b></td><td>Uses a parity bit and checks the number of 1s.</td><td>Some multiple-bit errors can remain undetected.</td></tr><tr><td><b>Checksum</b></td><td>Calculates a value from the data and compares it at the receiver.</td><td>A matching value does not guarantee every possible error is detected.</td></tr><tr><td><b>Echo check</b></td><td>Sends received data back for comparison with the original.</td><td>Requires additional transmission and communication resources.</td></tr></table></div>
+
+<div class="card"><span class="time">15–24 min · Scenario practice</span><h3>Choose and justify</h3>
+<p><b>Scenario A:</b> A simple system needs a basic check of a small group of binary bits.</p><div class="callout"><b>Suggested:</b> Parity check — it is simple and checks the number of 1s.</div>
+<p><b>Scenario B:</b> A system wants to calculate a checking value from a group of data.</p><div class="callout"><b>Suggested:</b> Checksum — a value can be calculated and compared at the receiver.</div>
+<p><b>Scenario C:</b> A system can return the received data and directly compare it with the original.</p><div class="callout"><b>Suggested:</b> Echo check — the received data is returned for direct comparison.</div></div>
+
+<div class="card"><span class="time">24–33 min · Interactive</span><h3>Method selector</h3>
+<div id="sc1"><p><b>1.</b> A binary transmission system wants a simple check based on the number of 1s.</p><button class="option" onclick="pick(this,true,'sc1','✓ Correct — parity uses the number of 1s.')">Parity check</button><button class="option" onclick="pick(this,false,'sc1','✗ Think about which method counts 1s.')">Checksum</button><button class="option" onclick="pick(this,false,'sc1','✗ Think about which method counts 1s.')">Echo check</button><div class="score"></div></div>
+<div id="sc2"><p><b>2.</b> A system needs to compare a calculated value at the receiving end.</p><button class="option" onclick="pick(this,false,'sc2','✗ Which method calculates a checking value?')">Parity check</button><button class="option" onclick="pick(this,true,'sc2','✓ Correct — checksum uses a calculated checking value.')">Checksum</button><button class="option" onclick="pick(this,false,'sc2','✗ Echo check returns the received data.')">Echo check</button><div class="score"></div></div>
+<div id="sc3"><p><b>3.</b> The receiver can send the received data back to the sender.</p><button class="option" onclick="pick(this,false,'sc3','✗ This scenario describes returning data.')">Parity check</button><button class="option" onclick="pick(this,false,'sc3','✗ This scenario describes returning data.')">Checksum</button><button class="option" onclick="pick(this,true,'sc3','✓ Correct — echo check returns and compares the data.')">Echo check</button><div class="score"></div></div>
+</div>
+
+<div class="card"><span class="time">33–39 min · Exam technique</span><h3>How to justify a choice</h3>
+<div class="callout"><b>Weak:</b> “Use a checksum.”</div>
+<div class="callout"><b>Strong:</b> “Use a checksum because the system can calculate a value from the data and compare it with the checksum received.”</div>
+<p>A good justification contains:</p><ol><li>The chosen method.</li><li>How that method works.</li><li>Why that feature suits the scenario.</li></ol></div>
+
+<div class="card"><span class="time">39–44 min · Assessment</span><h3>Mixed Cambridge-style questions</h3>
+<ol><li>State the purpose of error detection.</li><li>Explain how a parity check works.</li><li>Explain how a checksum detects an error.</li><li>Describe how an echo check works.</li><li>State one limitation of parity checking.</li><li>State one limitation of an echo check.</li><li>Choose a suitable method for a scenario and justify your choice.</li></ol>
+<div class="callout"><b>Marking focus:</b> Method names alone are not enough when the question asks you to <b>explain or justify</b>.</div></div>
+
+<div class="card"><span class="time">44–48 min · Mastery challenge</span><h3>One scenario — three answers</h3>
+<p>A company sends important data between two computers. The system designer is considering parity, checksum and echo checking.</p>
+<p>Ask students to identify <b>one strength and one limitation</b> of each method, then recommend one.</p><button onclick="showP10('modelP10')">Show model discussion</button><div class="answer" id="modelP10">Parity is simple but cannot detect every possible error. A checksum checks a calculated value but is not a guarantee against every possible error. An echo check allows direct comparison but requires additional transmission. The best choice depends on the system's requirements and constraints.</div></div>
+
+<div class="card"><span class="time">48–50 min · Exit ticket</span><h3>Final three-word memory aid</h3>
+<div class="method-grid"><div class="method"><b>PARITY</b>Count.</div><div class="method"><b>CHECKSUM</b>Calculate.</div><div class="method"><b>ECHO</b>Return.</div></div>
+<div class="callout"><b>Next:</b> We now move beyond error detection to the next part of Data Transmission.</div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br><b>Planning note:</b> Period 10 consolidates parity, checksum and echo checks through comparison, scenarios and exam practice.</div>
+</div></section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Recall</span><span>2. Compare</span><span>3. Choose</span><span>4. Justify</span><span>5. Test</span><span>6. Master</span></div><p>Today you will bring the three error-detection methods together and learn how to <b>choose and justify</b> a suitable method.</p></div>
+
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Recall parity, checksum and echo check.</li><li>Compare how they operate.</li><li>State important limitations.</li><li>Select a suitable method for a scenario.</li><li>Justify your choice using technical language.</li></ul></div>
+
+<div class="card"><h3>1 · The three methods</h3><div class="method-grid"><div class="method"><b>Parity check</b>Add a parity bit and check the number of 1s.</div><div class="method"><b>Checksum</b>Calculate a value and compare it at the receiver.</div><div class="method"><b>Echo check</b>Send received data back and compare it with the original.</div></div></div>
+
+<div class="card"><h3>2 · Quick comparison</h3><table><tr><th>Question</th><th>Answer</th></tr><tr><td>Which one counts 1s?</td><td><b>Parity</b></td></tr><tr><td>Which one calculates a value?</td><td><b>Checksum</b></td></tr><tr><td>Which one returns data?</td><td><b>Echo check</b></td></tr><tr><td>Which needs extra return transmission?</td><td><b>Echo check</b></td></tr></table></div>
+
+<div class="card"><h3>3 · Interactive method selector</h3>
+<p><b>Which method?</b> The system adds one bit so the number of 1s can be checked.</p><button class="option" onclick="studentPick(this,true,'s1p10')">Parity check</button><button class="option" onclick="studentPick(this,false,'s1p10')">Checksum</button><button class="option" onclick="studentPick(this,false,'s1p10')">Echo check</button><div class="score" id="s1p10"></div>
+<p style="margin-top:15px"><b>Which method?</b> The receiver sends the data it received back to the sender.</p><button class="option" onclick="studentPick(this,false,'s2p10')">Parity check</button><button class="option" onclick="studentPick(this,false,'s2p10')">Checksum</button><button class="option" onclick="studentPick(this,true,'s2p10')">Echo check</button><div class="score" id="s2p10"></div></div>
+
+<div class="card"><h3>4 · Scenario challenge</h3><p>A small binary system needs a simple method that checks whether the number of 1s follows an agreed rule.</p><button class="option" onclick="studentPick(this,true,'s3p10')">Parity check</button><button class="option" onclick="studentPick(this,false,'s3p10')">Checksum</button><button class="option" onclick="studentPick(this,false,'s3p10')">Echo check</button><div class="score" id="s3p10"></div>
+<p style="margin-top:15px">The receiver can return the received data to the sender for comparison.</p><button class="option" onclick="studentPick(this,false,'s4p10')">Parity check</button><button class="option" onclick="studentPick(this,false,'s4p10')">Checksum</button><button class="option" onclick="studentPick(this,true,'s4p10')">Echo check</button><div class="score" id="s4p10"></div></div>
+
+<div class="card"><h3>5 · Learn to justify</h3><p>When an exam asks <b>“Which method would be suitable and why?”</b>, use this structure:</p><div class="callout"><b>Choose → Describe → Link</b><br>Choose the method → describe how it works → link that feature to the scenario.</div><p>Example: <b>“Use an echo check because the received data can be sent back to the sender for direct comparison with the original.”</b></p></div>
+
+<div class="card"><h3>6 · Strengths and limitations</h3><table><tr><th>Method</th><th>Strength</th><th>Limitation</th></tr><tr><td>Parity</td><td>Simple check.</td><td>Some errors can go undetected.</td></tr><tr><td>Checksum</td><td>Checks a group of data using a calculated value.</td><td>Not a guarantee that every error is detected.</td></tr><tr><td>Echo</td><td>Direct comparison with original.</td><td>Needs extra transmission.</td></tr></table></div>
+
+<div class="card"><h3>7 · Exam practice</h3><p><b>Question:</b> A system can send received data back to the sender. Which error-detection method would use this feature? Explain your answer.</p><button onclick="showP10('examP10')">Show model answer</button><div class="answer" id="examP10">An echo check. The receiver sends the data it received back to the sender, and the sender compares it with the original data. A difference indicates that an error has occurred.</div></div>
+
+<div class="card"><h3>8 · Mastery check</h3><p>Match the method to the action:</p><button class="option" onclick="studentPick(this,true,'masterP10')">Parity → count the 1s</button><button class="option" onclick="studentPick(this,false,'masterP10')">Parity → return the data</button><button class="option" onclick="studentPick(this,false,'masterP10')">Parity → calculate a checksum value</button><div class="score" id="masterP10"></div></div>
+
+<div class="card"><h3>9 · Common exam mistakes</h3><ul><li>Choosing a method without giving a reason.</li><li>Confusing checksum with parity.</li><li>Forgetting that echo check sends data back.</li><li>Claiming any one method detects every possible error.</li><li>Giving vague statements such as “it is better” without linking the reason to the scenario.</li></ul></div>
+
+<div class="card"><h3>10 · Self-assessment</h3><p>Choose your confidence:</p><button onclick="confidenceP10('confident')">🟢 I can choose and justify</button><button onclick="confidenceP10('okay')">🟡 I need more practice</button><button onclick="confidenceP10('need')">🔴 I need help</button><div class="score" id="confidenceP10"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Parity · Checksum · Echo Check · Comparison · Suitability.</div>
+</div></section>
+</main>
+<script>
+function pick(btn,c,id,msg){const box=document.getElementById(id);[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');box.querySelector('.score').textContent=msg}
+function studentPick(btn,c,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');const m={s1p10:c?'✓ Correct — parity uses a parity bit.':'✗ Not quite — think about the number of 1s.',s2p10:c?'✓ Correct — echo check returns received data.':'✗ Not quite — this method returns the data.',s3p10:c?'✓ Correct — parity checks the number of 1s.':'✗ Not quite — the clue is the number of 1s.',s4p10:c?'✓ Correct — the received data is returned for comparison.':'✗ Not quite — look for the return transmission.',masterP10:c?'✓ Correct — parity is based on counting 1s.':'✗ Not quite — parity checks the number of 1s.'};document.getElementById(id).textContent=m[id]}
+function showP10(id){document.getElementById(id).style.display='block'}
+function confidenceP10(v){const t={confident:'Excellent — you have consolidated the three error-detection methods.',okay:'Good. Use the Count → Calculate → Return memory aid.',need:'That is useful information. Revisit the comparison table and scenario examples.'};document.getElementById('confidenceP10').textContent=t[v]}
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 8</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--blue2:#12477f;--glass:rgba(255,255,255,.72);--shadow:0 12px 30px rgba(8,43,89,.16)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(255,255,255,.34);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.55)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0 0;font-size:13px;font-weight:600}.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:white;font-weight:700;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}.panehead{padding:15px 20px;background:rgba(8,43,89,.95);color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:rgba(255,253,245,.88);border:1px solid rgba(8,43,89,.13);border-radius:16px;padding:16px;margin-bottom:15px}.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e1;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.checksum{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin:15px 0;padding:17px;background:rgba(255,255,255,.58);border-radius:16px}.block{min-width:56px;padding:11px 8px;border-radius:9px;background:var(--gold2);text-align:center;font-weight:900}.symbol{font-size:23px;font-weight:900}.result{background:var(--blue);color:white}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div><h1>IGCSE Computer Science 0984</h1><p>Topic 2 — Data Transmission · Period 8</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>My teaching route</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Lesson overview</span><h3>Period 8 · Checksum</h3>
+<p><b>Topic 2 · Data Transmission:</b> Students learn how a checksum can be calculated from transmitted data and then compared at the receiving end to detect errors.</p>
+<div class="callout"><b>Success criteria:</b> Students can explain the purpose of a checksum, calculate a simple checksum from data blocks, compare sender and receiver values, and explain what a mismatch means.</div>
+<p><b>Prior learning:</b> Periods 6–7 — transmission errors and parity checking.</p>
+<p><b>Key vocabulary:</b> checksum, data block, calculated value, sender, receiver, compare, mismatch, error detection.</p></div>
+
+<div class="card"><span class="time">My teaching route</span><h3>From data blocks to a checking value</h3>
+<ol><li>Retrieve the purpose of error detection.</li><li>Contrast checksum with a parity bit.</li><li>Split a small data set into blocks.</li><li>Calculate a simple checksum.</li><li>Transmit the data and checksum.</li><li>Recalculate at the receiver and compare.</li><li>Discuss what a match or mismatch tells us.</li></ol>
+<div class="callout"><b>Teaching principle:</b> The checksum is a <b>value calculated from the data</b>; the receiver recalculates it and compares the values.</div></div>
+
+<div class="card"><span class="time">0–5 min · Retrieval</span><h3>Why do we need another method?</h3>
+<ul><li>What is a parity bit?</li><li>What can parity checking detect?</li><li>What is one limitation of parity checking?</li><li>Why does the receiver need evidence that data has not changed?</li></ul>
+<div class="callout"><b>Bridge:</b> A checksum gives us another way of checking a larger group of transmitted data.</div></div>
+
+<div class="card"><span class="time">5–13 min · Teach</span><h3>What is a checksum?</h3>
+<p>A <b>checksum</b> is a value calculated from a block of data. The checksum is transmitted along with the data.</p>
+<div class="checksum"><div class="block">12</div><div class="symbol">+</div><div class="block">7</div><div class="symbol">+</div><div class="block">9</div><div class="symbol">=</div><div class="block result">28</div></div>
+<p>The receiver performs the same calculation using the received data. The newly calculated value is compared with the received checksum.</p>
+<div class="callout"><b>Core idea:</b> Same checksum → data is likely unchanged. Different checksum → an error has been detected.</div></div>
+
+<div class="card"><span class="time">13–23 min · Guided example</span><h3>Calculating a simple checksum</h3>
+<p>For this lesson, use a simple classroom example: add the values of the data blocks.</p>
+<div class="checksum"><div class="block">10</div><div class="symbol">+</div><div class="block">20</div><div class="symbol">+</div><div class="block">15</div><div class="symbol">=</div><div class="block result">45</div></div>
+<ol><li>Identify the data blocks: 10, 20 and 15.</li><li>Add them: 10 + 20 + 15 = 45.</li><li>The checksum is <b>45</b>.</li></ol>
+<div class="callout"><b>Exam caution:</b> Always follow the checksum calculation method specified in the question. Do not assume every real-world checksum uses simple addition.</div></div>
+
+<div class="card"><span class="time">23–31 min · Receiver check</span><h3>What happens if one block changes?</h3>
+<p>Suppose the sender transmitted 10, 20 and 15, giving checksum 45. During transmission, the receiver gets 10, <b>21</b> and 15.</p>
+<div class="checksum"><div class="block">10</div><div class="symbol">+</div><div class="block">21</div><div class="symbol">+</div><div class="block">15</div><div class="symbol">=</div><div class="block result">46</div></div>
+<div class="callout"><b>45 ≠ 46</b> → the checksum values do not match → an error is detected.</div></div>
+
+<div class="card"><span class="time">31–37 min · Compare</span><h3>Parity check vs checksum</h3>
+<table><tr><th>Parity check</th><th>Checksum</th></tr><tr><td>Adds a parity bit.</td><td>Calculates a value from a block/group of data.</td></tr><tr><td>Checks whether the number of 1s follows an agreed rule.</td><td>Recalculates and compares a checksum value.</td></tr><tr><td>Simple and useful for detecting certain errors.</td><td>Can provide a check across a larger group of data.</td></tr></table>
+</div>
+
+<div class="card"><span class="time">37–42 min · Critical thinking</span><h3>Does a matching checksum prove perfection?</h3>
+<p><b>No.</b> A checksum is an error-detection method, not a guarantee that every possible error has been detected.</p>
+<div class="callout">Different data can sometimes produce the same checking value, depending on the checksum method. Therefore a matching checksum means the check has passed, not that errors are mathematically impossible.</div></div>
+
+<div class="card"><span class="time">42–47 min · Assessment</span><h3>Cambridge-style questions</h3>
+<ol><li>Define a checksum.</li><li>Explain how a checksum is used to detect errors.</li><li>Using the simple addition method, calculate the checksum for 12, 8 and 5.</li><li>The original checksum is 25 but the receiver calculates 27. What does this indicate?</li><li>State one difference between a parity check and a checksum.</li></ol>
+<div class="callout"><b>Marking focus:</b> Use the sequence <b>calculate → transmit → recalculate → compare → detect mismatch</b>.</div></div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>Finish the sentences</h3>
+<div class="callout"><b>A checksum is...</b> a value calculated from transmitted data for error detection.</div>
+<div class="callout"><b>The receiver...</b> recalculates the checksum from the received data.</div>
+<div class="callout"><b>A mismatch means...</b> an error has been detected.</div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br><b>Planning note:</b> Period 8 teaches checksum-based error detection and comparison.</div>
+</div></section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Recall</span><span>2. Checksum</span><span>3. Calculate</span><span>4. Compare</span><span>5. Detect</span><span>6. Test</span></div><p>Today you will learn how a <b>checksum value</b> helps a receiver detect errors in transmitted data.</p></div>
+
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Define checksum.</li><li>Explain its purpose.</li><li>Calculate a simple checksum.</li><li>Recalculate at the receiver.</li><li>Explain a checksum mismatch.</li><li>Compare checksum and parity checking.</li></ul></div>
+
+<div class="card"><h3>1 · The basic idea</h3><div class="callout"><b>Sender calculates a checksum → sends data + checksum → receiver calculates again → values are compared.</b></div>
+<div class="checksum"><div class="block">DATA</div><div class="symbol">+</div><div class="block">CHECKSUM</div><div class="symbol">→</div><div class="block result">RECEIVER</div></div></div>
+
+<div class="card"><h3>2 · A simple checksum</h3><p>Suppose our data blocks are:</p><div class="checksum"><div class="block">12</div><div class="block">8</div><div class="block">5</div></div><p>Using simple addition:</p><div class="callout"><b>12 + 8 + 5 = 25</b><br>The checksum is <b>25</b>.</div></div>
+
+<div class="card"><h3>3 · Receiver recalculates</h3><p>The receiver receives 12, 8 and 5 plus the checksum 25.</p><div class="checksum"><div class="block">12</div><div class="symbol">+</div><div class="block">8</div><div class="symbol">+</div><div class="block">5</div><div class="symbol">=</div><div class="block result">25</div></div><div class="callout"><b>25 = 25</b> → the check passes.</div></div>
+
+<div class="card"><h3>4 · Detecting a change</h3><p>Now imagine that 8 changes to 9 during transmission.</p><div class="checksum"><div class="block">12</div><div class="symbol">+</div><div class="block">9</div><div class="symbol">+</div><div class="block">5</div><div class="symbol">=</div><div class="block result">26</div></div><div class="callout"><b>26 ≠ 25</b> → mismatch → an error has been detected.</div></div>
+
+<div class="card"><h3>5 · Interactive calculation</h3><p>Using simple addition, calculate the checksum for <b>14 + 6 + 10</b>.</p><button class="option" onclick="calcP8(this,false,'calcP8')">20</button><button class="option" onclick="calcP8(this,true,'calcP8')">30</button><button class="option" onclick="calcP8(this,false,'calcP8')">40</button><div class="score" id="calcP8"></div></div>
+
+<div class="card"><h3>6 · What does a mismatch mean?</h3><p>If the receiver calculates a different checksum from the checksum received, the check has failed.</p><button class="option" onclick="checkP8(this,true,'mismatchP8')">An error has been detected</button><button class="option" onclick="checkP8(this,false,'mismatchP8')">The data is definitely perfect</button><div class="score" id="mismatchP8"></div></div>
+
+<div class="card"><h3>7 · Compare with parity</h3><table><tr><th>Parity</th><th>Checksum</th></tr><tr><td>Uses an extra parity bit.</td><td>Uses a calculated checking value.</td></tr><tr><td>Checks the number of 1s.</td><td>Checks a calculated value against the received checksum.</td></tr></table></div>
+
+<div class="card"><h3>8 · Exam practice</h3><p><b>Question:</b> Explain how a checksum can be used to detect an error in transmitted data.</p><button onclick="showP8('examP8')">Show model answer</button><div class="answer" id="examP8">The sender calculates a checksum from the data and sends it with the data. The receiver recalculates the checksum from the received data and compares it with the received checksum. If the values are different, an error has been detected.</div></div>
+
+<div class="card"><h3>9 · Important limitation</h3><p>A checksum is an error-detection technique. It does not automatically correct the data, and a matching checksum does not guarantee that every possible error has been detected.</p><div class="callout"><b>Exam wording:</b> Say “an error is detected” rather than “the checksum fixes the error.”</div></div>
+
+<div class="card"><h3>10 · Common mistakes</h3><ul><li>Forgetting to recalculate the checksum at the receiver.</li><li>Comparing the wrong values.</li><li>Thinking a checksum automatically corrects the data.</li><li>Assuming every checksum algorithm is simple addition.</li><li>Claiming a matching checksum proves that no error is possible.</li></ul></div>
+
+<div class="card"><h3>11 · Self-assessment</h3><p>Choose your confidence:</p><button onclick="confidenceP8('confident')">🟢 I can explain checksum</button><button onclick="confidenceP8('okay')">🟡 I need more practice</button><button onclick="confidenceP8('need')">🔴 I need help</button><div class="score" id="confidenceP8"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Checksum · Calculate · Recalculate · Compare · Detect.</div>
+</div></section>
+</main>
+<script>
+function mark(btn,correct,id,msg){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(correct?'correct':'wrong');document.getElementById(id).textContent=correct?'✓ '+msg:'✗ Not quite — calculate carefully and try again.'}
+function calcP8(btn,c,id){mark(btn,c,id,'Correct — 14 + 6 + 10 = 30.')}
+function checkP8(btn,c,id){mark(btn,c,id,'Correct — a mismatch indicates that an error has been detected.')}
+function showP8(id){document.getElementById(id).style.display='block'}
+function confidenceP8(v){const t={confident:'Excellent — you are ready for the next error-detection method.',okay:'Good. Practise the calculate → compare sequence once more.',need:'That is useful information. Revisit the sender/receiver checksum example.'};document.getElementById('confidenceP8').textContent=t[v]}
+</script>
+</body>
+</html>

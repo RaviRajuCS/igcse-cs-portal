@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 1</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 2 — Data Transmission · Period 1</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 1 · Data Packets</h3>
+      <p><b>Topic 2 · Data Transmission:</b> We begin the new topic by understanding why data sent over a network is divided into packets and what information is carried in each packet.</p>
+      <div class="callout"><b>Success criteria:</b> Students can explain why data is split into packets, identify the header, payload and trailer, describe the purpose of important header fields, and explain why packet sequence numbers are needed.</div>
+      <p><b>Prior learning:</b> Topic 1 — binary data, storage and compression.</p>
+      <p><b>Key vocabulary:</b> packet, packet header, payload, trailer, IP address, sequence number, packet size, error checking, packet reassembly.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>Start with a real-life analogy</h3>
+      <p>Ask students to imagine sending a huge book through a postal service. Instead of sending one enormous package, the book can be divided into smaller numbered packages.</p>
+      <ol>
+        <li>Split the message.</li>
+        <li>Put each part into a packet.</li>
+        <li>Address each packet.</li>
+        <li>Send the packets.</li>
+        <li>Reassemble them at the destination.</li>
+      </ol>
+      <div class="callout"><b>Core idea:</b> packets make large amounts of data easier to control and transmit across networks.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Hook</span>
+      <h3>Would you send this as one piece?</h3>
+      <p>Suppose you need to send a very large video across a network. Ask:</p>
+      <ul>
+        <li>What happens if the route becomes busy?</li>
+        <li>What happens if part of the transmission is corrupted?</li>
+        <li>Would it be sensible to send everything as one continuous stream?</li>
+      </ul>
+      <div class="callout"><b>Transition:</b> Networks can divide large messages into smaller packets.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–13 min · Teach</span>
+      <h3>What is a data packet?</h3>
+      <p>A <b>data packet</b> is a small part of a message or data that is transmitted over a network. After transmission, the packets are reassembled to form the original message.</p>
+      <div class="packet-demo">
+        <div class="packet">PACKET 1</div>
+        <div class="packet">PACKET 2</div>
+        <div class="packet">PACKET 3</div>
+        <div class="packet">PACKET 4</div>
+      </div>
+      <p>Each packet carries part of the original data plus information needed to help it reach its destination and be handled correctly.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">13–22 min · Packet structure</span>
+      <h3>Header · Payload · Trailer</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Part</th><th style="padding:8px;background:#082b59;color:white">Purpose</th></tr>
+        <tr><td style="padding:7px"><b>Header</b></td><td style="padding:7px">Information about the packet, including source/destination IP addresses and sequence information.</td></tr>
+        <tr><td style="padding:7px"><b>Payload</b></td><td style="padding:7px">The actual data being carried.</td></tr>
+        <tr><td style="padding:7px"><b>Trailer</b></td><td style="padding:7px">Information identifying the end of the packet and providing error checking information.</td></tr>
+      </table>
+      <div class="callout"><b>Memory aid:</b> Header = instructions about the packet · Payload = the data · Trailer = ending/check information.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">22–30 min · Header fields</span>
+      <h3>What is inside the header?</h3>
+      <ul>
+        <li><b>Source IP address</b> — identifies the sending device.</li>
+        <li><b>Destination IP address</b> — identifies the receiving device.</li>
+        <li><b>Sequence number</b> — helps put packets back into the correct order.</li>
+        <li><b>Packet size</b> — allows the receiving station to check packet size/integrity.</li>
+      </ul>
+      <div class="callout"><b>Exam point:</b> sequence numbers are essential because packets may not arrive in their original order.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">30–35 min · Interactive</span>
+      <h3>Build a packet</h3>
+      <p>Click each part to reveal its role.</p>
+      <button onclick="packetReveal22('header')">Header</button>
+      <button onclick="packetReveal22('payload')">Payload</button>
+      <button onclick="packetReveal22('trailer')">Trailer</button>
+      <div class="callout" id="packetRevealBox">Choose a packet part.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">35–40 min · Reassembly</span>
+      <h3>Why do packets need sequence numbers?</h3>
+      <p>Imagine packets arrive as:</p>
+      <div class="packet-demo">
+        <div class="packet">3</div><div class="packet">1</div><div class="packet">4</div><div class="packet">2</div>
+      </div>
+      <p>The receiving computer uses the sequence numbers to rearrange them:</p>
+      <div class="callout"><b>1 → 2 → 3 → 4</b></div>
+      <p>This allows the original message to be reconstructed in the correct order.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">40–45 min · Assessment</span>
+      <h3>Cambridge-style questions</h3>
+      <ol>
+        <li>Define a data packet.</li>
+        <li>State the three main parts of a data packet.</li>
+        <li>State two pieces of information found in a packet header.</li>
+        <li>Explain why a sequence number is included in a packet header.</li>
+        <li>State the purpose of the payload.</li>
+      </ol>
+      <div class="callout"><b>Marking focus:</b> students should explain the reason for sequence numbers, not merely state that they “number packets”.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">45–50 min · Exit ticket</span>
+      <h3>Three things to remember</h3>
+      <ol>
+        <li>A message can be divided into smaller packets.</li>
+        <li>A packet contains a header, payload and trailer.</li>
+        <li>Sequence numbers help packets be reassembled correctly.</li>
+      </ol>
+      <div class="callout"><b>Next:</b> Packet switching — how packets can travel independently through a network and the role of routers.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 1 of Topic 2 introduces data packets and packet structure.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Why packets?</span><span>2. Packet structure</span>
+        <span>3. Header</span><span>4. Payload</span>
+        <span>5. Trailer</span><span>6. Reassembly</span>
+      </div>
+      <p>Today you start <b>Topic 2 — Data Transmission</b> by learning how messages are divided into packets.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Define a data packet.</li>
+        <li>Explain why data is divided into packets.</li>
+        <li>Identify header, payload and trailer.</li>
+        <li>Explain the purpose of sequence numbers.</li>
+        <li>Explain how packets are reassembled.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · What is a packet?</h3>
+      <p>A <b>data packet</b> is a small part of a message or data transmitted over a network.</p>
+      <div class="callout">Large message → smaller packets → transmission → reassembly → original message</div>
+    </div>
+
+    <div class="card">
+      <h3>2 · Packet structure</h3>
+      <div class="packet-demo">
+        <div class="packet">HEADER</div>
+        <div class="packet">PAYLOAD</div>
+        <div class="packet">TRAILER</div>
+      </div>
+      <p><b>Header:</b> packet information.</p>
+      <p><b>Payload:</b> actual data.</p>
+      <p><b>Trailer:</b> ending and error-checking information.</p>
+    </div>
+
+    <div class="card">
+      <h3>3 · Quick check</h3>
+      <p><b>Q1:</b> Which part carries the actual data?</p>
+      <button class="option" onclick="check22new(this,false,'q1s22new')">Header</button>
+      <button class="option" onclick="check22new(this,true,'q1s22new')">Payload</button>
+      <button class="option" onclick="check22new(this,false,'q1s22new')">Trailer</button>
+      <div class="score" id="q1s22new"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> Which part contains information such as source and destination IP addresses?</p>
+      <button class="option" onclick="check22new(this,true,'q2s22new')">Header</button>
+      <button class="option" onclick="check22new(this,false,'q2s22new')">Payload</button>
+      <div class="score" id="q2s22new"></div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Header information</h3>
+      <ul>
+        <li>Source IP address</li>
+        <li>Destination IP address</li>
+        <li>Sequence number</li>
+        <li>Packet size</li>
+      </ul>
+      <div class="callout"><b>Sequence number = correct order.</b></div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Interactive packet</h3>
+      <p>Click a part:</p>
+      <button onclick="packetReveal22('header')">Header</button>
+      <button onclick="packetReveal22('payload')">Payload</button>
+      <button onclick="packetReveal22('trailer')">Trailer</button>
+      <div class="callout" id="packetRevealBox">Choose a part to learn more.</div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Why sequence numbers?</h3>
+      <p>Suppose packets arrive:</p>
+      <div class="packet-demo">
+        <div class="packet">3</div><div class="packet">1</div><div class="packet">4</div><div class="packet">2</div>
+      </div>
+      <p>The receiving computer uses the sequence numbers to put them back into the correct order:</p>
+      <div class="callout"><b>1 → 2 → 3 → 4</b></div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Your turn</h3>
+      <p>State the three main parts of a data packet.</p>
+      <button onclick="show22new('answers22a')">Reveal answer</button>
+      <div class="answer" id="answers22a"><b>Header, payload and trailer.</b></div>
+
+      <p style="margin-top:15px">Why is a sequence number needed?</p>
+      <button onclick="show22new('answers22b')">Reveal model answer</button>
+      <div class="answer" id="answers22b">Packets may arrive out of order, so the sequence number allows the receiving computer to reassemble them correctly.</div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Exam practice</h3>
+      <p><b>Question:</b> Explain why a large message is divided into packets before transmission.</p>
+      <button onclick="show22new('exam22')">Show model answer</button>
+      <div class="answer" id="exam22">Dividing data into smaller packets makes it easier to control and transmit. Packets can travel through a network and can be reassembled at the destination to recreate the original message.</div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Common mistakes</h3>
+      <ul>
+        <li>Calling the payload the whole packet.</li>
+        <li>Forgetting that the payload contains the actual data.</li>
+        <li>Thinking sequence numbers are addresses.</li>
+        <li>Forgetting that packets must be reassembled.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>10 · Self-assessment</h3>
+      <p>Choose your confidence:</p>
+      <button onclick="confidence22new('confident')">🟢 I understand packets</button>
+      <button onclick="confidence22new('okay')">🟡 I need more practice</button>
+      <button onclick="confidence22new('need')">🔴 I need help</button>
+      <div class="score" id="confidence22new"></div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Data packets: header, payload, trailer and sequence numbers.
+    </div>>>
+  </div>
+</section>
+</main>
+
+<script>
+function packetReveal22(part){
+  const t={
+    header:'Header: contains information used to help the packet reach its destination and be reassembled correctly.',
+    payload:'Payload: this is the actual data being transmitted.',
+    trailer:'Trailer: marks the end of the packet and can contain error-checking information.'
+  };
+  document.getElementById('packetRevealBox').textContent=t[part];
+}
+function check22new(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1s22new:correct?'✓ Correct — the payload carries the actual data.':'✗ Not quite. The payload carries the actual data.',
+    q2s22new:correct?'✓ Correct — the header contains addressing information.':'✗ Not quite. Look at the packet header.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function show22new(id){document.getElementById(id).style.display='block'}
+function confidence22new(v){
+  const text={
+    confident:'Excellent — you are ready to learn packet switching.',
+    okay:'Good. Review header, payload and trailer once more.',
+    need:'That is useful information. Revisit the packet diagram and sequence-number example.'
+  };
+  document.getElementById('confidence22new').textContent=text[v];
+}
+</script>
+</body>
+</html>

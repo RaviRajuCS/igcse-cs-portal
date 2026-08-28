@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 5</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 5</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 5 · Binary Addition</h3>
+      <p><b>Cambridge focus:</b> Topic 1.1 Number systems — students need to be able to perform binary addition. fileciteturn5file0L11-L24</p>
+      <div class="callout"><b>Success criteria:</b> Students can recall the four basic binary addition rules, add binary integers accurately, show carries clearly, and verify an answer using denary conversion.</div>
+      <p><b>Prior learning:</b> Binary place values, binary ↔ denary conversion, hexadecimal and number-system concepts.</p>
+      <p><b>Key vocabulary:</b> binary addition, bit, column, carry, sum, place value, integer, overflow.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">Teacher preparation</span>
+      <h3>Before students enter</h3>
+      <ul>
+        <li>Open the webpage in full-screen mode.</li>
+        <li>Ensure students can recall binary place values.</li>
+        <li>Prepare mini-whiteboards or paper for column addition.</li>
+        <li>Keep the four addition rules visible throughout the modelling stage.</li>
+        <li>Remind students that <b>ordinary carrying</b> is not the same thing as <b>overflow</b>; overflow will be treated separately in Period 6.</li>
+      </ul>
+      <div class="callout"><b>Teaching principle:</b> build binary addition from familiar denary column addition. Students should understand why a carry occurs, not merely memorise a pattern.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Reconnect with place value</h3>
+      <ol>
+        <li>Write the 8-bit binary place values.</li>
+        <li>What is 1 + 1 in denary?</li>
+        <li>What happens when a binary column contains two 1s?</li>
+        <li>Convert 00000111₂ to denary.</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> Students already know that two 1s cannot remain in one binary digit. Today's lesson explains how the extra value is carried into the next column.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–12 min · Teach</span>
+      <h3>The four binary addition rules</h3>
+      <div class="callout">
+        <b>0 + 0 = 0</b><br>
+        <b>0 + 1 = 1</b><br>
+        <b>1 + 0 = 1</b><br>
+        <b>1 + 1 = 10</b>
+      </div>
+      <p>Emphasise that <b>10₂</b> means two in denary. Therefore, when 1 + 1 is calculated, write 0 in the current column and carry 1 to the next column.</p>
+      <p><b>Ask:</b> Why is the result written as 10 rather than 2?</p>
+    </div>
+
+    <div class="card">
+      <span class="time">12–20 min · Model</span>
+      <h3>Simple binary addition</h3>
+      <p>Begin with a one-column example:</p>
+      <div class="binary">1 + 1 = 10</div>
+      <p>Then build a multi-column example:</p>
+      <pre style="font-family:Consolas,monospace;font-size:20px;background:#0b315f;color:white;padding:15px;border-radius:12px;text-align:center">  0011
++ 0010
+------
+  0101</pre>
+      <p>Explain each column from right to left. In this example there is no carry because no column contains two 1s.</p>
+      <div class="callout"><b>Check:</b> 3₁₀ + 2₁₀ = 5₁₀, and 0101₂ = 5₁₀.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">20–29 min · Model</span>
+      <h3>Binary addition with carrying</h3>
+      <p>Model:</p>
+      <pre style="font-family:Consolas,monospace;font-size:20px;background:#0b315f;color:white;padding:15px;border-radius:12px;text-align:center">    1 1
+    0101
+  + 0011
+  ------
+    1000</pre>
+      <p>Work from right to left:</p>
+      <ul>
+        <li>1 + 1 = 10 → write 0, carry 1.</li>
+        <li>0 + 1 + carried 1 = 10 → write 0, carry 1.</li>
+        <li>1 + 0 + carried 1 = 10 → write 0, carry 1.</li>
+        <li>0 + 0 + carried 1 = 1.</li>
+      </ul>
+      <div class="callout"><b>Verification:</b> 5₁₀ + 3₁₀ = 8₁₀, and 1000₂ = 8₁₀.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">29–36 min · Guided practice</span>
+      <h3>Think → Pair → Explain</h3>
+      <p>Students add each pair and explain every carry:</p>
+      <ol>
+        <li>0011 + 0100</li>
+        <li>0101 + 0011</li>
+        <li>0110 + 0011</li>
+        <li>1001 + 0010</li>
+      </ol>
+      <div class="callout"><b>Teacher move:</b> Ask students to circle each column where a carry occurs. This makes their reasoning visible.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">36–42 min · Differentiation</span>
+      <h3>Three levels of challenge</h3>
+      <p><b>Support:</b> Use 4-bit additions with place-value prompts.</p>
+      <p><b>Core:</b> Complete 8-bit additions such as 00110110 + 00010101 and 01011001 + 00100111.</p>
+      <p><b>Challenge:</b> Add 8-bit numbers and verify each result by converting all three values to denary.</p>
+      <div class="callout"><b>Important:</b> If an addition produces a ninth bit beyond an 8-bit result, do not label the arithmetic carry itself as the learning outcome for today's lesson. Record the result and reserve the formal concept of overflow for Period 6.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">42–47 min · Assessment</span>
+      <h3>Mini-whiteboard check</h3>
+      <ol>
+        <li>0011₂ + 0101₂</li>
+        <li>0111₂ + 0001₂</li>
+        <li>01010110₂ + 00001101₂</li>
+      </ol>
+      <p>Ask students to show their carries, not just their final answers.</p>
+      <div class="callout"><b>Look for:</b> students who forget to add the carried 1 into the next column, or who write “2” instead of “10” in a binary column.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>State the result of 1 + 1 in binary.</li>
+        <li>Add 0101₂ + 0011₂.</li>
+        <li>Explain what happens when a binary column contains 1 + 1.</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> If students can add accurately and explain carrying, Period 6 can introduce overflow. If carrying is insecure, begin the next period with a short targeted retrieval exercise.</div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 5 develops the binary addition skill required by Cambridge. Overflow is intentionally separated into Period 6 so that students first master the arithmetic process.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Rules</span>
+        <span>3. Carrying</span><span>4. Practice</span>
+        <span>5. Check</span><span>6. Exit ticket</span>
+      </div>
+      <p>Today you will learn how computers can add binary numbers. Work from the <b>right-most column to the left</b>, just as you would with ordinary column addition.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Recall the four binary addition rules.</li>
+        <li>Add binary integers accurately.</li>
+        <li>Carry correctly between binary columns.</li>
+        <li>Show your working clearly.</li>
+        <li>Check a binary answer by converting it to denary.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · The four rules</h3>
+      <div class="callout">
+        <b>0 + 0 = 0</b><br>
+        <b>0 + 1 = 1</b><br>
+        <b>1 + 0 = 1</b><br>
+        <b>1 + 1 = 10</b>
+      </div>
+      <p>The last rule is the important one. <b>10₂ = 2₁₀</b>. We write 0 in the current column and carry 1 into the next column.</p>
+    </div>
+
+    <div class="card">
+      <h3>2 · A simple example</h3>
+      <pre style="font-family:Consolas,monospace;font-size:21px;background:#0b315f;color:white;padding:15px;border-radius:12px;text-align:center">  0011
++ 0010
+------
+  0101</pre>
+      <p>There are no carries in this example.</p>
+      <div class="callout"><b>Check:</b> 0011₂ = 3₁₀ and 0010₂ = 2₁₀. 3 + 2 = 5, and 0101₂ = 5₁₀.</div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Adding with a carry</h3>
+      <pre style="font-family:Consolas,monospace;font-size:21px;background:#0b315f;color:white;padding:15px;border-radius:12px;text-align:center">    1 1
+    0101
+  + 0011
+  ------
+    1000</pre>
+      <p>Start at the right:</p>
+      <ol>
+        <li>1 + 1 = 10 → write 0 and carry 1.</li>
+        <li>0 + 1 + 1 = 10 → write 0 and carry 1.</li>
+        <li>1 + 0 + 1 = 10 → write 0 and carry 1.</li>
+        <li>0 + 0 + 1 = 1.</li>
+      </ol>
+      <div class="callout"><b>Answer:</b> 0101₂ + 0011₂ = 1000₂.</div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Quick check</h3>
+      <p><b>Q1:</b> What is 1 + 1 in binary?</p>
+      <button class="option" onclick="studentCheck5(this,false,'q1s5')">11</button>
+      <button class="option" onclick="studentCheck5(this,true,'q1s5')">10</button>
+      <button class="option" onclick="studentCheck5(this,false,'q1s5')">2</button>
+      <div class="score" id="q1s5"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> What is 0011₂ + 0100₂?</p>
+      <button class="option" onclick="studentCheck5(this,false,'q2s5')">0110</button>
+      <button class="option" onclick="studentCheck5(this,true,'q2s5')">0111</button>
+      <button class="option" onclick="studentCheck5(this,false,'q2s5')">1000</button>
+      <div class="score" id="q2s5"></div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Practice — 4-bit addition</h3>
+      <ol>
+        <li>0010 + 0011</li>
+        <li>0100 + 0011</li>
+        <li>0101 + 0011</li>
+        <li>0110 + 0010</li>
+      </ol>
+      <button onclick="show('answers5a')">Reveal answers</button>
+      <div class="answer" id="answers5a">
+        <b>Answers:</b><br>
+        1. 0101 &nbsp; 2. 0111 &nbsp; 3. 1000 &nbsp; 4. 1000
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Practice — 8-bit addition</h3>
+      <ol>
+        <li>00110110 + 00010101</li>
+        <li>01011001 + 00100111</li>
+        <li>00011101 + 00101010</li>
+        <li>01100011 + 00011100</li>
+      </ol>
+      <button onclick="show('answers5b')">Reveal answers</button>
+      <div class="answer" id="answers5b">
+        <b>Answers:</b><br>
+        1. 01001011<br>
+        2. 10000000<br>
+        3. 01000111<br>
+        4. 01111111
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Verify your answer</h3>
+      <p>A reliable way to check binary addition is to convert the original binary values and the result into denary.</p>
+      <p><b>Example:</b> 0101₂ + 0011₂ = 1000₂</p>
+      <p>5 + 3 = 8, and 1000₂ = 8.</p>
+      <div class="callout"><b>Therefore the addition is correct.</b></div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Challenge</h3>
+      <p>Complete these and show every carry:</p>
+      <ol>
+        <li>1010₂ + 0111₂</li>
+        <li>00110101₂ + 01001011₂</li>
+        <li>01011110₂ + 00100001₂</li>
+      </ol>
+      <button onclick="show('challenge5')">Show challenge answers</button>
+      <div class="answer" id="challenge5">
+        <b>Answers:</b><br>
+        1. 10001₂<br>
+        2. 10000000₂<br>
+        3. 01111111₂
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Important distinction</h3>
+      <p>A <b>carry</b> is part of the normal addition process. It moves a value into the next column.</p>
+      <p>If the final result cannot be represented in the available number of bits, that is a different issue called <b>overflow</b>.</p>
+      <div class="callout"><b>We will study overflow in the next period.</b></div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Exam practice</h3>
+      <p><b>Question:</b> Add <b>00110110₂ + 00010101₂</b>. Show all carries.</p>
+      <button onclick="show('exam5')">Show model answer</button>
+      <div class="answer" id="exam5">
+        00110110₂ + 00010101₂ = <b>01001011₂</b>.<br>
+        Verification: 54 + 21 = 75 and 01001011₂ = 75.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>11 · Common mistakes</h3>
+      <ul>
+        <li>Adding from left to right instead of right to left.</li>
+        <li>Forgetting to include the carried 1.</li>
+        <li>Writing the denary digit 2 instead of binary 10.</li>
+        <li>Dropping a carry without checking it.</li>
+        <li>Not aligning the binary columns correctly.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>12 · Self-assessment</h3>
+      <p>How confident are you now?</p>
+      <button onclick="confidence5('confident')">🟢 I can add binary numbers</button>
+      <button onclick="confidence5('okay')">🟡 I need more practice</button>
+      <button onclick="confidence5('need')">🔴 I need help with carrying</button>
+      <div class="score" id="confidence5"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      <b>Source basis:</b> Cambridge IGCSE (9–1) Computer Science 0984 syllabus, 2026–2028, Topic 1.1; and <i>Cambridge IGCSE and O Level Computer Science, Second Edition</i>, Chapter 1. Content is presented as original teaching material.
+    </div>>
+  </div>
+</section>
+</main>
+
+<script>
+function studentCheck5(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  document.getElementById(id).textContent=correct?'✓ Correct!':'✗ Not quite. Work from right to left and check the carry.';
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence5(v){
+  const text={
+    confident:'Excellent — you are ready to learn about overflow.',
+    okay:'Good. Practise carrying once more before the next period.',
+    need:'That is useful information. Rework the four binary addition rules and the worked example.'
+  };
+  document.getElementById('confidence5').textContent=text[v];
+}
+</script>
+</body>
+</html>

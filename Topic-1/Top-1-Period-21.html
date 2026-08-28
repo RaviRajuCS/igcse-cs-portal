@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 21</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 21</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Assessment overview</span>
+      <h3>Period 21 · Topic 1 Assessment</h3>
+      <p><b>Purpose:</b> A formal 50-minute checkpoint covering the taught content of Topic 1: Data Representation.</p>
+      <div class="callout"><b>Assessment conditions:</b> 50 minutes · individual work · no help from the teacher during the assessment · students should show all calculation working.</div>
+      <p><b>Teacher goal:</b> assess knowledge, application and explanation across number systems, character sets, sound, images, storage and compression.</p>
+      <p><b>Marking:</b> use the teacher answer panel after students submit. Record strengths and misconceptions for targeted reteaching.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>Before starting</h3>
+      <ol>
+        <li>Tell students this is an assessment, not a guided lesson.</li>
+        <li>Ask them to read every command word carefully.</li>
+        <li>Remind them that calculators are not permitted in the Cambridge examination.</li>
+        <li>Tell students to show working for calculations.</li>
+        <li>Start the timer and allow students to work independently.</li>
+      </ol>
+      <div class="callout"><b>Cambridge alignment:</b> Paper 1 assesses Topics 1–6 using short-answer and structured questions; calculators are not permitted. </div>
+    </div>
+
+    <div class="card">
+      <span class="time">Assessment structure</span>
+      <h3>50 marks · 50 minutes</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Section</th><th style="padding:8px;background:#082b59;color:white">Focus</th><th style="padding:8px;background:#082b59;color:white">Marks</th></tr>
+        <tr><td style="padding:7px">A</td><td style="padding:7px">Number systems</td><td style="padding:7px">10</td></tr>
+        <tr><td style="padding:7px">B</td><td style="padding:7px">Text, sound and images</td><td style="padding:7px">16</td></tr>
+        <tr><td style="padding:7px">C</td><td style="padding:7px">Storage calculations</td><td style="padding:7px">14</td></tr>
+        <tr><td style="padding:7px">D</td><td style="padding:7px">Compression and RLE</td><td style="padding:7px">10</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <span class="time">After students finish</span>
+      <h3>Teacher review route</h3>
+      <ul>
+        <li>Mark calculations step-by-step.</li>
+        <li>Check whether definitions are precise.</li>
+        <li>Separate knowledge errors from calculation errors.</li>
+        <li>Look for confusion between resolution and colour depth.</li>
+        <li>Look for confusion between lossy and lossless.</li>
+        <li>Check whether RLE uses consecutive runs.</li>
+      </ul>
+      <div class="callout"><b>Command words matter:</b> Cambridge defines “calculate”, “define”, “explain”, “state”, “compare” and other command words with specific expectations. </div>
+    </div>
+
+    <div class="card">
+      <span class="time">Teacher answer guide</span>
+      <h3>Key marking points</h3>
+      <p><b>Number systems:</b> correct place values and conversions.</p>
+      <p><b>Character sets:</b> ASCII is 7-bit; Unicode represents a wider range of characters and symbols.</p>
+      <p><b>Sound:</b> sample rate = samples per second; sample resolution = bits per sample.</p>
+      <p><b>Images:</b> resolution = number of pixels; colour depth = bits used to represent colour.</p>
+      <p><b>Storage:</b> use 8 bits = 1 byte and 1024 for the specified binary storage conversions.</p>
+      <p><b>Compression:</b> lossy permanently removes data; lossless does not permanently lose data; RLE is a lossless method.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">Diagnostic bands</span>
+      <h3>Interpret the result</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Score</th><th style="padding:8px;background:#082b59;color:white">Suggested response</th></tr>
+        <tr><td style="padding:7px">43–50</td><td style="padding:7px">Strong Topic 1 readiness</td></tr>
+        <tr><td style="padding:7px">35–42</td><td style="padding:7px">Good; target minor gaps</td></tr>
+        <tr><td style="padding:7px">25–34</td><td style="padding:7px">Needs focused revision</td></tr>
+        <tr><td style="padding:7px">0–24</td><td style="padding:7px">Requires structured reteaching</td></tr>
+      </table>
+      <p><small>These bands are teacher-created diagnostic guidance, not Cambridge grade boundaries.</small></p>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Formal Topic 1 assessment covering Data Representation.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card" id="assessmentIntro">
+      <h3>📝 Topic 1 Assessment</h3>
+      <div class="callout"><b>50 minutes · 50 marks</b><br>Work independently. Read each question carefully. Show your working for calculations.</div>
+      <p>When you are ready, click <b>Start Assessment</b>. Your timer will begin.</p>
+      <button onclick="startAssessment()">▶ Start Assessment</button>
+      <div class="timer" id="timer">50:00</div>
+    </div>
+
+    <div id="assessment" style="display:none">
+      <div class="card">
+        <h3>Section A · Number Systems — 10 marks</h3>
+        <p><b>1. Convert 37₁₀ to binary. (2)</b></p>
+        <input id="a1" placeholder="Your answer">
+        <p><b>2. Convert 101101₂ to denary. (2)</b></p>
+        <input id="a2" placeholder="Your answer">
+        <p><b>3. Convert 2F₁₆ to denary. (2)</b></p>
+        <input id="a3" placeholder="Your answer">
+        <p><b>4. State the base of hexadecimal. (1)</b></p>
+        <input id="a4" placeholder="Your answer">
+        <p><b>5. Explain why binary is used by computers. (3)</b></p>
+        <textarea id="a5" rows="3" placeholder="Your answer"></textarea>
+      </div>
+
+      <div class="card">
+        <h3>Section B · Text, Sound and Images — 16 marks</h3>
+        <p><b>6. State the number of bits in standard ASCII. (1)</b></p>
+        <input id="b1" placeholder="Your answer">
+        <p><b>7. Explain why Unicode is needed. (2)</b></p>
+        <textarea id="b2" rows="2" placeholder="Your answer"></textarea>
+        <p><b>8. Define sample rate. (2)</b></p>
+        <textarea id="b3" rows="2" placeholder="Your answer"></textarea>
+        <p><b>9. Define sample resolution. (2)</b></p>
+        <textarea id="b4" rows="2" placeholder="Your answer"></textarea>
+        <p><b>10. Define image resolution. (2)</b></p>
+        <textarea id="b5" rows="2" placeholder="Your answer"></textarea>
+        <p><b>11. Define colour depth. (2)</b></p>
+        <textarea id="b6" rows="2" placeholder="Your answer"></textarea>
+        <p><b>12. State one effect of increasing image resolution. (2)</b></p>
+        <textarea id="b7" rows="2" placeholder="Your answer"></textarea>
+        <p><b>13. State one effect of increasing sound sample rate. (3)</b></p>
+        <textarea id="b8" rows="2" placeholder="Your answer"></textarea>
+      </div>
+
+      <div class="card">
+        <h3>Section C · Storage Calculations — 14 marks</h3>
+        <p><b>14. An image is 500 × 400 pixels with an 8-bit colour depth. Calculate its size in bytes. Show all working. (5)</b></p>
+        <textarea id="c1" rows="5" placeholder="Your working and answer"></textarea>
+        <p><b>15. A sound file has a sample rate of 8000 samples/second, sample resolution of 8 bits and duration of 10 seconds. Calculate its size in bytes. (5)</b></p>
+        <textarea id="c2" rows="5" placeholder="Your working and answer"></textarea>
+        <p><b>16. Convert 2048 KiB to MiB. (2)</b></p>
+        <input id="c3" placeholder="Your answer">
+        <p><b>17. State how many bits are in one byte. (2)</b></p>
+        <input id="c4" placeholder="Your answer">
+      </div>
+
+      <div class="card">
+        <h3>Section D · Compression and RLE — 10 marks</h3>
+        <p><b>18. State the purpose of data compression. (2)</b></p>
+        <textarea id="d1" rows="2" placeholder="Your answer"></textarea>
+        <p><b>19. Explain the difference between lossy and lossless compression. (3)</b></p>
+        <textarea id="d2" rows="3" placeholder="Your answer"></textarea>
+        <p><b>20. Encode AAAAABBBCC using RLE. (2)</b></p>
+        <input id="d3" placeholder="Your answer">
+        <p><b>21. Explain why RLE can be effective for an image containing large areas of one colour. (3)</b></p>
+        <textarea id="d4" rows="3" placeholder="Your answer"></textarea>
+      </div>
+
+      <div class="card">
+        <h3>Submit</h3>
+        <p>Check your answers before submitting. Once submitted, the assessment will be locked.</p>
+        <button onclick="submitAssessment()">✓ Submit Assessment</button>
+        <div class="callout" id="submitMessage"></div>
+      </div>
+    </div>
+
+    <div id="results" style="display:none">
+      <div class="card">
+        <h3>📊 Your result</h3>
+        <div class="score" id="resultScore"></div>
+        <p><b>Important:</b> Automatic marking checks the objective questions. Written responses should be reviewed using the teacher's marking guide.</p>
+        <button onclick="show('modelAnswers21')">Reveal model answers</button>
+      </div>
+
+      <div class="card answer" id="modelAnswers21">
+        <h3>Teacher review answers</h3>
+        <p>1. 100101₂</p>
+        <p>2. 45₁₀</p>
+        <p>3. 47₁₀</p>
+        <p>4. 16</p>
+        <p>5. Binary represents the two states used by electronic systems.</p>
+        <p>6. 7 bits</p>
+        <p>7. Unicode represents a much larger range of characters and symbols.</p>
+        <p>8. Number of samples taken per second.</p>
+        <p>9. Number of bits per sample.</p>
+        <p>10. Number of pixels in the image.</p>
+        <p>11. Number of bits used to represent colour information.</p>
+        <p>12. More pixels, greater potential detail and larger file size.</p>
+        <p>13. More samples per second, potentially greater recording accuracy and larger file size.</p>
+        <p>14. 500 × 400 × 8 = 1,600,000 bits ÷ 8 = <b>200,000 bytes</b>.</p>
+        <p>15. 8000 × 8 × 10 = 640,000 bits ÷ 8 = <b>80,000 bytes</b>.</p>
+        <p>16. <b>2 MiB</b>.</p>
+        <p>17. <b>8 bits</b>.</p>
+        <p>18. Reduce file size, with benefits such as less storage, bandwidth or transmission time.</p>
+        <p>19. Lossy permanently removes some data; lossless does not permanently lose data and allows exact restoration.</p>
+        <p>20. <b>5A 3B 2C</b>.</p>
+        <p>21. Large areas of one colour create long consecutive runs that RLE can represent using count + value.</p>
+      </div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Topic 1 formal assessment · 50 minutes · 50 marks.
+    </div>>>
+  </div>
+</section>
+</main>
+
+<script>
+let remaining=3000,timerId=null,started=false,submitted=false;
+function startAssessment(){
+  if(started)return;
+  started=true;
+  document.getElementById('assessment').style.display='block';
+  timerId=setInterval(()=>{
+    remaining--;
+    const m=Math.floor(remaining/60),s=remaining%60;
+    document.getElementById('timer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+    if(remaining<=0){clearInterval(timerId);submitAssessment(true);}
+  },1000);
+  window.scrollTo({top:document.getElementById('assessment').offsetTop-20,behavior:'smooth'});
+}
+function val(id){return document.getElementById(id).value.trim().toLowerCase().replace(/\s+/g,' ')}
+function submitAssessment(auto=false){
+  if(submitted)return;
+  submitted=true;
+  if(timerId)clearInterval(timerId);
+  const checks=[
+    ['a1',['100101','100101₂'],2],
+    ['a2',['45','45₁₀'],2],
+    ['a3',['47','47₁₀'],2],
+    ['a4',['16'],1],
+    ['b1',['7','7 bits'],1],
+    ['c3',['2','2 mib','2 miB'.toLowerCase()],2],
+    ['c4',['8','8 bits'],2],
+    ['d3',['5a 3b 2c','5A 3B 2C'.toLowerCase()],2]
+  ];
+  let earned=0,max=50;
+  checks.forEach(x=>{if(x[1].includes(val(x[0])))earned+=x[2];});
+  document.getElementById('assessment').style.display='none';
+  document.getElementById('results').style.display='block';
+  document.getElementById('resultScore').textContent='Objective score: '+earned+' / '+max+' marks';
+  document.getElementById('submitMessage').textContent=auto?'Time is up. Your assessment has been submitted.':'Assessment submitted successfully.';
+  window.scrollTo({top:document.getElementById('results').offsetTop-20,behavior:'smooth'});
+}
+function show(id){document.getElementById(id).style.display='block'}
+</script>
+</body>
+</html>

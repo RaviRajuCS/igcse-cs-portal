@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 8</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 8</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 8 · Two's Complement</h3>
+      <p><b>Cambridge focus:</b> Topic 1.1 Number systems — students need to understand two's complement as a method of representing negative binary integers and understand the effect of the number of bits available on the range of values that can be represented. fileciteturn6file0L44-L50</p>
+      <div class="callout"><b>Success criteria:</b> Students can explain why a method is needed to represent negative integers, identify the sign bit in a two's complement representation, determine the value of a positive two's complement number, and recognise the range available for a given number of bits.</div>
+      <p><b>Prior learning:</b> Binary place value, binary addition, overflow and logical shifts.</p>
+      <p><b>Key vocabulary:</b> two's complement, signed integer, sign bit, positive, negative, magnitude, most significant bit, range, representation.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">Teacher preparation</span>
+      <h3>Before students enter</h3>
+      <ul>
+        <li>Display the idea that ordinary unsigned binary represents only non-negative values.</li>
+        <li>Prepare 4-bit and 8-bit two's complement examples.</li>
+        <li>Keep the sign-bit rule visible: in an n-bit two's complement number, the left-most bit has a special negative place value.</li>
+        <li>Use a number line to connect binary patterns with positive and negative values.</li>
+        <li>Do not rush into conversion algorithms: establish the representation and range first.</li>
+      </ul>
+      <div class="callout"><b>Teaching principle:</b> students should first understand what two's complement represents before learning a mechanical conversion procedure.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Reconnect with yesterday</h3>
+      <ol>
+        <li>What is the largest unsigned value represented using 8 bits?</li>
+        <li>What happens in an 8-bit register when a result needs a ninth bit?</li>
+        <li>What does a logical right shift do?</li>
+        <li>Can ordinary unsigned binary directly represent −5?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> Unsigned binary gives us positive values. Today we need a systematic way to represent negative integers as well.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–14 min · Discover</span>
+      <h3>Why do we need two's complement?</h3>
+      <p>Unsigned binary uses every bit to represent magnitude. That means there is no ordinary unsigned pattern for a negative integer.</p>
+      <p>Computers therefore need a defined representation for signed integers. <b>Two's complement</b> is the method used in this part of the syllabus.</p>
+      <div class="callout"><b>Key idea:</b> the most significant bit acts as the sign indicator in a fixed-width two's complement representation.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">14–23 min · Teach</span>
+      <h3>The sign bit and place values</h3>
+      <p>For an 8-bit two's complement number, the place values are:</p>
+      <div class="weights">
+        <div>−128</div><div>64</div><div>32</div><div>16</div>
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p>If the left-most bit is <b>0</b>, the number is non-negative. If the left-most bit is <b>1</b>, the number is negative.</p>
+      <p><b>Example:</b> 00000101₂ = 5₁₀.</p>
+      <div class="callout"><b>Important:</b> the left-most bit is not simply another +128 bit in two's complement; its place value is negative.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">23–31 min · Model</span>
+      <h3>Reading a negative two's complement value</h3>
+      <p>Consider:</p>
+      <div class="binary">11111011</div>
+      <p>Using the 8-bit two's complement place values:</p>
+      <p style="text-align:center;font-weight:800">−128 + 64 + 32 + 16 + 8 + 2 + 1 = −5</p>
+      <div class="callout"><b>Answer:</b> 11111011₂ represents −5₁₀ in 8-bit two's complement.</div>
+      <p>This is the conceptual place-value method. Students should be able to explain the role of the left-most bit.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">31–38 min · Guided comparison</span>
+      <h3>Unsigned versus two's complement</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Representation</th><th style="padding:8px;background:#082b59;color:white">8-bit pattern</th><th style="padding:8px;background:#082b59;color:white">Value</th></tr>
+        <tr><td style="padding:7px">Unsigned</td><td style="padding:7px">11111111</td><td style="padding:7px">255</td></tr>
+        <tr><td style="padding:7px">Two's complement</td><td style="padding:7px">11111111</td><td style="padding:7px">−1</td></tr>
+        <tr><td style="padding:7px">Unsigned</td><td style="padding:7px">10000000</td><td style="padding:7px">128</td></tr>
+        <tr><td style="padding:7px">Two's complement</td><td style="padding:7px">10000000</td><td style="padding:7px">−128</td></tr>
+      </table>
+      <div class="callout"><b>Discussion:</b> the same bit pattern can represent a different value depending on the representation being used.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">38–43 min · Range</span>
+      <h3>What range can be represented?</h3>
+      <p>For an n-bit two's complement representation, the range is:</p>
+      <div class="callout"><b>−2ⁿ⁻¹ to 2ⁿ⁻¹ − 1</b></div>
+      <p>For 8 bits this gives:</p>
+      <p style="text-align:center;font-weight:800">−128 to +127</p>
+      <p>The textbook explains the signed range and shows that one bit is effectively used to represent the sign, reducing the positive range compared with unsigned representation. fileciteturn6file0L44-L50</p>
+    </div>
+
+    <div class="card">
+      <span class="time">43–47 min · Differentiation</span>
+      <h3>Three levels of challenge</h3>
+      <p><b>Support:</b> Identify whether 00000110 and 10000110 are positive or negative in 8-bit two's complement.</p>
+      <p><b>Core:</b> Find the denary values of 01111111, 11111111 and 10000000.</p>
+      <p><b>Challenge:</b> Explain why the positive maximum is +127 rather than +128 in 8-bit two's complement.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>What does the left-most bit tell us in two's complement?</li>
+        <li>What is the 8-bit two's complement value of 00000111?</li>
+        <li>What is the range of values represented by 8-bit two's complement?</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> Period 9 can teach the two's complement conversion procedure and negative-number conversion in detail. If the sign bit or range is insecure, revisit the 8-bit place-value table first.</div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 8 establishes the concept, sign bit and range of two's complement before students learn the full conversion procedure in Period 9.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Why signed?</span>
+        <span>3. Sign bit</span><span>4. Read values</span>
+        <span>5. Range</span><span>6. Exit ticket</span>
+      </div>
+      <p>Today you will learn how binary can represent <b>negative as well as positive integers</b> using two's complement.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Explain why signed binary representation is needed.</li>
+        <li>Identify the sign bit.</li>
+        <li>Use two's complement place values.</li>
+        <li>Read positive and negative two's complement values.</li>
+        <li>State the range of an 8-bit two's complement representation.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · The sign bit</h3>
+      <p>In an 8-bit two's complement number, the left-most bit is the <b>sign bit</b>.</p>
+      <ul>
+        <li><b>0</b> in the sign position → non-negative</li>
+        <li><b>1</b> in the sign position → negative</li>
+      </ul>
+      <div class="callout"><b>Remember:</b> this is different from unsigned binary, where the left-most bit has a positive place value of 128.</div>
+    </div>
+
+    <div class="card">
+      <h3>2 · Two's complement place values</h3>
+      <div class="weights">
+        <div>−128</div><div>64</div><div>32</div><div>16</div>
+        <div>8</div><div>4</div><div>2</div><div>1</div>
+      </div>
+      <p>Use these values to find the denary value of an 8-bit two's complement number.</p>
+      <p><b>Example:</b> 00000101 = 5.</p>
+    </div>
+
+    <div class="card">
+      <h3>3 · Reading a negative value</h3>
+      <p>Consider:</p>
+      <div class="binary">11111011</div>
+      <p>Its place values give:</p>
+      <p style="text-align:center;font-weight:800">−128 + 64 + 32 + 16 + 8 + 2 + 1 = −5</p>
+      <div class="callout"><b>11111011₂ = −5₁₀</b> in 8-bit two's complement.</div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Quick check</h3>
+      <p><b>Q1:</b> What does a sign bit of 1 indicate?</p>
+      <button class="option" onclick="studentCheck8(this,false,'q1s8')">A positive value</button>
+      <button class="option" onclick="studentCheck8(this,true,'q1s8')">A negative value</button>
+      <button class="option" onclick="studentCheck8(this,false,'q1s8')">An overflow automatically</button>
+      <div class="score" id="q1s8"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> What is 00000101 in 8-bit two's complement?</p>
+      <button class="option" onclick="studentCheck8(this,true,'q2s8')">+5</button>
+      <button class="option" onclick="studentCheck8(this,false,'q2s8')">−5</button>
+      <button class="option" onclick="studentCheck8(this,false,'q2s8')">+128</button>
+      <div class="score" id="q2s8"></div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Unsigned or two's complement?</h3>
+      <p>The same pattern can mean different things.</p>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Pattern</th><th style="padding:8px;background:#082b59;color:white">Unsigned</th><th style="padding:8px;background:#082b59;color:white">Two's complement</th></tr>
+        <tr><td style="padding:7px">11111111</td><td style="padding:7px">255</td><td style="padding:7px">−1</td></tr>
+        <tr><td style="padding:7px">10000000</td><td style="padding:7px">128</td><td style="padding:7px">−128</td></tr>
+        <tr><td style="padding:7px">01111111</td><td style="padding:7px">127</td><td style="padding:7px">+127</td></tr>
+      </table>
+      <div class="callout"><b>The representation matters.</b> Never interpret a bit pattern without knowing whether it is unsigned or signed.</div>
+    </div>
+
+    <div class="card">
+      <h3>6 · The 8-bit range</h3>
+      <p>For n-bit two's complement:</p>
+      <div class="callout"><b>−2ⁿ⁻¹ to 2ⁿ⁻¹ − 1</b></div>
+      <p>For 8 bits:</p>
+      <div class="binary">−128 to +127</div>
+      <p>This is why two's complement can represent negative values but has a smaller positive range than unsigned binary.</p>
+    </div>
+
+    <div class="card">
+      <h3>7 · Practice</h3>
+      <p>Find the denary value of each 8-bit two's complement number:</p>
+      <ol>
+        <li>00000011</li>
+        <li>00001111</li>
+        <li>01111111</li>
+        <li>11111111</li>
+        <li>10000000</li>
+      </ol>
+      <button onclick="show('answers8a')">Reveal answers</button>
+      <div class="answer" id="answers8a">
+        <b>Answers:</b> +3, +15, +127, −1, −128.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Challenge</h3>
+      <p>Explain why +128 cannot be represented in 8-bit two's complement, even though 128 can be represented using 8-bit unsigned binary.</p>
+      <button onclick="show('challenge8')">Show explanation</button>
+      <div class="answer" id="challenge8">
+        In two's complement, the left-most bit has a negative place value (−128). The positive values therefore run only from 0 to +127. The pattern 10000000 represents −128, not +128.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Exam practice</h3>
+      <p><b>Question:</b> State the range of values that can be represented using 8-bit two's complement.</p>
+      <button onclick="show('exam8')">Show model answer</button>
+      <div class="answer" id="exam8">
+        <b>−128 to +127.</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>10 · Common mistakes</h3>
+      <ul>
+        <li>Treating the sign bit as +128.</li>
+        <li>Using the unsigned place-value table for a two's complement number.</li>
+        <li>Thinking that a leading 1 always means 128.</li>
+        <li>Forgetting that the range depends on the number of bits.</li>
+        <li>Assuming every binary pattern has the same meaning regardless of representation.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>11 · Self-assessment</h3>
+      <p>How confident are you now?</p>
+      <button onclick="confidence8('confident')">🟢 I understand two's complement</button>
+      <button onclick="confidence8('okay')">🟡 I need more practice</button>
+      <button onclick="confidence8('need')">🔴 I need help</button>
+      <div class="score" id="confidence8"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      <b>Source basis:</b> Cambridge IGCSE (9–1) Computer Science 0984 syllabus, 2026–2028, Topic 1.1; and <i>Cambridge IGCSE and O Level Computer Science, Second Edition</i>, Chapter 1. Content is presented as original teaching material.
+    </div>>
+  </div>
+</section>
+</main>
+
+<script>
+function studentCheck8(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  document.getElementById(id).textContent=correct?'✓ Correct!':'✗ Not quite. Check the sign bit and two’s complement place values.';
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence8(v){
+  const text={
+    confident:'Excellent — you are ready to learn the conversion procedure.',
+    okay:'Good. Practise the sign bit and range again.',
+    need:'That is useful information. Rework the two’s complement place-value table carefully.'
+  };
+  document.getElementById('confidence8').textContent=text[v];
+}
+</script>
+</body>
+</html>

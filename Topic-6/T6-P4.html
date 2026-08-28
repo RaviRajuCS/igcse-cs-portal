@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 6 | Period 4</title>
+<style>
+:root{--gold:#d8ad45;--gold2:#efd47a;--blue:#123b63;--blue2:#0b2d4d;--ink:#17324d}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#c99528,#efd16c 45%,#c99a2e);color:var(--ink);overflow:hidden}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#0b2d4df2;color:#fff;border-bottom:3px solid var(--gold2);box-shadow:0 5px 18px #08203b66}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:2px 0;color:#e8eef5;font-size:13px;font-weight:600}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:19px;font-weight:700}
+.school{display:flex;align-items:center;gap:10px;font-size:13px}.school img{width:48px;height:48px;background:#fff;border-radius:9px;padding:3px;object-fit:contain}
+.badge{background:var(--gold2);color:var(--blue2);font-weight:900;padding:9px 13px;border-radius:18px}
+.layout{height:calc(100vh - 88px);display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:14px}
+.pane{min-height:0;background:#fffaf0f5;border:2px solid #c7a653;border-radius:22px;box-shadow:0 14px 34px #49340f55;overflow:hidden;display:flex;flex-direction:column}
+.panehead{background:var(--blue2);color:#fff;padding:15px 20px}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:#fffdf7;border:1px solid #d9c797;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #49340f12}
+.card h3{margin:0 0 9px;color:var(--blue2);font-size:17px}p{line-height:1.55}ul,ol{line-height:1.55;padding-left:20px}
+.time{display:inline-block;background:#f2dda0;border:1px solid #c7a653;color:var(--blue2);padding:4px 9px;border-radius:18px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{background:#f5ecd0;border-left:5px solid var(--blue);padding:12px 14px;border-radius:8px;margin:10px 0}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#f6edcf;border-radius:16px;margin:14px 0}
+.node{background:var(--blue2);color:#fff;padding:13px 15px;border-radius:13px;font-weight:900;text-align:center}.arrow{font-size:25px;font-weight:900;color:var(--blue)}
+.example{background:#eef3f7;border:1px solid #b7c7d6;border-radius:13px;padding:13px;margin:10px 0}
+.pros{background:#edf5ee;border:1px solid #a7c5ae;border-radius:13px;padding:13px}.cons{background:#f8e9e5;border:1px solid #d1aaa1;border-radius:13px;padding:13px}
+.workout{background:#f7f0dd;border:2px dashed #b7964e;border-radius:15px;padding:15px;margin:12px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue2);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid #c8b98e}.option.correct{background:#e1efe5;border-color:#6d997a}.option.wrong{background:#f5dfdb;border-color:#a86b61}
+.answer{display:none;background:#e5f0e7;border:1px solid #9db9a4;padding:11px;border-radius:10px;margin-top:9px}.score{font-weight:900;margin-top:8px}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{background:#e7dfcf;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:800}.progress .active{background:#e8d18a;border:1px solid #b7964e;color:var(--blue2)}
+table{width:100%;border-collapse:collapse}th{background:var(--blue2);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #ddd2b8;vertical-align:top}
+.footer{font-size:11px;color:#685e4e;border-top:1px solid #d8ccb0;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}header{height:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div><div class="name">Ravi Raju</div><h1>IGCSE Computer Science 0984</h1><p>Topic 6 · Automated and Emerging Technologies · Period 4</p></div></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">TOPIC 6</div></div>
+</header>
+<main class="layout">
+<section class="pane"><div class="panehead"><h2>📘 Teacher Studio</h2><small>6.1 Automated systems · advantages · disadvantages · scenario evaluation</small></div><div class="content">
+<div class="card"><span class="time">Topic 6 · Period 4</span><h3>Advantages and Disadvantages of Automated Systems</h3>
+<p>This period develops the second major requirement of Topic 6.1: evaluating an automated system in a <b>given scenario</b>.</p>
+<div class="callout"><b>Cambridge focus:</b> Students must be able to explain advantages and disadvantages of an automated system in a given scenario.</div></div>
+<div class="card"><h3>1 · What does “evaluate” mean?</h3>
+<p>In an exam, evaluation means more than listing a benefit and a drawback. A strong answer links each point to the <b>specific scenario</b>.</p>
+<div class="flow"><div class="node">SYSTEM</div><div class="arrow">→</div><div class="node">BENEFIT / DRAWBACK</div><div class="arrow">→</div><div class="node">WHY IT MATTERS<br>IN THIS SCENARIO</div></div>
+<div class="callout"><b>Weak:</b> “Automation is faster.”<br><b>Stronger:</b> “Automation can complete repetitive factory tasks quickly, increasing production while reducing the time needed for each item.”</div></div>
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>2 · Common advantages</h3>
+<div class="pros"><ul><li><b>Speed:</b> repetitive processes can be carried out quickly.</li><li><b>Consistency:</b> the programmed process can be repeated in the same way.</li><li><b>Accuracy:</b> suitable automated systems can make precise measurements or movements.</li><li><b>24/7 operation:</b> systems can operate for long periods without human fatigue.</li><li><b>Safety:</b> people can be kept away from dangerous environments.</li><li><b>Productivity:</b> more output can be produced or monitored in a given time.</li></ul></div></div>
+<div class="card"><span class="time">8–17 min · Teach</span><h3>3 · Common disadvantages</h3>
+<div class="cons"><ul><li><b>Cost:</b> purchasing, installing and maintaining equipment can be expensive.</li><li><b>Job displacement:</b> some repetitive human jobs may be reduced.</li><li><b>Maintenance:</b> sensors, processors and actuators can fail and need servicing.</li><li><b>Dependence on programming:</b> an incorrect program can cause incorrect actions.</li><li><b>Power dependence:</b> many automated systems require a reliable power supply.</li><li><b>Limited judgement:</b> a system follows its programmed rules and may not handle unexpected situations well.</li></ul></div></div>
+<div class="card"><span class="time">17–27 min · Scenario example</span><h3>4 · Automated factory production</h3>
+<div class="example"><b>Scenario:</b> Robots/automated machines perform repetitive assembly tasks in a factory.</div>
+<table><tr><th>Advantage</th><th>Scenario-specific explanation</th></tr><tr><td>Speed</td><td>Machines can repeat assembly operations quickly, increasing production.</td></tr><tr><td>Consistency</td><td>The same programmed sequence can be repeated for each product.</td></tr><tr><td>Safety</td><td>Workers may be kept away from dangerous machinery.</td></tr></table>
+<table><tr><th>Disadvantage</th><th>Scenario-specific explanation</th></tr><tr><td>Cost</td><td>Installation and maintenance of automated equipment can be expensive.</td></tr><tr><td>Failures</td><td>A sensor, actuator or program fault can stop production or cause incorrect actions.</td></tr><tr><td>Jobs</td><td>Some repetitive assembly roles may no longer be needed.</td></tr></table>
+</div>
+<div class="card"><span class="time">27–35 min · Teach</span><h3>5 · The scenario changes the answer</h3>
+<p>The same advantage can have different importance depending on the situation.</p>
+<table><tr><th>Scenario</th><th>Strong advantage</th><th>Strong disadvantage</th></tr>
+<tr><td>Dangerous industrial process</td><td>Safety</td><td>System failure could be dangerous</td></tr>
+<tr><td>Automatic street lighting</td><td>Reduced human intervention</td><td>Installation/maintenance cost</td></tr>
+<tr><td>Crop irrigation</td><td>Water supplied when needed</td><td>Sensor failure could cause under/over-watering</td></tr>
+<tr><td>Weather monitoring</td><td>Continuous monitoring</td><td>Power/equipment failure</td></tr></table></div>
+<div class="card"><span class="time">35–42 min · Worked example</span><h3>6 · Automatic greenhouse system</h3>
+<div class="example">A greenhouse uses sensors and automated equipment to control watering and temperature.</div>
+<ol><li><b>Advantage:</b> continuous monitoring allows the system to react when conditions change.</li><li><b>Advantage:</b> automatic watering can reduce the need for constant human supervision.</li><li><b>Disadvantage:</b> faulty sensors could cause incorrect watering or temperature control.</li><li><b>Disadvantage:</b> installation and maintenance add cost.</li></ol></div>
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>7 · Evaluation practice</h3>
+<div class="workout">An airport uses automated systems to control access doors. Give <b>two advantages</b> and <b>two disadvantages</b>. Explain each one in the context of airport access.</div>
+<button onclick="showA('w1')">Show model</button>
+<div class="answer" id="w1"><b>Advantages:</b> automated doors can operate quickly and consistently; access can be controlled according to programmed conditions. <b>Disadvantages:</b> a sensor or actuator failure could prevent correct operation; installation and maintenance can be costly.</div></div>
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>8 · The “because” test</h3>
+<div class="callout">After every advantage or disadvantage, add <b>“because…”</b> and explain its effect on the scenario. This turns a list into an explanation.</div></div>
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 4 · Advantages and disadvantages of automated systems.</div>
+</div></section>
+<section class="pane"><div class="panehead"><h2>🧠 Student Studio</h2><small>Identify → explain → contextualise → evaluate</small></div><div class="content">
+<div class="card"><h3>🧭 Topic 6 roadmap</h3><div class="progress"><span class="active">6.1 Automated systems</span><span>6.2 Robotics</span><span>6.3 Artificial Intelligence</span></div></div>
+<div class="card"><h3>🎯 Learning targets</h3><ul><li>State common advantages of automation.</li><li>State common disadvantages of automation.</li><li>Explain why each point matters in a particular scenario.</li><li>Distinguish between a simple statement and a developed explanation.</li><li>Evaluate an automated system using balanced points.</li></ul></div>
+<div class="card"><h3>1 · Quick check</h3><p>Which is most likely to be an advantage of an automated system performing a repetitive task?</p>
+<button class="option" onclick="checkQ(this,true,'q1')">Consistent repeated operation</button><button class="option" onclick="checkQ(this,false,'q1')">It never needs maintenance</button><div class="score" id="q1"></div></div>
+<div class="card"><h3>2 · Workout — Develop the point</h3><div class="workout">Turn this statement into a developed answer: <b>“Automation is fast.”</b></div><button onclick="showA('a1')">Show model</button><div class="answer" id="a1">Automated systems can carry out repetitive operations quickly, so a factory may produce more products in a given amount of time.</div></div>
+<div class="card"><h3>3 · Interactive check</h3><p>Which is a realistic disadvantage of automation?</p>
+<button class="option" onclick="checkQ(this,true,'q2')">A fault in a sensor or program may cause incorrect operation.</button><button class="option" onclick="checkQ(this,false,'q2')">Automated systems always make perfect decisions.</button><div class="score" id="q2"></div></div>
+<div class="card"><h3>4 · Scenario workout — Agriculture</h3><div class="workout">An automated irrigation system waters crops according to soil moisture. Give one advantage and one disadvantage, each linked to agriculture.</div><button onclick="showA('a2')">Show model answer</button><div class="answer" id="a2"><b>Advantage:</b> crops can be watered automatically when the soil becomes too dry, reducing the need for constant supervision. <b>Disadvantage:</b> a faulty moisture sensor could cause the system to supply too much or too little water.</div></div>
+<div class="card"><h3>5 · Worked comparison</h3><table><tr><th>Point</th><th>Good explanation</th></tr><tr><td>Safety</td><td>People can be kept away from hazardous industrial processes.</td></tr><tr><td>Cost</td><td>Equipment may require a large initial investment and ongoing maintenance.</td></tr><tr><td>Consistency</td><td>The same programmed process can be repeated without human fatigue.</td></tr><tr><td>Failure</td><td>A system fault can stop a process or produce an unsafe result.</td></tr></table></div>
+<div class="card"><h3>6 · Interactive check</h3><p>Why is “expensive” a better answer when it is explained as “expensive to install and maintain”?</p><button class="option" onclick="checkQ(this,true,'q3')">It explains what causes the cost in the scenario.</button><button class="option" onclick="checkQ(this,false,'q3')">It makes the system automatically cheaper.</button><div class="score" id="q3"></div></div>
+<div class="card"><h3>7 · Challenge — Transport</h3><div class="workout">An automated braking system is used in vehicles. Write two advantages and two disadvantages. Try to make every point scenario-specific.</div><button onclick="showA('a3')">Show model</button><div class="answer" id="a3"><b>Advantages:</b> rapid response can help reduce collision risk; automated monitoring can operate continuously. <b>Disadvantages:</b> sensor/software failure could cause incorrect braking; installation and maintenance can be costly.</div></div>
+<div class="card"><h3>8 · Exam-style question</h3><p><b>Question:</b> A factory is considering an automated system for a repetitive manufacturing task. Explain two advantages and two disadvantages of using the system.</p><button onclick="showA('a4')">Show mark-point model</button><div class="answer" id="a4"><b>Advantages:</b> the system can work quickly and consistently, increasing production; workers can be kept away from dangerous machinery. <b>Disadvantages:</b> purchase and maintenance can be expensive; faults in sensors, actuators or the program could stop production or cause incorrect actions.</div></div>
+<div class="card"><h3>9 · Exam writing frame</h3><div class="callout"><b>Advantage:</b> The system can ________, which means ________ in this scenario.<br><br><b>Disadvantage:</b> If ________ fails/is incorrect, ________ could happen in this scenario.</div></div>
+<div class="card"><h3>10 · Common mistakes</h3><ul><li>Writing only a list of advantages and disadvantages.</li><li>Using the same vague point for every scenario.</li><li>Claiming automated systems never make errors.</li><li>Forgetting installation, maintenance or failure costs.</li><li>Giving a disadvantage without explaining its consequence.</li></ul></div>
+<div class="card"><h3>11 · Self-assessment</h3><p>Can you give balanced, scenario-specific advantages and disadvantages rather than generic lists?</p><button onclick="confidence('ready')">🟢 Yes</button><button onclick="confidence('practice')">🟡 More practice</button><button onclick="confidence('revise')">🔴 Need revision</button><div class="score" id="confidence"></div></div>
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 4 · Advantages and disadvantages.</div>
+</div></section>
+</main>
+<script>
+function showA(id){document.getElementById(id).style.display='block'}
+function checkQ(btn,correct,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(correct?'correct':'wrong');const m={q1:correct?'✓ Correct — consistency is a realistic advantage for repetitive tasks.':'✗ A real automated system can require maintenance.',q2:correct?'✓ Correct — faults can cause incorrect operation.':'✗ Automation does not guarantee perfect decisions.',q3:correct?'✓ Correct — developed answers connect the cost to installation/maintenance.':'✗ The point should explain the source and consequence of the cost.'};document.getElementById(id).textContent=m[id]}
+function confidence(v){const m={ready:'Excellent — you can evaluate automation in a given scenario.',practice:'Good. Practise adding “because…” to every advantage and disadvantage.',revise:'Remember: make every point specific to the scenario and explain why it matters.'};document.getElementById('confidence').textContent=m[v]}
+</script>
+</body></html>

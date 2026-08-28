@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 9</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--blue2:#12477f;--glass:rgba(255,255,255,.72);--shadow:0 12px 30px rgba(8,43,89,.16)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(255,255,255,.34);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.55)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0 0;font-size:13px;font-weight:600}.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:white;font-weight:700;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}.panehead{padding:15px 20px;background:rgba(8,43,89,.95);color:white}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:rgba(255,253,245,.88);border:1px solid rgba(8,43,89,.13);border-radius:16px;padding:16px;margin-bottom:15px}.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.echo{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:18px;background:rgba(255,255,255,.58);border-radius:16px;margin:15px 0}.node{padding:14px 18px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:28px;font-weight:900}.loop{font-size:13px;font-weight:800;color:var(--blue2)}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div><h1>IGCSE Computer Science 0984</h1><p>Topic 2 — Data Transmission · Period 9</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>My teaching route</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Lesson overview</span><h3>Period 9 · Echo Check</h3>
+<p><b>Topic 2 · Data Transmission:</b> Students learn how an echo check can detect errors by sending received data back to the sender so that it can be compared with the original.</p>
+<div class="callout"><b>Success criteria:</b> Students can explain the echo check sequence, identify where comparison takes place, explain what a mismatch means, and compare echo checking with parity and checksum methods.</div>
+<p><b>Prior learning:</b> Periods 6–8 — transmission errors, parity checks and checksums.</p>
+<p><b>Key vocabulary:</b> echo check, original data, received data, return transmission, comparison, mismatch, error detection.</p></div>
+
+<div class="card"><span class="time">My teaching route</span><h3>Make the return journey visible</h3>
+<ol><li>Retrieve the purpose of error detection.</li><li>Ask how the receiver could prove what it received.</li><li>Introduce the echo check sequence.</li><li>Trace the original data → receiver → data sent back → comparison.</li><li>Show a successful match.</li><li>Change one piece of data and show a mismatch.</li><li>Compare echo check with parity and checksum.</li></ol>
+<div class="callout"><b>Memory rule:</b> Echo check = <b>send → receive → send back → compare</b>.</div></div>
+
+<div class="card"><span class="time">0–5 min · Retrieval</span><h3>What have we learned?</h3>
+<ul><li>Why can transmission errors occur?</li><li>What does a parity bit do?</li><li>What does a checksum provide?</li><li>What does a mismatch indicate?</li></ul>
+<div class="callout"><b>Bridge:</b> Instead of calculating a checking value, we can return the received data to the sender and compare it with the original.</div></div>
+
+<div class="card"><span class="time">5–14 min · Teach</span><h3>What is an echo check?</h3>
+<p>In an <b>echo check</b>, the receiver sends the data it received back to the sender. The sender compares the returned data with the original data.</p>
+<div class="echo"><div class="node">SENDER<br>Original</div><div class="arrow">→</div><div class="node">RECEIVER<br>Received</div><div class="arrow">↩</div><div class="node">SENDER<br>Compare</div></div>
+<div class="callout"><b>Core sequence:</b> Original data is sent → receiver gets it → receiver sends it back → sender compares the returned data with the original.</div></div>
+
+<div class="card"><span class="time">14–23 min · Guided example</span><h3>Echo check with matching data</h3>
+<p>The sender transmits:</p><div class="callout"><b>COMPUTER</b></div>
+<p>The receiver gets <b>COMPUTER</b> and sends it back.</p><div class="callout"><b>Returned data: COMPUTER</b></div>
+<p>The sender compares:</p><table><tr><th>Original</th><th>Returned</th><th>Result</th></tr><tr><td>COMPUTER</td><td>COMPUTER</td><td><b>Match</b></td></tr></table>
+<div class="callout"><b>Match:</b> The echo check has passed. No error has been detected by this check.</div></div>
+
+<div class="card"><span class="time">23–31 min · Guided example</span><h3>Echo check with changed data</h3>
+<p>Suppose the sender transmits:</p><div class="callout"><b>COMPUTER</b></div>
+<p>But the receiver gets and returns:</p><div class="callout"><b>COMPUTRR</b></div>
+<table><tr><th>Original</th><th>Returned</th><th>Result</th></tr><tr><td>COMPUTER</td><td>COMPUTRR</td><td><b>Mismatch</b></td></tr></table>
+<div class="callout"><b>Mismatch:</b> The sender knows that the returned data differs from the original, so an error has been detected.</div></div>
+
+<div class="card"><span class="time">31–37 min · Evaluate</span><h3>Advantages and disadvantages</h3>
+<table><tr><th>Advantages</th><th>Limitations</th></tr><tr><td>Simple concept: compare the returned data with the original.</td><td>Extra data must be transmitted back to the sender.</td></tr><tr><td>Can detect a difference between original and returned data.</td><td>Uses additional time and communication bandwidth.</td></tr><tr><td>Easy to understand and implement in suitable systems.</td><td>A matching return does not prove that every possible error is impossible.</td></tr></table></div>
+
+<div class="card"><span class="time">37–42 min · Compare</span><h3>Three error-detection methods</h3>
+<table><tr><th>Method</th><th>What is checked?</th></tr><tr><td><b>Parity</b></td><td>Whether the number of 1s follows an agreed rule.</td></tr><tr><td><b>Checksum</b></td><td>Whether a calculated checking value matches.</td></tr><tr><td><b>Echo check</b></td><td>Whether returned data matches the original.</td></tr></table>
+<div class="callout"><b>Think in actions:</b> Parity <b>counts</b> · Checksum <b>calculates</b> · Echo check <b>returns and compares</b>.</div></div>
+
+<div class="card"><span class="time">42–47 min · Assessment</span><h3>Cambridge-style questions</h3>
+<ol><li>Define an echo check.</li><li>Describe the sequence used in an echo check.</li><li>Explain what a mismatch between original and returned data indicates.</li><li>State one advantage of an echo check.</li><li>State one disadvantage of an echo check.</li></ol>
+<div class="callout"><b>Marking focus:</b> Include both <b>returning the received data</b> and <b>comparing it with the original</b>.</div></div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>Finish the sentences</h3>
+<div class="callout"><b>Echo check means...</b> received data is sent back to the sender for comparison.</div>
+<div class="callout"><b>A match means...</b> the check has passed.</div>
+<div class="callout"><b>A mismatch means...</b> an error has been detected.</div>
+<div class="callout"><b>One drawback is...</b> extra transmission is required.</div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br><b>Planning note:</b> Period 9 teaches echo checks and completes the core error-detection methods sequence.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Your learning route</h3><div class="progress"><span class="active">1. Recall</span><span>2. Echo</span><span>3. Return</span><span>4. Compare</span><span>5. Evaluate</span><span>6. Test</span></div><p>Today you will learn how an <b>echo check</b> uses returned data to detect transmission errors.</p></div>
+
+<div class="card"><h3>🎯 Learning goals</h3><ul><li>Define echo check.</li><li>Describe its sequence.</li><li>Explain a successful match.</li><li>Explain a mismatch.</li><li>State advantages and limitations.</li><li>Compare echo check with parity and checksum.</li></ul></div>
+
+<div class="card"><h3>1 · The four-step journey</h3><div class="echo"><div class="node">1. SEND<br>original</div><div class="arrow">→</div><div class="node">2. RECEIVE<br>data</div><div class="arrow">→</div><div class="node">3. SEND BACK<br>received data</div><div class="arrow">→</div><div class="node">4. COMPARE</div></div>
+<div class="callout"><b>Remember:</b> The important feature is the <b>return transmission</b>.</div></div>
+
+<div class="card"><h3>2 · Matching data</h3><p>Original:</p><div class="callout"><b>HELLO123</b></div><p>Returned:</p><div class="callout"><b>HELLO123</b></div><div class="callout"><b>Match →</b> the echo check passes.</div></div>
+
+<div class="card"><h3>3 · Changed data</h3><p>Original:</p><div class="callout"><b>HELLO123</b></div><p>Returned:</p><div class="callout"><b>HELLO128</b></div><div class="callout"><b>Mismatch →</b> an error has been detected.</div></div>
+
+<div class="card"><h3>4 · Interactive check</h3>
+<p>The sender transmitted <b>DATA2026</b>. The receiver returned <b>DATA2026</b>. What does this show?</p>
+<button class="option" onclick="checkP9(this,true,'q1p9')">The echo check has passed</button>
+<button class="option" onclick="checkP9(this,false,'q1p9')">An error has definitely been detected</button>
+<div class="score" id="q1p9"></div>
+<p style="margin-top:15px">The sender transmitted <b>DATA2026</b>. The receiver returned <b>DATA20Z6</b>. What does this show?</p>
+<button class="option" onclick="checkP9(this,false,'q2p9')">The echo check has passed</button>
+<button class="option" onclick="checkP9(this,true,'q2p9')">A mismatch has detected an error</button>
+<div class="score" id="q2p9"></div></div>
+
+<div class="card"><h3>5 · Why is extra transmission needed?</h3><p>The receiver has to send the received data back to the sender. This creates an additional transmission and therefore uses additional communication resources.</p><div class="callout"><b>Advantage:</b> direct comparison with the original data.<br><b>Disadvantage:</b> additional transmission is required.</div></div>
+
+<div class="card"><h3>6 · Compare the methods</h3><table><tr><th>Method</th><th>Memory clue</th></tr><tr><td>Parity</td><td><b>Count</b> the 1s.</td></tr><tr><td>Checksum</td><td><b>Calculate</b> a value.</td></tr><tr><td>Echo check</td><td><b>Return</b> and compare.</td></tr></table></div>
+
+<div class="card"><h3>7 · Exam practice</h3><p><b>Question:</b> Describe how an echo check is used to detect errors in transmitted data.</p><button onclick="showP9('examP9')">Show model answer</button><div class="answer" id="examP9">The receiver sends the data it received back to the sender. The sender compares the returned data with the original data. If they are different, an error has been detected.</div></div>
+
+<div class="card"><h3>8 · Challenge</h3><p>Why does an echo check require more communication than simply receiving the original data?</p><button onclick="showP9('challengeP9')">Show answer</button><div class="answer" id="challengeP9">Because the received data must be transmitted back to the sender for comparison, creating an additional transmission.</div></div>
+
+<div class="card"><h3>9 · Common mistakes</h3><ul><li>Thinking the receiver compares the data with the original when it may not have the original.</li><li>Forgetting that the received data is sent back.</li><li>Saying a match proves that no error is possible.</li><li>Confusing echo check with checksum.</li><li>Forgetting the extra transmission is a limitation.</li></ul></div>
+
+<div class="card"><h3>10 · Self-assessment</h3><p>Choose your confidence:</p><button onclick="confidenceP9('confident')">🟢 I can explain echo checks</button><button onclick="confidenceP9('okay')">🟡 I need more practice</button><button onclick="confidenceP9('need')">🔴 I need help</button><div class="score" id="confidenceP9"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Echo check · Return transmission · Compare · Detect.</div>
+</div>
+</section>
+</main>
+<script>
+function checkP9(btn,c,id){const box=btn.parentElement;[...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));btn.classList.add(c?'correct':'wrong');const m={q1p9:c?'✓ Correct — the original and returned data match.':'✗ Not quite — a match means the check has passed.',q2p9:c?'✓ Correct — the returned data differs from the original.':'✗ Not quite — look for the changed character.'};document.getElementById(id).textContent=m[id]}
+function showP9(id){document.getElementById(id).style.display='block'}
+function confidenceP9(v){const t={confident:'Excellent — you are ready to compare all three error-detection methods.',okay:'Good. Repeat the send → receive → send back → compare sequence.',need:'That is useful information. Revisit the echo-check journey and mismatch example.'};document.getElementById('confidenceP9').textContent=t[v]}
+</script>
+</body>
+</html>

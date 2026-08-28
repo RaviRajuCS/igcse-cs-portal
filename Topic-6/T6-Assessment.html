@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 6 Assessment | 50 Marks</title>
+<style>
+:root{--gold:#d8ad45;--gold2:#efd47a;--blue:#123b63;--blue2:#0b2d4d;--ink:#17324d}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#c99528,#efd16c 45%,#c99a2e);color:var(--ink);overflow:hidden}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#0b2d4df2;color:#fff;border-bottom:3px solid var(--gold2)}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:2px 0;color:#e8eef5;font-size:13px;font-weight:600}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:19px;font-weight:700}
+.school{display:flex;align-items:center;gap:10px;font-size:13px}.school img{width:48px;height:48px;background:#fff;border-radius:9px;padding:3px;object-fit:contain}.badge{background:var(--gold2);color:var(--blue2);font-weight:900;padding:9px 13px;border-radius:18px}
+.layout{height:calc(100vh - 88px);display:grid;grid-template-columns:1.35fr .65fr;gap:15px;padding:14px}
+.pane{min-height:0;background:#fffaf0f5;border:2px solid #c7a653;border-radius:22px;box-shadow:0 14px 34px #49340f55;overflow:hidden;display:flex;flex-direction:column}
+.panehead{background:var(--blue2);color:#fff;padding:15px 20px}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:#fffdf7;border:1px solid #d9c797;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #49340f12}
+.card h3{margin:0 0 9px;color:var(--blue2);font-size:17px}p{line-height:1.55}ul,ol{line-height:1.55;padding-left:22px}
+.section{border-left:6px solid var(--blue);padding:14px 15px;background:#f7f0dd;border-radius:10px;margin:12px 0}.section h3{margin-top:0}
+.marks{float:right;background:#e8d18a;color:var(--blue2);padding:4px 10px;border-radius:14px;font-weight:900;font-size:12px}
+.question{background:#fffdf7;border:1px solid #d9c797;border-radius:14px;padding:14px;margin:10px 0}.question p{margin:7px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid #c8b98e;border-radius:10px;padding:10px;margin:6px 0;cursor:pointer}
+.option.correct{background:#e1efe5;border-color:#6d997a}.option.wrong{background:#f5dfdb;border-color:#a86b61}
+.feedback{font-weight:800;margin-top:7px}.answer{display:none;background:#e5f0e7;border:1px solid #9db9a4;padding:11px;border-radius:10px;margin-top:9px}
+textarea,input[type=text]{width:100%;padding:10px;border:1px solid #c8b98e;border-radius:9px;background:#fffdf7;font-family:inherit}
+textarea{min-height:85px;resize:vertical}button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue2);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}
+.scorebox{background:#f5ecd0;border:2px solid #b7964e;border-radius:14px;padding:15px;text-align:center;margin-bottom:14px}
+.big{font-size:32px;font-weight:950;color:var(--blue2)}.subscore{font-weight:800;margin:3px 0}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{background:#e7dfcf;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:800}.progress .active{background:#e8d18a;border:1px solid #b7964e;color:var(--blue2)}
+table{width:100%;border-collapse:collapse}th{background:var(--blue2);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #ddd2b8;vertical-align:top}
+.callout{background:#f5ecd0;border-left:5px solid var(--blue);padding:12px 14px;border-radius:8px;margin:10px 0}.footer{font-size:11px;color:#685e4e;border-top:1px solid #d8ccb0;padding-top:10px;margin-top:18px}
+@media(max-width:1000px){body{overflow:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}header{height:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div><div class="name">Ravi Raju</div><h1>IGCSE Computer Science 0984</h1><p>Topic 6 · Assessment · Automated and Emerging Technologies · 50 Marks</p></div></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MARKS</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>📝 Topic 6 Assessment Paper</h2><small>6.1 Automated systems · 6.2 Robotics · 6.3 Artificial intelligence</small></div>
+<div class="content">
+
+<div class="card">
+<h3>Candidate instructions</h3>
+<ul><li>Answer all questions.</li><li>Total: <b>50 marks</b>.</li><li>Read the command word carefully.</li><li>Use precise 0984 terminology.</li><li>For written questions, type your answer in the space provided.</li><li>This is a <b>Topic 6 diagnostic assessment</b>; it is not an official Cambridge paper.</li></ul>
+<div class="callout"><b>Coverage:</b> 6.1 Automated systems · 6.2 Robotics · 6.3 Artificial intelligence.</div>
+</div>
+
+<div class="section">
+<span class="marks">10 marks</span><h3>Section A — Knowledge and Understanding</h3>
+
+<div class="question"><b>Q1. [2]</b><p>State the three main components of an automated system.</p>
+<input type="text" id="q1"><button onclick="guide('q1','f1')">Check guidance</button><div class="feedback" id="f1"></div></div>
+
+<div class="question"><b>Q2. [2]</b><p>Which component processes the information received from a sensor?</p>
+<button class="option" onclick="mc(this,true,'f2')">Microprocessor</button>
+<button class="option" onclick="mc(this,false,'f2')">Actuator</button><div class="feedback" id="f2"></div></div>
+
+<div class="question"><b>Q3. [2]</b><p>Which statement best describes a robot?</p>
+<button class="option" onclick="mc(this,true,'f3')">A programmable machine that can sense/process information and carry out physical actions.</button>
+<button class="option" onclick="mc(this,false,'f3')">Any program that displays information on a screen.</button><div class="feedback" id="f3"></div></div>
+
+<div class="question"><b>Q4. [2]</b><p>State two main characteristics associated with AI in the 0984 syllabus.</p>
+<input type="text" id="q4"><button onclick="guideAI('q4','f4')">Check guidance</button><div class="feedback" id="f4"></div></div>
+
+<div class="question"><b>Q5. [2]</b><p>What is meant by machine learning?</p>
+<textarea id="q5"></textarea><button onclick="show('a5')">Show model</button>
+<div class="answer" id="a5">A program has the ability to automatically adapt its own processes and/or data.</div></div>
+</div>
+
+<div class="section">
+<span class="marks">14 marks</span><h3>Section B — Automated Systems and Robotics</h3>
+
+<div class="question"><b>Q6. [2]</b><p>Explain the role of an actuator in an automated system.</p>
+<textarea id="q6"></textarea><button onclick="show('a6')">Show model</button>
+<div class="answer" id="a6">An actuator receives a signal from the microprocessor and produces a physical action, such as moving a motor, opening a valve or switching a device.</div></div>
+
+<div class="question"><b>Q7. [2]</b><p>A greenhouse uses a temperature sensor. When the temperature becomes too high, the microprocessor switches on a fan. Identify the sensor input and the actuator.</p>
+<textarea id="q7"></textarea><button onclick="show('a7')">Show model</button>
+<div class="answer" id="a7">Sensor input: the temperature reading. Actuator: the fan/motor that produces the physical action of moving air.</div></div>
+
+<div class="question"><b>Q8. [2]</b><p>State one advantage and one disadvantage of using robots for repetitive manufacturing.</p>
+<textarea id="q8"></textarea><button onclick="show('a8')">Show marking guidance</button>
+<div class="answer" id="a8">Advantage: a robot can repeat the task consistently and may increase productivity. Disadvantage: purchase/maintenance costs can be high, or a fault may stop production.</div></div>
+
+<div class="question"><b>Q9. [2]</b><p>Explain why a robot may be suitable for work in a dangerous environment.</p>
+<textarea id="q9"></textarea><button onclick="show('a9')">Show model</button>
+<div class="answer" id="a9">The robot can carry out the task while reducing a human worker's exposure to the dangerous environment.</div></div>
+
+<div class="question"><b>Q10. [2]</b><p>A mobile robot repeatedly detects an obstacle, changes direction and then checks its surroundings again. Explain how feedback is involved.</p>
+<textarea id="q10"></textarea><button onclick="show('a10')">Show model</button>
+<div class="answer" id="a10">Sensors provide new information about the obstacle. The controller processes it and changes the motor/actuator action. After the robot moves, new sensor readings are taken and used for the next decision.</div></div>
+
+<div class="question"><b>Q11. [2]</b><p>A warehouse robot transports boxes. Give two reasons why this task may be suitable for a robot.</p>
+<textarea id="q11"></textarea><button onclick="show('a11')">Show model</button>
+<div class="answer" id="a11">The task is repetitive and can be programmed. The robot can work consistently for long periods and can use sensors to navigate and detect obstacles.</div></div>
+
+<div class="question"><b>Q12. [2]</b><p>State one limitation that could make a robot unsuitable for a particular task.</p>
+<textarea id="q12"></textarea><button onclick="show('a12')">Show examples</button>
+<div class="answer" id="a12">Possible limitations include high cost, maintenance requirements, component failure, safety risks, or difficulty dealing with unexpected situations.</div></div>
+</div>
+
+<div class="section">
+<span class="marks">14 marks</span><h3>Section C — Artificial Intelligence</h3>
+
+<div class="question"><b>Q13. [2]</b><p>Give the Cambridge 0984 definition of artificial intelligence.</p>
+<textarea id="q13"></textarea><button onclick="show('a13')">Show model</button>
+<div class="answer" id="a13">Artificial intelligence is a branch of computer science dealing with the simulation of intelligent behaviours by computers.</div></div>
+
+<div class="question"><b>Q14. [2]</b><p>Explain the difference between a knowledge base and a rule base in an expert system.</p>
+<textarea id="q14"></textarea><button onclick="show('a14')">Show model</button>
+<div class="answer" id="a14">The knowledge base stores specialist facts/knowledge. The rule base stores rules for using that knowledge to reach conclusions.</div></div>
+
+<div class="question"><b>Q15. [2]</b><p>What is the role of the inference engine in an expert system?</p>
+<textarea id="q15"></textarea><button onclick="show('a15')">Show model</button>
+<div class="answer" id="a15">It applies the rules to available information/knowledge to infer a conclusion or recommendation.</div></div>
+
+<div class="question"><b>Q16. [2]</b><p>What is the role of the interface in an expert system?</p>
+<textarea id="q16"></textarea><button onclick="show('a16')">Show model</button>
+<div class="answer" id="a16">It allows the user to communicate with the expert system, providing information and receiving its conclusions or recommendations.</div></div>
+
+<div class="question"><b>Q17. [2]</b><p>State the four components of an expert system.</p>
+<input type="text" id="q17"><button onclick="guideComponents('q17','f17')">Check guidance</button><div class="feedback" id="f17"></div></div>
+
+<div class="question"><b>Q18. [2]</b><p>Explain one way in which machine learning differs from a fixed programmed system.</p>
+<textarea id="q18"></textarea><button onclick="show('a18')">Show model</button>
+<div class="answer" id="a18">A fixed programmed system follows instructions that remain unchanged unless a programmer changes them. Machine learning allows a program to automatically adapt its own processes and/or data.</div></div>
+
+<div class="question"><b>Q19. [2]</b><p>AI can include the ability to learn and adapt. What does “adapt” mean in the context of machine learning?</p>
+<textarea id="q19"></textarea><button onclick="show('a19')">Show model</button>
+<div class="answer" id="a19">The program can automatically change or adjust its own processes and/or data in response to information or experience.</div></div>
+</div>
+
+<div class="section">
+<span class="marks">12 marks</span><h3>Section D — Scenario and Evaluation</h3>
+
+<div class="question"><b>Q20. [4]</b><p>A hospital considers using a robot to deliver supplies around the hospital. The robot uses sensors to detect obstacles and motors to move.</p>
+<p><b>(a)</b> Explain how the sensors, microprocessor/controller and motors work together. <b>(2)</b><br>
+<b>(b)</b> Give one advantage and one limitation of using this robot. <b>(2)</b></p>
+<textarea id="q20"></textarea><button onclick="show('a20')">Show model</button>
+<div class="answer" id="a20"><b>Model:</b> (a) Sensors detect information such as obstacles; the controller processes the readings and sends signals to the motors, which move the robot. (b) Advantage: reduces routine human work and can operate repeatedly. Limitation: faults, maintenance, cost or unexpected situations may interrupt the service.</div></div>
+
+<div class="question"><b>Q21. [4]</b><p>A company uses an expert system to diagnose faults in machines.</p>
+<p>Explain how the <b>knowledge base, rule base, inference engine and interface</b> could work together to produce a diagnosis.</p>
+<textarea id="q21"></textarea><button onclick="show('a21')">Show model</button>
+<div class="answer" id="a21"><b>Model:</b> The interface collects information from the user. The knowledge base stores specialist information about machine faults. The rule base contains rules linking symptoms/conditions to possible faults. The inference engine applies the rules to the available information and infers a possible diagnosis, which is returned through the interface.</div></div>
+
+<div class="question"><b>Q22. [4]</b><p>A recommendation program automatically changes the process it uses as new user information is received.</p>
+<p>Explain why this is an example of machine learning and distinguish it from an ordinary fixed-rule program.</p>
+<textarea id="q22"></textarea><button onclick="show('a22')">Show model</button>
+<div class="answer" id="a22"><b>Model:</b> It is machine learning because the program automatically adapts its own process using new information. A fixed-rule program continues to use its programmed rules unless a programmer manually changes them.</div></div>
+
+<div class="card">
+<h3>🏁 Submit / Review</h3>
+<p>Objective questions are marked automatically. Written questions are self-marked against the model answers.</p>
+<button onclick="finalise()">Calculate objective score</button>
+<button onclick="resetTest()">Reset entire assessment</button>
+<div class="callout" id="finalNote">Objective score will appear here. Written responses should be reviewed against the model answers.</div>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 Assessment · 50 marks.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>📊 Assessment Dashboard</h2><small>50-mark Topic 6 diagnostic</small></div>
+<div class="content">
+
+<div class="scorebox"><div>Objective Score</div><div class="big" id="score">0 / 14</div><div class="subscore" id="pct">Complete objective questions.</div></div>
+
+<div class="card"><h3>📚 Coverage</h3><div class="progress"><span class="active">6.1 Automated systems</span><span class="active">6.2 Robotics</span><span class="active">6.3 AI</span></div></div>
+
+<div class="card"><h3>Mark allocation</h3>
+<table><tr><th>Section</th><th>Marks</th></tr>
+<tr><td>A — Knowledge and Understanding</td><td>10</td></tr>
+<tr><td>B — Automated Systems and Robotics</td><td>14</td></tr>
+<tr><td>C — Artificial Intelligence</td><td>14</td></tr>
+<tr><td>D — Scenario and Evaluation</td><td>12</td></tr>
+<tr><th>Total</th><th>50</th></tr></table>
+</div>
+
+<div class="card"><h3>🎯 What is being assessed?</h3>
+<ul><li>Automated-system components and operation</li><li>Robot applications, advantages and limitations</li><li>AI definition and characteristics</li><li>Expert-system components and operation</li><li>Machine learning and automatic adaptation</li><li>Application and explanation in scenarios</li></ul></div>
+
+<div class="card"><h3>🧠 Cambridge-style command words</h3>
+<table><tr><th>Command</th><th>Response expected</th></tr>
+<tr><td>State</td><td>A precise fact or term.</td></tr>
+<tr><td>Identify</td><td>Name the required item.</td></tr>
+<tr><td>Describe</td><td>Give relevant characteristics or features.</td></tr>
+<tr><td>Explain</td><td>Give a developed reason or describe how/why.</td></tr></table></div>
+
+<div class="card"><h3>📈 Classroom performance guide</h3>
+<table><tr><th>Score / 50</th><th>Diagnostic interpretation</th></tr>
+<tr><td>45–50</td><td>Excellent mastery</td></tr>
+<tr><td>40–44</td><td>Very strong</td></tr>
+<tr><td>35–39</td><td>Secure with some revision</td></tr>
+<tr><td>30–34</td><td>Developing</td></tr>
+<tr><td>0–29</td><td>Targeted revision recommended</td></tr></table>
+<div class="callout">These bands are a classroom diagnostic only, <b>not official Cambridge grade boundaries</b>.</div></div>
+
+<div class="card"><h3>🔍 Final review checklist</h3>
+<ul><li>Can I trace sensor → microprocessor → actuator?</li><li>Can I justify when a robot is suitable?</li><li>Can I define AI accurately?</li><li>Can I name all four expert-system components?</li><li>Can I explain the inference engine?</li><li>Can I define machine learning precisely?</li><li>Can I apply each idea to a scenario?</li></ul></div>
+
+<div class="card"><h3>Teacher note</h3>
+<p>This 50-mark assessment is a bespoke Topic 6 checkpoint aligned to the 0984 syllabus scope. It is deliberately <b>not presented as an official Cambridge paper or official grade boundary</b>. For formal exam preparation, pair it with Cambridge specimen/past-paper questions and mark schemes.</p></div>
+
+</div>
+</section>
+</main>
+
+<script>
+let score=0,answered={};
+const objectiveIds=['f2','f3'];
+function mc(btn,correct,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(correct?'correct':'wrong');
+ if(!answered[id]){answered[id]=true;if(correct)score+=2;}
+ document.getElementById(id).textContent=correct?'✓ Correct.':'✗ Review the relevant Topic 6 section.';
+ update();
+}
+function update(){
+ document.getElementById('score').textContent=score+' / 4';
+ document.getElementById('pct').textContent=Math.round(score/4*100)+'% of automatically marked questions';
+}
+function show(id){document.getElementById(id).style.display='block'}
+function guide(input,id){
+ const v=document.getElementById(input).value.trim();
+ document.getElementById(id).textContent=v?'Compare your response with: sensor, microprocessor, actuator.':'Enter your answer first.';
+}
+function guideAI(input,id){
+ const v=document.getElementById(input).value.toLowerCase();
+ const terms=['data','rules','reason','learn','adapt'];
+ const hits=terms.filter(t=>v.includes(t)).length;
+ document.getElementById(id).textContent=hits>=2?'✓ At least two relevant ideas detected. Full list: data, rules for using data, reasoning, learning/adaptation.':'Review: collection of data, rules for using data, reasoning, and ability to learn and adapt.';
+}
+function guideComponents(input,id){
+ const v=document.getElementById(input).value.toLowerCase();
+ const terms=['knowledge base','rule base','inference engine','interface'];
+ const hits=terms.filter(t=>v.includes(t)).length;
+ document.getElementById(id).textContent=hits>=4?'✓ All four components identified.':'Expected four: knowledge base, rule base, inference engine, interface.';
+}
+function finalise(){
+ const written=18; // Q1,Q4,Q5,Q6-Q22 are written/self-marked; dashboard does not auto-award them.
+ document.getElementById('finalNote').innerHTML='<b>Objective result:</b> '+score+' / 4. The remaining 46 marks require student/teacher marking using the model answers. <b>Total assessment = 50 marks.</b>';
+}
+function resetTest(){
+ score=0;answered={};
+ document.querySelectorAll('.option').forEach(x=>x.classList.remove('correct','wrong'));
+ document.querySelectorAll('.feedback').forEach(x=>x.textContent='');
+ document.querySelectorAll('input,textarea').forEach(x=>x.value='');
+ document.querySelectorAll('.answer').forEach(x=>x.style.display='none');
+ document.getElementById('finalNote').textContent='Objective score will appear here. Written responses should be reviewed against the model answers.';
+ update();
+}
+update();
+</script>
+</body>
+</html>

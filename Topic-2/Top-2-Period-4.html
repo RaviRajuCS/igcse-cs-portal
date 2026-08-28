@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 4</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+
+.network{position:relative;height:180px;margin:15px 0;border-radius:18px;background:rgba(255,255,255,.55);overflow:hidden}
+.network-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.network-svg line{stroke:#557;stroke-width:4;stroke-linecap:round}
+.network .node{position:absolute;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;background:#082b59;color:white;z-index:3;box-sizing:border-box}
+.network .sender{left:7%;top:50%}
+.network .r1{left:30%;top:25%}
+.network .r2{left:50%;top:72.2%}
+.network .r3{left:70%;top:25%}
+.network .dest{left:93%;top:50%}
+.moving-packet{position:absolute;left:0;top:0;width:26px;height:26px;border-radius:7px;background:#f2c94c;color:#082b59;font-weight:800;text-align:center;line-height:26px;z-index:4;opacity:0;transform:translate(-50%,-50%);box-shadow:0 3px 8px rgba(0,0,0,.18)}
+
+.mode-visual{display:flex;align-items:center;justify-content:center;gap:28px;margin:18px 0;padding:18px;border-radius:16px;background:rgba(255,255,255,.55)}
+.mode-visual .device{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#082b59;color:white;font-weight:800;font-size:18px}
+.mode-visual .arrow{font-size:48px;font-weight:800;color:#082b59;line-height:1}
+.mode-visual .arrow.one{letter-spacing:0}
+.scenario-box{padding:14px;margin:10px 0;border-radius:12px;background:rgba(255,255,255,.45)}
+.scenario-box button{margin:8px 4px 0}
+
+.bit-stream{display:flex;gap:6px;padding:12px 16px;border-radius:12px;background:rgba(255,255,255,.7);font-weight:800;color:#082b59}
+.bit-stream span{width:22px;height:28px;display:flex;align-items:center;justify-content:center;border:1px solid #082b59;border-radius:5px}
+.parallel-visual{display:flex;align-items:center;justify-content:center;gap:22px;margin:18px 0;padding:18px;border-radius:16px;background:rgba(255,255,255,.55)}
+.parallel-visual .device{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#082b59;color:white;font-weight:800;font-size:18px}
+.parallel-wires{display:flex;flex-direction:column;gap:4px;min-width:220px}
+.parallel-wires div{display:grid;grid-template-columns:35px 1fr;align-items:center;font-weight:800}
+.parallel-wires div span:last-child{border-bottom:3px solid #557;color:#082b59}
+.parallel-wires b{font-size:12px}
+.skew-demo .parallel-wires div span:last-child{border-bottom-style:dashed}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 2 — Data Transmission · Period 4</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 4 · Serial & Parallel Transmission</h3>
+      <p><b>Topic 2 · Data Transmission:</b> Students learn the two main methods of sending multiple bits between devices: serial and parallel data transmission.</p>
+      <div class="callout"><b>Success criteria:</b> Students can define serial and parallel transmission, describe how bits travel in each method, compare their advantages and disadvantages, and select a suitable method for a given situation.</div>
+      <p><b>Prior learning:</b> Period 3 — simplex, half-duplex and full-duplex describe the direction of communication. Today we study how bits are physically transmitted.</p>
+      <p><b>Key vocabulary:</b> serial, parallel, bit, byte, channel, wire, synchronised, skewed, transmission rate, long distance, short distance.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>Separate the two ideas</h3>
+      <ol>
+        <li>Write <b>ONE BIT</b> on the board and introduce serial transmission.</li>
+        <li>Show several wires carrying several bits at the same time for parallel transmission.</li>
+        <li>Use a road analogy: one lane versus several lanes.</li>
+        <li>Explain why serial works well over long distances.</li>
+        <li>Explain why parallel is faster but can suffer from skew over longer distances.</li>
+        <li>Finish by combining direction and method: serial can also be simplex, half-duplex or full-duplex.</li>
+      </ol>
+      <div class="callout"><b>Memory rule:</b> Serial = one bit at a time · Parallel = several bits at the same time.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Two different questions</h3>
+      <p>Ask students:</p>
+      <ul>
+        <li>Does <b>full-duplex</b> tell us how many directions data can travel?</li>
+        <li>Does <b>serial</b> tell us how many bits travel at one time?</li>
+      </ul>
+      <div class="callout"><b>Bridge:</b> Transmission mode tells us about direction. Serial/parallel tells us how bits are sent.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–15 min · Teach</span>
+      <h3>Serial data transmission</h3>
+      <div class="mode-visual">
+        <div class="device">S</div><div class="bit-stream"><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>1</span></div><div class="device">R</div>
+      </div>
+      <p><b>Serial data transmission</b> occurs when data is sent <b>one bit at a time over a single wire/channel</b>. The bits are sent one after another as a single stream.</p>
+      <div class="callout"><b>Advantages:</b> works well over long distances and data arrives synchronised because one channel is used.</div>
+      <div class="callout"><b>Disadvantage:</b> it is slower than parallel transmission.</div>
+      <p><b>Textbook example:</b> connecting a computer to a printer using a USB connection.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">15–25 min · Teach</span>
+      <h3>Parallel data transmission</h3>
+      <div class="parallel-visual">
+        <div class="device">S</div>
+        <div class="parallel-wires">
+          <div><span>1</span><span>→</span></div>
+          <div><span>0</span><span>→</span></div>
+          <div><span>0</span><span>→</span></div>
+          <div><span>1</span><span>→</span></div>
+          <div><span>1</span><span>→</span></div>
+          <div><span>0</span><span>→</span></div>
+          <div><span>1</span><span>→</span></div>
+          <div><span>1</span><span>→</span></div>
+        </div>
+        <div class="device">R</div>
+      </div>
+      <p><b>Parallel data transmission</b> occurs when several bits of data, usually one byte, are sent down several channels/wires <b>at the same time</b>. Each channel carries one bit.</p>
+      <div class="callout"><b>Advantage:</b> faster than serial transmission.</div>
+      <div class="callout"><b>Disadvantage:</b> over longer distances the bits can become <b>skewed</b> and arrive unsynchronised or out of order.</div>
+      <p><b>Textbook context:</b> internal computer circuits use parallel transmission because distances between components are short and high speed is important.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">25–32 min · Compare</span>
+      <h3>Serial vs Parallel</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Feature</th><th style="padding:8px;background:#082b59;color:white">Serial</th><th style="padding:8px;background:#082b59;color:white">Parallel</th></tr>
+        <tr><td style="padding:7px"><b>Bits at a time</b></td><td style="padding:7px">One</td><td style="padding:7px">Several</td></tr>
+        <tr><td style="padding:7px"><b>Channels</b></td><td style="padding:7px">Single</td><td style="padding:7px">Several</td></tr>
+        <tr><td style="padding:7px"><b>Speed</b></td><td style="padding:7px">Slower</td><td style="padding:7px">Faster</td></tr>
+        <tr><td style="padding:7px"><b>Distance</b></td><td style="padding:7px">Works well over long distances</td><td style="padding:7px">Works well over short distances</td></tr>
+        <tr><td style="padding:7px"><b>Synchronisation</b></td><td style="padding:7px">Arrives synchronised</td><td style="padding:7px">Can become skewed over longer distances</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <span class="time">32–38 min · Interactive</span>
+      <h3>Choose the correct method</h3>
+      <div class="scenario-box">
+        <b>Scenario 1:</b> One bit is sent at a time through one channel.
+        <button onclick="methodCheckP4('serial','m1')">Serial</button>
+        <button onclick="methodCheckP4('parallel','m1')">Parallel</button>
+        <div id="m1" class="score"></div>
+      </div>
+      <div class="scenario-box">
+        <b>Scenario 2:</b> Eight bits are sent simultaneously through eight channels.
+        <button onclick="methodCheckP4('serial','m2')">Serial</button>
+        <button onclick="methodCheckP4('parallel','m2')">Parallel</button>
+        <div id="m2" class="score"></div>
+      </div>
+      <div class="scenario-box">
+        <b>Scenario 3:</b> A method is needed for a long-distance connection where synchronisation is important.
+        <button onclick="methodCheckP4('serial','m3')">Serial</button>
+        <button onclick="methodCheckP4('parallel','m3')">Parallel</button>
+        <div id="m3" class="score"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="time">38–43 min · Concept check</span>
+      <h3>What is skew?</h3>
+      <p>In parallel transmission, several bits travel through separate wires. Over longer distances, the bits may not arrive at exactly the same time.</p>
+      <div class="parallel-visual skew-demo">
+        <div class="device">S</div>
+        <div class="parallel-wires">
+          <div><span>1</span><span>→</span><b>✓</b></div>
+          <div><span>0</span><span>→</span><b>✓</b></div>
+          <div><span>1</span><span>→</span><b>↘</b></div>
+          <div><span>0</span><span>→</span><b>↘</b></div>
+        </div>
+        <div class="device">R</div>
+      </div>
+      <div class="callout"><b>Skewed data:</b> data arrives at the destination with the bits no longer synchronised.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">43–47 min · Assessment</span>
+      <h3>Cambridge-style questions</h3>
+      <ol>
+        <li>Define serial data transmission.</li>
+        <li>Define parallel data transmission.</li>
+        <li>State one advantage of serial transmission.</li>
+        <li>State one disadvantage of parallel transmission over long distances.</li>
+        <li>Explain why parallel transmission is suitable for internal computer circuits.</li>
+      </ol>
+      <div class="callout"><b>Marking focus:</b> distinguish <b>number of bits/channels</b> from <b>direction of communication</b>.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>Finish the sentences</h3>
+      <div class="callout"><b>Serial sends...</b> one bit at a time over a single channel.</div>
+      <div class="callout"><b>Parallel sends...</b> several bits at the same time over several channels.</div>
+      <div class="callout"><b>Skew means...</b> bits arrive unsynchronised.</div>
+      <div class="callout"><b>Next:</b> Universal Serial Bus (USB).</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 4 teaches serial and parallel data transmission, including speed, distance and skew.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Serial</span>
+        <span>3. Parallel</span><span>4. Compare</span>
+        <span>5. Skew</span><span>6. Test</span>
+      </div>
+      <p>Today you will learn <b>how many bits are sent at one time</b> and how many channels are used.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Define serial transmission.</li>
+        <li>Define parallel transmission.</li>
+        <li>Compare speed and distance suitability.</li>
+        <li>Explain skewed data.</li>
+        <li>Choose a suitable method for a scenario.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · Serial transmission</h3>
+      <div class="mode-visual">
+        <div class="device">S</div><div class="bit-stream"><span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>1</span><span>1</span></div><div class="device">R</div>
+      </div>
+      <p>Serial sends <b>one bit at a time</b> through a <b>single wire/channel</b>.</p>
+      <div class="callout"><b>Good for:</b> long distances.</div>
+      <div class="callout"><b>Example:</b> USB connection between a computer and a device.</div>
+    </div>
+
+    <div class="card">
+      <h3>2 · Parallel transmission</h3>
+      <div class="parallel-visual">
+        <div class="device">S</div>
+        <div class="parallel-wires">
+          <div><span>1</span><span>→</span></div><div><span>0</span><span>→</span></div>
+          <div><span>0</span><span>→</span></div><div><span>1</span><span>→</span></div>
+          <div><span>1</span><span>→</span></div><div><span>0</span><span>→</span></div>
+          <div><span>1</span><span>→</span></div><div><span>1</span><span>→</span></div>
+        </div>
+        <div class="device">R</div>
+      </div>
+      <p>Parallel sends <b>several bits at the same time</b> through <b>several channels/wires</b>.</p>
+      <div class="callout"><b>Good for:</b> short distances where high speed is important.</div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Quick check</h3>
+      <p><b>Q1:</b> Which method sends one bit at a time?</p>
+      <button class="option" onclick="checkP4(this,true,'q1p4')">Serial</button>
+      <button class="option" onclick="checkP4(this,false,'q1p4')">Parallel</button>
+      <div class="score" id="q1p4"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> Which method uses several channels to send several bits at the same time?</p>
+      <button class="option" onclick="checkP4(this,false,'q2p4')">Serial</button>
+      <button class="option" onclick="checkP4(this,true,'q2p4')">Parallel</button>
+      <div class="score" id="q2p4"></div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Serial or parallel?</h3>
+      <div class="scenario-box">
+        <b>One bit at a time:</b>
+        <button onclick="methodCheckP4('serial','sm1')">Serial</button>
+        <button onclick="methodCheckP4('parallel','sm1')">Parallel</button>
+        <div id="sm1" class="score"></div>
+      </div>
+      <div class="scenario-box">
+        <b>Several bits at the same time:</b>
+        <button onclick="methodCheckP4('serial','sm2')">Serial</button>
+        <button onclick="methodCheckP4('parallel','sm2')">Parallel</button>
+        <div id="sm2" class="score"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Advantages and disadvantages</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Serial</th><th style="padding:8px;background:#082b59;color:white">Parallel</th></tr>
+        <tr><td style="padding:7px">One bit at a time</td><td style="padding:7px">Several bits at a time</td></tr>
+        <tr><td style="padding:7px">Slower</td><td style="padding:7px">Faster</td></tr>
+        <tr><td style="padding:7px">Good over long distances</td><td style="padding:7px">Good over short distances</td></tr>
+        <tr><td style="padding:7px">Synchronised arrival</td><td style="padding:7px">Can suffer from skew over longer distances</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>6 · What is skew?</h3>
+      <p>In parallel transmission, bits travel along different wires. Over longer distances, they may arrive at different times.</p>
+      <div class="callout"><b>Skewed data = bits arrive at the destination no longer synchronised.</b></div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Exam practice</h3>
+      <p><b>Question:</b> Explain why serial transmission can be more suitable than parallel transmission over long distances.</p>
+      <button onclick="showP4('examP4')">Show model answer</button>
+      <div class="answer" id="examP4">Serial transmission uses a single channel and sends one bit at a time, so the data arrives synchronised. Parallel transmission uses several channels and, over longer distances, the bits can become skewed and arrive unsynchronised.</div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Challenge</h3>
+      <p>A computer's internal circuits need very high-speed transmission and the distance between components is very short. Which method is suitable?</p>
+      <button class="option" onclick="checkP4(this,false,'challengeP4')">Serial</button>
+      <button class="option" onclick="checkP4(this,true,'challengeP4')">Parallel</button>
+      <div class="score" id="challengeP4"></div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Common mistakes</h3>
+      <ul>
+        <li>Thinking serial means one direction only.</li>
+        <li>Thinking parallel automatically means full-duplex.</li>
+        <li>Forgetting that serial and parallel describe how bits are sent.</li>
+        <li>Forgetting that parallel transmission can suffer from skew over longer distances.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>10 · Self-assessment</h3>
+      <p>Choose your confidence:</p>
+      <button onclick="confidenceP4('confident')">🟢 I understand serial and parallel</button>
+      <button onclick="confidenceP4('okay')">🟡 I need more practice</button>
+      <button onclick="confidenceP4('need')">🔴 I need help</button>
+      <div class="score" id="confidenceP4"></div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Serial · Parallel · Synchronisation · Skew.
+    </div>>>
+  </div>
+</section>
+</main>
+
+<script>
+function methodCheckP4(choice,id){
+  const correct={m1:'serial',m2:'parallel',m3:'serial',sm1:'serial',sm2:'parallel'};
+  const box=document.getElementById(id);
+  if(choice===correct[id]){
+    box.textContent='✓ Correct.';
+  }else{
+    box.textContent='✗ Not quite. Look at how many bits/channels are used.';
+  }
+}
+function checkP4(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1p4:correct?'✓ Correct — serial sends one bit at a time.':'✗ Not quite. One bit at a time is serial.',
+    q2p4:correct?'✓ Correct — parallel sends several bits at the same time.':'✗ Not quite. Several bits at the same time is parallel.',
+    challengeP4:correct?'✓ Correct — short distance + high speed suits parallel transmission.':'✗ Not quite. Think short distance and high speed.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function showP4(id){document.getElementById(id).style.display='block'}
+function confidenceP4(v){
+  const text={
+    confident:'Excellent — you are ready for USB.',
+    okay:'Good. Review the serial/parallel comparison once more.',
+    need:'That is useful information. Revisit the two diagrams and the idea of skew.'
+  };
+  document.getElementById('confidenceP4').textContent=text[v];
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 3 | Period 4</title>
+<style>
+:root{--gold:#d9a441;--gold2:#f4df9a;--blue:#082b59;--glass:rgba(255,255,255,.76)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72,#d9a441 48%,#f5df9b);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#ffffff55;backdrop-filter:blur(12px);border-bottom:1px solid #fff9}
+.brand h1{margin:0;font-size:27px}.brand p{margin:3px 0;font-size:13px;font-weight:600}
+.teacher{display:flex;align-items:center;gap:10px}.teacher img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid var(--blue)}
+.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700}
+.school{display:flex;align-items:center;gap:11px}.school img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}.school b{font-size:13px}
+.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:#fff;font-weight:800;font-size:13px}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid #fff9;border-radius:22px;box-shadow:0 12px 30px #082b5928;overflow:hidden;display:flex;flex-direction:column}
+.panehead{padding:15px 20px;background:#082b59f5;color:#fff}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.8}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:#fffdf5eb;border:1px solid #082b5922;border-radius:16px;padding:16px;margin-bottom:15px}
+.card h3{margin:0 0 9px;font-size:17px}p{line-height:1.55}ul,ol{padding-left:20px;line-height:1.55}
+.time{display:inline-block;background:var(--gold2);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}
+.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}
+.option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}.option.correct{background:#dff3e0;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress .active{background:var(--gold2);border:1px solid #bd8d2d}
+.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#ffffff95;border-radius:16px;margin:15px 0}
+.node{padding:13px 15px;border-radius:13px;background:var(--blue);color:#fff;font-weight:800;text-align:center}.arrow{font-size:25px;font-weight:900}.tag{padding:10px 13px;border-radius:12px;background:var(--gold2);font-weight:900}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.box{padding:13px;border-radius:13px;background:#f7f2df;border:1px solid #d9c98f}.box b{display:block;margin-bottom:5px}
+table{width:100%;border-collapse:collapse}th{background:var(--blue);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #d5dde6}
+.footer{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="teacher"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="name">Ravi Raju</div></div>
+<h1>IGCSE Computer Science 0984</h1><p>Topic 3 — Hardware · Period 4</p></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>👨‍🏫 Teacher Pane</h2><small>Instruction sets · machine code · embedded systems</small></div>
+<div class="content">
+
+<div class="card">
+<span class="time">Lesson overview</span>
+<h3>Period 4 · Instruction Sets & Embedded Systems</h3>
+<p>This lesson completes the remaining learning outcomes of <b>3.1 Computer architecture</b>: the purpose and use of a CPU instruction set, followed by the purpose and characteristics of embedded systems.</p>
+<div class="callout"><b>Success criteria:</b> Students can define an instruction set, explain its purpose and relationship to machine code, define an embedded system, describe its characteristics, distinguish it from a general-purpose computer, and identify common applications.</div>
+<p>Cambridge states that an instruction set is a list of commands a CPU can process and that the commands are machine code. It also defines an embedded system as a system designed to perform a dedicated function, contrasting it with general-purpose computers. citeturn3view0</p>
+</div>
+
+<div class="card">
+<span class="time">My teaching route</span>
+<h3>Two ideas, one common principle</h3>
+<ol>
+<li>Retrieve the CPU and FDE cycle.</li>
+<li>Introduce the instruction set as the CPU's available set of commands.</li>
+<li>Connect instructions to machine code.</li>
+<li>Explain why a CPU can only process instructions that belong to its instruction set.</li>
+<li>Define an embedded system.</li>
+<li>Identify dedicated functions and typical characteristics.</li>
+<li>Contrast embedded systems with PCs/laptops.</li>
+<li>Apply the ideas to real devices.</li>
+</ol>
+</div>
+
+<div class="card">
+<span class="time">0–6 min · Retrieval</span>
+<h3>The CPU needs instructions</h3>
+<div class="flow"><div class="node">PROGRAM<br>INSTRUCTIONS</div><div class="arrow">→</div><div class="node">CPU<br>FDE</div><div class="arrow">→</div><div class="node">RESULT</div></div>
+<p>Ask: <b>Can a CPU execute any command imaginable?</b></p>
+<div class="callout"><b>No.</b> A CPU has a defined set of commands that it can process. This is its <b>instruction set</b>.</div>
+</div>
+
+<div class="card">
+<span class="time">6–18 min · Teach</span>
+<h3>1 · What is an instruction set?</h3>
+<p>An <b>instruction set</b> is a list of all the commands that can be processed by a particular CPU.</p>
+<div class="flow"><div class="tag">INSTRUCTION SET</div><div class="arrow">→</div><div class="node">Commands the CPU<br>can process</div></div>
+<p>The instructions that the CPU processes are represented as <b>machine code</b>.</p>
+<div class="callout"><b>Exam definition:</b> An instruction set is a list of all the commands that can be processed by a CPU; the commands are machine code.</div>
+</div>
+
+<div class="card">
+<span class="time">18–25 min · Connect</span>
+<h3>2 · Instruction set and the FDE cycle</h3>
+<div class="flow"><div class="node">FETCH<br>instruction</div><div class="arrow">→</div><div class="node">DECODE<br>instruction</div><div class="arrow">→</div><div class="node">EXECUTE<br>instruction</div></div>
+<p>The CPU fetches a machine-code instruction from memory, decodes it and executes it. The instruction set defines the commands the CPU is designed to understand and execute.</p>
+<div class="callout"><b>Important:</b> The instruction set is not the same thing as a program. A program is a sequence of instructions; the instruction set is the collection of commands available to the CPU.</div>
+</div>
+
+<div class="card">
+<span class="time">25–33 min · Teach</span>
+<h3>3 · Embedded systems</h3>
+<p>An <b>embedded system</b> is a computer system designed to perform a <b>dedicated function</b> within a larger device or product.</p>
+<div class="grid">
+<div class="box"><b>Dedicated</b>Designed for a specific function or limited set of functions.</div>
+<div class="box"><b>Built into a device</b>Often forms part of a larger appliance or system.</div>
+<div class="box"><b>Task-focused</b>Runs software designed for the particular job.</div>
+<div class="box"><b>Different from a PC</b>Not intended to be a general-purpose computer for many unrelated tasks.</div>
+</div>
+</div>
+
+<div class="card">
+<span class="time">33–41 min · Examples</span>
+<h3>4 · Where are embedded systems used?</h3>
+<table>
+<tr><th>Device/system</th><th>Possible dedicated function</th></tr>
+<tr><td>Washing machine</td><td>Controls wash cycles, temperature, timing and motor operation.</td></tr>
+<tr><td>Car</td><td>Controls a specific function such as engine management or safety.</td></tr>
+<tr><td>Security system</td><td>Monitors sensors and controls alarms/locks.</td></tr>
+<tr><td>Lighting system</td><td>Controls switching, timing or automated lighting behaviour.</td></tr>
+<tr><td>Vending machine</td><td>Controls selection, payment and dispensing.</td></tr>
+</table>
+<p>These are examples named in the Cambridge syllabus. citeturn3view0</p>
+</div>
+
+<div class="card">
+<span class="time">41–46 min · Compare</span>
+<h3>5 · Embedded system vs general-purpose computer</h3>
+<table>
+<tr><th>Embedded system</th><th>General-purpose computer</th></tr>
+<tr><td>Dedicated function.</td><td>Many different functions.</td></tr>
+<tr><td>Usually designed for a particular product/system.</td><td>Designed for a wide range of user applications.</td></tr>
+<tr><td>Examples include appliances, cars and vending machines.</td><td>Examples include PCs and laptops.</td></tr>
+</table>
+<div class="callout"><b>Exam trigger:</b> If the question says <i>dedicated function</i>, think <b>embedded system</b>.</div>
+</div>
+
+<div class="card">
+<span class="time">46–50 min · Exit ticket</span>
+<h3>Four questions</h3>
+<ol>
+<li>What is an instruction set?</li>
+<li>What form are CPU instructions represented in?</li>
+<li>What is the key purpose of an embedded system?</li>
+<li>Give two examples of devices containing embedded systems.</li>
+</ol>
+<div class="callout"><b>Answers:</b> list of CPU commands · machine code · dedicated function · e.g. washing machine and car.</div>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+Topic 3 · Hardware · Period 4 · Instruction sets and embedded systems.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+<div class="content">
+
+<div class="card">
+<h3>🧭 Your learning route</h3>
+<div class="progress"><span class="active">1. Instruction set</span><span>2. Machine code</span><span>3. Embedded system</span><span>4. Compare</span><span>5. Test</span></div>
+<p>Today we connect the CPU's instructions to the devices that use computers for a specific purpose.</p>
+</div>
+
+<div class="card">
+<h3>🎯 Learning goals</h3>
+<ul>
+<li>Define an instruction set.</li>
+<li>Explain the purpose and use of an instruction set for a CPU.</li>
+<li>Understand that CPU commands are machine code.</li>
+<li>Define an embedded system.</li>
+<li>Describe the characteristics and purpose of embedded systems.</li>
+<li>Identify common devices that use embedded systems.</li>
+<li>Distinguish embedded systems from general-purpose computers.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>1 · Instruction set</h3>
+<p>A CPU cannot understand an unlimited number of different commands. It has a defined collection of commands that it can process.</p>
+<div class="flow"><div class="node">CPU</div><div class="arrow">↔</div><div class="tag">INSTRUCTION SET</div><div class="arrow">↔</div><div class="node">MACHINE-CODE<br>COMMANDS</div></div>
+<div class="callout"><b>Remember:</b> instruction set = the list of commands available to a CPU.</div>
+</div>
+
+<div class="card">
+<h3>2 · Interactive instruction-set check</h3>
+<p>Which definition is correct?</p>
+<button class="option" onclick="checkP4(this,true,'q1p4')">A list of all the commands that can be processed by a CPU.</button>
+<button class="option" onclick="checkP4(this,false,'q1p4')">A list of all files stored on a computer.</button>
+<button class="option" onclick="checkP4(this,false,'q1p4')">A list of all applications installed on a computer.</button>
+<div class="score" id="q1p4"></div>
+</div>
+
+<div class="card">
+<h3>3 · Machine code</h3>
+<p>The commands in the CPU's instruction set are represented as <b>machine code</b>.</p>
+<div class="callout">Machine code consists of instructions in the form directly processed by the CPU.</div>
+<p>When the CPU performs the FDE cycle, it fetches an instruction, decodes it and executes it according to the commands it supports.</p>
+</div>
+
+<div class="card">
+<h3>4 · Interactive machine-code check</h3>
+<p>Which statement is correct?</p>
+<button class="option" onclick="checkP4(this,true,'q2p4')">The commands in a CPU's instruction set are machine-code commands.</button>
+<button class="option" onclick="checkP4(this,false,'q2p4')">An instruction set is the same as a high-level programming language.</button>
+<div class="score" id="q2p4"></div>
+</div>
+
+<div class="card">
+<h3>5 · Embedded systems</h3>
+<p>An embedded system is designed to perform a <b>dedicated function</b>.</p>
+<div class="flow"><div class="node">EMBEDDED<br>SYSTEM</div><div class="arrow">→</div><div class="tag">SPECIFIC<br>PURPOSE</div><div class="arrow">→</div><div class="node">DEVICE /<br>SYSTEM</div></div>
+<p>It is usually built into a larger product and runs software designed for that product's particular function.</p>
+</div>
+
+<div class="card">
+<h3>6 · Interactive embedded-system check</h3>
+<p>Which is the strongest description of an embedded system?</p>
+<button class="option" onclick="checkP4(this,true,'q3p4')">A computer system designed to perform a dedicated function within a larger device or system.</button>
+<button class="option" onclick="checkP4(this,false,'q3p4')">A computer designed mainly to run many unrelated applications for general users.</button>
+<div class="score" id="q3p4"></div>
+</div>
+
+<div class="card">
+<h3>7 · Real-world examples</h3>
+<div class="grid">
+<div class="box"><b>🏠 Washing machine</b>Controls the programmed wash cycle.</div>
+<div class="box"><b>🚗 Car</b>Controls a particular vehicle function.</div>
+<div class="box"><b>🔐 Security system</b>Processes sensor information and controls security actions.</div>
+<div class="box"><b>💡 Lighting system</b>Controls lighting according to programmed rules.</div>
+<div class="box"><b>🥤 Vending machine</b>Controls selection, payment and dispensing.</div>
+<div class="box"><b>💻 PC / laptop</b>General-purpose computer rather than a dedicated embedded system.</div>
+</div>
+</div>
+
+<div class="card">
+<h3>8 · Embedded or general-purpose?</h3>
+<p>A laptop can be used for word processing, browsing, programming, gaming and many other tasks.</p>
+<button class="option" onclick="checkP4(this,true,'q4p4')">General-purpose computer</button>
+<button class="option" onclick="checkP4(this,false,'q4p4')">Embedded system</button>
+<div class="score" id="q4p4"></div>
+<p style="margin-top:15px">A washing machine controller is designed mainly to manage washing programmes.</p>
+<button class="option" onclick="checkP4(this,true,'q5p4')">Embedded system</button>
+<button class="option" onclick="checkP4(this,false,'q5p4')">General-purpose computer</button>
+<div class="score" id="q5p4"></div>
+</div>
+
+<div class="card">
+<h3>9 · Exam practice</h3>
+<p><b>Question:</b> State what is meant by an instruction set.</p>
+<button onclick="showP4('a1p4')">Show model answer</button>
+<div class="answer" id="a1p4">An instruction set is a list of all the commands that can be processed by a CPU.</div>
+<p><b>Question:</b> State the form of the commands in a CPU instruction set.</p>
+<button onclick="showP4('a2p4')">Show model answer</button>
+<div class="answer" id="a2p4">The commands are machine code.</div>
+<p><b>Question:</b> Describe the purpose of an embedded system.</p>
+<button onclick="showP4('a3p4')">Show model answer</button>
+<div class="answer" id="a3p4">It is used to perform a dedicated function, usually as part of a larger device or system.</div>
+</div>
+
+<div class="card">
+<h3>10 · Challenge: choose the system</h3>
+<p>A supermarket has a machine that accepts payment, checks product selection and releases one chosen product. Is this likely to be an embedded system?</p>
+<button class="option" onclick="checkP4(this,true,'q6p4')">Yes — it performs a dedicated function as part of a vending system.</button>
+<button class="option" onclick="checkP4(this,false,'q6p4')">No — every computer system is general-purpose.</button>
+<div class="score" id="q6p4"></div>
+</div>
+
+<div class="card">
+<h3>11 · Common exam mistakes</h3>
+<ul>
+<li>Defining an instruction set as a program.</li>
+<li>Forgetting that the CPU commands are <b>machine code</b>.</li>
+<li>Describing an embedded system simply as “a small computer”.</li>
+<li>Forgetting the phrase <b>dedicated function</b>.</li>
+<li>Calling a laptop an embedded system simply because it contains a microprocessor.</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>12 · Self-assessment</h3>
+<p>How confident are you with instruction sets and embedded systems?</p>
+<button onclick="confidenceP4('ready')">🟢 I understand</button>
+<button onclick="confidenceP4('practice')">🟡 I need practice</button>
+<button onclick="confidenceP4('revise')">🔴 I need revision</button>
+<div class="score" id="confidenceP4"></div>
+</div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div>
+<b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+Instruction set · Machine code · Embedded system · Dedicated function.</div>
+</div>
+</section>
+</main>
+
+<script>
+function checkP4(btn,c,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(c?'correct':'wrong');
+ const msg={
+ q1p4:c?'✓ Correct — it is the list of commands the CPU can process.':'✗ Not quite — an instruction set is about CPU commands.',
+ q2p4:c?'✓ Correct — the CPU commands in its instruction set are machine code.':'✗ Not quite — an instruction set is not the same as a high-level language.',
+ q3p4:c?'✓ Correct — dedicated function is the key idea.':'✗ Not quite — that describes a general-purpose computer.',
+ q4p4:c?'✓ Correct — a laptop is a general-purpose computer.':'✗ Not quite — laptops perform many different functions.',
+ q5p4:c?'✓ Correct — a washing-machine controller performs a dedicated function.':'✗ Not quite — this is a classic embedded-system example.',
+ q6p4:c?'✓ Correct — the vending machine performs a dedicated function.':'✗ Not quite — dedicated-purpose devices can contain embedded systems.'
+ };
+ document.getElementById(id).textContent=msg[id];
+}
+function showP4(id){document.getElementById(id).style.display='block'}
+function confidenceP4(v){
+ const t={
+ ready:'Excellent — you can now define an instruction set and identify embedded systems confidently.',
+ practice:'Good. Rehearse: instruction set = CPU commands; embedded system = dedicated function.',
+ revise:'Revisit the instruction-set definition and the embedded-vs-general-purpose comparison.'
+ };
+ document.getElementById('confidenceP4').textContent=t[v];
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 2 | Period 5</title>
+<style>
+:root{
+  --gold:#d9a441;--gold-light:#f4df9a;--gold-pale:#fff8df;
+  --blue:#082b59;--blue-2:#12477f;--ink:#12233a;--white:#fffdf5;
+  --glass:rgba(255,255,255,.72);--shadow:0 12px 30px rgba(8,43,89,.16)
+}
+*{box-sizing:border-box} html,body{height:100%;margin:0}
+body{font-family:Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);color:var(--blue);overflow:hidden}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:rgba(255,255,255,.34);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.55)}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{display:flex;align-items:center;gap:10px;margin:0 0 2px}.teacher-photo{width:44px;height:44px;object-fit:cover;border-radius:50%;border:2px solid rgba(8,43,89,.75);box-shadow:0 4px 10px rgba(8,43,89,.18)}
+.teacher-name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:20px;font-weight:700;letter-spacing:.8px}
+.school-brand{display:flex;align-items:center;gap:11px}.school-brand img{width:48px;height:48px;object-fit:contain;background:rgba(255,255,255,.8);border-radius:10px;padding:3px}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}.badge{padding:9px 14px;border-radius:18px;background:var(--blue);color:white;font-weight:700;font-size:13px;box-shadow:var(--shadow)}
+.layout{height:calc(100vh - 82px);display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px}
+.pane{min-height:0;background:var(--glass);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);border-radius:22px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.pane-head{padding:15px 20px;background:rgba(8,43,89,.95);color:white}.pane-head h2{margin:0;font-size:20px}.pane-head small{opacity:.8}
+.content{overflow:auto;padding:20px 22px 30px}.card{background:rgba(255,253,245,.86);border:1px solid rgba(8,43,89,.13);border-radius:16px;padding:16px;margin-bottom:15px}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}ul,ol{padding-left:20px;line-height:1.55}p{line-height:1.55}
+.time{display:inline-block;background:var(--gold-light);border:1px solid #c6942f;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px}
+.callout{border-left:5px solid var(--blue);background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;font-weight:700;cursor:pointer;margin:4px 3px 4px 0}
+button:hover{transform:translateY(-1px)} .option{display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;color:var(--blue);margin:7px 0}
+.option.correct{background:#dff3e1;border-color:#65a66c}.option.wrong{background:#f9e0e0;border-color:#c87575}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}.score{font-weight:800;margin-top:8px}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700}.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px}
+.usb-diagram{display:flex;align-items:center;justify-content:center;gap:14px;margin:16px 0;padding:18px;background:rgba(255,255,255,.55);border-radius:16px}
+.device{width:74px;height:74px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:var(--blue);color:white;font-weight:800;text-align:center}
+.cable{height:18px;min-width:150px;border-radius:10px;background:linear-gradient(90deg,#b8c2cf,#6d7c8e,#b8c2cf);position:relative}
+.cable:after{content:"USB connection";position:absolute;left:50%;top:25px;transform:translateX(-50%);font-size:11px;font-weight:800;white-space:nowrap;color:var(--blue)}
+.usb-points{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.usb-point{padding:12px;border-radius:12px;background:rgba(255,255,255,.62);border:1px solid #d2dbe5}
+.usb-point b{display:block;color:var(--blue-2);margin-bottom:4px}
+table{width:100%;border-collapse:collapse}th{padding:8px;background:var(--blue);color:white;text-align:left}td{padding:8px;border-bottom:1px solid #d5dde6}
+@media(max-width:900px){body{overflow:auto}header{height:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}.usb-points{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity"><img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju"><div class="teacher-name">Ravi Raju</div></div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 2 — Data Transmission · Period 5</p>
+  </div>
+  <div class="school-brand"><img src="MES35.jpg" alt="Modern English School Cairo logo"><div class="school-name">Modern English School Cairo</div><div class="badge">50 MINUTES</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head"><h2>👨‍🏫 Teacher Pane</h2><small>My teaching route</small></div>
+  <div class="content">
+
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 5 · Universal Serial Bus (USB)</h3>
+      <p><b>Topic 2 · Data Transmission:</b> Students move from the idea of serial transmission to a practical interface used to connect computers and peripherals: the Universal Serial Bus (USB).</p>
+      <div class="callout"><b>Success criteria:</b> Students can expand USB correctly, explain its purpose, identify common USB-connected devices, and explain key benefits and limitations of using USB.</div>
+      <p><b>Prior learning:</b> Period 4 — serial and parallel transmission. USB is a practical example of serial transmission.</p>
+      <p><b>Key vocabulary:</b> USB, Universal Serial Bus, interface, peripheral, connector, data transfer, power, compatibility, standard.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>From concept to real device</h3>
+      <ol>
+        <li>Retrieve the definition of serial transmission.</li>
+        <li>Show a familiar USB cable and ask what it connects.</li>
+        <li>Introduce the full term: <b>Universal Serial Bus</b>.</li>
+        <li>Separate the ideas of <b>interface</b>, <b>connector</b> and <b>device</b>.</li>
+        <li>Explore common uses and benefits.</li>
+        <li>Finish with compatibility and performance limitations.</li>
+      </ol>
+      <div class="callout"><b>Memory rule:</b> USB = Universal Serial Bus — a standard interface for connecting compatible devices and transferring data.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>What did we learn last time?</h3>
+      <ul>
+        <li>What does <b>serial</b> mean?</li>
+        <li>How many bits are sent at one time in serial transmission?</li>
+        <li>What is one advantage of serial transmission?</li>
+        <li>Why can serial transmission be useful over longer distances?</li>
+      </ul>
+      <div class="callout"><b>Bridge:</b> USB uses serial communication to provide a practical way of connecting compatible devices.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–12 min · Teach</span>
+      <h3>What is USB?</h3>
+      <div class="usb-diagram"><div class="device">COMPUTER</div><div class="cable"></div><div class="device">USB<br>DEVICE</div></div>
+      <p><b>USB</b> stands for <b>Universal Serial Bus</b>. It is an interface used to connect compatible devices and transmit data.</p>
+      <div class="callout"><b>Important:</b> USB is not simply the name of a plug. It describes a standard interface used for communication between compatible devices.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">12–20 min · Explore</span>
+      <h3>What can USB connect?</h3>
+      <div class="usb-points">
+        <div class="usb-point"><b>💾 Storage</b>USB flash drives and external storage devices.</div>
+        <div class="usb-point"><b>⌨️ Input devices</b>Keyboards, mice and other compatible input devices.</div>
+        <div class="usb-point"><b>🖨️ Peripherals</b>Printers and other computer peripherals.</div>
+        <div class="usb-point"><b>📱 Other devices</b>Compatible mobile and electronic devices.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="time">20–28 min · Teach</span>
+      <h3>Benefits of USB</h3>
+      <ul>
+        <li><b>Widely supported:</b> USB is commonly available on computers and many peripherals.</li>
+        <li><b>Convenient:</b> one standard interface can be used for many compatible devices.</li>
+        <li><b>Data transfer:</b> USB supports data transfer, with the actual speed depending on the USB standard and hardware.</li>
+        <li><b>Power:</b> USB can provide power to compatible devices.</li>
+      </ul>
+      <div class="callout"><b>Exam habit:</b> Give the benefit and explain why it matters rather than simply writing “USB is good”.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">28–34 min · Evaluate</span>
+      <h3>Limitations of USB</h3>
+      <ul>
+        <li><b>Compatibility:</b> different USB standards and connector types can cause compatibility problems.</li>
+        <li><b>Cable length:</b> USB connections have practical limits on cable length for reliable communication.</li>
+        <li><b>Performance:</b> the actual transfer speed depends on the USB standard, connected devices and the connection.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="time">34–39 min · Compare</span>
+      <h3>USB: Interface, connector or device?</h3>
+      <table>
+        <tr><th>Term</th><th>Meaning</th></tr>
+        <tr><td><b>USB</b></td><td>Universal Serial Bus — the standard interface.</td></tr>
+        <tr><td><b>USB connector</b></td><td>The physical connector used to make a compatible connection.</td></tr>
+        <tr><td><b>USB device</b></td><td>A compatible peripheral or storage device connected through USB.</td></tr>
+      </table>
+      <div class="callout"><b>Don't confuse them:</b> USB is the interface/standard; the connector is the physical connection point.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">39–44 min · Interactive</span>
+      <h3>Choose the best answer</h3>
+      <div class="scenario-box"><b>1. What does USB stand for?</b><br>
+        <button onclick="usbCheck('wrong','u1')">Universal System Bus</button>
+        <button onclick="usbCheck('correct','u1')">Universal Serial Bus</button>
+        <div id="u1" class="score"></div>
+      </div>
+      <div class="scenario-box"><b>2. Which is a common USB use?</b><br>
+        <button onclick="usbCheck('correct','u2')">Connecting a keyboard to a computer</button>
+        <button onclick="usbCheck('wrong','u2')">Changing a monitor into a printer</button>
+        <div id="u2" class="score"></div>
+      </div>
+      <div class="scenario-box"><b>3. Which statement is correct?</b><br>
+        <button onclick="usbCheck('correct','u3')">USB can transfer data and can provide power to compatible devices.</button>
+        <button onclick="usbCheck('wrong','u3')">All USB connections always have exactly the same speed.</button>
+        <div id="u3" class="score"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="time">44–48 min · Assessment</span>
+      <h3>Cambridge-style questions</h3>
+      <ol>
+        <li>What does USB stand for?</li>
+        <li>State what USB is used for.</li>
+        <li>Give two examples of devices that can be connected using USB.</li>
+        <li>State two benefits of using USB.</li>
+        <li>State one limitation of USB.</li>
+        <li>Explain why different USB standards or connector types can cause compatibility problems.</li>
+      </ol>
+      <div class="callout"><b>Marking focus:</b> distinguish the <b>interface</b> from the physical connector and give specific, explained benefits.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">48–50 min · Exit ticket</span>
+      <h3>Three things to remember</h3>
+      <div class="callout"><b>USB means...</b> Universal Serial Bus.</div>
+      <div class="callout"><b>USB is used to...</b> connect compatible devices and transmit data.</div>
+      <div class="callout"><b>One limitation is...</b> compatibility can depend on standards and connector types.</div>
+    </div>
+
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      <b>Planning note:</b> Period 5 introduces USB as a practical serial interface and develops its uses, benefits and limitations.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head"><h2>🎓 Student Learning Pane</h2><small>Detailed learning materials · interactive · self-contained</small></div>
+  <div class="content">
+
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. USB</span><span>3. Uses</span>
+        <span>4. Benefits</span><span>5. Limitations</span><span>6. Test</span>
+      </div>
+      <p>Today you will connect the idea of <b>serial transmission</b> to a real-world interface: <b>USB</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Expand USB correctly.</li>
+        <li>Explain what USB is.</li>
+        <li>Identify common USB-connected devices.</li>
+        <li>Explain benefits of USB.</li>
+        <li>Explain limitations and compatibility issues.</li>
+        <li>Answer exam questions using precise terminology.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · The key definition</h3>
+      <div class="callout"><b>USB = Universal Serial Bus.</b></div>
+      <p>USB is an interface used to connect compatible devices and transmit data.</p>
+      <div class="usb-diagram"><div class="device">HOST</div><div class="cable"></div><div class="device">DEVICE</div></div>
+      <p>Think of USB as a common communication route between a computer and a compatible peripheral or storage device.</p>
+    </div>
+
+    <div class="card">
+      <h3>2 · Common examples</h3>
+      <div class="usb-points">
+        <div class="usb-point"><b>Flash drive</b>Move or store files.</div>
+        <div class="usb-point"><b>Keyboard / mouse</b>Send input to a computer.</div>
+        <div class="usb-point"><b>Printer</b>Send print data to a peripheral.</div>
+        <div class="usb-point"><b>External storage</b>Provide additional storage and data transfer.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3 · Why is USB useful?</h3>
+      <ul>
+        <li>It is <b>widely supported</b>.</li>
+        <li>It provides a <b>standard connection</b> for many peripherals.</li>
+        <li>It supports <b>data transfer</b>.</li>
+        <li>It can provide <b>power</b> to compatible devices.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>4 · What can go wrong?</h3>
+      <div class="callout"><b>Compatibility:</b> Different standards and connector types may not work together as expected.</div>
+      <div class="callout"><b>Cable length:</b> There are practical limits on cable length for reliable communication.</div>
+      <div class="callout"><b>Speed:</b> Do not assume every USB connection has the same transfer rate.</div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Quick check</h3>
+      <p><b>Q1:</b> What does USB stand for?</p>
+      <button class="option" onclick="checkP5(this,true,'q1p5')">Universal Serial Bus</button>
+      <button class="option" onclick="checkP5(this,false,'q1p5')">Universal System Bus</button>
+      <div class="score" id="q1p5"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> Which device is commonly connected using USB?</p>
+      <button class="option" onclick="checkP5(this,true,'q2p5')">Keyboard</button>
+      <button class="option" onclick="checkP5(this,false,'q2p5')">A paper notebook</button>
+      <div class="score" id="q2p5"></div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Exam practice</h3>
+      <p><b>Question:</b> State two benefits of using USB to connect a computer to a peripheral.</p>
+      <button onclick="showP5('examP5')">Show model answer</button>
+      <div class="answer" id="examP5">USB is widely supported and provides a standard, convenient way to connect compatible peripherals. It also supports data transfer and can provide power to compatible devices.</div>
+    </div>
+
+    <div class="card">
+      <h3>7 · Challenge</h3>
+      <p>A student says: “USB always transfers data at the same speed, no matter which devices or USB standard are used.” Is the statement correct?</p>
+      <button class="option" onclick="checkP5(this,false,'challengeP5')">Yes</button>
+      <button class="option" onclick="checkP5(this,true,'challengeP5')">No</button>
+      <div class="score" id="challengeP5"></div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Common mistakes</h3>
+      <ul>
+        <li>Writing “Universal System Bus” instead of <b>Universal Serial Bus</b>.</li>
+        <li>Calling USB only a type of plug rather than an interface/standard.</li>
+        <li>Claiming that every USB connection has the same speed.</li>
+        <li>Giving “easy to use” without explaining the benefit.</li>
+        <li>Forgetting compatibility issues between standards or connector types.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>9 · Self-assessment</h3>
+      <p>Choose your confidence:</p>
+      <button onclick="confidenceP5('confident')">🟢 I can explain USB</button>
+      <button onclick="confidenceP5('okay')">🟡 I need more practice</button>
+      <button onclick="confidenceP5('need')">🔴 I need help</button>
+      <div class="score" id="confidenceP5"></div>
+    </div>
+
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Universal Serial Bus · Interface · Devices · Benefits · Limitations.
+    </div>
+  </div>
+</section>
+</main>
+
+<script>
+function usbCheck(result,id){
+  document.getElementById(id).textContent=result==='correct'?'✓ Correct.':'✗ Not quite. Read the definition and try again.';
+}
+function checkP5(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1p5:correct?'✓ Correct — USB means Universal Serial Bus.':'✗ Not quite — USB means Universal Serial Bus.',
+    q2p5:correct?'✓ Correct — keyboards can be connected using USB.':'✗ Not quite — think of a computer peripheral.',
+    challengeP5:correct?'✓ Correct — performance depends on the USB standard, devices and connection.':'✗ Not quite — USB performance is not identical in every connection.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function showP5(id){document.getElementById(id).style.display='block'}
+function confidenceP5(v){
+  const text={
+    confident:'Excellent — you are ready to move on to the next Data Transmission lesson.',
+    okay:'Good. Review the USB benefits and limitations once more.',
+    need:'That is useful information. Revisit the definition, examples and comparison cards.'
+  };
+  document.getElementById('confidenceP5').textContent=text[v];
+}
+</script>
+</body>
+</html>

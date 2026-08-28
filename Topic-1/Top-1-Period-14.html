@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 | Period 14</title>
+<style>
+:root{
+  --gold:#d9a441;
+  --gold-light:#f4df9a;
+  --gold-pale:#fff8df;
+  --blue:#082b59;
+  --blue-2:#12477f;
+  --ink:#12233a;
+  --white:#fffdf5;
+  --glass:rgba(255,255,255,.72);
+  --shadow:0 12px 30px rgba(8,43,89,.16);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Segoe UI,Arial,sans-serif;
+  background:linear-gradient(135deg,#f0cf72 0%,#d9a441 48%,#f5df9b 100%);
+  color:var(--blue);
+  overflow:hidden;
+}
+header{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 24px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.55);
+}
+.brand h1{margin:0;font-size:27px;letter-spacing:.5px}
+.brand p{margin:3px 0 0;font-size:13px;font-weight:600}
+.teacher-identity{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 2px;
+}
+.teacher-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(8,43,89,.75);
+  box-shadow:0 4px 10px rgba(8,43,89,.18);
+}
+.teacher-name{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:20px;font-weight:700;letter-spacing:.8px;
+}
+.school-brand{display:flex;align-items:center;gap:11px}
+.school-brand img{
+  width:48px;height:48px;object-fit:contain;
+  background:rgba(255,255,255,.8);border-radius:10px;padding:3px;
+}
+.school-name{font-size:13px;font-weight:800;letter-spacing:.3px}
+.badge{
+  padding:9px 14px;border-radius:18px;background:var(--blue);color:white;
+  font-weight:700;font-size:13px;box-shadow:var(--shadow)
+}
+.layout{
+  height:calc(100vh - 82px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:14px;
+}
+.pane{
+  min-height:0;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.pane-head{
+  padding:15px 20px;
+  background:rgba(8,43,89,.95);
+  color:white;
+}
+.pane-head h2{margin:0;font-size:20px}
+.pane-head small{opacity:.8}
+.content{
+  overflow:auto;
+  padding:20px 22px 30px;
+}
+.card{
+  background:rgba(255,253,245,.86);
+  border:1px solid rgba(8,43,89,.13);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+}
+.card h3{margin:0 0 9px;color:var(--blue);font-size:17px}
+.time{
+  display:inline-block;background:var(--gold-light);border:1px solid #c6942f;
+  border-radius:20px;padding:4px 9px;font-size:12px;font-weight:800;margin-bottom:9px
+}
+ul{padding-left:20px;line-height:1.55}
+p{line-height:1.55}
+.callout{
+  border-left:5px solid var(--blue);
+  background:#eef4fb;padding:12px 14px;border-radius:8px;margin:10px 0
+}
+.binary{
+  font-family:Consolas,monospace;font-size:24px;letter-spacing:7px;
+  text-align:center;padding:14px;background:#0b315f;color:white;border-radius:12px;
+}
+.weights{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:9px
+}
+.weights div{text-align:center;background:#f7e6ad;padding:8px 3px;border-radius:7px;font-weight:800}
+button{
+  border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;
+  font-weight:700;cursor:pointer;margin:4px 3px 4px 0
+}
+button:hover{transform:translateY(-1px)}
+.answer{display:none;margin-top:10px;padding:11px;background:#edf7ee;border-radius:10px;border:1px solid #9bc49f}
+.option{
+  display:block;width:100%;text-align:left;background:#fff;border:1px solid #c8d3df;
+  color:var(--blue);margin:7px 0
+}
+.option.correct{background:#dff3e1;border-color:#65a66c}
+.option.wrong{background:#f9e0e0;border-color:#c87575}
+.score{font-weight:800;margin-top:8px}
+.progress{
+  display:flex;gap:6px;flex-wrap:wrap
+}
+.progress span{
+  padding:6px 9px;border-radius:12px;background:#e7edf5;font-size:12px;font-weight:700
+}
+.progress span.active{background:var(--gold-light);border:1px solid #bd8d2d}
+.footer-note{
+  font-size:11px;color:#536477;border-top:1px solid #d6dde5;padding-top:10px;margin-top:18px
+}
+@media(max-width:900px){
+  body{overflow:auto}
+  header{height:auto}
+  .layout{height:auto;grid-template-columns:1fr}
+  .pane{min-height:70vh}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="teacher-identity">
+      <img class="teacher-photo" src="IMG-Ravi.jpeg" alt="Ravi Raju">
+      <div class="teacher-name">Ravi Raju</div>
+    </div>
+    <h1>IGCSE Computer Science 0984</h1>
+    <p>Topic 1 — Data Representation · Period 14</p>
+  </div>
+  <div class="school-brand">
+    <img src="MES35.jpg" alt="Modern English School Cairo logo">
+    <div class="school-name">Modern English School Cairo</div>
+    <div class="badge">50 MINUTES</div>
+  </div>
+</header>
+
+<main class="layout">
+<section class="pane">
+  <div class="pane-head">
+    <h2>👨‍🏫 Teacher Pane</h2>
+    <small>My teaching route</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <span class="time">Lesson overview</span>
+      <h3>Period 14 · Sound File Size Calculations</h3>
+      <p><b>Cambridge focus:</b> Topic 1.3 requires candidates to calculate the file size of a sound file using information such as sample rate, sample resolution and track length. The syllabus also specifies that storage calculations use 1024, not 1000, where conversions between storage denominations are required. fileciteturn10file2L186-L214</p>
+      <div class="callout"><b>Success criteria:</b> Students can identify the values needed for a sound-file calculation, calculate the total number of samples, calculate bits/bytes, convert to the requested storage unit, and give the answer in the unit specified.</div>
+      <p><b>Prior learning:</b> Period 13 — sampling, sample rate and sample resolution.</p>
+      <p><b>Key vocabulary:</b> sample rate, sample resolution, duration, samples, bits, bytes, KiB, MiB, GiB, file size.</p>
+    </div>
+
+    <div class="card">
+      <span class="time">My teaching route</span>
+      <h3>The calculation chain</h3>
+      <div class="callout"><b>File size (bits) = sample rate × sample resolution × duration</b></div>
+      <ol>
+        <li>Keep the sample rate in samples/second.</li>
+        <li>Keep the sample resolution in bits/sample.</li>
+        <li>Use duration in seconds.</li>
+        <li>The result is bits.</li>
+        <li>Divide by 8 to obtain bytes.</li>
+        <li>Convert to the requested unit using 1024 where the syllabus requires binary storage conversions.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <span class="time">0–5 min · Retrieval</span>
+      <h3>Reconnect with sampling</h3>
+      <ol>
+        <li>What does sample rate measure?</li>
+        <li>What does sample resolution measure?</li>
+        <li>What happens to file size if sample rate increases?</li>
+        <li>What happens to file size if sample resolution increases?</li>
+      </ol>
+      <div class="callout"><b>Bridge:</b> We now turn those relationships into a calculation.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">5–14 min · Model</span>
+      <h3>Worked example 1</h3>
+      <p>A sound recording has:</p>
+      <ul>
+        <li>Sample rate = 8,000 samples/s</li>
+        <li>Sample resolution = 8 bits/sample</li>
+        <li>Duration = 10 seconds</li>
+      </ul>
+      <p>Number of samples = 8,000 × 10 = <b>80,000</b></p>
+      <p>File size = 80,000 × 8 = <b>640,000 bits</b></p>
+      <p>Bytes = 640,000 ÷ 8 = <b>80,000 bytes</b></p>
+      <div class="callout"><b>Answer:</b> 80,000 bytes before any compression or file-format overhead.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">14–23 min · Model</span>
+      <h3>Worked example 2 · MiB</h3>
+      <p>A recording uses 44,100 samples/s, 16 bits/sample and lasts 60 seconds.</p>
+      <p>Bits = 44,100 × 16 × 60 = <b>42,336,000 bits</b></p>
+      <p>Bytes = 42,336,000 ÷ 8 = <b>5,292,000 bytes</b></p>
+      <p>MiB = 5,292,000 ÷ 1,048,576 ≈ <b>5.05 MiB</b></p>
+      <div class="callout"><b>Important:</b> the syllabus specifies 1024 rather than 1000 for these storage conversions. fileciteturn10file2L204-L210</div>
+    </div>
+
+    <div class="card">
+      <span class="time">23–31 min · Guided practice</span>
+      <h3>Build the calculation</h3>
+      <p><b>Question A:</b> 10,000 samples/s, 8 bits/sample, 5 seconds.</p>
+      <p><b>Question B:</b> 20,000 samples/s, 16 bits/sample, 10 seconds.</p>
+      <p>For each, students should show:</p>
+      <ol>
+        <li>Total samples</li>
+        <li>Total bits</li>
+        <li>Total bytes</li>
+      </ol>
+      <div class="callout"><b>Teacher move:</b> mark the method before marking the final number.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">31–37 min · Unit conversion</span>
+      <h3>Bits → bytes → KiB / MiB</h3>
+      <p>Remember:</p>
+      <div class="callout"><b>8 bits = 1 byte</b><br><b>1024 bytes = 1 KiB</b><br><b>1024 KiB = 1 MiB</b></div>
+      <p>The syllabus explicitly lists bit, nibble, byte, KiB, MiB, GiB and larger storage denominations and requires answers in the unit specified by the question. fileciteturn10file2L193-L210</p>
+    </div>
+
+    <div class="card">
+      <span class="time">37–42 min · Application</span>
+      <h3>What changes file size?</h3>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="padding:8px;background:#082b59;color:white">Increase</th><th style="padding:8px;background:#082b59;color:white">Effect on raw sound data</th></tr>
+        <tr><td style="padding:7px">Sample rate</td><td style="padding:7px">More samples each second → larger file</td></tr>
+        <tr><td style="padding:7px">Sample resolution</td><td style="padding:7px">More bits per sample → larger file</td></tr>
+        <tr><td style="padding:7px">Duration</td><td style="padding:7px">More seconds → more samples → larger file</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <span class="time">42–47 min · Assessment</span>
+      <h3>Cambridge-style calculation</h3>
+      <p>A sound file has a sample rate of <b>16,000 samples/s</b>, a sample resolution of <b>8 bits</b> and a duration of <b>20 seconds</b>.</p>
+      <ol>
+        <li>Calculate the number of samples.</li>
+        <li>Calculate the file size in bits.</li>
+        <li>Calculate the file size in bytes.</li>
+      </ol>
+      <div class="callout"><b>Marking focus:</b> correct multiplication, correct ÷8 conversion, and clear units at every stage.</div>
+    </div>
+
+    <div class="card">
+      <span class="time">47–50 min · Exit ticket</span>
+      <h3>Three questions before you leave</h3>
+      <ol>
+        <li>Write the formula for raw sound-file size in bits.</li>
+        <li>Why do we divide bits by 8?</li>
+        <li>Which value must be used for binary storage conversion: 1000 or 1024?</li>
+      </ol>
+      <div class="callout"><b>Teacher decision:</b> Period 15 can move to image representation and then compare image and sound file-size calculations.</div>
+    </div>
+  </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo</b><br><br>
+      <b>Planning note:</b> Period 14 converts sampling knowledge into raw sound-file-size calculations, including bits, bytes and 1024-based storage units.
+    </div>
+  </div>
+</section>
+
+<section class="pane">
+  <div class="pane-head">
+    <h2>🎓 Student Learning Pane</h2>
+    <small>Detailed learning materials · interactive · self-contained</small>
+  </div>
+  <div class="content">
+    <div class="card">
+      <h3>🧭 Your learning route</h3>
+      <div class="progress">
+        <span class="active">1. Recall</span><span>2. Formula</span>
+        <span>3. Samples</span><span>4. Bits & bytes</span>
+        <span>5. Units</span><span>6. Assessment</span>
+      </div>
+      <p>Today you will calculate how much storage a digital sound recording needs.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎯 Learning goals</h3>
+      <ul>
+        <li>Calculate total samples.</li>
+        <li>Calculate sound data size in bits.</li>
+        <li>Convert bits to bytes.</li>
+        <li>Convert to KiB or MiB when required.</li>
+        <li>Use 1024 for the specified binary storage conversions.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>1 · The formula</h3>
+      <div class="callout"><b>File size in bits = sample rate × sample resolution × duration</b></div>
+      <p>Make sure:</p>
+      <ul>
+        <li>Sample rate = samples per second</li>
+        <li>Resolution = bits per sample</li>
+        <li>Duration = seconds</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>2 · Worked example</h3>
+      <p>8,000 samples/s × 8 bits/sample × 10 s</p>
+      <div class="binary">640,000 bits</div>
+      <p>640,000 ÷ 8 = <b>80,000 bytes</b></p>
+    </div>
+
+    <div class="card">
+      <h3>3 · Quick check</h3>
+      <p><b>Q1:</b> Why do we divide by 8?</p>
+      <button class="option" onclick="check14(this,true,'q1s14')">8 bits make 1 byte</button>
+      <button class="option" onclick="check14(this,false,'q1s14')">8 bytes make 1 bit</button>
+      <div class="score" id="q1s14"></div>
+
+      <p style="margin-top:15px"><b>Q2:</b> Which conversion factor is specified for KiB/MiB calculations?</p>
+      <button class="option" onclick="check14(this,true,'q2s14')">1024</button>
+      <button class="option" onclick="check14(this,false,'q2s14')">1000</button>
+      <div class="score" id="q2s14"></div>
+    </div>
+
+    <div class="card">
+      <h3>4 · Practice A</h3>
+      <p>10,000 samples/s, 8 bits/sample, 5 seconds.</p>
+      <p>Calculate samples, bits and bytes.</p>
+      <button onclick="show('answers14a')">Reveal answer</button>
+      <div class="answer" id="answers14a">
+        Samples = 10,000 × 5 = 50,000.<br>
+        Bits = 50,000 × 8 = 400,000 bits.<br>
+        Bytes = 400,000 ÷ 8 = <b>50,000 bytes</b>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>5 · Practice B</h3>
+      <p>20,000 samples/s, 16 bits/sample, 10 seconds.</p>
+      <button onclick="show('answers14b')">Reveal answer</button>
+      <div class="answer" id="answers14b">
+        Samples = 200,000.<br>
+        Bits = 3,200,000 bits.<br>
+        Bytes = <b>400,000 bytes</b>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>6 · Storage units</h3>
+      <div class="callout"><b>8 bits = 1 byte</b><br><b>1024 bytes = 1 KiB</b><br><b>1024 KiB = 1 MiB</b></div>
+      <p>When a question asks for a particular unit, give your final answer in that unit.</p>
+    </div>
+
+    <div class="card">
+      <h3>7 · Challenge: MiB</h3>
+      <p>44,100 samples/s, 16 bits/sample, 60 seconds.</p>
+      <button onclick="show('challenge14')">Show model answer</button>
+      <div class="answer" id="challenge14">
+        Bits = 44,100 × 16 × 60 = 42,336,000 bits.<br>
+        Bytes = 5,292,000 bytes.<br>
+        MiB = 5,292,000 ÷ 1,048,576 ≈ <b>5.05 MiB</b>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>8 · Exam practice</h3>
+      <p>A sound file has a sample rate of 16,000 samples/s, resolution of 8 bits and duration of 20 seconds. Find the number of samples, bits and bytes.</p>
+      <button onclick="show('exam14')">Show model answer</button>
+      <div class="answer" id="exam14">
+        Samples = 16,000 × 20 = 320,000.<br>
+        Bits = 320,000 × 8 = 2,560,000 bits.<br>
+        Bytes = 2,560,000 ÷ 8 = <b>320,000 bytes</b>.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>9 · Common mistakes</h3>
+      <ul>
+        <li>Forgetting to multiply by duration.</li>
+        <li>Using bits when the question asks for bytes.</li>
+        <li>Dividing by 8 at the wrong stage.</li>
+        <li>Using 1000 instead of 1024 for the specified binary storage conversions.</li>
+        <li>Leaving out the unit from the final answer.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>10 · Self-assessment</h3>
+      <p>Choose your confidence:</p>
+      <button onclick="confidence14('confident')">🟢 I can calculate sound file sizes</button>
+      <button onclick="confidence14('okay')">🟡 I need more practice</button>
+      <button onclick="confidence14('need')">🔴 I need help</button>
+      <div class="score" id="confidence14"></div>
+    </div>
+    <div class="footer-note">
+      <div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700;margin-bottom:6px;">Ravi Raju</div>
+      <b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>
+      Sound-file size calculations using sample rate, sample resolution and duration.
+    </div>>
+  </div>
+</section>
+</main>
+
+<script>
+function check14(btn,correct,id){
+  const box=btn.parentElement;
+  [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+  btn.classList.add(correct?'correct':'wrong');
+  const messages={
+    q1s14:correct?'✓ Correct — 8 bits make 1 byte.':'✗ Not quite. Remember the bits-to-bytes relationship.',
+    q2s14:correct?'✓ Correct — use 1024 for the specified binary storage conversions.':'✗ Not quite. The syllabus specifies 1024 for these conversions.'
+  };
+  document.getElementById(id).textContent=messages[id];
+}
+function show(id){document.getElementById(id).style.display='block'}
+function confidence14(v){
+  const text={
+    confident:'Excellent — you are ready to calculate image file sizes.',
+    okay:'Good. Practise the calculation chain and unit conversions.',
+    need:'That is useful information. Work through the worked example step by step.'
+  };
+  document.getElementById('confidence14').textContent=text[v];
+}
+</script>
+</body>
+</html>

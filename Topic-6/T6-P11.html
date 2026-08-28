@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 6 | Period 11</title>
+<style>
+:root{--gold:#d8ad45;--gold2:#efd47a;--blue:#123b63;--blue2:#0b2d4d;--ink:#17324d}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(135deg,#c99528,#efd16c 45%,#c99a2e);color:var(--ink);overflow:hidden}
+header{height:88px;display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:#0b2d4df2;color:#fff;border-bottom:3px solid var(--gold2);box-shadow:0 5px 18px #08203b66}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--gold2)}
+.brand h1{margin:0;font-size:27px}.brand p{margin:2px 0;color:#e8eef5;font-size:13px;font-weight:600}.name{font-family:"Segoe Script","Brush Script MT",cursive;font-size:19px;font-weight:700}
+.school{display:flex;align-items:center;gap:10px;font-size:13px}.school img{width:48px;height:48px;background:#fff;border-radius:9px;padding:3px;object-fit:contain}.badge{background:var(--gold2);color:var(--blue2);font-weight:900;padding:9px 13px;border-radius:18px}
+.layout{height:calc(100vh - 88px);display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:14px}.pane{min-height:0;background:#fffaf0f5;border:2px solid #c7a653;border-radius:22px;box-shadow:0 14px 34px #49340f55;overflow:hidden;display:flex;flex-direction:column}
+.panehead{background:var(--blue2);color:#fff;padding:15px 20px}.panehead h2{margin:0;font-size:20px}.panehead small{opacity:.82}.content{overflow:auto;padding:20px 22px 30px}
+.card{background:#fffdf7;border:1px solid #d9c797;border-radius:16px;padding:16px;margin-bottom:15px;box-shadow:0 4px 12px #49340f12}.card h3{margin:0 0 9px;color:var(--blue2);font-size:17px}
+p{line-height:1.55}ul,ol{line-height:1.55;padding-left:20px}.time{display:inline-block;background:#f2dda0;border:1px solid #c7a653;color:var(--blue2);padding:4px 9px;border-radius:18px;font-size:12px;font-weight:900;margin-bottom:9px}
+.callout{background:#f5ecd0;border-left:5px solid var(--blue);padding:12px 14px;border-radius:8px;margin:10px 0}.flow{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:18px;background:#f6edcf;border-radius:16px;margin:14px 0}
+.node{background:var(--blue2);color:#fff;padding:13px 15px;border-radius:13px;font-weight:900;text-align:center}.arrow{font-size:25px;font-weight:900;color:var(--blue)}
+.example{background:#eef3f7;border:1px solid #b7c7d6;border-radius:13px;padding:13px;margin:10px 0}.workout{background:#f7f0dd;border:2px dashed #b7964e;border-radius:15px;padding:15px;margin:12px 0}
+button{border:0;border-radius:12px;padding:10px 14px;background:var(--blue2);color:#fff;font-weight:800;cursor:pointer;margin:4px 3px 4px 0}.option{display:block;width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid #c8b98e}
+.option.correct{background:#e1efe5;border-color:#6d997a}.option.wrong{background:#f5dfdb;border-color:#a86b61}.answer{display:none;background:#e5f0e7;border:1px solid #9db9a4;padding:11px;border-radius:10px;margin-top:9px}.score{font-weight:900;margin-top:8px}
+.progress{display:flex;gap:6px;flex-wrap:wrap}.progress span{background:#e7dfcf;border-radius:12px;padding:6px 9px;font-size:12px;font-weight:800}.progress .active{background:#e8d18a;border:1px solid #b7964e;color:var(--blue2)}
+table{width:100%;border-collapse:collapse}th{background:var(--blue2);color:#fff;text-align:left;padding:8px}td{padding:8px;border-bottom:1px solid #ddd2b8;vertical-align:top}
+.footer{font-size:11px;color:#685e4e;border-top:1px solid #d8ccb0;padding-top:10px;margin-top:18px}
+@media(max-width:900px){body{overflow:auto}.layout{height:auto;grid-template-columns:1fr}.pane{min-height:70vh}header{height:auto}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><img src="IMG-Ravi.jpeg" alt="Ravi Raju"><div><div class="name">Ravi Raju</div><h1>IGCSE Computer Science 0984</h1><p>Topic 6 · Automated and Emerging Technologies · Period 11</p></div></div>
+<div class="school"><img src="MES35.jpg" alt="Modern English School Cairo logo"><b>Modern English School Cairo</b><div class="badge">TOPIC 6</div></div>
+</header>
+
+<main class="layout">
+<section class="pane">
+<div class="panehead"><h2>📘 Teacher Studio</h2><small>6.3 Artificial intelligence · expert systems · knowledge base · rule base · inference engine · interface</small></div>
+<div class="content">
+
+<div class="card"><span class="time">Topic 6 · Period 11</span><h3>Expert Systems</h3>
+<p>This period teaches the first AI system type explicitly named in Cambridge 0984: the <b>expert system</b>.</p>
+<div class="callout"><b>Syllabus boundary:</b> Cambridge limits AI in this syllabus to <b>expert systems</b> and <b>machine learning</b>. An expert system has four required components: <b>knowledge base, rule base, inference engine and interface</b>.</div></div>
+
+<div class="card"><h3>1 · What is an expert system?</h3>
+<p>An expert system is an AI system designed to simulate the decision-making or problem-solving of a human expert in a particular domain.</p>
+<div class="flow"><div class="node">USER<br>INPUT</div><div class="arrow">→</div><div class="node">INTERFACE</div><div class="arrow">→</div><div class="node">INFERENCE<br>ENGINE</div><div class="arrow">↔</div><div class="node">KNOWLEDGE<br>BASE + RULE BASE</div></div>
+<p>The system uses stored expert knowledge and rules to reason towards a conclusion or recommendation.</p></div>
+
+<div class="card"><span class="time">0–8 min · Retrieval</span><h3>2 · The four components</h3>
+<table><tr><th>Component</th><th>Purpose</th></tr>
+<tr><td><b>Knowledge base</b></td><td>Stores facts and knowledge about the specialist subject area.</td></tr>
+<tr><td><b>Rule base</b></td><td>Stores rules used to process the knowledge and reach conclusions.</td></tr>
+<tr><td><b>Inference engine</b></td><td>Applies the rules to the available facts/knowledge to infer a conclusion.</td></tr>
+<tr><td><b>Interface</b></td><td>Allows the user to communicate with the expert system and receive information or conclusions.</td></tr>
+</table></div>
+
+<div class="card"><span class="time">8–18 min · Teach</span><h3>3 · Knowledge base</h3>
+<p>The <b>knowledge base</b> contains information about the specialist area. It represents the knowledge that an expert system can use when solving a problem.</p>
+<div class="example"><b>Medical example:</b> the knowledge base may contain information about diseases, symptoms and relevant medical facts.</div>
+<div class="callout">Do not confuse the knowledge base with the rule base. The knowledge base stores <b>knowledge/facts</b>; the rule base stores <b>rules</b> for using that knowledge.</div></div>
+
+<div class="card"><span class="time">18–26 min · Teach</span><h3>4 · Rule base</h3>
+<p>The <b>rule base</b> contains rules that connect conditions to conclusions or actions.</p>
+<div class="example"><b>Illustrative rule:</b> IF a patient has symptom A AND symptom B, THEN consider condition X.</div>
+<p>The exact rule depends on the specialist domain. The important examination idea is that rules are used with the stored knowledge to support reasoning.</p></div>
+
+<div class="card"><span class="time">26–35 min · Teach</span><h3>5 · Inference engine</h3>
+<p>The <b>inference engine</b> is the part that applies the rules to the available information and draws conclusions.</p>
+<div class="flow"><div class="node">FACTS / INPUT</div><div class="arrow">→</div><div class="node">INFERENCE<br>ENGINE</div><div class="arrow">←</div><div class="node">RULES</div><div class="arrow">→</div><div class="node">CONCLUSION</div></div>
+<p>It is therefore the component most directly associated with the <b>reasoning process</b> in an expert system.</p></div>
+
+<div class="card"><span class="time">35–42 min · Teach</span><h3>6 · Interface</h3>
+<p>The <b>interface</b> provides communication between the user and the expert system.</p>
+<ol><li>The user provides information or answers questions.</li><li>The interface passes the information to the system.</li><li>The system processes the information.</li><li>The conclusion or recommendation is returned through the interface.</li></ol>
+<div class="example"><b>Example:</b> A fault-diagnosis system asks a technician questions about a machine and then displays a possible cause of the fault.</div></div>
+
+<div class="card"><span class="time">42–47 min · Guided workout</span><h3>7 · Trace an expert system</h3>
+<div class="workout">A farmer enters information about a crop into an expert system. The system asks questions, compares the information with stored knowledge and rules, and gives a recommendation. Identify the four components involved.</div>
+<button onclick="showA('w1')">Show model</button>
+<div class="answer" id="w1"><b>Interface:</b> receives the farmer's information and presents the result. <b>Knowledge base:</b> stores crop-related knowledge. <b>Rule base:</b> stores rules connecting conditions to recommendations. <b>Inference engine:</b> applies the rules to the available information and produces the conclusion.</div></div>
+
+<div class="card"><span class="time">47–50 min · Exit ticket</span><h3>8 · Four words to remember</h3>
+<div class="callout"><b>KNOWLEDGE → RULES → INFERENCE → INTERFACE</b><br><br>
+Knowledge base stores what is known. Rule base stores how knowledge is used. Inference engine reasons from it. Interface communicates with the user.</div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 11 · Expert systems.</div>
+</div>
+</section>
+
+<section class="pane">
+<div class="panehead"><h2>🧠 Student Studio</h2><small>Identify → distinguish → trace → explain</small></div>
+<div class="content">
+
+<div class="card"><h3>🧭 Topic 6 roadmap</h3><div class="progress"><span>6.1 Automated systems</span><span>6.2 Robotics</span><span class="active">6.3 Artificial Intelligence</span></div></div>
+
+<div class="card"><h3>🎯 Learning targets</h3>
+<ul><li>Explain what an expert system is.</li><li>Identify the four expert-system components.</li><li>Distinguish a knowledge base from a rule base.</li><li>Explain the role of the inference engine.</li><li>Explain the role of the interface.</li><li>Trace information through an expert system.</li></ul></div>
+
+<div class="card"><h3>1 · Quick check</h3><p>Which component stores specialist facts and knowledge?</p>
+<button class="option" onclick="checkQ(this,true,'q1')">Knowledge base</button>
+<button class="option" onclick="checkQ(this,false,'q1')">Interface</button><div class="score" id="q1"></div></div>
+
+<div class="card"><h3>2 · Component challenge</h3>
+<div class="workout">Which four components must you remember for a Cambridge 0984 expert system?</div>
+<button onclick="showA('a1')">Show answer</button>
+<div class="answer" id="a1"><b>Knowledge base, rule base, inference engine and interface.</b></div></div>
+
+<div class="card"><h3>3 · Interactive check</h3><p>What does the rule base contain?</p>
+<button class="option" onclick="checkQ(this,true,'q2')">Rules used to process knowledge and reach conclusions.</button>
+<button class="option" onclick="checkQ(this,false,'q2')">Only the user's screen layout.</button><div class="score" id="q2"></div></div>
+
+<div class="card"><h3>4 · Worked Example — Fault diagnosis</h3>
+<div class="example">A technician enters symptoms of a machine fault. The system uses stored machine knowledge and rules to identify a possible cause.</div>
+<p><b>Interface:</b> technician enters symptoms and receives the result. <b>Knowledge base:</b> machine faults and relevant facts. <b>Rule base:</b> rules linking symptoms to possible causes. <b>Inference engine:</b> applies the rules to the entered information.</p></div>
+
+<div class="card"><h3>5 · Workout — Knowledge or rule?</h3>
+<div class="workout">Classify these examples: “High temperature is a symptom of fault X” and “IF high temperature AND vibration, THEN consider fault X.”</div>
+<button onclick="showA('a2')">Show answer</button>
+<div class="answer" id="a2">The first is <b>knowledge/fact</b> stored in the knowledge base. The second is a <b>rule</b> stored in the rule base.</div></div>
+
+<div class="card"><h3>6 · Interactive check</h3><p>Which component applies the rules to available information to infer a conclusion?</p>
+<button class="option" onclick="checkQ(this,true,'q3')">Inference engine</button>
+<button class="option" onclick="checkQ(this,false,'q3')">Knowledge base</button><div class="score" id="q3"></div></div>
+
+<div class="card"><h3>7 · Scenario challenge — Medical expert system</h3>
+<div class="workout">A patient answers questions about symptoms through a computer interface. The system produces a possible diagnosis. Explain how the four components could be involved.</div>
+<button onclick="showA('a3')">Show model</button>
+<div class="answer" id="a3"><b>Interface:</b> collects symptom information and displays the result. <b>Knowledge base:</b> stores medical facts. <b>Rule base:</b> stores rules connecting symptoms and possible conditions. <b>Inference engine:</b> applies the rules to the available symptom information to infer a possible diagnosis.</div></div>
+
+<div class="card"><h3>8 · Exam-style question</h3>
+<p><b>Question:</b> Describe the four components of an expert system.</p>
+<button onclick="showA('a4')">Show mark-point model</button>
+<div class="answer" id="a4"><b>Knowledge base:</b> stores specialist knowledge/facts. <b>Rule base:</b> stores rules for using the knowledge. <b>Inference engine:</b> applies the rules to available information to infer a conclusion. <b>Interface:</b> allows communication between the user and the system.</div></div>
+
+<div class="card"><h3>9 · Exam-style application</h3>
+<p><b>Question:</b> Explain how an expert system could help diagnose a machine fault.</p>
+<button onclick="showA('a5')">Show mark-point model</button>
+<div class="answer" id="a5">The user enters information about the fault through the interface. The system uses a knowledge base containing information about possible faults and a rule base containing rules linking symptoms to faults. The inference engine applies the rules to the available information and produces a possible conclusion, which is communicated through the interface.</div></div>
+
+<div class="card"><h3>10 · Expert system vs ordinary program</h3>
+<table><tr><th>Expert system</th><th>Ordinary fixed-rule program</th></tr>
+<tr><td>Designed to simulate expert decision-making in a specialist domain.</td><td>May simply perform a specified sequence of operations.</td></tr>
+<tr><td>Uses a knowledge base, rule base and inference engine.</td><td>May not have these separate components.</td></tr>
+<tr><td>Produces conclusions by applying rules to available knowledge/information.</td><td>May directly calculate or perform programmed operations.</td></tr></table></div>
+
+<div class="card"><h3>11 · Common mistakes</h3>
+<ul><li>Calling the knowledge base the rule base.</li><li>Saying the interface does the reasoning.</li><li>Forgetting the inference engine.</li><li>Confusing an expert system with a robot.</li><li>Assuming an expert system must have a physical robot.</li></ul></div>
+
+<div class="card"><h3>12 · Self-assessment</h3>
+<p>Can you name and explain all four components of an expert system?</p>
+<button onclick="confidence('ready')">🟢 Yes</button><button onclick="confidence('practice')">🟡 More practice</button><button onclick="confidence('revise')">🔴 Need revision</button>
+<div class="score" id="confidence"></div></div>
+
+<div class="footer"><div style="font-family:'Segoe Script','Brush Script MT',cursive;font-size:22px;font-weight:700">Ravi Raju</div><b>Modern English School Cairo · IGCSE Computer Science 0984</b><br><br>Topic 6 · Period 11 · Expert systems.</div>
+</div>
+</section>
+</main>
+
+<script>
+function showA(id){document.getElementById(id).style.display='block'}
+function checkQ(btn,correct,id){
+ const box=btn.parentElement;
+ [...box.querySelectorAll('.option')].forEach(x=>x.classList.remove('correct','wrong'));
+ btn.classList.add(correct?'correct':'wrong');
+ const m={
+ q1:correct?'✓ Correct — the knowledge base stores specialist facts and knowledge.':'✗ The interface communicates with the user; it does not store the specialist knowledge.',
+ q2:correct?'✓ Correct — the rule base stores the rules used to process the knowledge.':'✗ The rule base contains rules, not just the screen layout.',
+ q3:correct?'✓ Correct — the inference engine applies rules to available information to infer a conclusion.':'✗ The knowledge base stores information; the inference engine applies the rules.'
+ };
+ document.getElementById(id).textContent=m[id]
+}
+function confidence(v){
+ const m={
+ ready:'Excellent — you know the four expert-system components.',
+ practice:'Good. Practise distinguishing knowledge base, rule base, inference engine and interface.',
+ revise:'Remember: KNOWLEDGE + RULES → INFERENCE; INTERFACE connects the user to the system.'
+ };
+ document.getElementById('confidence').textContent=m[v]
+}
+</script>
+</body>
+</html>
