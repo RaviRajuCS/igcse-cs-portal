@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Ravi Raju</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    min-height:100vh;
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:linear-gradient(135deg,#f7d774,#fff4c7,#f3cf62);
+    color:#082b59;
+}
+
+/* HEADER */
+header{
+    padding:25px 45px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid rgba(8,43,89,.15);
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(12px);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.brand img{
+    width:72px;
+    height:72px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid white;
+    box-shadow:0 5px 18px rgba(0,0,0,.18);
+}
+
+.school{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:18px;
+    font-weight:700;
+}
+
+.school img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    border-radius:10px;
+}
+
+.ravi-name{
+    font-family:"Segoe Script","Brush Script MT",cursive;
+    font-size:30px;
+    font-weight:700;
+}
+
+.subtitle{
+    font-size:14px;
+    margin-top:4px;
+    opacity:.8;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:65px 25px 45px;
+}
+
+.hero h1{
+    font-size:52px;
+    letter-spacing:1px;
+    margin-bottom:12px;
+}
+
+.hero h2{
+    font-size:24px;
+    font-weight:500;
+    margin-bottom:18px;
+}
+
+.hero p{
+    max-width:850px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.7;
+}
+
+/* PORTAL */
+.portal{
+    max-width:1250px;
+    margin:0 auto;
+    padding:25px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.topic-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.topic-card{
+    background:rgba(255,255,255,.48);
+    border:1px solid rgba(255,255,255,.7);
+    border-radius:24px;
+    padding:28px;
+    min-height:230px;
+    box-shadow:0 12px 30px rgba(8,43,89,.12);
+    backdrop-filter:blur(14px);
+    transition:.25s ease;
+}
+
+.topic-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 38px rgba(8,43,89,.18);
+}
+
+.topic-number{
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    opacity:.7;
+}
+
+.topic-card h3{
+    font-size:25px;
+    margin:10px 0;
+}
+
+.topic-card p{
+    line-height:1.6;
+    min-height:70px;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:18px;
+}
+
+.btn{
+    display:inline-block;
+    padding:11px 18px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:700;
+    background:#082b59;
+    color:white;
+    transition:.2s ease;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    background:#12477f;
+}
+
+.btn.disabled{
+    background:rgba(8,43,89,.35);
+    cursor:default;
+}
+
+/* QUICK ACCESS */
+.quick{
+    margin-top:45px;
+    padding:30px;
+    border-radius:24px;
+    background:rgba(255,255,255,.42);
+    border:1px solid rgba(255,255,255,.65);
+    box-shadow:0 10px 28px rgba(8,43,89,.1);
+    text-align:center;
+}
+
+.quick h2{
+    margin-bottom:15px;
+}
+
+.quick p{
+    line-height:1.7;
+}
+
+/* FOOTER */
+footer{
+    margin-top:55px;
+    padding:30px;
+    text-align:center;
+    border-top:1px solid rgba(8,43,89,.15);
+    background:rgba(255,255,255,.25);
+}
+
+.footer-name{
+    font-family:"Segoe Script","Brush Script MT",cursive;
+    font-size:25px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+/* DESKTOP-FIRST */
+@media(max-width:900px){
+    .topic-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px){
+    .topic-grid{
+        grid-template-columns:1fr;
+    }
+
+    header{
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="brand">
+        <img src="IMG-Ravi.jpeg" alt="Ravi Raju">
+
+        <div>
+            <div class="ravi-name">Ravi Raju</div>
+            <div class="subtitle">
+                Computer Science Teacher
+            </div>
+        </div>
+    </div>
+
+    <div class="school">
+        <img src="MES35.jpg" alt="Modern English School Cairo logo">
+        <span>Modern English School Cairo</span>
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>IGCSE Computer Science 0984</h1>
+
+    <h2>Premium Computer Science Learning Portal</h2>
+
+    <p>
+        A structured learning environment designed for Cambridge
+        IGCSE Computer Science, combining teacher-led instruction,
+        detailed student learning materials, interactive activities
+        and examination preparation.
+    </p>
+
+</section>
+
+
+<main class="portal">
+
+    <h2 class="section-title">Course Topics</h2>
+
+    <div class="topic-grid">
+
+        <!-- TOPIC 1 -->
+        <div class="topic-card">
+
+            <div class="topic-number">Topic 1</div>
+
+            <h3>Data Representation</h3>
+
+            <p>
+                Binary, hexadecimal, text, images, sound,
+                data storage and representation.
+            </p>
+
+            <div class="buttons">
+
+                <a class="btn"
+                   href="Topic-1/Top-1-Period-1.html">
+                    Enter Topic
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOPIC 2 -->
+        <div class="topic-card">
+
+            <div class="topic-number">Topic 2</div>
+
+            <h3>Data Transmission</h3>
+
+            <p>
+                Data packets, packet switching, routers,
+                transmission modes and transmission methods.
+            </p>
+
+            <div class="buttons">
+
+                <a class="btn"
+                   href="Topic-2/Top-2-Period-1.html">
+                    Enter Topic
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOPIC 3 -->
+        <div class="topic-card">
+
+            <div class="topic-number">Topic 3</div>
+
+            <h3>Hardware</h3>
+
+            <p>
+                Computer hardware, components, storage,
+                input and output technologies.
+            </p>
+
+            <div class="buttons">
+
+                <span class="btn disabled">
+                    Coming Soon
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOPIC 4 -->
+        <div class="topic-card">
+
+            <div class="topic-number">Topic 4</div>
+
+            <h3>Software</h3>
+
+            <p>
+                System software, application software,
+                operating systems and software concepts.
+            </p>
+
+            <div class="buttons">
+
+                <span class="btn disabled">
+                    Coming Soon
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOPIC 5 -->
+        <div class="topic-card">
+
+            <div class="topic-number">Topic 5</div>
+
+            <h3>The Internet</h3>
+
+            <p>
+                Internet technologies, web concepts,
+                networks and online communication.
+            </p>
+
+            <div class="buttons">
+
+                <span class="btn disabled">
+                    Coming Soon
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOPIC 6 -->
+        <div class="topic-card">
+
+            <div class="topic-number">Topic 6</div>
+
+            <h3>Automated & Emerging Technologies</h3>
+
+            <p>
+                Sensors, automated systems, microprocessors,
+                actuators and emerging technologies.
+            </p>
+
+            <div class="buttons">
+
+                <a class="btn"
+                   href="Topic-6/T6-P1.html">
+                    Enter Topic
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOPIC 7 -->
+        <div class="topic-card">
+
+            <div class="topic-number">Topic 7</div>
+
+            <h3>Algorithm Design & Problem-Solving</h3>
+
+            <p>
+                Computational thinking, algorithms,
+                decomposition and problem-solving.
+            </p>
+
+            <div class="buttons">
+
+                <span class="btn disabled">
+                    Coming Soon
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOPIC 8 -->
+        <div class="topic-card">
+
+            <div class="topic-number">Topic 8</div>
+
+            <h3>Programming</h3>
+
+            <p>
+                Programming concepts, structures,
+                data types and problem-solving using code.
+            </p>
+
+            <div class="buttons">
+
+                <span class="btn disabled">
+                    Coming Soon
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOPIC 9 -->
+        <div class="topic-card">
+
+            <div class="topic-number">Topic 9</div>
+
+            <h3>Database</h3>
+
+            <p>
+                Database concepts, tables, fields,
+                records, queries and data management.
+            </p>
+
+            <div class="buttons">
+
+                <span class="btn disabled">
+                    Coming Soon
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOPIC 10 -->
+        <div class="topic-card">
+
+            <div class="topic-number">Topic 10</div>
+
+            <h3>Boolean Logic</h3>
+
+            <p>
+                Logic gates, truth tables, Boolean expressions
+                and logical problem-solving.
+            </p>
+
+            <div class="buttons">
+
+                <span class="btn disabled">
+                    Coming Soon
+                </span>
+
+            </div>
+
+        </div>
+        <!-- PRACTICAL PAPER -->
+        <div class="topic-card">
+
+            <div class="topic-number">Practical Paper</div>
+
+            <h3>Programming & Problem-Solving</h3>
+
+            <p>
+                Practical programming, problem-solving and
+                examination-focused programming practice.
+            </p>
+
+            <div class="buttons">
+
+                <a class="btn"
+                   href="Practical-1/index.html">
+                    Enter Practical Paper
+                </a>
+
+            </div>
+
+        </div>
+   
+
+
+    <section class="quick">
+
+        <h2>Teacher & Student Learning Environment</h2>
+
+        <p>
+            Each lesson page is designed as a two-pane classroom:
+            the <b>Teacher Studio</b> provides your teaching route,
+            explanations, timings and classroom prompts, while the
+            <b>Student Learning Studio</b> provides detailed learning
+            materials, activities, questions, exam practice and
+            self-assessment.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-name">
+        Ravi Raju
+    </div>
+
+    <div>
+        Modern English School Cairo
+    </div>
+
+    <div style="margin-top:10px;font-size:13px;opacity:.75;">
+        IGCSE Computer Science 0984
+    </div>
+
+    <div style="margin-top:12px;font-size:12px;opacity:.65;">
+        Design and content by Ravi Raju
+    </div>
+
+</footer>
+
+</body>
+</html>
