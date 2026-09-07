@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DR-13 | Data Compression</title>
+<link rel="stylesheet" href="DR-13.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="brand">
+        <!-- YOUR PHOTO — KEEP THIS ON ALL LESSON PAGES -->
+        <img src="IMG-Ravi.jpeg" alt="Ravi Raju">
+
+        <div>
+            <h1>IGCSE Computer Science 0984</h1>
+            <p>Design and Content by Ravi Raju</p>
+        </div>
+    </div>
+
+    <!-- MES 35 YEARS LOGO -->
+    <img class="school-logo" src="MES35.jpg"
+         alt="Modern English School Cairo 35 Years">
+</header>
+
+<nav class="top-nav">
+    <a href="DR-12.html">← DR-12</a>
+    <a href="INDEX.html">🏠 Topic Dashboard</a>
+    <a href="DR-14.html">DR-14 →</a>
+</nav>
+
+<main>
+
+<section class="hero">
+    <span class="lesson-number">LESSON 13</span>
+    <h2>Data Compression</h2>
+
+    <p>
+        Discover how compression reduces the amount of storage required by
+        digital data and why different compression methods are suitable for
+        different types of information.
+    </p>
+</section>
+
+
+<section class="panel">
+    <h2>🎯 Learning Objectives</h2>
+
+    <p>By the end of this lesson, you should be able to:</p>
+
+    <ul class="objectives">
+        <li>Explain why data is compressed.</li>
+        <li>Explain the relationship between compression and file size.</li>
+        <li>Distinguish between lossy and lossless compression.</li>
+        <li>Explain why lossless compression is suitable for some data.</li>
+        <li>Explain why lossy compression may be suitable for multimedia.</li>
+        <li>Describe the idea of reducing redundancy.</li>
+        <li>Calculate percentage reduction in file size.</li>
+        <li>Calculate compression ratio.</li>
+        <li>Compare original and compressed file sizes.</li>
+        <li>Choose an appropriate compression approach for a situation.</li>
+    </ul>
+</section>
+
+
+<section class="panel">
+    <h2>🔁 Why Do We Need Compression?</h2>
+
+    <p>
+        Digital files can become very large. High-resolution images,
+        high-quality audio and video can require a considerable amount of
+        storage space.
+    </p>
+
+    <p>
+        Compression attempts to represent the same information using
+        fewer bits, or—in the case of lossy compression—to represent it
+        using fewer bits while accepting some loss of information.
+    </p>
+
+    <div class="flow">
+        <div>Original Data</div>
+        <span>→</span>
+        <div>Compression</div>
+        <span>→</span>
+        <div>Smaller File</div>
+    </div>
+
+    <div class="two-column">
+
+        <div class="good-box">
+            <h3>💾 Less Storage</h3>
+            <p>
+                Smaller files require less storage space.
+            </p>
+        </div>
+
+        <div class="good-box">
+            <h3>🌐 Faster Transfer</h3>
+            <p>
+                Smaller files generally require less data to transfer.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="panel">
+    <h2>🧠 The Central Idea — Redundancy</h2>
+
+    <p>
+        Some data contains information that is repeated or predictable.
+        Such information may contain <strong>redundancy</strong>.
+    </p>
+
+    <p>
+        If the same information appears repeatedly, it may be possible to
+        represent it more efficiently.
+    </p>
+
+    <div class="example-box">
+
+        <h3>Simple Example</h3>
+
+        <p>Imagine this sequence:</p>
+
+        <div class="sequence">
+            A A A A A A A A A A
+        </div>
+
+        <p>
+            Instead of thinking of this as ten separate A characters,
+            we could describe it as:
+        </p>
+
+        <div class="sequence">
+            10 × A
+        </div>
+
+        <p>
+            This is only a simple illustration of the idea. Real compression
+            algorithms use formal methods to represent data efficiently.
+        </p>
+
+    </div>
+</section>
+
+
+<section class="panel">
+    <h2>📦 Two Major Approaches</h2>
+
+    <div class="compression-types">
+
+        <article class="type-card">
+            <div class="type-icon">🔐</div>
+            <h3>Lossless Compression</h3>
+
+            <p>
+                No information is permanently lost.
+            </p>
+
+            <ul>
+                <li>The original data can be reconstructed exactly.</li>
+                <li>Important for data where every bit matters.</li>
+                <li>Useful for many documents and other exact data.</li>
+            </ul>
+
+            <div class="tag">EXACT RECONSTRUCTION</div>
+        </article>
+
+
+        <article class="type-card">
+            <div class="type-icon">🎨</div>
+            <h3>Lossy Compression</h3>
+
+            <p>
+                Some information is discarded to achieve greater reduction
+                in file size.
+            </p>
+
+            <ul>
+                <li>The original data cannot be reconstructed exactly.</li>
+                <li>Can produce much smaller files.</li>
+                <li>Often useful for multimedia where some information may
+                    be less noticeable.</li>
+            </ul>
+
+            <div class="tag">SOME INFORMATION DISCARDED</div>
+        </article>
+
+    </div>
+</section>
+
+
+<section class="panel">
+    <h2>🔐 Lossless Compression</h2>
+
+    <p>
+        With lossless compression, the compressed representation can be
+        decompressed to recreate the original data exactly.
+    </p>
+
+    <div class="lossless-flow">
+
+        <div>
+            <strong>Original</strong>
+            <span>DATA</span>
+        </div>
+
+        <b>↓</b>
+
+        <div>
+            <strong>Compress</strong>
+            <span>Smaller representation</span>
+        </div>
+
+        <b>↓</b>
+
+        <div>
+            <strong>Decompress</strong>
+            <span>DATA</span>
+        </div>
+
+    </div>
+
+    <div class="important">
+        <strong>Key question:</strong>
+        If the data must come back exactly as it was, lossless compression
+        is required.
+    </div>
+</section>
+
+
+<section class="panel">
+    <h2>🎨 Lossy Compression</h2>
+
+    <p>
+        Lossy compression deliberately removes some information.
+        The objective is to reduce file size while maintaining acceptable
+        quality for its intended use.
+    </p>
+
+    <div class="lossy-flow">
+
+        <div>
+            <strong>Original</strong>
+            <span>Large amount of data</span>
+        </div>
+
+        <b>→</b>
+
+        <div>
+            <strong>Compress</strong>
+            <span>Some information removed</span>
+        </div>
+
+        <b>→</b>
+
+        <div>
+            <strong>Compressed</strong>
+            <span>Smaller file</span>
+        </div>
+
+    </div>
+
+    <p>
+        Once information has been discarded, decompressing the file does
+        not recreate the exact original.
+    </p>
+
+    <div class="warning">
+        <strong>Important:</strong>
+        Lossy compression is not simply "bad quality".
+        It is a deliberate trade-off between file size and information or
+        perceived quality.
+    </div>
+</section>
+
+
+<section class="panel">
+    <h2>⚖️ Lossless vs Lossy</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Lossless</th>
+                <th>Lossy</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Information permanently discarded?</td>
+                <td>No</td>
+                <td>Yes</td>
+            </tr>
+
+            <tr>
+                <td>Original reconstructed exactly?</td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+
+            <tr>
+                <td>Potential size reduction</td>
+                <td>Usually more limited</td>
+                <td>Can be much greater</td>
+            </tr>
+
+            <tr>
+                <td>Suitable when exact data matters?</td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+
+            <tr>
+                <td>Can be useful for multimedia?</td>
+                <td>Yes</td>
+                <td>Yes</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+<section class="panel">
+    <h2>📊 File Size Reduction</h2>
+
+    <p>
+        Compression can be described by comparing the original file size
+        with the compressed file size.
+    </p>
+
+    <div class="formula-box">
+
+        <h3>Percentage Reduction</h3>
+
+        <code>
+            Percentage reduction =
+            ((original size − compressed size) ÷ original size) × 100
+        </code>
+
+    </div>
+
+    <div class="formula-box">
+
+        <h3>Compression Ratio</h3>
+
+        <code>
+            Compression ratio =
+            original size ÷ compressed size
+        </code>
+
+    </div>
+</section>
+
+
+<section class="panel">
+    <h2>✏️ Worked Example 1 — Percentage Reduction</h2>
+
+    <div class="worked">
+
+        <p>
+            A file has an original size of <strong>800 MiB</strong>.
+            After compression it is <strong>200 MiB</strong>.
+            Calculate the percentage reduction.
+        </p>
+
+        <p><strong>Step 1:</strong> Find the reduction.</p>
+
+        <code>
+            800 − 200 = 600 MiB
+        </code>
+
+        <p><strong>Step 2:</strong> Divide by the original size.</p>
+
+        <code>
+            600 ÷ 800 = 0.75
+        </code>
+
+        <p><strong>Step 3:</strong> Convert to a percentage.</p>
+
+        <code>
+            0.75 × 100 = 75%
+        </code>
+
+        <div class="answer">
+            <strong>Percentage reduction = 75%</strong>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="panel">
+    <h2>✏️ Worked Example 2 — Compression Ratio</h2>
+
+    <div class="worked">
+
+        <p>
+            A file is originally <strong>1200 MiB</strong> and is compressed
+            to <strong>300 MiB</strong>.
+        </p>
+
+        <code>
+            Compression ratio = 1200 ÷ 300
+        </code>
+
+        <code>
+            = 4
+        </code>
+
+        <div class="answer">
+            <strong>Compression ratio = 4 : 1</strong>
+        </div>
+
+        <p>
+            This means the original file was four times the size of the
+            compressed file.
+        </p>
+
+    </div>
+</section>
+
+
+<section class="panel">
+    <h2>✏️ Worked Example 3 — Finding the Compressed Size</h2>
+
+    <div class="worked">
+
+        <p>
+            A file of <strong>600 MiB</strong> is reduced by
+            <strong>40%</strong>.
+            Find its compressed size.
+        </p>
+
+        <p>Amount removed:</p>
+
+        <code>
+            600 × 0.40 = 240 MiB
+        </code>
+
+        <p>Compressed size:</p>
+
+        <code>
+            600 − 240 = 360 MiB
+        </code>
+
+        <div class="answer">
+            <strong>Compressed size = 360 MiB</strong>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="panel">
+    <h2>🔍 When Should We Use Lossless Compression?</h2>
+
+    <div class="scenario-grid">
+
+        <div class="scenario">
+            <h3>📄 Documents</h3>
+            <p>
+                If characters or information cannot be changed,
+                exact reconstruction is important.
+            </p>
+            <strong>Lossless is appropriate.</strong>
+        </div>
+
+        <div class="scenario">
+            <h3>💻 Program Files</h3>
+            <p>
+                Changing program instructions could change how the program
+                works.
+            </p>
+            <strong>Lossless is appropriate.</strong>
+        </div>
+
+        <div class="scenario">
+            <h3>🗃️ Important Data</h3>
+            <p>
+                Where every piece of information must remain intact.
+            </p>
+            <strong>Lossless is appropriate.</strong>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="panel">
+    <h2>🎵 When Can Lossy Compression Be Useful?</h2>
+
+    <div class="scenario-grid">
+
+        <div class="scenario">
+            <h3>🖼️ Images</h3>
+            <p>
+                Some image information may be removed while retaining
+                acceptable visual quality.
+            </p>
+        </div>
+
+        <div class="scenario">
+            <h3>🎵 Audio</h3>
+            <p>
+                Some sound information may be removed if the result remains
+                acceptable to the listener.
+            </p>
+        </div>
+
+        <div class="scenario">
+            <h3>🎬 Video</h3>
+            <p>
+                Large amounts of multimedia data can benefit from
+                substantial reduction in size.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="important">
+        <strong>Think about the purpose.</strong>
+        The correct choice depends on whether exact reconstruction is
+        required and how much reduction is needed.
+    </div>
+</section>
+
+
+<section class="panel studio">
+
+    <h2>🎓 Student Studio</h2>
+
+    <p class="studio-intro">
+        Do not rush through these activities. Predict first, calculate
+        second, and use the feedback to understand the concept.
+    </p>
+
+    <div class="tabs">
+
+        <button data-tab="concept">Compression Concept</button>
+        <button data-tab="types">Lossless or Lossy?</button>
+        <button data-tab="ratio">Ratio Lab</button>
+        <button data-tab="percent">Percentage Lab</button>
+        <button data-tab="reverse">Reverse Compression</button>
+        <button data-tab="compare">Compare Files</button>
+        <button data-tab="scenarios">Scenario Lab</button>
+        <button data-tab="mistakes">Fix the Mistake</button>
+        <button data-tab="exam">Exam Method</button>
+        <button data-tab="challenge">Challenge</button>
+        <button data-tab="think">Think</button>
+        <button data-tab="quick">Quick Check</button>
+
+    </div>
+
+
+    <div id="concept" class="tab-content active">
+
+        <h3>Compression Concept</h3>
+
+        <p>
+            Complete this thought experiment:
+        </p>
+
+        <div class="concept-test">
+
+            <p>
+                A data sequence contains a large amount of repeated information.
+                Why might repeated information provide an opportunity for
+                compression?
+            </p>
+
+            <button onclick="reveal('conceptAnswer')">
+                Reveal Explanation
+            </button>
+
+            <p id="conceptAnswer" class="hidden-answer">
+                Repeated or predictable information can contain redundancy.
+                A compression method may represent that information more
+                efficiently, reducing the number of bits required.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div id="types" class="tab-content">
+
+        <h3>Lossless or Lossy?</h3>
+
+        <p>
+            Decide which approach is more appropriate.
+        </p>
+
+        <div class="scenario-question">
+
+            <p>
+                <strong>1.</strong>
+                A text document must be restored exactly.
+            </p>
+
+            <button onclick="scenarioAnswer(this, true)">
+                Lossless
+            </button>
+
+            <button onclick="scenarioAnswer(this, false)">
+                Lossy
+            </button>
+
+            <span class="scenario-feedback"></span>
+
+        </div>
+
+        <div class="scenario-question">
+
+            <p>
+                <strong>2.</strong>
+                A video service wants to reduce very large video files
+                while accepting some loss of information.
+            </p>
+
+            <button onclick="scenarioAnswer(this, false)">
+                Lossless
+            </button>
+
+            <button onclick="scenarioAnswer(this, true)">
+                Lossy
+            </button>
+
+            <span class="scenario-feedback"></span>
+
+        </div>
+
+        <div class="scenario-question">
+
+            <p>
+                <strong>3.</strong>
+                A program file must remain exactly unchanged.
+            </p>
+
+            <button onclick="scenarioAnswer(this, true)">
+                Lossless
+            </button>
+
+            <button onclick="scenarioAnswer(this, false)">
+                Lossy
+            </button>
+
+            <span class="scenario-feedback"></span>
+
+        </div>
+
+    </div>
+
+
+    <div id="ratio" class="tab-content">
+
+        <h3>Compression Ratio Lab</h3>
+
+        <label>Original file size</label>
+        <input id="ratioOriginal" type="number"
+               min="0" step="any" value="1200">
+
+        <label>Compressed file size</label>
+        <input id="ratioCompressed" type="number"
+               min="0" step="any" value="300">
+
+        <button id="ratioBtn">
+            Calculate Compression Ratio
+        </button>
+
+        <div id="ratioResult" class="result"></div>
+
+    </div>
+
+
+    <div id="percent" class="tab-content">
+
+        <h3>Percentage Reduction Lab</h3>
+
+        <label>Original file size</label>
+        <input id="percentOriginal" type="number"
+               min="0" step="any" value="800">
+
+        <label>Compressed file size</label>
+        <input id="percentCompressed" type="number"
+               min="0" step="any" value="200">
+
+        <button id="percentBtn">
+            Calculate Reduction
+        </button>
+
+        <div id="percentResult" class="result"></div>
+
+    </div>
+
+
+    <div id="reverse" class="tab-content">
+
+        <h3>Reverse Compression</h3>
+
+        <p>
+            The original file is known. A percentage reduction is given.
+            Calculate the compressed size.
+        </p>
+
+        <label>Original size (MiB)</label>
+        <input id="reverseOriginal"
+               type="number" min="0" value="600">
+
+        <label>Percentage reduction</label>
+        <input id="reversePercent"
+               type="number" min="0" max="100" value="40">
+
+        <button id="reverseBtn">
+            Find Compressed Size
+        </button>
+
+        <div id="reverseResult" class="result"></div>
+
+    </div>
+
+
+    <div id="compare" class="tab-content">
+
+        <h3>Compare Two Files</h3>
+
+        <label>File A — original size (MiB)</label>
+        <input id="compareA"
+               type="number" min="0" value="1000">
+
+        <label>File A — compressed size (MiB)</label>
+        <input id="compareAC"
+               type="number" min="0" value="250">
+
+        <label>File B — original size (MiB)</label>
+        <input id="compareB"
+               type="number" min="0" value="800">
+
+        <label>File B — compressed size (MiB)</label>
+        <input id="compareBC"
+               type="number" min="0" value="320">
+
+        <button id="compareBtn">
+            Compare Compression
+        </button>
+
+        <div id="compareResult" class="result"></div>
+
+    </div>
+
+
+    <div id="scenarios" class="tab-content">
+
+        <h3>Scenario Lab</h3>
+
+        <div class="scenario-question">
+
+            <p>
+                A school is archiving examination documents. Every character
+                must be preserved exactly.
+            </p>
+
+            <button onclick="scenarioAnswer(this, true)">
+                Lossless
+            </button>
+
+            <button onclick="scenarioAnswer(this, false)">
+                Lossy
+            </button>
+
+            <span class="scenario-feedback"></span>
+
+        </div>
+
+
+        <div class="scenario-question">
+
+            <p>
+                A website needs smaller photographs and accepts a reduction
+                in image information.
+            </p>
+
+            <button onclick="scenarioAnswer(this, false)">
+                Lossless
+            </button>
+
+            <button onclick="scenarioAnswer(this, true)">
+                Lossy
+            </button>
+
+            <span class="scenario-feedback"></span>
+
+        </div>
+
+
+        <div class="scenario-question">
+
+            <p>
+                A database backup must be restored exactly.
+            </p>
+
+            <button onclick="scenarioAnswer(this, true)">
+                Lossless
+            </button>
+
+            <button onclick="scenarioAnswer(this, false)">
+                Lossy
+            </button>
+
+            <span class="scenario-feedback"></span>
+
+        </div>
+
+    </div>
+
+
+    <div id="mistakes" class="tab-content">
+
+        <h3>🔍 Fix the Mistake</h3>
+
+        <div class="mistake-card">
+
+            <p>
+                <strong>Mistake 1:</strong>
+                "Lossless compression means that the compressed file has
+                exactly the same size as the original."
+            </p>
+
+            <button onclick="reveal('mistake1')">
+                Reveal
+            </button>
+
+            <p id="mistake1" class="hidden-answer">
+                Incorrect. Lossless refers to information, not identical
+                file size. The compressed file is normally smaller, but the
+                original information can be reconstructed exactly.
+            </p>
+
+        </div>
+
+
+        <div class="mistake-card">
+
+            <p>
+                <strong>Mistake 2:</strong>
+                "Lossy compression can always recreate the original file."
+            </p>
+
+            <button onclick="reveal('mistake2')">
+                Reveal
+            </button>
+
+            <p id="mistake2" class="hidden-answer">
+                Incorrect. Lossy compression permanently discards some
+                information, so exact reconstruction is not possible.
+            </p>
+
+        </div>
+
+
+        <div class="mistake-card">
+
+            <p>
+                <strong>Mistake 3:</strong>
+                "A 50% reduction means the compressed file is 50 times
+                smaller."
+            </p>
+
+            <button onclick="reveal('mistake3')">
+                Reveal
+            </button>
+
+            <p id="mistake3" class="hidden-answer">
+                Incorrect. A 50% reduction means half the original size
+                remains. The compressed file is 0.5 times the original size,
+                or the original is 2 times the compressed size.
+            </p>
+
+        </div>
+
+
+        <div class="mistake-card">
+
+            <p>
+                <strong>Mistake 4:</strong>
+                "Lossy compression is never suitable for multimedia."
+            </p>
+
+            <button onclick="reveal('mistake4')">
+                Reveal
+            </button>
+
+            <p id="mistake4" class="hidden-answer">
+                Incorrect. Lossy compression can be very useful for multimedia
+                when a reduction in information or quality is acceptable.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div id="exam" class="tab-content">
+
+        <h3>📝 Exam Method</h3>
+
+        <ol class="exam-steps">
+
+            <li>
+                Identify whether the question asks about
+                <strong>lossless</strong> or <strong>lossy</strong>.
+            </li>
+
+            <li>
+                Ask whether exact reconstruction is required.
+            </li>
+
+            <li>
+                For percentage reduction, identify the
+                <strong>original size</strong>.
+            </li>
+
+            <li>
+                Calculate the reduction:
+                <strong>original − compressed</strong>.
+            </li>
+
+            <li>
+                Divide the reduction by the original size.
+            </li>
+
+            <li>
+                Multiply by 100 to obtain the percentage.
+            </li>
+
+            <li>
+                For compression ratio, calculate:
+                <strong>original ÷ compressed</strong>.
+            </li>
+
+            <li>
+                Always include the correct units and check whether the
+                answer is sensible.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <div id="challenge" class="tab-content">
+
+        <h3>🏆 Challenge</h3>
+
+        <p>
+            A collection of multimedia files occupies
+            <strong>2.4 GiB</strong>.
+            Compression reduces the total size by
+            <strong>35%</strong>.
+        </p>
+
+        <ol>
+            <li>How much data is removed?</li>
+            <li>What is the compressed size?</li>
+        </ol>
+
+        <button onclick="reveal('challengeAnswer')">
+            Reveal Solution
+        </button>
+
+        <div id="challengeAnswer" class="hidden-answer">
+
+            <p>
+                Reduction:
+                <strong>2.4 × 0.35 = 0.84 GiB</strong>
+            </p>
+
+            <p>
+                Compressed size:
+                <strong>2.4 − 0.84 = 1.56 GiB</strong>
+            </p>
+
+            <p>
+                <strong>Answer: 0.84 GiB removed and 1.56 GiB remains.</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div id="think" class="tab-content">
+
+        <h3>💭 Think Deeper</h3>
+
+        <p>
+            Imagine that you are designing a storage system for a school.
+            Why might you choose lossless compression for some files but
+            allow lossy compression for others?
+        </p>
+
+        <textarea id="thinkAnswer"
+                  placeholder="Explain your reasoning..."></textarea>
+
+        <button id="saveThink">
+            Save Thinking
+        </button>
+
+        <div id="thinkSaved" class="result"></div>
+
+    </div>
+
+
+    <div id="quick" class="tab-content">
+
+        <h3>⚡ Quick Check</h3>
+
+        <div class="quick-question">
+
+            <p>
+                1. Which type allows exact reconstruction?
+            </p>
+
+            <button onclick="quick(this,true)">Lossless</button>
+            <button onclick="quick(this,false)">Lossy</button>
+
+            <span class="feedback"></span>
+
+        </div>
+
+
+        <div class="quick-question">
+
+            <p>
+                2. Which type permanently discards some information?
+            </p>
+
+            <button onclick="quick(this,false)">Lossless</button>
+            <button onclick="quick(this,true)">Lossy</button>
+
+            <span class="feedback"></span>
+
+        </div>
+
+
+        <div class="quick-question">
+
+            <p>
+                3. What is 75% of an 800 MiB file?
+            </p>
+
+            <button onclick="quick(this,true)">600 MiB</button>
+            <button onclick="quick(this,false)">200 MiB</button>
+
+            <span class="feedback"></span>
+
+        </div>
+
+
+        <div class="quick-question">
+
+            <p>
+                4. Original = 1000 MiB, compressed = 250 MiB.
+                What is the compression ratio?
+            </p>
+
+            <button onclick="quick(this,true)">4 : 1</button>
+            <button onclick="quick(this,false)">2 : 1</button>
+
+            <span class="feedback"></span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="panel">
+
+    <h2>📝 Independent Practice</h2>
+
+    <div class="practice-grid">
+
+        <div class="practice">
+            <h3>1</h3>
+            <p>
+                A 900 MiB file becomes 300 MiB.
+                Find the percentage reduction.
+            </p>
+
+            <button onclick="reveal('p1')">
+                Reveal Answer
+            </button>
+
+            <p id="p1" class="hidden-answer">
+                Reduction = 600 MiB.<br>
+                600 ÷ 900 × 100 = <strong>66.67%</strong>.
+            </p>
+        </div>
+
+
+        <div class="practice">
+            <h3>2</h3>
+            <p>
+                Original = 1600 MiB.
+                Compressed = 400 MiB.
+                Find the compression ratio.
+            </p>
+
+            <button onclick="reveal('p2')">
+                Reveal Answer
+            </button>
+
+            <p id="p2" class="hidden-answer">
+                1600 ÷ 400 = <strong>4 : 1</strong>.
+            </p>
+        </div>
+
+
+        <div class="practice">
+            <h3>3</h3>
+            <p>
+                A 500 MiB file is reduced by 20%.
+                Find its new size.
+            </p>
+
+            <button onclick="reveal('p3')">
+                Reveal Answer
+            </button>
+
+            <p id="p3" class="hidden-answer">
+                Reduction = 100 MiB.<br>
+                New size = <strong>400 MiB</strong>.
+            </p>
+        </div>
+
+
+        <div class="practice">
+            <h3>4</h3>
+            <p>
+                Which type should be used when exact reconstruction is
+                required?
+            </p>
+
+            <button onclick="reveal('p4')">
+                Reveal Answer
+            </button>
+
+            <p id="p4" class="hidden-answer">
+                <strong>Lossless compression.</strong>
+            </p>
+        </div>
+
+
+        <div class="practice">
+            <h3>5</h3>
+            <p>
+                Original = 2400 MiB.
+                Compressed = 600 MiB.
+                Find the percentage reduction.
+            </p>
+
+            <button onclick="reveal('p5')">
+                Reveal Answer
+            </button>
+
+            <p id="p5" class="hidden-answer">
+                Reduction = 1800 MiB.<br>
+                1800 ÷ 2400 × 100 =
+                <strong>75%</strong>.
+            </p>
+        </div>
+
+
+        <div class="practice">
+            <h3>6</h3>
+            <p>
+                A 2 GiB file is reduced by 25%.
+                Find its compressed size.
+            </p>
+
+            <button onclick="reveal('p6')">
+                Reveal Answer
+            </button>
+
+            <p id="p6" class="hidden-answer">
+                Reduction = 0.5 GiB.<br>
+                Compressed size =
+                <strong>1.5 GiB</strong>.
+            </p>
+        </div>
+
+
+        <div class="practice">
+            <h3>7</h3>
+            <p>
+                Why might lossy compression be suitable for a photograph?
+            </p>
+
+            <button onclick="reveal('p7')">
+                Reveal Answer
+            </button>
+
+            <p id="p7" class="hidden-answer">
+                Some information may be removed while retaining acceptable
+                visual quality and achieving a smaller file.
+            </p>
+        </div>
+
+
+        <div class="practice">
+            <h3>8</h3>
+            <p>
+                Why is lossy compression unsuitable when exact program data
+                must be preserved?
+            </p>
+
+            <button onclick="reveal('p8')">
+                Reveal Answer
+            </button>
+
+            <p id="p8" class="hidden-answer">
+                Because lossy compression permanently discards information,
+                so the original program data cannot be reconstructed exactly.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="panel">
+
+    <h2>🚨 Common Mistakes</h2>
+
+    <ul class="mistakes">
+
+        <li>
+            Thinking "lossless" means no reduction in file size.
+        </li>
+
+        <li>
+            Thinking lossy compression can recreate the exact original.
+        </li>
+
+        <li>
+            Using the compressed size instead of the original size when
+            calculating percentage reduction.
+        </li>
+
+        <li>
+            Confusing percentage reduction with compression ratio.
+        </li>
+
+        <li>
+            Forgetting to subtract the compressed size from the original.
+        </li>
+
+        <li>
+            Assuming lossy compression is always unsuitable.
+        </li>
+
+        <li>
+            Assuming lossless compression always produces the greatest
+            possible reduction.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<section class="panel assessment">
+
+    <h2>🧪 Formative Assessment</h2>
+
+    <p>
+        Complete all ten questions. You need
+        <strong>70% or above</strong> to proceed to DR-14.
+    </p>
+
+    <form id="assessmentForm">
+
+        <div class="question">
+            <p>1. Which type allows exact reconstruction?</p>
+
+            <label>
+                <input type="radio" name="q1" value="a">
+                Lossy
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="b">
+                Lossless
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="c">
+                Neither
+            </label>
+        </div>
+
+
+        <div class="question">
+            <p>2. Which type permanently discards some information?</p>
+
+            <label>
+                <input type="radio" name="q2" value="a">
+                Lossless
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="b">
+                Lossy
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="c">
+                Both always do
+            </label>
+        </div>
+
+
+        <div class="question">
+            <p>
+                3. An 800 MiB file becomes 200 MiB.
+                What percentage reduction occurred?
+            </p>
+
+            <label>
+                <input type="radio" name="q3" value="a">
+                25%
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="b">
+                50%
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="c">
+                75%
+            </label>
+        </div>
+
+
+        <div class="question">
+            <p>
+                4. Original size = 1200 MiB.
+                Compressed size = 300 MiB.
+                Compression ratio?
+            </p>
+
+            <label>
+                <input type="radio" name="q4" value="a">
+                2 : 1
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="b">
+                3 : 1
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="c">
+                4 : 1
+            </label>
+        </div>
+
+
+        <div class="question">
+            <p>
+                5. A 600 MiB file is reduced by 40%.
+                What is the new size?
+            </p>
+
+            <label>
+                <input type="radio" name="q5" value="a">
+                240 MiB
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="b">
+                360 MiB
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="c">
+                400 MiB
+            </label>
+        </div>
+
+
+        <div class="question">
+            <p>
+                6. Which is most important when choosing lossless compression?
+            </p>
+
+            <label>
+                <input type="radio" name="q6" value="a">
+                Exact reconstruction
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="b">
+                Maximum possible data loss
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="c">
+                Making the file larger
+            </label>
+        </div>
+
+
+        <div class="question">
+            <p>
+                7. Original = 1000 MiB, compressed = 250 MiB.
+                Percentage reduction?
+            </p>
+
+            <label>
+                <input type="radio" name="q7" value="a">
+                25%
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="b">
+                50%
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="c">
+                75%
+            </label>
+        </div>
+
+
+        <div class="question">
+            <p>
+                8. Which is a possible reason to use lossy compression?
+            </p>
+
+            <label>
+                <input type="radio" name="q8" value="a">
+                To preserve every bit exactly
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="b">
+                To achieve greater size reduction when some information
+                loss is acceptable
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="c">
+                To guarantee exact reconstruction
+            </label>
+        </div>
+
+
+        <div class="question">
+            <p>
+                9. A 2 GiB file is reduced by 25%.
+                What is the compressed size?
+            </p>
+
+            <label>
+                <input type="radio" name="q9" value="a">
+                0.5 GiB
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="b">
+                1.5 GiB
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="c">
+                1.75 GiB
+            </label>
+        </div>
+
+
+        <div class="question">
+            <p>
+                10. Which statement is correct?
+            </p>
+
+            <label>
+                <input type="radio" name="q10" value="a">
+                Lossless compression permanently removes information.
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="b">
+                Lossy compression always makes files exactly half their size.
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="c">
+                Lossless compression allows the original information
+                to be reconstructed exactly.
+            </label>
+        </div>
+
+
+        <button type="submit" class="assessment-button">
+            Submit Assessment
+        </button>
+
+    </form>
+
+    <div id="assessmentResult"></div>
+    <div id="pathway"></div>
+
+</section>
+
+
+<section class="panel game-panel">
+
+    <h2>🎮 5-Minute Game Break</h2>
+
+    <p>
+        You have completed the learning activities.
+        Take a short genuine Blockly Games break, then return for your
+        final reflection.
+    </p>
+
+    <a class="game-button"
+       href="https://blockly.games/maze?lang=en"
+       target="_blank">
+        🧩 Open Blockly Maze
+    </a>
+
+    <div id="timer">05:00</div>
+
+    <button id="startTimer">
+        Start 5-Minute Timer
+    </button>
+
+    <p id="timerMessage"></p>
+
+</section>
+
+
+<section class="panel exit-ticket">
+
+    <h2>🎫 Exit Ticket</h2>
+
+    <label>
+        What is the most important difference between lossless and lossy
+        compression?
+    </label>
+
+    <textarea id="learned"></textarea>
+
+    <label>
+        Which part of compression calculations do you still need to practise?
+    </label>
+
+    <textarea id="unclear"></textarea>
+
+    <button id="saveExit">
+        Save Exit Ticket
+    </button>
+
+    <div id="exitSaved"></div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        IGCSE Computer Science 0984 · Topic 1 · DR-13
+    </p>
+
+    <p>
+        Design and Content by Ravi Raju
+    </p>
+
+</footer>
+
+<script src="DR-13.js"></script>
+
+</body>
+</html>

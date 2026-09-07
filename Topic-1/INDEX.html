@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IGCSE Computer Science 0984 | Topic 1 — Data Representation</title>
+<style>
+:root{--g:#f4c542;--p:#164d2a;--d:#0d321b;--w:rgba(255,255,255,.72);--l:rgba(22,77,42,.18)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",Arial,sans-serif;color:var(--p);background:linear-gradient(135deg,#f3c83d,#ffe88a,#f1c33a);min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(22,77,42,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(22,77,42,.035) 1px,transparent 1px);background-size:36px 36px}
+a{color:inherit}.wrap{width:min(1480px,94%);margin:auto}
+header{margin:22px auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:25px;background:var(--w);border:1px solid #fff;border-radius:24px;box-shadow:0 16px 40px rgba(13,50,27,.15);backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:18px}.teacher{width:74px;height:74px;border-radius:50%;object-fit:cover;border:4px solid white;box-shadow:0 8px 20px rgba(13,50,27,.22)}
+h1{margin:0;font-size:28px}.brand p{margin:6px 0 0;font-weight:700;font-size:14px}.logo{width:105px;max-height:82px;object-fit:contain}
+.hero{padding:48px 52px;border-radius:32px;background:linear-gradient(135deg,rgba(13,50,27,.97),rgba(22,77,42,.92));color:#fffde8;box-shadow:0 16px 40px rgba(13,50,27,.15)}
+.eyebrow{display:inline-block;padding:8px 14px;border-radius:999px;background:rgba(244,197,66,.18);border:1px solid rgba(244,197,66,.4);color:#ffe27a;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:1px}
+.hero h2{margin:17px 0 8px;font-size:46px}.hero p{max-width:900px;margin:0;font-size:18px;line-height:1.7;color:#f8f4d6}.actions{margin-top:26px;display:flex;gap:13px;flex-wrap:wrap}
+.btn,.lesson a{display:inline-flex;padding:11px 18px;border-radius:14px;text-decoration:none;font-weight:800}.btn{border:1px solid rgba(255,255,255,.25)}.primary{background:var(--g);color:var(--d)}.light{background:rgba(255,255,255,.12);color:white}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:20px 0}.stat,.section{background:var(--w);border:1px solid #fff;box-shadow:0 12px 30px rgba(13,50,27,.12);backdrop-filter:blur(12px)}
+.stat{padding:20px;border-radius:20px}.num{font-size:32px;font-weight:900;color:var(--d)}.label{font-size:13px;font-weight:800;text-transform:uppercase;opacity:.78}
+.section{margin-top:24px;padding:30px;border-radius:28px}.title{margin-bottom:22px}.title h3{margin:0;font-size:28px}.title p{margin:5px 0 0;opacity:.75;font-weight:600}
+.progress{height:14px;overflow:hidden;border-radius:999px;background:rgba(22,77,42,.12)}.fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--p),#4f9d5e);transition:.4s}.note{margin-top:8px;font-weight:800;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}.lesson{position:relative;padding:22px;border-radius:22px;background:rgba(255,253,240,.84);border:1px solid var(--l);transition:.2s;overflow:hidden}.lesson:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(13,50,27,.12)}.lesson.done{background:rgba(239,251,235,.9);border-color:rgba(35,107,58,.5)}
+.lesson:after{content:attr(data-n);position:absolute;right:16px;top:8px;font-size:44px;font-weight:900;color:rgba(22,77,42,.07)}
+.lesson h4{margin:0 65px 8px 0;font-size:20px}.lesson p{margin:0 0 15px;line-height:1.55;font-size:14px}.lesson-foot{display:flex;justify-content:space-between;align-items:center;gap:10px}.lesson a{padding:9px 14px;border-radius:11px;background:var(--p);color:white;font-size:13px}.status{font-size:12px;font-weight:900}
+.cycle,.map{display:grid;gap:12px}.cycle{grid-template-columns:repeat(6,1fr)}.cycle div,.map div{padding:18px;text-align:center;border-radius:18px;background:rgba(255,255,255,.72);border:1px solid var(--l);font-weight:900}.cycle span{display:block;font-size:24px;margin-bottom:7px}
+.map{grid-template-columns:repeat(3,1fr)}.map div{text-align:left}.map strong{display:block;margin-bottom:6px;font-size:17px}.map p{margin:0;font-weight:500;line-height:1.5;font-size:14px}
+footer{margin:24px 0 50px;padding:28px;text-align:center;border-radius:25px;background:rgba(13,50,27,.94);color:#fffde8;box-shadow:0 16px 40px rgba(13,50,27,.15)}footer strong{color:#ffe27a}.reset{margin-top:15px;background:none;border:0;color:white;text-decoration:underline;cursor:pointer;font-weight:700}
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.cycle{grid-template-columns:repeat(3,1fr)}.map{grid-template-columns:1fr}}
+@media(max-width:700px){header{flex-direction:column;text-align:center}.brand{flex-direction:column}.hero{padding:34px 25px}.hero h2{font-size:34px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="wrap">
+<div class="brand"><img class="teacher" src="IMG-Ravi.jpeg" alt="Ravi Raju"><div><h1>IGCSE Computer Science 0984</h1><p>Design and Content by Ravi Raju</p></div></div>
+<img class="logo" src="MES35.jpg" alt="Modern English School Cairo — 35 Years">
+</header>
+
+<main class="wrap">
+<section class="hero">
+<span class="eyebrow">Topic 01 • Cambridge 0984 • 2026–2028</span>
+<h2>Data Representation</h2>
+<p>A complete learning journey from number systems and binary operations through characters, images, sound, storage and compression — with guided practice, calculations, diagnosis and assessment.</p>
+<div class="actions"><a class="btn primary" href="DR-01.html">▶ Start Topic 1</a><a class="btn light" href="#lessons">Explore All 14 Lessons</a></div>
+</section>
+
+<section class="stats">
+<div class="stat"><div class="num">14</div><div class="label">Learning Periods</div></div>
+<div class="stat"><div class="num">6</div><div class="label">Core Areas</div></div>
+<div class="stat"><div class="num">70%</div><div class="label">Mastery Target</div></div>
+<div class="stat"><div class="num" id="count">0</div><div class="label">Lessons Visited</div></div>
+</section>
+
+<section class="section">
+<div class="title"><h3>Your Topic Progress <span id="pct">0%</span></h3><p>Your browser remembers lesson visits on this device.</p></div>
+<div class="progress"><div class="fill" id="fill"></div></div><div class="note" id="note">Begin with DR-01.</div>
+</section>
+
+<section class="section" id="lessons">
+<div class="title"><h3>Topic 1 Learning Pathway</h3><p>Work through the lessons in order. Each period contains learning, practice and assessment.</p></div>
+<div class="grid">
+<article class="lesson" data-lesson="DR-01" data-n="01"><h4>Introduction to Data Representation + Number Systems</h4><p>Why computers represent information digitally; denary, binary, hexadecimal and the role of number systems.</p><div class="lesson-foot"><a href="DR-01.html">Open DR-01 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-02" data-n="02"><h4>Denary and Binary Number Systems</h4><p>Place value, powers of two, 8-bit representation and reading binary numbers confidently.</p><div class="lesson-foot"><a href="DR-02.html">Open DR-02 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-03" data-n="03"><h4>Binary ↔ Denary Conversion</h4><p>Convert accurately in both directions using place values, repeated reasoning and exam-ready methods.</p><div class="lesson-foot"><a href="DR-03.html">Open DR-03 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-04" data-n="04"><h4>Hexadecimal Number System</h4><p>Understand hexadecimal digits, place values, compact representation and why hexadecimal is useful.</p><div class="lesson-foot"><a href="DR-04.html">Open DR-04 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-05" data-n="05"><h4>Binary ↔ Hexadecimal Conversion</h4><p>Use 4-bit groups and nibbles to convert between binary and hexadecimal quickly and reliably.</p><div class="lesson-foot"><a href="DR-05.html">Open DR-05 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-06" data-n="06"><h4>Binary Operations Workshop</h4><p>Binary addition, carrying, overflow, logical shifts and two’s complement representation.</p><div class="lesson-foot"><a href="DR-06.html">Open DR-06 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-07" data-n="07"><h4>Character Representation</h4><p>Character sets, codes, storage of text and the difference between representing characters and displaying them.</p><div class="lesson-foot"><a href="DR-07.html">Open DR-07 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-08" data-n="08"><h4>Image Representation</h4><p>Pixels, resolution, colour depth, image quality and the principles behind bitmap representation.</p><div class="lesson-foot"><a href="DR-08.html">Open DR-08 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-09" data-n="09"><h4>Image Representation — Calculations & File Size</h4><p>Calculate bitmap file sizes and reason about resolution, colour depth and storage requirements.</p><div class="lesson-foot"><a href="DR-09.html">Open DR-09 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-10" data-n="10"><h4>Sound Representation</h4><p>Explore sampling, sample rate, sample resolution, digital sound and the effect of changing recording factors.</p><div class="lesson-foot"><a href="DR-10.html">Open DR-10 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-11" data-n="11"><h4>Sound — Sampling, Bit Depth & File Size</h4><p>Calculate raw sound file sizes and investigate sample rate, sample resolution, duration and channels.</p><div class="lesson-foot"><a href="DR-11.html">Open DR-11 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-12" data-n="12"><h4>Data Storage & File Size</h4><p>Convert storage units, compare capacity with file size and solve practical storage-planning problems.</p><div class="lesson-foot"><a href="DR-12.html">Open DR-12 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-13" data-n="13"><h4>Data Compression</h4><p>Understand redundancy, lossless and lossy compression, compression ratios and percentage reduction.</p><div class="lesson-foot"><a href="DR-13.html">Open DR-13 →</a><span class="status"></span></div></article>
+<article class="lesson" data-lesson="DR-14" data-n="14"><h4>Topic Review + Integrated Assessment</h4><p>Bring the entire topic together, diagnose weak areas, apply exam strategies and complete the final assessment.</p><div class="lesson-foot"><a href="DR-14.html">Open DR-14 →</a><span class="status"></span></div></article>
+
+</div></section>
+
+<section class="section">
+<div class="title"><h3>The Learning Cycle</h3><p>Learning and improvement — not simply collecting quiz scores.</p></div>
+<div class="cycle">
+<div><span>📖</span>Learn</div><div><span>🧩</span>Practise</div><div><span>📝</span>Assess</div><div><span>🔎</span>Diagnose</div><div><span>🛠️</span>Remediate</div><div><span>🎯</span>Reassess</div>
+</div></section>
+
+<section class="section">
+<div class="title"><h3>Topic at a Glance</h3><p>The six major strands connect to form one complete picture of digital data.</p></div>
+<div class="map">
+<div><strong>🔢 Numbers</strong><p>Denary, binary, hexadecimal, binary operations, shifts and two’s complement.</p></div>
+<div><strong>🔤 Characters</strong><p>Character sets and the representation of text as digital data.</p></div>
+<div><strong>🖼️ Images</strong><p>Pixels, resolution, colour depth and bitmap file-size calculations.</p></div>
+<div><strong>🎵 Sound</strong><p>Sampling, sample rate, sample resolution, channels and file-size calculations.</p></div>
+<div><strong>💾 Storage</strong><p>Bits, bytes, KiB, MiB, GiB, capacity and practical storage planning.</p></div>
+<div><strong>🗜️ Compression</strong><p>Redundancy, lossless and lossy methods, ratios and percentage reduction.</p></div>
+</div></section>
+
+<footer>
+<div>IGCSE Computer Science 0984</div>
+<div style="margin-top:7px"><strong>Topic 1 — Data Representation</strong></div>
+<div style="margin-top:10px;font-size:14px">Design and Content by Ravi Raju • Modern English School Cairo</div>
+<button class="reset" onclick="resetProgress()">Reset Topic Progress on This Device</button>
+</footer>
+</main>
+
+<script>
+const cards=[...document.querySelectorAll(".lesson")];
+function update(){
+ let visited=0;
+ cards.forEach(c=>{
+   const id=c.dataset.lesson, s=c.querySelector(".status");
+   if(localStorage.getItem(id+"-visited")==="true"){visited++;c.classList.add("done");s.textContent="✓ Visited";}
+   else{c.classList.remove("done");s.textContent="Not started";}
+ });
+ const p=Math.round(visited/cards.length*100);
+ document.getElementById("count").textContent=visited;
+ document.getElementById("pct").textContent=p+"%";
+ document.getElementById("fill").style.width=p+"%";
+ document.getElementById("note").textContent=visited===0?"Begin with DR-01.":visited===cards.length?"All 14 lessons visited. Topic 1 pathway complete!":visited+" of 14 lessons visited. Keep going!";
+}
+function resetProgress(){
+ if(!confirm("Reset Topic 1 visit and assessment progress on this device?"))return;
+ [...localStorage.keys()].forEach(k=>{
+   if(/^DR-\d{2}-(visited|assessment|exit-ticket)$/.test(k))localStorage.removeItem(k);
+ });
+ update();
+}
+update();window.addEventListener("storage",update);
+</script>
+</body>
+</html>

@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR-08 | Image Representation</title>
+    <link rel="stylesheet" href="DR-08.css">
+</head>
+
+<body>
+
+<header class="top-header">
+
+    <div class="brand-area">
+        <div class="brand-title">IGCSE Computer Science 0984</div>
+        <div class="brand-subtitle">Topic 1 — Data Representation</div>
+        <div class="designer">Design and Content by Ravi Raju</div>
+    </div>
+
+    <div class="header-images">
+        <img src="IMG-Ravi.jpeg"
+             class="ravi-photo"
+             alt="Ravi Raju">
+
+        <img src="MES35.jpg"
+             class="school-logo"
+             alt="Modern English School Cairo 35 Years">
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero glass">
+
+    <div class="lesson-number">DR-08</div>
+
+    <h1>Image Representation</h1>
+
+    <p>
+        How does a computer turn a photograph, drawing or digital image
+        into nothing more than patterns of binary digits?
+    </p>
+
+    <div class="hero-pills">
+        <span>Pixels</span>
+        <span>Resolution</span>
+        <span>Colour Depth</span>
+        <span>Bitmap Images</span>
+        <span>Metadata</span>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OBJECTIVES
+     ===================================================== -->
+
+<section class="content-card glass">
+
+    <h2>🎯 Learning Objectives</h2>
+
+    <p>By the end of this lesson, you should be able to:</p>
+
+    <ul class="objective-list">
+
+        <li>Explain how a bitmap image is represented digitally.</li>
+
+        <li>Define the term <strong>pixel</strong>.</li>
+
+        <li>Explain the meaning of image resolution.</li>
+
+        <li>Explain colour depth.</li>
+
+        <li>Explain how the number of bits used for each pixel affects
+            the number of available colours.</li>
+
+        <li>Explain the relationship between resolution and image quality.</li>
+
+        <li>Explain the relationship between colour depth and image quality.</li>
+
+        <li>Describe why increasing resolution increases file size.</li>
+
+        <li>Describe why increasing colour depth increases file size.</li>
+
+        <li>Identify metadata associated with an image file.</li>
+
+    </ul>
+
+</section>
+
+
+<!-- =====================================================
+     DIGITAL IMAGE
+     ===================================================== -->
+
+<section class="content-card glass" id="imageRepresentationSection">
+
+    <h2>1. What Is a Digital Image?</h2>
+
+    <p>
+        A digital image is an image represented using data that a computer
+        can store and process.
+    </p>
+
+    <p>
+        One common type is a <strong>bitmap image</strong>.
+        A bitmap image is made up of a large number of tiny coloured
+        elements called <strong>pixels</strong>.
+    </p>
+
+    <div class="pixel-visual">
+
+        <div class="pixel-grid">
+
+            <span>1</span><span>1</span><span>0</span><span>0</span>
+            <span>1</span><span>1</span><span>1</span><span>0</span>
+            <span>0</span><span>1</span><span>1</span><span>1</span>
+            <span>0</span><span>0</span><span>1</span><span>1</span>
+
+        </div>
+
+        <div class="visual-caption">
+            A simplified representation of a tiny image grid
+        </div>
+
+    </div>
+
+    <div class="tip-box">
+
+        💡 <strong>Key idea:</strong>
+        A bitmap image is not stored as a photograph inside the computer.
+        It is stored as data describing the pixels that make up the image.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PIXELS
+     ===================================================== -->
+
+<section class="content-card glass">
+
+    <h2>2. Pixels</h2>
+
+    <p>
+        The word <strong>pixel</strong> comes from
+        <strong>picture element</strong>.
+    </p>
+
+    <p>
+        A pixel is the smallest individual element of a bitmap image.
+        Each pixel is assigned information that determines its colour.
+    </p>
+
+    <div class="pixel-enlargement">
+
+        <div class="large-pixel-grid">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <span></span>
+            <span class="pixel-dark"></span>
+            <span class="pixel-dark"></span>
+            <span></span>
+
+            <span></span>
+            <span class="pixel-dark"></span>
+            <span class="pixel-dark"></span>
+            <span></span>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <div>
+            <h3>Zoom in far enough...</h3>
+            <p>
+                ...and an image can be viewed as a grid of individual pixels.
+            </p>
+        </div>
+
+    </div>
+
+    <p>
+        When many pixels are viewed together from a normal distance,
+        the human eye perceives them as a complete image.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     RESOLUTION
+     ===================================================== -->
+
+<section class="content-card glass" id="resolutionSection">
+
+    <h2>3. Image Resolution</h2>
+
+    <p>
+        <strong>Resolution</strong> describes the number of pixels in an image.
+    </p>
+
+    <p>
+        It is commonly expressed as:
+    </p>
+
+    <div class="resolution-equation">
+
+        <div>
+            <strong>Width</strong>
+            <span>×</span>
+            <strong>Height</strong>
+        </div>
+
+        <div class="resolution-example">
+            800 × 600
+        </div>
+
+    </div>
+
+    <p>
+        An image with a resolution of
+        <strong>800 × 600</strong> contains:
+    </p>
+
+    <div class="calculation-box">
+
+        <div class="big-number">
+            800 × 600
+        </div>
+
+        <div class="equals">=</div>
+
+        <div class="big-number">
+            480,000 pixels
+        </div>
+
+    </div>
+
+    <div class="tip-box">
+
+        🎯 <strong>Exam point:</strong>
+        Do not confuse the dimensions of an image with the number of colours
+        available for each pixel.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RESOLUTION AND QUALITY
+     ===================================================== -->
+
+<section class="content-card glass">
+
+    <h2>4. Resolution and Image Quality</h2>
+
+    <p>
+        Increasing the resolution means using more pixels to represent
+        the image.
+    </p>
+
+    <div class="quality-comparison">
+
+        <div class="quality-card">
+
+            <h3>Low Resolution</h3>
+
+            <div class="mini-image low-res">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+            </div>
+
+            <p>
+                Fewer pixels can make detail less clear.
+            </p>
+
+        </div>
+
+
+        <div class="quality-card">
+
+            <h3>Higher Resolution</h3>
+
+            <div class="mini-image high-res">
+
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+
+            </div>
+
+            <p>
+                More pixels can represent finer detail.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COLOUR DEPTH
+     ===================================================== -->
+
+<section class="content-card glass" id="colourDepthSection">
+
+    <h2>5. Colour Depth</h2>
+
+    <p>
+        <strong>Colour depth</strong> is the number of bits used to represent
+        the colour of a single pixel.
+    </p>
+
+    <p>
+        The more bits available for each pixel, the greater the number
+        of possible colours.
+    </p>
+
+    <div class="colour-depth-table">
+
+        <div class="table-head">Colour Depth</div>
+        <div class="table-head">Calculation</div>
+        <div class="table-head">Possible Colours</div>
+
+        <div>1 bit</div>
+        <div>2<sup>1</sup></div>
+        <div><strong>2</strong></div>
+
+        <div>2 bits</div>
+        <div>2<sup>2</sup></div>
+        <div><strong>4</strong></div>
+
+        <div>4 bits</div>
+        <div>2<sup>4</sup></div>
+        <div><strong>16</strong></div>
+
+        <div>8 bits</div>
+        <div>2<sup>8</sup></div>
+        <div><strong>256</strong></div>
+
+        <div>24 bits</div>
+        <div>2<sup>24</sup></div>
+        <div><strong>16,777,216</strong></div>
+
+    </div>
+
+    <div class="tip-box">
+
+        💡 <strong>Remember:</strong>
+
+        <br>
+
+        Number of possible colours =
+        <strong>2<sup>colour depth</sup></strong>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COLOUR DEPTH EFFECT
+     ===================================================== -->
+
+<section class="content-card glass">
+
+    <h2>6. Colour Depth and Image Quality</h2>
+
+    <p>
+        If fewer bits are available for each pixel, fewer colours can be
+        represented.
+    </p>
+
+    <p>
+        This can produce visible colour changes or a less realistic image.
+    </p>
+
+    <div class="depth-demo">
+
+        <div class="depth-card">
+
+            <h3>Low Colour Depth</h3>
+
+            <div class="colour-strip low-depth">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+            </div>
+
+            <p>
+                Fewer possible colours.
+            </p>
+
+        </div>
+
+
+        <div class="depth-card">
+
+            <h3>Higher Colour Depth</h3>
+
+            <div class="colour-strip high-depth">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+            </div>
+
+            <p>
+                A much larger range of colours can be represented.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     IMAGE FILE SIZE
+     ===================================================== -->
+
+<section class="content-card glass" id="fileSizeSection">
+
+    <h2>7. What Determines Bitmap Image File Size?</h2>
+
+    <p>
+        Two important factors are:
+    </p>
+
+    <div class="two-factor-grid">
+
+        <div class="factor-card">
+
+            <div class="factor-icon">🧩</div>
+
+            <h3>Number of Pixels</h3>
+
+            <p>
+                Higher resolution means more pixels.
+            </p>
+
+        </div>
+
+
+        <div class="factor-card">
+
+            <div class="factor-icon">🎨</div>
+
+            <h3>Colour Depth</h3>
+
+            <p>
+                More bits per pixel mean more data for each pixel.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="relationship-flow">
+
+        <span>Resolution ↑</span>
+        <span>→</span>
+        <span>Pixels ↑</span>
+        <span>→</span>
+        <span>File Size ↑</span>
+
+    </div>
+
+    <div class="relationship-flow">
+
+        <span>Colour Depth ↑</span>
+        <span>→</span>
+        <span>Bits per Pixel ↑</span>
+        <span>→</span>
+        <span>File Size ↑</span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     METADATA
+     ===================================================== -->
+
+<section class="content-card glass" id="metadataSection">
+
+    <h2>8. Metadata</h2>
+
+    <p>
+        An image file can contain more than the pixel data itself.
+    </p>
+
+    <p>
+        <strong>Metadata</strong> is data about the data.
+    </p>
+
+    <div class="metadata-grid">
+
+        <div>
+            <strong>Width</strong>
+            <span>1920 pixels</span>
+        </div>
+
+        <div>
+            <strong>Height</strong>
+            <span>1080 pixels</span>
+        </div>
+
+        <div>
+            <strong>Colour Depth</strong>
+            <span>24 bits</span>
+        </div>
+
+        <div>
+            <strong>File Type</strong>
+            <span>JPEG</span>
+        </div>
+
+        <div>
+            <strong>Creation Date</strong>
+            <span>Example date</span>
+        </div>
+
+        <div>
+            <strong>Camera Information</strong>
+            <span>Example metadata</span>
+        </div>
+
+    </div>
+
+    <div class="tip-box">
+
+        🎯 <strong>Important:</strong>
+        Metadata describes information about the image or file.
+        It is different from the actual pixel data that forms the image.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STUDENT STUDIO
+     ===================================================== -->
+
+<section class="studio-section">
+
+    <div class="studio-header">
+
+        <h2>🧪 Student Studio</h2>
+
+        <p>
+            This is your image-representation laboratory.
+            Do not simply read the answers — experiment, predict,
+            calculate and explain what happens.
+        </p>
+
+    </div>
+
+
+    <div class="studio-tabs">
+
+        <button class="studio-tab active" data-tab="explore">
+            Explore Pixels
+        </button>
+
+        <button class="studio-tab" data-tab="resolution">
+            Resolution Lab
+        </button>
+
+        <button class="studio-tab" data-tab="colour">
+            Colour Depth Lab
+        </button>
+
+        <button class="studio-tab" data-tab="compare">
+            Compare Images
+        </button>
+
+        <button class="studio-tab" data-tab="file">
+            File Size Thinking
+        </button>
+
+        <button class="studio-tab" data-tab="metadata">
+            Metadata Detective
+        </button>
+
+        <button class="studio-tab" data-tab="practice">
+            Guided Practice
+        </button>
+
+        <button class="studio-tab" data-tab="mistakes">
+            Fix the Mistake
+        </button>
+
+        <button class="studio-tab" data-tab="think">
+            Think Deeper
+        </button>
+
+        <button class="studio-tab" data-tab="quick">
+            Quick Check
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         EXPLORE
+         ================================================= -->
+
+    <div class="studio-panel active" id="explore">
+
+        <h3>🔍 Explore: What Is a Pixel?</h3>
+
+        <p>
+            Imagine a digital image as a huge sheet of tiny squares.
+            Each square is a pixel.
+        </p>
+
+        <p>
+            When the pixels are small and numerous, the image can appear
+            smooth and detailed. When the image is enlarged enough,
+            individual pixels become visible.
+        </p>
+
+        <div class="studio-explanation">
+
+            <h4>Look carefully at this idea:</h4>
+
+            <div class="pixel-lab-grid">
+
+                <div class="pixel-box">A</div>
+                <div class="pixel-box">B</div>
+                <div class="pixel-box">C</div>
+                <div class="pixel-box">D</div>
+
+                <div class="pixel-box">E</div>
+                <div class="pixel-box">F</div>
+                <div class="pixel-box">G</div>
+                <div class="pixel-box">H</div>
+
+                <div class="pixel-box">I</div>
+                <div class="pixel-box">J</div>
+                <div class="pixel-box">K</div>
+                <div class="pixel-box">L</div>
+
+                <div class="pixel-box">M</div>
+                <div class="pixel-box">N</div>
+                <div class="pixel-box">O</div>
+                <div class="pixel-box">P</div>
+
+            </div>
+
+            <p>
+                This tiny image contains:
+                <strong>4 × 4 = 16 pixels</strong>.
+            </p>
+
+            <p>
+                In a real image, the grid could contain millions of pixels.
+            </p>
+
+        </div>
+
+        <div class="learning-note">
+
+            <strong>Pause and explain:</strong>
+
+            <p>
+                Why does a bitmap image need to know the colour of every pixel?
+            </p>
+
+            <p>
+                Because the computer must have enough information to recreate
+                the image when it is displayed.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         RESOLUTION LAB
+         ================================================= -->
+
+    <div class="studio-panel" id="resolution">
+
+        <h3>📐 Resolution Laboratory</h3>
+
+        <p>
+            Use this laboratory to calculate the total number of pixels
+            in an image.
+        </p>
+
+        <div class="tool-card">
+
+            <label for="imageWidth">
+                Image width in pixels
+            </label>
+
+            <input id="imageWidth"
+                   type="number"
+                   min="1"
+                   value="800">
+
+            <label for="imageHeight">
+                Image height in pixels
+            </label>
+
+            <input id="imageHeight"
+                   type="number"
+                   min="1"
+                   value="600">
+
+            <button id="resolutionBtn"
+                    class="action-button">
+
+                Calculate Resolution
+
+            </button>
+
+            <div id="resolutionResult"
+                 class="tool-result">
+
+                Waiting for calculation...
+
+            </div>
+
+        </div>
+
+        <div class="studio-explanation">
+
+            <h4>Think before pressing the button</h4>
+
+            <p>
+                An image that is 1000 pixels wide and 500 pixels high
+                contains:
+            </p>
+
+            <div class="formula-large">
+                1000 × 500 = 500,000 pixels
+            </div>
+
+            <p>
+                Notice that we multiply width by height.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         COLOUR DEPTH LAB
+         ================================================= -->
+
+    <div class="studio-panel" id="colour">
+
+        <h3>🎨 Colour Depth Laboratory</h3>
+
+        <p>
+            Experiment with the number of bits available for each pixel.
+        </p>
+
+        <div class="colour-tool">
+
+            <label for="depthInput">
+                Colour depth in bits
+            </label>
+
+            <input id="depthInput"
+                   type="number"
+                   min="1"
+                   max="32"
+                   value="8">
+
+            <button id="depthBtn"
+                    class="action-button">
+
+                Calculate Possible Colours
+
+            </button>
+
+            <div id="depthResult"
+                 class="tool-result">
+
+                Waiting for calculation...
+
+            </div>
+
+        </div>
+
+        <div class="studio-explanation">
+
+            <h4>Build the rule</h4>
+
+            <p>
+                With 1 bit:
+            </p>
+
+            <div class="formula-large">
+                2<sup>1</sup> = 2 colours
+            </div>
+
+            <p>
+                With 2 bits:
+            </p>
+
+            <div class="formula-large">
+                2<sup>2</sup> = 4 colours
+            </div>
+
+            <p>
+                With 8 bits:
+            </p>
+
+            <div class="formula-large">
+                2<sup>8</sup> = 256 colours
+            </div>
+
+            <p>
+                The general rule is:
+            </p>
+
+            <div class="rule-banner">
+                Possible colours = 2<sup>colour depth</sup>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         COMPARE
+         ================================================= -->
+
+    <div class="studio-panel" id="compare">
+
+        <h3>⚖ Compare Two Images</h3>
+
+        <p>
+            Which image would normally require more pixel data?
+        </p>
+
+        <div class="comparison-cards">
+
+            <div class="comparison-card">
+
+                <h4>Image A</h4>
+
+                <p>
+                    800 × 600 pixels
+                </p>
+
+                <p>
+                    8-bit colour
+                </p>
+
+            </div>
+
+
+            <div class="comparison-card">
+
+                <h4>Image B</h4>
+
+                <p>
+                    1600 × 1200 pixels
+                </p>
+
+                <p>
+                    24-bit colour
+                </p>
+
+            </div>
+
+        </div>
+
+        <button id="compareBtn"
+                class="action-button">
+
+            Compare
+
+        </button>
+
+        <div id="compareResult"
+             class="tool-result">
+
+            Make your prediction first.
+
+        </div>
+
+        <div class="reasoning-box">
+
+            <h4>Why?</h4>
+
+            <p>
+                Image B has more pixels <strong>and</strong> more bits per pixel.
+                Therefore, before compression and metadata are considered,
+                it requires much more pixel data.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         FILE SIZE THINKING
+         ================================================= -->
+
+    <div class="studio-panel" id="file">
+
+        <h3>💾 File Size Thinking</h3>
+
+        <p>
+            For an uncompressed bitmap image, the pixel data can be related
+            to:
+        </p>
+
+        <div class="rule-banner">
+
+            File size in bits =
+            width × height × colour depth
+
+        </div>
+
+        <p>
+            Consider:
+        </p>
+
+        <div class="worked-study">
+
+<pre>
+Image:
+800 × 600 pixels
+
+Colour depth:
+8 bits
+
+Pixel data:
+800 × 600 × 8
+
+= 3,840,000 bits
+</pre>
+
+        </div>
+
+        <p>
+            The next lesson will develop these calculations further,
+            including conversion into bytes and larger storage units.
+        </p>
+
+        <div class="challenge-box">
+
+            <h4>🧠 Predict</h4>
+
+            <p>
+                If the colour depth doubles while the resolution stays
+                exactly the same, what happens to the pixel data size?
+            </p>
+
+            <button class="answer-button"
+                    data-answer="fileAnswer">
+
+                Reveal Answer
+
+            </button>
+
+            <div id="fileAnswer"
+                 class="hidden-answer">
+
+                The pixel data size also doubles because each pixel now
+                requires twice as many bits.
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         METADATA
+         ================================================= -->
+
+    <div class="studio-panel" id="metadata">
+
+        <h3>🔎 Metadata Detective</h3>
+
+        <p>
+            Look at the following fictional image information.
+            Decide which items describe the image itself and which are
+            metadata.
+        </p>
+
+        <div class="metadata-detective">
+
+            <div class="detective-item">
+                1920 × 1080
+                <span>Resolution</span>
+            </div>
+
+            <div class="detective-item">
+                24 bits
+                <span>Colour depth</span>
+            </div>
+
+            <div class="detective-item">
+                JPEG
+                <span>File format</span>
+            </div>
+
+            <div class="detective-item">
+                Camera model
+                <span>Device information</span>
+            </div>
+
+            <div class="detective-item">
+                Creation date
+                <span>Date information</span>
+            </div>
+
+            <div class="detective-item">
+                Location information
+                <span>Possible metadata</span>
+            </div>
+
+        </div>
+
+        <div class="learning-note">
+
+            <strong>Remember:</strong>
+
+            <p>
+                Metadata is information about the file or data.
+                It is not simply another word for the pixels themselves.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         GUIDED PRACTICE
+         ================================================= -->
+
+    <div class="studio-panel" id="practice">
+
+        <h3>📝 Guided Practice</h3>
+
+        <p>
+            Work through these progressively. Try to answer before
+            revealing the explanation.
+        </p>
+
+
+        <div class="studio-practice">
+
+            <div class="practice-question">
+
+                <h4>Challenge 1</h4>
+
+                <p>
+                    An image is 200 pixels wide and 100 pixels high.
+                    How many pixels does it contain?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="sp1">
+
+                    Reveal Answer
+
+                </button>
+
+                <div id="sp1"
+                     class="hidden-answer">
+
+                    200 × 100 =
+                    <strong>20,000 pixels</strong>.
+
+                </div>
+
+            </div>
+
+
+            <div class="practice-question">
+
+                <h4>Challenge 2</h4>
+
+                <p>
+                    How many colours can be represented using 4 bits per pixel?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="sp2">
+
+                    Reveal Answer
+
+                </button>
+
+                <div id="sp2"
+                     class="hidden-answer">
+
+                    2<sup>4</sup> =
+                    <strong>16 colours</strong>.
+
+                </div>
+
+            </div>
+
+
+            <div class="practice-question">
+
+                <h4>Challenge 3</h4>
+
+                <p>
+                    Which has more pixels:
+                    640 × 480 or 1280 × 720?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="sp3">
+
+                    Reveal Answer
+
+                </button>
+
+                <div id="sp3"
+                     class="hidden-answer">
+
+                    640 × 480 = 307,200 pixels.<br>
+                    1280 × 720 = 921,600 pixels.<br><br>
+
+                    Therefore the
+                    <strong>1280 × 720</strong> image has more pixels.
+
+                </div>
+
+            </div>
+
+
+            <div class="practice-question">
+
+                <h4>Challenge 4</h4>
+
+                <p>
+                    Why does increasing colour depth increase the amount
+                    of data required?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="sp4">
+
+                    Reveal Explanation
+
+                </button>
+
+                <div id="sp4"
+                     class="hidden-answer">
+
+                    Each pixel requires more bits to store its colour.
+                    Since there may be millions of pixels, the total
+                    amount of data increases significantly.
+
+                </div>
+
+            </div>
+
+
+            <div class="practice-question">
+
+                <h4>Challenge 5</h4>
+
+                <p>
+                    A student says:
+                    "More pixels always means more colours."
+                    Is this correct?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="sp5">
+
+                    Reveal Explanation
+
+                </button>
+
+                <div id="sp5"
+                     class="hidden-answer">
+
+                    <strong>No.</strong>
+
+                    Resolution determines how many pixels are present.
+                    Colour depth determines how many colours each pixel
+                    can represent.
+
+                </div>
+
+            </div>
+
+
+            <div class="practice-question">
+
+                <h4>Challenge 6</h4>
+
+                <p>
+                    Why might a high-resolution image have a larger file
+                    size than a low-resolution image?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="sp6">
+
+                    Reveal Explanation
+
+                </button>
+
+                <div id="sp6"
+                     class="hidden-answer">
+
+                    A higher-resolution image contains more pixels.
+                    More pixels mean more pixel data must be stored.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         MISTAKES
+         ================================================= -->
+
+    <div class="studio-panel" id="mistakes">
+
+        <h3>🕵️ Fix the Mistake</h3>
+
+
+        <div class="mistake-card">
+
+            <p><strong>Student:</strong></p>
+
+            <div class="student-answer">
+                "A pixel is one bit."
+            </div>
+
+            <button class="answer-button"
+                    data-answer="mistake1">
+
+                Reveal Explanation
+
+            </button>
+
+            <div id="mistake1"
+                 class="hidden-answer">
+
+                Incorrect.
+
+                A pixel is an individual picture element.
+                The number of bits used to represent its colour depends
+                on the colour depth.
+
+            </div>
+
+        </div>
+
+
+        <div class="mistake-card">
+
+            <p><strong>Student:</strong></p>
+
+            <div class="student-answer">
+                "8-bit colour means the image has 8 pixels."
+            </div>
+
+            <button class="answer-button"
+                    data-answer="mistake2">
+
+                Reveal Explanation
+
+            </button>
+
+            <div id="mistake2"
+                 class="hidden-answer">
+
+                Incorrect.
+
+                8-bit colour means each pixel is represented using
+                8 bits. It allows:
+
+                <strong>2<sup>8</sup> = 256 colours.</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="mistake-card">
+
+            <p><strong>Student:</strong></p>
+
+            <div class="student-answer">
+                "Resolution tells us how many colours an image can have."
+            </div>
+
+            <button class="answer-button"
+                    data-answer="mistake3">
+
+                Reveal Explanation
+
+            </button>
+
+            <div id="mistake3"
+                 class="hidden-answer">
+
+                Incorrect.
+
+                Resolution describes the number of pixels.
+                Colour depth determines the number of possible colours
+                per pixel.
+
+            </div>
+
+        </div>
+
+
+        <div class="mistake-card">
+
+            <p><strong>Student:</strong></p>
+
+            <div class="student-answer">
+                "Increasing resolution decreases file size."
+            </div>
+
+            <button class="answer-button"
+                    data-answer="mistake4">
+
+                Reveal Explanation
+
+            </button>
+
+            <div id="mistake4"
+                 class="hidden-answer">
+
+                Incorrect.
+
+                Increasing resolution means more pixels.
+                More pixels normally means more data and therefore
+                a larger uncompressed bitmap file.
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         THINK
+         ================================================= -->
+
+    <div class="studio-panel" id="think">
+
+        <h3>🧠 Think Deeper</h3>
+
+        <div class="thinking-question">
+
+            <p>
+                Imagine two photographs of exactly the same scene.
+                One has a much higher resolution.
+                Why might you notice more detail in that photograph?
+            </p>
+
+            <textarea id="thinkAnswer"
+                      placeholder="Explain your reasoning..."></textarea>
+
+            <button id="saveThink"
+                    class="action-button">
+
+                Save My Thinking
+
+            </button>
+
+            <div id="thinkSaved"
+                 class="saved-message">
+            </div>
+
+        </div>
+
+
+        <div class="thinking-question">
+
+            <p>
+                Suppose an image designer wants excellent colour accuracy
+                but also wants to reduce the amount of data.
+                What trade-off might they need to consider?
+            </p>
+
+            <textarea id="thinkAnswer2"
+                      placeholder="Explain the trade-off..."></textarea>
+
+            <button id="saveThink2"
+                    class="action-button">
+
+                Save My Thinking
+
+            </button>
+
+            <div id="thinkSaved2"
+                 class="saved-message">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         QUICK CHECK
+         ================================================= -->
+
+    <div class="studio-panel" id="quick">
+
+        <h3>⚡ Quick Check</h3>
+
+
+        <div class="quick-question">
+
+            <p>
+                1. What is a pixel?
+            </p>
+
+            <button class="quick-option"
+                    data-q="1">
+
+                A file format
+
+            </button>
+
+            <button class="quick-option"
+                    data-q="1"
+                    data-correct="true">
+
+                A picture element
+
+            </button>
+
+            <button class="quick-option"
+                    data-q="1">
+
+                A storage device
+
+            </button>
+
+            <div class="quick-feedback"
+                 id="feedback1">
+            </div>
+
+        </div>
+
+
+        <div class="quick-question">
+
+            <p>
+                2. What does resolution describe?
+            </p>
+
+            <button class="quick-option"
+                    data-q="2"
+                    data-correct="true">
+
+                The number of pixels
+
+            </button>
+
+            <button class="quick-option"
+                    data-q="2">
+
+                The number of files
+
+            </button>
+
+            <button class="quick-option"
+                    data-q="2">
+
+                The number of processors
+
+            </button>
+
+            <div class="quick-feedback"
+                 id="feedback2">
+            </div>
+
+        </div>
+
+
+        <div class="quick-question">
+
+            <p>
+                3. How many colours can 8 bits represent?
+            </p>
+
+            <button class="quick-option"
+                    data-q="3">
+
+                8
+
+            </button>
+
+            <button class="quick-option"
+                    data-q="3"
+                    data-correct="true">
+
+                256
+
+            </button>
+
+            <button class="quick-option"
+                    data-q="3">
+
+                512
+
+            </button>
+
+            <div class="quick-feedback"
+                 id="feedback3">
+            </div>
+
+        </div>
+
+
+        <div class="quick-question">
+
+            <p>
+                4. Which factor determines the number of possible colours
+                for each pixel?
+            </p>
+
+            <button class="quick-option"
+                    data-q="4">
+
+                Resolution
+
+            </button>
+
+            <button class="quick-option"
+                    data-q="4"
+                    data-correct="true">
+
+                Colour depth
+
+            </button>
+
+            <button class="quick-option"
+                    data-q="4">
+
+                File name
+
+            </button>
+
+            <div class="quick-feedback"
+                 id="feedback4">
+            </div>
+
+        </div>
+
+
+        <div class="quick-question">
+
+            <p>
+                5. What generally happens to uncompressed bitmap file size
+                when resolution increases?
+            </p>
+
+            <button class="quick-option"
+                    data-q="5"
+                    data-correct="true">
+
+                It increases
+
+            </button>
+
+            <button class="quick-option"
+                    data-q="5">
+
+                It always becomes zero
+
+            </button>
+
+            <button class="quick-option"
+                    data-q="5">
+
+                It cannot change
+
+            </button>
+
+            <div class="quick-feedback"
+                 id="feedback5">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRACTICE OUTSIDE STUDIO
+     ===================================================== -->
+
+<section class="content-card glass">
+
+    <h2>📝 Independent Practice</h2>
+
+    <p>
+        Try these without looking at the answers first.
+    </p>
+
+    <div class="practice-grid">
+
+        <div class="practice-card">
+
+            <h3>1</h3>
+
+            <p>
+                Calculate the number of pixels in a
+                1024 × 768 image.
+            </p>
+
+            <button class="answer-button"
+                    data-answer="p1">
+                Show Answer
+            </button>
+
+            <div id="p1"
+                 class="hidden-answer">
+
+                1024 × 768 =
+                <strong>786,432 pixels</strong>.
+
+            </div>
+
+        </div>
+
+
+        <div class="practice-card">
+
+            <h3>2</h3>
+
+            <p>
+                How many colours can 5 bits represent?
+            </p>
+
+            <button class="answer-button"
+                    data-answer="p2">
+                Show Answer
+            </button>
+
+            <div id="p2"
+                 class="hidden-answer">
+
+                2<sup>5</sup> =
+                <strong>32 colours</strong>.
+
+            </div>
+
+        </div>
+
+
+        <div class="practice-card">
+
+            <h3>3</h3>
+
+            <p>
+                What is the difference between resolution
+                and colour depth?
+            </p>
+
+            <button class="answer-button"
+                    data-answer="p3">
+                Show Answer
+            </button>
+
+            <div id="p3"
+                 class="hidden-answer">
+
+                Resolution concerns the number of pixels.
+                Colour depth concerns the number of bits used
+                for each pixel's colour.
+
+            </div>
+
+        </div>
+
+
+        <div class="practice-card">
+
+            <h3>4</h3>
+
+            <p>
+                Give two reasons why an uncompressed bitmap image
+                might have a large file size.
+            </p>
+
+            <button class="answer-button"
+                    data-answer="p4">
+                Show Answer
+            </button>
+
+            <div id="p4"
+                 class="hidden-answer">
+
+                High resolution and/or high colour depth.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ASSESSMENT
+     ===================================================== -->
+
+<section class="assessment-section glass">
+
+    <h2>📊 Formative Assessment</h2>
+
+    <p>
+        Answer all 10 questions.
+        <strong>70% or above</strong> indicates mastery.
+    </p>
+
+    <form id="assessmentForm">
+
+
+        <div class="assessment-question">
+
+            <p>
+                1. What is a pixel?
+            </p>
+
+            <label>
+                <input type="radio" name="q1" value="a">
+                A unit of sound
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="b">
+                A picture element
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="c">
+                A file extension
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <p>
+                2. What does 800 × 600 describe?
+            </p>
+
+            <label>
+                <input type="radio" name="q2" value="a">
+                Colour depth
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="b">
+                Image resolution
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="c">
+                File compression
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <p>
+                3. How many pixels are in an 800 × 600 image?
+            </p>
+
+            <label>
+                <input type="radio" name="q3" value="a">
+                480
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="b">
+                48,000
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="c">
+                480,000
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <p>
+                4. What does colour depth describe?
+            </p>
+
+            <label>
+                <input type="radio" name="q4" value="a">
+                Bits used to represent each pixel's colour
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="b">
+                Number of pixels in the image
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="c">
+                Image dimensions only
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <p>
+                5. How many colours can 8 bits represent?
+            </p>
+
+            <label>
+                <input type="radio" name="q5" value="a">
+                8
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="b">
+                128
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="c">
+                256
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <p>
+                6. Which change normally increases bitmap file size?
+            </p>
+
+            <label>
+                <input type="radio" name="q6" value="a">
+                Increasing resolution
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="b">
+                Deleting pixels
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="c">
+                Reducing colour depth
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <p>
+                7. What happens when colour depth increases?
+            </p>
+
+            <label>
+                <input type="radio" name="q7" value="a">
+                Fewer colours are available
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="b">
+                More colours can be represented
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="c">
+                The image has fewer pixels
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <p>
+                8. What is metadata?
+            </p>
+
+            <label>
+                <input type="radio" name="q8" value="a">
+                Data about data
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="b">
+                Only pixel colour information
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="c">
+                A type of processor
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <p>
+                9. Which image normally contains more pixels?
+            </p>
+
+            <label>
+                <input type="radio" name="q9" value="a">
+                640 × 480
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="b">
+                1920 × 1080
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="c">
+                They contain the same number
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <p>
+                10. Which statement is correct?
+            </p>
+
+            <label>
+                <input type="radio" name="q10" value="a">
+                Resolution determines the number of possible colours.
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="b">
+                Colour depth determines the number of pixels.
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="c">
+                Resolution determines pixels and colour depth determines
+                the bits used for each pixel's colour.
+            </label>
+
+        </div>
+
+
+        <button type="submit"
+                class="assessment-button">
+
+            Submit Assessment
+
+        </button>
+
+    </form>
+
+
+    <div id="assessmentResult"
+         class="assessment-result">
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MASTERY
+     ===================================================== -->
+
+<section id="masteryPanel"
+         class="pathway-card glass">
+
+    <h2>🚀 Your Learning Pathway</h2>
+
+    <div id="masteryMessage">
+
+        Complete the assessment to discover your next step.
+
+    </div>
+
+
+    <div id="remediationArea"
+         class="remediation hidden">
+
+        <h3>🔧 Targeted Remediation</h3>
+
+        <p>
+            If you scored below 70%, return to the relevant learning
+            sections, work through the explanations again, and then
+            retake the assessment.
+        </p>
+
+        <div class="remediation-grid">
+
+            <a href="#imageRepresentationSection">
+                Pixels
+            </a>
+
+            <a href="#resolutionSection">
+                Resolution
+            </a>
+
+            <a href="#colourDepthSection">
+                Colour Depth
+            </a>
+
+            <a href="#fileSizeSection">
+                File Size
+            </a>
+
+            <a href="#metadataSection">
+                Metadata
+            </a>
+
+        </div>
+
+        <button id="retakeBtn"
+                class="assessment-button">
+
+            Retake Assessment
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GAME BREAK
+     ===================================================== -->
+
+<section class="game-break glass">
+
+    <h2>🎮 5-Minute Game Break</h2>
+
+    <p>
+        You have completed serious learning.
+        Now take a short computational-thinking break.
+    </p>
+
+    <p>
+        The game is completely separate from your assessment.
+    </p>
+
+    <a href="https://blockly.games/turtle?lang=en"
+       target="_blank"
+       rel="noopener"
+       class="game-button">
+
+        Open Blockly Turtle ↗
+
+    </a>
+
+    <div class="timer-area">
+
+        <div id="gameTimer">
+            05:00
+        </div>
+
+        <button id="startTimer"
+                class="action-button">
+
+            Start 5-Minute Timer
+
+        </button>
+
+        <button id="stopTimer"
+                class="action-button secondary">
+
+            Stop Timer
+
+        </button>
+
+        <p id="timerMessage"></p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXIT TICKET
+     ===================================================== -->
+
+<section class="exit-ticket glass">
+
+    <h2>🎫 Exit Ticket</h2>
+
+    <p>
+        Before leaving DR-08, reflect on your understanding.
+    </p>
+
+    <label for="exitLearned">
+        What is the most important thing you learned today?
+    </label>
+
+    <textarea id="exitLearned"
+              placeholder="I learned that..."></textarea>
+
+
+    <label for="exitUnclear">
+        What is still unclear?
+    </label>
+
+    <textarea id="exitUnclear"
+              placeholder="I still need help with..."></textarea>
+
+
+    <button id="saveExit"
+            class="assessment-button">
+
+        Save Exit Ticket
+
+    </button>
+
+    <div id="exitSaved"
+         class="saved-message">
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<nav class="lesson-navigation">
+
+    <a href="DR-07.html"
+       class="nav-button">
+        ← DR-07
+    </a>
+
+    <a href="INDEX.html"
+       class="nav-button dashboard">
+        🏠 Topic Dashboard
+    </a>
+
+    <a href="DR-09.html"
+       class="nav-button">
+        DR-09 →
+    </a>
+
+</nav>
+
+</main>
+
+
+<footer>
+
+    <p>
+        IGCSE Computer Science 0984 • Topic 1 — Data Representation
+    </p>
+
+    <p>
+        Design and Content by Ravi Raju
+    </p>
+
+</footer>
+
+
+<script src="DR-08.js"></script>
+
+</body>
+</html>

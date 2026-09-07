@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR-02 | Denary and Binary Number Systems</title>
+    <link rel="stylesheet" href="DR-02.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="brand">
+        <div class="brand-title">IGCSE Computer Science 0984</div>
+        <div class="brand-subtitle">Topic 1 — Data Representation</div>
+    </div>
+
+    <div class="teacher-brand">
+        <img src="IMG-Ravi.jpeg" alt="Ravi Raju">
+        <div>
+            <strong>Design and Content by Ravi Raju</strong>
+            <span>Modern English School Cairo</span>
+        </div>
+        <img class="school-logo" src="MES35.jpg" alt="Modern English School Cairo">
+    </div>
+</header>
+
+<main class="page">
+
+    <section class="hero">
+        <div>
+            <span class="lesson-number">LESSON DR-02</span>
+            <h1>Denary and Binary Number Systems</h1>
+            <p>
+                Computers process data using binary. In this lesson you will discover
+                how denary and binary numbers are structured, how place value works,
+                and why every binary digit has a specific value.
+            </p>
+        </div>
+
+        <div class="hero-badge">
+            <span>01</span>
+            <small>Number Systems</small>
+        </div>
+    </section>
+
+    <section class="objectives panel">
+        <h2>Learning Objectives</h2>
+        <p>By the end of this lesson, you should be able to:</p>
+
+        <div class="objective-grid">
+            <div class="objective">
+                <b>01</b>
+                <span>Explain what a number system is.</span>
+            </div>
+            <div class="objective">
+                <b>02</b>
+                <span>Explain why denary is called base 10.</span>
+            </div>
+            <div class="objective">
+                <b>03</b>
+                <span>Explain why binary is called base 2.</span>
+            </div>
+            <div class="objective">
+                <b>04</b>
+                <span>Identify binary place values.</span>
+            </div>
+            <div class="objective">
+                <b>05</b>
+                <span>Construct binary numbers using place values.</span>
+            </div>
+            <div class="objective">
+                <b>06</b>
+                <span>Recognise the relationship between denary and binary.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TEACHER EXPLANATION ===================== -->
+
+    <section class="panel">
+        <div class="section-heading">
+            <span>01</span>
+            <div>
+                <h2>Teacher Explanation</h2>
+                <p>Understanding number systems before converting numbers</p>
+            </div>
+        </div>
+
+        <div class="content-grid">
+
+            <article class="content-card">
+                <h3>What is a number system?</h3>
+                <p>
+                    A number system is a way of representing numbers using a defined
+                    set of symbols and rules.
+                </p>
+                <p>
+                    Humans normally use the <strong>denary number system</strong>.
+                    Computers use the <strong>binary number system</strong>.
+                </p>
+
+                <div class="compare-box">
+                    <div>
+                        <strong>Denary</strong>
+                        <span>Base 10</span>
+                        <small>Digits 0–9</small>
+                    </div>
+                    <div>
+                        <strong>Binary</strong>
+                        <span>Base 2</span>
+                        <small>Digits 0 and 1</small>
+                    </div>
+                </div>
+            </article>
+
+            <article class="content-card">
+                <h3>Why is denary called base 10?</h3>
+                <p>
+                    Denary uses ten different digits:
+                </p>
+
+                <div class="digit-row">
+                    <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+                    <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                </div>
+
+                <p>
+                    Each position represents a power of 10.
+                    Moving one position to the left multiplies the place value by 10.
+                </p>
+
+                <div class="place-table denary-table">
+                    <div>10<sup>3</sup></div>
+                    <div>10<sup>2</sup></div>
+                    <div>10<sup>1</sup></div>
+                    <div>10<sup>0</sup></div>
+                    <div>1000</div>
+                    <div>100</div>
+                    <div>10</div>
+                    <div>1</div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="panel">
+        <div class="section-heading">
+            <span>02</span>
+            <div>
+                <h2>Understanding Binary</h2>
+                <p>The language of two states</p>
+            </div>
+        </div>
+
+        <div class="binary-explanation">
+
+            <div class="binary-big">
+                <div class="bit">0</div>
+                <div class="bit">1</div>
+            </div>
+
+            <div>
+                <h3>Binary has only two digits</h3>
+                <p>
+                    Binary uses only <strong>0</strong> and <strong>1</strong>.
+                    This makes it ideal for electronic computers because digital
+                    circuits can represent two distinct states.
+                </p>
+
+                <div class="state-grid">
+                    <div>
+                        <strong>0</strong>
+                        <span>OFF / LOW</span>
+                    </div>
+                    <div>
+                        <strong>1</strong>
+                        <span>ON / HIGH</span>
+                    </div>
+                </div>
+
+                <p class="important">
+                    <strong>Important:</strong>
+                    A binary digit is called a <strong>bit</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== 8 BIT PLACE VALUE ===================== -->
+
+    <section class="panel">
+        <div class="section-heading">
+            <span>03</span>
+            <div>
+                <h2>The 8-Bit Place-Value System</h2>
+                <p>Build a binary number one bit at a time</p>
+            </div>
+        </div>
+
+        <p>
+            The following eight positions are commonly used when working with
+            an 8-bit binary number.
+        </p>
+
+        <div class="eight-bit-table">
+            <div class="power">2<sup>7</sup></div>
+            <div class="power">2<sup>6</sup></div>
+            <div class="power">2<sup>5</sup></div>
+            <div class="power">2<sup>4</sup></div>
+            <div class="power">2<sup>3</sup></div>
+            <div class="power">2<sup>2</sup></div>
+            <div class="power">2<sup>1</sup></div>
+            <div class="power">2<sup>0</sup></div>
+
+            <div class="value">128</div>
+            <div class="value">64</div>
+            <div class="value">32</div>
+            <div class="value">16</div>
+            <div class="value">8</div>
+            <div class="value">4</div>
+            <div class="value">2</div>
+            <div class="value">1</div>
+        </div>
+
+        <div class="place-rule">
+            <strong>Rule:</strong>
+            Each place value is twice the value immediately to its right.
+        </div>
+
+        <h3 class="subheading">Interactive 8-Bit Builder</h3>
+
+        <p>
+            Click the bits to switch them between 0 and 1.
+            Watch the denary value change.
+        </p>
+
+        <div class="bit-builder" id="bitBuilder">
+            <div class="bit-column">
+                <small>128</small>
+                <button class="builder-bit" data-value="128">0</button>
+            </div>
+            <div class="bit-column">
+                <small>64</small>
+                <button class="builder-bit" data-value="64">0</button>
+            </div>
+            <div class="bit-column">
+                <small>32</small>
+                <button class="builder-bit" data-value="32">0</button>
+            </div>
+            <div class="bit-column">
+                <small>16</small>
+                <button class="builder-bit" data-value="16">0</button>
+            </div>
+            <div class="bit-column">
+                <small>8</small>
+                <button class="builder-bit" data-value="8">0</button>
+            </div>
+            <div class="bit-column">
+                <small>4</small>
+                <button class="builder-bit" data-value="4">0</button>
+            </div>
+            <div class="bit-column">
+                <small>2</small>
+                <button class="builder-bit" data-value="2">0</button>
+            </div>
+            <div class="bit-column">
+                <small>1</small>
+                <button class="builder-bit" data-value="1">0</button>
+            </div>
+        </div>
+
+        <div class="builder-result">
+            <div>
+                <small>Binary</small>
+                <strong id="binaryDisplay">00000000</strong>
+            </div>
+            <div>
+                <small>Denary</small>
+                <strong id="denaryDisplay">0</strong>
+            </div>
+        </div>
+
+        <button class="secondary-btn" id="resetBuilder">Reset Builder</button>
+    </section>
+
+    <!-- ===================== EXAMPLES ===================== -->
+
+    <section class="panel">
+        <div class="section-heading">
+            <span>04</span>
+            <div>
+                <h2>Teacher-Led Examples</h2>
+                <p>Read, reason and discuss</p>
+            </div>
+        </div>
+
+        <div class="example-grid">
+
+            <article class="example-card">
+                <span class="example-label">EXAMPLE A</span>
+                <h3>What is 00000101?</h3>
+
+                <div class="calculation">
+                    <p>0 × 128 = 0</p>
+                    <p>0 × 64 = 0</p>
+                    <p>0 × 32 = 0</p>
+                    <p>0 × 16 = 0</p>
+                    <p>0 × 8 = 0</p>
+                    <p>1 × 4 = <strong>4</strong></p>
+                    <p>0 × 2 = 0</p>
+                    <p>1 × 1 = <strong>1</strong></p>
+                    <hr>
+                    <strong>4 + 1 = 5</strong>
+                </div>
+
+                <div class="answer">00000101₂ = 5₁₀</div>
+            </article>
+
+            <article class="example-card">
+                <span class="example-label">EXAMPLE B</span>
+                <h3>What is 00101010?</h3>
+
+                <div class="calculation">
+                    <p>0 × 128 = 0</p>
+                    <p>0 × 64 = 0</p>
+                    <p>1 × 32 = <strong>32</strong></p>
+                    <p>0 × 16 = 0</p>
+                    <p>1 × 8 = <strong>8</strong></p>
+                    <p>0 × 4 = 0</p>
+                    <p>1 × 2 = <strong>2</strong></p>
+                    <p>0 × 1 = 0</p>
+                    <hr>
+                    <strong>32 + 8 + 2 = 42</strong>
+                </div>
+
+                <div class="answer">00101010₂ = 42₁₀</div>
+            </article>
+
+            <article class="example-card">
+                <span class="example-label">EXAMPLE C</span>
+                <h3>Why are leading zeroes useful?</h3>
+
+                <p>
+                    The numbers <strong>101</strong> and <strong>00000101</strong>
+                    represent the same binary value.
+                </p>
+
+                <p>
+                    However, an 8-bit system expects eight positions, so we write:
+                </p>
+
+                <div class="comparison">
+                    <span>101</span>
+                    <b>→</b>
+                    <span>00000101</span>
+                </div>
+
+                <p>
+                    The extra zeroes do not change the value.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ===================== ORAL QUESTIONS ===================== -->
+
+    <section class="panel oral-panel">
+        <div class="section-heading">
+            <span>05</span>
+            <div>
+                <h2>Teacher–Student Discussion</h2>
+                <p>Think aloud before entering the Student Studio</p>
+            </div>
+        </div>
+
+        <ol class="oral-list">
+            <li>Why do we call denary a base-10 number system?</li>
+            <li>How many symbols does binary use?</li>
+            <li>What is the value of the right-most bit in an 8-bit number?</li>
+            <li>What is the value of the left-most bit?</li>
+            <li>Why does each binary place value double as we move left?</li>
+            <li>What happens to the denary value when a bit changes from 0 to 1?</li>
+            <li>Can the binary number 102101 exist? Explain why or why not.</li>
+            <li>Why might computers prefer binary while humans prefer denary?</li>
+        </ol>
+    </section>
+
+    <!-- ===================== STUDENT STUDIO ===================== -->
+
+    <section class="student-studio">
+
+        <div class="studio-header">
+            <div>
+                <span>STUDENT STUDIO</span>
+                <h2>Your Learning Workshop</h2>
+                <p>
+                    Explore the ideas, practise them, explain your reasoning,
+                    and then prove what you know.
+                </p>
+            </div>
+            <div class="studio-icon">01</div>
+        </div>
+
+        <div class="studio-tabs">
+            <button class="studio-tab active" data-tab="explore">Explore</button>
+            <button class="studio-tab" data-tab="discover">Discover</button>
+            <button class="studio-tab" data-tab="practice">Practise</button>
+            <button class="studio-tab" data-tab="sort">Sort It Out</button>
+            <button class="studio-tab" data-tab="think">Think</button>
+            <button class="studio-tab" data-tab="quick">Quick Check</button>
+        </div>
+
+        <!-- EXPLORE -->
+        <div class="studio-content active" id="explore">
+
+            <div class="studio-intro">
+                <h3>Explore: Two Ways of Writing Numbers</h3>
+                <p>
+                    Humans use denary because we have ten digits available:
+                    0, 1, 2, 3, 4, 5, 6, 7, 8 and 9.
+                    Computers use binary because electronic systems can represent
+                    two states very reliably.
+                </p>
+            </div>
+
+            <div class="learning-cards">
+
+                <article>
+                    <h4>Denary = Base 10</h4>
+                    <p>
+                        Every position has a value based on powers of 10.
+                    </p>
+                    <div class="mini-values">
+                        <span>1000</span>
+                        <span>100</span>
+                        <span>10</span>
+                        <span>1</span>
+                    </div>
+                    <p class="small-note">
+                        10³ → 10² → 10¹ → 10⁰
+                    </p>
+                </article>
+
+                <article>
+                    <h4>Binary = Base 2</h4>
+                    <p>
+                        Every position has a value based on powers of 2.
+                    </p>
+                    <div class="mini-values binary-values">
+                        <span>8</span>
+                        <span>4</span>
+                        <span>2</span>
+                        <span>1</span>
+                    </div>
+                    <p class="small-note">
+                        2³ → 2² → 2¹ → 2⁰
+                    </p>
+                </article>
+
+                <article>
+                    <h4>A bit has two possible values</h4>
+                    <div class="two-state">
+                        <span>0</span>
+                        <span>1</span>
+                    </div>
+                    <p>
+                        A bit can therefore be OFF/LOW or ON/HIGH.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="guided-task">
+                <h4>Your Turn</h4>
+                <p>
+                    Look at the binary number <strong>01010010</strong>.
+                    Without calculating the complete answer yet, identify every
+                    position containing a 1.
+                </p>
+                <div class="guided-answer">
+                    <span>0</span><span class="highlight">1</span><span>0</span>
+                    <span class="highlight">1</span><span>0</span><span>0</span>
+                    <span class="highlight">1</span><span>0</span>
+                </div>
+                <p>
+                    Therefore the active place values are:
+                    <strong>64, 16 and 2</strong>.
+                </p>
+            </div>
+        </div>
+
+        <!-- DISCOVER -->
+        <div class="studio-content" id="discover">
+
+            <div class="studio-intro">
+                <h3>Discover: How Binary Place Value Works</h3>
+                <p>
+                    Binary follows exactly the same idea as denary place value.
+                    The important difference is that the base is 2 instead of 10.
+                </p>
+            </div>
+
+            <div class="discovery-table">
+
+                <div class="table-head">Position</div>
+                <div class="table-head">Power</div>
+                <div class="table-head">Place Value</div>
+                <div class="table-head">What happens?</div>
+
+                <div>8th from right</div>
+                <div>2⁷</div>
+                <div><strong>128</strong></div>
+                <div>Adding a 1 here adds 128.</div>
+
+                <div>7th from right</div>
+                <div>2⁶</div>
+                <div><strong>64</strong></div>
+                <div>Adding a 1 here adds 64.</div>
+
+                <div>6th from right</div>
+                <div>2⁵</div>
+                <div><strong>32</strong></div>
+                <div>Adding a 1 here adds 32.</div>
+
+                <div>5th from right</div>
+                <div>2⁴</div>
+                <div><strong>16</strong></div>
+                <div>Adding a 1 here adds 16.</div>
+
+                <div>4th from right</div>
+                <div>2³</div>
+                <div><strong>8</strong></div>
+                <div>Adding a 1 here adds 8.</div>
+
+                <div>3rd from right</div>
+                <div>2²</div>
+                <div><strong>4</strong></div>
+                <div>Adding a 1 here adds 4.</div>
+
+                <div>2nd from right</div>
+                <div>2¹</div>
+                <div><strong>2</strong></div>
+                <div>Adding a 1 here adds 2.</div>
+
+                <div>Right-most</div>
+                <div>2⁰</div>
+                <div><strong>1</strong></div>
+                <div>Adding a 1 here adds 1.</div>
+
+            </div>
+
+            <div class="discovery-challenge">
+                <h4>Challenge</h4>
+                <p>
+                    Which combination of place values produces <strong>37</strong>?
+                </p>
+                <p>
+                    Start with the largest value that does not exceed 37.
+                    Then continue with the remainder.
+                </p>
+
+                <div class="step-chain">
+                    <span>32</span>
+                    <b>+</b>
+                    <span>4</span>
+                    <b>+</b>
+                    <span>1</span>
+                    <b>=</b>
+                    <strong>37</strong>
+                </div>
+
+                <p>
+                    Therefore:
+                    <strong>00100101₂ = 37₁₀</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- PRACTISE -->
+        <div class="studio-content" id="practice">
+
+            <div class="studio-intro">
+                <h3>Practise: Build the Number</h3>
+                <p>
+                    For each question, identify the place values represented by 1s,
+                    then calculate the denary value.
+                </p>
+            </div>
+
+            <div class="practice-block">
+                <h4>Practice Set A — Warm Up</h4>
+
+                <div class="practice-question">
+                    <strong>1.</strong>
+                    What is <code>00000011</code> in denary?
+                    <details>
+                        <summary>Show worked answer</summary>
+                        <p>2 + 1 = <strong>3</strong></p>
+                    </details>
+                </div>
+
+                <div class="practice-question">
+                    <strong>2.</strong>
+                    What is <code>00001010</code> in denary?
+                    <details>
+                        <summary>Show worked answer</summary>
+                        <p>8 + 2 = <strong>10</strong></p>
+                    </details>
+                </div>
+
+                <div class="practice-question">
+                    <strong>3.</strong>
+                    What is <code>00010101</code> in denary?
+                    <details>
+                        <summary>Show worked answer</summary>
+                        <p>16 + 4 + 1 = <strong>21</strong></p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="practice-block">
+                <h4>Practice Set B — Developing</h4>
+
+                <div class="practice-question">
+                    <strong>4.</strong>
+                    What is <code>00110010</code> in denary?
+                    <details>
+                        <summary>Show worked answer</summary>
+                        <p>32 + 16 + 2 = <strong>50</strong></p>
+                    </details>
+                </div>
+
+                <div class="practice-question">
+                    <strong>5.</strong>
+                    What is <code>01010101</code> in denary?
+                    <details>
+                        <summary>Show worked answer</summary>
+                        <p>64 + 16 + 4 + 1 = <strong>85</strong></p>
+                    </details>
+                </div>
+
+                <div class="practice-question">
+                    <strong>6.</strong>
+                    What is <code>01100110</code> in denary?
+                    <details>
+                        <summary>Show worked answer</summary>
+                        <p>64 + 32 + 4 + 2 = <strong>102</strong></p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="practice-block">
+                <h4>Practice Set C — Challenge</h4>
+
+                <div class="practice-question">
+                    <strong>7.</strong>
+                    What is <code>10011001</code> in denary?
+                    <details>
+                        <summary>Show worked answer</summary>
+                        <p>128 + 16 + 8 + 1 = <strong>153</strong></p>
+                    </details>
+                </div>
+
+                <div class="practice-question">
+                    <strong>8.</strong>
+                    What is <code>11100001</code> in denary?
+                    <details>
+                        <summary>Show worked answer</summary>
+                        <p>128 + 64 + 32 + 1 = <strong>225</strong></p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="practice-reminder">
+                <strong>Exam habit:</strong>
+                Write the place values above the binary digits before adding.
+                This reduces careless errors.
+            </div>
+        </div>
+
+        <!-- SORT IT OUT -->
+        <div class="studio-content" id="sort">
+
+            <div class="studio-intro">
+                <h3>Sort It Out</h3>
+                <p>
+                    Decide which statements describe denary and which describe binary.
+                    Then check your reasoning.
+                </p>
+            </div>
+
+            <div class="sorting-grid">
+
+                <div class="sort-card">
+                    <h4>Denary</h4>
+                    <ul>
+                        <li>Base 10</li>
+                        <li>Uses digits 0–9</li>
+                        <li>Place values are powers of 10</li>
+                        <li>Commonly used by humans</li>
+                    </ul>
+                </div>
+
+                <div class="sort-card">
+                    <h4>Binary</h4>
+                    <ul>
+                        <li>Base 2</li>
+                        <li>Uses only 0 and 1</li>
+                        <li>Place values are powers of 2</li>
+                        <li>Used by digital computers</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="true-false-area">
+                <h4>True or False?</h4>
+
+                <div class="tf-item">
+                    <span>Binary uses the digits 0 and 1.</span>
+                    <strong>TRUE</strong>
+                </div>
+
+                <div class="tf-item">
+                    <span>Denary is base 2.</span>
+                    <strong>FALSE</strong>
+                </div>
+
+                <div class="tf-item">
+                    <span>The right-most binary place value is 1.</span>
+                    <strong>TRUE</strong>
+                </div>
+
+                <div class="tf-item">
+                    <span>Every binary position has the same value.</span>
+                    <strong>FALSE</strong>
+                </div>
+
+                <div class="tf-item">
+                    <span>2⁴ has the value 16.</span>
+                    <strong>TRUE</strong>
+                </div>
+
+                <div class="tf-item">
+                    <span>A bit can have three different values.</span>
+                    <strong>FALSE</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- THINK -->
+        <div class="studio-content" id="think">
+
+            <div class="studio-intro">
+                <h3>Think Like a Computer Scientist</h3>
+                <p>
+                    These questions are about understanding, not simply calculating.
+                    Discuss them with a partner or your teacher.
+                </p>
+            </div>
+
+            <div class="thinking-cards">
+
+                <article>
+                    <span>THINK 01</span>
+                    <h4>Why doesn't 101 mean one hundred and one?</h4>
+                    <p>
+                        In denary, the digits have place values based on powers of 10.
+                        In binary, they have place values based on powers of 2.
+                    </p>
+                    <details>
+                        <summary>Key idea</summary>
+                        <p>
+                            Binary 101 means 4 + 0 + 1 = 5.
+                        </p>
+                    </details>
+                </article>
+
+                <article>
+                    <span>THINK 02</span>
+                    <h4>What happens when a bit changes from 0 to 1?</h4>
+                    <p>
+                        The value of that particular place is added to the total.
+                    </p>
+                    <details>
+                        <summary>Example</summary>
+                        <p>
+                            Changing the 16-place from 0 to 1 adds 16 to the number.
+                        </p>
+                    </details>
+                </article>
+
+                <article>
+                    <span>THINK 03</span>
+                    <h4>Why does the place value double?</h4>
+                    <p>
+                        Binary is base 2. Each position is therefore twice the value
+                        of the position immediately to its right.
+                    </p>
+                    <details>
+                        <summary>Check yourself</summary>
+                        <p>
+                            1 → 2 → 4 → 8 → 16 → 32 → 64 → 128
+                        </p>
+                    </details>
+                </article>
+
+                <article>
+                    <span>THINK 04</span>
+                    <h4>Can a binary number contain the digit 2?</h4>
+                    <p>
+                        No. If a number contains 2, 3, 4, etc., it is not a valid
+                        binary representation.
+                    </p>
+                    <details>
+                        <summary>Reason</summary>
+                        <p>
+                            Base 2 has only two available digits: 0 and 1.
+                        </p>
+                    </details>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- QUICK CHECK -->
+        <div class="studio-content" id="quick">
+
+            <div class="studio-intro">
+                <h3>Quick Check</h3>
+                <p>
+                    Try these without looking back at the notes.
+                    Reveal each answer only after you have committed to an answer.
+                </p>
+            </div>
+
+            <div class="quick-list">
+
+                <details>
+                    <summary>1. What base is denary?</summary>
+                    <p><strong>Base 10.</strong></p>
+                </details>
+
+                <details>
+                    <summary>2. What base is binary?</summary>
+                    <p><strong>Base 2.</strong></p>
+                </details>
+
+                <details>
+                    <summary>3. What are the two binary digits?</summary>
+                    <p><strong>0 and 1.</strong></p>
+                </details>
+
+                <details>
+                    <summary>4. What is the place value of the right-most bit?</summary>
+                    <p><strong>1.</strong></p>
+                </details>
+
+                <details>
+                    <summary>5. What is 2⁵?</summary>
+                    <p><strong>32.</strong></p>
+                </details>
+
+                <details>
+                    <summary>6. What is 00010001 in denary?</summary>
+                    <p>16 + 1 = <strong>17.</strong></p>
+                </details>
+
+                <details>
+                    <summary>7. What is 01000001 in denary?</summary>
+                    <p>64 + 1 = <strong>65.</strong></p>
+                </details>
+
+                <details>
+                    <summary>8. What is 10000000 in denary?</summary>
+                    <p><strong>128.</strong></p>
+                </details>
+
+            </div>
+
+            <div class="confidence-check">
+                <h4>Before Assessment</h4>
+                <p>Can you explain this sentence in your own words?</p>
+
+                <div class="quote-box">
+                    “A binary number is a combination of powers of 2.”
+                </div>
+
+                <p>
+                    If you can explain why this statement is true, you are ready
+                    for the assessment.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================== ASSESSMENT ===================== -->
+
+    <section class="assessment panel" id="assessment">
+
+        <div class="section-heading">
+            <span>06</span>
+            <div>
+                <h2>Formative Assessment</h2>
+                <p>10 questions — demonstrate what you have learned</p>
+            </div>
+        </div>
+
+        <div class="assessment-intro">
+            <p>
+                Answer all ten questions. Your result determines your next learning
+                step. Do not worry about mistakes — mistakes tell us what to practise.
+            </p>
+        </div>
+
+        <form id="assessmentForm">
+
+            <div class="question">
+                <p><strong>1.</strong> Denary is a ______ number system.</p>
+                <label><input type="radio" name="q1" value="a"> base 2</label>
+                <label><input type="radio" name="q1" value="b"> base 8</label>
+                <label><input type="radio" name="q1" value="c"> base 10</label>
+                <label><input type="radio" name="q1" value="d"> base 16</label>
+            </div>
+
+            <div class="question">
+                <p><strong>2.</strong> Which digits are used in binary?</p>
+                <label><input type="radio" name="q2" value="a"> 0 and 1</label>
+                <label><input type="radio" name="q2" value="b"> 1 and 2</label>
+                <label><input type="radio" name="q2" value="c"> 0 to 9</label>
+                <label><input type="radio" name="q2" value="d"> 2 and 3</label>
+            </div>
+
+            <div class="question">
+                <p><strong>3.</strong> What is the value of 2⁴?</p>
+                <label><input type="radio" name="q3" value="a"> 4</label>
+                <label><input type="radio" name="q3" value="b"> 8</label>
+                <label><input type="radio" name="q3" value="c"> 16</label>
+                <label><input type="radio" name="q3" value="d"> 32</label>
+            </div>
+
+            <div class="question">
+                <p><strong>4.</strong> What is the right-most place value in binary?</p>
+                <label><input type="radio" name="q4" value="a"> 0</label>
+                <label><input type="radio" name="q4" value="b"> 1</label>
+                <label><input type="radio" name="q4" value="c"> 2</label>
+                <label><input type="radio" name="q4" value="d"> 10</label>
+            </div>
+
+            <div class="question">
+                <p><strong>5.</strong> What is 00000110 in denary?</p>
+                <label><input type="radio" name="q5" value="a"> 4</label>
+                <label><input type="radio" name="q5" value="b"> 5</label>
+                <label><input type="radio" name="q5" value="c"> 6</label>
+                <label><input type="radio" name="q5" value="d"> 7</label>
+            </div>
+
+            <div class="question">
+                <p><strong>6.</strong> What is 00010100 in denary?</p>
+                <label><input type="radio" name="q6" value="a"> 18</label>
+                <label><input type="radio" name="q6" value="b"> 20</label>
+                <label><input type="radio" name="q6" value="c"> 22</label>
+                <label><input type="radio" name="q6" value="d"> 24</label>
+            </div>
+
+            <div class="question">
+                <p><strong>7.</strong> What is 00101001 in denary?</p>
+                <label><input type="radio" name="q7" value="a"> 39</label>
+                <label><input type="radio" name="q7" value="b"> 40</label>
+                <label><input type="radio" name="q7" value="c"> 41</label>
+                <label><input type="radio" name="q7" value="d"> 42</label>
+            </div>
+
+            <div class="question">
+                <p><strong>8.</strong> Which statement is correct?</p>
+                <label><input type="radio" name="q8" value="a"> Binary uses powers of 10.</label>
+                <label><input type="radio" name="q8" value="b"> Binary uses powers of 2.</label>
+                <label><input type="radio" name="q8" value="c"> Binary uses powers of 16.</label>
+                <label><input type="radio" name="q8" value="d"> Binary has ten digits.</label>
+            </div>
+
+            <div class="question">
+                <p><strong>9.</strong> What is 01000001 in denary?</p>
+                <label><input type="radio" name="q9" value="a"> 63</label>
+                <label><input type="radio" name="q9" value="b"> 64</label>
+                <label><input type="radio" name="q9" value="c"> 65</label>
+                <label><input type="radio" name="q9" value="d"> 66</label>
+            </div>
+
+            <div class="question">
+                <p><strong>10.</strong> What is 10000000 in denary?</p>
+                <label><input type="radio" name="q10" value="a"> 64</label>
+                <label><input type="radio" name="q10" value="b"> 100</label>
+                <label><input type="radio" name="q10" value="c"> 127</label>
+                <label><input type="radio" name="q10" value="d"> 128</label>
+            </div>
+
+            <button class="primary-btn" type="submit">Submit Assessment</button>
+
+        </form>
+
+        <div id="assessmentResult" class="assessment-result hidden"></div>
+
+        <div id="nextStep" class="next-step hidden"></div>
+
+    </section>
+
+    <!-- ===================== GAME BREAK ===================== -->
+
+    <section class="game-break panel">
+
+        <div class="game-header">
+            <div>
+                <span>5-MINUTE GAME BREAK</span>
+                <h2>Give Your Brain a Short Break</h2>
+            </div>
+            <div class="game-symbol">▶</div>
+        </div>
+
+        <p>
+            You have completed the learning and assessment stage.
+            If your teacher has approved the game break, choose a genuine
+            Blockly Games activity.
+        </p>
+
+        <div class="game-controls">
+
+            <select id="gameSelect">
+                <option value="https://blockly.games/maze?lang=en">Blockly Maze</option>
+                <option value="https://blockly.games/turtle?lang=en">Blockly Turtle</option>
+                <option value="https://blockly.games/bird?lang=en">Blockly Bird</option>
+                <option value="https://blockly.games/puzzle?lang=en">Blockly Puzzle</option>
+                <option value="https://blockly.games/music?lang=en">Blockly Music</option>
+            </select>
+
+            <button class="primary-btn" id="startGame">Start 5-Minute Game</button>
+
+        </div>
+
+        <div id="gameTimer" class="game-timer hidden">
+            <strong id="timerDisplay">05:00</strong>
+            <span>Return to the lesson when the timer finishes.</span>
+        </div>
+
+        <div id="gameMessage" class="game-message"></div>
+
+    </section>
+
+    <!-- ===================== EXIT TICKET ===================== -->
+
+    <section class="exit-ticket panel">
+
+        <div class="section-heading">
+            <span>07</span>
+            <div>
+                <h2>Exit Ticket</h2>
+                <p>Pause and think about your learning</p>
+            </div>
+        </div>
+
+        <div class="exit-grid">
+
+            <div>
+                <label for="learned">
+                    What is one important idea you learned today?
+                </label>
+                <textarea id="learned" placeholder="Write your answer here..."></textarea>
+            </div>
+
+            <div>
+                <label for="unclear">
+                    What do you still find difficult or unclear?
+                </label>
+                <textarea id="unclear" placeholder="Be honest — this helps your teacher support you."></textarea>
+            </div>
+
+        </div>
+
+        <button class="secondary-btn" id="saveExit">Save Exit Ticket</button>
+        <p id="exitSaved" class="saved-message"></p>
+
+    </section>
+
+    <!-- ===================== NAVIGATION ===================== -->
+
+    <nav class="lesson-nav">
+        <a href="DR-01.html" class="nav-btn">← Previous</a>
+        <a href="INDEX.html" class="nav-btn dashboard">Topic Dashboard</a>
+        <a href="DR-03.html" class="nav-btn">Next →</a>
+    </nav>
+
+</main>
+
+<footer>
+    <strong>IGCSE Computer Science 0984</strong>
+    <span>Topic 1 — Data Representation</span>
+    <span>DR-02</span>
+</footer>
+
+<script src="DR-02.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DR-10 | Sound Representation</title>
+<link rel="stylesheet" href="DR-10.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="brand">
+        <div class="brand-title">IGCSE Computer Science 0984</div>
+        <div class="brand-subtitle">Data Representation • DR-10</div>
+    </div>
+
+    <div class="author">
+        <img src="IMG-Ravi.jpeg" alt="Design and Content by Ravi Raju">
+        <div>
+            <strong>Design and Content by Ravi Raju</strong>
+            <span>Computer Science • EdTech • Physical Computing</span>
+        </div>
+    </div>
+
+    <img class="school-logo" src="MES35.jpg"
+         alt="Modern English School Cairo 35 Years">
+
+</header>
+
+
+<nav class="top-nav">
+    <a href="#learn">Learn</a>
+    <a href="#sampling">Sampling</a>
+    <a href="#quality">Quality</a>
+    <a href="#studio">Student Studio</a>
+    <a href="#assessment">Assessment</a>
+    <a href="#exit">Exit Ticket</a>
+</nav>
+
+
+<main>
+
+<section class="hero">
+
+    <div>
+
+        <span class="lesson-code">DR-10</span>
+
+        <h1>
+            Sound Representation
+            <br>
+            <span>From Sound Waves to Digital Data</span>
+        </h1>
+
+        <p>
+            Sound exists naturally as an analogue signal. Computers, however,
+            store information digitally. In this lesson you will discover how
+            a continuous sound wave is converted into a sequence of numbers
+            that a computer can store and process.
+        </p>
+
+    </div>
+
+    <div class="hero-wave">
+
+        <div class="wave-label">ANALOGUE SOUND</div>
+
+        <svg viewBox="0 0 500 180"
+             xmlns="http://www.w3.org/2000/svg"
+             aria-label="Sound wave illustration">
+
+            <line x1="20" y1="90"
+                  x2="480" y2="90"
+                  class="axis"/>
+
+            <path d="
+                M20 90
+                C45 20, 70 20, 95 90
+                S145 160, 170 90
+                S220 20, 245 90
+                S295 160, 320 90
+                S370 20, 395 90
+                S445 160, 480 90"
+                class="wave"/>
+
+        </svg>
+
+        <div class="wave-caption">
+            Continuous variation in air pressure
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="learn" class="section">
+
+    <div class="section-heading">
+        <span>01</span>
+        <h2>What Is Sound?</h2>
+    </div>
+
+    <div class="concept-grid">
+
+        <article class="concept-card">
+
+            <div class="concept-icon">🌊</div>
+
+            <h3>Sound is a Wave</h3>
+
+            <p>
+                When an object vibrates, it causes particles in the surrounding
+                medium to vibrate. These changes travel as a sound wave.
+            </p>
+
+            <p>
+                A microphone can detect these changes and convert them into
+                an electrical signal.
+            </p>
+
+        </article>
+
+
+        <article class="concept-card">
+
+            <div class="concept-icon">🎙️</div>
+
+            <h3>Microphone</h3>
+
+            <p>
+                A microphone converts sound waves into an electrical signal.
+            </p>
+
+            <p>
+                The electrical signal varies continuously as the sound changes.
+                This is an <strong>analogue signal</strong>.
+            </p>
+
+        </article>
+
+
+        <article class="concept-card">
+
+            <div class="concept-icon">💻</div>
+
+            <h3>Computer</h3>
+
+            <p>
+                A computer stores information using binary data.
+            </p>
+
+            <p>
+                Therefore the analogue sound signal must be converted into
+                digital values before it can be stored as a digital audio file.
+            </p>
+
+        </article>
+
+    </div>
+
+
+    <div class="signal-flow">
+
+        <div class="signal-node">
+            <strong>Sound</strong>
+            <span>Physical vibration</span>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="signal-node">
+            <strong>Microphone</strong>
+            <span>Converts sound to signal</span>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="signal-node highlight">
+            <strong>Analogue Signal</strong>
+            <span>Continuous variation</span>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="signal-node">
+            <strong>Sampling</strong>
+            <span>Measurements taken</span>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="signal-node">
+            <strong>Digital Data</strong>
+            <span>Binary values</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+        <span>02</span>
+        <h2>Analogue and Digital</h2>
+    </div>
+
+    <div class="comparison-grid">
+
+        <article class="comparison-card analogue">
+
+            <h3>Analogue</h3>
+
+            <ul>
+                <li>Continuous signal</li>
+                <li>Can take any value within a range</li>
+                <li>Changes smoothly over time</li>
+                <li>Natural sound is analogue</li>
+                <li>Microphone output can be analogue</li>
+            </ul>
+
+        </article>
+
+
+        <article class="comparison-card digital">
+
+            <h3>Digital</h3>
+
+            <ul>
+                <li>Represented using discrete values</li>
+                <li>Stored as binary data</li>
+                <li>Can be processed by computers</li>
+                <li>Can be copied without analogue degradation</li>
+                <li>Digital audio consists of stored numerical samples</li>
+            </ul>
+
+        </article>
+
+    </div>
+
+
+    <div class="key-idea">
+
+        <strong>Key idea:</strong>
+
+        <p>
+            The original sound is continuous. A computer cannot directly store
+            that continuous wave. Instead, it takes measurements of the signal
+            at regular intervals.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="sampling" class="section">
+
+    <div class="section-heading">
+        <span>03</span>
+        <h2>Sampling — Measuring the Sound</h2>
+    </div>
+
+    <p class="lead">
+        <strong>Sampling</strong> is the process of taking measurements of an
+        analogue sound signal at regular intervals.
+    </p>
+
+
+    <div class="sampling-visual">
+
+        <div class="wave-area">
+
+            <div class="wave-title">
+                Continuous analogue signal
+            </div>
+
+            <svg viewBox="0 0 900 260"
+                 xmlns="http://www.w3.org/2000/svg">
+
+                <line x1="30" y1="130"
+                      x2="870" y2="130"
+                      class="axis"/>
+
+                <path d="
+                    M30 130
+                    C80 35,130 35,180 130
+                    S280 225,330 130
+                    S430 35,480 130
+                    S580 225,630 130
+                    S730 35,780 130
+                    S830 225,870 130"
+                    class="wave"/>
+
+                <g class="sample-dots">
+
+                    <circle cx="50" cy="100" r="7"/>
+                    <circle cx="110" cy="62" r="7"/>
+                    <circle cx="170" cy="119" r="7"/>
+                    <circle cx="230" cy="192" r="7"/>
+                    <circle cx="290" cy="168" r="7"/>
+                    <circle cx="350" cy="96" r="7"/>
+                    <circle cx="410" cy="61" r="7"/>
+                    <circle cx="470" cy="120" r="7"/>
+                    <circle cx="530" cy="192" r="7"/>
+                    <circle cx="590" cy="164" r="7"/>
+                    <circle cx="650" cy="92" r="7"/>
+                    <circle cx="710" cy="62" r="7"/>
+                    <circle cx="770" cy="118" r="7"/>
+                    <circle cx="830" cy="190" r="7"/>
+
+                </g>
+
+            </svg>
+
+        </div>
+
+        <div class="sampling-explanation">
+
+            <div class="sample-step">
+                <span>1</span>
+                <p>
+                    The microphone produces a continuous analogue signal.
+                </p>
+            </div>
+
+            <div class="sample-step">
+                <span>2</span>
+                <p>
+                    Measurements are taken at regular intervals.
+                </p>
+            </div>
+
+            <div class="sample-step">
+                <span>3</span>
+                <p>
+                    Each measurement is called a <strong>sample</strong>.
+                </p>
+            </div>
+
+            <div class="sample-step">
+                <span>4</span>
+                <p>
+                    Each sample is converted into a digital numerical value.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+        <span>04</span>
+        <h2>Sample Rate</h2>
+    </div>
+
+    <div class="definition-box">
+
+        <strong>Sample rate</strong>
+
+        <p>
+            The number of samples taken from an analogue sound signal
+            <strong>per second</strong>.
+        </p>
+
+        <div class="unit-definition">
+            Measured in <strong>samples per second (Hz)</strong>
+        </div>
+
+    </div>
+
+
+    <div class="rate-grid">
+
+        <article>
+            <h3>Low Sample Rate</h3>
+
+            <div class="sample-bars low">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <p>
+                Fewer measurements are taken. More detail between samples
+                may be lost.
+            </p>
+        </article>
+
+
+        <article>
+            <h3>High Sample Rate</h3>
+
+            <div class="sample-bars high">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+            </div>
+
+            <p>
+                More measurements are taken every second, giving a more
+                detailed representation of changes in the original signal.
+            </p>
+        </article>
+
+    </div>
+
+
+    <div class="important-note">
+
+        <strong>Remember:</strong>
+
+        <p>
+            Increasing the sample rate means that the computer takes
+            measurements more frequently.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+        <span>05</span>
+        <h2>Sample Resolution / Bit Depth</h2>
+    </div>
+
+    <p class="lead">
+        Sampling tells us <em>when</em> measurements are taken.
+        We also need to know how precisely each measurement is represented.
+    </p>
+
+
+    <div class="depth-visual">
+
+        <div class="depth-level">
+            <div class="levels level-low">
+                <span>0</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+            </div>
+
+            <h3>Low Sample Resolution</h3>
+
+            <p>
+                Fewer possible values are available to represent the amplitude
+                of each sample.
+            </p>
+
+        </div>
+
+
+        <div class="depth-level">
+
+            <div class="levels level-high">
+
+                <span>0</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+
+            </div>
+
+            <h3>Higher Sample Resolution</h3>
+
+            <p>
+                More possible values allow each sample to represent the
+                original signal more precisely.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="definition-box">
+
+        <strong>Sample resolution / bit depth</strong>
+
+        <p>
+            The number of bits used to store the value of each sample.
+        </p>
+
+        <p>
+            More bits per sample provide more possible amplitude values.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="quality" class="section">
+
+    <div class="section-heading">
+        <span>06</span>
+        <h2>How Sampling Affects Quality</h2>
+    </div>
+
+
+    <div class="quality-grid">
+
+        <article class="quality-card">
+
+            <div class="quality-number">01</div>
+
+            <h3>Increase Sample Rate</h3>
+
+            <p>
+                More samples are taken each second.
+            </p>
+
+            <p>
+                This gives a more detailed representation of how the signal
+                changes over time.
+            </p>
+
+            <div class="effect">
+                Higher sample rate → better representation of time variation
+            </div>
+
+        </article>
+
+
+        <article class="quality-card">
+
+            <div class="quality-number">02</div>
+
+            <h3>Increase Sample Resolution</h3>
+
+            <p>
+                More bits are available to represent each sample.
+            </p>
+
+            <p>
+                This allows the amplitude of the original signal to be
+                represented more precisely.
+            </p>
+
+            <div class="effect">
+                Higher resolution → more possible amplitude values
+            </div>
+
+        </article>
+
+
+        <article class="quality-card">
+
+            <div class="quality-number">03</div>
+
+            <h3>Increase Both</h3>
+
+            <p>
+                A high sample rate and high sample resolution can produce a
+                more accurate digital representation of the original sound.
+            </p>
+
+            <div class="effect">
+                Better representation → potentially larger file size
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+        <span>07</span>
+        <h2>Quantisation</h2>
+    </div>
+
+    <p>
+        A real analogue signal can have a huge number of possible amplitude
+        values. A digital system has a limited number of values available.
+    </p>
+
+    <div class="quantisation-demo">
+
+        <div class="analogue-side">
+
+            <h3>Original Signal</h3>
+
+            <svg viewBox="0 0 500 200"
+                 xmlns="http://www.w3.org/2000/svg">
+
+                <line x1="20" y1="100"
+                      x2="480" y2="100"
+                      class="axis"/>
+
+                <path d="
+                    M20 100
+                    C70 20,110 20,150 100
+                    S230 180,270 100
+                    S350 20,390 100
+                    S440 175,480 100"
+                    class="wave"/>
+
+            </svg>
+
+            <p>
+                The analogue signal varies continuously.
+            </p>
+
+        </div>
+
+
+        <div class="quant-arrow">→</div>
+
+
+        <div class="digital-side">
+
+            <h3>Quantised Values</h3>
+
+            <div class="quant-grid">
+
+                <span>7</span>
+                <span>6</span>
+                <span>5</span>
+                <span>4</span>
+                <span>3</span>
+                <span>2</span>
+                <span>1</span>
+                <span>0</span>
+
+            </div>
+
+            <p>
+                Each sample is assigned the nearest available digital level.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="important-note">
+
+        <strong>Key idea:</strong>
+
+        <p>
+            Quantisation converts each measured sample into one of the
+            available discrete values.
+        </p>
+
+        <p>
+            If there are too few possible values, the digital representation
+            may be less accurate.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+        <span>08</span>
+        <h2>Sample Rate vs Sample Resolution</h2>
+    </div>
+
+    <div class="difference-table">
+
+        <div class="difference-header">
+            <span></span>
+            <span>Sample Rate</span>
+            <span>Sample Resolution</span>
+        </div>
+
+        <div class="difference-row">
+            <span><strong>Question</strong></span>
+            <span>How often are measurements taken?</span>
+            <span>How precisely is each measurement represented?</span>
+        </div>
+
+        <div class="difference-row">
+            <span><strong>Related to</strong></span>
+            <span>Samples per second</span>
+            <span>Bits per sample</span>
+        </div>
+
+        <div class="difference-row">
+            <span><strong>Increasing it</strong></span>
+            <span>More samples every second</span>
+            <span>More possible values per sample</span>
+        </div>
+
+        <div class="difference-row">
+            <span><strong>Effect</strong></span>
+            <span>More detail over time</span>
+            <span>More precise amplitude representation</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="studio" class="section studio-section">
+
+    <div class="section-heading">
+        <span>09</span>
+        <h2>Student Studio</h2>
+    </div>
+
+    <p class="studio-intro">
+        Work through these activities in order. The purpose is not simply
+        to get an answer — it is to understand what happens to sound when
+        an analogue signal becomes digital data.
+    </p>
+
+
+    <div class="studio-tabs">
+
+        <button class="studio-tab active" data-tab="soundLab">
+            Explore Sound
+        </button>
+
+        <button class="studio-tab" data-tab="samplingLab">
+            Sampling Visualiser
+        </button>
+
+        <button class="studio-tab" data-tab="rateLab">
+            Sample Rate Lab
+        </button>
+
+        <button class="studio-tab" data-tab="resolutionLab">
+            Resolution Lab
+        </button>
+
+        <button class="studio-tab" data-tab="quantLab">
+            Quantisation
+        </button>
+
+        <button class="studio-tab" data-tab="compareLab">
+            Compare Settings
+        </button>
+
+        <button class="studio-tab" data-tab="reasonLab">
+            Reasoning Practice
+        </button>
+
+        <button class="studio-tab" data-tab="mistakeLab">
+            Fix the Mistake
+        </button>
+
+        <button class="studio-tab" data-tab="examLab">
+            Exam Method
+        </button>
+
+        <button class="studio-tab" data-tab="thinkLab">
+            Think Deeper
+        </button>
+
+        <button class="studio-tab" data-tab="quickLab">
+            Quick Check
+        </button>
+
+    </div>
+
+
+    <!-- SOUND LAB -->
+
+    <div id="soundLab" class="studio-panel active">
+
+        <div class="learning-panel">
+
+            <h3>Follow the Journey of a Sound</h3>
+
+            <div class="journey">
+
+                <div class="journey-step">
+                    <span>1</span>
+                    <strong>Sound Wave</strong>
+                    <p>Continuous physical vibration.</p>
+                </div>
+
+                <div class="journey-arrow">→</div>
+
+                <div class="journey-step">
+                    <span>2</span>
+                    <strong>Microphone</strong>
+                    <p>Converts sound into an electrical signal.</p>
+                </div>
+
+                <div class="journey-arrow">→</div>
+
+                <div class="journey-step">
+                    <span>3</span>
+                    <strong>Sampling</strong>
+                    <p>Measures the signal repeatedly.</p>
+                </div>
+
+                <div class="journey-arrow">→</div>
+
+                <div class="journey-step">
+                    <span>4</span>
+                    <strong>Quantisation</strong>
+                    <p>Assigns each sample a digital value.</p>
+                </div>
+
+                <div class="journey-arrow">→</div>
+
+                <div class="journey-step">
+                    <span>5</span>
+                    <strong>Binary Data</strong>
+                    <p>Values can be stored by a computer.</p>
+                </div>
+
+            </div>
+
+            <div class="reflection-box">
+
+                <h4>Stop and explain</h4>
+
+                <p>
+                    In your own words, explain why a computer cannot simply
+                    store the original continuous sound wave.
+                </p>
+
+                <textarea id="soundReflection"
+                    placeholder="Write your explanation here..."></textarea>
+
+                <button id="saveSoundReflection"
+                        class="action-button">
+                    Save My Explanation
+                </button>
+
+                <span id="soundSaved"
+                      class="saved-message"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SAMPLING VISUALISER -->
+
+    <div id="samplingLab" class="studio-panel">
+
+        <div class="learning-panel">
+
+            <h3>What Does Sampling Actually Do?</h3>
+
+            <p>
+                Move the slider to change the number of measurements shown.
+                Notice how a small number of samples gives fewer observations
+                of the changing signal.
+            </p>
+
+            <label class="slider-label">
+                Number of samples:
+                <strong id="sampleCountLabel">8</strong>
+            </label>
+
+            <input id="sampleSlider"
+                   type="range"
+                   min="4"
+                   max="32"
+                   value="8">
+
+            <canvas id="samplingCanvas"
+                    width="1000"
+                    height="300">
+            </canvas>
+
+            <div id="samplingExplanation"
+                 class="interactive-feedback">
+                Eight samples are being taken.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RATE LAB -->
+
+    <div id="rateLab" class="studio-panel">
+
+        <div class="lab-grid">
+
+            <div class="input-card">
+
+                <h3>Sample Rate Explorer</h3>
+
+                <label>
+                    Sample rate:
+                    <input id="sampleRateInput"
+                           type="number"
+                           min="1"
+                           value="8000">
+                </label>
+
+                <button id="rateExplain"
+                        class="action-button">
+                    Analyse Sample Rate
+                </button>
+
+            </div>
+
+            <div id="rateResult"
+                 class="result-card">
+
+                <h3>What does it mean?</h3>
+
+                <p>
+                    Enter a sample rate and analyse what it means.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESOLUTION LAB -->
+
+    <div id="resolutionLab" class="studio-panel">
+
+        <div class="resolution-explorer">
+
+            <h3>Sample Resolution Explorer</h3>
+
+            <p>
+                The number of possible amplitude values depends on the number
+                of bits used for each sample.
+            </p>
+
+            <div class="bit-options">
+
+                <button class="bit-option"
+                        data-bits="2">
+                    2 bits
+                </button>
+
+                <button class="bit-option"
+                        data-bits="4">
+                    4 bits
+                </button>
+
+                <button class="bit-option"
+                        data-bits="8">
+                    8 bits
+                </button>
+
+                <button class="bit-option"
+                        data-bits="16">
+                    16 bits
+                </button>
+
+            </div>
+
+            <div id="resolutionResult"
+                 class="resolution-result">
+
+                Select a bit depth to see how many values are possible.
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUANTISATION -->
+
+    <div id="quantLab" class="studio-panel">
+
+        <div class="learning-panel">
+
+            <h3>Quantisation Thought Experiment</h3>
+
+            <p>
+                Imagine that a sample has an amplitude somewhere between
+                two available digital levels.
+            </p>
+
+            <div class="quant-choice">
+
+                <button class="quant-choice-button"
+                        data-choice="low">
+                    Choose Lower Level
+                </button>
+
+                <button class="quant-choice-button"
+                        data-choice="high">
+                    Choose Higher Level
+                </button>
+
+            </div>
+
+            <div id="quantFeedback"
+                 class="interactive-feedback">
+
+                Choose one of the available levels.
+
+            </div>
+
+            <div class="quant-note">
+                In a real system the analogue value is quantised according to
+                the available digital levels. The important idea is that a
+                continuous range is represented by discrete values.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- COMPARE -->
+
+    <div id="compareLab" class="studio-panel">
+
+        <div class="comparison-settings">
+
+            <div class="setting-card">
+
+                <h3>Audio A</h3>
+
+                <label>
+                    Sample rate
+                    <select id="audioARate">
+                        <option value="8000">8 kHz</option>
+                        <option value="16000">16 kHz</option>
+                        <option value="44100" selected>44.1 kHz</option>
+                        <option value="48000">48 kHz</option>
+                    </select>
+                </label>
+
+                <label>
+                    Sample resolution
+                    <select id="audioADepth">
+                        <option value="8">8-bit</option>
+                        <option value="16" selected>16-bit</option>
+                        <option value="24">24-bit</option>
+                    </select>
+                </label>
+
+            </div>
+
+
+            <div class="setting-card">
+
+                <h3>Audio B</h3>
+
+                <label>
+                    Sample rate
+                    <select id="audioBRate">
+                        <option value="8000">8 kHz</option>
+                        <option value="16000">16 kHz</option>
+                        <option value="44100">44.1 kHz</option>
+                        <option value="48000" selected>48 kHz</option>
+                    </select>
+                </label>
+
+                <label>
+                    Sample resolution
+                    <select id="audioBDepth">
+                        <option value="8">8-bit</option>
+                        <option value="16">16-bit</option>
+                        <option value="24" selected>24-bit</option>
+                    </select>
+                </label>
+
+            </div>
+
+        </div>
+
+        <button id="compareAudio"
+                class="action-button centred">
+            Compare
+        </button>
+
+        <div id="audioComparison"
+             class="comparison-result">
+        </div>
+
+    </div>
+
+
+    <!-- REASONING -->
+
+    <div id="reasonLab" class="studio-panel">
+
+        <div class="practice-question">
+
+            <h3>Scenario 1</h3>
+
+            <p>
+                Two recordings have the same sample resolution.
+                Recording A uses 8,000 samples per second.
+                Recording B uses 44,100 samples per second.
+            </p>
+
+            <p>
+                Which recording represents changes in the sound more frequently?
+            </p>
+
+            <button class="reveal-button"
+                    data-answer="Recording B. It takes 44,100 samples each second compared with 8,000 samples each second for A.">
+                Reveal Answer
+            </button>
+
+            <div class="reveal-answer"></div>
+
+        </div>
+
+
+        <div class="practice-question">
+
+            <h3>Scenario 2</h3>
+
+            <p>
+                Two recordings use the same sample rate.
+                One uses 8 bits per sample and the other uses 16 bits per sample.
+            </p>
+
+            <p>
+                Which can represent the amplitude of each sample more precisely?
+            </p>
+
+            <button class="reveal-button"
+                    data-answer="The 16-bit recording. It has more bits available for each sample and therefore more possible amplitude values.">
+                Reveal Answer
+            </button>
+
+            <div class="reveal-answer"></div>
+
+        </div>
+
+
+        <div class="practice-question">
+
+            <h3>Scenario 3</h3>
+
+            <p>
+                A student says: “A higher sample rate means more bits are used
+                to store each sample.”
+            </p>
+
+            <p>Is this correct?</p>
+
+            <button class="reveal-button"
+                    data-answer="No. Sample rate tells us how many samples are taken per second. Sample resolution tells us how many bits are used for each sample. They are different properties.">
+                Reveal Answer
+            </button>
+
+            <div class="reveal-answer"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MISTAKES -->
+
+    <div id="mistakeLab" class="studio-panel">
+
+        <div class="mistake-card">
+
+            <h3>Mistake 1</h3>
+
+            <blockquote>
+                “Sampling means converting binary into sound.”
+            </blockquote>
+
+            <button class="action-button"
+                    data-mistake="1">
+                Diagnose
+            </button>
+
+            <div id="diagnosis1"
+                 class="diagnosis"></div>
+
+        </div>
+
+
+        <div class="mistake-card">
+
+            <h3>Mistake 2</h3>
+
+            <blockquote>
+                “Sample rate tells us how many bits are used for each sample.”
+            </blockquote>
+
+            <button class="action-button"
+                    data-mistake="2">
+                Diagnose
+            </button>
+
+            <div id="diagnosis2"
+                 class="diagnosis"></div>
+
+        </div>
+
+
+        <div class="mistake-card">
+
+            <h3>Mistake 3</h3>
+
+            <blockquote>
+                “Increasing sample resolution means fewer possible values.”
+            </blockquote>
+
+            <button class="action-button"
+                    data-mistake="3">
+                Diagnose
+            </button>
+
+            <div id="diagnosis3"
+                 class="diagnosis"></div>
+
+        </div>
+
+
+        <div class="mistake-card">
+
+            <h3>Mistake 4</h3>
+
+            <blockquote>
+                “A digital recording is exactly the same continuous signal as
+                the original sound.”
+            </blockquote>
+
+            <button class="action-button"
+                    data-mistake="4">
+                Diagnose
+            </button>
+
+            <div id="diagnosis4"
+                 class="diagnosis"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- EXAM METHOD -->
+
+    <div id="examLab" class="studio-panel">
+
+        <div class="exam-method">
+
+            <h3>How to Answer Sound Questions</h3>
+
+            <ol>
+
+                <li>
+                    <strong>Identify the concept.</strong>
+                    Is the question about sampling, sample rate, sample
+                    resolution or quantisation?
+                </li>
+
+                <li>
+                    <strong>Define the term.</strong>
+                    Use precise Computer Science terminology.
+                </li>
+
+                <li>
+                    <strong>Explain the effect.</strong>
+                    Do not merely say “better quality”.
+                    Explain what changes.
+                </li>
+
+                <li>
+                    <strong>Compare carefully.</strong>
+                    If two recordings are compared, identify what stays the
+                    same and what changes.
+                </li>
+
+                <li>
+                    <strong>Link quality and storage.</strong>
+                    Higher sampling settings generally require more data.
+                    DR-11 will calculate exactly how much.
+                </li>
+
+            </ol>
+
+
+            <div class="exam-tip">
+
+                <strong>Weak answer:</strong>
+
+                “Higher sample rate gives better sound.”
+
+                <br><br>
+
+                <strong>Stronger answer:</strong>
+
+                “A higher sample rate takes more samples each second, giving
+                a more detailed representation of how the analogue signal
+                changes over time.”
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- THINK DEEPER -->
+
+    <div id="thinkLab" class="studio-panel">
+
+        <div class="thinking-card">
+
+            <h3>Think Deeper</h3>
+
+            <div class="thinking-question">
+
+                <span>1</span>
+
+                <p>
+                    Why is a microphone needed when creating a digital
+                    recording from a real-world sound?
+                </p>
+
+            </div>
+
+
+            <div class="thinking-question">
+
+                <span>2</span>
+
+                <p>
+                    Why does increasing sample rate produce more samples
+                    rather than more bits per sample?
+                </p>
+
+            </div>
+
+
+            <div class="thinking-question">
+
+                <span>3</span>
+
+                <p>
+                    Why does increasing sample resolution allow more possible
+                    amplitude values?
+                </p>
+
+            </div>
+
+
+            <div class="thinking-question">
+
+                <span>4</span>
+
+                <p>
+                    Why can improving both sample rate and sample resolution
+                    increase the size of an audio file?
+                </p>
+
+            </div>
+
+
+            <textarea id="deepThinking"
+                placeholder="Write your reasoning here..."></textarea>
+
+            <button id="saveDeepThinking"
+                    class="action-button">
+                Save My Thinking
+            </button>
+
+            <span id="deepSaved"
+                  class="saved-message"></span>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUICK CHECK -->
+
+    <div id="quickLab" class="studio-panel">
+
+        <div class="quick-check">
+
+            <h3>Quick Check</h3>
+
+            <div class="quick-item">
+
+                <p>
+                    <strong>Q1.</strong>
+                    What is sampling?
+                </p>
+
+                <button data-answer=
+                    "Taking measurements of an analogue signal at regular intervals.">
+                    Reveal
+                </button>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="quick-item">
+
+                <p>
+                    <strong>Q2.</strong>
+                    What does sample rate measure?
+                </p>
+
+                <button data-answer=
+                    "The number of samples taken per second.">
+                    Reveal
+                </button>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="quick-item">
+
+                <p>
+                    <strong>Q3.</strong>
+                    What does sample resolution describe?
+                </p>
+
+                <button data-answer=
+                    "The number of bits used to represent each sample.">
+                    Reveal
+                </button>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="quick-item">
+
+                <p>
+                    <strong>Q4.</strong>
+                    What happens when sample rate increases?
+                </p>
+
+                <button data-answer=
+                    "More samples are taken each second.">
+                    Reveal
+                </button>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="quick-item">
+
+                <p>
+                    <strong>Q5.</strong>
+                    What happens when sample resolution increases?
+                </p>
+
+                <button data-answer=
+                    "More bits are available per sample, allowing more possible amplitude values.">
+                    Reveal
+                </button>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="quick-item">
+
+                <p>
+                    <strong>Q6.</strong>
+                    What is quantisation?
+                </p>
+
+                <button data-answer=
+                    "Assigning each measured sample to one of the available discrete digital values.">
+                    Reveal
+                </button>
+
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="assessment"
+         class="section assessment-section">
+
+    <div class="section-heading">
+        <span>10</span>
+        <h2>Formative Assessment</h2>
+    </div>
+
+    <p class="lead">
+        Ten questions. Think carefully about the terminology before choosing
+        your answer.
+    </p>
+
+
+    <form id="assessmentForm">
+
+
+        <div class="assessment-question">
+
+            <h3>
+                1. What is sampling?
+            </h3>
+
+            <label>
+                <input type="radio" name="q1" value="a">
+                Converting binary data into sound
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="b">
+                Taking measurements of an analogue signal at regular intervals
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="c">
+                Increasing the volume of a recording
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="d">
+                Compressing an audio file
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                2. What does sample rate measure?
+            </h3>
+
+            <label>
+                <input type="radio" name="q2" value="a">
+                Bits per sample
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="b">
+                Samples per second
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="c">
+                Bytes per file
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="d">
+                Amplitude per second
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                3. What does sample resolution determine?
+            </h3>
+
+            <label>
+                <input type="radio" name="q3" value="a">
+                The number of samples taken each second
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="b">
+                The number of bits used for each sample
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="c">
+                The length of the recording
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="d">
+                The number of speakers
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                4. What is an analogue signal?
+            </h3>
+
+            <label>
+                <input type="radio" name="q4" value="a">
+                A signal represented only by 0 and 1
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="b">
+                A continuous signal that can vary over a range
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="c">
+                A compressed file
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="d">
+                A sequence of machine instructions
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                5. Increasing sample rate means:
+            </h3>
+
+            <label>
+                <input type="radio" name="q5" value="a">
+                Fewer samples are taken each second
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="b">
+                More samples are taken each second
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="c">
+                Fewer bits are used per sample
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="d">
+                The sound becomes automatically louder
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                6. Increasing sample resolution provides:
+            </h3>
+
+            <label>
+                <input type="radio" name="q6" value="a">
+                More possible amplitude values
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="b">
+                Fewer possible amplitude values
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="c">
+                Fewer samples per second
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="d">
+                A lower sample rate
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                7. Which statement correctly compares sample rate and
+                sample resolution?
+            </h3>
+
+            <label>
+                <input type="radio" name="q7" value="a">
+                They are exactly the same thing
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="b">
+                Sample rate concerns samples per second; resolution concerns
+                bits per sample
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="c">
+                Sample rate concerns bits per sample
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="d">
+                Resolution concerns seconds per sample
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                8. What happens during quantisation?
+            </h3>
+
+            <label>
+                <input type="radio" name="q8" value="a">
+                The microphone records the sound
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="b">
+                Samples are assigned available discrete digital values
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="c">
+                The sound wave becomes louder
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="d">
+                The file is automatically compressed
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                9. Which recording can represent changes in a sound signal
+                more frequently?
+            </h3>
+
+            <p>
+                Recording A: 8,000 samples/second<br>
+                Recording B: 44,100 samples/second
+            </p>
+
+            <label>
+                <input type="radio" name="q9" value="a">
+                A
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="b">
+                B
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="c">
+                Both are identical
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="d">
+                Neither
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                10. Which statement is correct?
+            </h3>
+
+            <label>
+                <input type="radio" name="q10" value="a">
+                Higher sample rate means fewer samples
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="b">
+                Higher resolution means fewer possible values
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="c">
+                Higher sample rate and resolution can require more storage
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="d">
+                Sampling is not needed for digital sound
+            </label>
+
+        </div>
+
+
+        <button type="submit"
+                class="assessment-button">
+            Submit Assessment
+        </button>
+
+    </form>
+
+
+    <div id="assessmentResult"
+         class="assessment-result">
+    </div>
+
+
+    <div id="remediation"
+         class="remediation hidden">
+
+        <h3>Targeted Remediation</h3>
+
+        <p>
+            Your score is below the 70% mastery threshold.
+            Revisit these core ideas before retaking the assessment:
+        </p>
+
+        <ul>
+            <li>Analogue signals are continuous.</li>
+            <li>Sampling takes measurements at regular intervals.</li>
+            <li>Sample rate = samples per second.</li>
+            <li>Sample resolution = bits used per sample.</li>
+            <li>Higher sample rate means more samples each second.</li>
+            <li>Higher resolution means more possible amplitude values.</li>
+            <li>Quantisation assigns samples to discrete digital values.</li>
+        </ul>
+
+        <button id="retakeButton"
+                class="action-button">
+            Retake Assessment
+        </button>
+
+    </div>
+
+
+    <div id="mastery"
+         class="mastery hidden">
+
+        <h3>Excellent — Sound Representation Mastered!</h3>
+
+        <p>
+            You are ready to move from concepts to calculations.
+        </p>
+
+        <a href="DR-11.html"
+           class="next-button">
+            Continue to DR-11 →
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="section game-section">
+
+    <div class="section-heading">
+        <span>11</span>
+        <h2>5-Minute Game Break</h2>
+    </div>
+
+    <p>
+        You have completed the learning section. Take a short programming
+        break before returning for the final reflection.
+    </p>
+
+
+    <div class="game-card">
+
+        <div>
+
+            <h3>Blockly Games — Music</h3>
+
+            <p>
+                Experiment with programming blocks to create musical patterns.
+                This is a genuine Blockly programming activity, separate from
+                the academic assessment.
+            </p>
+
+        </div>
+
+
+        <div id="gameTimer"
+             class="timer-display">
+            05:00
+        </div>
+
+
+        <div class="game-actions">
+
+            <button id="startGame"
+                    class="action-button">
+                Start 5-Minute Break
+            </button>
+
+            <a href="https://blockly.games/music?lang=en"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="external-game">
+                Open Blockly Music ↗
+            </a>
+
+        </div>
+
+
+        <div id="gameMessage"
+             class="game-message">
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="exit"
+         class="section exit-section">
+
+    <div class="section-heading">
+        <span>12</span>
+        <h2>Exit Ticket</h2>
+    </div>
+
+    <p class="lead">
+        Finish the lesson by explaining what you understand rather than
+        simply reporting a score.
+    </p>
+
+
+    <div class="exit-grid">
+
+        <label>
+
+            What is sampling?
+
+            <textarea id="exitSampling"
+                placeholder="Explain it in your own words..."></textarea>
+
+        </label>
+
+
+        <label>
+
+            What is the difference between sample rate and sample resolution?
+
+            <textarea id="exitDifference"
+                placeholder="Explain the difference..."></textarea>
+
+        </label>
+
+
+        <label>
+
+            What do you still need to practise?
+
+            <textarea id="exitPractice"
+                placeholder="Be honest — this helps you learn."></textarea>
+
+        </label>
+
+    </div>
+
+
+    <button id="saveExit"
+            class="action-button">
+        Save Exit Ticket
+    </button>
+
+    <span id="exitSaved"
+          class="saved-message"></span>
+
+</section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-navigation">
+
+        <a href="DR-09.html">
+            ← DR-09
+        </a>
+
+        <a href="INDEX.html">
+            🏠 Topic Dashboard
+        </a>
+
+        <a href="DR-11.html">
+            DR-11 →
+        </a>
+
+    </div>
+
+    <p>
+        IGCSE Computer Science 0984 • Data Representation • DR-10
+    </p>
+
+    <p>
+        Design and Content by Ravi Raju
+    </p>
+
+</footer>
+
+
+<script src="DR-10.js"></script>
+
+</body>
+</html>

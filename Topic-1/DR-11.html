@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DR-11 | Sound Calculations & File Size</title>
+<link rel="stylesheet" href="DR-11.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="brand">
+        <div class="brand-title">IGCSE Computer Science 0984</div>
+        <div class="brand-subtitle">Data Representation • DR-11</div>
+    </div>
+
+    <div class="author">
+        <img src="IMG-Ravi.jpeg" alt="Design and Content by Ravi Raju">
+        <div>
+            <strong>Design and Content by Ravi Raju</strong>
+            <span>Computer Science • EdTech • Physical Computing</span>
+        </div>
+    </div>
+
+    <img class="school-logo"
+         src="MES35.jpg"
+         alt="Modern English School Cairo 35 Years">
+
+</header>
+
+
+<nav class="top-nav">
+    <a href="#learn">Learn</a>
+    <a href="#formula">Formula</a>
+    <a href="#worked">Worked Examples</a>
+    <a href="#studio">Student Studio</a>
+    <a href="#assessment">Assessment</a>
+    <a href="#exit">Exit Ticket</a>
+</nav>
+
+
+<main>
+
+<section class="hero">
+
+    <div>
+
+        <span class="lesson-code">DR-11</span>
+
+        <h1>
+            Sound Calculations
+            <br>
+            <span>Sampling, Bit Depth & File Size</span>
+        </h1>
+
+        <p>
+            In DR-10 you learned how analogue sound becomes digital data.
+            Now we will calculate how much data is produced. You will learn
+            how sample rate, sample resolution, duration and number of channels
+            affect the amount of storage required.
+        </p>
+
+        <div class="hero-tags">
+            <span>Sample Rate</span>
+            <span>Bit Depth</span>
+            <span>Duration</span>
+            <span>Channels</span>
+            <span>File Size</span>
+        </div>
+
+    </div>
+
+    <div class="formula-hero">
+
+        <div class="formula-label">
+            CORE IDEA
+        </div>
+
+        <div class="big-formula">
+            File size
+            <br>
+            =
+            <br>
+            Sample rate ×
+            bit depth ×
+            duration ×
+            channels
+        </div>
+
+        <div class="formula-note">
+            Result is initially in <strong>bits</strong>.
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="learn" class="section">
+
+    <div class="section-heading">
+        <span>01</span>
+        <h2>What Determines the Size of a Sound File?</h2>
+    </div>
+
+    <p class="lead">
+        For an uncompressed digital sound recording, four pieces of information
+        are especially important.
+    </p>
+
+    <div class="factor-grid">
+
+        <article class="factor-card">
+
+            <div class="factor-number">1</div>
+
+            <h3>Sample Rate</h3>
+
+            <p>
+                How many samples are taken every second?
+            </p>
+
+            <div class="factor-example">
+                44,100 samples/s
+            </div>
+
+            <p>
+                Higher sample rate → more samples → more data.
+            </p>
+
+        </article>
+
+
+        <article class="factor-card">
+
+            <div class="factor-number">2</div>
+
+            <h3>Sample Resolution</h3>
+
+            <p>
+                How many bits are used to represent each sample?
+            </p>
+
+            <div class="factor-example">
+                16 bits/sample
+            </div>
+
+            <p>
+                Higher bit depth → more bits per sample → more data.
+            </p>
+
+        </article>
+
+
+        <article class="factor-card">
+
+            <div class="factor-number">3</div>
+
+            <h3>Duration</h3>
+
+            <p>
+                How long is the recording?
+            </p>
+
+            <div class="factor-example">
+                60 seconds
+            </div>
+
+            <p>
+                Longer recording → more samples → more data.
+            </p>
+
+        </article>
+
+
+        <article class="factor-card">
+
+            <div class="factor-number">4</div>
+
+            <h3>Channels</h3>
+
+            <p>
+                How many separate audio channels are recorded?
+            </p>
+
+            <div class="factor-example">
+                Mono = 1<br>
+                Stereo = 2
+            </div>
+
+            <p>
+                More channels → more sample data.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<section id="formula" class="section">
+
+    <div class="section-heading">
+        <span>02</span>
+        <h2>The Sound File-Size Formula</h2>
+    </div>
+
+    <div class="formula-card">
+
+        <div class="formula-main">
+            File size in bits
+            =
+            sample rate × sample resolution × duration × channels
+        </div>
+
+        <div class="formula-breakdown">
+
+            <div>
+                <strong>Sample rate</strong>
+                <span>samples per second</span>
+            </div>
+
+            <div>
+                <strong>Sample resolution</strong>
+                <span>bits per sample</span>
+            </div>
+
+            <div>
+                <strong>Duration</strong>
+                <span>seconds</span>
+            </div>
+
+            <div>
+                <strong>Channels</strong>
+                <span>1, 2, etc.</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="unit-cancellation">
+
+        <h3>Why does the formula work?</h3>
+
+        <div class="unit-chain">
+            samples/s × bits/sample × seconds
+            <br>
+            =
+            <br>
+            <strong>bits</strong>
+        </div>
+
+        <p>
+            The word “samples” cancels with “per sample”, while seconds
+            cancels with “per second”. This leaves the amount of data in bits.
+        </p>
+
+    </div>
+
+
+    <div class="conversion-box">
+
+        <h3>Then Convert the Result</h3>
+
+        <div class="conversion-chain">
+
+            <div>bits</div>
+            <span>÷ 8</span>
+            <div>bytes</div>
+            <span>÷ 1024</span>
+            <div>KiB</div>
+            <span>÷ 1024</span>
+            <div>MiB</div>
+
+        </div>
+
+        <p>
+            Use the unit requested by the question. Do not stop at bits if
+            the question asks for bytes or MiB.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+        <span>03</span>
+        <h2>Important Storage Units</h2>
+    </div>
+
+    <div class="storage-table">
+
+        <div class="storage-row header">
+            <span>Unit</span>
+            <span>Relationship</span>
+            <span>Remember</span>
+        </div>
+
+        <div class="storage-row">
+            <span>1 byte</span>
+            <span>8 bits</span>
+            <span>÷ 8 from bits</span>
+        </div>
+
+        <div class="storage-row">
+            <span>1 KiB</span>
+            <span>1024 bytes</span>
+            <span>÷ 1024 from bytes</span>
+        </div>
+
+        <div class="storage-row">
+            <span>1 MiB</span>
+            <span>1024 KiB</span>
+            <span>÷ 1024 from KiB</span>
+        </div>
+
+        <div class="storage-row">
+            <span>1 GiB</span>
+            <span>1024 MiB</span>
+            <span>÷ 1024 from MiB</span>
+        </div>
+
+    </div>
+
+    <div class="warning-box">
+        <strong>Exam habit:</strong>
+        Always check the unit in the question before doing the final conversion.
+    </div>
+
+</section>
+
+
+<section id="worked" class="section">
+
+    <div class="section-heading">
+        <span>04</span>
+        <h2>Worked Examples</h2>
+    </div>
+
+
+    <article class="worked-example">
+
+        <div class="example-title">
+            Example 1 — Mono Recording
+        </div>
+
+        <p>
+            A mono recording has a sample rate of
+            <strong>8,000 samples per second</strong>,
+            a sample resolution of <strong>8 bits</strong>,
+            and lasts <strong>10 seconds</strong>.
+            Calculate the file size in bytes.
+        </p>
+
+        <div class="calculation">
+
+            <div>Step 1: Calculate bits</div>
+
+            <strong>
+                8,000 × 8 × 10 × 1
+                = 640,000 bits
+            </strong>
+
+            <div>Step 2: Convert bits to bytes</div>
+
+            <strong>
+                640,000 ÷ 8
+                = 80,000 bytes
+            </strong>
+
+            <div class="answer">
+                Answer: <strong>80,000 bytes</strong>
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <article class="worked-example">
+
+        <div class="example-title">
+            Example 2 — Stereo Recording
+        </div>
+
+        <p>
+            A stereo recording uses a sample rate of
+            <strong>44,100 samples/s</strong>,
+            a sample resolution of <strong>16 bits</strong>,
+            and lasts <strong>60 seconds</strong>.
+            Calculate the file size in MiB.
+        </p>
+
+        <div class="calculation">
+
+            <div>Step 1: Calculate bits</div>
+
+            <strong>
+                44,100 × 16 × 60 × 2
+                = 84,672,000 bits
+            </strong>
+
+            <div>Step 2: Convert to bytes</div>
+
+            <strong>
+                84,672,000 ÷ 8
+                = 10,584,000 bytes
+            </strong>
+
+            <div>Step 3: Convert to KiB</div>
+
+            <strong>
+                10,584,000 ÷ 1024
+                = 10,335.9375 KiB
+            </strong>
+
+            <div>Step 4: Convert to MiB</div>
+
+            <strong>
+                10,335.9375 ÷ 1024
+                ≈ 10.09 MiB
+            </strong>
+
+            <div class="answer">
+                Answer: <strong>≈ 10.09 MiB</strong>
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <article class="worked-example">
+
+        <div class="example-title">
+            Example 3 — High-Quality Recording
+        </div>
+
+        <p>
+            A 24-bit stereo recording has a sample rate of
+            <strong>48,000 samples/s</strong> and lasts
+            <strong>120 seconds</strong>.
+            Calculate the size in MiB.
+        </p>
+
+        <div class="calculation">
+
+            <div>Bits</div>
+
+            <strong>
+                48,000 × 24 × 120 × 2
+                = 276,480,000 bits
+            </strong>
+
+            <div>Bytes</div>
+
+            <strong>
+                276,480,000 ÷ 8
+                = 34,560,000 bytes
+            </strong>
+
+            <div>KiB</div>
+
+            <strong>
+                34,560,000 ÷ 1024
+                = 33,750 KiB
+            </strong>
+
+            <div>MiB</div>
+
+            <strong>
+                33,750 ÷ 1024
+                ≈ 32.96 MiB
+            </strong>
+
+            <div class="answer">
+                Answer: <strong>≈ 32.96 MiB</strong>
+            </div>
+
+        </div>
+
+    </article>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+        <span>05</span>
+        <h2>Mono and Stereo</h2>
+    </div>
+
+    <div class="channel-comparison">
+
+        <article>
+
+            <h3>Mono</h3>
+
+            <div class="channel-icon">
+                ●
+            </div>
+
+            <p>
+                One audio channel.
+            </p>
+
+            <strong>
+                Channels = 1
+            </strong>
+
+        </article>
+
+
+        <article>
+
+            <h3>Stereo</h3>
+
+            <div class="channel-icon">
+                ● ●
+            </div>
+
+            <p>
+                Two separate audio channels, normally left and right.
+            </p>
+
+            <strong>
+                Channels = 2
+            </strong>
+
+        </article>
+
+    </div>
+
+
+    <div class="important-note">
+
+        <strong>Important:</strong>
+
+        <p>
+            If all other settings remain the same, a stereo recording requires
+            twice as much raw sample data as a mono recording of the same duration.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+        <span>06</span>
+        <h2>How Each Factor Changes File Size</h2>
+    </div>
+
+    <div class="effect-table">
+
+        <div class="effect-row header">
+            <span>Change</span>
+            <span>Effect on data</span>
+            <span>Reason</span>
+        </div>
+
+        <div class="effect-row">
+            <span>Double sample rate</span>
+            <span>Double</span>
+            <span>Twice as many samples each second</span>
+        </div>
+
+        <div class="effect-row">
+            <span>Double bit depth</span>
+            <span>Double</span>
+            <span>Twice as many bits per sample</span>
+        </div>
+
+        <div class="effect-row">
+            <span>Double duration</span>
+            <span>Double</span>
+            <span>Twice as many seconds of recording</span>
+        </div>
+
+        <div class="effect-row">
+            <span>Mono → Stereo</span>
+            <span>Double</span>
+            <span>Two channels instead of one</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="studio" class="section studio-section">
+
+    <div class="section-heading">
+        <span>07</span>
+        <h2>Student Studio</h2>
+    </div>
+
+    <p class="studio-intro">
+        This is your calculation workshop. Do not rush to the calculator.
+        First understand the units, then build the calculation step by step.
+    </p>
+
+
+    <div class="studio-tabs">
+
+        <button class="studio-tab active" data-tab="formulaLab">
+            Formula Builder
+        </button>
+
+        <button class="studio-tab" data-tab="calculatorLab">
+            Full Calculator
+        </button>
+
+        <button class="studio-tab" data-tab="unitLab">
+            Unit Converter
+        </button>
+
+        <button class="studio-tab" data-tab="reverseLab">
+            Reverse Engineer
+        </button>
+
+        <button class="studio-tab" data-tab="compareLab">
+            Compare Recordings
+        </button>
+
+        <button class="studio-tab" data-tab="practiceLab">
+            Guided Practice
+        </button>
+
+        <button class="studio-tab" data-tab="mistakeLab">
+            Fix the Mistake
+        </button>
+
+        <button class="studio-tab" data-tab="examLab">
+            Exam Method
+        </button>
+
+        <button class="studio-tab" data-tab="challengeLab">
+            Challenge
+        </button>
+
+        <button class="studio-tab" data-tab="thinkLab">
+            Think
+        </button>
+
+        <button class="studio-tab" data-tab="quickLab">
+            Quick Check
+        </button>
+
+    </div>
+
+
+    <!-- FORMULA BUILDER -->
+
+    <div id="formulaLab" class="studio-panel active">
+
+        <div class="learning-panel">
+
+            <h3>Build the Formula</h3>
+
+            <p>
+                Choose the correct quantity for each part of the formula.
+            </p>
+
+            <div class="formula-builder">
+
+                <span>File size in bits =</span>
+
+                <select id="builder1">
+                    <option value="">Choose</option>
+                    <option value="rate">sample rate</option>
+                    <option value="duration">duration</option>
+                    <option value="depth">sample resolution</option>
+                    <option value="channels">channels</option>
+                </select>
+
+                <span>×</span>
+
+                <select id="builder2">
+                    <option value="">Choose</option>
+                    <option value="rate">sample rate</option>
+                    <option value="duration">duration</option>
+                    <option value="depth">sample resolution</option>
+                    <option value="channels">channels</option>
+                </select>
+
+                <span>×</span>
+
+                <select id="builder3">
+                    <option value="">Choose</option>
+                    <option value="rate">sample rate</option>
+                    <option value="duration">duration</option>
+                    <option value="depth">sample resolution</option>
+                    <option value="channels">channels</option>
+                </select>
+
+                <span>×</span>
+
+                <select id="builder4">
+                    <option value="">Choose</option>
+                    <option value="rate">sample rate</option>
+                    <option value="duration">duration</option>
+                    <option value="depth">sample resolution</option>
+                    <option value="channels">channels</option>
+                </select>
+
+            </div>
+
+            <button id="checkBuilder"
+                    class="action-button">
+                Check Formula
+            </button>
+
+            <div id="builderFeedback"
+                 class="interactive-feedback">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CALCULATOR -->
+
+    <div id="calculatorLab" class="studio-panel">
+
+        <div class="calculator-grid">
+
+            <div class="calculator-inputs">
+
+                <h3>Sound File-Size Calculator</h3>
+
+                <label>
+                    Sample rate (samples/second)
+                    <input id="calcRate"
+                           type="number"
+                           value="44100"
+                           min="1">
+                </label>
+
+                <label>
+                    Sample resolution (bits/sample)
+                    <input id="calcDepth"
+                           type="number"
+                           value="16"
+                           min="1">
+                </label>
+
+                <label>
+                    Duration (seconds)
+                    <input id="calcDuration"
+                           type="number"
+                           value="60"
+                           min="1">
+                </label>
+
+                <label>
+                    Channels
+                    <select id="calcChannels">
+                        <option value="1">Mono — 1</option>
+                        <option value="2" selected>Stereo — 2</option>
+                    </select>
+                </label>
+
+                <label>
+                    Show result in
+                    <select id="calcUnit">
+                        <option value="bits">bits</option>
+                        <option value="bytes">bytes</option>
+                        <option value="KiB">KiB</option>
+                        <option value="MiB" selected>MiB</option>
+                        <option value="GiB">GiB</option>
+                    </select>
+                </label>
+
+                <button id="calculateSound"
+                        class="action-button">
+                    Calculate
+                </button>
+
+            </div>
+
+
+            <div id="calculatorResult"
+                 class="calculator-result">
+
+                <h3>Result</h3>
+
+                <p>
+                    Enter the values and calculate the raw sound-data size.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- UNIT CONVERTER -->
+
+    <div id="unitLab" class="studio-panel">
+
+        <div class="unit-converter">
+
+            <h3>Bits ↔ Bytes ↔ KiB ↔ MiB ↔ GiB</h3>
+
+            <label>
+                Enter value
+                <input id="unitValue"
+                       type="number"
+                       value="640000"
+                       min="0">
+            </label>
+
+            <label>
+                Input unit
+                <select id="unitFrom">
+                    <option value="bits">bits</option>
+                    <option value="bytes">bytes</option>
+                    <option value="KiB">KiB</option>
+                    <option value="MiB">MiB</option>
+                    <option value="GiB">GiB</option>
+                </select>
+            </label>
+
+            <button id="convertUnits"
+                    class="action-button">
+                Convert
+            </button>
+
+            <div id="unitResult"
+                 class="unit-results">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- REVERSE -->
+
+    <div id="reverseLab" class="studio-panel">
+
+        <div class="reverse-grid">
+
+            <div class="input-card">
+
+                <h3>Reverse Engineer a Recording</h3>
+
+                <p>
+                    Sometimes an exam gives you the file size and asks you
+                    to determine a missing property.
+                </p>
+
+                <label>
+                    File size in bits
+                    <input id="reverseBits"
+                           type="number"
+                           value="84480000">
+                </label>
+
+                <label>
+                    Sample rate
+                    <input id="reverseRate"
+                           type="number"
+                           value="44100">
+                </label>
+
+                <label>
+                    Sample resolution
+                    <input id="reverseDepth"
+                           type="number"
+                           value="16">
+                </label>
+
+                <label>
+                    Duration
+                    <input id="reverseDuration"
+                           type="number"
+                           value="60">
+                </label>
+
+                <label>
+                    Known channels
+                    <select id="reverseChannels">
+                        <option value="1">Mono</option>
+                        <option value="2" selected>Stereo</option>
+                    </select>
+                </label>
+
+                <button id="reverseCalculate"
+                        class="action-button">
+                    Find Missing Value
+                </button>
+
+            </div>
+
+
+            <div id="reverseResult"
+                 class="result-card">
+
+                <h3>Reverse Calculation</h3>
+
+                <p>
+                    Choose one quantity to calculate.
+                </p>
+
+                <select id="reverseTarget">
+
+                    <option value="rate">
+                        Find sample rate
+                    </option>
+
+                    <option value="depth">
+                        Find sample resolution
+                    </option>
+
+                    <option value="duration">
+                        Find duration
+                    </option>
+
+                    <option value="channels">
+                        Find number of channels
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- COMPARE -->
+
+    <div id="compareLab" class="studio-panel">
+
+        <div class="recording-compare">
+
+            <div class="recording-card">
+
+                <h3>Recording A</h3>
+
+                <label>
+                    Sample rate
+                    <input id="aRate" value="8000" type="number">
+                </label>
+
+                <label>
+                    Bit depth
+                    <input id="aDepth" value="8" type="number">
+                </label>
+
+                <label>
+                    Duration
+                    <input id="aDuration" value="60" type="number">
+                </label>
+
+                <label>
+                    Channels
+                    <select id="aChannels">
+                        <option value="1" selected>Mono</option>
+                        <option value="2">Stereo</option>
+                    </select>
+                </label>
+
+            </div>
+
+
+            <div class="recording-card">
+
+                <h3>Recording B</h3>
+
+                <label>
+                    Sample rate
+                    <input id="bRate" value="44100" type="number">
+                </label>
+
+                <label>
+                    Bit depth
+                    <input id="bDepth" value="16" type="number">
+                </label>
+
+                <label>
+                    Duration
+                    <input id="bDuration" value="60" type="number">
+                </label>
+
+                <label>
+                    Channels
+                    <select id="bChannels">
+                        <option value="1">Mono</option>
+                        <option value="2" selected>Stereo</option>
+                    </select>
+                </label>
+
+            </div>
+
+        </div>
+
+        <button id="compareRecordings"
+                class="action-button centred">
+            Compare File Sizes
+        </button>
+
+        <div id="recordingComparison"
+             class="comparison-result">
+        </div>
+
+    </div>
+
+
+    <!-- PRACTICE -->
+
+    <div id="practiceLab" class="studio-panel">
+
+        <div class="practice-question">
+
+            <h3>Practice 1</h3>
+
+            <p>
+                A mono recording uses 8,000 samples/s, 8 bits/sample and
+                lasts 5 seconds. Calculate the size in bits.
+            </p>
+
+            <button class="reveal-button"
+                    data-answer="8,000 × 8 × 5 × 1 = 320,000 bits.">
+                Reveal Answer
+            </button>
+
+            <div class="reveal-answer"></div>
+
+        </div>
+
+
+        <div class="practice-question">
+
+            <h3>Practice 2</h3>
+
+            <p>
+                A stereo recording uses 16,000 samples/s, 8 bits/sample
+                and lasts 10 seconds. Calculate the size in bytes.
+            </p>
+
+            <button class="reveal-button"
+                    data-answer="16,000 × 8 × 10 × 2 = 2,560,000 bits. 2,560,000 ÷ 8 = 320,000 bytes.">
+                Reveal Answer
+            </button>
+
+            <div class="reveal-answer"></div>
+
+        </div>
+
+
+        <div class="practice-question">
+
+            <h3>Practice 3</h3>
+
+            <p>
+                A 44,100 samples/s, 16-bit stereo recording lasts 30 seconds.
+                Calculate its size in bits.
+            </p>
+
+            <button class="reveal-button"
+                    data-answer="44,100 × 16 × 30 × 2 = 42,336,000 bits.">
+                Reveal Answer
+            </button>
+
+            <div class="reveal-answer"></div>
+
+        </div>
+
+
+        <div class="practice-question">
+
+            <h3>Practice 4</h3>
+
+            <p>
+                A recording is 24-bit, 48,000 samples/s, stereo and lasts
+                10 seconds. Calculate the size in bytes.
+            </p>
+
+            <button class="reveal-button"
+                    data-answer="48,000 × 24 × 10 × 2 = 23,040,000 bits. 23,040,000 ÷ 8 = 2,880,000 bytes.">
+                Reveal Answer
+            </button>
+
+            <div class="reveal-answer"></div>
+
+        </div>
+
+
+        <div class="practice-question">
+
+            <h3>Practice 5</h3>
+
+            <p>
+                A recording uses 22,050 samples/s, 8 bits/sample, mono and
+                lasts 20 seconds. Calculate the size in bytes.
+            </p>
+
+            <button class="reveal-button"
+                    data-answer="22,050 × 8 × 20 × 1 = 3,528,000 bits. 3,528,000 ÷ 8 = 441,000 bytes.">
+                Reveal Answer
+            </button>
+
+            <div class="reveal-answer"></div>
+
+        </div>
+
+
+        <div class="practice-question">
+
+            <h3>Practice 6</h3>
+
+            <p>
+                A stereo recording has the same duration, sample rate and
+                bit depth as a mono recording. How does its raw data size compare?
+            </p>
+
+            <button class="reveal-button"
+                    data-answer="The stereo recording is twice as large because it contains two channels instead of one.">
+                Reveal Answer
+            </button>
+
+            <div class="reveal-answer"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MISTAKES -->
+
+    <div id="mistakeLab" class="studio-panel">
+
+        <div class="mistake-card">
+
+            <h3>Mistake 1</h3>
+
+            <blockquote>
+                44,100 × 16 × 60 = 42,336,000 bits
+            </blockquote>
+
+            <p>
+                The question says the recording is stereo.
+            </p>
+
+            <button class="diagnose-button"
+                    data-diagnosis="1">
+                Diagnose
+            </button>
+
+            <div id="diagnosis1"></div>
+
+        </div>
+
+
+        <div class="mistake-card">
+
+            <h3>Mistake 2</h3>
+
+            <blockquote>
+                8,000 bits ÷ 1024 = 7.81 KiB
+            </blockquote>
+
+            <p>
+                The student is trying to convert bits directly into KiB.
+            </p>
+
+            <button class="diagnose-button"
+                    data-diagnosis="2">
+                Diagnose
+            </button>
+
+            <div id="diagnosis2"></div>
+
+        </div>
+
+
+        <div class="mistake-card">
+
+            <h3>Mistake 3</h3>
+
+            <blockquote>
+                1 MiB = 1,000 KiB
+            </blockquote>
+
+            <button class="diagnose-button"
+                    data-diagnosis="3">
+                Diagnose
+            </button>
+
+            <div id="diagnosis3"></div>
+
+        </div>
+
+
+        <div class="mistake-card">
+
+            <h3>Mistake 4</h3>
+
+            <blockquote>
+                Higher bit depth means fewer bits are stored.
+            </blockquote>
+
+            <button class="diagnose-button"
+                    data-diagnosis="4">
+                Diagnose
+            </button>
+
+            <div id="diagnosis4"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- EXAM METHOD -->
+
+    <div id="examLab" class="studio-panel">
+
+        <div class="exam-method">
+
+            <h3>The Reliable Exam Method</h3>
+
+            <ol>
+
+                <li>
+                    <strong>Write the formula first.</strong>
+                    Do not immediately start multiplying numbers.
+                </li>
+
+                <li>
+                    <strong>Identify every factor.</strong>
+                    Sample rate, bit depth, duration and channels.
+                </li>
+
+                <li>
+                    <strong>Check units.</strong>
+                    Duration must be in seconds.
+                </li>
+
+                <li>
+                    <strong>Calculate the raw result in bits.</strong>
+                </li>
+
+                <li>
+                    <strong>Convert bits to bytes.</strong>
+                    Divide by 8.
+                </li>
+
+                <li>
+                    <strong>Continue converting if necessary.</strong>
+                    Divide by 1024 for each binary storage unit.
+                </li>
+
+                <li>
+                    <strong>State the unit clearly.</strong>
+                    A number without a unit may not receive full credit.
+                </li>
+
+            </ol>
+
+
+            <div class="exam-tip">
+
+                <strong>Golden rule:</strong>
+
+                <p>
+                    Never divide by 1024 before converting bits to bytes.
+                </p>
+
+                <p>
+                    The safe chain is:
+                </p>
+
+                <strong>
+                    bits → bytes → KiB → MiB → GiB
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHALLENGE -->
+
+    <div id="challengeLab" class="studio-panel">
+
+        <div class="challenge-card">
+
+            <h3>Challenge Problem</h3>
+
+            <p>
+                A school records a 3-minute stereo interview using a sample
+                rate of 44,100 samples/s and a sample resolution of 16 bits.
+            </p>
+
+            <p>
+                <strong>Calculate the raw data size in MiB.</strong>
+            </p>
+
+            <textarea id="challengeAnswer"
+                      placeholder="Show every step of your calculation..."></textarea>
+
+            <button id="showChallenge"
+                    class="action-button">
+                Show Worked Solution
+            </button>
+
+            <div id="challengeSolution"
+                 class="solution hidden">
+
+                <strong>Step 1 — Convert minutes to seconds</strong>
+
+                <p>
+                    3 × 60 = 180 seconds
+                </p>
+
+                <strong>Step 2 — Calculate bits</strong>
+
+                <p>
+                    44,100 × 16 × 180 × 2
+                    = 254,016,000 bits
+                </p>
+
+                <strong>Step 3 — Bytes</strong>
+
+                <p>
+                    254,016,000 ÷ 8
+                    = 31,752,000 bytes
+                </p>
+
+                <strong>Step 4 — KiB</strong>
+
+                <p>
+                    31,752,000 ÷ 1024
+                    ≈ 30,? 
+                </p>
+
+                <strong>Step 5 — MiB</strong>
+
+                <p>
+                    ≈ 30.28 MiB
+                </p>
+
+                <div class="answer">
+                    Final answer: approximately
+                    <strong>30.28 MiB</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- THINK -->
+
+    <div id="thinkLab" class="studio-panel">
+
+        <div class="thinking-card">
+
+            <h3>Think Before You Calculate</h3>
+
+            <div class="thinking-question">
+
+                <span>1</span>
+
+                <p>
+                    If the sample rate doubles but everything else stays
+                    the same, what happens to the file size?
+                </p>
+
+            </div>
+
+
+            <div class="thinking-question">
+
+                <span>2</span>
+
+                <p>
+                    If a mono recording becomes stereo, why does the raw
+                    data size double?
+                </p>
+
+            </div>
+
+
+            <div class="thinking-question">
+
+                <span>3</span>
+
+                <p>
+                    Why must duration be converted into seconds before using
+                    the formula?
+                </p>
+
+            </div>
+
+
+            <div class="thinking-question">
+
+                <span>4</span>
+
+                <p>
+                    Why is the result of the main formula initially measured
+                    in bits?
+                </p>
+
+            </div>
+
+
+            <textarea id="thinkingText"
+                      placeholder="Write your reasoning..."></textarea>
+
+            <button id="saveThinking"
+                    class="action-button">
+                Save Thinking
+            </button>
+
+            <span id="thinkingSaved"
+                  class="saved-message"></span>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUICK CHECK -->
+
+    <div id="quickLab" class="studio-panel">
+
+        <div class="quick-check">
+
+            <h3>Quick Check</h3>
+
+            <div class="quick-item">
+
+                <p>
+                    <strong>1.</strong>
+                    How many bits are in one byte?
+                </p>
+
+                <button data-answer="8 bits">
+                    Reveal
+                </button>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="quick-item">
+
+                <p>
+                    <strong>2.</strong>
+                    What does sample rate measure?
+                </p>
+
+                <button data-answer="Samples per second">
+                    Reveal
+                </button>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="quick-item">
+
+                <p>
+                    <strong>3.</strong>
+                    How many channels does stereo use in this calculation model?
+                </p>
+
+                <button data-answer="2 channels">
+                    Reveal
+                </button>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="quick-item">
+
+                <p>
+                    <strong>4.</strong>
+                    What is the first unit produced by the main formula?
+                </p>
+
+                <button data-answer="Bits">
+                    Reveal
+                </button>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="quick-item">
+
+                <p>
+                    <strong>5.</strong>
+                    What do you divide bits by to obtain bytes?
+                </p>
+
+                <button data-answer="8">
+                    Reveal
+                </button>
+
+                <span></span>
+
+            </div>
+
+
+            <div class="quick-item">
+
+                <p>
+                    <strong>6.</strong>
+                    What happens to file size if duration doubles?
+                </p>
+
+                <button data-answer="The raw data size doubles, assuming all other settings remain unchanged.">
+                    Reveal
+                </button>
+
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="assessment"
+         class="section assessment-section">
+
+    <div class="section-heading">
+        <span>08</span>
+        <h2>Formative Assessment</h2>
+    </div>
+
+    <p class="lead">
+        This assessment deliberately includes both concepts and calculations.
+        Show working on paper where appropriate.
+    </p>
+
+
+    <form id="assessmentForm">
+
+
+        <div class="assessment-question">
+
+            <h3>1. Which formula calculates raw sound-data size in bits?</h3>
+
+            <label>
+                <input type="radio" name="q1" value="a">
+                Sample rate + bit depth + duration
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="b">
+                Sample rate × bit depth × duration × channels
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="c">
+                Sample rate × duration ÷ channels
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="d">
+                Bit depth × channels
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                2. A 10-second mono recording uses 8,000 samples/s and
+                8 bits/sample. What is its size in bits?
+            </h3>
+
+            <label>
+                <input type="radio" name="q2" value="a">
+                80,000
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="b">
+                640,000
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="c">
+                64,000
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="d">
+                6,400,000
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                3. How many bytes are in 640,000 bits?
+            </h3>
+
+            <label>
+                <input type="radio" name="q3" value="a">
+                8,000
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="b">
+                80,000
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="c">
+                640,000
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="d">
+                5,120,000
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                4. What is the main difference between mono and stereo
+                in the file-size calculation?
+            </h3>
+
+            <label>
+                <input type="radio" name="q4" value="a">
+                Mono uses 2 channels
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="b">
+                Stereo uses 2 channels
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="c">
+                Stereo uses half the sample rate
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="d">
+                Mono uses twice the bit depth
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                5. If all other settings remain unchanged, doubling the
+                duration will:
+            </h3>
+
+            <label>
+                <input type="radio" name="q5" value="a">
+                Halve the file size
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="b">
+                Double the raw data size
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="c">
+                Have no effect
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="d">
+                Quarter the file size
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                6. A stereo recording uses 44,100 samples/s, 16 bits/sample
+                and lasts 10 seconds. What is the size in bits?
+            </h3>
+
+            <label>
+                <input type="radio" name="q6" value="a">
+                7,056,000
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="b">
+                14,112,000
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="c">
+                70,560,000
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="d">
+                705,600
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                7. What should you do first when converting bits into MiB?
+            </h3>
+
+            <label>
+                <input type="radio" name="q7" value="a">
+                Divide by 1024
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="b">
+                Divide by 8 to obtain bytes
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="c">
+                Multiply by 1024
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="d">
+                Divide by 2
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                8. A recording changes from mono to stereo while all other
+                settings remain unchanged. What happens?
+            </h3>
+
+            <label>
+                <input type="radio" name="q8" value="a">
+                Data size halves
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="b">
+                Data size doubles
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="c">
+                Data size becomes one quarter
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="d">
+                Data size does not change
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                9. Which unit should duration normally be expressed in when
+                using the basic file-size formula?
+            </h3>
+
+            <label>
+                <input type="radio" name="q9" value="a">
+                Seconds
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="b">
+                Bytes
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="c">
+                KiB
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="d">
+                Bits
+            </label>
+
+        </div>
+
+
+        <div class="assessment-question">
+
+            <h3>
+                10. Which statement is correct?
+            </h3>
+
+            <label>
+                <input type="radio" name="q10" value="a">
+                Higher sample rate always means a smaller raw file
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="b">
+                Higher bit depth reduces the number of bits stored
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="c">
+                Higher sample rate, bit depth, duration or channel count can
+                increase raw data size
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="d">
+                Stereo uses one channel
+            </label>
+
+        </div>
+
+
+        <button type="submit"
+                class="assessment-button">
+            Submit Assessment
+        </button>
+
+    </form>
+
+
+    <div id="assessmentResult"
+         class="assessment-result">
+    </div>
+
+
+    <div id="remediation"
+         class="remediation hidden">
+
+        <h3>Targeted Remediation</h3>
+
+        <p>
+            Before retaking the assessment, revisit these ideas:
+        </p>
+
+        <ul>
+            <li>File size = sample rate × bit depth × duration × channels.</li>
+            <li>The formula initially gives bits.</li>
+            <li>Divide by 8 to obtain bytes.</li>
+            <li>Divide by 1024 to move from bytes → KiB → MiB.</li>
+            <li>Mono = 1 channel; stereo = 2 channels.</li>
+            <li>Duration must be in seconds.</li>
+            <li>Increasing any multiplicative factor increases raw data size.</li>
+        </ul>
+
+        <button id="retakeButton"
+                class="action-button">
+            Retake Assessment
+        </button>
+
+    </div>
+
+
+    <div id="mastery"
+         class="mastery hidden">
+
+        <h3>Excellent — Sound Calculations Mastered!</h3>
+
+        <p>
+            You have completed the numerical work on digital sound.
+            You are ready to move into the wider topic of data storage.
+        </p>
+
+        <a href="DR-12.html"
+           class="next-button">
+            Continue to DR-12 →
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="section game-section">
+
+    <div class="section-heading">
+        <span>09</span>
+        <h2>5-Minute Game Break</h2>
+    </div>
+
+    <p>
+        Take a short programming break after completing the academic work.
+    </p>
+
+    <div class="game-card">
+
+        <div>
+
+            <h3>Blockly Games — Music</h3>
+
+            <p>
+                Create musical patterns using Blockly programming blocks.
+                This is a genuine programming activity, separate from the
+                Computer Science assessment.
+            </p>
+
+        </div>
+
+        <div id="gameTimer"
+             class="timer-display">
+            05:00
+        </div>
+
+        <div class="game-actions">
+
+            <button id="startGame"
+                    class="action-button">
+                Start 5-Minute Break
+            </button>
+
+            <a href="https://blockly.games/music?lang=en"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="external-game">
+                Open Blockly Music ↗
+            </a>
+
+        </div>
+
+        <div id="gameMessage"
+             class="game-message">
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="exit"
+         class="section exit-section">
+
+    <div class="section-heading">
+        <span>10</span>
+        <h2>Exit Ticket</h2>
+    </div>
+
+    <p class="lead">
+        A good programmer and a good Computer Scientist do not simply
+        calculate. They can explain what the calculation means.
+    </p>
+
+    <div class="exit-grid">
+
+        <label>
+            Write the sound file-size formula in your own words.
+            <textarea id="exitFormula"></textarea>
+        </label>
+
+        <label>
+            Which part of sound calculations do you understand best?
+            <textarea id="exitStrength"></textarea>
+        </label>
+
+        <label>
+            Which calculation step do you still need to practise?
+            <textarea id="exitNeed"></textarea>
+        </label>
+
+    </div>
+
+    <button id="saveExit"
+            class="action-button">
+        Save Exit Ticket
+    </button>
+
+    <span id="exitSaved"
+          class="saved-message"></span>
+
+</section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-navigation">
+
+        <a href="DR-10.html">← DR-10</a>
+
+        <a href="INDEX.html">🏠 Topic Dashboard</a>
+
+        <a href="DR-12.html">DR-12 →</a>
+
+    </div>
+
+    <p>
+        IGCSE Computer Science 0984 • Data Representation • DR-11
+    </p>
+
+    <p>
+        Design and Content by Ravi Raju
+    </p>
+
+</footer>
+
+
+<script src="DR-11.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR-04 | Hexadecimal Number System</title>
+    <link rel="stylesheet" href="DR-04.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="brand">
+        <div class="brand-title">IGCSE Computer Science 0984</div>
+        <div class="brand-subtitle">Topic 1 — Data Representation</div>
+    </div>
+
+    <div class="teacher-brand">
+
+        <img src="IMG-Ravi.jpeg" alt="Ravi Raju">
+
+        <div>
+            <strong>Design and Content by Ravi Raju</strong>
+            <span>Modern English School Cairo</span>
+        </div>
+
+        <img class="school-logo"
+             src="MES35.jpg"
+             alt="Modern English School Cairo">
+
+    </div>
+
+</header>
+
+
+<main class="page">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div>
+
+            <span class="lesson-number">LESSON DR-04</span>
+
+            <h1>Hexadecimal Number System</h1>
+
+            <p>
+                Binary is ideal for computers, but long strings of binary digits
+                can be difficult for humans to read. Hexadecimal provides a
+                compact way of representing binary values.
+            </p>
+
+        </div>
+
+        <div class="hero-badge">
+
+            <span>04</span>
+            <small>Hexadecimal</small>
+
+        </div>
+
+    </section>
+
+
+    <!-- OBJECTIVES -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>01</span>
+
+            <div>
+                <h2>Learning Objectives</h2>
+                <p>By the end of this lesson you should be able to:</p>
+            </div>
+
+        </div>
+
+
+        <div class="objective-grid">
+
+            <div class="objective">
+                <b>01</b>
+                <span>Explain what hexadecimal means.</span>
+            </div>
+
+            <div class="objective">
+                <b>02</b>
+                <span>Explain why hexadecimal is used in computing.</span>
+            </div>
+
+            <div class="objective">
+                <b>03</b>
+                <span>Identify the sixteen hexadecimal symbols.</span>
+            </div>
+
+            <div class="objective">
+                <b>04</b>
+                <span>Understand hexadecimal place values.</span>
+            </div>
+
+            <div class="objective">
+                <b>05</b>
+                <span>Recognise common computing uses of hexadecimal.</span>
+            </div>
+
+            <div class="objective">
+                <b>06</b>
+                <span>Recognise hexadecimal values and distinguish them from denary values.</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY HEX -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>02</span>
+
+            <div>
+                <h2>Why Do We Need Hexadecimal?</h2>
+                <p>Making binary easier for humans to read</p>
+            </div>
+
+        </div>
+
+
+        <div class="representation-comparison">
+
+            <div class="representation-card">
+
+                <small>BINARY</small>
+
+                <strong>
+                    1101011010110010
+                </strong>
+
+                <p>
+                    16 binary digits
+                </p>
+
+            </div>
+
+
+            <div class="comparison-arrow">
+                →
+            </div>
+
+
+            <div class="representation-card highlighted">
+
+                <small>HEXADECIMAL</small>
+
+                <strong>
+                    D6B2
+                </strong>
+
+                <p>
+                    Only 4 hexadecimal digits
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="important">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                Hexadecimal does not replace binary inside the computer.
+                It provides a shorter and more convenient way for humans
+                to represent binary values.
+            </p>
+
+            <p>
+                This is particularly useful when binary values become long
+                and difficult to read.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- BASE 16 -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>03</span>
+
+            <div>
+                <h2>Hexadecimal is Base 16</h2>
+                <p>Sixteen different symbols are required</p>
+            </div>
+
+        </div>
+
+
+        <p>
+            Denary uses ten symbols:
+            <strong>0–9</strong>.
+        </p>
+
+        <p>
+            Binary uses two symbols:
+            <strong>0 and 1</strong>.
+        </p>
+
+        <p>
+            Hexadecimal requires sixteen symbols. The first ten are
+            <strong>0–9</strong>, followed by six letters:
+            <strong>A–F</strong>.
+        </p>
+
+
+        <div class="hex-symbols">
+
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+            <div>E</div>
+            <div>F</div>
+
+        </div>
+
+
+        <div class="hex-values">
+
+            <div>
+                <strong>0–9</strong>
+                <span>Same values as denary</span>
+            </div>
+
+            <div>
+                <strong>A = 10</strong>
+                <span>Ten</span>
+            </div>
+
+            <div>
+                <strong>B = 11</strong>
+                <span>Eleven</span>
+            </div>
+
+            <div>
+                <strong>C = 12</strong>
+                <span>Twelve</span>
+            </div>
+
+            <div>
+                <strong>D = 13</strong>
+                <span>Thirteen</span>
+            </div>
+
+            <div>
+                <strong>E = 14</strong>
+                <span>Fourteen</span>
+            </div>
+
+            <div>
+                <strong>F = 15</strong>
+                <span>Fifteen</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PLACE VALUES -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>04</span>
+
+            <div>
+                <h2>Hexadecimal Place Values</h2>
+                <p>Each position is a power of 16</p>
+            </div>
+
+        </div>
+
+
+        <div class="place-value-table">
+
+            <div class="place-column">
+                <strong>Position</strong>
+                <span>3</span>
+                <span>2</span>
+                <span>1</span>
+                <span>0</span>
+            </div>
+
+            <div class="place-column">
+                <strong>Power</strong>
+                <span>16³</span>
+                <span>16²</span>
+                <span>16¹</span>
+                <span>16⁰</span>
+            </div>
+
+            <div class="place-column values">
+                <strong>Value</strong>
+                <span>4096</span>
+                <span>256</span>
+                <span>16</span>
+                <span>1</span>
+            </div>
+
+        </div>
+
+
+        <div class="important">
+
+            <strong>Remember:</strong>
+
+            <p>
+                Just as denary place values are powers of 10 and binary
+                place values are powers of 2, hexadecimal place values
+                are powers of 16.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- WORKED EXAMPLES -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>05</span>
+
+            <div>
+                <h2>Worked Examples</h2>
+                <p>Understanding hexadecimal values</p>
+            </div>
+
+        </div>
+
+
+        <div class="worked-example">
+
+            <div class="example-title">
+                WORKED EXAMPLE 1
+            </div>
+
+            <h3>What does 2A₁₆ represent in denary?</h3>
+
+
+            <div class="hex-equation">
+
+                <div class="hex-digit">
+                    <strong>2</strong>
+                    <span>× 16</span>
+                </div>
+
+                <div class="operator">+</div>
+
+                <div class="hex-digit">
+                    <strong>A</strong>
+                    <span>× 1</span>
+                </div>
+
+            </div>
+
+
+            <div class="calculation-large">
+
+                <span>2 × 16</span>
+
+                <b>+</b>
+
+                <span>10 × 1</span>
+
+                <b>=</b>
+
+                <strong>42</strong>
+
+            </div>
+
+
+            <div class="answer">
+                2A₁₆ = 42₁₀
+            </div>
+
+        </div>
+
+
+        <div class="worked-example">
+
+            <div class="example-title">
+                WORKED EXAMPLE 2
+            </div>
+
+            <h3>What does 3F₁₆ represent in denary?</h3>
+
+
+            <div class="hex-equation">
+
+                <div class="hex-digit">
+                    <strong>3</strong>
+                    <span>× 16</span>
+                </div>
+
+                <div class="operator">+</div>
+
+                <div class="hex-digit">
+                    <strong>F</strong>
+                    <span>× 1</span>
+                </div>
+
+            </div>
+
+
+            <div class="calculation-large">
+
+                <span>3 × 16</span>
+
+                <b>+</b>
+
+                <span>15 × 1</span>
+
+                <b>=</b>
+
+                <strong>63</strong>
+
+            </div>
+
+
+            <div class="answer">
+                3F₁₆ = 63₁₀
+            </div>
+
+        </div>
+
+
+        <div class="worked-example">
+
+            <div class="example-title">
+                WORKED EXAMPLE 3
+            </div>
+
+            <h3>What does B4₁₆ represent in denary?</h3>
+
+
+            <div class="calculation-large">
+
+                <span>11 × 16</span>
+
+                <b>+</b>
+
+                <span>4 × 1</span>
+
+                <b>=</b>
+
+                <strong>180</strong>
+
+            </div>
+
+
+            <div class="answer">
+                B4₁₆ = 180₁₀
+            </div>
+
+        </div>
+
+
+        <div class="worked-example">
+
+            <div class="example-title">
+                WORKED EXAMPLE 4
+            </div>
+
+            <h3>What does FF₁₆ represent in denary?</h3>
+
+
+            <div class="calculation-large">
+
+                <span>15 × 16</span>
+
+                <b>+</b>
+
+                <span>15</span>
+
+                <b>=</b>
+
+                <strong>255</strong>
+
+            </div>
+
+
+            <div class="answer">
+                FF₁₆ = 255₁₀
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- USES -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>06</span>
+
+            <div>
+                <h2>Where is Hexadecimal Used?</h2>
+                <p>Recognising hexadecimal in the real world of computing</p>
+            </div>
+
+        </div>
+
+
+        <div class="uses-grid">
+
+            <article>
+
+                <div class="use-icon">#</div>
+
+                <h3>Web Colour Codes</h3>
+
+                <p>
+                    Colours in HTML and CSS can be represented using
+                    six hexadecimal digits.
+                </p>
+
+                <div class="code-example">
+                    #FF0000
+                </div>
+
+                <p>
+                    This represents a colour using hexadecimal values
+                    for the red, green and blue components.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <div class="use-icon">0x</div>
+
+                <h3>Memory Addresses</h3>
+
+                <p>
+                    Hexadecimal is commonly used when displaying
+                    memory addresses because it is much shorter than
+                    writing the equivalent binary value.
+                </p>
+
+                <div class="code-example">
+                    0x7FF2A
+                </div>
+
+            </article>
+
+
+            <article>
+
+                <div class="use-icon">IP</div>
+
+                <h3>MAC Addresses</h3>
+
+                <p>
+                    Network interface MAC addresses are normally written
+                    using hexadecimal digits.
+                </p>
+
+                <div class="code-example">
+                    3A:7F:21:B4:09:CE
+                </div>
+
+            </article>
+
+
+            <article>
+
+                <div class="use-icon">DB</div>
+
+                <h3>Machine-Level Data</h3>
+
+                <p>
+                    Hexadecimal can make low-level binary data easier
+                    for programmers and technicians to inspect.
+                </p>
+
+                <div class="code-example">
+                    7F 45 4C 46
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ORAL QUESTIONS -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>07</span>
+
+            <div>
+                <h2>Teacher–Student Discussion</h2>
+                <p>Talk through the ideas before independent practice</p>
+            </div>
+
+        </div>
+
+
+        <div class="oral-grid">
+
+            <div class="oral-question">
+                <b>01</b>
+                <p>Why does hexadecimal need six letters?</p>
+            </div>
+
+            <div class="oral-question">
+                <b>02</b>
+                <p>Why is hexadecimal called base 16?</p>
+            </div>
+
+            <div class="oral-question">
+                <b>03</b>
+                <p>What value does the hexadecimal digit F represent?</p>
+            </div>
+
+            <div class="oral-question">
+                <b>04</b>
+                <p>Why is FF a useful hexadecimal value to recognise?</p>
+            </div>
+
+            <div class="oral-question">
+                <b>05</b>
+                <p>Why is hexadecimal easier for humans than a long binary string?</p>
+            </div>
+
+            <div class="oral-question">
+                <b>06</b>
+                <p>Give one real computing situation where hexadecimal may be seen.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STUDENT STUDIO -->
+
+    <section class="student-studio">
+
+        <div class="studio-header">
+
+            <div>
+
+                <span>STUDENT STUDIO</span>
+
+                <h2>Hexadecimal Workshop</h2>
+
+                <p>
+                    Explore, build, practise, investigate and explain
+                    hexadecimal representation.
+                </p>
+
+            </div>
+
+            <div class="studio-icon">
+                16
+            </div>
+
+        </div>
+
+
+        <div class="studio-tabs">
+
+            <button class="studio-tab active" data-tab="explore">
+                Explore
+            </button>
+
+            <button class="studio-tab" data-tab="symbols">
+                Symbol Lab
+            </button>
+
+            <button class="studio-tab" data-tab="place">
+                Place Values
+            </button>
+
+            <button class="studio-tab" data-tab="practice">
+                Practise
+            </button>
+
+            <button class="studio-tab" data-tab="applications">
+                Real Uses
+            </button>
+
+            <button class="studio-tab" data-tab="mistakes">
+                Fix the Mistake
+            </button>
+
+            <button class="studio-tab" data-tab="think">
+                Think
+            </button>
+
+            <button class="studio-tab" data-tab="quick">
+                Quick Check
+            </button>
+
+        </div>
+
+
+        <!-- EXPLORE -->
+
+        <div class="studio-content active" id="explore">
+
+            <div class="studio-intro">
+
+                <h3>Explore Base 16</h3>
+
+                <p>
+                    Imagine counting in a number system that has sixteen
+                    symbols available instead of ten.
+                </p>
+
+                <p>
+                    After 9, hexadecimal continues with A, B, C, D, E and F.
+                </p>
+
+            </div>
+
+
+            <div class="counting-strip">
+
+                <div>0</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>A</div>
+                <div>B</div>
+                <div>C</div>
+                <div>D</div>
+                <div>E</div>
+                <div>F</div>
+
+            </div>
+
+
+            <div class="hex-sequence">
+
+                <div>
+                    <strong>09</strong>
+                    <span>9</span>
+                </div>
+
+                <div>
+                    <strong>0A</strong>
+                    <span>10</span>
+                </div>
+
+                <div>
+                    <strong>0B</strong>
+                    <span>11</span>
+                </div>
+
+                <div>
+                    <strong>0C</strong>
+                    <span>12</span>
+                </div>
+
+                <div>
+                    <strong>0D</strong>
+                    <span>13</span>
+                </div>
+
+                <div>
+                    <strong>0E</strong>
+                    <span>14</span>
+                </div>
+
+                <div>
+                    <strong>0F</strong>
+                    <span>15</span>
+                </div>
+
+                <div class="highlight">
+                    <strong>10</strong>
+                    <span>16</span>
+                </div>
+
+            </div>
+
+
+            <div class="studio-card-row">
+
+                <article class="learning-card">
+
+                    <h4>Denary</h4>
+
+                    <p>
+                        Uses ten symbols:
+                        <strong>0–9</strong>.
+                    </p>
+
+                </article>
+
+
+                <article class="learning-card">
+
+                    <h4>Binary</h4>
+
+                    <p>
+                        Uses two symbols:
+                        <strong>0 and 1</strong>.
+                    </p>
+
+                </article>
+
+
+                <article class="learning-card">
+
+                    <h4>Hexadecimal</h4>
+
+                    <p>
+                        Uses sixteen symbols:
+                        <strong>0–9 and A–F</strong>.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <!-- SYMBOL LAB -->
+
+        <div class="studio-content" id="symbols">
+
+            <div class="studio-intro">
+
+                <h3>Symbol Lab</h3>
+
+                <p>
+                    The six letters used in hexadecimal are not letters
+                    representing unknown values. Each one has a numerical value.
+                </p>
+
+            </div>
+
+
+            <div class="symbol-lab">
+
+                <div>
+                    <strong>A</strong>
+                    <span>10</span>
+                </div>
+
+                <div>
+                    <strong>B</strong>
+                    <span>11</span>
+                </div>
+
+                <div>
+                    <strong>C</strong>
+                    <span>12</span>
+                </div>
+
+                <div>
+                    <strong>D</strong>
+                    <span>13</span>
+                </div>
+
+                <div>
+                    <strong>E</strong>
+                    <span>14</span>
+                </div>
+
+                <div>
+                    <strong>F</strong>
+                    <span>15</span>
+                </div>
+
+            </div>
+
+
+            <div class="symbol-explanation">
+
+                <h4>Why not simply use 10, 11, 12, 13, 14 and 15?</h4>
+
+                <p>
+                    A hexadecimal digit must represent a value from 0 to 15
+                    using a single symbol. If we used two denary digits,
+                    the position system would become ambiguous.
+                </p>
+
+                <p>
+                    Therefore hexadecimal uses letters A–F as single-digit
+                    symbols for values 10–15.
+                </p>
+
+            </div>
+
+
+            <div class="conversion-pairs">
+
+                <div>
+                    <strong>10₁₀</strong>
+                    <span>→</span>
+                    <strong>A₁₆</strong>
+                </div>
+
+                <div>
+                    <strong>12₁₀</strong>
+                    <span>→</span>
+                    <strong>C₁₆</strong>
+                </div>
+
+                <div>
+                    <strong>14₁₀</strong>
+                    <span>→</span>
+                    <strong>E₁₆</strong>
+                </div>
+
+                <div>
+                    <strong>15₁₀</strong>
+                    <span>→</span>
+                    <strong>F₁₆</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PLACE VALUES -->
+
+        <div class="studio-content" id="place">
+
+            <div class="studio-intro">
+
+                <h3>Build Hexadecimal Numbers</h3>
+
+                <p>
+                    A hexadecimal number can contain more than one digit.
+                    Each position has a place value based on powers of 16.
+                </p>
+
+            </div>
+
+
+            <div class="place-builder">
+
+                <div>
+                    <span>16²</span>
+                    <strong>256</strong>
+                </div>
+
+                <div>
+                    <span>16¹</span>
+                    <strong>16</strong>
+                </div>
+
+                <div>
+                    <span>16⁰</span>
+                    <strong>1</strong>
+                </div>
+
+            </div>
+
+
+            <div class="place-example">
+
+                <h4>Example: 1A3₁₆</h4>
+
+                <p>
+                    Work from right to left:
+                </p>
+
+                <div class="place-calculation">
+
+                    <span>1 × 256</span>
+                    <b>+</b>
+                    <span>10 × 16</span>
+                    <b>+</b>
+                    <span>3 × 1</span>
+                    <b>=</b>
+                    <strong>419</strong>
+
+                </div>
+
+                <div class="answer">
+                    1A3₁₆ = 419₁₀
+                </div>
+
+            </div>
+
+
+            <div class="learning-card wide-card">
+
+                <h4>Important Pattern</h4>
+
+                <p>
+                    The base determines the place values.
+                </p>
+
+                <div class="base-pattern">
+
+                    <span>
+                        Denary:
+                        10⁰, 10¹, 10², 10³...
+                    </span>
+
+                    <span>
+                        Binary:
+                        2⁰, 2¹, 2², 2³...
+                    </span>
+
+                    <span>
+                        Hexadecimal:
+                        16⁰, 16¹, 16², 16³...
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRACTICE -->
+
+        <div class="studio-content" id="practice">
+
+            <div class="studio-intro">
+
+                <h3>Practise Hexadecimal Values</h3>
+
+                <p>
+                    Work each problem yourself before opening the explanation.
+                </p>
+
+            </div>
+
+
+            <div class="practice-set">
+
+                <div class="practice-item">
+
+                    <strong>1. What denary value is A₁₆?</strong>
+
+                    <details>
+                        <summary>Reveal answer</summary>
+                        <p>
+                            A₁₆ = <strong>10₁₀</strong>.
+                        </p>
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>2. What denary value is F₁₆?</strong>
+
+                    <details>
+                        <summary>Reveal answer</summary>
+                        <p>
+                            F₁₆ = <strong>15₁₀</strong>.
+                        </p>
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>3. What denary value is 10₁₆?</strong>
+
+                    <details>
+                        <summary>Reveal answer</summary>
+                        <p>
+                            1 × 16 + 0 = <strong>16₁₀</strong>.
+                        </p>
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>4. What denary value is 1F₁₆?</strong>
+
+                    <details>
+                        <summary>Reveal answer</summary>
+                        <p>
+                            1 × 16 + 15 =
+                            <strong>31₁₀</strong>.
+                        </p>
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>5. What denary value is 2B₁₆?</strong>
+
+                    <details>
+                        <summary>Reveal answer</summary>
+                        <p>
+                            2 × 16 + 11 =
+                            <strong>43₁₀</strong>.
+                        </p>
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>6. What denary value is 7D₁₆?</strong>
+
+                    <details>
+                        <summary>Reveal answer</summary>
+                        <p>
+                            7 × 16 + 13 =
+                            <strong>125₁₀</strong>.
+                        </p>
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>7. What denary value is C8₁₆?</strong>
+
+                    <details>
+                        <summary>Reveal answer</summary>
+                        <p>
+                            12 × 16 + 8 =
+                            <strong>200₁₀</strong>.
+                        </p>
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>8. What denary value is FF₁₆?</strong>
+
+                    <details>
+                        <summary>Reveal answer</summary>
+                        <p>
+                            15 × 16 + 15 =
+                            <strong>255₁₀</strong>.
+                        </p>
+                    </details>
+
+                </div>
+
+            </div>
+
+
+            <div class="studio-intro second">
+
+                <h3>Recognition Practice</h3>
+
+                <p>
+                    Which of the following are valid hexadecimal numbers?
+                </p>
+
+            </div>
+
+
+            <div class="validity-grid">
+
+                <div>
+                    <strong>4B</strong>
+                    <span class="valid">VALID</span>
+                </div>
+
+                <div>
+                    <strong>9G</strong>
+                    <span class="invalid">INVALID</span>
+                </div>
+
+                <div>
+                    <strong>CAFE</strong>
+                    <span class="valid">VALID</span>
+                </div>
+
+                <div>
+                    <strong>12F</strong>
+                    <span class="valid">VALID</span>
+                </div>
+
+                <div>
+                    <strong>7Z</strong>
+                    <span class="invalid">INVALID</span>
+                </div>
+
+                <div>
+                    <strong>BEEF</strong>
+                    <span class="valid">VALID</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- APPLICATIONS -->
+
+        <div class="studio-content" id="applications">
+
+            <div class="studio-intro">
+
+                <h3>Hexadecimal in Computing</h3>
+
+                <p>
+                    Hexadecimal becomes particularly useful when programmers,
+                    network engineers and computer technicians need to inspect
+                    binary-related information.
+                </p>
+
+            </div>
+
+
+            <div class="application-table">
+
+                <div class="application-row heading">
+
+                    <span>Area</span>
+                    <span>Example</span>
+                    <span>Why hexadecimal helps</span>
+
+                </div>
+
+
+                <div class="application-row">
+
+                    <span>Web colours</span>
+
+                    <span>#00FF00</span>
+
+                    <span>
+                        Represents colour components compactly.
+                    </span>
+
+                </div>
+
+
+                <div class="application-row">
+
+                    <span>MAC addresses</span>
+
+                    <span>3A:7F:21:B4:09:CE</span>
+
+                    <span>
+                        Much shorter than the equivalent binary.
+                    </span>
+
+                </div>
+
+
+                <div class="application-row">
+
+                    <span>Memory addresses</span>
+
+                    <span>0x7FF2A</span>
+
+                    <span>
+                        Makes low-level addresses easier to read.
+                    </span>
+
+                </div>
+
+
+                <div class="application-row">
+
+                    <span>Machine data</span>
+
+                    <span>7F 45 4C 46</span>
+
+                    <span>
+                        Allows long binary sequences to be inspected compactly.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="exam-tip">
+
+                <strong>Exam Tip</strong>
+
+                <p>
+                    If asked why hexadecimal is used, do not simply say
+                    "because computers use hexadecimal." Explain that it
+                    provides a <strong>shorter and easier-to-read representation
+                    of binary data for humans</strong>.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MISTAKES -->
+
+        <div class="studio-content" id="mistakes">
+
+            <div class="studio-intro">
+
+                <h3>Fix the Mistake</h3>
+
+                <p>
+                    Carefully examine each student's reasoning.
+                </p>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <h4>Mistake 1</h4>
+
+                <div class="wrong-work">
+                    F₁₆ = 16₁₀
+                </div>
+
+                <p>
+                    What is wrong?
+                </p>
+
+                <details>
+                    <summary>Reveal explanation</summary>
+
+                    <p>
+                        F is the hexadecimal symbol for
+                        <strong>15</strong>, not 16.
+                    </p>
+
+                    <p>
+                        The next hexadecimal value after F is 10₁₆,
+                        which represents 16₁₀.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <h4>Mistake 2</h4>
+
+                <div class="wrong-work">
+                    2A₁₆ = 2 × 16 + 10 = 26
+                </div>
+
+                <p>
+                    Find the arithmetic error.
+                </p>
+
+                <details>
+                    <summary>Reveal explanation</summary>
+
+                    <p>
+                        2 × 16 = 32.
+                    </p>
+
+                    <p>
+                        Therefore:
+                    </p>
+
+                    <p>
+                        32 + 10 = <strong>42</strong>.
+                    </p>
+
+                    <p>
+                        So:
+                        <strong>2A₁₆ = 42₁₀</strong>.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <h4>Mistake 3</h4>
+
+                <div class="wrong-work">
+                    1G₁₆ is a valid hexadecimal number.
+                </div>
+
+                <details>
+                    <summary>Reveal explanation</summary>
+
+                    <p>
+                        Hexadecimal uses only:
+                        <strong>0–9 and A–F</strong>.
+                    </p>
+
+                    <p>
+                        G is not a hexadecimal digit.
+                    </p>
+
+                    <p>
+                        Therefore 1G₁₆ is invalid.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <h4>Mistake 4</h4>
+
+                <div class="wrong-work">
+                    "Hexadecimal is another language that computers
+                    use instead of binary."
+                </div>
+
+                <details>
+                    <summary>Improve the statement</summary>
+
+                    <p>
+                        A better explanation is:
+                    </p>
+
+                    <p>
+                        <strong>
+                            Hexadecimal is a compact representation of binary
+                            data that is easier for humans to read.
+                        </strong>
+                    </p>
+
+                </details>
+
+            </div>
+
+        </div>
+
+
+        <!-- THINK -->
+
+        <div class="studio-content" id="think">
+
+            <div class="studio-intro">
+
+                <h3>Think Like a Computer Scientist</h3>
+
+                <p>
+                    These questions are about understanding, not just
+                    remembering.
+                </p>
+
+            </div>
+
+
+            <div class="thinking-grid">
+
+                <article>
+
+                    <span>THINK 01</span>
+
+                    <h4>
+                        Why are letters A–F necessary?
+                    </h4>
+
+                    <p>
+                        Could hexadecimal work using only 0–9?
+                    </p>
+
+                    <details>
+                        <summary>Think it through</summary>
+
+                        <p>
+                            No. Base 16 requires sixteen distinct symbols.
+                            The six additional values are represented by A–F.
+                        </p>
+
+                    </details>
+
+                </article>
+
+
+                <article>
+
+                    <span>THINK 02</span>
+
+                    <h4>
+                        Why is 10₁₆ equal to 16₁₀?
+                    </h4>
+
+                    <p>
+                        Compare the meaning of "10" in different bases.
+                    </p>
+
+                    <details>
+                        <summary>Answer</summary>
+
+                        <p>
+                            10₁₆ means:
+                            1 × 16 + 0 = 16.
+                        </p>
+
+                    </details>
+
+                </article>
+
+
+                <article>
+
+                    <span>THINK 03</span>
+
+                    <h4>
+                        Why is FF₁₆ equal to 255₁₀?
+                    </h4>
+
+                    <p>
+                        What happens when both hexadecimal positions contain
+                        the largest possible digit?
+                    </p>
+
+                    <details>
+                        <summary>Answer</summary>
+
+                        <p>
+                            F = 15.
+                        </p>
+
+                        <p>
+                            15 × 16 + 15 = 255.
+                        </p>
+
+                    </details>
+
+                </article>
+
+
+                <article>
+
+                    <span>THINK 04</span>
+
+                    <h4>
+                        Why might a programmer prefer 7F to 01111111?
+                    </h4>
+
+                    <details>
+                        <summary>Key idea</summary>
+
+                        <p>
+                            Both represent the same binary information,
+                            but 7F is considerably shorter and easier to
+                            read and remember.
+                        </p>
+
+                    </details>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK CHECK -->
+
+        <div class="studio-content" id="quick">
+
+            <div class="studio-intro">
+
+                <h3>Quick Check</h3>
+
+                <p>
+                    Answer first. Reveal only after you have committed
+                    to your answer.
+                </p>
+
+            </div>
+
+
+            <div class="quick-grid">
+
+                <details>
+                    <summary>1. How many symbols does hexadecimal use?</summary>
+                    <p><strong>16</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>2. What value does A represent?</summary>
+                    <p><strong>10</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>3. What value does F represent?</summary>
+                    <p><strong>15</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>4. What is 10₁₆ in denary?</summary>
+                    <p><strong>16</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>5. What is 20₁₆ in denary?</summary>
+                    <p><strong>32</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>6. What is FF₁₆ in denary?</summary>
+                    <p><strong>255</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>7. Is 4E a valid hexadecimal number?</summary>
+                    <p><strong>Yes.</strong></p>
+                </details>
+
+                <details>
+                    <summary>8. Is 4G a valid hexadecimal number?</summary>
+                    <p><strong>No.</strong></p>
+                </details>
+
+            </div>
+
+
+            <div class="ready-check">
+
+                <h4>Ready for Assessment?</h4>
+
+                <div class="ready-list">
+
+                    <span>✓ Know 0–9 and A–F</span>
+                    <span>✓ Understand base 16</span>
+                    <span>✓ Know hexadecimal place values</span>
+                    <span>✓ Recognise valid hexadecimal</span>
+                    <span>✓ Explain why hexadecimal is useful</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ASSESSMENT -->
+
+    <section class="assessment panel" id="assessment">
+
+        <div class="section-heading">
+
+            <span>08</span>
+
+            <div>
+                <h2>Formative Assessment</h2>
+                <p>10 questions — demonstrate your understanding</p>
+            </div>
+
+        </div>
+
+
+        <div class="assessment-intro">
+
+            <p>
+                Answer all ten questions independently.
+                <strong>70% or above</strong> indicates that you are ready
+                to move forward.
+            </p>
+
+        </div>
+
+
+        <form id="assessmentForm">
+
+
+            <div class="question">
+
+                <p>
+                    <strong>1.</strong>
+                    How many symbols are used in hexadecimal?
+                </p>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    2
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    10
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    16
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="d">
+                    20
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>2.</strong>
+                    What denary value does hexadecimal A represent?
+                </p>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    8
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    10
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    12
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    16
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>3.</strong>
+                    What denary value does F represent?
+                </p>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    14
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    15
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    16
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    20
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>4.</strong>
+                    What is 10₁₆ in denary?
+                </p>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    10
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    15
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    16
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    20
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>5.</strong>
+                    What is 2A₁₆ in denary?
+                </p>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    26
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    32
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    40
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="d">
+                    42
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>6.</strong>
+                    What is FF₁₆ in denary?
+                </p>
+
+                <label>
+                    <input type="radio" name="q6" value="a">
+                    240
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="b">
+                    250
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="c">
+                    255
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="d">
+                    256
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>7.</strong>
+                    Which is a valid hexadecimal number?
+                </p>
+
+                <label>
+                    <input type="radio" name="q7" value="a">
+                    3G
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="b">
+                    H2
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="c">
+                    4E
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="d">
+                    9Z
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>8.</strong>
+                    What is the hexadecimal place value immediately to the
+                    left of 1?
+                </p>
+
+                <label>
+                    <input type="radio" name="q8" value="a">
+                    2
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="b">
+                    10
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="c">
+                    16
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="d">
+                    256
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>9.</strong>
+                    Why is hexadecimal useful in computing?
+                </p>
+
+                <label>
+                    <input type="radio" name="q9" value="a">
+                    It replaces binary inside the processor.
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="b">
+                    It makes binary data shorter and easier for humans to read.
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="c">
+                    It uses fewer symbols than binary.
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="d">
+                    It removes the need for binary.
+                </label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>10.</strong>
+                    Which hexadecimal value represents denary 200?
+                </p>
+
+                <label>
+                    <input type="radio" name="q10" value="a">
+                    B4
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="b">
+                    C8
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="c">
+                    D8
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="d">
+                    F0
+                </label>
+
+            </div>
+
+
+            <button type="submit" class="primary-btn">
+                Submit Assessment
+            </button>
+
+        </form>
+
+
+        <div id="assessmentResult"
+             class="assessment-result hidden">
+        </div>
+
+
+        <div id="nextStep"
+             class="next-step hidden">
+        </div>
+
+    </section>
+
+
+    <!-- GAME BREAK -->
+
+    <section class="game-break panel">
+
+        <div class="game-header">
+
+            <div>
+
+                <span>5-MINUTE GAME BREAK</span>
+
+                <h2>Take a Short Blockly Games Break</h2>
+
+            </div>
+
+            <div class="game-symbol">
+                ▶
+            </div>
+
+        </div>
+
+
+        <p>
+            This is a genuine Blockly Games activity, not part of your
+            Computer Science assessment.
+        </p>
+
+
+        <div class="game-controls">
+
+            <select id="gameSelect">
+
+                <option value="https://blockly.games/maze?lang=en">
+                    Blockly Maze
+                </option>
+
+                <option value="https://blockly.games/turtle?lang=en">
+                    Blockly Turtle
+                </option>
+
+                <option value="https://blockly.games/bird?lang=en">
+                    Blockly Bird
+                </option>
+
+                <option value="https://blockly.games/puzzle?lang=en">
+                    Blockly Puzzle
+                </option>
+
+                <option value="https://blockly.games/music?lang=en">
+                    Blockly Music
+                </option>
+
+            </select>
+
+
+            <button id="startGame" class="primary-btn">
+                Start 5-Minute Game
+            </button>
+
+        </div>
+
+
+        <div id="gameTimer"
+             class="game-timer hidden">
+
+            <strong id="timerDisplay">
+                05:00
+            </strong>
+
+            <span>
+                Return to the lesson when the timer finishes.
+            </span>
+
+        </div>
+
+
+        <div id="gameMessage"
+             class="game-message">
+        </div>
+
+    </section>
+
+
+    <!-- EXIT TICKET -->
+
+    <section class="exit-ticket panel">
+
+        <div class="section-heading">
+
+            <span>09</span>
+
+            <div>
+                <h2>Exit Ticket</h2>
+                <p>Reflect before leaving the lesson</p>
+            </div>
+
+        </div>
+
+
+        <div class="exit-grid">
+
+            <div>
+
+                <label for="learned">
+                    What have you learned about hexadecimal?
+                </label>
+
+                <textarea
+                    id="learned"
+                    placeholder="Write your reflection..."
+                ></textarea>
+
+            </div>
+
+
+            <div>
+
+                <label for="unclear">
+                    What still needs clarification or practice?
+                </label>
+
+                <textarea
+                    id="unclear"
+                    placeholder="Be honest — this helps your teacher support you."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <button id="saveExit"
+                class="secondary-btn">
+            Save Exit Ticket
+        </button>
+
+        <p id="exitSaved"
+           class="saved-message">
+        </p>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="lesson-nav">
+
+        <a href="DR-03.html"
+           class="nav-btn">
+            ← Previous
+        </a>
+
+        <a href="INDEX.html"
+           class="nav-btn dashboard">
+            Topic Dashboard
+        </a>
+
+        <a href="DR-05.html"
+           class="nav-btn">
+            Next →
+        </a>
+
+    </nav>
+
+</main>
+
+
+<footer>
+
+    <strong>IGCSE Computer Science 0984</strong>
+
+    <span>Topic 1 — Data Representation</span>
+
+    <span>DR-04</span>
+
+</footer>
+
+
+<script src="DR-04.js"></script>
+
+</body>
+</html>

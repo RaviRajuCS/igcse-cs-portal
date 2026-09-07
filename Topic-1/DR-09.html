@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DR-09 | Image Representation — Calculations & File Size</title>
+<link rel="stylesheet" href="DR-09.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="brand">
+        <div class="brand-title">IGCSE Computer Science 0984</div>
+        <div class="brand-subtitle">Data Representation • DR-09</div>
+    </div>
+
+    <div class="author">
+        <img src="IMG-Ravi.jpeg" alt="Design and Content by Ravi Raju">
+        <div>
+            <strong>Design and Content by Ravi Raju</strong>
+            <span>Computer Science • EdTech • Physical Computing</span>
+        </div>
+    </div>
+
+    <img class="school-logo" src="MES35.jpg" alt="Modern English School Cairo 35 Years">
+</header>
+
+<nav class="top-nav">
+    <a href="#learn">Learn</a>
+    <a href="#worked">Worked Examples</a>
+    <a href="#studio">Student Studio</a>
+    <a href="#assessment">Assessment</a>
+    <a href="#exit">Exit Ticket</a>
+</nav>
+
+<main>
+
+<section class="hero">
+    <div>
+        <span class="lesson-code">DR-09</span>
+        <h1>Image Representation<br><span>Calculations &amp; File Size</span></h1>
+        <p>
+            Move beyond knowing what pixels and colour depth are.
+            In this lesson you will calculate how much data an image requires,
+            convert between bits, bytes and binary storage units, and solve
+            reverse and exam-style problems.
+        </p>
+    </div>
+
+    <div class="hero-equation">
+        <div class="equation-label">THE CORE IDEA</div>
+        <div class="big-formula">
+            Width × Height × Colour Depth
+        </div>
+        <div class="equation-result">
+            = image data in <strong>bits</strong>
+        </div>
+    </div>
+</section>
+
+
+<section id="learn" class="section">
+    <div class="section-heading">
+        <span>01</span>
+        <h2>What You Already Know</h2>
+    </div>
+
+    <div class="knowledge-grid">
+
+        <article class="knowledge-card">
+            <div class="icon">▦</div>
+            <h3>Pixels</h3>
+            <p>
+                A bitmap image is made from a rectangular grid of tiny picture
+                elements called <strong>pixels</strong>.
+            </p>
+            <p>
+                Each pixel stores information about the colour that should
+                appear at that position.
+            </p>
+        </article>
+
+        <article class="knowledge-card">
+            <div class="icon">↔</div>
+            <h3>Resolution</h3>
+            <p>
+                Resolution describes the number of pixels in the image,
+                usually written as:
+            </p>
+            <div class="mini-formula">width × height</div>
+            <p>
+                For example, 800 × 600 means 800 pixels across and 600 pixels
+                down.
+            </p>
+        </article>
+
+        <article class="knowledge-card">
+            <div class="icon">🎨</div>
+            <h3>Colour Depth</h3>
+            <p>
+                Colour depth is the number of bits used to represent the colour
+                of <strong>one pixel</strong>.
+            </p>
+            <p>
+                A 24-bit image therefore uses 24 bits for each pixel.
+            </p>
+        </article>
+
+        <article class="knowledge-card">
+            <div class="icon">ⓘ</div>
+            <h3>Metadata</h3>
+            <p>
+                Metadata may store information such as image dimensions,
+                colour information, date, camera details or other file data.
+            </p>
+            <p>
+                The standard exam calculation focuses on the supplied
+                pixel information unless additional information is given.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+
+<section class="section formula-section">
+    <div class="section-heading">
+        <span>02</span>
+        <h2>The Image File-Size Formula</h2>
+    </div>
+
+    <div class="formula-box">
+        <div class="formula-main">
+            <span>Image size in bits</span>
+            <strong>=</strong>
+            <span>width × height × colour depth</span>
+        </div>
+
+        <div class="formula-explanation">
+            <div>
+                <b>WIDTH</b>
+                <span>number of pixels horizontally</span>
+            </div>
+            <div>
+                <b>HEIGHT</b>
+                <span>number of pixels vertically</span>
+            </div>
+            <div>
+                <b>COLOUR DEPTH</b>
+                <span>bits used for each pixel</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="important-note">
+        <strong>Important:</strong>
+        This formula gives the size of the raw pixel data.
+        A real image file can also contain headers, metadata or compression,
+        so the actual stored file size can differ.
+    </div>
+
+    <div class="step-grid">
+
+        <div class="step-card">
+            <span class="step-number">1</span>
+            <h3>Find the pixels</h3>
+            <p>Multiply width by height.</p>
+            <code>width × height</code>
+        </div>
+
+        <div class="step-card">
+            <span class="step-number">2</span>
+            <h3>Find the bits</h3>
+            <p>Multiply the number of pixels by colour depth.</p>
+            <code>pixels × colour depth</code>
+        </div>
+
+        <div class="step-card">
+            <span class="step-number">3</span>
+            <h3>Convert to bytes</h3>
+            <p>There are 8 bits in one byte.</p>
+            <code>bits ÷ 8</code>
+        </div>
+
+        <div class="step-card">
+            <span class="step-number">4</span>
+            <h3>Convert units</h3>
+            <p>Use 1024 when converting binary storage units.</p>
+            <code>bytes ÷ 1024</code>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section units-section">
+    <div class="section-heading">
+        <span>03</span>
+        <h2>Bits, Bytes and Storage Units</h2>
+    </div>
+
+    <p class="lead">
+        Image calculations often require more than one conversion.
+        Learn the conversion chain rather than memorising isolated answers.
+    </p>
+
+    <div class="unit-chain">
+        <div class="unit-card">
+            <strong>8</strong>
+            <span>bits</span>
+            <small>= 1 byte</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="unit-card">
+            <strong>1024</strong>
+            <span>bytes</span>
+            <small>= 1 KiB</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="unit-card">
+            <strong>1024</strong>
+            <span>KiB</span>
+            <small>= 1 MiB</small>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="unit-card">
+            <strong>1024</strong>
+            <span>MiB</span>
+            <small>= 1 GiB</small>
+        </div>
+    </div>
+
+    <div class="exam-note">
+        <h3>Exam habit</h3>
+        <p>
+            Always look carefully at the unit requested by the question.
+            Do not stop after calculating the answer in bits if the question
+            asks for KiB or MiB.
+        </p>
+    </div>
+</section>
+
+
+<section id="worked" class="section">
+    <div class="section-heading">
+        <span>04</span>
+        <h2>Worked Examples — Step by Step</h2>
+    </div>
+
+    <article class="worked-example">
+        <div class="example-number">Example 1</div>
+        <h3>An 800 × 600 image with 8-bit colour depth</h3>
+
+        <div class="problem">
+            Calculate the size of the raw image data in bits and bytes.
+        </div>
+
+        <div class="working">
+            <div class="working-line">
+                <span>Pixels</span>
+                <strong>800 × 600 = 480,000 pixels</strong>
+            </div>
+
+            <div class="working-line">
+                <span>Bits</span>
+                <strong>480,000 × 8 = 3,840,000 bits</strong>
+            </div>
+
+            <div class="working-line">
+                <span>Bytes</span>
+                <strong>3,840,000 ÷ 8 = 480,000 bytes</strong>
+            </div>
+
+            <div class="working-line final-line">
+                <span>KiB</span>
+                <strong>480,000 ÷ 1024 = 468.75 KiB</strong>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <strong>Answer:</strong> 3,840,000 bits = 480,000 bytes = 468.75 KiB
+        </div>
+    </article>
+
+
+    <article class="worked-example">
+        <div class="example-number">Example 2</div>
+        <h3>A 1024 × 768 image with 24-bit colour depth</h3>
+
+        <div class="problem">
+            Calculate the image size in MiB.
+        </div>
+
+        <div class="working">
+            <div class="working-line">
+                <span>Pixels</span>
+                <strong>1024 × 768 = 786,432 pixels</strong>
+            </div>
+
+            <div class="working-line">
+                <span>Bits</span>
+                <strong>786,432 × 24 = 18,874,368 bits</strong>
+            </div>
+
+            <div class="working-line">
+                <span>Bytes</span>
+                <strong>18,874,368 ÷ 8 = 2,359,296 bytes</strong>
+            </div>
+
+            <div class="working-line">
+                <span>KiB</span>
+                <strong>2,359,296 ÷ 1024 = 2,304 KiB</strong>
+            </div>
+
+            <div class="working-line final-line">
+                <span>MiB</span>
+                <strong>2,304 ÷ 1024 = 2.25 MiB</strong>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <strong>Answer:</strong> 2.25 MiB
+        </div>
+    </article>
+
+
+    <article class="worked-example">
+        <div class="example-number">Example 3</div>
+        <h3>A 1920 × 1080 image with 24-bit colour depth</h3>
+
+        <div class="problem">
+            Calculate the raw image-data size in bytes and MiB.
+        </div>
+
+        <div class="working">
+            <div class="working-line">
+                <span>Pixels</span>
+                <strong>1920 × 1080 = 2,073,600 pixels</strong>
+            </div>
+
+            <div class="working-line">
+                <span>Bits</span>
+                <strong>2,073,600 × 24 = 49,766,400 bits</strong>
+            </div>
+
+            <div class="working-line">
+                <span>Bytes</span>
+                <strong>49,766,400 ÷ 8 = 6,220,800 bytes</strong>
+            </div>
+
+            <div class="working-line">
+                <span>KiB</span>
+                <strong>6,220,800 ÷ 1024 = 6,075 KiB</strong>
+            </div>
+
+            <div class="working-line final-line">
+                <span>MiB</span>
+                <strong>6,075 ÷ 1024 ≈ 5.93 MiB</strong>
+            </div>
+        </div>
+
+        <div class="answer-box">
+            <strong>Answer:</strong> 6,220,800 bytes ≈ 5.93 MiB
+        </div>
+    </article>
+</section>
+
+
+<section class="section reverse-section">
+    <div class="section-heading">
+        <span>05</span>
+        <h2>Reverse Calculations</h2>
+    </div>
+
+    <p class="lead">
+        Strong Computer Science students should not only calculate forward.
+        You should also be able to work backwards from a file size.
+    </p>
+
+    <div class="reverse-grid">
+
+        <article>
+            <h3>Finding Colour Depth</h3>
+            <p>If the image dimensions and raw data size are known:</p>
+
+            <div class="reverse-formula">
+                Colour depth =
+                <strong>file size in bits ÷ number of pixels</strong>
+            </div>
+
+            <p>
+                For example, suppose an image is 100 × 100 pixels and contains
+                80,000 bits of raw pixel data.
+            </p>
+
+            <div class="mini-working">
+                100 × 100 = 10,000 pixels<br>
+                80,000 ÷ 10,000 = <strong>8 bits per pixel</strong>
+            </div>
+        </article>
+
+        <article>
+            <h3>Finding Maximum Pixels</h3>
+            <p>
+                If storage space is limited, divide the available number of
+                bits by the colour depth.
+            </p>
+
+            <div class="reverse-formula">
+                Pixels =
+                <strong>available bits ÷ colour depth</strong>
+            </div>
+
+            <p>
+                This tells you how many pixels could be stored under the
+                stated conditions.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+
+<section class="section compare-section">
+    <div class="section-heading">
+        <span>06</span>
+        <h2>Which Image Needs More Storage?</h2>
+    </div>
+
+    <div class="comparison-table">
+        <div class="compare-header">
+            <span>Image</span>
+            <span>Resolution</span>
+            <span>Colour Depth</span>
+            <span>Relative Data</span>
+        </div>
+
+        <div class="compare-row">
+            <span>A</span>
+            <span>800 × 600</span>
+            <span>8-bit</span>
+            <span>3,840,000 bits</span>
+        </div>
+
+        <div class="compare-row">
+            <span>B</span>
+            <span>800 × 600</span>
+            <span>24-bit</span>
+            <span>11,520,000 bits</span>
+        </div>
+
+        <div class="compare-row">
+            <span>C</span>
+            <span>1600 × 1200</span>
+            <span>8-bit</span>
+            <span>15,360,000 bits</span>
+        </div>
+    </div>
+
+    <div class="reasoning-box">
+        <h3>Think before calculating</h3>
+        <p>
+            Image B has the same number of pixels as A but uses three times
+            the colour depth. Therefore B requires three times the pixel data.
+        </p>
+        <p>
+            Image C has four times as many pixels as A because both dimensions
+            have doubled. Therefore C requires four times as much pixel data.
+        </p>
+    </div>
+</section>
+
+
+<section id="studio" class="section studio-section">
+    <div class="section-heading">
+        <span>07</span>
+        <h2>Student Studio</h2>
+    </div>
+
+    <p class="studio-intro">
+        This is your working laboratory. Read the explanation, perform the
+        calculations, check your reasoning, and then practise without help.
+    </p>
+
+    <div class="studio-tabs">
+        <button class="studio-tab active" data-tab="formulaLab">Learn the Formula</button>
+        <button class="studio-tab" data-tab="calculator">Full Image Calculator</button>
+        <button class="studio-tab" data-tab="conversionLab">Bits ↔ Bytes</button>
+        <button class="studio-tab" data-tab="storageLab">Storage Units</button>
+        <button class="studio-tab" data-tab="reverseLab">Reverse Engineer</button>
+        <button class="studio-tab" data-tab="compareLab">Compare Images</button>
+        <button class="studio-tab" data-tab="examLab">Exam Method</button>
+        <button class="studio-tab" data-tab="practiceLab">Guided Practice</button>
+        <button class="studio-tab" data-tab="mistakeLab">Fix the Mistake</button>
+        <button class="studio-tab" data-tab="challengeLab">Challenge</button>
+        <button class="studio-tab" data-tab="thinkLab">Think Deeper</button>
+        <button class="studio-tab" data-tab="quickLab">Quick Check</button>
+    </div>
+
+
+    <div id="formulaLab" class="studio-panel active">
+
+        <div class="learning-panel">
+            <h3>Understand what each multiplication means</h3>
+
+            <p>
+                Imagine an image that is 4 pixels wide and 3 pixels high.
+                That gives:
+            </p>
+
+            <div class="calculation-strip">
+                4 × 3 = <strong>12 pixels</strong>
+            </div>
+
+            <p>
+                If each pixel requires 8 bits:
+            </p>
+
+            <div class="calculation-strip">
+                12 × 8 = <strong>96 bits</strong>
+            </div>
+
+            <p>
+                Since 8 bits make one byte:
+            </p>
+
+            <div class="calculation-strip">
+                96 ÷ 8 = <strong>12 bytes</strong>
+            </div>
+
+            <div class="concept-chain">
+                <span>Dimensions</span>
+                <b>→</b>
+                <span>Pixels</span>
+                <b>→</b>
+                <span>Bits</span>
+                <b>→</b>
+                <span>Bytes</span>
+                <b>→</b>
+                <span>KiB / MiB</span>
+            </div>
+
+            <h4>Your key question</h4>
+            <p>
+                At every stage ask yourself:
+                <strong>“What unit do I have now?”</strong>
+            </p>
+        </div>
+
+    </div>
+
+
+    <div id="calculator" class="studio-panel">
+
+        <div class="lab-grid">
+
+            <div class="input-card">
+                <h3>Full Image Calculator</h3>
+
+                <label>
+                    Width (pixels)
+                    <input id="calcWidth" type="number" min="1" value="800">
+                </label>
+
+                <label>
+                    Height (pixels)
+                    <input id="calcHeight" type="number" min="1" value="600">
+                </label>
+
+                <label>
+                    Colour depth (bits per pixel)
+                    <input id="calcDepth" type="number" min="1" value="8">
+                </label>
+
+                <button id="calculateImage" class="action-button">
+                    Calculate Image Size
+                </button>
+            </div>
+
+            <div id="imageCalcResult" class="result-card">
+                <h3>Calculation</h3>
+                <p>Enter the image details and calculate.</p>
+            </div>
+
+        </div>
+
+        <div class="method-reminder">
+            <strong>Remember:</strong>
+            Width × Height gives pixels.
+            Pixels × Colour Depth gives bits.
+            Bits ÷ 8 gives bytes.
+        </div>
+
+    </div>
+
+
+    <div id="conversionLab" class="studio-panel">
+
+        <div class="lab-grid">
+
+            <div class="input-card">
+                <h3>Bits → Bytes</h3>
+
+                <label>
+                    Number of bits
+                    <input id="bitsInput" type="number" min="0" value="3840000">
+                </label>
+
+                <button id="bitsToBytes" class="action-button">
+                    Convert to Bytes
+                </button>
+
+                <div id="bitsResult" class="lab-result"></div>
+            </div>
+
+            <div class="input-card">
+                <h3>Bytes → Bits</h3>
+
+                <label>
+                    Number of bytes
+                    <input id="bytesInput" type="number" min="0" value="480000">
+                </label>
+
+                <button id="bytesToBits" class="action-button">
+                    Convert to Bits
+                </button>
+
+                <div id="bytesResult" class="lab-result"></div>
+            </div>
+
+        </div>
+
+        <div class="learning-panel compact">
+            <h3>Why divide by 8?</h3>
+            <p>
+                A byte is a group of exactly 8 bits. Therefore, when converting
+                a number of bits into bytes, you are asking:
+                <strong>“How many groups of eight are there?”</strong>
+            </p>
+        </div>
+
+    </div>
+
+
+    <div id="storageLab" class="studio-panel">
+
+        <div class="lab-grid">
+
+            <div class="input-card">
+                <h3>Storage Unit Converter</h3>
+
+                <label>
+                    Value
+                    <input id="storageValue" type="number" min="0" value="2359296">
+                </label>
+
+                <label>
+                    Starting unit
+                    <select id="storageUnit">
+                        <option value="bits">bits</option>
+                        <option value="bytes" selected>bytes</option>
+                        <option value="kib">KiB</option>
+                        <option value="mib">MiB</option>
+                        <option value="gib">GiB</option>
+                    </select>
+                </label>
+
+                <button id="convertStorage" class="action-button">
+                    Convert
+                </button>
+            </div>
+
+            <div id="storageResult" class="result-card">
+                <h3>Conversions</h3>
+                <p>Enter a value and choose its starting unit.</p>
+            </div>
+
+        </div>
+
+        <div class="unit-warning">
+            <strong>Do not confuse:</strong>
+            KB/MB as decimal units with KiB/MiB as binary units.
+            For these calculations, use the conversion values given by the
+            question or the convention being taught.
+        </div>
+
+    </div>
+
+
+    <div id="reverseLab" class="studio-panel">
+
+        <div class="lab-grid">
+
+            <div class="input-card">
+                <h3>Find Colour Depth</h3>
+
+                <label>
+                    Width (pixels)
+                    <input id="reverseWidth" type="number" min="1" value="100">
+                </label>
+
+                <label>
+                    Height (pixels)
+                    <input id="reverseHeight" type="number" min="1" value="100">
+                </label>
+
+                <label>
+                    Raw image data (bits)
+                    <input id="reverseBits" type="number" min="1" value="80000">
+                </label>
+
+                <button id="reverseCalculate" class="action-button">
+                    Find Colour Depth
+                </button>
+            </div>
+
+            <div id="reverseResult" class="result-card">
+                <h3>Reverse Calculation</h3>
+                <p>Work backwards from the known information.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="compareLab" class="studio-panel">
+
+        <div class="comparison-inputs">
+
+            <div class="input-card">
+                <h3>Image A</h3>
+                <label>Width <input id="aWidth" type="number" value="800"></label>
+                <label>Height <input id="aHeight" type="number" value="600"></label>
+                <label>Colour depth <input id="aDepth" type="number" value="8"></label>
+            </div>
+
+            <div class="input-card">
+                <h3>Image B</h3>
+                <label>Width <input id="bWidth" type="number" value="800"></label>
+                <label>Height <input id="bHeight" type="number" value="600"></label>
+                <label>Colour depth <input id="bDepth" type="number" value="24"></label>
+            </div>
+
+        </div>
+
+        <button id="compareImages" class="action-button centred">
+            Compare Raw Data
+        </button>
+
+        <div id="compareResult" class="comparison-result"></div>
+
+    </div>
+
+
+    <div id="examLab" class="studio-panel">
+
+        <div class="exam-method">
+
+            <h3>The 6-Step Exam Method</h3>
+
+            <ol>
+                <li>
+                    <strong>Write the dimensions.</strong>
+                    Identify width and height.
+                </li>
+                <li>
+                    <strong>Calculate the number of pixels.</strong>
+                    Width × height.
+                </li>
+                <li>
+                    <strong>Multiply by colour depth.</strong>
+                    This gives bits.
+                </li>
+                <li>
+                    <strong>Convert bits to bytes.</strong>
+                    Divide by 8.
+                </li>
+                <li>
+                    <strong>Convert the unit if required.</strong>
+                    For KiB, divide by 1024; for MiB, divide by 1024 again.
+                </li>
+                <li>
+                    <strong>Check the answer.</strong>
+                    Does the size and unit make sense?
+                </li>
+            </ol>
+
+            <div class="exam-tip">
+                <strong>Exam tip:</strong>
+                Show your working. Even if the final answer is wrong,
+                clear intermediate calculations demonstrate your method
+                and make errors easier to diagnose.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="practiceLab" class="studio-panel">
+
+        <div class="practice-intro">
+            <h3>Guided Practice</h3>
+            <p>
+                Try each question yourself before revealing the answer.
+                Do not immediately click “Reveal”.
+            </p>
+        </div>
+
+        <div class="practice-question">
+            <h4>Practice 1</h4>
+            <p>
+                A bitmap is 200 × 100 pixels with a colour depth of 8 bits.
+                How many bits are required?
+            </p>
+            <button class="reveal-button" data-answer="200 × 100 = 20,000 pixels. 20,000 × 8 = 160,000 bits.">
+                Reveal Answer
+            </button>
+            <div class="reveal-answer"></div>
+        </div>
+
+        <div class="practice-question">
+            <h4>Practice 2</h4>
+            <p>
+                A 400 × 300 image has a colour depth of 24 bits.
+                Find the size in bytes.
+            </p>
+            <button class="reveal-button" data-answer="400 × 300 = 120,000 pixels. 120,000 × 24 = 2,880,000 bits. 2,880,000 ÷ 8 = 360,000 bytes.">
+                Reveal Answer
+            </button>
+            <div class="reveal-answer"></div>
+        </div>
+
+        <div class="practice-question">
+            <h4>Practice 3</h4>
+            <p>
+                A bitmap contains 1,048,576 bytes of raw pixel data.
+                How many KiB is this?
+            </p>
+            <button class="reveal-button" data-answer="1,048,576 ÷ 1024 = 1,024 KiB.">
+                Reveal Answer
+            </button>
+            <div class="reveal-answer"></div>
+        </div>
+
+        <div class="practice-question">
+            <h4>Practice 4</h4>
+            <p>
+                An image is 1024 × 1024 pixels and uses 8-bit colour depth.
+                Find its size in MiB.
+            </p>
+            <button class="reveal-button" data-answer="1,048,576 pixels × 8 = 8,388,608 bits. ÷8 = 1,048,576 bytes. ÷1024 = 1,024 KiB. ÷1024 = 1 MiB.">
+                Reveal Answer
+            </button>
+            <div class="reveal-answer"></div>
+        </div>
+
+        <div class="practice-question">
+            <h4>Practice 5</h4>
+            <p>
+                Two images have the same resolution. Image A is 8-bit and
+                Image B is 24-bit. Which requires more raw storage and by what
+                factor?
+            </p>
+            <button class="reveal-button" data-answer="Image B. 24 ÷ 8 = 3, so Image B requires three times as much raw pixel data.">
+                Reveal Answer
+            </button>
+            <div class="reveal-answer"></div>
+        </div>
+
+        <div class="practice-question">
+            <h4>Practice 6</h4>
+            <p>
+                An image is 500 × 400 pixels and requires 800,000 bits.
+                What is its colour depth?
+            </p>
+            <button class="reveal-button" data-answer="500 × 400 = 200,000 pixels. 800,000 ÷ 200,000 = 4 bits per pixel.">
+                Reveal Answer
+            </button>
+            <div class="reveal-answer"></div>
+        </div>
+
+    </div>
+
+
+    <div id="mistakeLab" class="studio-panel">
+
+        <div class="mistake-card">
+            <h3>Student says:</h3>
+            <blockquote>
+                “800 × 600 × 8 = 480,000 bytes.”
+            </blockquote>
+
+            <p><strong>What is wrong?</strong></p>
+
+            <button id="mistakeReveal" class="action-button">
+                Diagnose the Mistake
+            </button>
+
+            <div id="mistakeAnswer" class="diagnosis"></div>
+        </div>
+
+        <div class="mistake-card">
+            <h3>Student says:</h3>
+            <blockquote>
+                “A 1024 × 768 image has 1024 + 768 = 1792 pixels.”
+            </blockquote>
+
+            <p><strong>What is wrong?</strong></p>
+
+            <button id="mistakeReveal2" class="action-button">
+                Diagnose the Mistake
+            </button>
+
+            <div id="mistakeAnswer2" class="diagnosis"></div>
+        </div>
+
+        <div class="mistake-card">
+            <h3>Student says:</h3>
+            <blockquote>
+                “To convert bits to bytes I multiply by 8.”
+            </blockquote>
+
+            <p><strong>What is wrong?</strong></p>
+
+            <button id="mistakeReveal3" class="action-button">
+                Diagnose the Mistake
+            </button>
+
+            <div id="mistakeAnswer3" class="diagnosis"></div>
+        </div>
+
+    </div>
+
+
+    <div id="challengeLab" class="studio-panel">
+
+        <div class="challenge-box">
+
+            <span class="challenge-label">CHALLENGE</span>
+
+            <h3>A Storage-Limited Camera</h3>
+
+            <p>
+                A camera stores raw bitmap images using 24-bit colour.
+                It has 12 MiB available for one image.
+            </p>
+
+            <p>
+                Assuming no metadata or compression, how many pixels can
+                theoretically be stored?
+            </p>
+
+            <div class="challenge-hint">
+                <strong>Hint:</strong>
+                Convert 12 MiB to bytes first, then to bits.
+                Finally divide by 24 bits per pixel.
+            </div>
+
+            <button id="challengeReveal" class="action-button">
+                Reveal Solution
+            </button>
+
+            <div id="challengeAnswer" class="diagnosis"></div>
+
+        </div>
+
+    </div>
+
+
+    <div id="thinkLab" class="studio-panel">
+
+        <div class="thinking-card">
+
+            <h3>Think Like a Computer Scientist</h3>
+
+            <div class="thinking-question">
+                <span>1</span>
+                <p>
+                    If both the width and height of an image are doubled,
+                    what happens to the number of pixels?
+                </p>
+            </div>
+
+            <div class="thinking-question">
+                <span>2</span>
+                <p>
+                    If colour depth changes from 8-bit to 16-bit while
+                    resolution stays the same, what happens to raw data size?
+                </p>
+            </div>
+
+            <div class="thinking-question">
+                <span>3</span>
+                <p>
+                    Why is a 24-bit image normally larger than an 8-bit image
+                    at the same resolution?
+                </p>
+            </div>
+
+            <div class="thinking-question">
+                <span>4</span>
+                <p>
+                    Why might the actual file size of a compressed image be
+                    smaller than the value calculated using the bitmap formula?
+                </p>
+            </div>
+
+            <textarea id="thinkResponse"
+                placeholder="Write your own reasoning here..."></textarea>
+
+            <button id="saveThinking" class="action-button">
+                Save My Thinking
+            </button>
+
+            <span id="thinkingSaved" class="saved-message"></span>
+
+        </div>
+
+    </div>
+
+
+    <div id="quickLab" class="studio-panel">
+
+        <div class="quick-check">
+
+            <h3>Quick Check</h3>
+            <p>Answer mentally before revealing the answer.</p>
+
+            <div class="quick-item">
+                <p><strong>Q1.</strong> How many bits are in 1 byte?</p>
+                <button data-answer="8 bits">Reveal</button>
+                <span></span>
+            </div>
+
+            <div class="quick-item">
+                <p><strong>Q2.</strong> What do width × height give?</p>
+                <button data-answer="The total number of pixels.">Reveal</button>
+                <span></span>
+            </div>
+
+            <div class="quick-item">
+                <p><strong>Q3.</strong> What does pixels × colour depth give?</p>
+                <button data-answer="The image data size in bits.">Reveal</button>
+                <span></span>
+            </div>
+
+            <div class="quick-item">
+                <p><strong>Q4.</strong> How do you convert bits to bytes?</p>
+                <button data-answer="Divide by 8.">Reveal</button>
+                <span></span>
+            </div>
+
+            <div class="quick-item">
+                <p><strong>Q5.</strong> How many bytes are in 1 KiB?</p>
+                <button data-answer="1024 bytes.">Reveal</button>
+                <span></span>
+            </div>
+
+            <div class="quick-item">
+                <p><strong>Q6.</strong> If resolution stays constant and colour depth triples, what happens to raw image size?</p>
+                <button data-answer="It triples.">Reveal</button>
+                <span></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="assessment" class="section assessment-section">
+
+    <div class="section-heading">
+        <span>08</span>
+        <h2>Formative Assessment</h2>
+    </div>
+
+    <p class="lead">
+        Ten questions. Work independently. Your result determines your next
+        learning step.
+    </p>
+
+    <form id="assessmentForm">
+
+        <div class="assessment-question">
+            <h3>1. What is the first calculation in an image-size problem?</h3>
+            <label><input type="radio" name="q1" value="a"> Divide the colour depth by 8</label>
+            <label><input type="radio" name="q1" value="b"> Multiply width by height</label>
+            <label><input type="radio" name="q1" value="c"> Divide width by height</label>
+            <label><input type="radio" name="q1" value="d"> Multiply bytes by 1024</label>
+        </div>
+
+        <div class="assessment-question">
+            <h3>2. A 100 × 200 image contains:</h3>
+            <label><input type="radio" name="q2" value="a"> 300 pixels</label>
+            <label><input type="radio" name="q2" value="b"> 10,000 pixels</label>
+            <label><input type="radio" name="q2" value="c"> 20,000 pixels</label>
+            <label><input type="radio" name="q2" value="d"> 30,000 pixels</label>
+        </div>
+
+        <div class="assessment-question">
+            <h3>3. A 500 × 400 image has 8-bit colour depth. How many bits?</h3>
+            <label><input type="radio" name="q3" value="a"> 200,000 bits</label>
+            <label><input type="radio" name="q3" value="b"> 800,000 bits</label>
+            <label><input type="radio" name="q3" value="c"> 1,600,000 bits</label>
+            <label><input type="radio" name="q3" value="d"> 3,200,000 bits</label>
+        </div>
+
+        <div class="assessment-question">
+            <h3>4. 2,880,000 bits is equal to:</h3>
+            <label><input type="radio" name="q4" value="a"> 36,000 bytes</label>
+            <label><input type="radio" name="q4" value="b"> 180,000 bytes</label>
+            <label><input type="radio" name="q4" value="c"> 360,000 bytes</label>
+            <label><input type="radio" name="q4" value="d"> 720,000 bytes</label>
+        </div>
+
+        <div class="assessment-question">
+            <h3>5. 1,048,576 bytes is equal to:</h3>
+            <label><input type="radio" name="q5" value="a"> 1 KiB</label>
+            <label><input type="radio" name="q5" value="b"> 1024 KiB</label>
+            <label><input type="radio" name="q5" value="c"> 2048 KiB</label>
+            <label><input type="radio" name="q5" value="d"> 10,240 KiB</label>
+        </div>
+
+        <div class="assessment-question">
+            <h3>6. A 1024 × 1024 image uses 8-bit colour. Its raw size is:</h3>
+            <label><input type="radio" name="q6" value="a"> 1 MiB</label>
+            <label><input type="radio" name="q6" value="b"> 2 MiB</label>
+            <label><input type="radio" name="q6" value="c"> 4 MiB</label>
+            <label><input type="radio" name="q6" value="d"> 8 MiB</label>
+        </div>
+
+        <div class="assessment-question">
+            <h3>7. Two images have identical resolution. One is 8-bit and one is 24-bit. The 24-bit image requires:</h3>
+            <label><input type="radio" name="q7" value="a"> one third as much data</label>
+            <label><input type="radio" name="q7" value="b"> twice as much data</label>
+            <label><input type="radio" name="q7" value="c"> three times as much data</label>
+            <label><input type="radio" name="q7" value="d"> 24 times as much data</label>
+        </div>
+
+        <div class="assessment-question">
+            <h3>8. An image is 100 × 100 pixels and contains 80,000 bits. What is its colour depth?</h3>
+            <label><input type="radio" name="q8" value="a"> 4 bits</label>
+            <label><input type="radio" name="q8" value="b"> 8 bits</label>
+            <label><input type="radio" name="q8" value="c"> 16 bits</label>
+            <label><input type="radio" name="q8" value="d"> 24 bits</label>
+        </div>
+
+        <div class="assessment-question">
+            <h3>9. Which statement is correct?</h3>
+            <label><input type="radio" name="q9" value="a"> Bits are converted to bytes by multiplying by 8.</label>
+            <label><input type="radio" name="q9" value="b"> Width + height gives the number of pixels.</label>
+            <label><input type="radio" name="q9" value="c"> Pixels × colour depth gives the image size in bits.</label>
+            <label><input type="radio" name="q9" value="d"> Colour depth has no effect on file size.</label>
+        </div>
+
+        <div class="assessment-question">
+            <h3>10. Why can the actual file size differ from the raw bitmap calculation?</h3>
+            <label><input type="radio" name="q10" value="a"> Pixels do not contain data.</label>
+            <label><input type="radio" name="q10" value="b"> Files may contain metadata or use compression.</label>
+            <label><input type="radio" name="q10" value="c"> Width and height are never stored.</label>
+            <label><input type="radio" name="q10" value="d"> Colour depth is always ignored.</label>
+        </div>
+
+        <button type="submit" class="assessment-button">
+            Submit Assessment
+        </button>
+
+    </form>
+
+    <div id="assessmentResult" class="assessment-result"></div>
+
+    <div id="remediation" class="remediation hidden">
+        <h3>Targeted Remediation</h3>
+        <p>
+            Your score is below the mastery threshold. Do not simply move on.
+            Revisit these areas:
+        </p>
+
+        <ul>
+            <li>Width × height = number of pixels</li>
+            <li>Pixels × colour depth = bits</li>
+            <li>Bits ÷ 8 = bytes</li>
+            <li>Bytes ÷ 1024 = KiB</li>
+            <li>KiB ÷ 1024 = MiB</li>
+            <li>Show every stage of the calculation</li>
+        </ul>
+
+        <button id="retakeButton" class="action-button">
+            Retake Assessment
+        </button>
+    </div>
+
+    <div id="mastery" class="mastery hidden">
+        <h3>Excellent — Image Calculations Mastered!</h3>
+        <p>
+            You are ready to move to <strong>DR-10: Sound Representation</strong>.
+        </p>
+        <a href="DR-10.html" class="next-button">Continue to DR-10 →</a>
+    </div>
+
+</section>
+
+
+<section class="section game-section">
+
+    <div class="section-heading">
+        <span>09</span>
+        <h2>5-Minute Game Break</h2>
+    </div>
+
+    <p>
+        You have completed the academic work. Now take a short genuine
+        programming game break.
+    </p>
+
+    <div class="game-card">
+        <div>
+            <h3>Blockly Games — Turtle</h3>
+            <p>
+                Use visual programming blocks to control a turtle and create
+                drawings. This is a genuine external Blockly programming
+                activity, not an assessment disguised as a game.
+            </p>
+        </div>
+
+        <div class="timer-display" id="gameTimer">05:00</div>
+
+        <div class="game-actions">
+            <button id="startGame" class="action-button">Start 5-Minute Break</button>
+            <a href="https://blockly.games/turtle?lang=en"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="external-game">
+                Open Blockly Turtle ↗
+            </a>
+        </div>
+
+        <div id="gameMessage" class="game-message"></div>
+    </div>
+
+</section>
+
+
+<section id="exit" class="section exit-section">
+
+    <div class="section-heading">
+        <span>10</span>
+        <h2>Exit Ticket</h2>
+    </div>
+
+    <p class="lead">
+        Before leaving this lesson, tell yourself honestly what you now
+        understand.
+    </p>
+
+    <div class="exit-grid">
+
+        <label>
+            What is the most important thing you learned?
+            <textarea id="learned"
+                placeholder="For example: I can calculate raw bitmap image size..."></textarea>
+        </label>
+
+        <label>
+            Which calculation can you now do confidently?
+            <textarea id="confident"
+                placeholder="Describe it in your own words..."></textarea>
+        </label>
+
+        <label>
+            What still needs more practice?
+            <textarea id="needsPractice"
+                placeholder="Be honest — this helps you learn."></textarea>
+        </label>
+
+    </div>
+
+    <button id="saveExit" class="action-button">
+        Save Exit Ticket
+    </button>
+
+    <span id="exitSaved" class="saved-message"></span>
+
+</section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-navigation">
+        <a href="DR-08.html">← DR-08</a>
+        <a href="INDEX.html">🏠 Topic Dashboard</a>
+        <a href="DR-10.html">DR-10 →</a>
+    </div>
+
+    <p>
+        IGCSE Computer Science 0984 • Data Representation • DR-09
+    </p>
+
+    <p>
+        Design and Content by Ravi Raju
+    </p>
+
+</footer>
+
+<script src="DR-09.js"></script>
+</body>
+</html>

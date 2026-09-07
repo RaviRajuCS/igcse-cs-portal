@@ -1,0 +1,977 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top left,
+        rgba(255,255,255,0.35),
+        transparent 35%),
+
+        linear-gradient(
+        135deg,
+        #f7d94c,
+        #f4c430,
+        #ffe98a
+        );
+
+    color: #174d32;
+    line-height: 1.65;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 40px;
+
+    background: rgba(255,255,255,0.32);
+
+    backdrop-filter: blur(16px);
+
+    border-bottom:
+        2px solid rgba(23,77,50,0.20);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.08);
+}
+
+.brand {
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand img {
+
+    width: 82px;
+    height: 82px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        4px solid #174d32;
+
+    box-shadow:
+        0 5px 16px rgba(0,0,0,0.18);
+}
+
+.brand h1 {
+
+    margin: 0;
+
+    font-size: 30px;
+
+    letter-spacing: 0.5px;
+}
+
+.brand p {
+
+    margin: 3px 0 0;
+
+    font-weight: 700;
+}
+
+.school-logo {
+
+    width: 115px;
+    height: 115px;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.top-nav {
+
+    display: flex;
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 16px;
+
+    flex-wrap: wrap;
+}
+
+.top-nav a {
+
+    padding: 11px 21px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,0.58);
+
+    color: #174d32;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.12);
+
+    transition: 0.2s ease;
+}
+
+.top-nav a:hover {
+
+    transform: translateY(-3px);
+
+    background:
+        rgba(255,255,255,0.90);
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+
+    width: 94%;
+
+    max-width: 1450px;
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    text-align: center;
+
+    padding: 50px 35px;
+
+    margin: 20px 0 30px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.43);
+
+    backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.12);
+
+    border:
+        1px solid rgba(255,255,255,0.45);
+}
+
+.lesson-number {
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+}
+
+.hero h2 {
+
+    margin: 8px 0 0;
+
+    font-size: 52px;
+
+    letter-spacing: 1px;
+}
+
+.hero h3 {
+
+    margin: 0 0 12px;
+
+    font-size: 25px;
+}
+
+.hero p {
+
+    max-width: 950px;
+
+    margin: auto;
+
+    font-size: 20px;
+}
+
+.topic-map {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 12px;
+
+    margin-top: 32px;
+}
+
+.topic-map div {
+
+    padding: 16px 8px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.58);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+/* =====================================================
+   PANELS
+===================================================== */
+
+.panel {
+
+    margin: 26px 0;
+
+    padding: 32px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.49);
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.09);
+
+    border:
+        1px solid rgba(255,255,255,0.40);
+}
+
+.panel h2 {
+
+    margin-top: 0;
+
+    font-size: 30px;
+}
+
+
+/* =====================================================
+   OBJECTIVES
+===================================================== */
+
+.objective-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+}
+
+.objective-grid div {
+
+    padding: 20px;
+
+    border-radius: 17px;
+
+    background:
+        rgba(255,255,255,0.58);
+
+    border-left:
+        5px solid #174d32;
+}
+
+.objective-grid strong {
+
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   BIG PICTURE
+===================================================== */
+
+.big-picture {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 15px;
+}
+
+.big-card {
+
+    text-align: center;
+
+    padding: 22px 14px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.58);
+
+    transition: 0.2s ease;
+}
+
+.big-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 10px 22px rgba(0,0,0,0.12);
+}
+
+.big-card span {
+
+    font-size: 38px;
+}
+
+.big-card h3 {
+
+    margin: 8px 0;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.revision-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background:
+        rgba(255,255,255,0.55);
+
+    overflow: hidden;
+
+    border-radius: 15px;
+}
+
+.revision-table th,
+.revision-table td {
+
+    padding: 14px;
+
+    border:
+        1px solid rgba(23,77,50,0.20);
+
+    text-align: left;
+}
+
+.revision-table th {
+
+    background:
+        rgba(23,77,50,0.14);
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   FORMULAS
+===================================================== */
+
+.formula-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.formula-grid div {
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.58);
+}
+
+.formula-grid h3 {
+
+    margin-top: 0;
+}
+
+code {
+
+    display: block;
+
+    padding: 13px;
+
+    border-radius: 9px;
+
+    background: #173d2b;
+
+    color: #fff6b5;
+
+    font-family: Consolas, monospace;
+
+    white-space: pre-wrap;
+}
+
+
+/* =====================================================
+   STUDIO
+===================================================== */
+
+.studio {
+
+    border:
+        3px solid rgba(23,77,50,0.20);
+}
+
+.studio-intro {
+
+    font-size: 18px;
+}
+
+.tabs {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.tabs button,
+button {
+
+    border: none;
+
+    border-radius: 13px;
+
+    padding: 10px 16px;
+
+    background:
+        rgba(255,255,255,0.65);
+
+    color: #174d32;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.10);
+
+    transition: 0.2s ease;
+}
+
+.tabs button:hover,
+button:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(255,255,255,0.92);
+}
+
+.tab-content {
+
+    display: none;
+
+    padding: 25px;
+
+    border-radius: 19px;
+
+    background:
+        rgba(255,255,255,0.50);
+}
+
+.tab-content.active {
+
+    display: block;
+}
+
+.review-box,
+.mixed-card {
+
+    padding: 20px;
+
+    margin: 14px 0;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.58);
+}
+
+.hidden-answer {
+
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    border-radius: 11px;
+
+    background:
+        rgba(179,255,177,0.62);
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   DIAGNOSTIC
+===================================================== */
+
+.diagnostic-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 12px;
+
+    margin: 25px 0;
+}
+
+.diagnostic-grid label {
+
+    padding: 15px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,0.60);
+
+    font-weight: 700;
+}
+
+.diagnostic-grid input {
+
+    width: auto;
+}
+
+
+/* =====================================================
+   EXAM STRATEGY
+===================================================== */
+
+.strategy-step {
+
+    display: flex;
+
+    gap: 20px;
+
+    padding: 18px;
+
+    margin: 12px 0;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.58);
+}
+
+.strategy-step > span {
+
+    min-width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #174d32;
+
+    color: #fff6b5;
+
+    font-weight: 900;
+}
+
+
+/* =====================================================
+   ASSESSMENT
+===================================================== */
+
+.assessment {
+
+    border:
+        4px solid rgba(23,77,50,0.24);
+}
+
+.assessment-header {
+
+    text-align: center;
+
+    padding-bottom: 20px;
+}
+
+.assessment-header > span {
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+
+    font-weight: 900;
+}
+
+.assessment-header h2 {
+
+    font-size: 35px;
+}
+
+.assessment-rules {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.assessment-rules div {
+
+    text-align: center;
+
+    padding: 18px;
+
+    border-radius: 17px;
+
+    background:
+        rgba(255,255,255,0.62);
+}
+
+.assessment-rules strong {
+
+    display: block;
+
+    font-size: 25px;
+}
+
+.assessment-rules span {
+
+    font-weight: 700;
+}
+
+.question {
+
+    position: relative;
+
+    padding: 25px 25px 22px 75px;
+
+    margin: 18px 0;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.58);
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.06);
+}
+
+.question-number {
+
+    position: absolute;
+
+    left: 20px;
+    top: 22px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #174d32;
+
+    color: #fff6b5;
+
+    font-weight: 900;
+}
+
+.question label {
+
+    display: block;
+
+    padding: 8px 0;
+
+    cursor: pointer;
+}
+
+.question input {
+
+    width: auto;
+
+    margin-right: 8px;
+}
+
+.submit-button {
+
+    display: block;
+
+    margin: 28px auto 10px;
+
+    padding: 15px 30px;
+
+    font-size: 18px;
+
+    background:
+        rgba(255,255,255,0.75);
+}
+
+#assessmentResult,
+#pathway {
+
+    margin-top: 20px;
+
+    padding: 22px;
+
+    border-radius: 16px;
+
+    font-size: 18px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   REMEDIATION
+===================================================== */
+
+.remediation-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+.remediation-grid div {
+
+    padding: 20px;
+
+    border-radius: 17px;
+
+    background:
+        rgba(255,255,255,0.58);
+}
+
+
+/* =====================================================
+   FINAL REFLECTION
+===================================================== */
+
+.final-reflection {
+
+    text-align: center;
+}
+
+.journey {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 13px;
+
+    margin: 30px 0;
+}
+
+.journey div {
+
+    padding: 17px 23px;
+
+    border-radius: 15px;
+
+    background:
+        #fff6b5;
+
+    font-weight: 900;
+}
+
+.journey span {
+
+    font-size: 25px;
+
+    font-weight: 900;
+}
+
+.final-message {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    font-size: 21px;
+}
+
+
+/* =====================================================
+   EXIT TICKET
+===================================================== */
+
+.exit-ticket label {
+
+    display: block;
+
+    margin-top: 16px;
+
+    font-weight: 800;
+}
+
+textarea {
+
+    width: 100%;
+
+    min-height: 110px;
+
+    margin-top: 7px;
+
+    padding: 13px;
+
+    border:
+        2px solid rgba(23,77,50,0.22);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255,255,255,0.76);
+
+    color: #174d32;
+
+    font-size: 16px;
+
+    resize: vertical;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    margin-top: 40px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    background:
+        rgba(23,77,50,0.14);
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   RESPONSIVE FALLBACK
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .topic-map,
+    .big-picture {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .objective-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .formula-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .diagnostic-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .site-header {
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .hero h2 {
+
+        font-size: 38px;
+    }
+
+    .two-column,
+    .assessment-rules,
+    .remediation-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .formula-grid,
+    .objective-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .diagnostic-grid {
+
+        grid-template-columns: 1fr 1fr;
+    }
+}

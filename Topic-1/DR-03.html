@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR-03 | Binary and Denary Conversion</title>
+    <link rel="stylesheet" href="DR-03.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="brand">
+        <div class="brand-title">IGCSE Computer Science 0984</div>
+        <div class="brand-subtitle">Topic 1 — Data Representation</div>
+    </div>
+
+    <div class="teacher-brand">
+        <img src="IMG-Ravi.jpeg" alt="Ravi Raju">
+        <div>
+            <strong>Design and Content by Ravi Raju</strong>
+            <span>Modern English School Cairo</span>
+        </div>
+        <img class="school-logo" src="MES35.jpg"
+             alt="Modern English School Cairo">
+    </div>
+
+</header>
+
+
+<main class="page">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div>
+            <span class="lesson-number">LESSON DR-03</span>
+
+            <h1>Binary ↔ Denary Conversion</h1>
+
+            <p>
+                Computers work with binary, while humans commonly use denary.
+                Computer scientists therefore need to move confidently between
+                the two representations.
+            </p>
+        </div>
+
+        <div class="hero-badge">
+            <span>03</span>
+            <small>Conversion</small>
+        </div>
+
+    </section>
+
+
+    <!-- OBJECTIVES -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+            <span>01</span>
+
+            <div>
+                <h2>Learning Objectives</h2>
+                <p>What you should be able to do by the end of this lesson</p>
+            </div>
+        </div>
+
+        <div class="objective-grid">
+
+            <div class="objective">
+                <b>01</b>
+                <span>Explain why binary and denary represent the same numerical values in different ways.</span>
+            </div>
+
+            <div class="objective">
+                <b>02</b>
+                <span>Convert positive binary integers into denary.</span>
+            </div>
+
+            <div class="objective">
+                <b>03</b>
+                <span>Convert positive denary integers into binary.</span>
+            </div>
+
+            <div class="objective">
+                <b>04</b>
+                <span>Use binary place values accurately.</span>
+            </div>
+
+            <div class="objective">
+                <b>05</b>
+                <span>Use repeated division by 2 to convert denary to binary.</span>
+            </div>
+
+            <div class="objective">
+                <b>06</b>
+                <span>Check a conversion by converting it back again.</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONNECTION -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+            <span>02</span>
+
+            <div>
+                <h2>One Number — Two Representations</h2>
+                <p>The value does not change; only its representation changes</p>
+            </div>
+        </div>
+
+        <div class="conversion-bridge">
+
+            <div class="number-card">
+                <small>DENARY</small>
+                <strong>25</strong>
+                <span>Base 10</span>
+            </div>
+
+            <div class="bridge-arrow">
+                ⇄
+            </div>
+
+            <div class="number-card">
+                <small>BINARY</small>
+                <strong>00011001</strong>
+                <span>Base 2</span>
+            </div>
+
+        </div>
+
+        <div class="important">
+
+            <strong>Key idea:</strong>
+
+            <p>
+                25 and 00011001 are two different representations of the
+                <strong>same numerical value</strong>.
+            </p>
+
+            <p>
+                The computer does not suddenly change the value. We are simply
+                changing the way the value is represented.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- BINARY TO DENARY -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>03</span>
+
+            <div>
+                <h2>Binary → Denary</h2>
+                <p>Use the place values and add the values represented by 1s</p>
+            </div>
+
+        </div>
+
+
+        <div class="method-box">
+
+            <div class="method-number">METHOD 1</div>
+
+            <h3>Place-Value Method</h3>
+
+            <p>
+                To convert a binary number into denary:
+            </p>
+
+            <ol>
+                <li>Write the binary number.</li>
+                <li>Write the binary place values underneath.</li>
+                <li>Identify the positions containing <strong>1</strong>.</li>
+                <li>Add those place values.</li>
+                <li>The total is the denary value.</li>
+            </ol>
+
+        </div>
+
+
+        <div class="worked-example">
+
+            <div class="example-title">
+                Worked Example 1
+            </div>
+
+            <h3>Convert 00101101₂ to denary.</h3>
+
+            <div class="binary-work">
+
+                <div class="work-row labels">
+                    <span>Binary</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span>1</span>
+                    <span>0</span>
+                    <span>1</span>
+                    <span>1</span>
+                    <span>0</span>
+                    <span>1</span>
+                </div>
+
+                <div class="work-row">
+                    <span>Place value</span>
+                    <span>128</span>
+                    <span>64</span>
+                    <span>32</span>
+                    <span>16</span>
+                    <span>8</span>
+                    <span>4</span>
+                    <span>2</span>
+                    <span>1</span>
+                </div>
+
+            </div>
+
+            <div class="calculation-large">
+
+                <span>32</span>
+                <b>+</b>
+                <span>8</span>
+                <b>+</b>
+                <span>4</span>
+                <b>+</b>
+                <span>1</span>
+
+                <b>=</b>
+
+                <strong>45</strong>
+
+            </div>
+
+            <div class="answer">
+                00101101₂ = 45₁₀
+            </div>
+
+        </div>
+
+
+        <div class="worked-example">
+
+            <div class="example-title">
+                Worked Example 2
+            </div>
+
+            <h3>Convert 11001010₂ to denary.</h3>
+
+            <div class="binary-work">
+
+                <div class="work-row labels">
+                    <span>Binary</span>
+                    <span>1</span>
+                    <span>1</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span>1</span>
+                    <span>0</span>
+                    <span>1</span>
+                    <span>0</span>
+                </div>
+
+                <div class="work-row">
+                    <span>Place value</span>
+                    <span>128</span>
+                    <span>64</span>
+                    <span>32</span>
+                    <span>16</span>
+                    <span>8</span>
+                    <span>4</span>
+                    <span>2</span>
+                    <span>1</span>
+                </div>
+
+            </div>
+
+            <div class="calculation-large">
+
+                <span>128</span>
+                <b>+</b>
+                <span>64</span>
+                <b>+</b>
+                <span>8</span>
+                <b>+</b>
+                <span>2</span>
+
+                <b>=</b>
+
+                <strong>202</strong>
+
+            </div>
+
+            <div class="answer">
+                11001010₂ = 202₁₀
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DENARY TO BINARY -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>04</span>
+
+            <div>
+                <h2>Denary → Binary</h2>
+                <p>Use the largest possible binary place value at each step</p>
+            </div>
+
+        </div>
+
+
+        <div class="method-box">
+
+            <div class="method-number">METHOD 2</div>
+
+            <h3>Place-Value Selection Method</h3>
+
+            <p>
+                This is a very useful method for working with the 8-bit values
+                used in this topic.
+            </p>
+
+            <ol>
+                <li>Start with the largest place value: 128.</li>
+                <li>Ask: can this value be subtracted from the denary number?</li>
+                <li>If yes, write <strong>1</strong> and subtract it.</li>
+                <li>If no, write <strong>0</strong>.</li>
+                <li>Continue from left to right.</li>
+                <li>Read the eight bits as the final binary number.</li>
+            </ol>
+
+        </div>
+
+
+        <div class="worked-example">
+
+            <div class="example-title">
+                Worked Example 3
+            </div>
+
+            <h3>Convert 77₁₀ to an 8-bit binary number.</h3>
+
+            <div class="conversion-steps">
+
+                <div class="conversion-step">
+                    <strong>128</strong>
+                    <span>Too large</span>
+                    <b>0</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>64</strong>
+                    <span>77 − 64 = 13</span>
+                    <b>1</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>32</strong>
+                    <span>Too large</span>
+                    <b>0</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>16</strong>
+                    <span>Too large</span>
+                    <b>0</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>8</strong>
+                    <span>13 − 8 = 5</span>
+                    <b>1</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>4</strong>
+                    <span>5 − 4 = 1</span>
+                    <b>1</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>2</strong>
+                    <span>Too large</span>
+                    <b>0</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>1</strong>
+                    <span>1 − 1 = 0</span>
+                    <b>1</b>
+                </div>
+
+            </div>
+
+            <div class="answer">
+                77₁₀ = 01001101₂
+            </div>
+
+        </div>
+
+
+        <div class="worked-example">
+
+            <div class="example-title">
+                Worked Example 4
+            </div>
+
+            <h3>Convert 156₁₀ to binary.</h3>
+
+            <div class="conversion-steps">
+
+                <div class="conversion-step">
+                    <strong>128</strong>
+                    <span>156 − 128 = 28</span>
+                    <b>1</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>64</strong>
+                    <span>Too large</span>
+                    <b>0</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>32</strong>
+                    <span>Too large</span>
+                    <b>0</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>16</strong>
+                    <span>28 − 16 = 12</span>
+                    <b>1</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>8</strong>
+                    <span>12 − 8 = 4</span>
+                    <b>1</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>4</strong>
+                    <span>4 − 4 = 0</span>
+                    <b>1</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>2</strong>
+                    <span>Too large</span>
+                    <b>0</b>
+                </div>
+
+                <div class="conversion-step">
+                    <strong>1</strong>
+                    <span>Too large</span>
+                    <b>0</b>
+                </div>
+
+            </div>
+
+            <div class="answer">
+                156₁₀ = 10011100₂
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTERACTIVE CONVERTER -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>05</span>
+
+            <div>
+                <h2>Interactive Conversion Lab</h2>
+                <p>Experiment with binary and denary values</p>
+            </div>
+
+        </div>
+
+
+        <div class="converter">
+
+            <div class="converter-column">
+
+                <h3>Binary → Denary</h3>
+
+                <p>
+                    Enter an 8-bit binary number.
+                    Use only 0 and 1.
+                </p>
+
+                <input
+                    id="binaryInput"
+                    class="large-input"
+                    maxlength="8"
+                    placeholder="e.g. 01010110"
+                    inputmode="numeric"
+                >
+
+                <button id="binaryConvert" class="primary-btn">
+                    Convert to Denary
+                </button>
+
+                <div id="binaryResult" class="converter-result">
+                    Result will appear here.
+                </div>
+
+            </div>
+
+
+            <div class="converter-divider">
+                ⇄
+            </div>
+
+
+            <div class="converter-column">
+
+                <h3>Denary → Binary</h3>
+
+                <p>
+                    Enter a positive denary integer from 0 to 255.
+                </p>
+
+                <input
+                    id="denaryInput"
+                    class="large-input"
+                    type="number"
+                    min="0"
+                    max="255"
+                    placeholder="e.g. 86"
+                >
+
+                <button id="denaryConvert" class="primary-btn">
+                    Convert to Binary
+                </button>
+
+                <div id="denaryResult" class="converter-result">
+                    Result will appear here.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="converter-note">
+
+            <strong>Remember:</strong>
+
+            <span>
+                An 8-bit unsigned binary number can represent values from
+                <strong>0</strong> to <strong>255</strong>.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ORAL QUESTIONS -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>06</span>
+
+            <div>
+                <h2>Teacher–Student Discussion</h2>
+                <p>Explain your reasoning before moving on</p>
+            </div>
+
+        </div>
+
+        <div class="oral-grid">
+
+            <div class="oral-question">
+                <b>01</b>
+                <p>Why does 00000101 represent the same value as 101?</p>
+            </div>
+
+            <div class="oral-question">
+                <b>02</b>
+                <p>Why is the first bit in an 8-bit number worth 128?</p>
+            </div>
+
+            <div class="oral-question">
+                <b>03</b>
+                <p>When converting binary to denary, why do we only add the place values containing 1?</p>
+            </div>
+
+            <div class="oral-question">
+                <b>04</b>
+                <p>Why does 10000000 represent 128 rather than 1?</p>
+            </div>
+
+            <div class="oral-question">
+                <b>05</b>
+                <p>What would happen if you tried to represent 256 using only eight bits?</p>
+            </div>
+
+            <div class="oral-question">
+                <b>06</b>
+                <p>How could you check whether your conversion is correct?</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STUDENT STUDIO -->
+
+    <section class="student-studio">
+
+        <div class="studio-header">
+
+            <div>
+                <span>STUDENT STUDIO</span>
+
+                <h2>Conversion Workshop</h2>
+
+                <p>
+                    Learn the method, practise it, investigate mistakes,
+                    and then demonstrate your understanding.
+                </p>
+            </div>
+
+            <div class="studio-icon">
+                ⇄
+            </div>
+
+        </div>
+
+
+        <div class="studio-tabs">
+
+            <button class="studio-tab active" data-tab="explore">
+                Explore
+            </button>
+
+            <button class="studio-tab" data-tab="method">
+                Learn the Method
+            </button>
+
+            <button class="studio-tab" data-tab="practice">
+                Practise
+            </button>
+
+            <button class="studio-tab" data-tab="challenge">
+                Challenge
+            </button>
+
+            <button class="studio-tab" data-tab="mistakes">
+                Fix the Mistake
+            </button>
+
+            <button class="studio-tab" data-tab="think">
+                Think
+            </button>
+
+            <button class="studio-tab" data-tab="quick">
+                Quick Check
+            </button>
+
+        </div>
+
+
+        <!-- EXPLORE -->
+
+        <div class="studio-content active" id="explore">
+
+            <div class="studio-intro">
+
+                <h3>Explore the Conversion</h3>
+
+                <p>
+                    A binary number is not a completely different kind of
+                    number. It is another way of representing a numerical value.
+                </p>
+
+                <p>
+                    Think about the denary number <strong>13</strong>.
+                    In binary, we can build 13 using the place values
+                    8, 4 and 1.
+                </p>
+
+            </div>
+
+
+            <div class="explore-number">
+
+                <div class="number-part">
+                    <span>8</span>
+                    <small>2³</small>
+                </div>
+
+                <div class="plus">+</div>
+
+                <div class="number-part">
+                    <span>4</span>
+                    <small>2²</small>
+                </div>
+
+                <div class="plus">+</div>
+
+                <div class="number-part inactive">
+                    <span>2</span>
+                    <small>2¹</small>
+                </div>
+
+                <div class="plus">+</div>
+
+                <div class="number-part">
+                    <span>1</span>
+                    <small>2⁰</small>
+                </div>
+
+                <div class="equals">=</div>
+
+                <div class="total">13</div>
+
+            </div>
+
+
+            <div class="bit-pattern">
+
+                <div>
+                    <strong>8</strong>
+                    <span>1</span>
+                </div>
+
+                <div>
+                    <strong>4</strong>
+                    <span>1</span>
+                </div>
+
+                <div class="off">
+                    <strong>2</strong>
+                    <span>0</span>
+                </div>
+
+                <div>
+                    <strong>1</strong>
+                    <span>1</span>
+                </div>
+
+            </div>
+
+
+            <div class="studio-card-row">
+
+                <article class="learning-card">
+
+                    <h4>Binary → Denary</h4>
+
+                    <p>
+                        Find the place values where the bits are 1,
+                        then add those values together.
+                    </p>
+
+                    <div class="formula">
+                        1101₂ = 8 + 4 + 1 = 13₁₀
+                    </div>
+
+                </article>
+
+
+                <article class="learning-card">
+
+                    <h4>Denary → Binary</h4>
+
+                    <p>
+                        Find which powers of 2 can be combined to make
+                        the denary value.
+                    </p>
+
+                    <div class="formula">
+                        13₁₀ = 8 + 4 + 1 = 1101₂
+                    </div>
+
+                </article>
+
+
+                <article class="learning-card">
+
+                    <h4>The direction changes</h4>
+
+                    <p>
+                        The underlying place-value system remains the same.
+                        What changes is the method we use to construct the
+                        representation.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <!-- METHOD -->
+
+        <div class="studio-content" id="method">
+
+            <div class="studio-intro">
+
+                <h3>Learn the Two Conversion Methods</h3>
+
+                <p>
+                    Learn both directions carefully. Do not try to memorise
+                    answers. Learn the process.
+                </p>
+
+            </div>
+
+
+            <div class="method-comparison">
+
+                <article>
+
+                    <div class="direction">
+                        BINARY → DENARY
+                    </div>
+
+                    <h4>Place-Value Addition</h4>
+
+                    <ol>
+                        <li>Write the place values.</li>
+                        <li>Look at each binary digit.</li>
+                        <li>Ignore positions containing 0.</li>
+                        <li>Add the values underneath the 1s.</li>
+                        <li>Write the total in denary.</li>
+                    </ol>
+
+                    <div class="method-example">
+                        <strong>10110100</strong>
+                        <br>
+                        128 + 32 + 16 + 4
+                        <br>
+                        = <strong>180</strong>
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <div class="direction">
+                        DENARY → BINARY
+                    </div>
+
+                    <h4>Place-Value Selection</h4>
+
+                    <ol>
+                        <li>Start with 128.</li>
+                        <li>Decide whether it fits.</li>
+                        <li>Write 1 if it fits.</li>
+                        <li>Write 0 if it does not.</li>
+                        <li>Subtract selected values.</li>
+                        <li>Continue to the right.</li>
+                    </ol>
+
+                    <div class="method-example">
+                        <strong>180</strong>
+                        <br>
+                        128 + 32 + 16 + 4
+                        <br>
+                        = <strong>10110100</strong>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="exam-tip">
+
+                <strong>Exam Tip</strong>
+
+                <p>
+                    Always write the place values when doing a conversion by hand.
+                    It gives you a clear working method and makes mistakes easier
+                    to find.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRACTISE -->
+
+        <div class="studio-content" id="practice">
+
+            <div class="studio-intro">
+
+                <h3>Practise: Binary → Denary</h3>
+
+                <p>
+                    Work through these in order. Try each one before revealing
+                    the worked answer.
+                </p>
+
+            </div>
+
+
+            <div class="practice-set">
+
+                <div class="practice-item">
+
+                    <strong>1. 00000111₂</strong>
+
+                    <details>
+                        <summary>Reveal worked answer</summary>
+
+                        <p>
+                            4 + 2 + 1 = <strong>7</strong>
+                        </p>
+
+                        <p>
+                            Therefore:
+                            <strong>00000111₂ = 7₁₀</strong>
+                        </p>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>2. 00011001₂</strong>
+
+                    <details>
+                        <summary>Reveal worked answer</summary>
+
+                        <p>
+                            16 + 8 + 1 = <strong>25</strong>
+                        </p>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>3. 00110110₂</strong>
+
+                    <details>
+                        <summary>Reveal worked answer</summary>
+
+                        <p>
+                            32 + 16 + 4 + 2 =
+                            <strong>54</strong>
+                        </p>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>4. 01101001₂</strong>
+
+                    <details>
+                        <summary>Reveal worked answer</summary>
+
+                        <p>
+                            64 + 32 + 8 + 1 =
+                            <strong>105</strong>
+                        </p>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>5. 10010110₂</strong>
+
+                    <details>
+                        <summary>Reveal worked answer</summary>
+
+                        <p>
+                            128 + 16 + 4 + 2 =
+                            <strong>150</strong>
+                        </p>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>6. 11110000₂</strong>
+
+                    <details>
+                        <summary>Reveal worked answer</summary>
+
+                        <p>
+                            128 + 64 + 32 + 16 =
+                            <strong>240</strong>
+                        </p>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+
+            <div class="studio-intro second">
+
+                <h3>Now Practise the Other Direction</h3>
+
+                <p>
+                    Convert these denary values into 8-bit binary.
+                </p>
+
+            </div>
+
+
+            <div class="practice-set">
+
+                <div class="practice-item">
+
+                    <strong>7. 18₁₀</strong>
+
+                    <details>
+                        <summary>Reveal worked answer</summary>
+
+                        <p>
+                            16 + 2 = 18
+                        </p>
+
+                        <p>
+                            <strong>00010010₂</strong>
+                        </p>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>8. 43₁₀</strong>
+
+                    <details>
+                        <summary>Reveal worked answer</summary>
+
+                        <p>
+                            32 + 8 + 2 + 1 = 43
+                        </p>
+
+                        <p>
+                            <strong>00101011₂</strong>
+                        </p>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>9. 92₁₀</strong>
+
+                    <details>
+                        <summary>Reveal worked answer</summary>
+
+                        <p>
+                            64 + 16 + 8 + 4 = 92
+                        </p>
+
+                        <p>
+                            <strong>01011100₂</strong>
+                        </p>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>10. 201₁₀</strong>
+
+                    <details>
+                        <summary>Reveal worked answer</summary>
+
+                        <p>
+                            128 + 64 + 8 + 1 = 201
+                        </p>
+
+                        <p>
+                            <strong>11001001₂</strong>
+                        </p>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHALLENGE -->
+
+        <div class="studio-content" id="challenge">
+
+            <div class="studio-intro">
+
+                <h3>Challenge Zone</h3>
+
+                <p>
+                    These problems require you to use the conversion method rather
+                    than simply recall an answer.
+                </p>
+
+            </div>
+
+
+            <div class="challenge-card">
+
+                <h4>Challenge 1</h4>
+
+                <p>
+                    Which binary number represents the denary value 127?
+                </p>
+
+                <div class="challenge-options">
+                    <span>01111111</span>
+                    <span>10000000</span>
+                    <span>11111110</span>
+                    <span>11111111</span>
+                </div>
+
+                <details>
+                    <summary>Check the reasoning</summary>
+
+                    <p>
+                        127 = 64 + 32 + 16 + 8 + 4 + 2 + 1.
+                    </p>
+
+                    <p>
+                        Therefore every position except the 128 position is 1:
+                        <strong>01111111</strong>.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="challenge-card">
+
+                <h4>Challenge 2</h4>
+
+                <p>
+                    A student says:
+                </p>
+
+                <div class="student-statement">
+                    "10000001₂ is 9 because I can see a 1 at the beginning
+                    and a 1 at the end."
+                </div>
+
+                <p>
+                    Is the student correct?
+                </p>
+
+                <details>
+                    <summary>Check the reasoning</summary>
+
+                    <p>
+                        No. The left-most 1 represents 128 and the right-most
+                        1 represents 1.
+                    </p>
+
+                    <p>
+                        Therefore:
+                        <strong>10000001₂ = 129₁₀</strong>.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="challenge-card">
+
+                <h4>Challenge 3</h4>
+
+                <p>
+                    Find a binary number containing exactly four 1s whose
+                    denary value is greater than 200.
+                </p>
+
+                <details>
+                    <summary>One possible answer</summary>
+
+                    <p>
+                        <strong>11001100₂</strong>
+                    </p>
+
+                    <p>
+                        128 + 64 + 8 + 4 = 204.
+                    </p>
+
+                    <p>
+                        Other correct answers are possible.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </div>
+
+
+        <!-- MISTAKES -->
+
+        <div class="studio-content" id="mistakes">
+
+            <div class="studio-intro">
+
+                <h3>Fix the Mistake</h3>
+
+                <p>
+                    Strong programmers and computer scientists do not simply
+                    find answers — they learn to identify and correct errors.
+                </p>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <h4>Mistake 1</h4>
+
+                <p>
+                    A student converts:
+                </p>
+
+                <div class="wrong-work">
+                    00101010₂
+                    <br>
+                    32 + 8 + 2 = 40
+                </div>
+
+                <p>
+                    The answer should actually be 42.
+                    What was missed?
+                </p>
+
+                <details>
+                    <summary>Find the error</summary>
+
+                    <p>
+                        The binary number is:
+                        00101010
+                    </p>
+
+                    <p>
+                        Its 1s represent:
+                        32 + 8 + 2.
+                    </p>
+
+                    <p>
+                        That equals:
+                        <strong>42</strong>.
+                    </p>
+
+                    <p>
+                        The student's addition was incorrect.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <h4>Mistake 2</h4>
+
+                <p>
+                    A student writes:
+                </p>
+
+                <div class="wrong-work">
+                    25₁₀ = 00011010₂
+                </div>
+
+                <p>
+                    Find the problem.
+                </p>
+
+                <details>
+                    <summary>Check</summary>
+
+                    <p>
+                        00011010 represents:
+                    </p>
+
+                    <p>
+                        16 + 8 + 2 = <strong>26</strong>.
+                    </p>
+
+                    <p>
+                        Therefore it is not 25.
+                    </p>
+
+                    <p>
+                        25 is:
+                        <strong>00011001₂</strong>.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <h4>Mistake 3</h4>
+
+                <p>
+                    A student says:
+                </p>
+
+                <div class="wrong-work">
+                    "The binary number 00101 is smaller than 101
+                    because it has more zeroes."
+                </div>
+
+                <details>
+                    <summary>Think about it</summary>
+
+                    <p>
+                        Leading zeroes do not change a binary value.
+                    </p>
+
+                    <p>
+                        Therefore:
+                        <strong>00101₂ = 101₂ = 5₁₀</strong>.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </div>
+
+
+        <!-- THINK -->
+
+        <div class="studio-content" id="think">
+
+            <div class="studio-intro">
+
+                <h3>Think Beyond the Calculation</h3>
+
+                <p>
+                    Explain the ideas in your own words.
+                </p>
+
+            </div>
+
+
+            <div class="thinking-grid">
+
+                <article>
+
+                    <span>THINK 01</span>
+
+                    <h4>
+                        Why can every positive integer be represented in binary?
+                    </h4>
+
+                    <p>
+                        Think about the powers of 2 and how they can be combined
+                        to produce different values.
+                    </p>
+
+                    <details>
+                        <summary>Key idea</summary>
+
+                        <p>
+                            Powers of 2 can be combined to represent every
+                            positive integer within the available range.
+                        </p>
+
+                    </details>
+
+                </article>
+
+
+                <article>
+
+                    <span>THINK 02</span>
+
+                    <h4>
+                        Why does an 8-bit number stop at 255?
+                    </h4>
+
+                    <p>
+                        What happens when all eight bits are set to 1?
+                    </p>
+
+                    <details>
+                        <summary>Check</summary>
+
+                        <p>
+                            128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 = 255.
+                        </p>
+
+                    </details>
+
+                </article>
+
+
+                <article>
+
+                    <span>THINK 03</span>
+
+                    <h4>
+                        Why is checking the reverse conversion useful?
+                    </h4>
+
+                    <p>
+                        Suppose you converted 91 to binary. How could you
+                        test whether your answer is correct?
+                    </p>
+
+                    <details>
+                        <summary>Answer</summary>
+
+                        <p>
+                            Convert your binary answer back to denary.
+                            If you get 91, your conversion is consistent.
+                        </p>
+
+                    </details>
+
+                </article>
+
+
+                <article>
+
+                    <span>THINK 04</span>
+
+                    <h4>
+                        Is 01000000 greater than 00111111?
+                    </h4>
+
+                    <p>
+                        Do not compare the digits as if they were denary.
+                        Compare their place values.
+                    </p>
+
+                    <details>
+                        <summary>Answer</summary>
+
+                        <p>
+                            Yes. 01000000 = 64, while 00111111 = 63.
+                        </p>
+
+                    </details>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK CHECK -->
+
+        <div class="studio-content" id="quick">
+
+            <div class="studio-intro">
+
+                <h3>Quick Check</h3>
+
+                <p>
+                    Answer mentally first. Open each answer only after you have
+                    committed to your response.
+                </p>
+
+            </div>
+
+
+            <div class="quick-grid">
+
+                <details>
+                    <summary>1. Convert 00001001₂ to denary.</summary>
+                    <p>8 + 1 = <strong>9</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>2. Convert 00110000₂ to denary.</summary>
+                    <p>32 + 16 = <strong>48</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>3. Convert 00011100₂ to denary.</summary>
+                    <p>16 + 8 + 4 = <strong>28</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>4. Convert 14₁₀ to binary.</summary>
+                    <p>8 + 4 + 2 = <strong>00001110₂</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>5. Convert 50₁₀ to binary.</summary>
+                    <p>32 + 16 + 2 = <strong>00110010₂</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>6. Convert 100₁₀ to binary.</summary>
+                    <p>64 + 32 + 4 = <strong>01100100₂</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>7. What is 11111111₂?</summary>
+                    <p><strong>255₁₀</strong>.</p>
+                </details>
+
+                <details>
+                    <summary>8. What is 10000000₂?</summary>
+                    <p><strong>128₁₀</strong>.</p>
+                </details>
+
+            </div>
+
+
+            <div class="ready-check">
+
+                <h4>Ready for Assessment?</h4>
+
+                <p>
+                    You should now be able to do both directions without
+                    guessing:
+                </p>
+
+                <div class="ready-list">
+
+                    <span>✓ Binary → Denary</span>
+                    <span>✓ Denary → Binary</span>
+                    <span>✓ Use place values</span>
+                    <span>✓ Explain your working</span>
+                    <span>✓ Check your answer</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ASSESSMENT -->
+
+    <section class="assessment panel" id="assessment">
+
+        <div class="section-heading">
+
+            <span>07</span>
+
+            <div>
+                <h2>Formative Assessment</h2>
+                <p>10 questions — show what you can do independently</p>
+            </div>
+
+        </div>
+
+
+        <div class="assessment-intro">
+
+            <p>
+                Answer all ten questions. A score of <strong>70%</strong>
+                or higher indicates that you are ready to continue.
+                If you score below this, the lesson will direct you back
+                to targeted practice before a retest.
+            </p>
+
+        </div>
+
+
+        <form id="assessmentForm">
+
+            <div class="question">
+
+                <p>
+                    <strong>1.</strong>
+                    What is 00000101₂ in denary?
+                </p>
+
+                <label><input type="radio" name="q1" value="a"> 3</label>
+                <label><input type="radio" name="q1" value="b"> 4</label>
+                <label><input type="radio" name="q1" value="c"> 5</label>
+                <label><input type="radio" name="q1" value="d"> 6</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>2.</strong>
+                    What is 00011010₂ in denary?
+                </p>
+
+                <label><input type="radio" name="q2" value="a"> 24</label>
+                <label><input type="radio" name="q2" value="b"> 25</label>
+                <label><input type="radio" name="q2" value="c"> 26</label>
+                <label><input type="radio" name="q2" value="d"> 28</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>3.</strong>
+                    What is 00101101₂ in denary?
+                </p>
+
+                <label><input type="radio" name="q3" value="a"> 43</label>
+                <label><input type="radio" name="q3" value="b"> 44</label>
+                <label><input type="radio" name="q3" value="c"> 45</label>
+                <label><input type="radio" name="q3" value="d"> 46</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>4.</strong>
+                    What is 01000000₂ in denary?
+                </p>
+
+                <label><input type="radio" name="q4" value="a"> 32</label>
+                <label><input type="radio" name="q4" value="b"> 64</label>
+                <label><input type="radio" name="q4" value="c"> 65</label>
+                <label><input type="radio" name="q4" value="d"> 128</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>5.</strong>
+                    What is 13₁₀ in 8-bit binary?
+                </p>
+
+                <label><input type="radio" name="q5" value="a"> 00001101</label>
+                <label><input type="radio" name="q5" value="b"> 00001110</label>
+                <label><input type="radio" name="q5" value="c"> 00001011</label>
+                <label><input type="radio" name="q5" value="d"> 00010101</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>6.</strong>
+                    What is 25₁₀ in 8-bit binary?
+                </p>
+
+                <label><input type="radio" name="q6" value="a"> 00011000</label>
+                <label><input type="radio" name="q6" value="b"> 00011001</label>
+                <label><input type="radio" name="q6" value="c"> 00010101</label>
+                <label><input type="radio" name="q6" value="d"> 00110001</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>7.</strong>
+                    What is 10010110₂ in denary?
+                </p>
+
+                <label><input type="radio" name="q7" value="a"> 148</label>
+                <label><input type="radio" name="q7" value="b"> 149</label>
+                <label><input type="radio" name="q7" value="c"> 150</label>
+                <label><input type="radio" name="q7" value="d"> 152</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>8.</strong>
+                    Which binary number represents 200₁₀?
+                </p>
+
+                <label><input type="radio" name="q8" value="a"> 11001000</label>
+                <label><input type="radio" name="q8" value="b"> 11000100</label>
+                <label><input type="radio" name="q8" value="c"> 10101000</label>
+                <label><input type="radio" name="q8" value="d"> 11101000</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>9.</strong>
+                    What is the maximum positive value represented by
+                    an 8-bit unsigned binary number?
+                </p>
+
+                <label><input type="radio" name="q9" value="a"> 128</label>
+                <label><input type="radio" name="q9" value="b"> 254</label>
+                <label><input type="radio" name="q9" value="c"> 255</label>
+                <label><input type="radio" name="q9" value="d"> 256</label>
+
+            </div>
+
+
+            <div class="question">
+
+                <p>
+                    <strong>10.</strong>
+                    Which statement about leading zeroes is correct?
+                </p>
+
+                <label>
+                    <input type="radio" name="q10" value="a">
+                    They change the numerical value.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="b">
+                    They make binary invalid.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="c">
+                    They have no effect on the numerical value.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="d">
+                    They double the value.
+                </label>
+
+            </div>
+
+
+            <button type="submit" class="primary-btn">
+                Submit Assessment
+            </button>
+
+        </form>
+
+
+        <div id="assessmentResult"
+             class="assessment-result hidden">
+        </div>
+
+
+        <div id="nextStep"
+             class="next-step hidden">
+        </div>
+
+    </section>
+
+
+    <!-- GAME BREAK -->
+
+    <section class="game-break panel">
+
+        <div class="game-header">
+
+            <div>
+                <span>5-MINUTE GAME BREAK</span>
+
+                <h2>Give Your Brain a Short Break</h2>
+            </div>
+
+            <div class="game-symbol">
+                ▶
+            </div>
+
+        </div>
+
+
+        <p>
+            Once your teacher has approved the game break, choose a genuine
+            Blockly Games activity. The game is separate from your assessment.
+        </p>
+
+
+        <div class="game-controls">
+
+            <select id="gameSelect">
+
+                <option value="https://blockly.games/maze?lang=en">
+                    Blockly Maze
+                </option>
+
+                <option value="https://blockly.games/turtle?lang=en">
+                    Blockly Turtle
+                </option>
+
+                <option value="https://blockly.games/bird?lang=en">
+                    Blockly Bird
+                </option>
+
+                <option value="https://blockly.games/puzzle?lang=en">
+                    Blockly Puzzle
+                </option>
+
+                <option value="https://blockly.games/music?lang=en">
+                    Blockly Music
+                </option>
+
+            </select>
+
+
+            <button id="startGame" class="primary-btn">
+                Start 5-Minute Game
+            </button>
+
+        </div>
+
+
+        <div id="gameTimer" class="game-timer hidden">
+
+            <strong id="timerDisplay">
+                05:00
+            </strong>
+
+            <span>
+                Return to the lesson when the timer finishes.
+            </span>
+
+        </div>
+
+
+        <div id="gameMessage" class="game-message"></div>
+
+    </section>
+
+
+    <!-- EXIT TICKET -->
+
+    <section class="exit-ticket panel">
+
+        <div class="section-heading">
+
+            <span>08</span>
+
+            <div>
+                <h2>Exit Ticket</h2>
+                <p>Think about what you can now do</p>
+            </div>
+
+        </div>
+
+
+        <div class="exit-grid">
+
+            <div>
+
+                <label for="learned">
+                    What can you do now that you could not do before this lesson?
+                </label>
+
+                <textarea
+                    id="learned"
+                    placeholder="Write your reflection here..."
+                ></textarea>
+
+            </div>
+
+
+            <div>
+
+                <label for="unclear">
+                    What part of binary ↔ denary conversion still needs practice?
+                </label>
+
+                <textarea
+                    id="unclear"
+                    placeholder="Write honestly — this helps your teacher support you."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <button id="saveExit" class="secondary-btn">
+            Save Exit Ticket
+        </button>
+
+        <p id="exitSaved" class="saved-message"></p>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="lesson-nav">
+
+        <a href="DR-02.html" class="nav-btn">
+            ← Previous
+        </a>
+
+        <a href="INDEX.html" class="nav-btn dashboard">
+            Topic Dashboard
+        </a>
+
+        <a href="DR-04.html" class="nav-btn">
+            Next →
+        </a>
+
+    </nav>
+
+</main>
+
+
+<footer>
+
+    <strong>IGCSE Computer Science 0984</strong>
+
+    <span>Topic 1 — Data Representation</span>
+
+    <span>DR-03</span>
+
+</footer>
+
+
+<script src="DR-03.js"></script>
+
+</body>
+</html>

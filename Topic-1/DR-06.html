@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR-06 | Binary Operations Workshop</title>
+    <link rel="stylesheet" href="DR-06.css">
+</head>
+
+<body>
+
+<header class="top-header">
+    <div class="brand-area">
+        <div class="brand-title">IGCSE Computer Science 0984</div>
+        <div class="brand-subtitle">Topic 1 — Data Representation</div>
+        <div class="designer">Design and Content by Ravi Raju</div>
+    </div>
+
+    <img src="MES35.jpg" class="school-logo" alt="Modern English School Cairo 35 Years">
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero glass">
+        <div class="lesson-number">DR-06</div>
+        <h1>Binary Operations Workshop</h1>
+        <p>
+            Binary addition, overflow, logical shifts and two's complement —
+            the operations that make binary numbers useful inside a computer.
+        </p>
+
+        <div class="hero-pills">
+            <span>Binary Addition</span>
+            <span>Overflow</span>
+            <span>Logical Shifts</span>
+            <span>Two's Complement</span>
+        </div>
+    </section>
+
+
+    <!-- LEARNING OBJECTIVES -->
+    <section class="content-card glass">
+        <h2>🎯 Learning Objectives</h2>
+
+        <p>By the end of this lesson, you should be able to:</p>
+
+        <ul class="objective-list">
+            <li>Perform binary addition correctly, including carrying.</li>
+            <li>Explain what an 8-bit register is.</li>
+            <li>Identify overflow when an 8-bit result cannot be represented.</li>
+            <li>Perform logical left and right shifts.</li>
+            <li>Explain what happens to bits shifted out of a register.</li>
+            <li>Explain the effect of multiple logical shifts.</li>
+            <li>Relate left and right shifts to multiplication and division.</li>
+            <li>Use two's complement to represent positive and negative 8-bit integers.</li>
+            <li>Convert between denary values and two's complement representation.</li>
+            <li>Identify and correct common binary-operation errors.</li>
+        </ul>
+    </section>
+
+
+    <!-- BINARY ADDITION -->
+    <section class="content-card glass">
+        <h2>1. Binary Addition</h2>
+
+        <p>
+            Binary addition follows the same basic idea as denary addition,
+            but there are only two digits: <strong>0</strong> and <strong>1</strong>.
+        </p>
+
+        <div class="binary-rules">
+            <div class="rule-box">
+                <strong>0 + 0</strong>
+                <span>0</span>
+            </div>
+
+            <div class="rule-box">
+                <strong>0 + 1</strong>
+                <span>1</span>
+            </div>
+
+            <div class="rule-box">
+                <strong>1 + 0</strong>
+                <span>1</span>
+            </div>
+
+            <div class="rule-box important">
+                <strong>1 + 1</strong>
+                <span>10</span>
+                <small>Write 0, carry 1</small>
+            </div>
+
+            <div class="rule-box important">
+                <strong>1 + 1 + 1</strong>
+                <span>11</span>
+                <small>Write 1, carry 1</small>
+            </div>
+        </div>
+
+        <h3>Worked Example</h3>
+
+        <div class="worked-example">
+<pre>
+     0101
+   + 0011
+   ------
+     1000
+</pre>
+            <div>
+                <p><strong>5 + 3 = 8</strong></p>
+                <p>
+                    The addition is performed from right to left.
+                    Whenever the result is 2 or 3, a carry is produced.
+                </p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            💡 <strong>Remember:</strong>
+            In binary, <code>1 + 1 = 10</code>, not 2.
+        </div>
+    </section>
+
+
+    <!-- 8 BIT REGISTER -->
+    <section class="content-card glass">
+        <h2>2. The 8-bit Register</h2>
+
+        <p>
+            A register can be thought of as a small storage location inside the
+            processor. An <strong>8-bit register</strong> contains exactly eight bits.
+        </p>
+
+        <div class="register">
+            <div>1</div>
+            <div>0</div>
+            <div>1</div>
+            <div>1</div>
+            <div>0</div>
+            <div>0</div>
+            <div>1</div>
+            <div>0</div>
+        </div>
+
+        <div class="bit-labels">
+            <span>MSB</span>
+            <span>Bit 6</span>
+            <span>Bit 5</span>
+            <span>Bit 4</span>
+            <span>Bit 3</span>
+            <span>Bit 2</span>
+            <span>Bit 1</span>
+            <span>LSB</span>
+        </div>
+
+        <p>
+            For an <strong>unsigned</strong> 8-bit binary integer, the range is:
+        </p>
+
+        <div class="range-box">
+            <strong>0 to 255</strong>
+        </div>
+
+        <p>
+            This becomes important when an operation produces a result requiring
+            more than eight bits.
+        </p>
+    </section>
+
+
+    <!-- OVERFLOW -->
+    <section class="content-card glass">
+        <h2>3. Overflow</h2>
+
+        <p>
+            <strong>Overflow</strong> occurs when the result of an operation
+            requires more bits than the register can hold.
+        </p>
+
+        <h3>Example</h3>
+
+        <div class="overflow-example">
+<pre>
+    11111111
+  + 00000001
+  ----------
+  1 00000000
+</pre>
+
+            <div class="warning-panel">
+                <strong>9-bit result!</strong>
+                <p>
+                    An 8-bit register cannot store the leading 1.
+                </p>
+                <p>
+                    Stored 8-bit result:
+                    <code>00000000</code>
+                </p>
+                <p class="danger-text">
+                    ⚠ Overflow has occurred.
+                </p>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            ⚠ <strong>Exam Tip:</strong>
+            Always check whether the result can fit in the specified number
+            of bits.
+        </div>
+    </section>
+
+
+    <!-- LEFT SHIFT -->
+    <section class="content-card glass">
+        <h2>4. Logical Left Shift</h2>
+
+        <p>
+            During a logical left shift, every bit moves one position to the left.
+            A <strong>0</strong> enters at the right-hand side.
+            The bit leaving the left-hand side is lost.
+        </p>
+
+        <div class="shift-diagram">
+            <div class="shift-row">
+                <span class="lost">1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+            </div>
+
+            <div class="shift-arrow">← LEFT</div>
+
+            <div class="shift-row result">
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+            </div>
+        </div>
+
+        <p>
+            For a positive binary integer, a one-place left shift normally
+            multiplies the value by <strong>2</strong>, provided that no
+            significant bit is lost through overflow.
+        </p>
+
+        <div class="formula">
+            <code>0011  (3)</code>
+            →
+            <code>0110  (6)</code>
+        </div>
+    </section>
+
+
+    <!-- RIGHT SHIFT -->
+    <section class="content-card glass">
+        <h2>5. Logical Right Shift</h2>
+
+        <p>
+            During a logical right shift, every bit moves one position to the right.
+            A <strong>0</strong> enters at the left-hand side.
+            The bit leaving the right-hand side is lost.
+        </p>
+
+        <div class="shift-diagram">
+            <div class="shift-row">
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span class="lost">1</span>
+            </div>
+
+            <div class="shift-arrow">RIGHT →</div>
+
+            <div class="shift-row result">
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+            </div>
+        </div>
+
+        <p>
+            For a positive binary integer, a one-place logical right shift
+            normally divides the value by <strong>2</strong>, with any fractional
+            part discarded.
+        </p>
+
+        <div class="formula">
+            <code>1000  (8)</code>
+            →
+            <code>0100  (4)</code>
+        </div>
+    </section>
+
+
+    <!-- MULTIPLE SHIFTS -->
+    <section class="content-card glass">
+        <h2>6. Multiple Logical Shifts</h2>
+
+        <p>
+            A shift can be performed more than once.
+        </p>
+
+        <div class="multiple-shift">
+<pre>
+00110000
+   ↓
+01100000     left shift ×1
+   ↓
+11000000     left shift ×2
+</pre>
+        </div>
+
+        <div class="two-column">
+            <div class="mini-card">
+                <h3>Left shift</h3>
+                <p>Each shift approximately multiplies a positive integer by 2.</p>
+                <p><strong>2 shifts → ×4</strong></p>
+                <p><strong>3 shifts → ×8</strong></p>
+            </div>
+
+            <div class="mini-card">
+                <h3>Right shift</h3>
+                <p>Each shift approximately divides a positive integer by 2.</p>
+                <p><strong>2 shifts → ÷4</strong></p>
+                <p><strong>3 shifts → ÷8</strong></p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TWO'S COMPLEMENT -->
+    <section class="content-card glass">
+        <h2>7. Two's Complement</h2>
+
+        <p>
+            Computers can use the <strong>two's complement number system</strong>
+            to represent both positive and negative integers using binary.
+        </p>
+
+        <div class="twos-range">
+            <div>
+                <span>8-bit two's complement</span>
+                <strong>-128 to +127</strong>
+            </div>
+        </div>
+
+        <h3>Positive Values</h3>
+
+        <p>
+            Positive values are represented using ordinary binary,
+            with leading zeros added to make eight bits.
+        </p>
+
+        <div class="formula">
+            <strong>+5</strong>
+            →
+            <code>00000101</code>
+        </div>
+
+        <h3>Representing a Negative Value</h3>
+
+        <p>To represent <strong>-5</strong>:</p>
+
+        <ol class="numbered-steps">
+            <li>Write +5 in 8-bit binary.</li>
+            <li>Invert every bit.</li>
+            <li>Add 1.</li>
+        </ol>
+
+        <div class="twos-worked">
+<pre>
++5       00000101
+         ↓
+Invert   11111010
+         ↓
+Add 1    11111011
+
+Therefore:
+
+-5 = 11111011
+</pre>
+        </div>
+
+        <div class="tip-box">
+            💡 <strong>Memory trick:</strong>
+            <br>
+            <strong>Invert → Add 1</strong>
+        </div>
+    </section>
+
+
+    <!-- DECODING TWO'S COMPLEMENT -->
+    <section class="content-card glass">
+        <h2>8. Decoding a Negative Two's Complement Number</h2>
+
+        <p>
+            Suppose we are given:
+        </p>
+
+        <div class="formula">
+            <code>11111011</code>
+        </div>
+
+        <p>The most significant bit is <strong>1</strong>, so the value is negative.</p>
+
+        <ol class="numbered-steps">
+            <li>Invert every bit.</li>
+            <li>Add 1.</li>
+            <li>Convert the result to denary.</li>
+            <li>Apply the negative sign.</li>
+        </ol>
+
+        <div class="twos-worked">
+<pre>
+11111011
+   ↓
+00000100    invert
+   ↓
+00000101    add 1
+
+00000101 = 5
+
+Therefore:
+11111011 = -5
+</pre>
+        </div>
+    </section>
+
+
+    <!-- STUDENT STUDIO -->
+    <section class="studio-section">
+
+        <div class="studio-header">
+            <h2>🧪 Student Studio</h2>
+            <p>
+                Explore, experiment, make mistakes, explain your thinking,
+                and then test yourself.
+            </p>
+        </div>
+
+        <div class="studio-tabs">
+
+            <button class="studio-tab active" data-tab="explore">
+                Explore Addition
+            </button>
+
+            <button class="studio-tab" data-tab="carry">
+                Carry Lab
+            </button>
+
+            <button class="studio-tab" data-tab="register">
+                8-bit Register
+            </button>
+
+            <button class="studio-tab" data-tab="overflow">
+                Overflow Detective
+            </button>
+
+            <button class="studio-tab" data-tab="shift">
+                Shift Lab
+            </button>
+
+            <button class="studio-tab" data-tab="twos">
+                Two's Complement Lab
+            </button>
+
+            <button class="studio-tab" data-tab="mistakes">
+                Fix the Mistake
+            </button>
+
+            <button class="studio-tab" data-tab="think">
+                Think
+            </button>
+
+            <button class="studio-tab" data-tab="quick">
+                Quick Check
+            </button>
+
+        </div>
+
+
+        <!-- EXPLORE -->
+        <div class="studio-panel active" id="explore">
+
+            <h3>🔢 Explore Binary Addition</h3>
+
+            <p>
+                Use the binary adder to investigate what happens when two
+                8-bit binary numbers are added.
+            </p>
+
+            <div class="tool-card">
+
+                <label>First 8-bit number</label>
+                <input id="addA" maxlength="8" value="00000101">
+
+                <label>Second 8-bit number</label>
+                <input id="addB" maxlength="8" value="00000011">
+
+                <button id="addBtn" class="action-button">
+                    Add the Numbers
+                </button>
+
+                <div id="addResult" class="tool-result">
+                    Enter two 8-bit binary numbers.
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- CARRY -->
+        <div class="studio-panel" id="carry">
+
+            <h3>🎯 Carry Lab</h3>
+
+            <p>
+                The most important rule to remember is:
+            </p>
+
+            <div class="formula large">
+                <code>1 + 1 = 10</code>
+            </div>
+
+            <p>
+                The rightmost 0 is written in the current column and
+                the 1 is carried to the next column.
+            </p>
+
+            <div class="carry-challenge">
+                <h4>Try this mentally:</h4>
+                <p class="big-binary">0111 + 0001 = ?</p>
+
+                <button class="answer-button" data-answer="carryAnswer">
+                    Reveal Answer
+                </button>
+
+                <div id="carryAnswer" class="hidden-answer">
+                    <strong>1000</strong>
+                    <p>
+                        7 + 1 = 8.
+                        The carries propagate through the three rightmost 1s.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- REGISTER -->
+        <div class="studio-panel" id="register">
+
+            <h3>💾 8-bit Register Lab</h3>
+
+            <p>
+                Click the bits to change them. Observe that a register
+                always contains exactly eight positions.
+            </p>
+
+            <div id="bitRegister" class="interactive-register"></div>
+
+            <div id="registerValue" class="register-output">
+                Binary: 00000000 | Denary: 0
+            </div>
+
+            <button id="resetRegister" class="action-button">
+                Reset Register
+            </button>
+
+        </div>
+
+
+        <!-- OVERFLOW -->
+        <div class="studio-panel" id="overflow">
+
+            <h3>🚨 Overflow Detective</h3>
+
+            <p>
+                Can the answer fit into eight bits?
+            </p>
+
+            <div class="overflow-demo">
+
+                <label>Enter first number</label>
+                <input id="overflowA" maxlength="8" value="11111111">
+
+                <label>Enter second number</label>
+                <input id="overflowB" maxlength="8" value="00000001">
+
+                <button id="overflowBtn" class="action-button">
+                    Investigate
+                </button>
+
+                <div id="overflowResult" class="tool-result">
+                    Waiting for investigation...
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- SHIFT -->
+        <div class="studio-panel" id="shift">
+
+            <h3>↔ Shift Lab</h3>
+
+            <p>
+                Enter an 8-bit positive binary integer and experiment with
+                logical left and right shifts.
+            </p>
+
+            <div class="tool-card">
+
+                <label>8-bit binary number</label>
+                <input id="shiftInput" maxlength="8" value="00110000">
+
+                <label>Direction</label>
+
+                <select id="shiftDirection">
+                    <option value="left">Logical Left</option>
+                    <option value="right">Logical Right</option>
+                </select>
+
+                <label>Number of shifts</label>
+
+                <select id="shiftCount">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+
+                <button id="shiftBtn" class="action-button">
+                    Perform Shift
+                </button>
+
+                <div id="shiftResult" class="tool-result">
+                    Waiting for shift...
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- TWO'S COMPLEMENT -->
+        <div class="studio-panel" id="twos">
+
+            <h3>➕➖ Two's Complement Lab</h3>
+
+            <p>
+                Enter a denary integer between -128 and +127.
+            </p>
+
+            <div class="tool-card">
+
+                <label>Denary value</label>
+                <input id="twosInput" type="number" min="-128" max="127" value="-5">
+
+                <button id="twosBtn" class="action-button">
+                    Convert
+                </button>
+
+                <div id="twosResult" class="tool-result">
+                    Waiting for conversion...
+                </div>
+
+            </div>
+
+            <hr>
+
+            <h4>Decode an 8-bit two's complement value</h4>
+
+            <div class="tool-card">
+
+                <label>8-bit binary</label>
+                <input id="decodeInput" maxlength="8" value="11111011">
+
+                <button id="decodeBtn" class="action-button">
+                    Decode
+                </button>
+
+                <div id="decodeResult" class="tool-result">
+                    Waiting for decoding...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MISTAKES -->
+        <div class="studio-panel" id="mistakes">
+
+            <h3>🕵️ Fix the Mistake</h3>
+
+            <div class="mistake-card">
+
+                <p><strong>A student says:</strong></p>
+
+                <div class="student-answer">
+                    00001111 + 00000001 = 00001111
+                </div>
+
+                <p>
+                    What is wrong?
+                </p>
+
+                <button class="answer-button" data-answer="mistake1">
+                    Reveal Explanation
+                </button>
+
+                <div id="mistake1" class="hidden-answer">
+                    The student has forgotten that the addition changes
+                    the value. The correct answer is:
+                    <strong>00010000</strong>.
+                </div>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <p><strong>A student performs:</strong></p>
+
+                <div class="student-answer">
+                    10110000 → 01011000
+                </div>
+
+                <p>
+                    They call this a logical left shift. Are they correct?
+                </p>
+
+                <button class="answer-button" data-answer="mistake2">
+                    Reveal Explanation
+                </button>
+
+                <div id="mistake2" class="hidden-answer">
+                    No. This is a <strong>logical right shift</strong>.
+                    A left shift would produce:
+                    <strong>01100000</strong>, with the leftmost 1 lost.
+                </div>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <p><strong>A student converts -5:</strong></p>
+
+                <div class="student-answer">
+                    00000101 → 11111010
+                </div>
+
+                <p>
+                    What step has been missed?
+                </p>
+
+                <button class="answer-button" data-answer="mistake3">
+                    Reveal Explanation
+                </button>
+
+                <div id="mistake3" class="hidden-answer">
+                    The student inverted the bits but forgot to
+                    <strong>add 1</strong>. The correct answer is:
+                    <strong>11111011</strong>.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- THINK -->
+        <div class="studio-panel" id="think">
+
+            <h3>🧠 Think Like a Computer Scientist</h3>
+
+            <div class="thinking-question">
+                <p>
+                    Why do computers need a special representation such as
+                    two's complement for negative numbers?
+                </p>
+
+                <textarea id="thinkAnswer"
+                          placeholder="Write your explanation here..."></textarea>
+
+                <button id="saveThink" class="action-button">
+                    Save My Thinking
+                </button>
+
+                <div id="thinkSaved" class="saved-message"></div>
+            </div>
+
+            <div class="thinking-question">
+
+                <p>
+                    What could happen if a program ignores overflow?
+                </p>
+
+                <textarea id="thinkAnswer2"
+                          placeholder="Explain your reasoning..."></textarea>
+
+                <button id="saveThink2" class="action-button">
+                    Save My Thinking
+                </button>
+
+                <div id="thinkSaved2" class="saved-message"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK CHECK -->
+        <div class="studio-panel" id="quick">
+
+            <h3>⚡ Quick Check</h3>
+
+            <div class="quick-question">
+                <p>1. What is 1 + 1 in binary?</p>
+
+                <button class="quick-option" data-q="1" data-correct="true">
+                    10
+                </button>
+
+                <button class="quick-option" data-q="1">
+                    11
+                </button>
+
+                <button class="quick-option" data-q="1">
+                    01
+                </button>
+
+                <div class="quick-feedback" id="feedback1"></div>
+            </div>
+
+
+            <div class="quick-question">
+                <p>2. What enters during a logical left shift?</p>
+
+                <button class="quick-option" data-q="2" data-correct="true">
+                    0 at the right
+                </button>
+
+                <button class="quick-option" data-q="2">
+                    1 at the right
+                </button>
+
+                <button class="quick-option" data-q="2">
+                    0 at the left
+                </button>
+
+                <div class="quick-feedback" id="feedback2"></div>
+            </div>
+
+
+            <div class="quick-question">
+                <p>3. What happens to a bit shifted out of the register?</p>
+
+                <button class="quick-option" data-q="3">
+                    It moves around to the other end
+                </button>
+
+                <button class="quick-option" data-q="3" data-correct="true">
+                    It is lost
+                </button>
+
+                <button class="quick-option" data-q="3">
+                    It becomes a decimal digit
+                </button>
+
+                <div class="quick-feedback" id="feedback3"></div>
+            </div>
+
+
+            <div class="quick-question">
+                <p>4. What is the first step when creating a negative two's complement value?</p>
+
+                <button class="quick-option" data-q="4">
+                    Divide by 2
+                </button>
+
+                <button class="quick-option" data-q="4" data-correct="true">
+                    Write the positive binary value
+                </button>
+
+                <button class="quick-option" data-q="4">
+                    Add 1 immediately
+                </button>
+
+                <div class="quick-feedback" id="feedback4"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRACTICE -->
+    <section class="content-card glass">
+        <h2>📝 Guided Practice</h2>
+
+        <div class="practice-grid">
+
+            <div class="practice-card">
+                <h3>1</h3>
+                <p>0011 + 0101 = ?</p>
+                <button class="answer-button" data-answer="p1">Show Answer</button>
+                <div id="p1" class="hidden-answer">1000</div>
+            </div>
+
+            <div class="practice-card">
+                <h3>2</h3>
+                <p>0110 + 0011 = ?</p>
+                <button class="answer-button" data-answer="p2">Show Answer</button>
+                <div id="p2" class="hidden-answer">1001</div>
+            </div>
+
+            <div class="practice-card">
+                <h3>3</h3>
+                <p>What is 11111111 + 00000001?</p>
+                <button class="answer-button" data-answer="p3">Show Answer</button>
+                <div id="p3" class="hidden-answer">
+                    1 00000000 — overflow in 8 bits.
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <h3>4</h3>
+                <p>Left shift 00001010 once.</p>
+                <button class="answer-button" data-answer="p4">Show Answer</button>
+                <div id="p4" class="hidden-answer">00010100</div>
+            </div>
+
+            <div class="practice-card">
+                <h3>5</h3>
+                <p>Right shift 00110000 twice.</p>
+                <button class="answer-button" data-answer="p5">Show Answer</button>
+                <div id="p5" class="hidden-answer">00001100</div>
+            </div>
+
+            <div class="practice-card">
+                <h3>6</h3>
+                <p>Represent -5 in 8-bit two's complement.</p>
+                <button class="answer-button" data-answer="p6">Show Answer</button>
+                <div id="p6" class="hidden-answer">11111011</div>
+            </div>
+
+            <div class="practice-card">
+                <h3>7</h3>
+                <p>What is 11111101 in two's complement?</p>
+                <button class="answer-button" data-answer="p7">Show Answer</button>
+                <div id="p7" class="hidden-answer">-3</div>
+            </div>
+
+            <div class="practice-card">
+                <h3>8</h3>
+                <p>What is the range of 8-bit two's complement?</p>
+                <button class="answer-button" data-answer="p8">Show Answer</button>
+                <div id="p8" class="hidden-answer">-128 to +127</div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FORMATIVE ASSESSMENT -->
+    <section class="assessment-section glass">
+
+        <h2>📊 Formative Assessment</h2>
+
+        <p>
+            Answer all 10 questions. A score of <strong>70%</strong> or higher
+            takes you to the mastery pathway.
+        </p>
+
+        <form id="assessmentForm">
+
+            <div class="assessment-question">
+                <p>1. What is 1010 + 0011?</p>
+
+                <label><input type="radio" name="q1" value="a"> 1100</label>
+                <label><input type="radio" name="q1" value="b"> 1101</label>
+                <label><input type="radio" name="q1" value="c"> 1110</label>
+            </div>
+
+
+            <div class="assessment-question">
+                <p>2. What happens when 1 + 1 is added in binary?</p>
+
+                <label><input type="radio" name="q2" value="a"> Write 1 and carry 1</label>
+                <label><input type="radio" name="q2" value="b"> Write 0 and carry 1</label>
+                <label><input type="radio" name="q2" value="c"> Write 10 in the same column</label>
+            </div>
+
+
+            <div class="assessment-question">
+                <p>3. What is the result of 11111111 + 00000001 in an 8-bit register?</p>
+
+                <label><input type="radio" name="q3" value="a"> 11111111</label>
+                <label><input type="radio" name="q3" value="b"> 00000000 with overflow</label>
+                <label><input type="radio" name="q3" value="c"> 00000001</label>
+            </div>
+
+
+            <div class="assessment-question">
+                <p>4. What enters from the right during a logical left shift?</p>
+
+                <label><input type="radio" name="q4" value="a"> 0</label>
+                <label><input type="radio" name="q4" value="b"> 1</label>
+                <label><input type="radio" name="q4" value="c"> The lost bit</label>
+            </div>
+
+
+            <div class="assessment-question">
+                <p>5. What happens to the bit shifted out of the register?</p>
+
+                <label><input type="radio" name="q5" value="a"> It is lost</label>
+                <label><input type="radio" name="q5" value="b"> It becomes the MSB</label>
+                <label><input type="radio" name="q5" value="c"> It is stored automatically</label>
+            </div>
+
+
+            <div class="assessment-question">
+                <p>6. What is 00001000 after a logical right shift?</p>
+
+                <label><input type="radio" name="q6" value="a"> 00010000</label>
+                <label><input type="radio" name="q6" value="b"> 00000100</label>
+                <label><input type="radio" name="q6" value="c"> 10000100</label>
+            </div>
+
+
+            <div class="assessment-question">
+                <p>7. What is the 8-bit two's complement representation of -5?</p>
+
+                <label><input type="radio" name="q7" value="a"> 11111010</label>
+                <label><input type="radio" name="q7" value="b"> 11111011</label>
+                <label><input type="radio" name="q7" value="c"> 00000101</label>
+            </div>
+
+
+            <div class="assessment-question">
+                <p>8. What is 11111101 as an 8-bit two's complement number?</p>
+
+                <label><input type="radio" name="q8" value="a"> -2</label>
+                <label><input type="radio" name="q8" value="b"> -3</label>
+                <label><input type="radio" name="q8" value="c"> +253</label>
+            </div>
+
+
+            <div class="assessment-question">
+                <p>9. What is the range of 8-bit two's complement?</p>
+
+                <label><input type="radio" name="q9" value="a"> -127 to +128</label>
+                <label><input type="radio" name="q9" value="b"> -128 to +127</label>
+                <label><input type="radio" name="q9" value="c"> 0 to 255</label>
+            </div>
+
+
+            <div class="assessment-question">
+                <p>10. Which sequence correctly creates a negative two's complement value?</p>
+
+                <label><input type="radio" name="q10" value="a">
+                    Invert → Add 1
+                </label>
+
+                <label><input type="radio" name="q10" value="b">
+                    Add 1 → Invert
+                </label>
+
+                <label><input type="radio" name="q10" value="c">
+                    Shift left → Add 1
+                </label>
+            </div>
+
+            <button type="submit" class="assessment-button">
+                Submit Assessment
+            </button>
+
+        </form>
+
+        <div id="assessmentResult" class="assessment-result"></div>
+
+    </section>
+
+
+    <!-- MASTERY -->
+    <section id="masteryPanel" class="pathway-card glass">
+
+        <h2>🚀 Your Learning Pathway</h2>
+
+        <div id="masteryMessage">
+            Complete the assessment to discover your next step.
+        </div>
+
+        <div id="remediationArea" class="remediation hidden">
+
+            <h3>🔧 Targeted Remediation</h3>
+
+            <p>
+                Don't worry if you did not reach 70%. Return to the sections
+                below and focus on the areas where you need more confidence.
+            </p>
+
+            <div class="remediation-grid">
+                <a href="#binaryAddition">Binary Addition</a>
+                <a href="#overflow">Overflow</a>
+                <a href="#shift">Logical Shifts</a>
+                <a href="#twos">Two's Complement</a>
+            </div>
+
+            <button id="retakeBtn" class="assessment-button">
+                Retake Assessment
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- GAME BREAK -->
+    <section class="game-break glass">
+
+        <h2>🎮 5-Minute Game Break</h2>
+
+        <p>
+            You have worked hard. Take a short computational-thinking break.
+        </p>
+
+        <p>
+            Your game is a genuine Blockly Games activity.
+            It is separate from the assessment.
+        </p>
+
+        <a href="https://blockly.games/maze?lang=en"
+           target="_blank"
+           rel="noopener"
+           class="game-button">
+            Open Blockly Maze ↗
+        </a>
+
+        <div class="timer-area">
+
+            <div id="gameTimer">05:00</div>
+
+            <button id="startTimer" class="action-button">
+                Start 5-Minute Timer
+            </button>
+
+            <button id="stopTimer" class="action-button secondary">
+                Stop Timer
+            </button>
+
+            <p id="timerMessage"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXIT TICKET -->
+    <section class="exit-ticket glass">
+
+        <h2>🎫 Exit Ticket</h2>
+
+        <p>
+            Before leaving this lesson, tell yourself what you now understand.
+        </p>
+
+        <label>
+            What is one thing you learned today?
+        </label>
+
+        <textarea id="exitLearned"
+                  placeholder="I learned that..."></textarea>
+
+        <label>
+            What is still unclear?
+        </label>
+
+        <textarea id="exitUnclear"
+                  placeholder="I still need help with..."></textarea>
+
+        <button id="saveExit" class="assessment-button">
+            Save Exit Ticket
+        </button>
+
+        <div id="exitSaved" class="saved-message"></div>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+    <nav class="lesson-navigation">
+
+        <a href="DR-05.html" class="nav-button">
+            ← DR-05
+        </a>
+
+        <a href="INDEX.html" class="nav-button dashboard">
+            🏠 Topic Dashboard
+        </a>
+
+        <a href="DR-07.html" class="nav-button">
+            DR-07 →
+        </a>
+
+    </nav>
+
+</main>
+
+
+<footer>
+    <p>
+        IGCSE Computer Science 0984 • Topic 1 — Data Representation
+    </p>
+    <p>
+        Design and Content by Ravi Raju
+    </p>
+</footer>
+
+
+<script src="DR-06.js"></script>
+
+</body>
+</html>

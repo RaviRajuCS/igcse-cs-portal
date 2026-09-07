@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DR-01 | Introduction to Data Representation</title>
+
+<link rel="stylesheet" href="DR-01.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="header-left">
+
+        <img src="MES35.jpg"
+             class="school-logo"
+             alt="Modern English School Cairo">
+
+        <div class="header-title">
+            <div class="course-name">
+                IGCSE COMPUTER SCIENCE 0984
+            </div>
+
+            <h1>Data Representation</h1>
+
+            <p>
+                DR-01 · Introduction to Data Representation
+            </p>
+        </div>
+
+    </div>
+
+    <img src="IMG-Ravi.jpeg"
+         class="teacher-photo"
+         alt="Ravi Raju">
+
+</header>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav class="lesson-navigation">
+
+    <a href="INDEX.html" class="nav-button">
+        🏠 Topic Dashboard
+    </a>
+
+    <span class="lesson-position">
+        DR-01 of 14
+    </span>
+
+    <a href="DR-02.html" class="nav-button">
+        Next Lesson →
+    </a>
+
+</nav>
+
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="hero-badge">
+        60-MINUTE LESSON
+    </div>
+
+    <h2>
+        How Does a Computer Represent Information?
+    </h2>
+
+    <p class="hero-question">
+        Numbers, words, photographs, music and videos look completely
+        different to us. Yet a computer ultimately stores and processes
+        all of them using patterns of bits.
+    </p>
+
+    <div class="learning-cycle">
+
+        <div>🎯 Learn</div>
+        <div>🔎 Explore</div>
+        <div>✍️ Practise</div>
+        <div>🧠 Think</div>
+        <div>📝 Assess</div>
+        <div>🔄 Improve</div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     LEARNING OBJECTIVES
+========================================================= -->
+
+<section class="teacher-pane">
+
+    <div class="section-label">
+        TEACHER PANE
+    </div>
+
+    <h2>🎯 Learning Objectives</h2>
+
+    <p>
+        By the end of this lesson, you should be able to:
+    </p>
+
+    <div class="objective-grid">
+
+        <div class="objective-card">
+            <span>01</span>
+            <strong>Define Data Representation</strong>
+            <p>
+                Explain what is meant by representing data in a computer.
+            </p>
+        </div>
+
+        <div class="objective-card">
+            <span>02</span>
+            <strong>Explain Binary</strong>
+            <p>
+                Explain why computers use binary to represent information.
+            </p>
+        </div>
+
+        <div class="objective-card">
+            <span>03</span>
+            <strong>Recognise Number Systems</strong>
+            <p>
+                Identify denary, binary and hexadecimal number systems.
+            </p>
+        </div>
+
+        <div class="objective-card">
+            <span>04</span>
+            <strong>Understand Bits</strong>
+            <p>
+                Explain the meaning of 0 and 1 in a digital system.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INTRODUCTION
+========================================================= -->
+
+<section class="teacher-pane">
+
+    <h2>🌍 Why Do Computers Need Data Representation?</h2>
+
+    <p>
+        Humans communicate using many forms of information. We write
+        words, draw pictures, record sound, calculate numbers and create
+        videos.
+    </p>
+
+    <p>
+        A computer cannot directly process information in the same way
+        that a human brain does. Information must first be represented
+        in a form that the computer's electronic circuits can store
+        and process.
+    </p>
+
+    <div class="representation-flow">
+
+        <div class="flow-box">
+            🔢<br>
+            Numbers
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+            🔤<br>
+            Text
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+            🖼️<br>
+            Images
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box">
+            🎵<br>
+            Sound
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="flow-box binary-box">
+            0 1<br>
+            BITS
+        </div>
+
+    </div>
+
+    <div class="important-box">
+
+        <strong>Key Idea</strong>
+
+        <p>
+            Data representation is the way information is converted into
+            a form that a computer can store and process.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY BINARY
+========================================================= -->
+
+<section class="teacher-pane">
+
+    <h2>⚡ Why Does a Computer Use Binary?</h2>
+
+    <p>
+        At the electronic level, digital computers work with devices that
+        can reliably distinguish between two states.
+    </p>
+
+    <div class="two-state-display">
+
+        <div class="state-card">
+            <div class="state-symbol">0</div>
+            <h3>OFF / LOW</h3>
+            <p>
+                One possible electronic state.
+            </p>
+        </div>
+
+        <div class="state-card">
+            <div class="state-symbol">1</div>
+            <h3>ON / HIGH</h3>
+            <p>
+                The other possible electronic state.
+            </p>
+        </div>
+
+    </div>
+
+    <p>
+        These two states can be represented using the binary digits
+        <strong>0</strong> and <strong>1</strong>.
+    </p>
+
+    <div class="important-box">
+
+        <strong>Remember</strong>
+
+        <p>
+            A single binary digit is called a <strong>bit</strong>.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     NUMBER SYSTEMS
+========================================================= -->
+
+<section class="teacher-pane">
+
+    <h2>🔢 Three Number Systems</h2>
+
+    <p>
+        Computer Science uses several number systems. Three particularly
+        important ones are:
+    </p>
+
+    <div class="number-system-grid">
+
+        <div class="system-card">
+
+            <div class="system-icon">10</div>
+
+            <h3>Denary</h3>
+
+            <p class="base-label">
+                BASE 10
+            </p>
+
+            <p>
+                Uses the digits:
+            </p>
+
+            <strong class="digit-display">
+                0 1 2 3 4 5 6 7 8 9
+            </strong>
+
+            <p>
+                This is the number system humans normally use.
+            </p>
+
+        </div>
+
+
+        <div class="system-card binary-system">
+
+            <div class="system-icon">01</div>
+
+            <h3>Binary</h3>
+
+            <p class="base-label">
+                BASE 2
+            </p>
+
+            <p>
+                Uses only:
+            </p>
+
+            <strong class="digit-display">
+                0 1
+            </strong>
+
+            <p>
+                This is the fundamental number system used by digital
+                computers.
+            </p>
+
+        </div>
+
+
+        <div class="system-card">
+
+            <div class="system-icon">16</div>
+
+            <h3>Hexadecimal</h3>
+
+            <p class="base-label">
+                BASE 16
+            </p>
+
+            <p>
+                Uses:
+            </p>
+
+            <strong class="digit-display">
+                0–9 and A–F
+            </strong>
+
+            <p>
+                It provides a compact human-readable way of writing
+                binary values.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="important-box">
+
+        <strong>Important:</strong>
+
+        <p>
+            We are introducing the number systems in this lesson.
+            Formal conversion methods will be taught in later lessons.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BINARY VISUAL
+========================================================= -->
+
+<section class="teacher-pane">
+
+    <h2>💡 A Visual Introduction to Binary</h2>
+
+    <p>
+        Imagine eight switches. Each switch can be either OFF or ON.
+    </p>
+
+    <div class="switch-board">
+
+        <div class="switch-column">
+            <div class="switch-light off"></div>
+            <strong>0</strong>
+            <small>OFF</small>
+        </div>
+
+        <div class="switch-column">
+            <div class="switch-light on"></div>
+            <strong>1</strong>
+            <small>ON</small>
+        </div>
+
+        <div class="switch-column">
+            <div class="switch-light off"></div>
+            <strong>0</strong>
+            <small>OFF</small>
+        </div>
+
+        <div class="switch-column">
+            <div class="switch-light on"></div>
+            <strong>1</strong>
+            <small>ON</small>
+        </div>
+
+        <div class="switch-column">
+            <div class="switch-light off"></div>
+            <strong>0</strong>
+            <small>OFF</small>
+        </div>
+
+        <div class="switch-column">
+            <div class="switch-light off"></div>
+            <strong>0</strong>
+            <small>OFF</small>
+        </div>
+
+        <div class="switch-column">
+            <div class="switch-light on"></div>
+            <strong>1</strong>
+            <small>ON</small>
+        </div>
+
+        <div class="switch-column">
+            <div class="switch-light on"></div>
+            <strong>1</strong>
+            <small>ON</small>
+        </div>
+
+    </div>
+
+    <p class="binary-example">
+        Example binary pattern:
+        <strong>01010011</strong>
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     STUDENT STUDIO
+========================================================= -->
+
+<section class="student-studio">
+
+    <div class="studio-heading">
+
+        <div>
+
+            <div class="section-label">
+                STUDENT PANE
+            </div>
+
+            <h2>
+                🧑‍💻 Student Studio
+            </h2>
+
+            <p>
+                This is your main learning workspace.
+                Work through every stage rather than jumping directly
+                to the assessment.
+            </p>
+
+        </div>
+
+        <div class="studio-progress">
+
+            <span id="studioPercent">
+                0%
+            </span>
+
+            <small>
+                Studio
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- STUDIO NAVIGATION -->
+
+    <div class="studio-tabs">
+
+        <button class="studio-tab active"
+                data-panel="explore">
+            🔎 Explore
+        </button>
+
+        <button class="studio-tab"
+                data-panel="discover">
+            🔬 Discover
+        </button>
+
+        <button class="studio-tab"
+                data-panel="practise">
+            ✍️ Practise
+        </button>
+
+        <button class="studio-tab"
+                data-panel="sort">
+            🧩 Sort It Out
+        </button>
+
+        <button class="studio-tab"
+                data-panel="think">
+            🧠 Think
+        </button>
+
+        <button class="studio-tab"
+                data-panel="quick">
+            ⚡ Quick Check
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         EXPLORE
+    ====================================================== -->
+
+    <div class="studio-panel active" id="explore">
+
+        <h3>🔎 Explore — What Can a Computer Represent?</h3>
+
+        <p>
+            Click each card. Think about how that type of information
+            could eventually be represented using bits.
+        </p>
+
+        <div class="explore-grid">
+
+            <button class="explore-card"
+                    data-info="number">
+                <span>🔢</span>
+                <strong>Numbers</strong>
+                <small>Quantities and calculations</small>
+            </button>
+
+            <button class="explore-card"
+                    data-info="text">
+                <span>🔤</span>
+                <strong>Text</strong>
+                <small>Letters, symbols and words</small>
+            </button>
+
+            <button class="explore-card"
+                    data-info="image">
+                <span>🖼️</span>
+                <strong>Images</strong>
+                <small>Pictures and graphics</small>
+            </button>
+
+            <button class="explore-card"
+                    data-info="sound">
+                <span>🎵</span>
+                <strong>Sound</strong>
+                <small>Music and speech</small>
+            </button>
+
+            <button class="explore-card"
+                    data-info="video">
+                <span>🎬</span>
+                <strong>Video</strong>
+                <small>Moving images and sound</small>
+            </button>
+
+            <button class="explore-card"
+                    data-info="program">
+                <span>💻</span>
+                <strong>Programs</strong>
+                <small>Instructions for the computer</small>
+            </button>
+
+        </div>
+
+        <div id="exploreInfo"
+             class="studio-output">
+
+            Select a card above to investigate it.
+
+        </div>
+
+
+        <h3>🔎 Explore — Two States</h3>
+
+        <p>
+            Click the switches. Can you create different patterns using
+            only two possible states?
+        </p>
+
+        <div id="interactiveBits"
+             class="interactive-bits">
+        </div>
+
+        <div class="bit-total">
+
+            Current pattern:
+
+            <strong id="bitPattern">
+                00000000
+            </strong>
+
+        </div>
+
+        <button id="resetBits"
+                class="small-button">
+            Reset
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         DISCOVER
+    ====================================================== -->
+
+    <div class="studio-panel" id="discover">
+
+        <h3>🔬 Discover — Number Systems</h3>
+
+        <p>
+            You already use different number systems without thinking
+            about them. Explore the differences below.
+        </p>
+
+        <div class="discover-table">
+
+            <div class="table-head">
+                <span>System</span>
+                <span>Base</span>
+                <span>Symbols</span>
+                <span>Used For</span>
+            </div>
+
+            <div class="table-row">
+                <strong>Denary</strong>
+                <span>10</span>
+                <span>0–9</span>
+                <span>Everyday human numbers</span>
+            </div>
+
+            <div class="table-row">
+                <strong>Binary</strong>
+                <span>2</span>
+                <span>0, 1</span>
+                <span>Digital representation</span>
+            </div>
+
+            <div class="table-row">
+                <strong>Hexadecimal</strong>
+                <span>16</span>
+                <span>0–9, A–F</span>
+                <span>Compact representation</span>
+            </div>
+
+        </div>
+
+
+        <h3>🔬 Discover — Place Value</h3>
+
+        <p>
+            Both denary and binary are positional number systems.
+            The position of a digit affects its value.
+        </p>
+
+        <div class="place-value-demo">
+
+            <div>
+                <strong>Denary</strong>
+                <div class="place-values denary-values">
+                    <span>1000</span>
+                    <span>100</span>
+                    <span>10</span>
+                    <span>1</span>
+                </div>
+            </div>
+
+            <div>
+                <strong>Binary</strong>
+                <div class="place-values binary-values">
+                    <span>128</span>
+                    <span>64</span>
+                    <span>32</span>
+                    <span>16</span>
+                    <span>8</span>
+                    <span>4</span>
+                    <span>2</span>
+                    <span>1</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="question-box">
+
+            <strong>Think about this:</strong>
+
+            <p>
+                What pattern can you see in the binary place values?
+            </p>
+
+            <textarea
+                id="discoverAnswer"
+                placeholder="Write your observation here...">
+            </textarea>
+
+            <button id="showDiscoverHint"
+                    class="small-button">
+                💡 Hint
+            </button>
+
+            <p id="discoverHint"
+               class="feedback">
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PRACTISE
+    ====================================================== -->
+
+    <div class="studio-panel" id="practise">
+
+        <h3>✍️ Practise — Binary or Not?</h3>
+
+        <p>
+            A binary number may contain only the digits 0 and 1.
+        </p>
+
+        <div class="practice-grid">
+
+            <div class="practice-card">
+                <strong>101101</strong>
+
+                <div>
+                    <button class="practice-choice"
+                            data-correct="true">
+                        Valid Binary
+                    </button>
+
+                    <button class="practice-choice"
+                            data-correct="false">
+                        Not Binary
+                    </button>
+                </div>
+
+                <p class="practice-feedback"></p>
+            </div>
+
+
+            <div class="practice-card">
+                <strong>120101</strong>
+
+                <div>
+                    <button class="practice-choice"
+                            data-correct="false">
+                        Valid Binary
+                    </button>
+
+                    <button class="practice-choice"
+                            data-correct="true">
+                        Not Binary
+                    </button>
+                </div>
+
+                <p class="practice-feedback"></p>
+            </div>
+
+
+            <div class="practice-card">
+                <strong>00011101</strong>
+
+                <div>
+                    <button class="practice-choice"
+                            data-correct="true">
+                        Valid Binary
+                    </button>
+
+                    <button class="practice-choice"
+                            data-correct="false">
+                        Not Binary
+                    </button>
+                </div>
+
+                <p class="practice-feedback"></p>
+            </div>
+
+
+            <div class="practice-card">
+                <strong>10A01</strong>
+
+                <div>
+                    <button class="practice-choice"
+                            data-correct="false">
+                        Valid Binary
+                    </button>
+
+                    <button class="practice-choice"
+                            data-correct="true">
+                        Not Binary
+                    </button>
+                </div>
+
+                <p class="practice-feedback"></p>
+            </div>
+
+        </div>
+
+
+        <h3>✍️ Practise — Which System?</h3>
+
+        <div class="classification-question">
+
+            <p>
+                Match each description to the correct number system.
+            </p>
+
+            <button class="classification"
+                    data-answer="binary">
+                Uses only 0 and 1
+            </button>
+
+            <button class="classification"
+                    data-answer="denary">
+                Uses digits 0–9
+            </button>
+
+            <button class="classification"
+                    data-answer="hex">
+                Uses 0–9 and A–F
+            </button>
+
+            <p id="classificationFeedback"
+               class="feedback">
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SORT IT OUT
+    ====================================================== -->
+
+    <div class="studio-panel" id="sort">
+
+        <h3>🧩 Sort It Out</h3>
+
+        <p>
+            Decide whether each statement belongs to
+            <strong>Denary</strong>, <strong>Binary</strong>,
+            <strong>Hexadecimal</strong>, or describes
+            <strong>Data Representation</strong>.
+        </p>
+
+        <div class="sorting-activity">
+
+            <div class="sort-statement"
+                 data-answer="denary">
+                Uses ten different digits.
+            </div>
+
+            <div class="sort-buttons">
+                <button data-sort="denary">Denary</button>
+                <button data-sort="binary">Binary</button>
+                <button data-sort="hex">Hexadecimal</button>
+                <button data-sort="representation">Representation</button>
+            </div>
+
+            <p class="sort-feedback"></p>
+
+        </div>
+
+
+        <div class="sorting-activity">
+
+            <div class="sort-statement"
+                 data-answer="binary">
+                Uses only two symbols.
+            </div>
+
+            <div class="sort-buttons">
+                <button data-sort="denary">Denary</button>
+                <button data-sort="binary">Binary</button>
+                <button data-sort="hex">Hexadecimal</button>
+                <button data-sort="representation">Representation</button>
+            </div>
+
+            <p class="sort-feedback"></p>
+
+        </div>
+
+
+        <div class="sorting-activity">
+
+            <div class="sort-statement"
+                 data-answer="hex">
+                Uses A–F as well as 0–9.
+            </div>
+
+            <div class="sort-buttons">
+                <button data-sort="denary">Denary</button>
+                <button data-sort="binary">Binary</button>
+                <button data-sort="hex">Hexadecimal</button>
+                <button data-sort="representation">Representation</button>
+            </div>
+
+            <p class="sort-feedback"></p>
+
+        </div>
+
+
+        <div class="sorting-activity">
+
+            <div class="sort-statement"
+                 data-answer="representation">
+                Converts information into a form a computer can store
+                and process.
+            </div>
+
+            <div class="sort-buttons">
+                <button data-sort="denary">Denary</button>
+                <button data-sort="binary">Binary</button>
+                <button data-sort="hex">Hexadecimal</button>
+                <button data-sort="representation">Representation</button>
+            </div>
+
+            <p class="sort-feedback"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         THINK
+    ====================================================== -->
+
+    <div class="studio-panel" id="think">
+
+        <h3>🧠 Think Like a Computer Scientist</h3>
+
+        <div class="think-card">
+
+            <h4>Think 1</h4>
+
+            <p>
+                Imagine you have a light switch that can only be
+                <strong>OFF</strong> or <strong>ON</strong>.
+            </p>
+
+            <p>
+                How could you represent these two states using numbers?
+            </p>
+
+            <textarea
+                id="thinkOne"
+                placeholder="Explain your idea...">
+            </textarea>
+
+        </div>
+
+
+        <div class="think-card">
+
+            <h4>Think 2</h4>
+
+            <p>
+                A computer can store photographs, music and text.
+                Why do you think all of these can ultimately be
+                represented using only 0s and 1s?
+            </p>
+
+            <textarea
+                id="thinkTwo"
+                placeholder="Explain your reasoning...">
+            </textarea>
+
+        </div>
+
+
+        <div class="think-card">
+
+            <h4>Think 3 — Challenge the Statement</h4>
+
+            <p class="statement">
+                “Binary is a completely different way of counting,
+                so humans cannot understand it.”
+            </p>
+
+            <p>
+                Do you agree or disagree? Explain why.
+            </p>
+
+            <textarea
+                id="thinkThree"
+                placeholder="Give a reasoned answer...">
+            </textarea>
+
+        </div>
+
+
+        <button id="saveThinking"
+                class="primary-button">
+            Save My Thinking
+        </button>
+
+        <p id="thinkingSaved"
+           class="feedback">
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         QUICK CHECK
+    ====================================================== -->
+
+    <div class="studio-panel" id="quick">
+
+        <h3>⚡ Quick Check</h3>
+
+        <p>
+            Eight quick questions. Aim for at least <strong>6/8</strong>.
+        </p>
+
+        <div id="quickQuestions">
+
+            <div class="quick-question">
+                <strong>1. Binary is base…</strong>
+                <label>
+                    <input type="radio" name="q1" value="2">
+                    2
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="10">
+                    10
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="16">
+                    16
+                </label>
+            </div>
+
+
+            <div class="quick-question">
+                <strong>2. Which digits are used in binary?</strong>
+                <label>
+                    <input type="radio" name="q2" value="01">
+                    0 and 1
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="09">
+                    0–9
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="af">
+                    A–F
+                </label>
+            </div>
+
+
+            <div class="quick-question">
+                <strong>3. Denary is base…</strong>
+                <label>
+                    <input type="radio" name="q3" value="2">
+                    2
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="10">
+                    10
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="16">
+                    16
+                </label>
+            </div>
+
+
+            <div class="quick-question">
+                <strong>4. A single binary digit is called a…</strong>
+                <label>
+                    <input type="radio" name="q4" value="bit">
+                    bit
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="byte">
+                    byte
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="hex">
+                    hexadecimal digit
+                </label>
+            </div>
+
+
+            <div class="quick-question">
+                <strong>5. Which system uses A–F?</strong>
+                <label>
+                    <input type="radio" name="q5" value="denary">
+                    Denary
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="binary">
+                    Binary
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="hex">
+                    Hexadecimal
+                </label>
+            </div>
+
+
+            <div class="quick-question">
+                <strong>6. Why is binary suitable for digital electronics?</strong>
+                <label>
+                    <input type="radio" name="q6" value="two">
+                    It represents two reliable states.
+                </label>
+                <label>
+                    <input type="radio" name="q6" value="ten">
+                    It has ten digits.
+                </label>
+                <label>
+                    <input type="radio" name="q6" value="hex">
+                    It uses A–F.
+                </label>
+            </div>
+
+
+            <div class="quick-question">
+                <strong>7. What is data representation?</strong>
+                <label>
+                    <input type="radio" name="q7" value="correct">
+                    Converting information into a form a computer can store/process.
+                </label>
+                <label>
+                    <input type="radio" name="q7" value="wrong1">
+                    Designing a computer.
+                </label>
+                <label>
+                    <input type="radio" name="q7" value="wrong2">
+                    Connecting computers together.
+                </label>
+            </div>
+
+
+            <div class="quick-question">
+                <strong>8. Which is a valid binary number?</strong>
+                <label>
+                    <input type="radio" name="q8" value="101101">
+                    101101
+                </label>
+                <label>
+                    <input type="radio" name="q8" value="120101">
+                    120101
+                </label>
+                <label>
+                    <input type="radio" name="q8" value="10A01">
+                    10A01
+                </label>
+            </div>
+
+        </div>
+
+        <button id="markQuick"
+                class="primary-button">
+            Check My Quick Check
+        </button>
+
+        <div id="quickResult"
+             class="assessment-result">
+        </div>
+
+    </div>
+
+
+    <!-- STUDIO COMPLETION -->
+
+    <div class="studio-completion">
+
+        <strong>
+            Student Studio Journey
+        </strong>
+
+        <div class="completion-track">
+
+            <span id="stageExplore">Explore</span>
+            →
+            <span id="stageDiscover">Discover</span>
+            →
+            <span id="stagePractise">Practise</span>
+            →
+            <span id="stageSort">Sort</span>
+            →
+            <span id="stageThink">Think</span>
+            →
+            <span id="stageQuick">Quick Check</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FORMATIVE ASSESSMENT
+========================================================= -->
+
+<section class="assessment-pane">
+
+    <div class="section-label">
+        FORMATIVE ASSESSMENT
+    </div>
+
+    <h2>
+        📝 10-Question Formative Assessment
+    </h2>
+
+    <p>
+        Complete the Student Studio first. This assessment checks
+        whether you can now work independently.
+    </p>
+
+    <div id="assessmentQuestions">
+
+        <div class="assessment-question">
+            <strong>1. What is data representation?</strong>
+
+            <label>
+                <input type="radio" name="a1" value="a">
+                The way information is converted into a form a computer
+                can store and process.
+            </label>
+
+            <label>
+                <input type="radio" name="a1" value="b">
+                The design of a computer monitor.
+            </label>
+
+            <label>
+                <input type="radio" name="a1" value="c">
+                The connection between two computers.
+            </label>
+        </div>
+
+
+        <div class="assessment-question">
+            <strong>2. Which number system is base 2?</strong>
+
+            <label>
+                <input type="radio" name="a2" value="a">
+                Denary
+            </label>
+
+            <label>
+                <input type="radio" name="a2" value="b">
+                Binary
+            </label>
+
+            <label>
+                <input type="radio" name="a2" value="c">
+                Hexadecimal
+            </label>
+        </div>
+
+
+        <div class="assessment-question">
+            <strong>3. Which digits can appear in binary?</strong>
+
+            <label>
+                <input type="radio" name="a3" value="a">
+                0 and 1
+            </label>
+
+            <label>
+                <input type="radio" name="a3" value="b">
+                0–9
+            </label>
+
+            <label>
+                <input type="radio" name="a3" value="c">
+                A–F
+            </label>
+        </div>
+
+
+        <div class="assessment-question">
+            <strong>4. Which number system is base 10?</strong>
+
+            <label>
+                <input type="radio" name="a4" value="a">
+                Binary
+            </label>
+
+            <label>
+                <input type="radio" name="a4" value="b">
+                Denary
+            </label>
+
+            <label>
+                <input type="radio" name="a4" value="c">
+                Hexadecimal
+            </label>
+        </div>
+
+
+        <div class="assessment-question">
+            <strong>5. A single binary digit is called a…</strong>
+
+            <label>
+                <input type="radio" name="a5" value="a">
+                Byte
+            </label>
+
+            <label>
+                <input type="radio" name="a5" value="b">
+                Bit
+            </label>
+
+            <label>
+                <input type="radio" name="a5" value="c">
+                Nibble
+            </label>
+        </div>
+
+
+        <div class="assessment-question">
+            <strong>6. Why does a computer use binary?</strong>
+
+            <label>
+                <input type="radio" name="a6" value="a">
+                Digital electronics can reliably represent two states.
+            </label>
+
+            <label>
+                <input type="radio" name="a6" value="b">
+                Humans normally count in binary.
+            </label>
+
+            <label>
+                <input type="radio" name="a6" value="c">
+                Binary always requires less storage.
+            </label>
+        </div>
+
+
+        <div class="assessment-question">
+            <strong>7. Which system uses A–F?</strong>
+
+            <label>
+                <input type="radio" name="a7" value="a">
+                Denary
+            </label>
+
+            <label>
+                <input type="radio" name="a7" value="b">
+                Binary
+            </label>
+
+            <label>
+                <input type="radio" name="a7" value="c">
+                Hexadecimal
+            </label>
+        </div>
+
+
+        <div class="assessment-question">
+            <strong>8. Which is a valid binary number?</strong>
+
+            <label>
+                <input type="radio" name="a8" value="a">
+                101101
+            </label>
+
+            <label>
+                <input type="radio" name="a8" value="b">
+                120101
+            </label>
+
+            <label>
+                <input type="radio" name="a8" value="c">
+                10A01
+            </label>
+        </div>
+
+
+        <div class="assessment-question">
+            <strong>9. Which statement about binary is correct?</strong>
+
+            <label>
+                <input type="radio" name="a9" value="a">
+                Binary uses ten symbols.
+            </label>
+
+            <label>
+                <input type="radio" name="a9" value="b">
+                Binary uses two symbols.
+            </label>
+
+            <label>
+                <input type="radio" name="a9" value="c">
+                Binary uses sixteen symbols.
+            </label>
+        </div>
+
+
+        <div class="assessment-question">
+            <strong>10. Why is hexadecimal useful?</strong>
+
+            <label>
+                <input type="radio" name="a10" value="a">
+                It provides a compact way of writing binary values.
+            </label>
+
+            <label>
+                <input type="radio" name="a10" value="b">
+                It replaces binary inside every computer.
+            </label>
+
+            <label>
+                <input type="radio" name="a10" value="c">
+                It uses only two symbols.
+            </label>
+        </div>
+
+    </div>
+
+    <button id="submitAssessment"
+            class="primary-button">
+        Submit Assessment
+    </button>
+
+    <div id="assessmentResult"
+         class="assessment-result">
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ADAPTIVE NEXT STEP
+========================================================= -->
+
+<section id="adaptivePane"
+         class="adaptive-pane hidden">
+
+    <div class="section-label">
+        ADAPTIVE LEARNING
+    </div>
+
+    <h2>
+        🔀 Your Next Step
+    </h2>
+
+    <div id="adaptiveContent">
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GAME BREAK
+========================================================= -->
+
+<section class="game-pane">
+
+    <div class="section-label">
+        BRAIN BREAK
+    </div>
+
+    <h2>
+        🎮 5-Minute Blockly Game Break
+    </h2>
+
+    <p>
+        You have finished a substantial learning cycle.
+        Take five minutes for a genuine computational-thinking game.
+    </p>
+
+    <div class="game-controls">
+
+        <button id="gameButton"
+                class="primary-button">
+            🎮 Play a 5-Minute CS Game
+        </button>
+
+        <div id="gameTimer"
+             class="game-timer">
+            05:00
+        </div>
+
+    </div>
+
+    <p id="gameMessage"
+       class="game-message">
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     EXIT TICKET
+========================================================= -->
+
+<section class="exit-pane">
+
+    <div class="section-label">
+        EXIT TICKET
+    </div>
+
+    <h2>
+        🎫 Before You Leave
+    </h2>
+
+    <p>
+        Be honest. The purpose is not to impress your teacher.
+        It is to identify what you understand and what needs more work.
+    </p>
+
+    <div class="exit-grid">
+
+        <div class="exit-card">
+
+            <h3>1. I can explain data representation.</h3>
+
+            <select id="exitOne">
+                <option>Confidently</option>
+                <option>Mostly</option>
+                <option>Not yet</option>
+            </select>
+
+        </div>
+
+
+        <div class="exit-card">
+
+            <h3>2. I can explain why computers use binary.</h3>
+
+            <select id="exitTwo">
+                <option>Confidently</option>
+                <option>Mostly</option>
+                <option>Not yet</option>
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <label class="exit-reflection">
+
+        <strong>
+            What is one idea you still want your teacher to explain?
+        </strong>
+
+        <textarea id="exitThree"
+                  placeholder="Write your reflection...">
+        </textarea>
+
+    </label>
+
+    <button id="saveExit"
+            class="primary-button">
+        Save Exit Ticket
+    </button>
+
+    <p id="exitSaved"
+       class="feedback">
+    </p>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div>
+        <strong>
+            IGCSE Computer Science 0984
+        </strong>
+    </div>
+
+    <div>
+        Design and content by
+        <strong>Ravi Raju</strong>
+    </div>
+
+    <div>
+        Modern English School Cairo
+    </div>
+
+</footer>
+
+
+<script src="DR-01.js"></script>
+
+</body>
+</html>

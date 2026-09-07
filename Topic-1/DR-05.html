@@ -1,0 +1,3072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DR-05 | Binary ↔ Hexadecimal Conversion</title>
+
+    <link rel="stylesheet" href="DR-05.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="brand">
+
+        <div class="brand-title">
+            IGCSE Computer Science 0984
+        </div>
+
+        <div class="brand-subtitle">
+            Topic 1 — Data Representation
+        </div>
+
+    </div>
+
+
+    <div class="teacher-brand">
+
+        <img src="IMG-Ravi.jpeg"
+             alt="Ravi Raju">
+
+        <div>
+
+            <strong>
+                Design and Content by Ravi Raju
+            </strong>
+
+            <span>
+                Modern English School Cairo
+            </span>
+
+        </div>
+
+
+        <img class="school-logo"
+             src="MES35.jpg"
+             alt="Modern English School Cairo">
+
+    </div>
+
+</header>
+
+
+<main class="page">
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div>
+
+            <span class="lesson-number">
+                LESSON DR-05
+            </span>
+
+            <h1>
+                Binary ↔ Hexadecimal Conversion
+            </h1>
+
+            <p>
+                Learn the powerful relationship between binary and
+                hexadecimal. Four binary bits correspond exactly to
+                one hexadecimal digit.
+            </p>
+
+        </div>
+
+
+        <div class="hero-badge">
+
+            <span>4 ↔ 1</span>
+
+            <small>
+                Binary Bits : Hex Digit
+            </small>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- OBJECTIVES -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>01</span>
+
+            <div>
+
+                <h2>
+                    Learning Objectives
+                </h2>
+
+                <p>
+                    By the end of this lesson you should be able to:
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="objective-grid">
+
+            <div class="objective">
+
+                <b>01</b>
+
+                <span>
+                    Explain the relationship between binary and hexadecimal.
+                </span>
+
+            </div>
+
+
+            <div class="objective">
+
+                <b>02</b>
+
+                <span>
+                    Explain why four binary bits correspond to one
+                    hexadecimal digit.
+                </span>
+
+            </div>
+
+
+            <div class="objective">
+
+                <b>03</b>
+
+                <span>
+                    Convert binary values into hexadecimal.
+                </span>
+
+            </div>
+
+
+            <div class="objective">
+
+                <b>04</b>
+
+                <span>
+                    Convert hexadecimal values into binary.
+                </span>
+
+            </div>
+
+
+            <div class="objective">
+
+                <b>05</b>
+
+                <span>
+                    Use leading zeros correctly when grouping binary digits.
+                </span>
+
+            </div>
+
+
+            <div class="objective">
+
+                <b>06</b>
+
+                <span>
+                    Apply the conversion method accurately in examination
+                    questions.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- KEY RELATIONSHIP -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>02</span>
+
+            <div>
+
+                <h2>
+                    The Key Relationship
+                </h2>
+
+                <p>
+                    Four binary bits make one hexadecimal digit
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="relationship">
+
+            <div class="binary-group">
+
+                <small>
+                    BINARY
+                </small>
+
+                <strong>
+                    1010
+                </strong>
+
+                <span>
+                    Four bits
+                </span>
+
+            </div>
+
+
+            <div class="relationship-arrow">
+                =
+            </div>
+
+
+            <div class="hex-group">
+
+                <small>
+                    HEXADECIMAL
+                </small>
+
+                <strong>
+                    A
+                </strong>
+
+                <span>
+                    One digit
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="important">
+
+            <strong>
+                The reason:
+            </strong>
+
+            <p>
+                A group of four binary bits can represent values from
+                0 to 15. Hexadecimal has exactly sixteen symbols,
+                representing 0 to 15.
+            </p>
+
+            <p>
+                Therefore every possible 4-bit binary pattern has
+                exactly one hexadecimal equivalent.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- 4-BIT TABLE -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>03</span>
+
+            <div>
+
+                <h2>
+                    The 4-Bit Conversion Table
+                </h2>
+
+                <p>
+                    Learn this relationship — it becomes extremely useful.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="conversion-table">
+
+            <div class="conversion-header">
+
+                <span>Binary</span>
+                <span>Denary</span>
+                <span>Hexadecimal</span>
+
+            </div>
+
+
+            <div>
+                <span>0000</span>
+                <span>0</span>
+                <strong>0</strong>
+            </div>
+
+            <div>
+                <span>0001</span>
+                <span>1</span>
+                <strong>1</strong>
+            </div>
+
+            <div>
+                <span>0010</span>
+                <span>2</span>
+                <strong>2</strong>
+            </div>
+
+            <div>
+                <span>0011</span>
+                <span>3</span>
+                <strong>3</strong>
+            </div>
+
+            <div>
+                <span>0100</span>
+                <span>4</span>
+                <strong>4</strong>
+            </div>
+
+            <div>
+                <span>0101</span>
+                <span>5</span>
+                <strong>5</strong>
+            </div>
+
+            <div>
+                <span>0110</span>
+                <span>6</span>
+                <strong>6</strong>
+            </div>
+
+            <div>
+                <span>0111</span>
+                <span>7</span>
+                <strong>7</strong>
+            </div>
+
+            <div>
+                <span>1000</span>
+                <span>8</span>
+                <strong>8</strong>
+            </div>
+
+            <div>
+                <span>1001</span>
+                <span>9</span>
+                <strong>9</strong>
+            </div>
+
+            <div>
+                <span>1010</span>
+                <span>10</span>
+                <strong>A</strong>
+            </div>
+
+            <div>
+                <span>1011</span>
+                <span>11</span>
+                <strong>B</strong>
+            </div>
+
+            <div>
+                <span>1100</span>
+                <span>12</span>
+                <strong>C</strong>
+            </div>
+
+            <div>
+                <span>1101</span>
+                <span>13</span>
+                <strong>D</strong>
+            </div>
+
+            <div>
+                <span>1110</span>
+                <span>14</span>
+                <strong>E</strong>
+            </div>
+
+            <div>
+                <span>1111</span>
+                <span>15</span>
+                <strong>F</strong>
+            </div>
+
+        </div>
+
+
+        <div class="memory-box">
+
+            <strong>
+                Memory shortcut
+            </strong>
+
+            <p>
+                The hexadecimal sequence after 9 is:
+            </p>
+
+            <div class="memory-sequence">
+                A → B → C → D → E → F
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- NIBBLE -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>04</span>
+
+            <div>
+
+                <h2>
+                    Meet the Nibble
+                </h2>
+
+                <p>
+                    A useful term for four binary bits
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="nibble-layout">
+
+            <div class="bit-box">
+                1
+            </div>
+
+            <div class="bit-box">
+                0
+            </div>
+
+            <div class="bit-box">
+                1
+            </div>
+
+            <div class="bit-box">
+                0
+            </div>
+
+            <div class="nibble-arrow">
+                →
+            </div>
+
+            <div class="nibble-result">
+                A
+            </div>
+
+        </div>
+
+
+        <div class="nibble-explanation">
+
+            <h3>
+                What is a nibble?
+            </h3>
+
+            <p>
+                A <strong>nibble</strong> is a group of four binary bits.
+            </p>
+
+            <p>
+                Since four bits can represent sixteen different values
+                from 0 to 15, one nibble can be represented by exactly
+                one hexadecimal digit.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BINARY TO HEX -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>05</span>
+
+            <div>
+
+                <h2>
+                    Binary → Hexadecimal
+                </h2>
+
+                <p>
+                    The four-step conversion method
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="method">
+
+            <div class="method-step">
+
+                <b>1</b>
+
+                <h3>
+                    Start with the binary number
+                </h3>
+
+                <p>
+                    Example:
+                </p>
+
+                <code>
+                    11010110
+                </code>
+
+            </div>
+
+
+            <div class="method-step">
+
+                <b>2</b>
+
+                <h3>
+                    Split into groups of four
+                </h3>
+
+                <p>
+                    Starting from the right:
+                </p>
+
+                <code>
+                    1101 &nbsp; 0110
+                </code>
+
+            </div>
+
+
+            <div class="method-step">
+
+                <b>3</b>
+
+                <h3>
+                    Convert each group
+                </h3>
+
+                <p>
+                    1101 = D
+                    &nbsp;&nbsp;&nbsp;
+                    0110 = 6
+                </p>
+
+            </div>
+
+
+            <div class="method-step">
+
+                <b>4</b>
+
+                <h3>
+                    Write the hexadecimal value
+                </h3>
+
+                <code>
+                    D6
+                </code>
+
+            </div>
+
+        </div>
+
+
+        <div class="worked-example">
+
+            <div class="example-title">
+                WORKED EXAMPLE
+            </div>
+
+            <h3>
+                Convert 10101111₂ to hexadecimal.
+            </h3>
+
+
+            <div class="binary-groups">
+
+                <span>
+                    1010
+                </span>
+
+                <span>
+                    1111
+                </span>
+
+            </div>
+
+
+            <div class="group-conversion">
+
+                <div>
+                    <strong>1010</strong>
+                    <span>→ A</span>
+                </div>
+
+                <div>
+                    <strong>1111</strong>
+                    <span>→ F</span>
+                </div>
+
+            </div>
+
+
+            <div class="answer">
+                10101111₂ = AF₁₆
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- LEADING ZERO -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>06</span>
+
+            <div>
+
+                <h2>
+                    What if the Binary Number is Not a Multiple of Four?
+                </h2>
+
+                <p>
+                    Leading zeros are your friend
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <p>
+            Suppose we need to convert:
+        </p>
+
+
+        <div class="large-binary">
+            101101₂
+        </div>
+
+
+        <p>
+            We cannot immediately make complete groups of four.
+            Add zeros to the <strong>left</strong>, not the right.
+        </p>
+
+
+        <div class="zero-process">
+
+            <div>
+                101101
+            </div>
+
+            <span>
+                →
+            </span>
+
+            <div class="highlight">
+                00101101
+            </div>
+
+        </div>
+
+
+        <p>
+            Now group from the right:
+        </p>
+
+
+        <div class="binary-groups">
+
+            <span>
+                0010
+            </span>
+
+            <span>
+                1101
+            </span>
+
+        </div>
+
+
+        <div class="group-conversion">
+
+            <div>
+                <strong>0010</strong>
+                <span>→ 2</span>
+            </div>
+
+            <div>
+                <strong>1101</strong>
+                <span>→ D</span>
+            </div>
+
+        </div>
+
+
+        <div class="answer">
+            101101₂ = 2D₁₆
+        </div>
+
+
+        <div class="important">
+
+            <strong>
+                Critical rule:
+            </strong>
+
+            <p>
+                When adding leading zeros, add them to the
+                <strong>left-hand side</strong> of the binary number.
+                Adding zeros to the right changes the value.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- HEX TO BINARY -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>07</span>
+
+            <div>
+
+                <h2>
+                    Hexadecimal → Binary
+                </h2>
+
+                <p>
+                    The reverse process is even easier
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="reverse-method">
+
+            <div>
+
+                <span>Step 1</span>
+
+                <strong>
+                    Take each hexadecimal digit separately.
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Step 2</span>
+
+                <strong>
+                    Replace each digit with its 4-bit binary equivalent.
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Step 3</span>
+
+                <strong>
+                    Join the groups together.
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="worked-example">
+
+            <div class="example-title">
+                WORKED EXAMPLE
+            </div>
+
+            <h3>
+                Convert 3C₁₆ to binary.
+            </h3>
+
+
+            <div class="group-conversion">
+
+                <div>
+
+                    <strong>3</strong>
+
+                    <span>
+                        →
+                        0011
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>C</strong>
+
+                    <span>
+                        →
+                        1100
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="binary-result">
+                0011 1100
+            </div>
+
+
+            <div class="answer">
+                3C₁₆ = 00111100₂
+            </div>
+
+        </div>
+
+
+        <div class="worked-example">
+
+            <div class="example-title">
+                ANOTHER EXAMPLE
+            </div>
+
+            <h3>
+                Convert B7₁₆ to binary.
+            </h3>
+
+
+            <div class="group-conversion">
+
+                <div>
+
+                    <strong>B</strong>
+
+                    <span>
+                        →
+                        1011
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>7</strong>
+
+                    <span>
+                        →
+                        0111
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="binary-result">
+                1011 0111
+            </div>
+
+
+            <div class="answer">
+                B7₁₆ = 10110111₂
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- USEFUL PATTERN -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>08</span>
+
+            <div>
+
+                <h2>
+                    Why the Conversion Works
+                </h2>
+
+                <p>
+                    See the mathematics behind the shortcut
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="power-table">
+
+            <div>
+                <strong>Binary</strong>
+                <span>8</span>
+                <span>4</span>
+                <span>2</span>
+                <span>1</span>
+            </div>
+
+
+            <div>
+                <strong>Hex</strong>
+                <span>8</span>
+                <span>4</span>
+                <span>2</span>
+                <span>1</span>
+            </div>
+
+        </div>
+
+
+        <p>
+            A 4-bit binary group has place values:
+        </p>
+
+
+        <div class="place-values">
+            2³ &nbsp; 2² &nbsp; 2¹ &nbsp; 2⁰
+        </div>
+
+
+        <p>
+            These are:
+        </p>
+
+
+        <div class="place-values">
+            8 &nbsp; 4 &nbsp; 2 &nbsp; 1
+        </div>
+
+
+        <p>
+            The largest possible value is:
+        </p>
+
+
+        <div class="maximum">
+            8 + 4 + 2 + 1 = 15
+        </div>
+
+
+        <p>
+            Hexadecimal has exactly sixteen possible digits:
+            <strong>0–15</strong>.
+            That is why the relationship is exact.
+        </p>
+
+    </section>
+
+
+
+    <!-- ORAL QUESTIONS -->
+
+    <section class="panel">
+
+        <div class="section-heading">
+
+            <span>09</span>
+
+            <div>
+
+                <h2>
+                    Teacher–Student Discussion
+                </h2>
+
+                <p>
+                    Discuss before entering the Student Studio
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="oral-grid">
+
+            <div class="oral-question">
+
+                <b>01</b>
+
+                <p>
+                    Why can four binary bits be represented by one
+                    hexadecimal digit?
+                </p>
+
+            </div>
+
+
+            <div class="oral-question">
+
+                <b>02</b>
+
+                <p>
+                    What is the hexadecimal equivalent of 1010₂?
+                </p>
+
+            </div>
+
+
+            <div class="oral-question">
+
+                <b>03</b>
+
+                <p>
+                    Why do we add leading zeros when necessary?
+                </p>
+
+            </div>
+
+
+            <div class="oral-question">
+
+                <b>04</b>
+
+                <p>
+                    Where should leading zeros be added?
+                </p>
+
+            </div>
+
+
+            <div class="oral-question">
+
+                <b>05</b>
+
+                <p>
+                    What is the binary equivalent of F₁₆?
+                </p>
+
+            </div>
+
+
+            <div class="oral-question">
+
+                <b>06</b>
+
+                <p>
+                    What is the binary equivalent of A7₁₆?
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- STUDENT STUDIO -->
+
+    <section class="student-studio">
+
+
+        <div class="studio-header">
+
+            <div>
+
+                <span>
+                    STUDENT STUDIO
+                </span>
+
+                <h2>
+                    Binary ↔ Hex Workshop
+                </h2>
+
+                <p>
+                    Build the conversion skill through exploration,
+                    practice, investigation and explanation.
+                </p>
+
+            </div>
+
+
+            <div class="studio-icon">
+                ↔
+            </div>
+
+        </div>
+
+
+
+        <div class="studio-tabs">
+
+            <button class="studio-tab active"
+                    data-tab="explore">
+                Explore
+            </button>
+
+            <button class="studio-tab"
+                    data-tab="converter">
+                Conversion Lab
+            </button>
+
+            <button class="studio-tab"
+                    data-tab="grouping">
+                Group It
+            </button>
+
+            <button class="studio-tab"
+                    data-tab="practice">
+                Practise
+            </button>
+
+            <button class="studio-tab"
+                    data-tab="reverse">
+                Reverse It
+            </button>
+
+            <button class="studio-tab"
+                    data-tab="mistakes">
+                Fix the Mistake
+            </button>
+
+            <button class="studio-tab"
+                    data-tab="think">
+                Think
+            </button>
+
+            <button class="studio-tab"
+                    data-tab="quick">
+                Quick Check
+            </button>
+
+        </div>
+
+
+
+        <!-- EXPLORE -->
+
+        <div class="studio-content active"
+             id="explore">
+
+            <div class="studio-intro">
+
+                <h3>
+                    Discover the 4 ↔ 1 Rule
+                </h3>
+
+                <p>
+                    Every hexadecimal digit corresponds to exactly four
+                    binary bits. This means that conversion does not require
+                    complicated arithmetic.
+                </p>
+
+            </div>
+
+
+            <div class="mapping-display">
+
+                <div class="mapping-binary">
+
+                    <span>
+                        0000
+                    </span>
+
+                    <span>
+                        0001
+                    </span>
+
+                    <span>
+                        0010
+                    </span>
+
+                    <span>
+                        0011
+                    </span>
+
+                    <span>
+                        0100
+                    </span>
+
+                    <span>
+                        0101
+                    </span>
+
+                    <span>
+                        0110
+                    </span>
+
+                    <span>
+                        0111
+                    </span>
+
+                </div>
+
+
+                <div class="mapping-hex">
+
+                    <span>0</span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="mapping-display">
+
+                <div class="mapping-binary">
+
+                    <span>1000</span>
+                    <span>1001</span>
+                    <span>1010</span>
+                    <span>1011</span>
+                    <span>1100</span>
+                    <span>1101</span>
+                    <span>1110</span>
+                    <span>1111</span>
+
+                </div>
+
+
+                <div class="mapping-hex">
+
+                    <span>8</span>
+                    <span>9</span>
+                    <span>A</span>
+                    <span>B</span>
+                    <span>C</span>
+                    <span>D</span>
+                    <span>E</span>
+                    <span>F</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="studio-card-row">
+
+                <article class="learning-card">
+
+                    <h4>
+                        Binary → Hex
+                    </h4>
+
+                    <p>
+                        Split binary into groups of four and replace
+                        each group with its hexadecimal equivalent.
+                    </p>
+
+                </article>
+
+
+                <article class="learning-card">
+
+                    <h4>
+                        Hex → Binary
+                    </h4>
+
+                    <p>
+                        Replace every hexadecimal digit with its
+                        four-bit binary equivalent.
+                    </p>
+
+                </article>
+
+
+                <article class="learning-card">
+
+                    <h4>
+                        The Core Skill
+                    </h4>
+
+                    <p>
+                        Learn the 16 four-bit patterns and conversion
+                        becomes fast and reliable.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONVERTER -->
+
+        <div class="studio-content"
+             id="converter">
+
+            <div class="studio-intro">
+
+                <h3>
+                    Interactive Conversion Lab
+                </h3>
+
+                <p>
+                    Enter either a binary or hexadecimal value.
+                    The other representation will be calculated for you.
+                    Then explain the conversion yourself.
+                </p>
+
+            </div>
+
+
+            <div class="converter-box">
+
+                <div class="converter-field">
+
+                    <label for="binaryInput">
+                        Binary
+                    </label>
+
+                    <input id="binaryInput"
+                           type="text"
+                           placeholder="Example: 11010110">
+
+                </div>
+
+
+                <div class="converter-arrow">
+                    ↔
+                </div>
+
+
+                <div class="converter-field">
+
+                    <label for="hexInput">
+                        Hexadecimal
+                    </label>
+
+                    <input id="hexInput"
+                           type="text"
+                           placeholder="Example: D6">
+
+                </div>
+
+            </div>
+
+
+            <div class="converter-buttons">
+
+                <button id="binaryToHex"
+                        class="primary-btn">
+                    Binary → Hex
+                </button>
+
+                <button id="hexToBinary"
+                        class="secondary-btn">
+                    Hex → Binary
+                </button>
+
+                <button id="clearConverter"
+                        class="clear-btn">
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div id="converterResult"
+                 class="converter-result">
+
+                Enter a value and choose a conversion.
+
+            </div>
+
+
+            <div class="conversion-explanation">
+
+                <h4>
+                    Your challenge
+                </h4>
+
+                <p>
+                    Do not simply copy the result. Take the result and
+                    explain the conversion using the 4-bit grouping method.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- GROUPING -->
+
+        <div class="studio-content"
+             id="grouping">
+
+            <div class="studio-intro">
+
+                <h3>
+                    Group It Correctly
+                </h3>
+
+                <p>
+                    One of the most common errors is grouping binary
+                    digits incorrectly.
+                </p>
+
+            </div>
+
+
+            <div class="grouping-example">
+
+                <h4>
+                    Example: 110110101111₂
+                </h4>
+
+
+                <div class="bad-group">
+                    1101 1010 1111
+                </div>
+
+
+                <p>
+                    This is correct because every group contains exactly
+                    four bits.
+                </p>
+
+
+                <div class="good-group">
+
+                    <span>1101</span>
+                    <span>1010</span>
+                    <span>1111</span>
+
+                </div>
+
+
+                <div class="group-labels">
+
+                    <span>D</span>
+                    <span>A</span>
+                    <span>F</span>
+
+                </div>
+
+
+                <div class="answer">
+                    110110101111₂ = DAF₁₆
+                </div>
+
+            </div>
+
+
+            <div class="grouping-example">
+
+                <h4>
+                    Example with leading zeros
+                </h4>
+
+                <p>
+                    Convert:
+                </p>
+
+                <div class="large-binary">
+                    1011011₂
+                </div>
+
+
+                <p>
+                    Add one leading zero:
+                </p>
+
+
+                <div class="good-group">
+
+                    <span>0101</span>
+                    <span>1011</span>
+
+                </div>
+
+
+                <div class="group-labels">
+
+                    <span>5</span>
+                    <span>B</span>
+
+                </div>
+
+
+                <div class="answer">
+                    1011011₂ = 5B₁₆
+                </div>
+
+            </div>
+
+
+            <div class="rule-card">
+
+                <strong>
+                    Group from the RIGHT.
+                </strong>
+
+                <p>
+                    If the first group contains fewer than four bits,
+                    add leading zeros to complete it.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRACTICE -->
+
+        <div class="studio-content"
+             id="practice">
+
+            <div class="studio-intro">
+
+                <h3>
+                    Independent Practice
+                </h3>
+
+                <p>
+                    Try each conversion on paper before revealing
+                    the answer.
+                </p>
+
+            </div>
+
+
+            <div class="practice-set">
+
+                <div class="practice-item">
+
+                    <strong>
+                        1. Convert 1010₂ to hexadecimal.
+                    </strong>
+
+                    <details>
+                        <summary>
+                            Reveal answer
+                        </summary>
+
+                        <p>
+                            1010 → A
+                        </p>
+
+                        <strong>
+                            Answer: A₁₆
+                        </strong>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>
+                        2. Convert 1111₂ to hexadecimal.
+                    </strong>
+
+                    <details>
+                        <summary>
+                            Reveal answer
+                        </summary>
+
+                        <p>
+                            1111 → F
+                        </p>
+
+                        <strong>
+                            Answer: F₁₆
+                        </strong>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>
+                        3. Convert 11010110₂ to hexadecimal.
+                    </strong>
+
+                    <details>
+                        <summary>
+                            Reveal answer
+                        </summary>
+
+                        <p>
+                            1101 → D
+                            and
+                            0110 → 6
+                        </p>
+
+                        <strong>
+                            Answer: D6₁₆
+                        </strong>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>
+                        4. Convert 11110000₂ to hexadecimal.
+                    </strong>
+
+                    <details>
+                        <summary>
+                            Reveal answer
+                        </summary>
+
+                        <p>
+                            1111 → F
+                            and
+                            0000 → 0
+                        </p>
+
+                        <strong>
+                            Answer: F0₁₆
+                        </strong>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>
+                        5. Convert 101101₂ to hexadecimal.
+                    </strong>
+
+                    <details>
+                        <summary>
+                            Reveal answer
+                        </summary>
+
+                        <p>
+                            0010 1101 → 2D
+                        </p>
+
+                        <strong>
+                            Answer: 2D₁₆
+                        </strong>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>
+                        6. Convert 10011101₂ to hexadecimal.
+                    </strong>
+
+                    <details>
+                        <summary>
+                            Reveal answer
+                        </summary>
+
+                        <p>
+                            1001 → 9
+                            and
+                            1101 → D
+                        </p>
+
+                        <strong>
+                            Answer: 9D₁₆
+                        </strong>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>
+                        7. Convert A5₁₆ to binary.
+                    </strong>
+
+                    <details>
+                        <summary>
+                            Reveal answer
+                        </summary>
+
+                        <p>
+                            A → 1010
+                            and
+                            5 → 0101
+                        </p>
+
+                        <strong>
+                            Answer: 10100101₂
+                        </strong>
+
+                    </details>
+
+                </div>
+
+
+                <div class="practice-item">
+
+                    <strong>
+                        8. Convert CE₁₆ to binary.
+                    </strong>
+
+                    <details>
+                        <summary>
+                            Reveal answer
+                        </summary>
+
+                        <p>
+                            C → 1100
+                            and
+                            E → 1110
+                        </p>
+
+                        <strong>
+                            Answer: 11001110₂
+                        </strong>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- REVERSE -->
+
+        <div class="studio-content"
+             id="reverse">
+
+            <div class="studio-intro">
+
+                <h3>
+                    Reverse It
+                </h3>
+
+                <p>
+                    Hexadecimal → binary is simply the reverse of
+                    binary → hexadecimal.
+                </p>
+
+            </div>
+
+
+            <div class="reverse-grid">
+
+                <article>
+
+                    <div class="reverse-symbol">
+                        4
+                    </div>
+
+                    <h4>
+                        0100
+                    </h4>
+
+                    <p>
+                        One hexadecimal digit always becomes
+                        four binary bits.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <div class="reverse-symbol">
+                        9
+                    </div>
+
+                    <h4>
+                        1001
+                    </h4>
+
+                    <p>
+                        Do not remove leading zeros from the
+                        four-bit group.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <div class="reverse-symbol">
+                        C
+                    </div>
+
+                    <h4>
+                        1100
+                    </h4>
+
+                    <p>
+                        C represents denary 12.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <div class="reverse-symbol">
+                        F
+                    </div>
+
+                    <h4>
+                        1111
+                    </h4>
+
+                    <p>
+                        F represents the largest possible
+                        four-bit value.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="challenge-box">
+
+                <h4>
+                    Challenge
+                </h4>
+
+                <p>
+                    Convert:
+                </p>
+
+                <div class="challenge-value">
+                    FACE₁₆
+                </div>
+
+                <details>
+
+                    <summary>
+                        Reveal solution
+                    </summary>
+
+                    <p>
+                        F → 1111
+                    </p>
+
+                    <p>
+                        A → 1010
+                    </p>
+
+                    <p>
+                        C → 1100
+                    </p>
+
+                    <p>
+                        E → 1110
+                    </p>
+
+                    <div class="answer">
+                        FACE₁₆ = 1111101011001110₂
+                    </div>
+
+                </details>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MISTAKES -->
+
+        <div class="studio-content"
+             id="mistakes">
+
+            <div class="studio-intro">
+
+                <h3>
+                    Fix the Mistake
+                </h3>
+
+                <p>
+                    Understanding mistakes is part of becoming accurate.
+                </p>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <h4>
+                    Mistake 1
+                </h4>
+
+                <div class="wrong-work">
+                    101101₂ → 1011 01 → B6
+                </div>
+
+                <p>
+                    What went wrong?
+                </p>
+
+                <details>
+
+                    <summary>
+                        Reveal explanation
+                    </summary>
+
+                    <p>
+                        Binary must be grouped from the right into groups
+                        of four.
+                    </p>
+
+                    <p>
+                        101101 becomes:
+                    </p>
+
+                    <p>
+                        0010 1101
+                    </p>
+
+                    <p>
+                        Therefore the correct answer is:
+                        <strong>2D₁₆</strong>.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <h4>
+                    Mistake 2
+                </h4>
+
+                <div class="wrong-work">
+                    A₁₆ → 101₂
+                </div>
+
+                <details>
+
+                    <summary>
+                        Reveal explanation
+                    </summary>
+
+                    <p>
+                        Every hexadecimal digit must become
+                        exactly four binary bits.
+                    </p>
+
+                    <p>
+                        A → <strong>1010</strong>
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <h4>
+                    Mistake 3
+                </h4>
+
+                <div class="wrong-work">
+                    0110 → 011 → 3
+                </div>
+
+                <details>
+
+                    <summary>
+                        Reveal explanation
+                    </summary>
+
+                    <p>
+                        The leading zero is significant when identifying
+                        the complete four-bit pattern.
+                    </p>
+
+                    <p>
+                        0110 represents denary 6, therefore:
+                        <strong>0110₂ = 6₁₆</strong>.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <h4>
+                    Mistake 4
+                </h4>
+
+                <div class="wrong-work">
+                    101101 → 1011 0100
+                </div>
+
+                <details>
+
+                    <summary>
+                        Reveal explanation
+                    </summary>
+
+                    <p>
+                        The zero was added to the wrong side.
+                    </p>
+
+                    <p>
+                        Leading zeros must be added to the
+                        <strong>left</strong>.
+                    </p>
+
+                    <p>
+                        Correct:
+                        <strong>0010 1101</strong>.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- THINK -->
+
+        <div class="studio-content"
+             id="think">
+
+            <div class="studio-intro">
+
+                <h3>
+                    Think Like a Computer Scientist
+                </h3>
+
+                <p>
+                    Do not just perform the conversion — understand why
+                    the method works.
+                </p>
+
+            </div>
+
+
+            <div class="thinking-grid">
+
+                <article>
+
+                    <span>
+                        THINK 01
+                    </span>
+
+                    <h4>
+                        Why exactly four bits?
+                    </h4>
+
+                    <p>
+                        Why not three bits or five bits?
+                    </p>
+
+                    <details>
+
+                        <summary>
+                            Think it through
+                        </summary>
+
+                        <p>
+                            Four binary bits can represent 16 different
+                            combinations, from 0000 to 1111. Hexadecimal
+                            also has exactly 16 possible symbols.
+                        </p>
+
+                    </details>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        THINK 02
+                    </span>
+
+                    <h4>
+                        Why are leading zeros allowed?
+                    </h4>
+
+                    <p>
+                        Does adding a zero to the left change a binary
+                        number's value?
+                    </p>
+
+                    <details>
+
+                        <summary>
+                            Answer
+                        </summary>
+
+                        <p>
+                            No. Just as 007 and 7 have the same denary
+                            value, 001011 and 1011 have the same binary
+                            value.
+                        </p>
+
+                    </details>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        THINK 03
+                    </span>
+
+                    <h4>
+                        Why does hexadecimal make binary shorter?
+                    </h4>
+
+                    <details>
+
+                        <summary>
+                            Answer
+                        </summary>
+
+                        <p>
+                            Each hexadecimal digit represents four binary
+                            bits. Therefore four binary characters can be
+                            replaced by one hexadecimal character.
+                        </p>
+
+                    </details>
+
+                </article>
+
+
+                <article>
+
+                    <span>
+                        THINK 04
+                    </span>
+
+                    <h4>
+                        Could one hexadecimal digit represent five binary bits?
+                    </h4>
+
+                    <details>
+
+                        <summary>
+                            Answer
+                        </summary>
+
+                        <p>
+                            No. Five binary bits can represent 32 different
+                            values, but hexadecimal has only 16 symbols.
+                        </p>
+
+                    </details>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUICK CHECK -->
+
+        <div class="studio-content"
+             id="quick">
+
+            <div class="studio-intro">
+
+                <h3>
+                    Quick Check
+                </h3>
+
+                <p>
+                    Answer before opening each explanation.
+                </p>
+
+            </div>
+
+
+            <div class="quick-grid">
+
+                <details>
+
+                    <summary>
+                        1. How many binary bits correspond to one hexadecimal digit?
+                    </summary>
+
+                    <p>
+                        <strong>Four.</strong>
+                    </p>
+
+                </details>
+
+
+                <details>
+
+                    <summary>
+                        2. What is 1010₂ in hexadecimal?
+                    </summary>
+
+                    <p>
+                        <strong>A₁₆.</strong>
+                    </p>
+
+                </details>
+
+
+                <details>
+
+                    <summary>
+                        3. What is 1111₂ in hexadecimal?
+                    </summary>
+
+                    <p>
+                        <strong>F₁₆.</strong>
+                    </p>
+
+                </details>
+
+
+                <details>
+
+                    <summary>
+                        4. What is C₁₆ in binary?
+                    </summary>
+
+                    <p>
+                        <strong>1100₂.</strong>
+                    </p>
+
+                </details>
+
+
+                <details>
+
+                    <summary>
+                        5. What is 1001₂ in hexadecimal?
+                    </summary>
+
+                    <p>
+                        <strong>9₁₆.</strong>
+                    </p>
+
+                </details>
+
+
+                <details>
+
+                    <summary>
+                        6. What is A5₁₆ in binary?
+                    </summary>
+
+                    <p>
+                        <strong>10100101₂.</strong>
+                    </p>
+
+                </details>
+
+
+                <details>
+
+                    <summary>
+                        7. What must you do if the first binary group has fewer than four bits?
+                    </summary>
+
+                    <p>
+                        Add <strong>leading zeros to the left</strong>.
+                    </p>
+
+                </details>
+
+
+                <details>
+
+                    <summary>
+                        8. Convert 11101010₂ to hexadecimal.
+                    </summary>
+
+                    <p>
+                        1110 → E and 1010 → A.
+                        Therefore <strong>EA₁₆</strong>.
+                    </p>
+
+                </details>
+
+            </div>
+
+
+            <div class="ready-check">
+
+                <h4>
+                    Ready for Assessment?
+                </h4>
+
+                <div class="ready-list">
+
+                    <span>
+                        ✓ Know the 4-bit table
+                    </span>
+
+                    <span>
+                        ✓ Group binary from the right
+                    </span>
+
+                    <span>
+                        ✓ Use leading zeros correctly
+                    </span>
+
+                    <span>
+                        ✓ Binary → hexadecimal
+                    </span>
+
+                    <span>
+                        ✓ Hexadecimal → binary
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ASSESSMENT -->
+
+    <section class="assessment panel"
+             id="assessment">
+
+        <div class="section-heading">
+
+            <span>10</span>
+
+            <div>
+
+                <h2>
+                    Formative Assessment
+                </h2>
+
+                <p>
+                    10 questions — Binary ↔ Hexadecimal Conversion
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="assessment-intro">
+
+            <p>
+                Work independently. A score of
+                <strong>70% or above</strong>
+                indicates that you are ready to progress.
+            </p>
+
+        </div>
+
+
+        <form id="assessmentForm">
+
+
+            <!-- Q1 -->
+
+            <div class="question">
+
+                <p>
+                    <strong>1.</strong>
+                    How many binary bits correspond to one hexadecimal digit?
+                </p>
+
+                <label>
+                    <input type="radio"
+                           name="q1"
+                           value="a">
+                    2
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q1"
+                           value="b">
+                    4
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q1"
+                           value="c">
+                    8
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q1"
+                           value="d">
+                    16
+                </label>
+
+            </div>
+
+
+            <!-- Q2 -->
+
+            <div class="question">
+
+                <p>
+                    <strong>2.</strong>
+                    What is 1010₂ in hexadecimal?
+                </p>
+
+                <label>
+                    <input type="radio"
+                           name="q2"
+                           value="a">
+                    8
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q2"
+                           value="b">
+                    A
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q2"
+                           value="c">
+                    B
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q2"
+                           value="d">
+                    F
+                </label>
+
+            </div>
+
+
+            <!-- Q3 -->
+
+            <div class="question">
+
+                <p>
+                    <strong>3.</strong>
+                    What is 1111₂ in hexadecimal?
+                </p>
+
+                <label>
+                    <input type="radio"
+                           name="q3"
+                           value="a">
+                    E
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q3"
+                           value="b">
+                    F
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q3"
+                           value="c">
+                    10
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q3"
+                           value="d">
+                    15
+                </label>
+
+            </div>
+
+
+            <!-- Q4 -->
+
+            <div class="question">
+
+                <p>
+                    <strong>4.</strong>
+                    Convert 11010110₂ to hexadecimal.
+                </p>
+
+                <label>
+                    <input type="radio"
+                           name="q4"
+                           value="a">
+                    C6
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q4"
+                           value="b">
+                    D6
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q4"
+                           value="c">
+                    D7
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q4"
+                           value="d">
+                    E6
+                </label>
+
+            </div>
+
+
+            <!-- Q5 -->
+
+            <div class="question">
+
+                <p>
+                    <strong>5.</strong>
+                    Convert A5₁₆ to binary.
+                </p>
+
+                <label>
+                    <input type="radio"
+                           name="q5"
+                           value="a">
+                    10100101
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q5"
+                           value="b">
+                    10100111
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q5"
+                           value="c">
+                    10110101
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q5"
+                           value="d">
+                    11000101
+                </label>
+
+            </div>
+
+
+            <!-- Q6 -->
+
+            <div class="question">
+
+                <p>
+                    <strong>6.</strong>
+                    Convert 101101₂ to hexadecimal.
+                </p>
+
+                <label>
+                    <input type="radio"
+                           name="q6"
+                           value="a">
+                    2B
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q6"
+                           value="b">
+                    2D
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q6"
+                           value="c">
+                    3D
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q6"
+                           value="d">
+                    BD
+                </label>
+
+            </div>
+
+
+            <!-- Q7 -->
+
+            <div class="question">
+
+                <p>
+                    <strong>7.</strong>
+                    When binary digits are grouped for hexadecimal
+                    conversion, from which side do you group them?
+                </p>
+
+                <label>
+                    <input type="radio"
+                           name="q7"
+                           value="a">
+                    From the left
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q7"
+                           value="b">
+                    From the middle
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q7"
+                           value="c">
+                    From the right
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q7"
+                           value="d">
+                    It does not matter
+                </label>
+
+            </div>
+
+
+            <!-- Q8 -->
+
+            <div class="question">
+
+                <p>
+                    <strong>8.</strong>
+                    What is C7₁₆ in binary?
+                </p>
+
+                <label>
+                    <input type="radio"
+                           name="q8"
+                           value="a">
+                    11000111
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q8"
+                           value="b">
+                    11010111
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q8"
+                           value="c">
+                    10110111
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q8"
+                           value="d">
+                    11100111
+                </label>
+
+            </div>
+
+
+            <!-- Q9 -->
+
+            <div class="question">
+
+                <p>
+                    <strong>9.</strong>
+                    Why can leading zeros be added when converting
+                    binary to hexadecimal?
+                </p>
+
+                <label>
+                    <input type="radio"
+                           name="q9"
+                           value="a">
+                    They change the value.
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q9"
+                           value="b">
+                    They make the number larger.
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q9"
+                           value="c">
+                    They do not change the value and complete a 4-bit group.
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q9"
+                           value="d">
+                    They convert binary into denary.
+                </label>
+
+            </div>
+
+
+            <!-- Q10 -->
+
+            <div class="question">
+
+                <p>
+                    <strong>10.</strong>
+                    Convert 11101010₂ to hexadecimal.
+                </p>
+
+                <label>
+                    <input type="radio"
+                           name="q10"
+                           value="a">
+                    DA
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q10"
+                           value="b">
+                    EA
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q10"
+                           value="c">
+                    EB
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="q10"
+                           value="d">
+                    FA
+                </label>
+
+            </div>
+
+
+            <button type="submit"
+                    class="primary-btn">
+                Submit Assessment
+            </button>
+
+        </form>
+
+
+        <div id="assessmentResult"
+             class="assessment-result hidden">
+        </div>
+
+
+        <div id="nextStep"
+             class="next-step hidden">
+        </div>
+
+    </section>
+
+
+
+    <!-- GAME BREAK -->
+
+    <section class="game-break panel">
+
+        <div class="game-header">
+
+            <div>
+
+                <span>
+                    5-MINUTE GAME BREAK
+                </span>
+
+                <h2>
+                    Take a Short Blockly Games Break
+                </h2>
+
+            </div>
+
+
+            <div class="game-symbol">
+                ▶
+            </div>
+
+        </div>
+
+
+        <p>
+            This is a genuine Blockly Games activity. It is a short
+            recreation break and is not part of the Computer Science
+            assessment.
+        </p>
+
+
+        <div class="game-controls">
+
+            <select id="gameSelect">
+
+                <option value="https://blockly.games/maze?lang=en">
+                    Blockly Maze
+                </option>
+
+                <option value="https://blockly.games/turtle?lang=en">
+                    Blockly Turtle
+                </option>
+
+                <option value="https://blockly.games/bird?lang=en">
+                    Blockly Bird
+                </option>
+
+                <option value="https://blockly.games/puzzle?lang=en">
+                    Blockly Puzzle
+                </option>
+
+                <option value="https://blockly.games/music?lang=en">
+                    Blockly Music
+                </option>
+
+            </select>
+
+
+            <button id="startGame"
+                    class="primary-btn">
+                Start 5-Minute Game
+            </button>
+
+        </div>
+
+
+        <div id="gameTimer"
+             class="game-timer hidden">
+
+            <strong id="timerDisplay">
+                05:00
+            </strong>
+
+            <span>
+                Return to the lesson when the timer finishes.
+            </span>
+
+        </div>
+
+
+        <div id="gameMessage"
+             class="game-message">
+        </div>
+
+    </section>
+
+
+
+    <!-- EXIT TICKET -->
+
+    <section class="exit-ticket panel">
+
+        <div class="section-heading">
+
+            <span>11</span>
+
+            <div>
+
+                <h2>
+                    Exit Ticket
+                </h2>
+
+                <p>
+                    Reflect on your learning
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="exit-grid">
+
+            <div>
+
+                <label for="learned">
+                    What can you now do confidently?
+                </label>
+
+                <textarea id="learned"
+                          placeholder="For example: I can convert binary to hexadecimal by..."></textarea>
+
+            </div>
+
+
+            <div>
+
+                <label for="unclear">
+                    What still needs more practice?
+                </label>
+
+                <textarea id="unclear"
+                          placeholder="Tell your teacher what you need help with."></textarea>
+
+            </div>
+
+        </div>
+
+
+        <button id="saveExit"
+                class="secondary-btn">
+            Save Exit Ticket
+        </button>
+
+
+        <p id="exitSaved"
+           class="saved-message">
+        </p>
+
+    </section>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="lesson-nav">
+
+        <a href="DR-04.html"
+           class="nav-btn">
+            ← Previous
+        </a>
+
+
+        <a href="INDEX.html"
+           class="nav-btn dashboard">
+            Topic Dashboard
+        </a>
+
+
+        <a href="DR-06.html"
+           class="nav-btn">
+            Next →
+        </a>
+
+    </nav>
+
+</main>
+
+
+
+<footer>
+
+    <strong>
+        IGCSE Computer Science 0984
+    </strong>
+
+    <span>
+        Topic 1 — Data Representation
+    </span>
+
+    <span>
+        DR-05
+    </span>
+
+</footer>
+
+
+<script src="DR-05.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DR-14 | Topic Review + Integrated Assessment</title>
+
+<link rel="stylesheet" href="DR-14.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="brand">
+
+        <!-- YOUR PHOTO — KEEP THIS IN ALL LESSON PAGES -->
+        <img src="IMG-Ravi.jpeg" alt="Ravi Raju">
+
+        <div>
+            <h1>IGCSE Computer Science 0984</h1>
+            <p>Design and Content by Ravi Raju</p>
+        </div>
+
+    </div>
+
+    <!-- MES 35 YEARS LOGO -->
+    <img class="school-logo"
+         src="MES35.jpg"
+         alt="Modern English School Cairo 35 Years">
+
+</header>
+
+
+<nav class="top-nav">
+
+    <a href="DR-13.html">← DR-13</a>
+
+    <a href="INDEX.html">🏠 Topic Dashboard</a>
+
+    <a href="#assessment">Assessment ↓</a>
+
+</nav>
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <span class="lesson-number">LESSON 14 · FINAL TOPIC REVIEW</span>
+
+    <h2>Data Representation</h2>
+
+    <h3>Topic Review + Integrated Assessment</h3>
+
+    <p>
+        Bring together everything you have learned about how computers
+        represent, calculate, store and compress digital data.
+    </p>
+
+    <div class="topic-map">
+
+        <div>01<br><strong>Numbers</strong></div>
+        <div>02<br><strong>Characters</strong></div>
+        <div>03<br><strong>Images</strong></div>
+        <div>04<br><strong>Sound</strong></div>
+        <div>05<br><strong>Storage</strong></div>
+        <div>06<br><strong>Compression</strong></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OBJECTIVES
+===================================================== -->
+
+<section class="panel">
+
+    <h2>🎯 Final Learning Objectives</h2>
+
+    <p>
+        By completing DR-14, you should be able to demonstrate understanding
+        across the whole Data Representation topic.
+    </p>
+
+    <div class="objective-grid">
+
+        <div>
+            <strong>Number Systems</strong>
+            <p>
+                Work confidently with denary, binary and hexadecimal.
+            </p>
+        </div>
+
+        <div>
+            <strong>Binary Operations</strong>
+            <p>
+                Perform binary addition, shifts and use two's complement.
+            </p>
+        </div>
+
+        <div>
+            <strong>Characters</strong>
+            <p>
+                Explain how characters are represented using character sets.
+            </p>
+        </div>
+
+        <div>
+            <strong>Images</strong>
+            <p>
+                Explain pixels, resolution, colour depth and calculate
+                bitmap file size.
+            </p>
+        </div>
+
+        <div>
+            <strong>Sound</strong>
+            <p>
+                Explain sampling and calculate sampled sound file size.
+            </p>
+        </div>
+
+        <div>
+            <strong>Storage</strong>
+            <p>
+                Convert storage units and solve capacity problems.
+            </p>
+        </div>
+
+        <div>
+            <strong>Compression</strong>
+            <p>
+                Distinguish lossless and lossy compression and calculate
+                compression measures.
+            </p>
+        </div>
+
+        <div>
+            <strong>Exam Thinking</strong>
+            <p>
+                Select appropriate methods, show working and check answers.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BIG PICTURE
+===================================================== -->
+
+<section class="panel">
+
+    <h2>🧠 The Big Picture</h2>
+
+    <p>
+        Computers work with binary data. Different types of information
+        require different representation methods.
+    </p>
+
+    <div class="big-picture">
+
+        <div class="big-card">
+            <span>🔢</span>
+            <h3>Numbers</h3>
+            <p>Binary and hexadecimal representation.</p>
+        </div>
+
+        <div class="big-card">
+            <span>🔤</span>
+            <h3>Characters</h3>
+            <p>Character sets map characters to binary codes.</p>
+        </div>
+
+        <div class="big-card">
+            <span>🖼️</span>
+            <h3>Images</h3>
+            <p>Pixels, resolution and colour depth.</p>
+        </div>
+
+        <div class="big-card">
+            <span>🎵</span>
+            <h3>Sound</h3>
+            <p>Sampling, sample rate and sample resolution.</p>
+        </div>
+
+        <div class="big-card">
+            <span>💾</span>
+            <h3>Storage</h3>
+            <p>Bits, bytes, KiB, MiB and GiB.</p>
+        </div>
+
+        <div class="big-card">
+            <span>📦</span>
+            <h3>Compression</h3>
+            <p>Reducing the amount of data required.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MASTER REVISION TABLE
+===================================================== -->
+
+<section class="panel">
+
+    <h2>📚 Master Revision Table</h2>
+
+    <table class="revision-table">
+
+        <thead>
+            <tr>
+                <th>Area</th>
+                <th>Remember</th>
+                <th>Be Able To</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Denary ↔ Binary</td>
+                <td>Place values 128 64 32 16 8 4 2 1</td>
+                <td>Convert both directions</td>
+            </tr>
+
+            <tr>
+                <td>Binary ↔ Hex</td>
+                <td>1 hexadecimal digit = 4 bits</td>
+                <td>Convert using nibbles</td>
+            </tr>
+
+            <tr>
+                <td>Binary Addition</td>
+                <td>Carry values</td>
+                <td>Add 8-bit numbers</td>
+            </tr>
+
+            <tr>
+                <td>Overflow</td>
+                <td>Result exceeds available bits</td>
+                <td>Identify overflow</td>
+            </tr>
+
+            <tr>
+                <td>Logical Shift</td>
+                <td>Bits leaving the register are lost</td>
+                <td>Perform left/right shifts</td>
+            </tr>
+
+            <tr>
+                <td>Two's Complement</td>
+                <td>Positive and negative integers</td>
+                <td>Convert and interpret 8-bit values</td>
+            </tr>
+
+            <tr>
+                <td>Characters</td>
+                <td>Character → binary code</td>
+                <td>Explain character representation</td>
+            </tr>
+
+            <tr>
+                <td>Bitmap Images</td>
+                <td>Pixels + colour depth</td>
+                <td>Calculate raw file size</td>
+            </tr>
+
+            <tr>
+                <td>Sound</td>
+                <td>Sample rate + resolution + duration + channels</td>
+                <td>Calculate raw file size</td>
+            </tr>
+
+            <tr>
+                <td>Storage</td>
+                <td>8 bits = 1 byte; 1024-based units</td>
+                <td>Convert and plan capacity</td>
+            </tr>
+
+            <tr>
+                <td>Compression</td>
+                <td>Lossless vs lossy</td>
+                <td>Explain and calculate reduction</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+<!-- =====================================================
+     FORMULA WALL
+===================================================== -->
+
+<section class="panel formula-wall">
+
+    <h2>🧮 Formula Wall</h2>
+
+    <div class="formula-grid">
+
+        <div>
+            <h3>Bitmap</h3>
+            <code>
+                File size (bits)
+                =
+                width × height × colour depth
+            </code>
+        </div>
+
+        <div>
+            <h3>Sampled Sound</h3>
+            <code>
+                File size (bits)
+                =
+                sample rate × sample resolution
+                × duration × channels
+            </code>
+        </div>
+
+        <div>
+            <h3>Bits → Bytes</h3>
+            <code>
+                bytes = bits ÷ 8
+            </code>
+        </div>
+
+        <div>
+            <h3>Binary Storage Units</h3>
+            <code>
+                1 KiB = 1024 bytes
+                1 MiB = 1024 KiB
+                1 GiB = 1024 MiB
+            </code>
+        </div>
+
+        <div>
+            <h3>Percentage Reduction</h3>
+            <code>
+                ((original − compressed)
+                ÷ original) × 100
+            </code>
+        </div>
+
+        <div>
+            <h3>Compression Ratio</h3>
+            <code>
+                original ÷ compressed
+            </code>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STUDENT STUDIO
+===================================================== -->
+
+<section class="panel studio">
+
+    <h2>🎓 Final Student Studio</h2>
+
+    <p class="studio-intro">
+        This is your final revision laboratory. Use it to identify weak
+        areas before attempting the assessment.
+    </p>
+
+
+    <div class="tabs">
+
+        <button data-tab="numberReview">
+            Number Systems
+        </button>
+
+        <button data-tab="binaryReview">
+            Binary Operations
+        </button>
+
+        <button data-tab="characterReview">
+            Characters
+        </button>
+
+        <button data-tab="imageReview">
+            Images
+        </button>
+
+        <button data-tab="soundReview">
+            Sound
+        </button>
+
+        <button data-tab="storageReview">
+            Storage
+        </button>
+
+        <button data-tab="compressionReview">
+            Compression
+        </button>
+
+        <button data-tab="mixedPractice">
+            Mixed Practice
+        </button>
+
+        <button data-tab="diagnostic">
+            Diagnose Yourself
+        </button>
+
+        <button data-tab="examStrategy">
+            Exam Strategy
+        </button>
+
+    </div>
+
+
+    <!-- NUMBER REVIEW -->
+
+    <div id="numberReview" class="tab-content active">
+
+        <h3>🔢 Number Systems Review</h3>
+
+        <div class="review-box">
+
+            <p>
+                Convert <strong>45 denary</strong> into binary.
+            </p>
+
+            <button onclick="reveal('nr1')">
+                Reveal
+            </button>
+
+            <p id="nr1" class="hidden-answer">
+                45 = 32 + 8 + 4 + 1.
+                Therefore:
+                <strong>00101101</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                Convert <strong>10110110</strong> into hexadecimal.
+            </p>
+
+            <button onclick="reveal('nr2')">
+                Reveal
+            </button>
+
+            <p id="nr2" class="hidden-answer">
+                Split into nibbles:
+                1011 0110 → B6.
+                Answer:
+                <strong>B6</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                What is the value of hexadecimal <strong>3A</strong>
+                in denary?
+            </p>
+
+            <button onclick="reveal('nr3')">
+                Reveal
+            </button>
+
+            <p id="nr3" class="hidden-answer">
+                3 × 16 + 10 = 48 + 10 =
+                <strong>58</strong>.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- BINARY REVIEW -->
+
+    <div id="binaryReview" class="tab-content">
+
+        <h3>⚙️ Binary Operations Review</h3>
+
+        <div class="review-box">
+
+            <p>
+                Add:
+                <strong>00101101 + 00000111</strong>
+            </p>
+
+            <button onclick="reveal('br1')">
+                Reveal
+            </button>
+
+            <p id="br1" class="hidden-answer">
+                45 + 7 = 52.
+                Binary:
+                <strong>00110100</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                Perform a logical left shift on:
+                <strong>00010110</strong>.
+            </p>
+
+            <button onclick="reveal('br2')">
+                Reveal
+            </button>
+
+            <p id="br2" class="hidden-answer">
+                Shift every bit one position left and insert zero:
+                <strong>00101100</strong>.
+                The value has doubled from 22 to 44.
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                What happens to a bit shifted out of an 8-bit register?
+            </p>
+
+            <button onclick="reveal('br3')">
+                Reveal
+            </button>
+
+            <p id="br3" class="hidden-answer">
+                The bit shifted out is lost.
+                A zero is inserted at the opposite end for a logical shift.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHARACTER REVIEW -->
+
+    <div id="characterReview" class="tab-content">
+
+        <h3>🔤 Character Representation</h3>
+
+        <div class="review-box">
+
+            <p>
+                What is the purpose of a character set?
+            </p>
+
+            <button onclick="reveal('cr1')">
+                Reveal
+            </button>
+
+            <p id="cr1" class="hidden-answer">
+                A character set defines mappings between characters and
+                numerical codes so that computers can represent characters
+                using binary.
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                Why can different character sets represent the same
+                character using different codes?
+            </p>
+
+            <button onclick="reveal('cr2')">
+                Reveal
+            </button>
+
+            <p id="cr2" class="hidden-answer">
+                Each character set defines its own mapping between characters
+                and numerical values.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- IMAGE REVIEW -->
+
+    <div id="imageReview" class="tab-content">
+
+        <h3>🖼️ Image Representation</h3>
+
+        <div class="review-box">
+
+            <p>
+                What happens to bitmap file size if both width and height
+                are doubled while colour depth stays constant?
+            </p>
+
+            <button onclick="reveal('ir1')">
+                Reveal
+            </button>
+
+            <p id="ir1" class="hidden-answer">
+                Pixels increase by 2 × 2 = 4.
+                Therefore the raw bitmap data requires
+                <strong>four times as much storage</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                What is colour depth?
+            </p>
+
+            <button onclick="reveal('ir2')">
+                Reveal
+            </button>
+
+            <p id="ir2" class="hidden-answer">
+                The number of bits used to represent the colour of each
+                pixel.
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                Calculate the raw size of a
+                100 × 100 image using 8 bits per pixel.
+            </p>
+
+            <button onclick="reveal('ir3')">
+                Reveal
+            </button>
+
+            <p id="ir3" class="hidden-answer">
+                100 × 100 × 8 =
+                <strong>80,000 bits</strong>.
+                That is 10,000 bytes.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SOUND REVIEW -->
+
+    <div id="soundReview" class="tab-content">
+
+        <h3>🎵 Sound Representation</h3>
+
+        <div class="review-box">
+
+            <p>
+                Name the four factors used in the basic sampled-sound
+                file-size calculation.
+            </p>
+
+            <button onclick="reveal('sr1')">
+                Reveal
+            </button>
+
+            <p id="sr1" class="hidden-answer">
+                Sample rate, sample resolution, duration and number of
+                channels.
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                What happens to file size if the sample rate is doubled
+                while everything else remains constant?
+            </p>
+
+            <button onclick="reveal('sr2')">
+                Reveal
+            </button>
+
+            <p id="sr2" class="hidden-answer">
+                The number of samples doubles, so the calculated raw file
+                size also doubles.
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                What is the difference between mono and stereo?
+            </p>
+
+            <button onclick="reveal('sr3')">
+                Reveal
+            </button>
+
+            <p id="sr3" class="hidden-answer">
+                Mono uses one audio channel. Stereo uses two channels.
+                With all other factors equal, stereo requires twice the
+                raw sample data of mono.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- STORAGE REVIEW -->
+
+    <div id="storageReview" class="tab-content">
+
+        <h3>💾 Storage Review</h3>
+
+        <div class="review-box">
+
+            <p>
+                Convert 5 MiB into KiB.
+            </p>
+
+            <button onclick="reveal('stor1')">
+                Reveal
+            </button>
+
+            <p id="stor1" class="hidden-answer">
+                5 × 1024 =
+                <strong>5120 KiB</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                Convert 16,384 bits into bytes.
+            </p>
+
+            <button onclick="reveal('stor2')">
+                Reveal
+            </button>
+
+            <p id="stor2" class="hidden-answer">
+                16,384 ÷ 8 =
+                <strong>2048 bytes</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                Why should mixed file sizes be converted to the same unit
+                before they are added?
+            </p>
+
+            <button onclick="reveal('stor3')">
+                Reveal
+            </button>
+
+            <p id="stor3" class="hidden-answer">
+                Because values in different units cannot be meaningfully
+                added until they have been expressed using the same unit.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- COMPRESSION REVIEW -->
+
+    <div id="compressionReview" class="tab-content">
+
+        <h3>📦 Compression Review</h3>
+
+        <div class="review-box">
+
+            <p>
+                Which type of compression allows exact reconstruction?
+            </p>
+
+            <button onclick="reveal('comp1')">
+                Reveal
+            </button>
+
+            <p id="comp1" class="hidden-answer">
+                <strong>Lossless compression.</strong>
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                A 1000 MiB file becomes 250 MiB.
+                What percentage reduction occurred?
+            </p>
+
+            <button onclick="reveal('comp2')">
+                Reveal
+            </button>
+
+            <p id="comp2" class="hidden-answer">
+                Reduction = 1000 − 250 = 750 MiB.
+                750 ÷ 1000 × 100 =
+                <strong>75%</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <p>
+                What is the compression ratio for the same file?
+            </p>
+
+            <button onclick="reveal('comp3')">
+                Reveal
+            </button>
+
+            <p id="comp3" class="hidden-answer">
+                1000 ÷ 250 =
+                <strong>4 : 1</strong>.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- MIXED PRACTICE -->
+
+    <div id="mixedPractice" class="tab-content">
+
+        <h3>🔥 Mixed Practice</h3>
+
+        <p>
+            These questions deliberately mix different areas.
+            This is closer to real examination thinking.
+        </p>
+
+        <div class="mixed-card">
+
+            <p>
+                <strong>1.</strong>
+                Convert hexadecimal 7C to binary.
+            </p>
+
+            <button onclick="reveal('mix1')">Reveal</button>
+
+            <p id="mix1" class="hidden-answer">
+                7 = 0111 and C = 1100.
+                Answer:
+                <strong>01111100</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="mixed-card">
+
+            <p>
+                <strong>2.</strong>
+                An image is 640 × 480 pixels with 16-bit colour depth.
+                Calculate its raw size in bits.
+            </p>
+
+            <button onclick="reveal('mix2')">Reveal</button>
+
+            <p id="mix2" class="hidden-answer">
+                640 × 480 × 16 =
+                <strong>4,915,200 bits</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="mixed-card">
+
+            <p>
+                <strong>3.</strong>
+                A mono recording has a sample rate of 8000 samples/s,
+                sample resolution of 8 bits and duration of 20 seconds.
+                Find the raw size.
+            </p>
+
+            <button onclick="reveal('mix3')">Reveal</button>
+
+            <p id="mix3" class="hidden-answer">
+                8000 × 8 × 20 × 1 =
+                <strong>1,280,000 bits</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="mixed-card">
+
+            <p>
+                <strong>4.</strong>
+                A 2 GiB device contains 800 MiB of data.
+                How much remains?
+            </p>
+
+            <button onclick="reveal('mix4')">Reveal</button>
+
+            <p id="mix4" class="hidden-answer">
+                2 GiB = 2048 MiB.
+                2048 − 800 =
+                <strong>1248 MiB</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="mixed-card">
+
+            <p>
+                <strong>5.</strong>
+                A 500 MiB file is compressed to 350 MiB.
+                Find the percentage reduction.
+            </p>
+
+            <button onclick="reveal('mix5')">Reveal</button>
+
+            <p id="mix5" class="hidden-answer">
+                Reduction = 150 MiB.
+                150 ÷ 500 × 100 =
+                <strong>30%</strong>.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- DIAGNOSTIC -->
+
+    <div id="diagnostic" class="tab-content">
+
+        <h3>🩺 Diagnose Yourself</h3>
+
+        <p>
+            Before starting the final assessment, honestly identify the
+            areas that still need attention.
+        </p>
+
+        <div class="diagnostic-grid">
+
+            <label>
+                <input type="checkbox" class="diagnostic">
+                Binary / Denary
+            </label>
+
+            <label>
+                <input type="checkbox" class="diagnostic">
+                Hexadecimal
+            </label>
+
+            <label>
+                <input type="checkbox" class="diagnostic">
+                Binary Arithmetic
+            </label>
+
+            <label>
+                <input type="checkbox" class="diagnostic">
+                Shifts
+            </label>
+
+            <label>
+                <input type="checkbox" class="diagnostic">
+                Two's Complement
+            </label>
+
+            <label>
+                <input type="checkbox" class="diagnostic">
+                Character Representation
+            </label>
+
+            <label>
+                <input type="checkbox" class="diagnostic">
+                Image Calculations
+            </label>
+
+            <label>
+                <input type="checkbox" class="diagnostic">
+                Sound Calculations
+            </label>
+
+            <label>
+                <input type="checkbox" class="diagnostic">
+                Storage Calculations
+            </label>
+
+            <label>
+                <input type="checkbox" class="diagnostic">
+                Compression
+            </label>
+
+        </div>
+
+        <button id="diagnoseBtn">
+            Analyse My Revision Needs
+        </button>
+
+        <div id="diagnosticResult" class="result"></div>
+
+    </div>
+
+
+    <!-- EXAM STRATEGY -->
+
+    <div id="examStrategy" class="tab-content">
+
+        <h3>📝 Final Exam Strategy</h3>
+
+        <div class="strategy-step">
+
+            <span>1</span>
+
+            <div>
+                <strong>Read the question carefully.</strong>
+                <p>
+                    Identify what information has been given and exactly
+                    what the question asks you to find.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="strategy-step">
+
+            <span>2</span>
+
+            <div>
+                <strong>Write the formula or method.</strong>
+                <p>
+                    Do not immediately substitute numbers. Establish the
+                    correct method first.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="strategy-step">
+
+            <span>3</span>
+
+            <div>
+                <strong>Keep units visible.</strong>
+                <p>
+                    Bits, bytes, KiB and MiB are not interchangeable.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="strategy-step">
+
+            <span>4</span>
+
+            <div>
+                <strong>Show intermediate working.</strong>
+                <p>
+                    Multi-step calculations become easier to check and
+                    correct.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="strategy-step">
+
+            <span>5</span>
+
+            <div>
+                <strong>Check whether the answer makes sense.</strong>
+                <p>
+                    A calculated file size should not unexpectedly become
+                    negative, and a number of complete files cannot normally
+                    be fractional.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL ASSESSMENT
+===================================================== -->
+
+<section class="panel assessment" id="assessment">
+
+    <div class="assessment-header">
+
+        <span>FINAL ASSESSMENT</span>
+
+        <h2>🧪 Topic 1 Integrated Assessment</h2>
+
+        <p>
+            This assessment checks understanding across the complete
+            Data Representation topic.
+        </p>
+
+    </div>
+
+
+    <div class="assessment-rules">
+
+        <div>
+            <strong>10 Questions</strong>
+            <span>Mixed difficulty</span>
+        </div>
+
+        <div>
+            <strong>70%</strong>
+            <span>Mastery threshold</span>
+        </div>
+
+        <div>
+            <strong>100%</strong>
+            <span>Final target</span>
+        </div>
+
+    </div>
+
+
+    <form id="assessmentForm">
+
+
+        <!-- Q1 -->
+
+        <div class="question">
+
+            <span class="question-number">01</span>
+
+            <p>
+                Which hexadecimal value represents the binary number
+                <strong>10101101</strong>?
+            </p>
+
+            <label>
+                <input type="radio" name="q1" value="a">
+                A5
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="b">
+                AD
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="c">
+                DA
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="d">
+                BD
+            </label>
+
+        </div>
+
+
+        <!-- Q2 -->
+
+        <div class="question">
+
+            <span class="question-number">02</span>
+
+            <p>
+                An 8-bit binary number
+                <strong>00110110</strong>
+                is logically shifted left by one position.
+                What is the result?
+            </p>
+
+            <label>
+                <input type="radio" name="q2" value="a">
+                00011011
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="b">
+                01101100
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="c">
+                00110111
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="d">
+                11011000
+            </label>
+
+        </div>
+
+
+        <!-- Q3 -->
+
+        <div class="question">
+
+            <span class="question-number">03</span>
+
+            <p>
+                An image has a resolution of 800 × 600 pixels and a colour
+                depth of 8 bits per pixel. What is its raw size in bits?
+            </p>
+
+            <label>
+                <input type="radio" name="q3" value="a">
+                480,000 bits
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="b">
+                3,840,000 bits
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="c">
+                4,800,000 bits
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="d">
+                38,400,000 bits
+            </label>
+
+        </div>
+
+
+        <!-- Q4 -->
+
+        <div class="question">
+
+            <span class="question-number">04</span>
+
+            <p>
+                A sound file is sampled at 8000 samples/s using 8-bit
+                samples for 10 seconds in mono.
+                What is the raw file size?
+            </p>
+
+            <label>
+                <input type="radio" name="q4" value="a">
+                80,000 bits
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="b">
+                640,000 bits
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="c">
+                800,000 bits
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="d">
+                6,400,000 bits
+            </label>
+
+        </div>
+
+
+        <!-- Q5 -->
+
+        <div class="question">
+
+            <span class="question-number">05</span>
+
+            <p>
+                Which statement about a character set is correct?
+            </p>
+
+            <label>
+                <input type="radio" name="q5" value="a">
+                It stores every character as an image.
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="b">
+                It defines mappings between characters and numerical codes.
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="c">
+                It is only used for numbers.
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="d">
+                It determines image resolution.
+            </label>
+
+        </div>
+
+
+        <!-- Q6 -->
+
+        <div class="question">
+
+            <span class="question-number">06</span>
+
+            <p>
+                A storage device has a capacity of 2 GiB.
+                500 MiB is already used.
+                Each new file requires 120 MiB.
+                What is the maximum number of complete files that can be added?
+            </p>
+
+            <label>
+                <input type="radio" name="q6" value="a">
+                10
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="b">
+                12
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="c">
+                12.9
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="d">
+                13
+            </label>
+
+        </div>
+
+
+        <!-- Q7 -->
+
+        <div class="question">
+
+            <span class="question-number">07</span>
+
+            <p>
+                Which type of compression allows the original data to be
+                reconstructed exactly?
+            </p>
+
+            <label>
+                <input type="radio" name="q7" value="a">
+                Lossy
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="b">
+                Lossless
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="c">
+                Both always
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="d">
+                Neither
+            </label>
+
+        </div>
+
+
+        <!-- Q8 -->
+
+        <div class="question">
+
+            <span class="question-number">08</span>
+
+            <p>
+                A file is reduced from 1000 MiB to 250 MiB.
+                What is the percentage reduction?
+            </p>
+
+            <label>
+                <input type="radio" name="q8" value="a">
+                25%
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="b">
+                50%
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="c">
+                75%
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="d">
+                80%
+            </label>
+
+        </div>
+
+
+        <!-- Q9 -->
+
+        <div class="question">
+
+            <span class="question-number">09</span>
+
+            <p>
+                Which change would make the raw bitmap file size four times
+                larger, assuming colour depth stays constant?
+            </p>
+
+            <label>
+                <input type="radio" name="q9" value="a">
+                Double only the width.
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="b">
+                Double only the height.
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="c">
+                Double both width and height.
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="d">
+                Halve both width and height.
+            </label>
+
+        </div>
+
+
+        <!-- Q10 -->
+
+        <div class="question">
+
+            <span class="question-number">10</span>
+
+            <p>
+                A stereo recording has a sample rate of 10,000 samples/s,
+                sample resolution of 16 bits and duration of 5 seconds.
+                What is the raw size?
+            </p>
+
+            <label>
+                <input type="radio" name="q10" value="a">
+                400,000 bits
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="b">
+                800,000 bits
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="c">
+                1,600,000 bits
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="d">
+                3,200,000 bits
+            </label>
+
+        </div>
+
+
+        <button type="submit" class="submit-button">
+            Submit Final Assessment
+        </button>
+
+    </form>
+
+
+    <div id="assessmentResult"></div>
+
+    <div id="pathway"></div>
+
+</section>
+
+
+<!-- =====================================================
+     REMEDIATION
+===================================================== -->
+
+<section class="panel remediation">
+
+    <h2>🔄 Targeted Remediation</h2>
+
+    <p>
+        If your assessment score is below 70%, do not simply repeat the
+        test. Use the diagnostic information to revisit the appropriate
+        lesson.
+    </p>
+
+    <div class="remediation-grid">
+
+        <div>
+            <strong>Numbers</strong>
+            <p>Return to DR-02 → DR-06.</p>
+        </div>
+
+        <div>
+            <strong>Characters</strong>
+            <p>Return to DR-07.</p>
+        </div>
+
+        <div>
+            <strong>Images</strong>
+            <p>Return to DR-08 → DR-09.</p>
+        </div>
+
+        <div>
+            <strong>Sound</strong>
+            <p>Return to DR-10 → DR-11.</p>
+        </div>
+
+        <div>
+            <strong>Storage</strong>
+            <p>Return to DR-12.</p>
+        </div>
+
+        <div>
+            <strong>Compression</strong>
+            <p>Return to DR-13.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL REFLECTION
+===================================================== -->
+
+<section class="panel final-reflection">
+
+    <h2>🌟 Your Data Representation Journey</h2>
+
+    <p>
+        You began with the question:
+        <strong>
+            "How does a computer represent information?"
+        </strong>
+    </p>
+
+    <p>
+        You have now explored numbers, characters, images, sound,
+        storage and compression.
+    </p>
+
+    <div class="journey">
+
+        <div>Binary</div>
+        <span>→</span>
+        <div>Representation</div>
+        <span>→</span>
+        <div>Calculation</div>
+        <span>→</span>
+        <div>Storage</div>
+        <span>→</span>
+        <div>Compression</div>
+
+    </div>
+
+    <p class="final-message">
+        <strong>
+            The goal is not simply to remember formulas.
+            The goal is to understand how information becomes data that a
+            computer can process.
+        </strong>
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     EXIT TICKET
+===================================================== -->
+
+<section class="panel exit-ticket">
+
+    <h2>🎫 Final Topic Exit Ticket</h2>
+
+    <label>
+        Which Data Representation concept do you now understand best?
+    </label>
+
+    <textarea id="learned"></textarea>
+
+
+    <label>
+        Which concept would you like to practise again?
+    </label>
+
+    <textarea id="unclear"></textarea>
+
+
+    <label>
+        One thing I can now explain to another student:
+    </label>
+
+    <textarea id="explain"></textarea>
+
+
+    <button id="saveExit">
+        Save Final Reflection
+    </button>
+
+    <div id="exitSaved"></div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        IGCSE Computer Science 0984 · Topic 1 · Data Representation
+    </p>
+
+    <p>
+        DR-14 · Final Topic Review
+    </p>
+
+    <p>
+        Design and Content by Ravi Raju
+    </p>
+
+</footer>
+
+
+<script src="DR-14.js"></script>
+
+</body>
+</html>

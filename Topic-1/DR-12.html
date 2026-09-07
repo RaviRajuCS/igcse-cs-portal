@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DR-12 | Data Storage & File Size</title>
+<link rel="stylesheet" href="DR-12.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="brand">
+        <img src="IMG-Ravi.jpeg" alt="Ravi Raju">
+        <div>
+            <h1>IGCSE Computer Science 0984</h1>
+            <p>Design and Content by Ravi Raju</p>
+        </div>
+    </div>
+    <img class="school-logo" src="MES35.jpg" alt="Modern English School Cairo">
+</header>
+
+<nav class="top-nav">
+    <a href="DR-11.html">← DR-11</a>
+    <a href="INDEX.html">🏠 Topic Dashboard</a>
+    <a href="DR-13.html">DR-13 →</a>
+</nav>
+
+<main>
+
+<section class="hero">
+    <span class="lesson-number">LESSON 12</span>
+    <h2>Data Storage & File Size</h2>
+    <p>
+        Understand how digital data occupies storage space, convert between
+        storage units, calculate capacity, and solve realistic storage-planning
+        problems.
+    </p>
+</section>
+
+<section class="panel">
+    <h2>🎯 Learning Objectives</h2>
+    <p>By the end of this lesson, you should be able to:</p>
+    <ul class="objectives">
+        <li>Explain the relationship between bits, bytes and larger storage units.</li>
+        <li>Convert correctly between bits, bytes, KiB, MiB and GiB.</li>
+        <li>Calculate the storage occupied by collections of files.</li>
+        <li>Calculate remaining storage capacity.</li>
+        <li>Determine how many files can fit into available storage.</li>
+        <li>Distinguish between file size and storage capacity.</li>
+        <li>Apply a clear exam method to multi-step storage calculations.</li>
+        <li>Recognise common unit-conversion errors.</li>
+    </ul>
+</section>
+
+<section class="panel">
+    <h2>🔁 What We Already Know</h2>
+
+    <div class="concept-grid">
+        <article class="concept-card">
+            <h3>Bit</h3>
+            <p>The smallest unit of binary data.</p>
+            <strong>0 or 1</strong>
+        </article>
+
+        <article class="concept-card">
+            <h3>Byte</h3>
+            <p>Eight bits make one byte.</p>
+            <strong>1 byte = 8 bits</strong>
+        </article>
+
+        <article class="concept-card">
+            <h3>KiB</h3>
+            <p>Used for binary storage calculations.</p>
+            <strong>1 KiB = 1024 bytes</strong>
+        </article>
+
+        <article class="concept-card">
+            <h3>MiB</h3>
+            <p>A larger binary storage unit.</p>
+            <strong>1 MiB = 1024 KiB</strong>
+        </article>
+
+        <article class="concept-card">
+            <h3>GiB</h3>
+            <p>A still larger binary storage unit.</p>
+            <strong>1 GiB = 1024 MiB</strong>
+        </article>
+    </div>
+
+    <div class="unit-chain">
+        <span>bits</span>
+        <b>÷ 8</b>
+        <span>bytes</span>
+        <b>÷ 1024</b>
+        <span>KiB</span>
+        <b>÷ 1024</b>
+        <span>MiB</span>
+        <b>÷ 1024</b>
+        <span>GiB</span>
+    </div>
+
+    <div class="tip">
+        <strong>Remember:</strong>
+        Moving from a smaller unit to a larger unit means dividing.
+        Moving from a larger unit to a smaller unit means multiplying.
+    </div>
+</section>
+
+<section class="panel">
+    <h2>📦 Storage Units — The Complete Picture</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Unit</th>
+                <th>Relationship</th>
+                <th>Direction</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Byte</td>
+                <td>8 bits</td>
+                <td>bits → bytes: ÷8</td>
+            </tr>
+            <tr>
+                <td>KiB</td>
+                <td>1024 bytes</td>
+                <td>bytes → KiB: ÷1024</td>
+            </tr>
+            <tr>
+                <td>MiB</td>
+                <td>1024 KiB</td>
+                <td>KiB → MiB: ÷1024</td>
+            </tr>
+            <tr>
+                <td>GiB</td>
+                <td>1024 MiB</td>
+                <td>MiB → GiB: ÷1024</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="important">
+        <strong>Exam rule:</strong>
+        If the question uses 1024, continue using 1024 throughout the
+        calculation unless the question explicitly tells you otherwise.
+    </p>
+</section>
+
+<section class="panel">
+    <h2>🧠 Why Does File Size Matter?</h2>
+
+    <p>
+        Every digital file occupies space in a storage device. A computer may
+        contain thousands of images, sound files, documents and videos.
+        Understanding file size allows us to determine whether those files
+        will fit within the available storage.
+    </p>
+
+    <div class="flow">
+        <div>Digital Data</div>
+        <span>→</span>
+        <div>File</div>
+        <span>→</span>
+        <div>File Size</div>
+        <span>→</span>
+        <div>Storage Used</div>
+    </div>
+
+    <p>
+        The important idea is that <strong>file size</strong> and
+        <strong>storage capacity</strong> are not the same thing.
+    </p>
+
+    <div class="two-column">
+        <div class="good-box">
+            <h3>File Size</h3>
+            <p>How much storage one particular file requires.</p>
+        </div>
+
+        <div class="good-box">
+            <h3>Storage Capacity</h3>
+            <p>How much data a storage device can hold.</p>
+        </div>
+    </div>
+</section>
+
+<section class="panel">
+    <h2>✏️ Worked Example 1 — Bits to MiB</h2>
+
+    <div class="worked">
+        <p><strong>Question:</strong> Convert 5,000,000 bits into bytes, KiB and MiB.</p>
+
+        <p>Step 1 — bits → bytes</p>
+        <code>5,000,000 ÷ 8 = 625,000 bytes</code>
+
+        <p>Step 2 — bytes → KiB</p>
+        <code>625,000 ÷ 1024 = 610.3515625 KiB</code>
+
+        <p>Step 3 — KiB → MiB</p>
+        <code>610.3515625 ÷ 1024 ≈ 0.596 MiB</code>
+
+        <div class="answer">
+            <strong>Answer:</strong> approximately <b>0.596 MiB</b>
+        </div>
+    </div>
+</section>
+
+<section class="panel">
+    <h2>✏️ Worked Example 2 — MiB to Bits</h2>
+
+    <div class="worked">
+        <p><strong>Question:</strong> Convert 3.5 MiB into bytes and bits.</p>
+
+        <p>Step 1 — MiB → KiB</p>
+        <code>3.5 × 1024 = 3584 KiB</code>
+
+        <p>Step 2 — KiB → bytes</p>
+        <code>3584 × 1024 = 3,670,016 bytes</code>
+
+        <p>Step 3 — bytes → bits</p>
+        <code>3,670,016 × 8 = 29,360,128 bits</code>
+
+        <div class="answer">
+            <strong>Answer:</strong> 3.5 MiB =
+            <b>3,670,016 bytes</b> =
+            <b>29,360,128 bits</b>
+        </div>
+    </div>
+</section>
+
+<section class="panel">
+    <h2>✏️ Worked Example 3 — GiB All the Way Down</h2>
+
+    <div class="worked">
+        <p><strong>Question:</strong> Convert 2 GiB into MiB, KiB, bytes and bits.</p>
+
+        <code>2 GiB × 1024 = 2048 MiB</code>
+        <code>2048 MiB × 1024 = 2,097,152 KiB</code>
+        <code>2,097,152 KiB × 1024 = 2,147,483,648 bytes</code>
+        <code>2,147,483,648 × 8 = 17,179,869,184 bits</code>
+
+        <div class="answer">
+            <strong>Final:</strong>
+            2 GiB =
+            <b>2048 MiB</b> =
+            <b>2,097,152 KiB</b> =
+            <b>2,147,483,648 bytes</b> =
+            <b>17,179,869,184 bits</b>
+        </div>
+    </div>
+</section>
+
+<section class="panel">
+    <h2>📚 Storage Planning</h2>
+
+    <p>
+        Real storage problems often involve more than one file.
+        We must first calculate the total amount already used and then
+        determine how much space remains.
+    </p>
+
+    <div class="worked">
+        <h3>Example</h3>
+        <p>
+            A storage device has a capacity of <strong>2 GiB</strong>.
+            <strong>500 MiB</strong> is already being used.
+            Each new file requires <strong>120 MiB</strong>.
+            How many complete files can be stored?
+        </p>
+
+        <p>Convert the capacity:</p>
+        <code>2 GiB = 2 × 1024 = 2048 MiB</code>
+
+        <p>Find remaining storage:</p>
+        <code>2048 − 500 = 1548 MiB</code>
+
+        <p>Find the number of complete files:</p>
+        <code>1548 ÷ 120 = 12.9</code>
+
+        <p>
+            We cannot store 0.9 of a file, so we take the whole-number part.
+        </p>
+
+        <div class="answer">
+            <strong>Maximum files = 12</strong>
+        </div>
+
+        <p>Space remaining after 12 files:</p>
+        <code>1548 − (12 × 120) = 108 MiB</code>
+    </div>
+</section>
+
+<section class="panel">
+    <h2>🧩 Mixed File Collections</h2>
+
+    <p>
+        Sometimes we need to calculate the total size of several different
+        types of files.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>File Type</th>
+                <th>Number</th>
+                <th>Size Each</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Images</td>
+                <td>8</td>
+                <td>18 MiB</td>
+                <td>144 MiB</td>
+            </tr>
+            <tr>
+                <td>Audio</td>
+                <td>5</td>
+                <td>25 MiB</td>
+                <td>125 MiB</td>
+            </tr>
+            <tr>
+                <td>Video</td>
+                <td>2</td>
+                <td>180 MiB</td>
+                <td>360 MiB</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="answer">
+        Total storage required =
+        <b>144 + 125 + 360 = 629 MiB</b>
+    </div>
+</section>
+
+<section class="panel">
+    <h2>⚠️ Important Distinction: Calculated vs Actual File Size</h2>
+
+    <p>
+        In earlier lessons, we calculated raw bitmap and sound sizes from
+        their representation parameters. Those calculations describe the
+        amount of data before compression and additional file-format
+        considerations.
+    </p>
+
+    <p>
+        The actual size of a stored file can be different because file formats,
+        metadata and compression may affect the amount of storage required.
+    </p>
+
+    <div class="warning">
+        <strong>For Cambridge calculations:</strong>
+        use the information and formula given in the question. Do not invent
+        compression or metadata adjustments unless the question asks for them.
+    </div>
+</section>
+
+<section class="panel studio">
+    <h2>🎓 Student Studio</h2>
+
+    <p class="studio-intro">
+        Work through the activities below. Do not simply press buttons:
+        calculate, predict, explain and then check your answer.
+    </p>
+
+    <div class="tabs">
+        <button data-tab="units">Storage Units</button>
+        <button data-tab="converter">Conversion Lab</button>
+        <button data-tab="bitsbytes">Bits / Bytes Lab</button>
+        <button data-tab="planner">Capacity Planner</button>
+        <button data-tab="collection">File Collection</button>
+        <button data-tab="remaining">Remaining Space</button>
+        <button data-tab="howmany">How Many Files?</button>
+        <button data-tab="compare">Compare Storage</button>
+        <button data-tab="mistakes">Fix the Mistake</button>
+        <button data-tab="exam">Exam Method</button>
+        <button data-tab="challenge">Challenge</button>
+        <button data-tab="think">Think</button>
+        <button data-tab="quick">Quick Check</button>
+    </div>
+
+    <div id="units" class="tab-content active">
+        <h3>Storage Unit Ladder</h3>
+
+        <div class="ladder">
+            <div><b>1 GiB</b><span>= 1024 MiB</span></div>
+            <div><b>1 MiB</b><span>= 1024 KiB</span></div>
+            <div><b>1 KiB</b><span>= 1024 bytes</span></div>
+            <div><b>1 byte</b><span>= 8 bits</span></div>
+        </div>
+
+        <p>
+            Explain aloud why you multiply when moving downward and divide
+            when moving upward.
+        </p>
+    </div>
+
+    <div id="converter" class="tab-content">
+        <h3>Conversion Lab</h3>
+
+        <label>Value</label>
+        <input id="convValue" type="number" min="0" step="any" value="1024">
+
+        <label>From</label>
+        <select id="convFrom">
+            <option value="bits">Bits</option>
+            <option value="bytes">Bytes</option>
+            <option value="KiB">KiB</option>
+            <option value="MiB">MiB</option>
+            <option value="GiB">GiB</option>
+        </select>
+
+        <button id="convertBtn">Convert</button>
+
+        <div id="conversionResult" class="result"></div>
+    </div>
+
+    <div id="bitsbytes" class="tab-content">
+        <h3>Bits ↔ Bytes Lab</h3>
+
+        <p>
+            Test your understanding of the most important conversion:
+            <strong>8 bits = 1 byte</strong>.
+        </p>
+
+        <label>Enter bits</label>
+        <input id="bitsInput" type="number" min="0" value="8000">
+
+        <button id="bitsBtn">Convert to Bytes</button>
+
+        <div id="bitsResult" class="result"></div>
+
+        <hr>
+
+        <label>Enter bytes</label>
+        <input id="bytesInput" type="number" min="0" value="1000">
+
+        <button id="bytesBtn">Convert to Bits</button>
+
+        <div id="bytesResult" class="result"></div>
+    </div>
+
+    <div id="planner" class="tab-content">
+        <h3>Capacity Planner</h3>
+
+        <label>Storage capacity</label>
+        <input id="planCapacity" type="number" min="0" step="any" value="2">
+
+        <select id="planCapacityUnit">
+            <option value="GiB">GiB</option>
+            <option value="MiB">MiB</option>
+            <option value="KiB">KiB</option>
+        </select>
+
+        <label>Already used</label>
+        <input id="planUsed" type="number" min="0" step="any" value="500">
+
+        <select id="planUsedUnit">
+            <option value="MiB">MiB</option>
+            <option value="GiB">GiB</option>
+            <option value="KiB">KiB</option>
+        </select>
+
+        <label>Size of each new file (MiB)</label>
+        <input id="planFile" type="number" min="0" step="any" value="120">
+
+        <button id="planBtn">Plan Storage</button>
+
+        <div id="planResult" class="result"></div>
+    </div>
+
+    <div id="collection" class="tab-content">
+        <h3>File Collection Calculator</h3>
+
+        <p>Enter up to three groups of files.</p>
+
+        <div class="collection-grid">
+            <div>
+                <label>Group 1 — number</label>
+                <input id="c1n" type="number" min="0" value="8">
+                <label>Size each (MiB)</label>
+                <input id="c1s" type="number" min="0" value="18">
+            </div>
+
+            <div>
+                <label>Group 2 — number</label>
+                <input id="c2n" type="number" min="0" value="5">
+                <label>Size each (MiB)</label>
+                <input id="c2s" type="number" min="0" value="25">
+            </div>
+
+            <div>
+                <label>Group 3 — number</label>
+                <input id="c3n" type="number" min="0" value="2">
+                <label>Size each (MiB)</label>
+                <input id="c3s" type="number" min="0" value="180">
+            </div>
+        </div>
+
+        <button id="collectionBtn">Calculate Total</button>
+
+        <div id="collectionResult" class="result"></div>
+    </div>
+
+    <div id="remaining" class="tab-content">
+        <h3>Remaining Space</h3>
+
+        <label>Total capacity (MiB)</label>
+        <input id="remainCapacity" type="number" min="0" value="2048">
+
+        <label>Used storage (MiB)</label>
+        <input id="remainUsed" type="number" min="0" value="500">
+
+        <button id="remainBtn">Calculate Remaining</button>
+
+        <div id="remainResult" class="result"></div>
+    </div>
+
+    <div id="howmany" class="tab-content">
+        <h3>How Many Files?</h3>
+
+        <label>Available storage (MiB)</label>
+        <input id="fitSpace" type="number" min="0" value="1548">
+
+        <label>File size (MiB)</label>
+        <input id="fitFile" type="number" min="0" value="120">
+
+        <button id="fitBtn">Calculate</button>
+
+        <div id="fitResult" class="result"></div>
+    </div>
+
+    <div id="compare" class="tab-content">
+        <h3>Compare Storage Requirements</h3>
+
+        <label>Storage capacity (GiB)</label>
+        <input id="compareCapacity" type="number" min="0" value="4">
+
+        <label>Collection size (MiB)</label>
+        <input id="compareCollection" type="number" min="0" value="2500">
+
+        <button id="compareBtn">Compare</button>
+
+        <div id="compareResult" class="result"></div>
+    </div>
+
+    <div id="mistakes" class="tab-content">
+        <h3>🔍 Fix the Mistake</h3>
+
+        <div class="mistake-card">
+            <p><strong>Mistake 1:</strong> A student converts 8000 bits to bytes by multiplying by 8.</p>
+            <button onclick="reveal('mistake1')">Reveal</button>
+            <p id="mistake1" class="hidden-answer">
+                Wrong direction. Bits → bytes means divide by 8.
+                8000 ÷ 8 = 1000 bytes.
+            </p>
+        </div>
+
+        <div class="mistake-card">
+            <p><strong>Mistake 2:</strong> A student converts 4 MiB to KiB by dividing by 1024.</p>
+            <button onclick="reveal('mistake2')">Reveal</button>
+            <p id="mistake2" class="hidden-answer">
+                Wrong direction. MiB → KiB means multiply.
+                4 × 1024 = 4096 KiB.
+            </p>
+        </div>
+
+        <div class="mistake-card">
+            <p><strong>Mistake 3:</strong> A student says 2 GiB contains 2000 MiB.</p>
+            <button onclick="reveal('mistake3')">Reveal</button>
+            <p id="mistake3" class="hidden-answer">
+                In this Cambridge-style binary calculation, 2 GiB =
+                2 × 1024 = 2048 MiB.
+            </p>
+        </div>
+
+        <div class="mistake-card">
+            <p><strong>Mistake 4:</strong> A student divides available space by file size and writes 12.9 files.</p>
+            <button onclick="reveal('mistake4')">Reveal</button>
+            <p id="mistake4" class="hidden-answer">
+                You cannot store a fraction of a complete file.
+                The maximum is 12 complete files.
+            </p>
+        </div>
+    </div>
+
+    <div id="exam" class="tab-content">
+        <h3>📝 Exam Method</h3>
+
+        <ol class="exam-steps">
+            <li><strong>Identify the units.</strong> Write them beside every number.</li>
+            <li><strong>Choose one common unit.</strong> MiB is often convenient.</li>
+            <li><strong>Convert before calculating.</strong></li>
+            <li><strong>Calculate the total used storage.</strong></li>
+            <li><strong>Subtract from capacity</strong> when finding remaining space.</li>
+            <li><strong>Divide available space by file size</strong> when finding how many files fit.</li>
+            <li><strong>Use the whole-number part</strong> when complete files are required.</li>
+            <li><strong>Check your units and answer.</strong></li>
+        </ol>
+    </div>
+
+    <div id="challenge" class="tab-content">
+        <h3>🏆 Challenge</h3>
+
+        <p>
+            A storage device has a capacity of <strong>4 GiB</strong>.
+            It already contains <strong>1.25 GiB</strong> of data.
+            New files require <strong>90 MiB</strong> each.
+        </p>
+
+        <p><strong>Questions:</strong></p>
+        <ol>
+            <li>How much space remains in MiB?</li>
+            <li>What is the maximum number of complete files that can be added?</li>
+            <li>How much space remains afterwards?</li>
+        </ol>
+
+        <button onclick="reveal('challengeAnswer')">Reveal Solution</button>
+
+        <div id="challengeAnswer" class="hidden-answer">
+            <p>4 GiB = 4096 MiB</p>
+            <p>1.25 GiB = 1280 MiB</p>
+            <p>Remaining = 4096 − 1280 = <strong>2816 MiB</strong></p>
+            <p>2816 ÷ 90 = 31.28...</p>
+            <p>Maximum complete files = <strong>31</strong></p>
+            <p>31 × 90 = 2790 MiB</p>
+            <p>Final remaining space = <strong>26 MiB</strong></p>
+        </div>
+    </div>
+
+    <div id="think" class="tab-content">
+        <h3>💭 Think Deeper</h3>
+
+        <p>
+            Why is it important to convert all values into the same unit
+            before adding file sizes?
+        </p>
+
+        <textarea id="thinkAnswer" placeholder="Write your explanation here..."></textarea>
+
+        <button id="saveThink">Save Thinking</button>
+        <div id="thinkSaved" class="result"></div>
+    </div>
+
+    <div id="quick" class="tab-content">
+        <h3>⚡ Quick Check</h3>
+
+        <div class="quick-question">
+            <p>1. How many bits are in one byte?</p>
+            <button onclick="quick(this,true)">8</button>
+            <button onclick="quick(this,false)">1024</button>
+            <span class="feedback"></span>
+        </div>
+
+        <div class="quick-question">
+            <p>2. What operation converts bytes to KiB?</p>
+            <button onclick="quick(this,true)">÷ 1024</button>
+            <button onclick="quick(this,false)">× 1024</button>
+            <span class="feedback"></span>
+        </div>
+
+        <div class="quick-question">
+            <p>3. What is 3 GiB in MiB?</p>
+            <button onclick="quick(this,true)">3072 MiB</button>
+            <button onclick="quick(this,false)">3000 MiB</button>
+            <span class="feedback"></span>
+        </div>
+
+        <div class="quick-question">
+            <p>4. If 500 MiB is available and each file is 60 MiB, how many complete files fit?</p>
+            <button onclick="quick(this,true)">8</button>
+            <button onclick="quick(this,false)">8.33</button>
+            <span class="feedback"></span>
+        </div>
+    </div>
+</section>
+
+<section class="panel">
+    <h2>📝 Independent Practice</h2>
+
+    <div class="practice-grid">
+
+        <div class="practice">
+            <h3>1</h3>
+            <p>Convert 16,384 bits into bytes.</p>
+            <button onclick="reveal('p1')">Reveal Answer</button>
+            <p id="p1" class="hidden-answer">2048 bytes</p>
+        </div>
+
+        <div class="practice">
+            <h3>2</h3>
+            <p>Convert 4096 KiB into MiB.</p>
+            <button onclick="reveal('p2')">Reveal Answer</button>
+            <p id="p2" class="hidden-answer">4 MiB</p>
+        </div>
+
+        <div class="practice">
+            <h3>3</h3>
+            <p>Convert 7 MiB into KiB.</p>
+            <button onclick="reveal('p3')">Reveal Answer</button>
+            <p id="p3" class="hidden-answer">7168 KiB</p>
+        </div>
+
+        <div class="practice">
+            <h3>4</h3>
+            <p>Convert 3 GiB into MiB.</p>
+            <button onclick="reveal('p4')">Reveal Answer</button>
+            <p id="p4" class="hidden-answer">3072 MiB</p>
+        </div>
+
+        <div class="practice">
+            <h3>5</h3>
+            <p>A 1 GiB device has 300 MiB used. How much remains?</p>
+            <button onclick="reveal('p5')">Reveal Answer</button>
+            <p id="p5" class="hidden-answer">1024 − 300 = 724 MiB</p>
+        </div>
+
+        <div class="practice">
+            <h3>6</h3>
+            <p>How many 50 MiB files fit into 600 MiB?</p>
+            <button onclick="reveal('p6')">Reveal Answer</button>
+            <p id="p6" class="hidden-answer">12 files</p>
+        </div>
+
+        <div class="practice">
+            <h3>7</h3>
+            <p>10 files are each 24 MiB. Find the total.</p>
+            <button onclick="reveal('p7')">Reveal Answer</button>
+            <p id="p7" class="hidden-answer">240 MiB</p>
+        </div>
+
+        <div class="practice">
+            <h3>8</h3>
+            <p>A 2 GiB device contains 700 MiB. How much remains?</p>
+            <button onclick="reveal('p8')">Reveal Answer</button>
+            <p id="p8" class="hidden-answer">2048 − 700 = 1348 MiB</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="panel">
+    <h2>🚨 Common Mistakes</h2>
+
+    <ul class="mistakes">
+        <li>Confusing bits with bytes.</li>
+        <li>Multiplying when the conversion requires division.</li>
+        <li>Dividing when the conversion requires multiplication.</li>
+        <li>Mixing MiB and GiB in the same calculation.</li>
+        <li>Using 1000 when the question expects 1024.</li>
+        <li>Forgetting storage already in use.</li>
+        <li>Adding file sizes without first converting them to the same unit.</li>
+        <li>Giving a fractional answer when complete files are required.</li>
+    </ul>
+</section>
+
+<section class="panel assessment">
+    <h2>🧪 Formative Assessment</h2>
+
+    <p>
+        Answer all ten questions. A score of <strong>70% or above</strong>
+        takes you to DR-13. Otherwise, complete the remediation and retake.
+    </p>
+
+    <form id="assessmentForm">
+
+        <div class="question">
+            <p>1. How many bits are in 1 byte?</p>
+            <label><input type="radio" name="q1" value="a"> 4</label>
+            <label><input type="radio" name="q1" value="b"> 8</label>
+            <label><input type="radio" name="q1" value="c"> 16</label>
+        </div>
+
+        <div class="question">
+            <p>2. 2048 bytes equals:</p>
+            <label><input type="radio" name="q2" value="a"> 1 KiB</label>
+            <label><input type="radio" name="q2" value="b"> 2 KiB</label>
+            <label><input type="radio" name="q2" value="c"> 4 KiB</label>
+        </div>
+
+        <div class="question">
+            <p>3. 5 MiB equals:</p>
+            <label><input type="radio" name="q3" value="a"> 5120 KiB</label>
+            <label><input type="radio" name="q3" value="b"> 5000 KiB</label>
+            <label><input type="radio" name="q3" value="c"> 4096 KiB</label>
+        </div>
+
+        <div class="question">
+            <p>4. 2 GiB equals:</p>
+            <label><input type="radio" name="q4" value="a"> 2000 MiB</label>
+            <label><input type="radio" name="q4" value="b"> 1024 MiB</label>
+            <label><input type="radio" name="q4" value="c"> 2048 MiB</label>
+        </div>
+
+        <div class="question">
+            <p>5. 16,000 bits equals:</p>
+            <label><input type="radio" name="q5" value="a"> 2000 bytes</label>
+            <label><input type="radio" name="q5" value="b"> 128,000 bytes</label>
+            <label><input type="radio" name="q5" value="c"> 8000 bytes</label>
+        </div>
+
+        <div class="question">
+            <p>6. A 1 GiB device has 300 MiB used. Remaining space is:</p>
+            <label><input type="radio" name="q6" value="a"> 724 MiB</label>
+            <label><input type="radio" name="q6" value="b"> 700 MiB</label>
+            <label><input type="radio" name="q6" value="c"> 1324 MiB</label>
+        </div>
+
+        <div class="question">
+            <p>7. How many 80 MiB files fit into 500 MiB?</p>
+            <label><input type="radio" name="q7" value="a"> 5</label>
+            <label><input type="radio" name="q7" value="b"> 6</label>
+            <label><input type="radio" name="q7" value="c"> 6.25</label>
+        </div>
+
+        <div class="question">
+            <p>8. Eight files are 25 MiB each. Total size?</p>
+            <label><input type="radio" name="q8" value="a"> 200 MiB</label>
+            <label><input type="radio" name="q8" value="b"> 175 MiB</label>
+            <label><input type="radio" name="q8" value="c"> 225 MiB</label>
+        </div>
+
+        <div class="question">
+            <p>9. Which is the correct Cambridge-style conversion?</p>
+            <label><input type="radio" name="q9" value="a"> 1 GiB = 1000 MiB</label>
+            <label><input type="radio" name="q9" value="b"> 1 GiB = 1024 MiB</label>
+            <label><input type="radio" name="q9" value="c"> 1 GiB = 512 MiB</label>
+        </div>
+
+        <div class="question">
+            <p>10. A device has 2048 MiB available. Each file is 120 MiB. Maximum complete files?</p>
+            <label><input type="radio" name="q10" value="a"> 16</label>
+            <label><input type="radio" name="q10" value="b"> 17</label>
+            <label><input type="radio" name="q10" value="c"> 18</label>
+        </div>
+
+        <button type="submit" class="assessment-button">Submit Assessment</button>
+    </form>
+
+    <div id="assessmentResult"></div>
+    <div id="pathway"></div>
+</section>
+
+<section class="panel game-panel">
+    <h2>🎮 5-Minute Game Break</h2>
+    <p>
+        Your learning comes first. Now take a short genuine Blockly Games
+        break before returning to your lesson.
+    </p>
+
+    <a class="game-button"
+       href="https://blockly.games/bird?lang=en"
+       target="_blank">
+       🐦 Open Blockly Bird
+    </a>
+
+    <div id="timer">05:00</div>
+    <button id="startTimer">Start 5-Minute Timer</button>
+    <p id="timerMessage"></p>
+</section>
+
+<section class="panel exit-ticket">
+    <h2>🎫 Exit Ticket</h2>
+
+    <label>What is the most important thing you learned today?</label>
+    <textarea id="learned"></textarea>
+
+    <label>What part of storage calculations is still unclear?</label>
+    <textarea id="unclear"></textarea>
+
+    <button id="saveExit">Save Exit Ticket</button>
+    <div id="exitSaved"></div>
+</section>
+
+</main>
+
+<footer>
+    <p>IGCSE Computer Science 0984 · Topic 1 · DR-12</p>
+    <p>Design and Content by Ravi Raju</p>
+</footer>
+
+<script src="DR-12.js"></script>
+</body>
+</html>

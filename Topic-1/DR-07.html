@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR-07 | Character Representation</title>
+    <link rel="stylesheet" href="DR-07.css">
+</head>
+
+<body>
+
+<header class="top-header">
+
+    <div class="brand-area">
+        <div class="brand-title">IGCSE Computer Science 0984</div>
+        <div class="brand-subtitle">Topic 1 — Data Representation</div>
+        <div class="designer">Design and Content by Ravi Raju</div>
+    </div>
+
+    <div class="header-images">
+        <img src="IMG-Ravi.jpeg"
+             class="ravi-photo"
+             alt="Ravi Raju">
+
+        <img src="MES35.jpg"
+             class="school-logo"
+             alt="Modern English School Cairo 35 Years">
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero glass">
+
+        <div class="lesson-number">DR-07</div>
+
+        <h1>Character Representation</h1>
+
+        <p>
+            How does a computer store letters, digits, punctuation and symbols
+            when everything inside the computer is represented using bits?
+        </p>
+
+        <div class="hero-pills">
+            <span>Characters</span>
+            <span>ASCII</span>
+            <span>Extended ASCII</span>
+            <span>Unicode</span>
+            <span>Character Sets</span>
+        </div>
+
+    </section>
+
+
+    <!-- OBJECTIVES -->
+    <section class="content-card glass">
+
+        <h2>🎯 Learning Objectives</h2>
+
+        <p>By the end of this lesson, you should be able to:</p>
+
+        <ul class="objective-list">
+
+            <li>Explain what a character set is.</li>
+
+            <li>Explain why characters must be represented using binary.</li>
+
+            <li>Describe how ASCII represents characters.</li>
+
+            <li>Explain the limitations of the original ASCII character set.</li>
+
+            <li>Explain why extended character sets were developed.</li>
+
+            <li>Describe Unicode and its purpose.</li>
+
+            <li>Explain why Unicode can represent a much larger range of characters.</li>
+
+            <li>Distinguish between a character and its binary representation.</li>
+
+            <li>Interpret simple character-code tables.</li>
+
+            <li>Explain why different character sets are needed for different languages and symbols.</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- WHAT IS CHARACTER REPRESENTATION -->
+    <section class="content-card glass">
+
+        <h2>1. What Is Character Representation?</h2>
+
+        <p>
+            A computer does not store a letter such as
+            <strong>A</strong> directly as a letter.
+        </p>
+
+        <p>
+            Instead, a character is assigned a numerical code.
+            That numerical code is then stored using binary.
+        </p>
+
+        <div class="representation-flow">
+
+            <div class="flow-box">
+                <strong>Character</strong>
+                <span>A</span>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-box">
+                <strong>Character Code</strong>
+                <span>65</span>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-box">
+                <strong>Binary</strong>
+                <span>01000001</span>
+            </div>
+
+        </div>
+
+        <div class="tip-box">
+
+            💡 <strong>Key idea:</strong>
+            A character set assigns a numerical value to each character.
+            The computer stores that value in binary.
+
+        </div>
+
+    </section>
+
+
+    <!-- CHARACTER SET -->
+    <section class="content-card glass">
+
+        <h2>2. Character Sets</h2>
+
+        <p>
+            A <strong>character set</strong> is a collection of characters
+            together with a unique code assigned to each character.
+        </p>
+
+        <p>
+            For example, a character set may contain:
+        </p>
+
+        <div class="character-cloud">
+
+            <span>A</span>
+            <span>B</span>
+            <span>C</span>
+            <span>a</span>
+            <span>b</span>
+            <span>1</span>
+            <span>2</span>
+            <span>+</span>
+            <span>?</span>
+            <span>@</span>
+            <span>£</span>
+            <span>!</span>
+
+        </div>
+
+        <p>
+            Each character is assigned a numerical code.
+            The computer can therefore store and process the characters
+            using binary numbers.
+        </p>
+
+    </section>
+
+
+    <!-- ASCII -->
+    <section class="content-card glass">
+
+        <h2>3. ASCII</h2>
+
+        <p>
+            <strong>ASCII</strong> stands for
+            <strong>American Standard Code for Information Interchange</strong>.
+        </p>
+
+        <p>
+            ASCII is a character encoding system that assigns numerical
+            codes to characters.
+        </p>
+
+        <h3>The Original ASCII Character Set</h3>
+
+        <p>
+            Original ASCII uses <strong>7 bits</strong>.
+        </p>
+
+        <div class="calculation-box">
+
+            <div class="big-number">
+                2<sup>7</sup>
+            </div>
+
+            <div class="equals">=</div>
+
+            <div class="big-number">
+                128
+            </div>
+
+            <p>
+                Therefore, 7 bits can represent
+                <strong>128 different values</strong>.
+            </p>
+
+        </div>
+
+        <p>
+            These codes include letters, digits, punctuation and control
+            characters.
+        </p>
+
+    </section>
+
+
+    <!-- ASCII EXAMPLES -->
+    <section class="content-card glass">
+
+        <h2>4. ASCII Character Codes</h2>
+
+        <p>
+            Here are some familiar ASCII examples:
+        </p>
+
+        <div class="code-table">
+
+            <div class="table-head">Character</div>
+            <div class="table-head">Denary</div>
+            <div class="table-head">Binary</div>
+
+            <div>A</div>
+            <div>65</div>
+            <div><code>1000001</code></div>
+
+            <div>B</div>
+            <div>66</div>
+            <div><code>1000010</code></div>
+
+            <div>C</div>
+            <div>67</div>
+            <div><code>1000011</code></div>
+
+            <div>a</div>
+            <div>97</div>
+            <div><code>1100001</code></div>
+
+            <div>b</div>
+            <div>98</div>
+            <div><code>1100010</code></div>
+
+            <div>0</div>
+            <div>48</div>
+            <div><code>0110000</code></div>
+
+            <div>1</div>
+            <div>49</div>
+            <div><code>0110001</code></div>
+
+        </div>
+
+        <div class="tip-box">
+
+            💡 Notice that the character <strong>A</strong> is not stored
+            as the shape "A". It is represented by its assigned code.
+
+        </div>
+
+    </section>
+
+
+    <!-- ASCII PATTERNS -->
+    <section class="content-card glass">
+
+        <h2>5. Discovering Patterns in ASCII</h2>
+
+        <p>
+            ASCII codes are not random. There are useful patterns.
+        </p>
+
+        <div class="pattern-grid">
+
+            <div class="pattern-card">
+
+                <h3>Uppercase Letters</h3>
+
+                <p>
+                    A = 65
+                </p>
+
+                <p>
+                    B = 66
+                </p>
+
+                <p>
+                    C = 67
+                </p>
+
+                <p>
+                    The codes increase by 1.
+                </p>
+
+            </div>
+
+
+            <div class="pattern-card">
+
+                <h3>Lowercase Letters</h3>
+
+                <p>
+                    a = 97
+                </p>
+
+                <p>
+                    b = 98
+                </p>
+
+                <p>
+                    c = 99
+                </p>
+
+                <p>
+                    The codes also increase by 1.
+                </p>
+
+            </div>
+
+
+            <div class="pattern-card">
+
+                <h3>Digits</h3>
+
+                <p>
+                    0 = 48
+                </p>
+
+                <p>
+                    1 = 49
+                </p>
+
+                <p>
+                    2 = 50
+                </p>
+
+                <p>
+                    Digits have consecutive codes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ASCII LIMITATION -->
+    <section class="content-card glass">
+
+        <h2>6. The Limitation of ASCII</h2>
+
+        <p>
+            Original ASCII uses only 7 bits, giving it 128 possible codes.
+        </p>
+
+        <p>
+            This is enough for many common English characters, but it is
+            not enough to represent the enormous number of characters,
+            symbols and writing systems used around the world.
+        </p>
+
+        <div class="limitation-box">
+
+            <div class="limitation-item">
+                <strong>English</strong>
+                <span>Many characters supported</span>
+            </div>
+
+            <div class="limitation-item">
+                <strong>Many other scripts</strong>
+                <span>Not adequately represented</span>
+            </div>
+
+            <div class="limitation-item">
+                <strong>Large symbol collections</strong>
+                <span>More codes are required</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXTENDED ASCII -->
+    <section class="content-card glass">
+
+        <h2>7. Extended Character Sets</h2>
+
+        <p>
+            One approach to increasing the number of available codes was
+            to use <strong>8 bits</strong> rather than 7 bits.
+        </p>
+
+        <div class="calculation-box">
+
+            <div class="big-number">
+                2<sup>8</sup>
+            </div>
+
+            <div class="equals">=</div>
+
+            <div class="big-number">
+                256
+            </div>
+
+        </div>
+
+        <p>
+            Using 8 bits gives 256 possible values.
+        </p>
+
+        <p>
+            However, different extended character encodings used the
+            additional values in different ways. This could cause
+            compatibility problems between systems.
+        </p>
+
+        <div class="tip-box">
+
+            ⚠ <strong>Important:</strong>
+            Simply increasing the number of bits does not automatically
+            create one universal character set.
+
+        </div>
+
+    </section>
+
+
+    <!-- UNICODE -->
+    <section class="content-card glass">
+
+        <h2>8. Unicode</h2>
+
+        <p>
+            <strong>Unicode</strong> was developed to provide a much larger
+            and more consistent character repertoire.
+        </p>
+
+        <p>
+            It supports characters from many different writing systems
+            around the world, as well as a large collection of symbols.
+        </p>
+
+        <div class="unicode-examples">
+
+            <div class="unicode-card">
+                <span class="symbol">A</span>
+                <strong>Latin</strong>
+            </div>
+
+            <div class="unicode-card">
+                <span class="symbol">Ω</span>
+                <strong>Greek</strong>
+            </div>
+
+            <div class="unicode-card">
+                <span class="symbol">Ж</span>
+                <strong>Cyrillic</strong>
+            </div>
+
+            <div class="unicode-card">
+                <span class="symbol">中</span>
+                <strong>Chinese</strong>
+            </div>
+
+            <div class="unicode-card">
+                <span class="symbol">ع</span>
+                <strong>Arabic</strong>
+            </div>
+
+            <div class="unicode-card">
+                <span class="symbol">अ</span>
+                <strong>Devanagari</strong>
+            </div>
+
+        </div>
+
+        <p>
+            This makes Unicode much more suitable for modern international
+            computing.
+        </p>
+
+    </section>
+
+
+    <!-- UNICODE IDEA -->
+    <section class="content-card glass">
+
+        <h2>9. Why Unicode Is Important</h2>
+
+        <div class="two-column">
+
+            <div class="mini-card">
+
+                <h3>🌍 International Communication</h3>
+
+                <p>
+                    Computers need to represent text from many languages
+                    and writing systems.
+                </p>
+
+            </div>
+
+            <div class="mini-card">
+
+                <h3>💻 Consistency</h3>
+
+                <p>
+                    A common standard helps different computer systems
+                    exchange and display text reliably.
+                </p>
+
+            </div>
+
+            <div class="mini-card">
+
+                <h3>🔣 More Symbols</h3>
+
+                <p>
+                    Modern computing requires far more characters than
+                    traditional ASCII could provide.
+                </p>
+
+            </div>
+
+            <div class="mini-card">
+
+                <h3>📱 Modern Technology</h3>
+
+                <p>
+                    Websites, applications and digital communication need
+                    broad character support.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHARACTER VS CODE -->
+    <section class="content-card glass">
+
+        <h2>10. Character ≠ Character Code ≠ Binary</h2>
+
+        <p>
+            These three ideas should not be confused.
+        </p>
+
+        <div class="three-stage">
+
+            <div>
+                <span class="stage-number">1</span>
+                <h3>Character</h3>
+                <code>A</code>
+            </div>
+
+            <div>
+                <span class="stage-number">2</span>
+                <h3>Code</h3>
+                <code>65</code>
+            </div>
+
+            <div>
+                <span class="stage-number">3</span>
+                <h3>Binary</h3>
+                <code>01000001</code>
+            </div>
+
+        </div>
+
+        <div class="tip-box">
+
+            🎯 <strong>Exam language:</strong>
+            A character is assigned a numerical code by a character set,
+            and that code is represented in binary inside the computer.
+
+        </div>
+
+    </section>
+
+
+    <!-- STUDENT STUDIO -->
+    <section class="studio-section">
+
+        <div class="studio-header">
+
+            <h2>🧪 Student Studio</h2>
+
+            <p>
+                Explore character representation by discovering patterns,
+                converting codes and solving character-set problems.
+            </p>
+
+        </div>
+
+
+        <div class="studio-tabs">
+
+            <button class="studio-tab active" data-tab="explore">
+                Explore
+            </button>
+
+            <button class="studio-tab" data-tab="ascii">
+                ASCII Lab
+            </button>
+
+            <button class="studio-tab" data-tab="binary">
+                Binary Lab
+            </button>
+
+            <button class="studio-tab" data-tab="pattern">
+                Pattern Detective
+            </button>
+
+            <button class="studio-tab" data-tab="unicode">
+                Unicode Explorer
+            </button>
+
+            <button class="studio-tab" data-tab="mistakes">
+                Fix the Mistake
+            </button>
+
+            <button class="studio-tab" data-tab="think">
+                Think
+            </button>
+
+            <button class="studio-tab" data-tab="quick">
+                Quick Check
+            </button>
+
+        </div>
+
+
+        <!-- EXPLORE -->
+        <div class="studio-panel active" id="explore">
+
+            <h3>🔍 Explore Character Representation</h3>
+
+            <p>
+                Choose a character and see how its ASCII code can be
+                represented as binary.
+            </p>
+
+            <div class="tool-card">
+
+                <label for="characterInput">
+                    Enter one ASCII character
+                </label>
+
+                <input id="characterInput"
+                       maxlength="1"
+                       value="A">
+
+                <button id="characterBtn"
+                        class="action-button">
+                    Explore Character
+                </button>
+
+                <div id="characterResult"
+                     class="tool-result">
+                    Waiting for a character...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ASCII LAB -->
+        <div class="studio-panel" id="ascii">
+
+            <h3>🔢 ASCII Lab</h3>
+
+            <p>
+                Enter a denary ASCII code between 0 and 127.
+            </p>
+
+            <div class="tool-card">
+
+                <label for="asciiInput">
+                    ASCII denary code
+                </label>
+
+                <input id="asciiInput"
+                       type="number"
+                       min="0"
+                       max="127"
+                       value="65">
+
+                <button id="asciiBtn"
+                        class="action-button">
+                    Decode ASCII
+                </button>
+
+                <div id="asciiResult"
+                     class="tool-result">
+                    Waiting for a code...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BINARY LAB -->
+        <div class="studio-panel" id="binary">
+
+            <h3>💾 Binary Character Lab</h3>
+
+            <p>
+                Enter a 7-bit ASCII binary value.
+            </p>
+
+            <div class="tool-card">
+
+                <label for="binaryCharInput">
+                    7-bit binary
+                </label>
+
+                <input id="binaryCharInput"
+                       maxlength="7"
+                       value="1000001">
+
+                <button id="binaryCharBtn"
+                        class="action-button">
+                    Decode Binary
+                </button>
+
+                <div id="binaryCharResult"
+                     class="tool-result">
+                    Waiting for binary...
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PATTERN -->
+        <div class="studio-panel" id="pattern">
+
+            <h3>🕵️ Pattern Detective</h3>
+
+            <p>
+                ASCII codes for uppercase letters are consecutive.
+            </p>
+
+            <div class="pattern-challenge">
+
+                <p class="big-binary">
+                    If A = 65, what is D?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="patternAnswer">
+                    Reveal Answer
+                </button>
+
+                <div id="patternAnswer"
+                     class="hidden-answer">
+
+                    A = 65<br>
+                    B = 66<br>
+                    C = 67<br>
+                    D = <strong>68</strong>
+
+                </div>
+
+            </div>
+
+            <div class="pattern-challenge">
+
+                <p class="big-binary">
+                    If a = 97, what is d?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="patternAnswer2">
+                    Reveal Answer
+                </button>
+
+                <div id="patternAnswer2"
+                     class="hidden-answer">
+
+                    a = 97<br>
+                    b = 98<br>
+                    c = 99<br>
+                    d = <strong>100</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- UNICODE -->
+        <div class="studio-panel" id="unicode">
+
+            <h3>🌍 Unicode Explorer</h3>
+
+            <p>
+                Look at the range of writing systems that modern computers
+                need to represent.
+            </p>
+
+            <div class="unicode-explorer">
+
+                <div>English — <strong>Hello</strong></div>
+
+                <div>Arabic — <strong>مرحبا</strong></div>
+
+                <div>Greek — <strong>Γειά</strong></div>
+
+                <div>Hindi — <strong>नमस्ते</strong></div>
+
+                <div>Chinese — <strong>你好</strong></div>
+
+                <div>Japanese — <strong>こんにちは</strong></div>
+
+            </div>
+
+            <div class="tip-box">
+
+                Think about this:
+                <strong>Could the original 7-bit ASCII character set
+                represent all these writing systems?</strong>
+
+                No — this is one reason a much larger character repertoire
+                is necessary.
+
+            </div>
+
+        </div>
+
+
+        <!-- MISTAKES -->
+        <div class="studio-panel" id="mistakes">
+
+            <h3>🕵️ Fix the Mistake</h3>
+
+
+            <div class="mistake-card">
+
+                <p><strong>Student statement:</strong></p>
+
+                <div class="student-answer">
+                    "ASCII stores letters directly as letters."
+                </div>
+
+                <button class="answer-button"
+                        data-answer="mistake1">
+                    Reveal Explanation
+                </button>
+
+                <div id="mistake1"
+                     class="hidden-answer">
+
+                    Not quite.
+                    ASCII assigns a numerical code to each character.
+                    The computer stores the numerical code in binary.
+
+                </div>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <p><strong>Student statement:</strong></p>
+
+                <div class="student-answer">
+                    "ASCII uses 8 bits and therefore has 256 codes."
+                </div>
+
+                <button class="answer-button"
+                        data-answer="mistake2">
+                    Reveal Explanation
+                </button>
+
+                <div id="mistake2"
+                     class="hidden-answer">
+
+                    Original ASCII uses <strong>7 bits</strong>,
+                    giving <strong>128 possible codes</strong>.
+                    8-bit extended character sets can provide 256 values,
+                    but these are not simply the same thing as original ASCII.
+
+                </div>
+
+            </div>
+
+
+            <div class="mistake-card">
+
+                <p><strong>Student statement:</strong></p>
+
+                <div class="student-answer">
+                    "Unicode is only another name for ASCII."
+                </div>
+
+                <button class="answer-button"
+                        data-answer="mistake3">
+                    Reveal Explanation
+                </button>
+
+                <div id="mistake3"
+                     class="hidden-answer">
+
+                    No.
+                    Unicode is a much larger character repertoire designed
+                    to support characters from many writing systems and
+                    symbols.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- THINK -->
+        <div class="studio-panel" id="think">
+
+            <h3>🧠 Think Like a Computer Scientist</h3>
+
+            <div class="thinking-question">
+
+                <p>
+                    Why can't a computer simply store the letter A as the
+                    letter A?
+                </p>
+
+                <textarea id="thinkAnswer"
+                          placeholder="Explain your reasoning..."></textarea>
+
+                <button id="saveThink"
+                        class="action-button">
+                    Save My Thinking
+                </button>
+
+                <div id="thinkSaved"
+                     class="saved-message">
+                </div>
+
+            </div>
+
+
+            <div class="thinking-question">
+
+                <p>
+                    Why is a universal character repertoire useful on the
+                    modern Internet?
+                </p>
+
+                <textarea id="thinkAnswer2"
+                          placeholder="Write your explanation..."></textarea>
+
+                <button id="saveThink2"
+                        class="action-button">
+                    Save My Thinking
+                </button>
+
+                <div id="thinkSaved2"
+                     class="saved-message">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK CHECK -->
+        <div class="studio-panel" id="quick">
+
+            <h3>⚡ Quick Check</h3>
+
+
+            <div class="quick-question">
+
+                <p>
+                    1. What is a character set?
+                </p>
+
+                <button class="quick-option"
+                        data-q="1"
+                        data-correct="true">
+                    A collection of characters and their codes
+                </button>
+
+                <button class="quick-option"
+                        data-q="1">
+                    A computer keyboard
+                </button>
+
+                <button class="quick-option"
+                        data-q="1">
+                    A binary calculator
+                </button>
+
+                <div class="quick-feedback"
+                     id="feedback1">
+                </div>
+
+            </div>
+
+
+            <div class="quick-question">
+
+                <p>
+                    2. How many bits does original ASCII use?
+                </p>
+
+                <button class="quick-option"
+                        data-q="2"
+                        data-correct="true">
+                    7
+                </button>
+
+                <button class="quick-option"
+                        data-q="2">
+                    8
+                </button>
+
+                <button class="quick-option"
+                        data-q="2">
+                    16
+                </button>
+
+                <div class="quick-feedback"
+                     id="feedback2">
+                </div>
+
+            </div>
+
+
+            <div class="quick-question">
+
+                <p>
+                    3. How many possible values can 7 bits represent?
+                </p>
+
+                <button class="quick-option"
+                        data-q="3">
+                    64
+                </button>
+
+                <button class="quick-option"
+                        data-q="3"
+                        data-correct="true">
+                    128
+                </button>
+
+                <button class="quick-option"
+                        data-q="3">
+                    256
+                </button>
+
+                <div class="quick-feedback"
+                     id="feedback3">
+                </div>
+
+            </div>
+
+
+            <div class="quick-question">
+
+                <p>
+                    4. Why was Unicode developed?
+                </p>
+
+                <button class="quick-option"
+                        data-q="4"
+                        data-correct="true">
+                    To support a much larger range of characters
+                </button>
+
+                <button class="quick-option"
+                        data-q="4">
+                    To replace binary
+                </button>
+
+                <button class="quick-option"
+                        data-q="4">
+                    To make processors faster
+                </button>
+
+                <div class="quick-feedback"
+                     id="feedback4">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GUIDED PRACTICE -->
+    <section class="content-card glass">
+
+        <h2>📝 Guided Practice</h2>
+
+        <div class="practice-grid">
+
+            <div class="practice-card">
+
+                <h3>1</h3>
+
+                <p>
+                    How many different values can 7 bits represent?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="p1">
+                    Show Answer
+                </button>
+
+                <div id="p1"
+                     class="hidden-answer">
+                    2<sup>7</sup> = <strong>128</strong>
+                </div>
+
+            </div>
+
+
+            <div class="practice-card">
+
+                <h3>2</h3>
+
+                <p>
+                    What is the ASCII denary code for A?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="p2">
+                    Show Answer
+                </button>
+
+                <div id="p2"
+                     class="hidden-answer">
+                    <strong>65</strong>
+                </div>
+
+            </div>
+
+
+            <div class="practice-card">
+
+                <h3>3</h3>
+
+                <p>
+                    What is the ASCII denary code for B?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="p3">
+                    Show Answer
+                </button>
+
+                <div id="p3"
+                     class="hidden-answer">
+                    <strong>66</strong>
+                </div>
+
+            </div>
+
+
+            <div class="practice-card">
+
+                <h3>4</h3>
+
+                <p>
+                    What is the binary representation of ASCII A?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="p4">
+                    Show Answer
+                </button>
+
+                <div id="p4"
+                     class="hidden-answer">
+                    7-bit: <strong>1000001</strong><br>
+                    8-bit padded: <strong>01000001</strong>
+                </div>
+
+            </div>
+
+
+            <div class="practice-card">
+
+                <h3>5</h3>
+
+                <p>
+                    What is the ASCII code for lowercase a?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="p5">
+                    Show Answer
+                </button>
+
+                <div id="p5"
+                     class="hidden-answer">
+                    <strong>97</strong>
+                </div>
+
+            </div>
+
+
+            <div class="practice-card">
+
+                <h3>6</h3>
+
+                <p>
+                    Why is ASCII insufficient for global communication?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="p6">
+                    Show Answer
+                </button>
+
+                <div id="p6"
+                     class="hidden-answer">
+                    Original ASCII has only 128 possible codes and cannot
+                    represent the huge range of characters used by all
+                    languages and writing systems.
+                </div>
+
+            </div>
+
+
+            <div class="practice-card">
+
+                <h3>7</h3>
+
+                <p>
+                    How many possible values can 8 bits represent?
+                </p>
+
+                <button class="answer-button"
+                        data-answer="p7">
+                    Show Answer
+                </button>
+
+                <div id="p7"
+                     class="hidden-answer">
+                    2<sup>8</sup> = <strong>256</strong>
+                </div>
+
+            </div>
+
+
+            <div class="practice-card">
+
+                <h3>8</h3>
+
+                <p>
+                    Name the character set designed for a very large
+                    international range of characters.
+                </p>
+
+                <button class="answer-button"
+                        data-answer="p8">
+                    Show Answer
+                </button>
+
+                <div id="p8"
+                     class="hidden-answer">
+                    <strong>Unicode</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ASSESSMENT -->
+    <section class="assessment-section glass">
+
+        <h2>📊 Formative Assessment</h2>
+
+        <p>
+            Answer all 10 questions. A score of
+            <strong>70%</strong> or higher indicates mastery.
+        </p>
+
+
+        <form id="assessmentForm">
+
+
+            <div class="assessment-question">
+
+                <p>
+                    1. What is a character set?
+                </p>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    A list of computer instructions
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    A collection of characters and their assigned codes
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    A type of processor
+                </label>
+
+            </div>
+
+
+            <div class="assessment-question">
+
+                <p>
+                    2. How many bits does original ASCII use?
+                </p>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    6
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    7
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    8
+                </label>
+
+            </div>
+
+
+            <div class="assessment-question">
+
+                <p>
+                    3. How many possible values can 7 bits represent?
+                </p>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    64
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    128
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    256
+                </label>
+
+            </div>
+
+
+            <div class="assessment-question">
+
+                <p>
+                    4. What is the denary ASCII code for A?
+                </p>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    64
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    65
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    66
+                </label>
+
+            </div>
+
+
+            <div class="assessment-question">
+
+                <p>
+                    5. What is the denary ASCII code for a?
+                </p>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    96
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    97
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    98
+                </label>
+
+            </div>
+
+
+            <div class="assessment-question">
+
+                <p>
+                    6. What is 65 in 7-bit binary?
+                </p>
+
+                <label>
+                    <input type="radio" name="q6" value="a">
+                    1000001
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="b">
+                    1000010
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="c">
+                    1100001
+                </label>
+
+            </div>
+
+
+            <div class="assessment-question">
+
+                <p>
+                    7. What is the main limitation of original ASCII?
+                </p>
+
+                <label>
+                    <input type="radio" name="q7" value="a">
+                    It uses too many bits
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="b">
+                    It cannot represent enough characters for worldwide use
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="c">
+                    It cannot represent numbers
+                </label>
+
+            </div>
+
+
+            <div class="assessment-question">
+
+                <p>
+                    8. How many values can 8 bits represent?
+                </p>
+
+                <label>
+                    <input type="radio" name="q8" value="a">
+                    128
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="b">
+                    256
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="c">
+                    512
+                </label>
+
+            </div>
+
+
+            <div class="assessment-question">
+
+                <p>
+                    9. Which character repertoire is designed to support
+                    characters from many writing systems?
+                </p>
+
+                <label>
+                    <input type="radio" name="q9" value="a">
+                    ASCII
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="b">
+                    Unicode
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="c">
+                    Binary
+                </label>
+
+            </div>
+
+
+            <div class="assessment-question">
+
+                <p>
+                    10. Which sequence correctly describes character storage?
+                </p>
+
+                <label>
+                    <input type="radio" name="q10" value="a">
+                    Character → binary shape → code
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="b">
+                    Character → numerical code → binary representation
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="c">
+                    Binary → character → processor
+                </label>
+
+            </div>
+
+
+            <button type="submit"
+                    class="assessment-button">
+                Submit Assessment
+            </button>
+
+        </form>
+
+
+        <div id="assessmentResult"
+             class="assessment-result">
+        </div>
+
+    </section>
+
+
+    <!-- MASTERY -->
+    <section id="masteryPanel"
+             class="pathway-card glass">
+
+        <h2>🚀 Your Learning Pathway</h2>
+
+        <div id="masteryMessage">
+
+            Complete the assessment to discover your next step.
+
+        </div>
+
+
+        <div id="remediationArea"
+             class="remediation hidden">
+
+            <h3>🔧 Targeted Remediation</h3>
+
+            <p>
+                Revisit the areas below before attempting the assessment again.
+            </p>
+
+            <div class="remediation-grid">
+
+                <a href="#asciiSection">
+                    ASCII
+                </a>
+
+                <a href="#limitationSection">
+                    ASCII Limitations
+                </a>
+
+                <a href="#unicodeSection">
+                    Unicode
+                </a>
+
+                <a href="#representationSection">
+                    Character Representation
+                </a>
+
+            </div>
+
+            <button id="retakeBtn"
+                    class="assessment-button">
+                Retake Assessment
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- GAME -->
+    <section class="game-break glass">
+
+        <h2>🎮 5-Minute Game Break</h2>
+
+        <p>
+            Take a short computational-thinking break.
+            This activity is separate from your assessment.
+        </p>
+
+        <a href="https://blockly.games/turtle?lang=en"
+           target="_blank"
+           rel="noopener"
+           class="game-button">
+
+            Open Blockly Turtle ↗
+
+        </a>
+
+
+        <div class="timer-area">
+
+            <div id="gameTimer">
+                05:00
+            </div>
+
+            <button id="startTimer"
+                    class="action-button">
+                Start 5-Minute Timer
+            </button>
+
+            <button id="stopTimer"
+                    class="action-button secondary">
+                Stop Timer
+            </button>
+
+            <p id="timerMessage"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXIT TICKET -->
+    <section class="exit-ticket glass">
+
+        <h2>🎫 Exit Ticket</h2>
+
+        <p>
+            Before leaving DR-07, reflect on your learning.
+        </p>
+
+
+        <label for="exitLearned">
+            What is one important thing you learned?
+        </label>
+
+        <textarea id="exitLearned"
+                  placeholder="I learned that..."></textarea>
+
+
+        <label for="exitUnclear">
+            What is still unclear?
+        </label>
+
+        <textarea id="exitUnclear"
+                  placeholder="I still need help with..."></textarea>
+
+
+        <button id="saveExit"
+                class="assessment-button">
+            Save Exit Ticket
+        </button>
+
+        <div id="exitSaved"
+             class="saved-message">
+        </div>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+    <nav class="lesson-navigation">
+
+        <a href="DR-06.html"
+           class="nav-button">
+            ← DR-06
+        </a>
+
+        <a href="INDEX.html"
+           class="nav-button dashboard">
+            🏠 Topic Dashboard
+        </a>
+
+        <a href="DR-08.html"
+           class="nav-button">
+            DR-08 →
+        </a>
+
+    </nav>
+
+</main>
+
+
+<footer>
+
+    <p>
+        IGCSE Computer Science 0984 • Topic 1 — Data Representation
+    </p>
+
+    <p>
+        Design and Content by Ravi Raju
+    </p>
+
+</footer>
+
+
+<script src="DR-07.js"></script>
+
+</body>
+</html>
